@@ -1,0 +1,487 @@
+/**
+ * ABYSS DESIGN SYSTEM — CSS Custom Properties
+ *
+ * Source of truth: blackink-app/src/theme/
+ * Generated from: abyssTokens.js, colors.js, BText.jsx, index.jsx
+ *
+ * Usage:
+ *   <link rel="stylesheet" href="css/abyss-tokens.css">
+ *   Then use: var(--abyss-depth-surface)
+ *
+ * Themes: .theme-dark (default), .theme-light
+ */
+
+/* ==========================================================
+   BASE TOKENS (theme-independent)
+   ========================================================== */
+:root {
+    /* ── Brand ── */
+    --brand-blue: #116CC5;
+    --brand-deep-blue: #081943;
+
+    /* ── Semantic (consistent across themes) ── */
+    --color-error: #DC2626;
+    --color-success: #16A34A;
+    --color-warning: #D97706;
+    --color-info: #0EA5E9;
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+
+    /* ── Abyss Depth Colors ── */
+    --abyss-depth-surface: #0a1628;
+    --abyss-depth-shallow: #071422;
+    --abyss-depth-mid: #050f1a;
+    --abyss-depth-deep: #030a12;
+    --abyss-depth-abyss: #020608;
+
+    /* ── Abyss Depth Gradient (CSS) ── */
+    --abyss-depth-gradient: linear-gradient(
+        180deg,
+        #0a1628 0%,
+        #071422 25%,
+        #050f1a 50%,
+        #030a12 75%,
+        #020608 100%
+    );
+
+    /* ── Glass Effect (cards/elements) ── */
+    --abyss-glass-top: rgba(10, 22, 40, 0.82);
+    --abyss-glass-mid: rgba(8, 18, 35, 0.85);
+    --abyss-glass-bottom: rgba(6, 14, 28, 0.88);
+    --abyss-glass-gradient: linear-gradient(
+        180deg,
+        rgba(10, 22, 40, 0.82) 0%,
+        rgba(8, 18, 35, 0.85) 50%,
+        rgba(6, 14, 28, 0.88) 100%
+    );
+
+    /* ── Glass Light (filter buttons) ── */
+    --abyss-glass-light-top: rgba(10, 22, 40, 0.80);
+    --abyss-glass-light-mid: rgba(8, 18, 35, 0.84);
+    --abyss-glass-light-bottom: rgba(6, 14, 28, 0.86);
+    --abyss-glass-light-gradient: linear-gradient(
+        180deg,
+        rgba(10, 22, 40, 0.80) 0%,
+        rgba(8, 18, 35, 0.84) 50%,
+        rgba(6, 14, 28, 0.86) 100%
+    );
+
+    /* ── Bioluminescent Colors ── */
+    --bio-primary: rgba(100, 180, 255, 1);
+    --bio-secondary: rgba(80, 200, 220, 1);
+    --bio-accent: rgba(60, 220, 200, 1);
+    --bio-particle: rgba(140, 210, 255, 1);
+
+    /* ── Bioluminescent Opacity Variants ── */
+    --bio-border: rgba(100, 200, 255, 0.15);
+    --bio-top-line: rgba(100, 200, 255, 0.10);
+    --bio-ambient: rgba(100, 200, 255, 0.03);
+    --bio-whisper: rgba(100, 180, 255, 0.015);
+
+    /* ── Abyss Layers (background overlays) ── */
+    --abyss-mist-gradient: linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(0, 15, 35, 0.25) 65%,
+        rgba(0, 8, 20, 0.4) 100%
+    );
+    --abyss-vignette-gradient: radial-gradient(
+        ellipse at center,
+        transparent 0%,
+        transparent 75%,
+        rgba(0, 0, 0, 0.35) 100%
+    );
+
+    /* ── Particles ── */
+    --particle-color: rgba(140, 210, 255, 1);
+    --particle-size: 3px;
+    --particle-opacity-min: 0.08;
+    --particle-opacity-max: 0.18;
+
+    /* ── Spacing Scale ── */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-xxl: 48px;
+
+    /* ── Border Radius ── */
+    --radius-xs: 4px;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+    --radius-full: 9999px;
+
+    /* ── Abyss-specific Radius ── */
+    --radius-card: 16px;
+    --radius-button: 14px;
+    --radius-small: 8px;
+
+    /* ── Z-Index Scale ── */
+    --z-base: 0;
+    --z-card: 1;
+    --z-sticky: 10;
+    --z-header: 100;
+    --z-overlay: 200;
+    --z-modal: 300;
+    --z-toast: 400;
+
+    /* ── Animation Durations ── */
+    --duration-fast: 150ms;
+    --duration-normal: 300ms;
+    --duration-slow: 500ms;
+    --duration-particle: 60s;
+    --duration-glow-cycle: 10s;
+
+    /* ── Breakpoints (for reference, use in @media) ── */
+    --bp-sm: 640px;
+    --bp-md: 768px;
+    --bp-lg: 1024px;
+    --bp-xl: 1280px;
+
+    /* ── Font Family ── */
+    --font-system: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+}
+
+
+/* ==========================================================
+   DARK THEME (Midnight Ocean — default)
+   ========================================================== */
+.theme-dark,
+:root {
+    /* ── Background ── */
+    --bg-primary: #040d1a;
+    --bg-secondary: rgba(8, 22, 48, 0.7);
+    --bg-tertiary: #071428;
+    --bg-elevated: rgba(12, 30, 58, 0.85);
+    --bg-gradient-start: #040d1a;
+    --bg-gradient-end: #081830;
+
+    /* ── Text ── */
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-tertiary: #64748b;
+    --text-inverse: #020617;
+    --text-link: #38bdf8;
+    --text-gold: #fbbf24;
+
+    /* ── Accent ── */
+    --accent-primary: #3b82f6;
+    --accent-secondary: #6366f1;
+    --accent-tertiary: #06b6d4;
+    --accent-muted: rgba(59, 130, 246, 0.15);
+    --accent-glow: rgba(59, 130, 246, 0.5);
+
+    /* ── Border ── */
+    --border-primary: rgba(148, 163, 184, 0.1);
+    --border-secondary: rgba(148, 163, 184, 0.05);
+    --border-accent: rgba(59, 130, 246, 0.4);
+
+    /* ── Status ── */
+    --status-error: #ef4444;
+    --status-error-bg: rgba(239, 68, 68, 0.15);
+    --status-success: #10b981;
+    --status-success-bg: rgba(16, 185, 129, 0.15);
+    --status-warning: #f59e0b;
+    --status-warning-bg: rgba(245, 158, 11, 0.15);
+    --status-info: #06b6d4;
+    --status-info-bg: rgba(6, 182, 212, 0.15);
+
+    /* ── Shadows ── */
+    --shadow-card: 0 8px 20px rgba(0, 0, 0, 0.4);
+    --shadow-card-elevated: 0 12px 28px rgba(0, 0, 0, 0.5);
+    --shadow-filter: 0 6px 16px rgba(0, 0, 0, 0.35);
+    --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --shadow-medium: 0 8px 16px rgba(0, 0, 0, 0.2);
+    --shadow-strong: 0 12px 24px rgba(0, 0, 0, 0.25);
+    --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.2);
+
+    /* ── Card Component ── */
+    --card-bg: rgba(7, 20, 40, 0.75);
+    --card-border: rgba(100, 150, 220, 0.08);
+    --card-shadow: rgba(0, 10, 30, 0.5);
+    --card-gradient-border-start: rgba(100, 150, 220, 0.12);
+    --card-gradient-border-end: rgba(60, 100, 180, 0.02);
+
+    /* ── Input Component ── */
+    --input-bg: rgba(10, 22, 40, 0.6);
+    --input-border: rgba(100, 200, 255, 0.12);
+    --input-placeholder: #5a7a9a;
+    --input-text: #f8fafc;
+    --input-focus-border: rgba(100, 200, 255, 0.35);
+    --input-focus-bg: rgba(10, 22, 40, 0.8);
+
+    /* ── Button Component ── */
+    --btn-primary-bg: #3b82f6;
+    --btn-primary-gradient: linear-gradient(90deg, #3b82f6, #2563eb);
+    --btn-primary-text: #ffffff;
+    --btn-secondary-bg: rgba(12, 30, 58, 0.6);
+    --btn-secondary-text: #f8fafc;
+    --btn-outline-border: #3b82f6;
+    --btn-outline-text: #3b82f6;
+    --btn-danger-bg: rgba(239, 68, 68, 0.2);
+    --btn-danger-text: #ef4444;
+    --btn-disabled-opacity: 0.5;
+
+    /* ── Toast Component ── */
+    --toast-success-bg: rgba(16, 185, 129, 0.15);
+    --toast-success-border: rgba(16, 185, 129, 0.3);
+    --toast-success-text: #10b981;
+    --toast-error-bg: rgba(239, 68, 68, 0.15);
+    --toast-error-border: rgba(239, 68, 68, 0.3);
+    --toast-error-text: #ef4444;
+    --toast-warning-bg: rgba(245, 158, 11, 0.15);
+    --toast-warning-border: rgba(245, 158, 11, 0.3);
+    --toast-warning-text: #f59e0b;
+    --toast-info-bg: rgba(6, 182, 212, 0.15);
+    --toast-info-border: rgba(6, 182, 212, 0.3);
+    --toast-info-text: #06b6d4;
+
+    /* ── Tab Bar ── */
+    --tabbar-bg: rgba(4, 13, 26, 0.92);
+    --tabbar-active-bg: #3b82f6;
+    --tabbar-active-text: #ffffff;
+    --tabbar-inactive-text: #5a7a9a;
+
+    /* ── Header ── */
+    --header-bg: rgba(4, 13, 26, 0.85);
+    --header-title: #f8fafc;
+    --header-subtitle: #8aa4c4;
+    --header-border: rgba(100, 150, 220, 0.08);
+
+    /* ── Modal ── */
+    --modal-overlay: rgba(0, 5, 15, 0.88);
+    --modal-bg: #0a1e38;
+    --modal-border: rgba(100, 150, 220, 0.1);
+}
+
+
+/* ==========================================================
+   LIGHT THEME (Liquid Glass Premium)
+   ========================================================== */
+.theme-light {
+    /* ── Background ── */
+    --bg-primary: #081943;
+    --bg-secondary: rgba(255, 255, 255, 0.05);
+    --bg-tertiary: #081943;
+    --bg-elevated: rgba(255, 255, 255, 0.08);
+
+    /* ── Text ── */
+    --text-primary: #FFFFFF;
+    --text-secondary: #999999;
+    --text-tertiary: #666666;
+    --text-inverse: #081943;
+    --text-link: #116CC5;
+    --text-gold: #fbbf24;
+
+    /* ── Accent ── */
+    --accent-primary: #116CC5;
+    --accent-secondary: #0D5299;
+    --accent-tertiary: #0EA5E9;
+    --accent-muted: rgba(17, 108, 197, 0.2);
+    --accent-glow: rgba(17, 108, 197, 0.4);
+
+    /* ── Border ── */
+    --border-primary: rgba(255, 255, 255, 0.1);
+    --border-secondary: rgba(255, 255, 255, 0.05);
+    --border-accent: rgba(17, 108, 197, 0.3);
+
+    /* ── Status ── */
+    --status-error: #DC2626;
+    --status-error-bg: rgba(220, 38, 38, 0.15);
+    --status-success: #16A34A;
+    --status-success-bg: rgba(22, 163, 74, 0.15);
+    --status-warning: #D97706;
+    --status-warning-bg: rgba(217, 119, 6, 0.15);
+    --status-info: #0EA5E9;
+    --status-info-bg: rgba(14, 165, 233, 0.15);
+
+    /* ── Shadows ── */
+    --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.06);
+    --shadow-card-elevated: 0 8px 20px rgba(0, 0, 0, 0.10);
+    --shadow-filter: 0 3px 10px rgba(0, 0, 0, 0.05);
+    --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --shadow-medium: 0 8px 16px rgba(0, 0, 0, 0.2);
+    --shadow-strong: 0 12px 24px rgba(0, 0, 0, 0.25);
+    --shadow-glow: 0 0 20px rgba(17, 108, 197, 0.2);
+
+    /* ── Card Component ── */
+    --card-bg: rgba(255, 255, 255, 0.08);
+    --card-border: rgba(255, 255, 255, 0.15);
+    --card-shadow: rgba(0, 0, 0, 0.25);
+    --card-gradient-border-start: rgba(255, 255, 255, 0.25);
+    --card-gradient-border-end: rgba(255, 255, 255, 0.05);
+
+    /* ── Input Component ── */
+    --input-bg: rgba(255, 255, 255, 0.08);
+    --input-border: rgba(255, 255, 255, 0.15);
+    --input-placeholder: #999999;
+    --input-text: #FFFFFF;
+    --input-focus-border: rgba(17, 108, 197, 0.5);
+    --input-focus-bg: rgba(255, 255, 255, 0.12);
+
+    /* ── Button Component ── */
+    --btn-primary-bg: #116CC5;
+    --btn-primary-gradient: linear-gradient(90deg, #116CC5, #0D5299);
+    --btn-primary-text: #FFFFFF;
+    --btn-secondary-bg: rgba(255, 255, 255, 0.1);
+    --btn-secondary-text: #FFFFFF;
+    --btn-outline-border: #116CC5;
+    --btn-outline-text: #116CC5;
+    --btn-danger-bg: #DC2626;
+    --btn-danger-text: #FFFFFF;
+    --btn-disabled-opacity: 0.6;
+
+    /* ── Toast Component ── */
+    --toast-success-bg: rgba(22, 163, 74, 0.15);
+    --toast-success-border: rgba(22, 163, 74, 0.3);
+    --toast-success-text: #16A34A;
+    --toast-error-bg: rgba(220, 38, 38, 0.15);
+    --toast-error-border: rgba(220, 38, 38, 0.3);
+    --toast-error-text: #DC2626;
+    --toast-warning-bg: rgba(217, 119, 6, 0.15);
+    --toast-warning-border: rgba(217, 119, 6, 0.3);
+    --toast-warning-text: #D97706;
+    --toast-info-bg: rgba(14, 165, 233, 0.15);
+    --toast-info-border: rgba(14, 165, 233, 0.3);
+    --toast-info-text: #0EA5E9;
+
+    /* ── Tab Bar ── */
+    --tabbar-bg: rgba(8, 25, 67, 0.95);
+    --tabbar-active-bg: #116CC5;
+    --tabbar-active-text: #FFFFFF;
+    --tabbar-inactive-text: #7C8BA1;
+
+    /* ── Header ── */
+    --header-bg: #081943;
+    --header-title: #FFFFFF;
+    --header-subtitle: #999999;
+    --header-border: rgba(255, 255, 255, 0.1);
+
+    /* ── Modal ── */
+    --modal-overlay: rgba(0, 0, 0, 0.7);
+    --modal-bg: rgba(8, 25, 67, 0.95);
+    --modal-border: rgba(17, 108, 197, 0.3);
+}
+
+
+/* ==========================================================
+   TYPOGRAPHY CLASSES
+   Extracted from: BText.jsx (25+ variants)
+   Font: -apple-system / SF Pro / Roboto / system
+   ========================================================== */
+
+/* Base text style */
+.bt { font-family: var(--font-system); color: var(--text-primary); }
+
+/* Display — Large showcase numbers */
+.bt-display          { font-size: 40px; font-weight: 700; letter-spacing: -1.5px; line-height: 48px; }
+
+/* Metric Values */
+.bt-metric           { font-size: 28px; font-weight: 700; letter-spacing: -0.8px; line-height: 34px; }
+.bt-metric-lg        { font-size: 34px; font-weight: 700; letter-spacing: -1.2px; line-height: 40px; }
+.bt-metric-sm        { font-size: 22px; font-weight: 700; letter-spacing: -0.5px; line-height: 28px; }
+
+/* Headings */
+.bt-h1               { font-size: 32px; font-weight: 700; letter-spacing: -0.8px; line-height: 40px; }
+.bt-h2               { font-size: 24px; font-weight: 700; letter-spacing: -0.5px; line-height: 30px; }
+.bt-h3               { font-size: 20px; font-weight: 600; letter-spacing: -0.3px; line-height: 26px; }
+.bt-title            { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; line-height: 34px; }
+
+/* Section */
+.bt-section-title    { font-size: 18px; font-weight: 600; letter-spacing: -0.2px; line-height: 24px; }
+.bt-section-subtitle { font-size: 14px; font-weight: 500; letter-spacing: 0.1px;  line-height: 20px; color: var(--text-secondary); }
+
+/* Labels */
+.bt-label            { font-size: 13px; font-weight: 600; letter-spacing: 0.3px;  line-height: 18px; color: var(--text-secondary); }
+.bt-label-sm         { font-size: 11px; font-weight: 600; letter-spacing: 0.4px;  line-height: 14px; color: var(--text-tertiary); }
+.bt-label-upper      { font-size: 11px; font-weight: 600; letter-spacing: 0.8px;  line-height: 14px; color: var(--text-secondary); text-transform: uppercase; }
+
+/* Body */
+.bt-body             { font-size: 16px; font-weight: 400; letter-spacing: 0;       line-height: 24px; }
+.bt-body-md          { font-size: 15px; font-weight: 500; letter-spacing: 0;       line-height: 22px; }
+.bt-body-sm          { font-size: 14px; font-weight: 400; letter-spacing: 0.1px;  line-height: 20px; color: var(--text-secondary); }
+
+/* Caption */
+.bt-caption          { font-size: 12px; font-weight: 400; letter-spacing: 0.2px;  line-height: 16px; color: var(--text-tertiary); }
+.bt-caption-md       { font-size: 12px; font-weight: 500; letter-spacing: 0.2px;  line-height: 16px; color: var(--text-secondary); }
+
+/* Special */
+.bt-subtitle         { font-size: 16px; font-weight: 400; letter-spacing: 0.1px;  line-height: 22px; color: var(--text-secondary); text-align: center; }
+.bt-link             { font-size: 14px; font-weight: 500; letter-spacing: 0.1px;  line-height: 20px; color: var(--accent-primary); }
+
+/* Button text */
+.bt-button           { font-size: 16px; font-weight: 600; letter-spacing: 0.2px;  line-height: 22px; }
+.bt-button-sm        { font-size: 14px; font-weight: 600; letter-spacing: 0.2px;  line-height: 18px; }
+
+/* Accent */
+.bt-accent           { font-size: 14px; font-weight: 600; letter-spacing: 0.1px;  line-height: 20px; color: var(--accent-primary); }
+
+/* Numeric */
+.bt-numeric          { font-size: 16px; font-weight: 600; letter-spacing: -0.2px; line-height: 22px; font-variant-numeric: tabular-nums; }
+.bt-numeric-lg       { font-size: 24px; font-weight: 700; letter-spacing: -0.5px; line-height: 30px; font-variant-numeric: tabular-nums; }
+
+/* Percentage */
+.bt-percentage       { font-size: 14px; font-weight: 700; letter-spacing: -0.2px; line-height: 18px; font-variant-numeric: tabular-nums; }
+.bt-percentage-lg    { font-size: 40px; font-weight: 700; letter-spacing: -1.5px; line-height: 48px; font-variant-numeric: tabular-nums; }
+
+
+/* ==========================================================
+   ANIMATION KEYFRAMES
+   Extracted from: BAnimateEntry.jsx directions
+   ========================================================== */
+
+@keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-down {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-left {
+    from { opacity: 0; transform: translateX(-20px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fade-in-right {
+    from { opacity: 0; transform: translateX(20px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes float-up {
+    from { transform: translateY(100vh); }
+    to   { transform: translateY(-20px); }
+}
+
+@keyframes glow-pulse {
+    0%, 100% { opacity: var(--particle-opacity-min); }
+    50%      { opacity: var(--particle-opacity-max); }
+}
+
+/* Utility animation classes */
+.animate-fade-in-up    { animation: fade-in-up    0.5s ease-out both; }
+.animate-fade-in-down  { animation: fade-in-down  0.5s ease-out both; }
+.animate-fade-in-left  { animation: fade-in-left  0.5s ease-out both; }
+.animate-fade-in-right { animation: fade-in-right 0.5s ease-out both; }
+.animate-fade-in       { animation: fade-in       0.5s ease-out both; }
+
+/* Stagger delays */
+.delay-1 { animation-delay: 70ms; }
+.delay-2 { animation-delay: 140ms; }
+.delay-3 { animation-delay: 210ms; }
+.delay-4 { animation-delay: 280ms; }
+.delay-5 { animation-delay: 350ms; }
+.delay-6 { animation-delay: 420ms; }
+.delay-7 { animation-delay: 490ms; }
+.delay-8 { animation-delay: 560ms; }
