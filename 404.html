@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Página não encontrada | BlackInk</title>
+    <meta name="description" content="A página que você está procurando não foi encontrada.">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/abyss-tokens.css">
+<style>
+/* ══════════════════════════════════════════════════════════
+   BLACKINK — 404 Page
+   ══════════════════════════════════════════════════════════ */
+:root {
+    --ff-display: 'Space Grotesk', sans-serif;
+    --ff-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --bg: #020a14;
+    --bg2: #06111f;
+    --surface: rgba(8,22,48,0.45);
+    --border: rgba(100,180,255,0.08);
+    --border-h: rgba(100,180,255,0.18);
+    --white: #f0f4f8;
+    --dim: rgba(240,244,248,0.55);
+    --muted: rgba(240,244,248,0.3);
+    --accent: #64b4ff;
+    --accent2: #38bdf8;
+    --ease: cubic-bezier(0.16,1,0.3,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--ff-body);color:var(--white);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.6;min-height:100vh;display:flex;flex-direction:column}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* Grain */
+body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:0.022;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:256px}
+
+/* ── Typography ── */
+.t-xl{font-family:var(--ff-display);font-weight:700;font-size:clamp(120px,22vw,240px);line-height:0.85;letter-spacing:-0.06em}
+.t-lg{font-family:var(--ff-display);font-weight:700;font-size:clamp(28px,4vw,44px);line-height:1.1;letter-spacing:-0.03em}
+.t-body{font-size:clamp(15px,1.2vw,17px);line-height:1.7;color:var(--dim)}
+.grad{background:linear-gradient(135deg,#f0f4f8 0%,var(--accent) 60%,var(--accent2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* ── Buttons ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:none;border-radius:14px;font-family:var(--ff-body);font-weight:600;cursor:pointer;position:relative;overflow:hidden;transition:all .4s var(--ease)}
+.btn-p{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#020a14;font-size:16px;height:56px;padding:0 32px;box-shadow:0 0 0 1px rgba(100,180,255,0.2),0 8px 40px rgba(100,180,255,0.15)}
+.btn-p:hover{transform:translateY(-3px);box-shadow:0 0 0 1px rgba(100,180,255,0.3),0 20px 60px rgba(100,180,255,0.25)}
+.btn-p:active{transform:translateY(0)}
+.btn-o{background:transparent;color:var(--white);font-size:16px;height:56px;padding:0 32px;border:1px solid var(--border-h)}
+.btn-o:hover{border-color:rgba(100,180,255,0.35);background:rgba(100,180,255,0.04);transform:translateY(-3px)}
+
+/* ── Header ── */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;background:rgba(2,10,20,0.88);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--border)}
+.hdr-in{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:72px}
+.hdr-logo{font-family:var(--ff-display);font-size:24px;font-weight:700;letter-spacing:-0.03em}
+.hdr-logo span{color:var(--accent)}
+
+/* ── Main 404 Section ── */
+.error-page{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;position:relative;overflow:hidden}
+
+/* Gradient mesh background */
+.error-mesh{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.error-mesh div{position:absolute;border-radius:50%;filter:blur(130px);animation:mesh-float 20s ease-in-out infinite}
+.error-mesh .m1{width:600px;height:600px;background:radial-gradient(circle,rgba(100,180,255,0.1),transparent 70%);top:-20%;right:-10%;animation-delay:0s}
+.error-mesh .m2{width:400px;height:400px;background:radial-gradient(circle,rgba(56,189,248,0.06),transparent 70%);bottom:-10%;left:-10%;animation-delay:-7s}
+@keyframes mesh-float{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-20px) scale(1.05)}66%{transform:translate(-20px,30px) scale(0.95)}}
+
+/* Floating particles */
+.error-p{position:absolute;width:2px;height:2px;border-radius:50%;background:rgba(140,210,255,0.5);bottom:-10px;animation:p-up 45s linear infinite,p-glow 8s ease-in-out infinite;pointer-events:none}
+@keyframes p-up{from{transform:translateY(0);opacity:0}5%{opacity:1}95%{opacity:1}to{transform:translateY(-100vh);opacity:0}}
+@keyframes p-glow{0%,100%{box-shadow:0 0 4px rgba(140,210,255,0.3)}50%{box-shadow:0 0 12px rgba(140,210,255,0.8)}}
+
+.error-content{position:relative;z-index:1}
+
+.error-code{color:rgba(100,180,255,0.08);text-shadow:0 0 60px rgba(100,180,255,0.1);margin-bottom:-20px;animation:error-in 1s var(--ease) both}
+@keyframes error-in{from{opacity:0;transform:scale(0.9) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
+
+.error-title{margin-bottom:16px;animation:fade-up .8s var(--ease) .2s both}
+.error-desc{max-width:440px;margin:0 auto 40px;animation:fade-up .8s var(--ease) .4s both}
+.error-ctas{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;animation:fade-up .8s var(--ease) .6s both}
+@keyframes fade-up{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+/* Glitch effect on hover */
+.error-code:hover{animation:glitch 0.4s linear}
+@keyframes glitch{
+    0%,100%{text-shadow:0 0 60px rgba(100,180,255,0.1)}
+    20%{text-shadow:-3px 0 rgba(100,180,255,0.3),3px 0 rgba(255,100,100,0.2)}
+    40%{text-shadow:3px 0 rgba(100,180,255,0.3),-3px 0 rgba(255,100,100,0.2)}
+    60%{text-shadow:-2px 0 rgba(100,180,255,0.4),2px 0 rgba(255,100,100,0.3)}
+    80%{text-shadow:2px 0 rgba(100,180,255,0.3),-2px 0 rgba(255,100,100,0.2)}
+}
+
+/* ── Footer ── */
+.footer{padding:28px 0;border-top:1px solid var(--border)}
+.f-bottom{text-align:center}
+.f-bottom span{font-size:12px;color:var(--muted)}
+
+/* ── Cursor ── */
+.cursor{position:fixed;width:8px;height:8px;border-radius:50%;background:var(--accent);pointer-events:none;z-index:9997;opacity:0;mix-blend-mode:screen;transition:opacity .3s,width .4s var(--ease),height .4s var(--ease);transform:translate(-50%,-50%)}
+.cursor.on{opacity:.5}
+.cursor.big{width:48px;height:48px;opacity:.12}
+@media(pointer:coarse){.cursor{display:none}}
+
+/* ── Responsive ── */
+@media(max-width:767px){
+    .error-page{padding:100px 20px 60px}
+    .error-code{font-size:clamp(100px,25vw,160px)}
+}
+</style>
+</head>
+<body>
+
+<!-- Cursor -->
+<div class="cursor" id="cur"></div>
+
+<!-- ═══════ HEADER ═══════ -->
+<header class="hdr">
+    <div class="hdr-in">
+        <a href="/" class="hdr-logo">Black<span>Ink</span></a>
+    </div>
+</header>
+
+<!-- ═══════ MAIN ═══════ -->
+<main class="error-page">
+    <!-- Background effects -->
+    <div class="error-mesh">
+        <div class="m1"></div>
+        <div class="m2"></div>
+    </div>
+    <div class="error-p" style="left:12%;animation-delay:0s,-2s"></div>
+    <div class="error-p" style="left:28%;animation-delay:-10s,-4s"></div>
+    <div class="error-p" style="left:45%;animation-delay:-20s,-6s"></div>
+    <div class="error-p" style="left:62%;animation-delay:-30s,-3s"></div>
+    <div class="error-p" style="left:78%;animation-delay:-15s,-7s"></div>
+    <div class="error-p" style="left:92%;animation-delay:-25s,-5s"></div>
+
+    <div class="error-content">
+        <div class="t-xl error-code">404</div>
+        <h1 class="t-lg error-title">Página <span class="grad">não encontrada</span></h1>
+        <p class="t-body error-desc">
+            O link que você seguiu pode estar quebrado, ou a página pode ter sido removida.
+        </p>
+        <div class="error-ctas">
+            <a href="/" class="btn btn-p">Voltar ao Início</a>
+            <a href="https://app.theblack.ink" class="btn btn-o">Acessar Dashboard</a>
+        </div>
+    </div>
+</main>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer class="footer">
+    <div class="f-bottom">
+        <span>&copy; 2026 BlackInk. Todos os direitos reservados.</span>
+    </div>
+</footer>
+
+<script>
+(() => {
+// ── Cursor follower (desktop) ──
+const cur = document.getElementById('cur');
+if (matchMedia('(pointer:fine)').matches && cur) {
+    let cx=0,cy=0,tx=0,ty=0;
+    document.addEventListener('mousemove', e => { tx=e.clientX; ty=e.clientY; if(!cur.classList.contains('on'))cur.classList.add('on'); });
+    (function loop(){ cx+=(tx-cx)*.12; cy+=(ty-cy)*.12; cur.style.left=cx+'px'; cur.style.top=cy+'px'; requestAnimationFrame(loop); })();
+    document.querySelectorAll('a,button').forEach(el => {
+        el.addEventListener('mouseenter', () => cur.classList.add('big'));
+        el.addEventListener('mouseleave', () => cur.classList.remove('big'));
+    });
+    document.addEventListener('mouseleave', () => cur.classList.remove('on'));
+    document.addEventListener('mouseenter', () => cur.classList.add('on'));
+}
+
+// ── Magnetic buttons ──
+if (matchMedia('(pointer:fine)').matches) {
+    document.querySelectorAll('.btn-p').forEach(btn => {
+        btn.addEventListener('mousemove', e => {
+            const r = btn.getBoundingClientRect();
+            btn.style.transform = `translate(${(e.clientX-r.left-r.width/2)*.1}px,${(e.clientY-r.top-r.height/2)*.1}px)`;
+        });
+        btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+    });
+}
+})();
+</script>
+</body>
+</html>
