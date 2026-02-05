@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Política de Privacidade - BlackInk Tracker Anti-Fraude">
+    <title>Política de Privacidade - BlackInk</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #0a1628;
+            --primary-blue: #1e3a5f;
+            --accent-blue: #4a90e2;
+            --accent-purple: #6b46c1;
+            --accent-orange: #ff6b00;
+            --text-primary: #1a202c;
+            --text-secondary: #4a5568;
+            --gray-light: #f7fafc;
+            --border-color: #e2e8f0;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --success: #22c55e;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(180deg, #f7fafc 0%, #ffffff 100%);
+        }
+
+        /* Header Padrão BlackInk */
+        .header {
+            background: linear-gradient(180deg, #1a2332 0%, #0a1628 100%);
+            color: white;
+            padding: 80px 0 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+        }
+
+        .header-logo {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 25px;
+            letter-spacing: -1px;
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 20px 0;
+            color: #ffffff;
+        }
+
+        .document-info {
+            margin-top: 25px;
+            padding: 12px 25px;
+            background: rgba(74, 144, 226, 0.1);
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            border-radius: 25px;
+            display: inline-block;
+            font-size: 0.9rem;
+            color: #cbd5e0;
+        }
+
+        .document-info span {
+            margin: 0 10px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation Sidebar Padrão */
+        .nav-sidebar {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 250px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-height: 70vh;
+            overflow-y: auto;
+            display: none;
+        }
+
+        @media (min-width: 1400px) {
+            .nav-sidebar {
+                display: block;
+            }
+        }
+
+        .nav-sidebar h3 {
+            font-size: 0.9rem;
+            color: var(--accent-blue);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-sidebar ul {
+            list-style: none;
+        }
+
+        .nav-sidebar li {
+            margin-bottom: 10px;
+        }
+
+        .nav-sidebar a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 5px 0;
+        }
+
+        .nav-sidebar a:hover {
+            color: var(--accent-blue);
+            padding-left: 5px;
+        }
+
+        /* Content Padrão */
+        .content {
+            background: white;
+            margin: 40px auto;
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 30px 20px;
+                margin: 20px auto;
+            }
+        }
+
+        /* Typography Padrão */
+        h2 {
+            font-size: 2rem;
+            color: var(--primary-dark);
+            margin: 40px 0 20px 0;
+            padding-top: 40px;
+            border-top: 2px solid var(--border-color);
+            position: relative;
+        }
+
+        h2:first-child {
+            border-top: none;
+            padding-top: 0;
+            margin-top: 0;
+        }
+
+        h2::before {
+            content: attr(data-section);
+            position: absolute;
+            top: 45px;
+            left: -30px;
+            background: var(--gradient);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: var(--primary-blue);
+            margin: 30px 0 15px 0;
+        }
+
+        h4 {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin: 20px 0 10px 0;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin: 15px 0 20px 30px;
+            color: var(--text-secondary);
+        }
+
+        li {
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+
+        strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Alert Boxes Padrão */
+        .alert {
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            position: relative;
+            padding-left: 50px;
+        }
+
+        .alert::before {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+        }
+
+        .alert-info {
+            background: #ebf8ff;
+            border-left: 4px solid var(--accent-blue);
+            color: #2c5282;
+        }
+
+        .alert-info::before {
+            content: "ℹ️";
+        }
+
+        .alert-warning {
+            background: #fffbeb;
+            border-left: 4px solid var(--accent-orange);
+            color: #92400e;
+        }
+
+        .alert-warning::before {
+            content: "⚠️";
+        }
+
+        .alert-success {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            color: #166534;
+        }
+
+        .alert-success::before {
+            content: "✅";
+        }
+
+        /* Definition Lists Padrão */
+        .definition-list {
+            background: var(--gray-light);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .definition-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .definition-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .definition-term {
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 5px;
+        }
+
+        /* Tables Padrão */
+        .plans-table {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th {
+            background: var(--gradient);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        tr:hover {
+            background: var(--gray-light);
+        }
+
+        /* Legal References (específico da política) */
+        .legal-ref {
+            display: inline-block;
+            padding: 2px 6px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 3px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent-purple);
+            margin-left: 4px;
+        }
+
+        /* Rights Grid (específico da política) */
+        .rights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 32px 0;
+        }
+
+        .right-item {
+            padding: 24px;
+            background: var(--gray-light);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .right-item:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+            border-color: var(--accent-blue);
+        }
+
+        .right-item-title {
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .right-item-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Contact Section Padrão */
+        .contact-section {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .contact-section h3 {
+            color: var(--accent-purple);
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-primary);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            margin-top: 24px;
+            text-align: left;
+        }
+
+        .contact-method h4 {
+            color: var(--accent-purple);
+            margin-bottom: 12px;
+        }
+
+        .contact-method p {
+            margin-bottom: 8px;
+        }
+
+        /* Footer Padrão */
+        .footer {
+            background: linear-gradient(180deg, #1a2332 0%, #0a1628 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .footer-logo {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .footer-text {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            margin-bottom: 40px;
+        }
+
+        .version-info {
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 0.9rem;
+        }
+
+        .footer-meta {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.875rem;
+            opacity: 0.9;
+        }
+
+        .footer-meta p {
+            margin: 5px 0;
+            color: #cbd5e0;
+        }
+
+        /* Scroll to Top Padrão */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .header-logo {
+                font-size: 2.2rem;
+            }
+
+            .rights-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .nav-sidebar,
+            .scroll-top {
+                display: none;
+            }
+
+            .content {
+                box-shadow: none;
+                padding: 0;
+            }
+
+            body {
+                background: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Padrão BlackInk -->
+    <div class="header">
+        <div class="container">
+            <div class="header-logo">BLACK<span style="color: #4a90e2;">INK</span> 🦑</div>
+            <p class="subtitle">Plataforma de Rastreamento e Análise Anti-Fraude</p>
+            <h1>Política de Privacidade e Proteção de Dados</h1>
+            <div class="document-info">
+                <span>Versão 2.0</span> | 
+                <span>Vigência: <span id="header-date"></span></span> | 
+                <span>Conformidade: LGPD/GDPR</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Sidebar -->
+    <nav class="nav-sidebar">
+        <h3>Navegação Rápida</h3>
+        <ul>
+            <li><a href="#section1">1. Definições e Escopo</a></li>
+            <li><a href="#section2">2. Controlador de Dados</a></li>
+            <li><a href="#section3">3. Dados Pessoais Tratados</a></li>
+            <li><a href="#section4">4. Finalidades do Tratamento</a></li>
+            <li><a href="#section5">5. Base Legal</a></li>
+            <li><a href="#section6">6. Compartilhamento</a></li>
+            <li><a href="#section7">7. Cookies e Tecnologias</a></li>
+            <li><a href="#section8">8. Segurança</a></li>
+            <li><a href="#section9">9. Retenção de Dados</a></li>
+            <li><a href="#section10">10. Direitos dos Titulares</a></li>
+            <li><a href="#section11">11. Transferência Internacional</a></li>
+            <li><a href="#section12">12. Tratamento de Menores</a></li>
+            <li><a href="#section13">13. Alterações</a></li>
+            <li><a href="#section14">14. Disposições Finais</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="content">
+            <!-- Section 1 -->
+            <h2 id="section1" data-section="1">1. DEFINIÇÕES E ESCOPO</h2>
+            
+            <h3>1.1 Aplicabilidade</h3>
+            <p>Esta Política de Privacidade e Proteção de Dados Pessoais ("Política") aplica-se a todos os dados pessoais tratados pela BlackInk Tecnologia Ltda. ("BlackInk", "nós" ou "Controlador") no contexto da prestação de serviços de rastreamento e análise anti-fraude para campanhas de marketing digital através da plataforma BlackInk.</p>
+
+            <h3>1.2 Definições Legais</h3>
+            <p>Para fins desta Política, aplicam-se as definições estabelecidas no art. 5º da Lei nº 13.709/2018 (Lei Geral de Proteção de Dados - LGPD):</p>
+            
+            <div class="definition-list">
+                <div class="definition-item">
+                    <div class="definition-term">Dado Pessoal</div>
+                    <div>Informação relacionada a pessoa natural identificada ou identificável.</div>
+                </div>
+                
+                <div class="definition-item">
+                    <div class="definition-term">Titular</div>
+                    <div>Pessoa natural a quem se referem os dados pessoais objeto de tratamento.</div>
+                </div>
+                
+                <div class="definition-item">
+                    <div class="definition-term">Tratamento</div>
+                    <div>Toda operação realizada com dados pessoais, conforme art. 5º, X da LGPD.</div>
+                </div>
+                
+                <div class="definition-item">
+                    <div class="definition-term">Controlador</div>
+                    <div>Pessoa natural ou jurídica responsável pelas decisões referentes ao tratamento de dados pessoais.</div>
+                </div>
+                
+                <div class="definition-item">
+                    <div class="definition-term">Operador</div>
+                    <div>Pessoa natural ou jurídica que realiza o tratamento em nome do controlador.</div>
+                </div>
+                
+                <div class="definition-item">
+                    <div class="definition-term">Encarregado</div>
+                    <div>Pessoa indicada para atuar como canal de comunicação entre controlador, titulares e ANPD.</div>
+                </div>
+            </div>
+
+            <h3>1.3 Princípios Aplicáveis</h3>
+            <p>O tratamento de dados pessoais pelo BlackInk observa rigorosamente os princípios estabelecidos no art. 6º da LGPD:</p>
+            
+            <div class="definition-list">
+                <ul style="list-style: none; margin: 0;">
+                    <li><strong>Finalidade:</strong> Tratamento para propósitos legítimos, específicos e informados</li>
+                    <li><strong>Adequação:</strong> Compatibilidade com as finalidades informadas</li>
+                    <li><strong>Necessidade:</strong> Limitação ao mínimo necessário</li>
+                    <li><strong>Livre Acesso:</strong> Garantia de consulta facilitada sobre o tratamento</li>
+                    <li><strong>Qualidade:</strong> Garantia de exatidão e atualização</li>
+                    <li><strong>Transparência:</strong> Informações claras sobre o tratamento</li>
+                    <li><strong>Segurança:</strong> Medidas técnicas e administrativas de proteção</li>
+                    <li><strong>Prevenção:</strong> Adoção de medidas preventivas</li>
+                    <li><strong>Não Discriminação:</strong> Impossibilidade de tratamento discriminatório</li>
+                    <li><strong>Responsabilização:</strong> Demonstração de conformidade e eficácia das medidas</li>
+                </ul>
+            </div>
+
+            <!-- Section 2 -->
+            <h2 id="section2" data-section="2">2. IDENTIFICAÇÃO DO CONTROLADOR</h2>
+
+            <h3>2.1 Dados do Controlador</h3>
+            <div class="definition-list">
+                <div class="definition-item" style="border-bottom: none;">
+                    <p><strong>Razão Social:</strong> BlackInk Tecnologia e Serviços Digitais Ltda.</p>
+                    <p><strong>CNPJ:</strong> [A ser definido]</p>
+                    <p><strong>Endereço:</strong> [A ser definido]</p>
+                    <p><strong>Website:</strong> theblack.ink</p>
+                    <p><strong>Email Institucional:</strong> contato@theblack.ink</p>
+                </div>
+            </div>
+
+            <h3>2.2 Encarregado pelo Tratamento de Dados (DPO)</h3>
+            <div class="definition-list">
+                <div class="definition-item" style="border-bottom: none;">
+                    <p><strong>Nome:</strong> [A ser designado]</p>
+                    <p><strong>Email:</strong> privacidade@theblack.ink</p>
+                    <p><strong>Telefone:</strong> [A ser definido]</p>
+                    <p><strong>Horário de Atendimento:</strong> Segunda a Sexta, 9h às 18h (Horário de Brasília)</p>
+                </div>
+            </div>
+
+            <h3>2.3 Responsabilidades</h3>
+            <p>O BlackInk atua como Controlador de Dados para informações pessoais dos usuários da plataforma e como Operador quando processa dados de campanhas em nome de seus clientes, conforme instruções documentadas.</p>
+
+            <!-- Section 3 -->
+            <h2 id="section3" data-section="3">3. CATEGORIAS DE DADOS PESSOAIS TRATADOS</h2>
+
+            <h3>3.1 Dados de Identificação e Cadastro</h3>
+            <div class="definition-list">
+                <h4 style="color: var(--primary-blue); margin-top: 0;">Dados coletados diretamente do titular:</h4>
+                <ul>
+                    <li>Nome completo e razão social</li>
+                    <li>CPF ou CNPJ</li>
+                    <li>Endereço de email corporativo</li>
+                    <li>Número de telefone comercial</li>
+                    <li>Cargo e empresa</li>
+                    <li>Endereço comercial completo</li>
+                    <li>Dados de faturamento</li>
+                </ul>
+            </div>
+
+            <h3>3.2 Dados de Navegação e Uso</h3>
+            <div class="definition-list">
+                <h4 style="color: var(--primary-blue); margin-top: 0;">Dados coletados automaticamente:</h4>
+                <ul>
+                    <li>Endereço IP e geolocalização aproximada</li>
+                    <li>Identificadores de dispositivo</li>
+                    <li>Tipo e versão de navegador</li>
+                    <li>Sistema operacional</li>
+                    <li>Páginas acessadas e tempo de permanência</li>
+                    <li>Ações realizadas na plataforma</li>
+                    <li>Logs de acesso e utilização de APIs</li>
+                    <li>Preferências e configurações</li>
+                </ul>
+            </div>
+
+            <h3>3.3 Dados de Campanhas e Analytics</h3>
+            <div class="definition-list">
+                <h4 style="color: var(--primary-blue); margin-top: 0;">Dados processados para detecção de fraudes:</h4>
+                <ul>
+                    <li>Identificadores de campanha e anúncios</li>
+                    <li>Métricas de performance e conversão</li>
+                    <li>Parâmetros de rastreamento (UTM)</li>
+                    <li>Fingerprints anonimizados de dispositivos</li>
+                    <li>Dados de localização geográfica agregados</li>
+                    <li>User-agent e dados técnicos de navegação</li>
+                    <li>Timestamps e sequências de eventos</li>
+                    <li>Padrões comportamentais para análise anti-fraude</li>
+                </ul>
+            </div>
+
+            <div class="alert alert-info">
+                <strong>Dados Sensíveis:</strong> O BlackInk não coleta ou processa intencionalmente dados pessoais sensíveis conforme definido no art. 5º, II da LGPD. Caso sejam identificados inadvertidamente, serão imediatamente excluídos.
+            </div>
+
+            <!-- Section 4 -->
+            <h2 id="section4" data-section="4">4. FINALIDADES DO TRATAMENTO</h2>
+
+            <h3>4.1 Finalidades Primárias</h3>
+            <p>Os dados pessoais são tratados para as seguintes finalidades específicas:</p>
+
+            <ul>
+                <li><strong>Prestação de Serviços:</strong> Execução do contrato de prestação de serviços de rastreamento e análise anti-fraude</li>
+                <li><strong>Detecção de Fraudes:</strong> Identificação e prevenção de tráfego fraudulento em campanhas digitais</li>
+                <li><strong>Análise e Relatórios:</strong> Geração de insights e métricas de performance</li>
+                <li><strong>Suporte Técnico:</strong> Atendimento e resolução de questões técnicas</li>
+                <li><strong>Cobrança:</strong> Processamento de pagamentos e gestão financeira</li>
+            </ul>
+
+            <h3>4.2 Finalidades Secundárias</h3>
+            <ul>
+                <li><strong>Melhoria de Serviços:</strong> Desenvolvimento e aprimoramento de funcionalidades</li>
+                <li><strong>Segurança:</strong> Proteção contra atividades maliciosas e manutenção da integridade da plataforma</li>
+                <li><strong>Conformidade Legal:</strong> Cumprimento de obrigações legais e regulatórias</li>
+                <li><strong>Comunicações:</strong> Envio de informações relevantes sobre a plataforma (mediante consentimento para fins de marketing)</li>
+                <li><strong>Pesquisa e Desenvolvimento:</strong> Análises agregadas e anonimizadas para evolução tecnológica</li>
+            </ul>
+
+            <!-- Section 5 -->
+            <h2 id="section5" data-section="5">5. BASES LEGAIS PARA O TRATAMENTO</h2>
+
+            <p>O tratamento de dados pessoais pelo BlackInk fundamenta-se nas seguintes bases legais previstas no art. 7º da LGPD:</p>
+
+            <div class="plans-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Categoria de Dados</th>
+                            <th>Base Legal</th>
+                            <th>Fundamento Jurídico</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dados de Cadastro</td>
+                            <td>Execução de Contrato</td>
+                            <td>Art. 7º, V da LGPD</td>
+                        </tr>
+                        <tr>
+                            <td>Dados de Pagamento</td>
+                            <td>Execução de Contrato</td>
+                            <td>Art. 7º, V da LGPD</td>
+                        </tr>
+                        <tr>
+                            <td>Dados de Navegação</td>
+                            <td>Legítimo Interesse</td>
+                            <td>Art. 7º, IX da LGPD</td>
+                        </tr>
+                        <tr>
+                            <td>Dados de Campanhas</td>
+                            <td>Execução de Contrato / Legítimo Interesse</td>
+                            <td>Art. 7º, V e IX da LGPD</td>
+                        </tr>
+                        <tr>
+                            <td>Comunicações de Marketing</td>
+                            <td>Consentimento</td>
+                            <td>Art. 7º, I da LGPD</td>
+                        </tr>
+                        <tr>
+                            <td>Cookies não essenciais</td>
+                            <td>Consentimento</td>
+                            <td>Art. 7º, I da LGPD</td>
+                        </tr>
+                        <tr>
+                            <td>Dados para Conformidade</td>
+                            <td>Cumprimento de Obrigação Legal</td>
+                            <td>Art. 7º, II da LGPD</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>5.1 Avaliação de Legítimo Interesse</h3>
+            <p>Quando o tratamento baseia-se em legítimo interesse, realizamos avaliação documentada considerando:</p>
+            <ul>
+                <li>Necessidade e proporcionalidade do tratamento</li>
+                <li>Expectativas razoáveis do titular</li>
+                <li>Impacto nos direitos e liberdades fundamentais</li>
+                <li>Salvaguardas e medidas de mitigação implementadas</li>
+            </ul>
+
+            <!-- Section 6 -->
+            <h2 id="section6" data-section="6">6. COMPARTILHAMENTO DE DADOS PESSOAIS</h2>
+
+            <div class="alert alert-success">
+                <strong>Compromisso de Não Comercialização:</strong> O BlackInk não comercializa, vende ou aluga dados pessoais de seus usuários a terceiros sob nenhuma circunstância.
+            </div>
+
+            <h3>6.1 Hipóteses de Compartilhamento</h3>
+            <p>O compartilhamento de dados pessoais ocorre exclusivamente nas seguintes situações:</p>
+
+            <h4>6.1.1 Operadores e Prestadores de Serviços</h4>
+            <div class="definition-list">
+                <ul>
+                    <li><strong>Processadores de Pagamento:</strong> Instituições financeiras e gateways para processamento de transações</li>
+                    <li><strong>Infraestrutura Cloud:</strong> Amazon Web Services (região Brasil) para hospedagem segura</li>
+                    <li><strong>Serviços de Comunicação:</strong> Plataformas de email transacional e SMS</li>
+                    <li><strong>Ferramentas de Suporte:</strong> Sistemas de atendimento ao cliente</li>
+                    <li><strong>Auditores e Consultores:</strong> Sob obrigação de confidencialidade</li>
+                </ul>
+            </div>
+
+            <h4>6.1.2 Obrigações Legais e Regulatórias</h4>
+            <ul>
+                <li>Cumprimento de ordens judiciais válidas</li>
+                <li>Atendimento a requisições de autoridades competentes</li>
+                <li>Cooperação com investigações legítimas</li>
+                <li>Exercício regular de direitos em processos judiciais ou administrativos</li>
+            </ul>
+
+            <h3>6.2 Garantias e Salvaguardas</h3>
+            <p>Todo compartilhamento com operadores é regido por:</p>
+            <ul>
+                <li>Contratos de processamento de dados com cláusulas LGPD</li>
+                <li>Obrigações de confidencialidade e segurança</li>
+                <li>Limitação de uso aos fins contratados</li>
+                <li>Direito de auditoria e fiscalização</li>
+            </ul>
+
+            <!-- Section 7 -->
+            <h2 id="section7" data-section="7">7. COOKIES E TECNOLOGIAS DE RASTREAMENTO</h2>
+
+            <h3>7.1 Tipos de Cookies Utilizados</h3>
+            
+            <div class="plans-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Categoria</th>
+                            <th>Finalidade</th>
+                            <th>Retenção</th>
+                            <th>Base Legal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Estritamente Necessários</strong></td>
+                            <td>Autenticação, segurança, funcionalidades essenciais</td>
+                            <td>Sessão</td>
+                            <td>Execução de Contrato</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Funcionais</strong></td>
+                            <td>Preferências, configurações, personalização</td>
+                            <td>12 meses</td>
+                            <td>Legítimo Interesse</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Analíticos</strong></td>
+                            <td>Análise de uso, métricas de performance</td>
+                            <td>24 meses</td>
+                            <td>Consentimento</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Marketing</strong></td>
+                            <td>Remarketing, segmentação</td>
+                            <td>90 dias</td>
+                            <td>Consentimento</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>7.2 Gerenciamento de Preferências</h3>
+            <p>Os titulares podem gerenciar cookies através de:</p>
+            <ul>
+                <li>Painel de preferências de cookies na plataforma</li>
+                <li>Configurações do navegador</li>
+                <li>Ferramentas de opt-out de terceiros</li>
+                <li>Solicitação ao Encarregado de Dados</li>
+            </ul>
+
+            <h3>7.3 Tecnologias Similares</h3>
+            <p>Além de cookies, utilizamos:</p>
+            <ul>
+                <li><strong>Local Storage:</strong> Armazenamento de preferências locais</li>
+                <li><strong>Session Storage:</strong> Dados temporários de sessão</li>
+                <li><strong>Device Fingerprinting:</strong> Exclusivamente para detecção de fraudes, com hash irreversível</li>
+            </ul>
+
+            <!-- Section 8 -->
+            <h2 id="section8" data-section="8">8. SEGURANÇA DA INFORMAÇÃO</h2>
+
+            <h3>8.1 Medidas Técnicas de Segurança</h3>
+            <div class="definition-list">
+                <ul>
+                    <li><strong>Criptografia:</strong> TLS 1.3 para dados em trânsito e AES-256-GCM para dados em repouso</li>
+                    <li><strong>Controle de Acesso:</strong> Autenticação multifator (MFA) e gestão de privilégios baseada em funções (RBAC)</li>
+                    <li><strong>Monitoramento:</strong> Sistema de detecção e prevenção de intrusões (IDS/IPS) 24/7</li>
+                    <li><strong>Backup e Recuperação:</strong> Backups incrementais a cada 6 horas com replicação geográfica</li>
+                    <li><strong>Segregação:</strong> Isolamento lógico e físico entre ambientes e clientes</li>
+                    <li><strong>Testes de Segurança:</strong> Pentests trimestrais e varreduras de vulnerabilidade mensais</li>
+                </ul>
+            </div>
+
+            <h3>8.2 Medidas Organizacionais</h3>
+            <ul>
+                <li>Política de Segurança da Informação documentada</li>
+                <li>Programa de conscientização e treinamento em segurança</li>
+                <li>Acordos de confidencialidade com colaboradores e terceiros</li>
+                <li>Procedimento de resposta a incidentes (IRP)</li>
+                <li>Gestão de vulnerabilidades e patches</li>
+                <li>Auditorias internas e externas periódicas</li>
+            </ul>
+
+            <h3>8.3 Certificações e Conformidade</h3>
+            <div class="alert alert-info">
+                <strong>Status de Certificações:</strong>
+                <ul style="margin-top: 10px;">
+                    <li>ISO 27001:2013 - Em processo de certificação</li>
+                    <li>SOC 2 Type II - Planejado para 2025</li>
+                    <li>LGPD Compliance - Auditoria anual por terceiros</li>
+                </ul>
+            </div>
+
+            <h3>8.4 Gestão de Incidentes</h3>
+            <p>Em caso de incidente de segurança que afete dados pessoais:</p>
+            <ol>
+                <li>Contenção imediata e avaliação de impacto</li>
+                <li>Notificação à ANPD em até 2 dias úteis <span class="legal-ref">Art. 48 LGPD</span></li>
+                <li>Comunicação aos titulares afetados quando houver risco relevante</li>
+                <li>Documentação completa e medidas de remediação</li>
+                <li>Análise post-mortem e implementação de melhorias</li>
+            </ol>
+
+            <!-- Section 9 -->
+            <h2 id="section9" data-section="9">9. RETENÇÃO E ELIMINAÇÃO DE DADOS</h2>
+
+            <h3>9.1 Períodos de Retenção</h3>
+            
+            <div class="plans-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Categoria de Dados</th>
+                            <th>Período de Retenção</th>
+                            <th>Fundamentação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dados Cadastrais</td>
+                            <td>Durante a relação contratual + 5 anos</td>
+                            <td>Obrigações fiscais e tributárias</td>
+                        </tr>
+                        <tr>
+                            <td>Dados Financeiros</td>
+                            <td>5 anos após última transação</td>
+                            <td>Art. 12 e 34 do Código Tributário Nacional</td>
+                        </tr>
+                        <tr>
+                            <td>Dados de Campanhas</td>
+                            <td>90 dias após processamento</td>
+                            <td>Necessidade operacional</td>
+                        </tr>
+                        <tr>
+                            <td>Logs de Acesso</td>
+                            <td>6 meses</td>
+                            <td>Marco Civil da Internet (Lei 12.965/2014)</td>
+                        </tr>
+                        <tr>
+                            <td>Dados de Suporte</td>
+                            <td>2 anos após resolução</td>
+                            <td>Defesa em processos judiciais</td>
+                        </tr>
+                        <tr>
+                            <td>Cookies</td>
+                            <td>Conforme categoria (máx. 24 meses)</td>
+                            <td>Consentimento específico</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>9.2 Procedimento de Eliminação</h3>
+            <p>Após o término do período de retenção:</p>
+            <ul>
+                <li>Exclusão segura e irreversível de dados pessoais</li>
+                <li>Anonimização para dados estatísticos relevantes</li>
+                <li>Expurgo de backups em ciclos programados</li>
+                <li>Certificado de eliminação disponível mediante solicitação</li>
+            </ul>
+
+            <h3>9.3 Exceções à Eliminação</h3>
+            <p>Dados podem ser retidos além dos prazos estabelecidos quando:</p>
+            <ul>
+                <li>Cumprimento de obrigação legal ou regulatória <span class="legal-ref">Art. 16, I LGPD</span></li>
+                <li>Exercício regular de direitos em processo judicial <span class="legal-ref">Art. 16, II LGPD</span></li>
+                <li>Transferência a terceiro com consentimento <span class="legal-ref">Art. 16, IV LGPD</span></li>
+                <li>Uso exclusivo do controlador com dados anonimizados <span class="legal-ref">Art. 16, V LGPD</span></li>
+            </ul>
+
+            <!-- Section 10 -->
+            <h2 id="section10" data-section="10">10. DIREITOS DOS TITULARES</h2>
+
+            <p>Em conformidade com o Capítulo III da LGPD, garantimos aos titulares o exercício pleno de seus direitos:</p>
+
+            <div class="rights-grid">
+                <div class="right-item">
+                    <div class="right-item-title">Confirmação e Acesso</div>
+                    <div class="right-item-description">Confirmação da existência de tratamento e acesso aos dados pessoais. <span class="legal-ref">Art. 18, I e II</span></div>
+                </div>
+                
+                <div class="right-item">
+                    <div class="right-item-title">Correção</div>
+                    <div class="right-item-description">Correção de dados incompletos, inexatos ou desatualizados. <span class="legal-ref">Art. 18, III</span></div>
+                </div>
+                
+                <div class="right-item">
+                    <div class="right-item-title">Anonimização ou Bloqueio</div>
+                    <div class="right-item-description">Anonimização, bloqueio ou eliminação de dados desnecessários. <span class="legal-ref">Art. 18, IV</span></div>
+                </div>
+                
+                <div class="right-item">
+                    <div class="right-item-title">Portabilidade</div>
+                    <div class="right-item-description">Portabilidade dos dados a outro fornecedor mediante requisição. <span class="legal-ref">Art. 18, V</span></div>
+                </div>
+                
+                <div class="right-item">
+                    <div class="right-item-title">Eliminação</div>
+                    <div class="right-item-description">Eliminação dos dados pessoais tratados com consentimento. <span class="legal-ref">Art. 18, VI</span></div>
+                </div>
+                
+                <div class="right-item">
+                    <div class="right-item-title">Informação sobre Compartilhamento</div>
+                    <div class="right-item-description">Informação sobre entidades com as quais os dados foram compartilhados. <span class="legal-ref">Art. 18, VII</span></div>
+                </div>
+                
+                <div class="right-item">
+                    <div class="right-item-title">Revogação de Consentimento</div>
+                    <div class="right-item-description">Revogação do consentimento a qualquer momento. <span class="legal-ref">Art. 18, IX</span></div>
+                </div>
+                
+                <div class="right-item">
+                    <div class="right-item-title">Oposição</div>
+                    <div class="right-item-description">Oposição ao tratamento realizado com fundamento em legítimo interesse. <span class="legal-ref">Art. 18, § 2º</span></div>
+                </div>
+                
+                <div class="right-item">
+                    <div class="right-item-title">Revisão de Decisões Automatizadas</div>
+                    <div class="right-item-description">Revisão de decisões tomadas unicamente com base em tratamento automatizado. <span class="legal-ref">Art. 20</span></div>
+                </div>
+            </div>
+
+            <h3>10.1 Procedimento para Exercício de Direitos</h3>
+            <ol>
+                <li>Solicitação através do email privacidade@theblack.ink</li>
+                <li>Validação da identidade do titular</li>
+                <li>Análise e processamento em até 15 dias <span class="legal-ref">Art. 18, § 3º LGPD</span></li>
+                <li>Resposta fundamentada em caso de impossibilidade de atendimento</li>
+                <li>Gratuidade do exercício de direitos, salvo requisições abusivas</li>
+            </ol>
+
+            <!-- Section 11 -->
+            <h2 id="section11" data-section="11">11. TRANSFERÊNCIA INTERNACIONAL DE DADOS</h2>
+
+            <h3>11.1 Política de Localização</h3>
+            <p>O BlackInk prioriza o armazenamento e processamento de dados em território brasileiro, garantindo soberania digital e conformidade com a LGPD.</p>
+
+            <h3>11.2 Hipóteses de Transferência</h3>
+            <p>Transferências internacionais podem ocorrer nas seguintes situações, sempre com garantias adequadas:</p>
+            
+            <ul>
+                <li>Países com nível adequado de proteção <span class="legal-ref">Art. 33, I LGPD</span></li>
+                <li>Garantias específicas através de cláusulas contratuais <span class="legal-ref">Art. 33, II LGPD</span></li>
+                <li>Cooperação jurídica internacional <span class="legal-ref">Art. 33, III LGPD</span></li>
+                <li>Consentimento específico do titular <span class="legal-ref">Art. 33, VIII LGPD</span></li>
+                <li>Cumprimento de obrigação legal <span class="legal-ref">Art. 33, IX LGPD</span></li>
+            </ul>
+
+            <h3>11.3 Salvaguardas Implementadas</h3>
+            <ul>
+                <li>Cláusulas Contratuais Padrão aprovadas pela ANPD</li>
+                <li>Avaliação de impacto à proteção de dados (DPIA)</li>
+                <li>Criptografia end-to-end para transferências</li>
+                <li>Auditoria de conformidade dos receptores</li>
+            </ul>
+
+            <!-- Section 12 -->
+            <h2 id="section12" data-section="12">12. TRATAMENTO DE DADOS DE CRIANÇAS E ADOLESCENTES</h2>
+
+            <div class="alert alert-warning">
+                <strong>Restrição de Idade:</strong> Os serviços do BlackInk são destinados exclusivamente a pessoas maiores de 18 anos. Não coletamos ou tratamos intencionalmente dados de crianças ou adolescentes.
+            </div>
+
+            <h3>12.1 Medidas Preventivas</h3>
+            <ul>
+                <li>Verificação de idade no cadastro</li>
+                <li>Termos de Uso com restrição etária explícita</li>
+                <li>Não direcionamento de marketing para menores</li>
+                <li>Treinamento de equipe para identificação e proteção</li>
+            </ul>
+
+            <h3>12.2 Procedimento em Caso de Identificação</h3>
+            <p>Se tomarmos conhecimento do tratamento inadvertido de dados de menores:</p>
+            <ol>
+                <li>Suspensão imediata do tratamento</li>
+                <li>Notificação aos responsáveis legais quando possível</li>
+                <li>Eliminação completa dos dados em 48 horas</li>
+                <li>Documentação do incidente e medidas tomadas</li>
+                <li>Revisão de processos para prevenir recorrência</li>
+            </ol>
+
+            <!-- Section 13 -->
+            <h2 id="section13" data-section="13">13. ALTERAÇÕES NA POLÍTICA</h2>
+
+            <h3>13.1 Processo de Atualização</h3>
+            <p>Esta Política pode ser atualizada periodicamente para refletir:</p>
+            <ul>
+                <li>Mudanças legislativas ou regulatórias</li>
+                <li>Novas funcionalidades ou serviços</li>
+                <li>Alterações em práticas de tratamento</li>
+                <li>Decisões judiciais ou orientações da ANPD</li>
+                <li>Melhores práticas do mercado</li>
+            </ul>
+
+            <h3>13.2 Comunicação de Alterações</h3>
+            <p>Alterações substanciais serão comunicadas através de:</p>
+            <ul>
+                <li>Notificação por email com 30 dias de antecedência</li>
+                <li>Banner informativo na plataforma</li>
+                <li>Publicação de comparativo de versões</li>
+                <li>Manutenção de histórico versionado</li>
+            </ul>
+
+            <h3>13.3 Aceitação e Oposição</h3>
+            <p>O uso continuado dos serviços após a vigência das alterações implica concordância. Em caso de discordância, o titular pode exercer seus direitos, incluindo a eliminação de dados e encerramento da conta.</p>
+
+            <!-- Section 14 -->
+            <h2 id="section14" data-section="14">14. DISPOSIÇÕES FINAIS</h2>
+
+            <h3>14.1 Canal de Privacidade</h3>
+            <div class="contact-section">
+                <h3>Encarregado pelo Tratamento de Dados Pessoais (DPO)</h3>
+                <p>Estamos comprometidos com a proteção de seus dados pessoais</p>
+                
+                <div class="contact-grid">
+                    <div class="contact-method">
+                        <h4>Correspondência Eletrônica</h4>
+                        <p><strong>Email:</strong> privacidade@theblack.ink</p>
+                        <p><strong>Assunto:</strong> [LGPD] - [Tipo de Solicitação]</p>
+                    </div>
+                    <div class="contact-method">
+                        <h4>Prazos de Resposta</h4>
+                        <p><strong>Confirmação de recebimento:</strong> 2 dias úteis</p>
+                        <p><strong>Resposta completa:</strong> 15 dias corridos</p>
+                    </div>
+                    <div class="contact-method">
+                        <h4>Horário de Atendimento</h4>
+                        <p><strong>Segunda a Sexta:</strong> 9h às 18h</p>
+                        <p><strong>Fuso horário:</strong> Brasília (UTC-3)</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>14.2 Autoridade Nacional de Proteção de Dados</h3>
+            <p>Os titulares podem apresentar reclamação à ANPD:</p>
+            <div class="definition-list">
+                <div class="definition-item" style="border-bottom: none;">
+                    <p><strong>Website:</strong> www.gov.br/anpd</p>
+                    <p><strong>Endereço:</strong> Esplanada dos Ministérios, Bloco C, 2º andar, Brasília/DF, CEP 70.297-400</p>
+                </div>
+            </div>
+
+            <h3>14.3 Lei Aplicável e Foro</h3>
+            <p>Esta Política é regida pelas leis da República Federativa do Brasil. Fica eleito o foro da Comarca da Capital do Estado onde o BlackInk mantém sua sede para dirimir questões oriundas desta Política.</p>
+
+            <h3>14.4 Integração com Termos de Uso</h3>
+            <p>Esta Política de Privacidade é parte integrante e indissociável dos Termos de Uso do BlackInk, devendo ser lida e interpretada em conjunto.</p>
+
+            <h3>14.5 Separabilidade</h3>
+            <p>Se qualquer disposição desta Política for considerada inválida ou inexequível, as demais disposições permanecerão válidas e em pleno vigor.</p>
+
+            <!-- Final Statement -->
+            <div style="margin-top: 60px; padding: 30px; background: var(--gray-light); border-radius: 10px; text-align: center;">
+                <h3 style="color: var(--accent-purple); margin-bottom: 20px;">Compromisso com a Privacidade</h3>
+                <p style="font-size: 1.1rem; color: var(--text-primary); font-weight: 500;">
+                    O BlackInk está comprometido com a proteção de seus dados pessoais e o cumprimento integral da legislação de privacidade aplicável.
+                </p>
+                <p style="margin-top: 20px; font-style: italic;">
+                    "Seus dados protegidos com a força de 8 tentáculos - Transparência, segurança e controle em suas mãos."
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Padrão -->
+    <div class="footer">
+        <div class="container">
+            <div class="footer-logo">BLACK<span style="color: #4a90e2;">INK</span> 🦑</div>
+            <p class="footer-text">Proteção de Dados com a Força de 8 Tentáculos</p>
+            <div class="footer-meta">
+                <p>Política de Privacidade v2.0 | Última atualização: <span id="footer-date"></span></p>
+                <p>© 2024 BlackInk Tecnologia Ltda. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <a href="#" class="scroll-top" id="scrollTop">↑</a>
+
+    <script>
+        // Set current date
+        const currentDate = new Date();
+        const formattedDate = currentDate.toLocaleDateString('pt-BR', {
+            day: '2-digit',
+            month: 'long',
+            year: 'numeric'
+        });
+        
+        document.getElementById('header-date').textContent = formattedDate;
+        document.getElementById('footer-date').textContent = formattedDate;
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 20;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scrollTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Highlight section on navigation click
+        document.querySelectorAll('.nav-sidebar a').forEach(link => {
+            link.addEventListener('click', function() {
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                if (targetSection) {
+                    targetSection.style.background = 'linear-gradient(90deg, rgba(102, 126, 234, 0.1) 0%, transparent 100%)';
+                    setTimeout(() => {
+                        targetSection.style.background = '';
+                    }, 2000);
+                }
+            });
+        });
+
+        // Add current year for copyright if needed
+        document.querySelectorAll('.current-year').forEach(el => {
+            el.textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>

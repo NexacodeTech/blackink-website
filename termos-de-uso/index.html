@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Termos de Uso - BlackInk Tracker Anti-Fraude">
+    <title>Termos de Uso - BlackInk</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #0a1628;
+            --primary-blue: #1e3a5f;
+            --accent-blue: #4a90e2;
+            --accent-purple: #6b46c1;
+            --accent-orange: #ff6b00;
+            --text-primary: #1a202c;
+            --text-secondary: #4a5568;
+            --gray-light: #f7fafc;
+            --border-color: #e2e8f0;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(180deg, #f7fafc 0%, #ffffff 100%);
+        }
+
+        /* Header */
+        .header {
+            background: var(--gradient);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '🦑';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 200px;
+            opacity: 0.1;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .last-update {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 0.9rem;
+        }
+
+        /* Navigation */
+        .nav-sidebar {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 250px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-height: 70vh;
+            overflow-y: auto;
+            display: none;
+        }
+
+        @media (min-width: 1400px) {
+            .nav-sidebar {
+                display: block;
+            }
+        }
+
+        .nav-sidebar h3 {
+            font-size: 0.9rem;
+            color: var(--accent-blue);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-sidebar ul {
+            list-style: none;
+        }
+
+        .nav-sidebar li {
+            margin-bottom: 10px;
+        }
+
+        .nav-sidebar a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 5px 0;
+        }
+
+        .nav-sidebar a:hover {
+            color: var(--accent-blue);
+            padding-left: 5px;
+        }
+
+        /* Content */
+        .content {
+            background: white;
+            margin: 40px auto;
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 30px 20px;
+                margin: 20px auto;
+            }
+        }
+
+        /* Typography */
+        h2 {
+            font-size: 2rem;
+            color: var(--primary-dark);
+            margin: 40px 0 20px 0;
+            padding-top: 40px;
+            border-top: 2px solid var(--border-color);
+            position: relative;
+        }
+
+        h2:first-child {
+            border-top: none;
+            padding-top: 0;
+            margin-top: 0;
+        }
+
+        h2::before {
+            content: attr(data-section);
+            position: absolute;
+            top: 45px;
+            left: -30px;
+            background: var(--gradient);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: var(--primary-blue);
+            margin: 30px 0 15px 0;
+        }
+
+        h4 {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin: 20px 0 10px 0;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin: 15px 0 20px 30px;
+            color: var(--text-secondary);
+        }
+
+        li {
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+
+        strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Special Sections */
+        .definition-list {
+            background: var(--gray-light);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .definition-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .definition-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .definition-term {
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 5px;
+        }
+
+        /* Plans Table */
+        .plans-table {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th {
+            background: var(--gradient);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        tr:hover {
+            background: var(--gray-light);
+        }
+
+        /* Alert Boxes */
+        .alert {
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            position: relative;
+            padding-left: 50px;
+        }
+
+        .alert::before {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+        }
+
+        .alert-info {
+            background: #ebf8ff;
+            border-left: 4px solid var(--accent-blue);
+            color: #2c5282;
+        }
+
+        .alert-info::before {
+            content: "ℹ️";
+        }
+
+        .alert-warning {
+            background: #fffbeb;
+            border-left: 4px solid var(--accent-orange);
+            color: #92400e;
+        }
+
+        .alert-warning::before {
+            content: "⚠️";
+        }
+
+        .alert-success {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            color: #166534;
+        }
+
+        .alert-success::before {
+            content: "✅";
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .contact-section h3 {
+            color: var(--accent-purple);
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-primary);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .footer-text {
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+
+        .version-info {
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 0.9rem;
+        }
+
+        /* Scroll to Top */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .nav-sidebar,
+            .scroll-top {
+                display: none;
+            }
+
+            .content {
+                box-shadow: none;
+                padding: 0;
+            }
+
+            body {
+                background: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="container">
+            <h1>Termos de Uso - BlackInk</h1>
+            <p class="subtitle">Plataforma de Rastreamento e Análise Anti-Fraude</p>
+            <div class="last-update">Última atualização: <span id="update-date"></span></div>
+        </div>
+    </div>
+
+    <!-- Navigation Sidebar -->
+    <nav class="nav-sidebar">
+        <h3>Navegação Rápida</h3>
+        <ul>
+            <li><a href="#section1">1. Definições e Aceitação</a></li>
+            <li><a href="#section2">2. Descrição dos Serviços</a></li>
+            <li><a href="#section3">3. Cadastro e Conta</a></li>
+            <li><a href="#section4">4. Planos e Pagamento</a></li>
+            <li><a href="#section5">5. Uso Permitido</a></li>
+            <li><a href="#section6">6. Propriedade Intelectual</a></li>
+            <li><a href="#section7">7. Privacidade e Dados</a></li>
+            <li><a href="#section8">8. Garantias</a></li>
+            <li><a href="#section9">9. Suporte</a></li>
+            <li><a href="#section10">10. Alterações</a></li>
+            <li><a href="#section11">11. Comunicações</a></li>
+            <li><a href="#section12">12. Disposições Gerais</a></li>
+            <li><a href="#section13">13. Cancelamento</a></li>
+            <li><a href="#section14">14. Contato</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="content">
+            <!-- Section 1 -->
+            <h2 id="section1" data-section="1">1. DEFINIÇÕES E ACEITAÇÃO DOS TERMOS</h2>
+            
+            <h3>1.1 Definições</h3>
+            <p>Para fins destes Termos de Uso, considera-se:</p>
+            
+            <div class="definition-list">
+                <div class="definition-item">
+                    <div class="definition-term">BlackInk</div>
+                    <div>Plataforma de rastreamento e análise anti-fraude para campanhas de marketing digital, com tecnologia de inteligência artificial para detecção de tráfego fraudulento.</div>
+                </div>
+                
+                <div class="definition-item">
+                    <div class="definition-term">Usuário</div>
+                    <div>Pessoa física ou jurídica devidamente cadastrada que utiliza os serviços da plataforma BlackInk.</div>
+                </div>
+                
+                <div class="definition-item">
+                    <div class="definition-term">Conta</div>
+                    <div>Perfil único criado pelo Usuário para acesso à plataforma, protegido por credenciais de acesso exclusivas.</div>
+                </div>
+                
+                <div class="definition-item">
+                    <div class="definition-term">Serviços</div>
+                    <div>Conjunto completo de funcionalidades oferecidas pela plataforma BlackInk, incluindo rastreamento server-side, análise anti-fraude com IA, relatórios em tempo real, dashboard unificado e integrações via API.</div>
+                </div>
+                
+                <div class="definition-item">
+                    <div class="definition-term">Eventos</div>
+                    <div>Todas as ações rastreadas pela plataforma, incluindo mas não limitado a: cliques, conversões, pageviews, impressões e outras interações digitais.</div>
+                </div>
+                
+                <div class="definition-item">
+                    <div class="definition-term">Plano</div>
+                    <div>Modalidade de assinatura escolhida pelo Usuário, podendo ser: Free (teste gratuito), Raso, Recife ou Abissal, cada um com características e limites específicos.</div>
+                </div>
+            </div>
+
+            <h3>1.2 Aceitação dos Termos</h3>
+            <p>Ao criar uma conta, acessar ou utilizar qualquer funcionalidade dos Serviços do BlackInk, o Usuário declara expressamente ter lido, compreendido e concordado integralmente com todos os termos e condições aqui estabelecidos. Caso não concorde com qualquer disposição presente nestes Termos, o Usuário não deverá prosseguir com o cadastro ou utilizar a plataforma.</p>
+
+            <h3>1.3 Capacidade Legal</h3>
+            <p>O Usuário declara e garante que possui capacidade legal plena para celebrar este acordo, sendo maior de 18 anos ou devidamente emancipado nos termos da lei civil. No caso de pessoa jurídica, o responsável pelo cadastro declara possuir poderes e autorização expressa para representar a empresa e vinculá-la aos presentes Termos.</p>
+
+            <!-- Section 2 -->
+            <h2 id="section2" data-section="2">2. DESCRIÇÃO DOS SERVIÇOS</h2>
+
+            <h3>2.1 Funcionalidades Principais</h3>
+            <p>O BlackInk oferece uma suíte completa de ferramentas para proteção e otimização de campanhas digitais:</p>
+            
+            <ul>
+                <li><strong>Rastreamento Server-Side Avançado:</strong> Tecnologia de ponta para captura de 100% das conversões reais, com bypass completo de ad blockers</li>
+                <li><strong>Detecção de Fraudes com IA:</strong> Sistema de inteligência artificial que analisa 47 parâmetros simultaneamente para identificação de tráfego fraudulento</li>
+                <li><strong>8 Camadas de Proteção:</strong> Sistema exclusivo com 8 "braços" de proteção trabalhando simultaneamente</li>
+                <li><strong>Dashboard Unificado:</strong> Visualização centralizada de todas as métricas e campanhas em tempo real</li>
+                <li><strong>Relatórios Detalhados:</strong> Análises profundas com insights acionáveis</li>
+                <li><strong>Score de Qualidade:</strong> Avaliação automática da qualidade de cada fonte de tráfego</li>
+                <li><strong>Integração Universal:</strong> API completa e webhooks para integração com qualquer plataforma</li>
+                <li><strong>Análise Geográfica:</strong> Mapa de calor e detecção de origem real vs VPNs/proxies</li>
+                <li><strong>Machine Learning Personalizado:</strong> Algoritmos que aprendem com seus dados específicos</li>
+            </ul>
+
+            <h3>2.2 Disponibilidade dos Serviços</h3>
+            <p>Os Serviços são fornecidos 24 horas por dia, 7 dias por semana, com compromisso de alta disponibilidade, ressalvados:</p>
+            
+            <ul>
+                <li>Períodos de manutenção programada (comunicada com antecedência mínima de 48 horas)</li>
+                <li>Interrupções emergenciais necessárias para atualizações críticas de segurança</li>
+                <li>Casos fortuitos, força maior ou eventos fora do controle razoável do BlackInk</li>
+                <li>Falhas em serviços de terceiros dos quais a plataforma dependa</li>
+            </ul>
+
+            <h3>2.3 SLA (Acordo de Nível de Serviço)</h3>
+            <p>O BlackInk compromete-se a manter:</p>
+            <ul>
+                <li>Disponibilidade mínima de <strong>99,5% mensalmente</strong></li>
+                <li>Tempo de resposta médio inferior a <strong>200ms</strong> para requisições de API</li>
+                <li>Processamento em tempo real de eventos (latência < 1 segundo)</li>
+                <li>Backup automático de dados a cada 6 horas</li>
+            </ul>
+
+            <!-- Section 3 -->
+            <h2 id="section3" data-section="3">3. CADASTRO E CONTA DO USUÁRIO</h2>
+
+            <h3>3.1 Criação de Conta</h3>
+            <p>Para utilizar os Serviços do BlackInk, o Usuário deve:</p>
+            
+            <ul>
+                <li>Fornecer informações verdadeiras, precisas, atuais e completas durante o processo de registro</li>
+                <li>Criar uma senha forte (mínimo 8 caracteres, incluindo letras, números e caracteres especiais)</li>
+                <li>Manter absoluta confidencialidade de suas credenciais de acesso</li>
+                <li>Atualizar imediatamente suas informações sempre que houver alterações</li>
+                <li>Não compartilhar credenciais de acesso com terceiros sob nenhuma circunstância</li>
+                <li>Configurar autenticação de dois fatores quando disponível</li>
+            </ul>
+
+            <h3>3.2 Responsabilidade pela Conta</h3>
+            <p>O Usuário é integralmente responsável por:</p>
+            
+            <ul>
+                <li>Todas as atividades realizadas através de sua conta</li>
+                <li>Manter a segurança e confidencialidade de suas credenciais</li>
+                <li>Notificar imediatamente o BlackInk sobre qualquer uso não autorizado</li>
+                <li>Danos causados por negligência na proteção de sua conta</li>
+                <li>Ações de terceiros que tenham obtido acesso por descuido do Usuário</li>
+            </ul>
+
+            <h3>3.3 Múltiplas Contas e Campanhas</h3>
+            <p>Dependendo do plano contratado, o Usuário poderá gerenciar simultaneamente:</p>
+            
+            <div class="plans-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Plano</th>
+                            <th>Contas/Campanhas</th>
+                            <th>Usuários</th>
+                            <th>Eventos/mês</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>FREE</strong></td>
+                            <td>1 campanha</td>
+                            <td>1 usuário</td>
+                            <td>10.000 eventos</td>
+                        </tr>
+                        <tr>
+                            <td><strong>RASO</strong></td>
+                            <td>3 contas simultâneas</td>
+                            <td>2 usuários</td>
+                            <td>100.000 eventos</td>
+                        </tr>
+                        <tr>
+                            <td><strong>RECIFE</strong></td>
+                            <td>5 contas simultâneas</td>
+                            <td>5 usuários</td>
+                            <td>500.000 eventos</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ABISSAL</strong></td>
+                            <td>10 contas simultâneas</td>
+                            <td>Ilimitado</td>
+                            <td>Eventos ilimitados</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Section 4 -->
+            <h2 id="section4" data-section="4">4. PLANOS E PAGAMENTO</h2>
+
+            <h3>4.1 Planos Disponíveis</h3>
+            
+            <div class="alert alert-info">
+                <strong>Período de Teste:</strong> Todos os novos usuários têm direito a 7 dias de teste gratuito com funcionalidades completas do plano FREE.
+            </div>
+
+            <h4>Plano FREE - Teste Gratuito</h4>
+            <ul>
+                <li>Duração: 7 dias corridos</li>
+                <li>1 campanha monitorada</li>
+                <li>Dashboard completo</li>
+                <li>Proteção anti-fraude básica</li>
+                <li>Relatórios em tempo real</li>
+                <li>Suporte por email</li>
+            </ul>
+
+            <h4>Plano RASO - R$ 149,90/mês</h4>
+            <ul>
+                <li>3 contas simultâneas</li>
+                <li>100.000 eventos por mês</li>
+                <li>Proteção anti-fraude com IA básica</li>
+                <li>Mapa de calor geográfico</li>
+                <li>API para integrações</li>
+                <li>Suporte via chat em horário comercial</li>
+            </ul>
+
+            <h4>Plano RECIFE - R$ 249,90/mês</h4>
+            <ul>
+                <li>5 contas simultâneas</li>
+                <li>500.000 eventos por mês</li>
+                <li>IA avançada com Machine Learning</li>
+                <li>Análise preditiva de fraudes</li>
+                <li>API completa + Webhooks</li>
+                <li>WhatsApp prioritário (resposta em 2h)</li>
+                <li>Score de qualidade por fonte</li>
+            </ul>
+
+            <h4>Plano ABISSAL - R$ 399,99/mês</h4>
+            <ul>
+                <li>10 contas simultâneas</li>
+                <li>Eventos ilimitados</li>
+                <li>Proteção enterprise com IA exclusiva</li>
+                <li>Machine Learning personalizado</li>
+                <li>Servidor dedicado no Brasil</li>
+                <li>Account Manager dedicado</li>
+                <li>Treinamento mensal para equipe</li>
+                <li>WhatsApp direto com fundador</li>
+                <li>Setup VIP + Auditoria grátis</li>
+            </ul>
+
+            <h3>4.2 Formas de Pagamento</h3>
+            <ul>
+                <li><strong>Cartão de Crédito:</strong> Débito automático mensal</li>
+                <li><strong>Boleto Bancário:</strong> Vencimento em 3 dias úteis</li>
+                <li><strong>PIX:</strong> Pagamento instantâneo com confirmação automática</li>
+                <li><strong>Planos Anuais:</strong> 20% de desconto no pagamento antecipado</li>
+            </ul>
+
+            <h3>4.3 Renovação e Cobrança</h3>
+            <p>As assinaturas são renovadas automaticamente no mesmo dia de cada mês, salvo cancelamento com antecedência mínima de 48 horas antes do vencimento. A data de cobrança será sempre a mesma data da contratação inicial.</p>
+
+            <h3>4.4 Reajuste de Preços</h3>
+            <p>Os valores dos planos poderão ser reajustados anualmente pelo IPCA (Índice Nacional de Preços ao Consumidor Amplo) ou mediante comunicação prévia de 30 dias aos usuários ativos.</p>
+
+            <h3>4.5 Inadimplência</h3>
+            <div class="alert alert-warning">
+                <strong>Importante:</strong> Em caso de inadimplência:
+                <ul style="margin-top: 10px;">
+                    <li>5 dias de atraso: Suspensão temporária do acesso</li>
+                    <li>30 dias de atraso: Cancelamento automático da conta</li>
+                    <li>60 dias após cancelamento: Exclusão permanente de todos os dados</li>
+                </ul>
+            </div>
+
+            <!-- Section 5 -->
+            <h2 id="section5" data-section="5">5. USO PERMITIDO E RESTRIÇÕES</h2>
+
+            <h3>5.1 Uso Permitido</h3>
+            <p>O Usuário está autorizado a:</p>
+            <ul>
+                <li>Rastrear e analisar suas próprias campanhas de marketing digital</li>
+                <li>Integrar o BlackInk com plataformas de anúncios legítimas</li>
+                <li>Exportar dados e relatórios de suas próprias campanhas</li>
+                <li>Utilizar as APIs dentro dos limites estabelecidos pelo plano contratado</li>
+                <li>Configurar alertas e automações para suas campanhas</li>
+                <li>Compartilhar acesso com membros autorizados de sua equipe</li>
+            </ul>
+
+            <h3>5.2 Uso Expressamente Proibido</h3>
+            <div class="alert alert-warning">
+                É terminantemente vedado ao Usuário:
+            </div>
+            
+            <ul>
+                <li>Utilizar os Serviços para atividades ilegais, fraudulentas ou antiéticas</li>
+                <li>Realizar engenharia reversa, descompilar ou desmontar qualquer parte do software</li>
+                <li>Sobrecarregar intencionalmente os servidores com requisições excessivas</li>
+                <li>Compartilhar credenciais de acesso com usuários não autorizados</li>
+                <li>Coletar ou processar dados de terceiros sem consentimento apropriado</li>
+                <li>Violar direitos de propriedade intelectual de terceiros</li>
+                <li>Usar os Serviços para distribuir spam ou realizar práticas de marketing abusivas</li>
+                <li>Tentar burlar, hackear ou comprometer os sistemas de segurança</li>
+                <li>Revender, sublicenciar ou redistribuir os Serviços sem autorização expressa</li>
+                <li>Usar os dados para treinar modelos de IA concorrentes</li>
+                <li>Criar múltiplas contas para burlar limitações dos planos</li>
+            </ul>
+
+            <h3>5.3 Consequências de Violação</h3>
+            <p>O descumprimento das restrições de uso poderá resultar em:</p>
+            <ol>
+                <li><strong>Primeira violação:</strong> Advertência formal por escrito</li>
+                <li><strong>Segunda violação:</strong> Suspensão temporária de 7 dias</li>
+                <li><strong>Terceira violação:</strong> Cancelamento definitivo sem direito a reembolso</li>
+                <li><strong>Violações graves:</strong> Cancelamento imediato e medidas judiciais cabíveis</li>
+            </ol>
+
+            <!-- Section 6 -->
+            <h2 id="section6" data-section="6">6. PROPRIEDADE INTELECTUAL</h2>
+
+            <h3>6.1 Direitos do BlackInk</h3>
+            <p>Todos os direitos de propriedade intelectual relacionados à plataforma BlackInk, incluindo mas não limitado a:</p>
+            
+            <ul>
+                <li>Software, código-fonte e algoritmos proprietários</li>
+                <li>Marca "BlackInk", logotipos e identidade visual (incluindo o símbolo do polvo)</li>
+                <li>Metodologias e técnicas de detecção de fraude</li>
+                <li>Interface de usuário, design e experiência do usuário</li>
+                <li>Documentação técnica, manuais e materiais de treinamento</li>
+                <li>Tecnologia dos "8 braços" de proteção</li>
+            </ul>
+            
+            <p>São de propriedade exclusiva do BlackInk e protegidos por leis nacionais e internacionais de propriedade intelectual, incluindo direitos autorais, marcas registradas e segredos comerciais.</p>
+
+            <h3>6.2 Licença de Uso</h3>
+            <p>O BlackInk concede ao Usuário uma licença não-exclusiva, intransferível, revogável e limitada para uso dos Serviços exclusivamente conforme os termos do plano contratado e estas condições de uso.</p>
+
+            <h3>6.3 Propriedade dos Dados do Usuário</h3>
+            <p>O Usuário mantém todos os direitos de propriedade sobre seus dados, concedendo ao BlackInk apenas uma licença limitada para processar esses dados com o único propósito de fornecer os Serviços contratados. O BlackInk não reivindica propriedade sobre os dados do Usuário.</p>
+
+            <!-- Section 7 -->
+            <h2 id="section7" data-section="7">7. PRIVACIDADE E PROTEÇÃO DE DADOS</h2>
+
+            <h3>7.1 Conformidade Legal</h3>
+            <p>O BlackInk opera em total conformidade com a legislação brasileira e internacional de proteção de dados:</p>
+            
+            <ul>
+                <li><strong>LGPD:</strong> Lei Geral de Proteção de Dados (Lei nº 13.709/2018)</li>
+                <li><strong>GDPR:</strong> General Data Protection Regulation (quando aplicável a usuários europeus)</li>
+                <li><strong>Marco Civil da Internet:</strong> Lei nº 12.965/2014</li>
+                <li><strong>Código de Defesa do Consumidor:</strong> Lei nº 8.078/1990</li>
+            </ul>
+
+            <h3>7.2 Coleta e Uso de Dados</h3>
+            <p>Coletamos apenas os dados estritamente necessários para:</p>
+            <ul>
+                <li>Prestação adequada dos Serviços contratados</li>
+                <li>Melhoria contínua da plataforma e seus algoritmos</li>
+                <li>Cumprimento de obrigações legais e regulatórias</li>
+                <li>Comunicação relevante com o Usuário</li>
+                <li>Prevenção de fraudes e segurança da plataforma</li>
+            </ul>
+
+            <h3>7.3 Medidas de Segurança</h3>
+            <p>Implementamos medidas técnicas e organizacionais robustas para proteção de dados:</p>
+            
+            <ul>
+                <li><strong>Criptografia:</strong> TLS 1.3 em trânsito e AES-256 em repouso</li>
+                <li><strong>Infraestrutura:</strong> Servidores localizados em território brasileiro</li>
+                <li><strong>Controle de Acesso:</strong> Autenticação multifator e princípio do menor privilégio</li>
+                <li><strong>Backups:</strong> Realizados a cada 6 horas com redundância geográfica</li>
+                <li><strong>Auditorias:</strong> Testes de segurança trimestrais por empresas especializadas</li>
+                <li><strong>Certificações:</strong> Processo de certificação ISO 27001 em andamento</li>
+            </ul>
+
+            <h3>7.4 Compartilhamento de Dados</h3>
+            <div class="alert alert-success">
+                <strong>Compromisso:</strong> Não vendemos, alugamos ou compartilhamos dados dos usuários com terceiros para fins comerciais.
+            </div>
+            
+            <p>Dados podem ser compartilhados apenas nas seguintes situações:</p>
+            <ul>
+                <li>Com consentimento expresso e específico do Usuário</li>
+                <li>Para cumprimento de ordem judicial ou requisição de autoridade competente</li>
+                <li>Com processadores essenciais (pagamento, hospedagem) sob acordos de confidencialidade</li>
+                <li>Em caso de fusão, aquisição ou venda de ativos, com notificação prévia</li>
+            </ul>
+
+            <h3>7.5 Direitos do Titular dos Dados</h3>
+            <p>Em conformidade com a LGPD, o Usuário tem direito a:</p>
+            <ul>
+                <li><strong>Acesso:</strong> Solicitar cópia de todos os seus dados pessoais</li>
+                <li><strong>Correção:</strong> Retificar dados incompletos ou desatualizados</li>
+                <li><strong>Exclusão:</strong> Solicitar a eliminação de dados pessoais</li>
+                <li><strong>Portabilidade:</strong> Receber dados em formato estruturado</li>
+                <li><strong>Revogação:</strong> Retirar consentimento a qualquer momento</li>
+                <li><strong>Informação:</strong> Saber com quem seus dados foram compartilhados</li>
+            </ul>
+
+            <!-- Section 8 -->
+            <h2 id="section8" data-section="8">8. GARANTIAS E LIMITAÇÕES</h2>
+
+            <h3>8.1 Garantia de Detecção de Fraudes</h3>
+            <div class="alert alert-success">
+                <strong>Garantia BlackInk:</strong> Garantimos detectar no mínimo 15% de tráfego suspeito ou fraudulento em campanhas ativas. Caso não seja identificado esse percentual mínimo nos primeiros 7 dias, o Usuário tem direito ao cancelamento com reembolso integral.
+            </div>
+
+            <h3>8.2 Limitações de Garantia</h3>
+            <p>O BlackInk não pode garantir:</p>
+            <ul>
+                <li>Detecção de 100% de todas as fraudes possíveis</li>
+                <li>Resultados específicos ou ROI garantido em campanhas</li>
+                <li>Compatibilidade com sistemas não documentados ou não suportados</li>
+                <li>Funcionamento absolutamente ininterrupto ou livre de erros</li>
+                <li>Que os Serviços atenderão todas as necessidades específicas do Usuário</li>
+            </ul>
+
+            <h3>8.3 Isenção de Garantias Implícitas</h3>
+            <p>Os Serviços são fornecidos "como estão" e "conforme disponíveis", sem garantias implícitas de comercialização, adequação a um propósito específico ou não-violação de direitos de terceiros.</p>
+
+            <h3>8.4 Limitação de Responsabilidade</h3>
+            <p>Em nenhuma hipótese o BlackInk será responsável por:</p>
+            <ul>
+                <li>Danos indiretos, incidentais, especiais ou consequenciais</li>
+                <li>Perda de lucros, receitas ou oportunidades de negócio</li>
+                <li>Perda de dados causada por negligência do Usuário</li>
+                <li>Danos superiores ao valor pago pelo Usuário nos últimos 12 meses</li>
+            </ul>
+
+            <h3>8.5 Indenização</h3>
+            <p>O Usuário concorda em indenizar e isentar o BlackInk de responsabilidade por quaisquer reclamações, danos, perdas e despesas decorrentes de:</p>
+            <ul>
+                <li>Violação destes Termos de Uso</li>
+                <li>Uso indevido ou não autorizado dos Serviços</li>
+                <li>Violação de direitos de terceiros</li>
+                <li>Informações falsas ou enganosas fornecidas</li>
+            </ul>
+
+            <!-- Section 9 -->
+            <h2 id="section9" data-section="9">9. SUPORTE</h2>
+
+            <h3>9.1 Canais de Atendimento por Plano</h3>
+            
+            <div class="plans-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Plano</th>
+                            <th>Canal</th>
+                            <th>Tempo de Resposta</th>
+                            <th>Horário</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>FREE</strong></td>
+                            <td>Email</td>
+                            <td>48h úteis</td>
+                            <td>Horário comercial</td>
+                        </tr>
+                        <tr>
+                            <td><strong>RASO</strong></td>
+                            <td>Email + Chat</td>
+                            <td>24h úteis</td>
+                            <td>Seg-Sex, 9h-18h</td>
+                        </tr>
+                        <tr>
+                            <td><strong>RECIFE</strong></td>
+                            <td>WhatsApp Prioritário</td>
+                            <td>2 horas</td>
+                            <td>Seg-Sex, 8h-20h</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ABISSAL</strong></td>
+                            <td>WhatsApp Direto + Account Manager</td>
+                            <td>30 minutos</td>
+                            <td>Seg-Sáb, 8h-22h</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>9.2 Escopo do Suporte</h3>
+            <p>O suporte técnico inclui:</p>
+            <ul>
+                <li>Assistência na configuração inicial e integração</li>
+                <li>Resolução de problemas técnicos da plataforma</li>
+                <li>Esclarecimento de dúvidas sobre funcionalidades</li>
+                <li>Orientações sobre melhores práticas</li>
+                <li>Auxílio na interpretação de relatórios</li>
+            </ul>
+
+            <h3>9.3 Exclusões do Suporte</h3>
+            <p>Não está incluído no suporte:</p>
+            <ul>
+                <li>Desenvolvimento de código personalizado</li>
+                <li>Consultoria de marketing ou estratégia de campanhas</li>
+                <li>Suporte para plataformas de terceiros</li>
+                <li>Treinamentos não incluídos no plano</li>
+            </ul>
+
+            <!-- Section 10 -->
+            <h2 id="section10" data-section="10">10. ALTERAÇÕES E MODIFICAÇÕES</h2>
+
+            <h3>10.1 Alteração de Plano</h3>
+            <ul>
+                <li><strong>Upgrade:</strong> Disponível imediatamente com cobrança proporcional da diferença</li>
+                <li><strong>Downgrade:</strong> Efetivado no início do próximo ciclo de cobrança</li>
+                <li><strong>Sem penalidades:</strong> Mudanças de plano não geram multas ou taxas adicionais</li>
+            </ul>
+
+            <h3>10.2 Alterações nos Termos</h3>
+            <p>O BlackInk reserva-se o direito de modificar estes Termos mediante:</p>
+            <ul>
+                <li>Notificação prévia de 30 dias para alterações substanciais</li>
+                <li>Publicação da nova versão na plataforma</li>
+                <li>Comunicação via email para todos os usuários ativos</li>
+                <li>Manutenção de versões anteriores para consulta</li>
+            </ul>
+
+            <h3>10.3 Alterações na Plataforma</h3>
+            <p>Podemos adicionar, modificar ou remover funcionalidades visando:</p>
+            <ul>
+                <li>Melhoria contínua dos Serviços</li>
+                <li>Correção de bugs e vulnerabilidades</li>
+                <li>Adequação a novas regulamentações</li>
+                <li>Implementação de novas tecnologias</li>
+            </ul>
+
+            <!-- Section 11 -->
+            <h2 id="section11" data-section="11">11. COMUNICAÇÕES</h2>
+
+            <h3>11.1 Notificações Oficiais</h3>
+            <p>Comunicações oficiais e legais serão enviadas através de:</p>
+            <ul>
+                <li>Email cadastrado principal do Usuário</li>
+                <li>Notificações no painel da plataforma</li>
+                <li>WhatsApp (apenas para planos Recife e Abissal)</li>
+            </ul>
+
+            <h3>11.2 Comunicações de Marketing</h3>
+            <p>O Usuário pode optar por receber ou não comunicações promocionais:</p>
+            <ul>
+                <li>Novidades e atualizações da plataforma</li>
+                <li>Dicas e melhores práticas</li>
+                <li>Ofertas especiais e promoções</li>
+                <li>Conteúdo educativo sobre anti-fraude</li>
+            </ul>
+            
+            <div class="alert alert-info">
+                Para cancelar o recebimento de comunicações promocionais, utilize o link de descadastro presente em todos os emails ou ajuste suas preferências no painel de controle.
+            </div>
+
+            <!-- Section 12 -->
+            <h2 id="section12" data-section="12">12. DISPOSIÇÕES GERAIS</h2>
+
+            <h3>12.1 Lei Aplicável e Foro</h3>
+            <p>Estes Termos são regidos e interpretados de acordo com as leis da República Federativa do Brasil. Para dirimir quaisquer controvérsias oriundas deste instrumento, fica eleito o foro da comarca da capital do estado onde o BlackInk mantém sua sede principal, com renúncia expressa a qualquer outro, por mais privilegiado que seja.</p>
+
+            <h3>12.2 Acordo Integral</h3>
+            <p>Estes Termos de Uso, em conjunto com a Política de Privacidade e demais políticas referenciadas, constituem o acordo integral entre o Usuário e o BlackInk, substituindo todos os entendimentos, acordos e comunicações anteriores, sejam verbais ou escritos.</p>
+
+            <h3>12.3 Cessão e Transferência</h3>
+            <p>O Usuário não poderá ceder, transferir ou sublicenciar quaisquer direitos ou obrigações decorrentes destes Termos sem o consentimento prévio e por escrito do BlackInk. O BlackInk pode ceder seus direitos e obrigações sem necessidade de consentimento do Usuário.</p>
+
+            <h3>12.4 Independência das Cláusulas</h3>
+            <p>Se qualquer disposição destes Termos for considerada inválida, ilegal ou inexequível por autoridade competente, as demais disposições permanecerão em pleno vigor e efeito, devendo a cláusula inválida ser substituída por outra válida que mais se aproxime da intenção original.</p>
+
+            <h3>12.5 Não Constituição de Vínculo</h3>
+            <p>Nenhuma disposição destes Termos deve ser interpretada como criação de vínculo empregatício, societário, de parceria, joint venture ou agência entre o Usuário e o BlackInk.</p>
+
+            <h3>12.6 Renúncia</h3>
+            <p>A tolerância ou não exercício, por qualquer das partes, de quaisquer direitos a ela assegurados nestes Termos ou na lei em geral não importará em novação ou renúncia a qualquer desses direitos.</p>
+
+            <h3>12.7 Força Maior</h3>
+            <p>Nenhuma das partes será responsabilizada por falhas ou atrasos no cumprimento de suas obrigações quando decorrentes de caso fortuito ou força maior, incluindo mas não limitado a: catástrofes naturais, guerras, pandemias, greves, falhas de energia elétrica ou internet fora do controle razoável da parte afetada.</p>
+
+            <!-- Section 13 -->
+            <h2 id="section13" data-section="13">13. POLÍTICA DE CANCELAMENTO E REEMBOLSO</h2>
+
+            <h3>13.1 Período de Teste e Garantia</h3>
+            <div class="alert alert-success">
+                <strong>Garantia de 7 Dias:</strong> Todos os novos usuários têm direito a 7 dias corridos de teste. Se o BlackInk não detectar pelo menos 15% de tráfego suspeito ou fraudulento neste período, o Usuário poderá solicitar o cancelamento com reembolso integral do valor pago.
+            </div>
+
+            <h3>13.2 Procedimento de Cancelamento</h3>
+            <p>Para solicitar o cancelamento dentro do período de garantia:</p>
+            <ol>
+                <li>Acesse o painel de controle da sua conta</li>
+                <li>Navegue até "Configurações" > "Assinatura"</li>
+                <li>Clique em "Solicitar Cancelamento"</li>
+                <li>Preencha o formulário indicando o motivo</li>
+                <li>Aguarde confirmação em até 48 horas úteis</li>
+            </ol>
+
+            <h3>13.3 Condições para Reembolso</h3>
+            <p>O reembolso integral será processado quando:</p>
+            <ul>
+                <li>Solicitação realizada dentro dos primeiros 7 dias corridos</li>
+                <li>BlackInk não detectou mínimo de 15% de tráfego suspeito</li>
+                <li>Usuário forneceu acesso correto às campanhas para análise</li>
+                <li>Não houve violação dos Termos de Uso</li>
+                <li>Conta não foi suspensa por atividades fraudulentas</li>
+            </ul>
+
+            <h3>13.4 Cancelamento Após Período de Garantia</h3>
+            <p>Após os 7 dias iniciais:</p>
+            <ul>
+                <li>Cancelamento pode ser solicitado a qualquer momento</li>
+                <li>Acesso mantido até o fim do período já pago</li>
+                <li>Sem direito a reembolso proporcional</li>
+                <li>Sem multas ou taxas de cancelamento</li>
+                <li>Dados disponíveis para download por 30 dias</li>
+            </ul>
+
+            <h3>13.5 Processamento do Reembolso</h3>
+            <div class="alert alert-info">
+                <strong>Prazos de Reembolso:</strong>
+                <ul style="margin-top: 10px;">
+                    <li>Cartão de Crédito: 1 a 2 faturas (conforme operadora)</li>
+                    <li>PIX: Até 3 dias úteis</li>
+                    <li>Boleto: Até 10 dias úteis via transferência</li>
+                </ul>
+            </div>
+
+            <h3>13.6 Casos Não Elegíveis para Reembolso</h3>
+            <p>Não haverá reembolso nas seguintes situações:</p>
+            <ul>
+                <li>Solicitação após o período de 7 dias</li>
+                <li>Violação comprovada dos Termos de Uso</li>
+                <li>Fornecimento de informações falsas no cadastro</li>
+                <li>Tentativa de fraude ou uso indevido da garantia</li>
+                <li>Conta suspensa por inadimplência anterior</li>
+                <li>Usuário já utilizou a garantia anteriormente</li>
+            </ul>
+
+            <h3>13.7 Cancelamento pelo BlackInk</h3>
+            <p>O BlackInk reserva-se o direito de cancelar contas sem reembolso em caso de:</p>
+            <ul>
+                <li>Violação grave dos Termos de Uso</li>
+                <li>Atividades fraudulentas comprovadas</li>
+                <li>Uso dos Serviços para fins ilegais</li>
+                <li>Inadimplência superior a 30 dias</li>
+                <li>Ordem judicial ou requisição legal</li>
+            </ul>
+
+            <h3>13.8 Direito de Arrependimento</h3>
+            <p>Em conformidade com o Código de Defesa do Consumidor (Art. 49), o Usuário pessoa física tem direito ao arrependimento da compra em até 7 dias, com devolução integral dos valores pagos.</p>
+
+            <!-- Section 14 -->
+            <h2 id="section14" data-section="14">14. CONTATO E ATENDIMENTO</h2>
+
+            <div class="contact-section">
+                <h3>Central de Atendimento BlackInk</h3>
+                <p>Estamos aqui para ajudar você a navegar com segurança nas águas do marketing digital!</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span>📧</span>
+                        <span>suporte@theblack.ink</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📱</span>
+                        <span>WhatsApp: Conforme seu plano</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>💬</span>
+                        <span>Chat: app.theblack.ink/help</span>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px;">
+                    <h4>Canais Específicos</h4>
+                    <ul style="text-align: left; max-width: 500px; margin: 20px auto;">
+                        <li><strong>Questões Legais:</strong> legal@theblack.ink</li>
+                        <li><strong>Privacidade/LGPD:</strong> privacidade@theblack.ink</li>
+                        <li><strong>Parcerias:</strong> parcerias@theblack.ink</li>
+                        <li><strong>Imprensa:</strong> imprensa@theblack.ink</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="alert alert-info" style="margin-top: 40px;">
+                <strong>Horário de Atendimento:</strong><br>
+                Segunda a Sexta: 9h às 18h (Horário de Brasília)<br>
+                Sábado (Plano Abissal): 9h às 13h<br>
+                <em>Exceto feriados nacionais</em>
+            </div>
+
+            <!-- Final Agreement -->
+            <div style="margin-top: 60px; padding: 30px; background: var(--gray-light); border-radius: 10px; text-align: center;">
+                <h3 style="color: var(--accent-purple); margin-bottom: 20px;">Declaração de Aceite</h3>
+                <p style="font-size: 1.1rem; color: var(--text-primary); font-weight: 500;">
+                    Ao criar uma conta ou utilizar os serviços do BlackInk, você confirma ter lido, compreendido e concordado integralmente com estes Termos de Uso.
+                </p>
+                <p style="margin-top: 20px; font-style: italic;">
+                    "Navegue com segurança nas águas profundas do marketing digital com os 8 braços do BlackInk protegendo seu investimento."
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="footer-logo">BLACK<span style="color: #4a90e2;">INK</span> 🦑</div>
+            <p class="footer-text">O Predador das Fraudes no Marketing Digital</p>
+            <div class="version-info">
+                Versão 1.0 - Documento gerado em <span id="footer-date"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <a href="#" class="scroll-top" id="scrollTop">↑</a>
+
+    <script>
+        // Set current date
+        const currentDate = new Date();
+        const formattedDate = currentDate.toLocaleDateString('pt-BR', {
+            day: '2-digit',
+            month: 'long',
+            year: 'numeric'
+        });
+        
+        document.getElementById('update-date').textContent = formattedDate;
+        document.getElementById('footer-date').textContent = formattedDate;
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 20;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scrollTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Print function
+        function printTerms() {
+            window.print();
+        }
+
+        // Highlight section on navigation click
+        document.querySelectorAll('.nav-sidebar a').forEach(link => {
+            link.addEventListener('click', function() {
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                if (targetSection) {
+                    targetSection.style.background = 'linear-gradient(90deg, rgba(102, 126, 234, 0.1) 0%, transparent 100%)';
+                    setTimeout(() => {
+                        targetSection.style.background = '';
+                    }, 2000);
+                }
+            });
+        });
+
+        // Add current year for copyright if needed
+        document.querySelectorAll('.current-year').forEach(el => {
+            el.textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
