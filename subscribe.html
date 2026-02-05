@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha Seu Plano — BlackInk</title>
+    <meta name="description" content="Selecione seu plano para ter acesso antecipado à plataforma BlackInk.">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/abyss-tokens.css">
+    <style>
+        /* ══════════════════════════════════════════════════════════
+           BLACKINK — Subscribe Page
+           ══════════════════════════════════════════════════════════ */
+        :root {
+            --ff-display: 'Space Grotesk', sans-serif;
+            --ff-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --bg: #020a14;
+            --bg2: #06111f;
+            --surface: rgba(8,22,48,0.45);
+            --border: rgba(100,180,255,0.08);
+            --border-h: rgba(100,180,255,0.18);
+            --white: #f0f4f8;
+            --dim: rgba(240,244,248,0.55);
+            --muted: rgba(240,244,248,0.3);
+            --accent: #64b4ff;
+            --accent2: #38bdf8;
+            --green: #34d399;
+            --error: #f87171;
+            --ease: cubic-bezier(0.16,1,0.3,1);
+        }
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+        body{font-family:var(--ff-body);color:var(--white);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.6;min-height:100vh;display:flex;flex-direction:column}
+        a{color:inherit;text-decoration:none}
+        img{max-width:100%;display:block}
+        ul{list-style:none}
+
+        /* Grain */
+        body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:0.022;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:256px}
+
+        /* ── Layout ── */
+        .container{max-width:1200px;margin:0 auto;padding:0 24px}
+        @media(min-width:768px){.container{padding:0 48px}}
+
+        /* ── Typography ── */
+        .t-xl{font-family:var(--ff-display);font-weight:700;font-size:clamp(36px,6vw,64px);line-height:1.05;letter-spacing:-0.04em}
+        .t-lg{font-family:var(--ff-display);font-weight:700;font-size:clamp(24px,4vw,36px);line-height:1.1;letter-spacing:-0.03em}
+        .t-md{font-family:var(--ff-display);font-weight:600;font-size:clamp(18px,2.5vw,24px);line-height:1.2;letter-spacing:-0.02em}
+        .t-body{font-size:clamp(15px,1.2vw,17px);line-height:1.7;color:var(--dim)}
+        .t-label{font-size:12px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent)}
+        .grad{background:linear-gradient(135deg,#f0f4f8 0%,var(--accent) 60%,var(--accent2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+        /* ── Buttons ── */
+        .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:none;border-radius:14px;font-family:var(--ff-body);font-weight:600;cursor:pointer;position:relative;overflow:hidden;transition:all .4s var(--ease)}
+        .btn-p{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#020a14;font-size:16px;height:56px;padding:0 32px;box-shadow:0 0 0 1px rgba(100,180,255,0.2),0 8px 40px rgba(100,180,255,0.15);width:100%}
+        .btn-p:hover:not(:disabled){transform:translateY(-3px);box-shadow:0 0 0 1px rgba(100,180,255,0.3),0 20px 60px rgba(100,180,255,0.25)}
+        .btn-p:active{transform:translateY(0)}
+        .btn-p:disabled{opacity:0.5;cursor:not-allowed}
+        .btn-o{background:transparent;color:var(--white);font-size:16px;height:56px;padding:0 32px;border:1px solid var(--border-h);width:100%}
+        .btn-o:hover{border-color:rgba(100,180,255,0.35);background:rgba(100,180,255,0.04);transform:translateY(-3px)}
+
+        /* ── Header ── */
+        .hdr{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;background:rgba(2,10,20,0.88);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--border)}
+        .hdr-in{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:72px}
+        .hdr-logo{font-family:var(--ff-display);font-size:24px;font-weight:700;letter-spacing:-0.03em}
+        .hdr-logo span{color:var(--accent)}
+
+        /* ── Main Section ── */
+        .main-section{flex:1;padding:120px 24px 80px;position:relative;overflow:hidden}
+
+        /* Gradient mesh background */
+        .mesh{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+        .mesh div{position:absolute;border-radius:50%;filter:blur(130px);animation:mesh-float 20s ease-in-out infinite}
+        .mesh .m1{width:700px;height:700px;background:radial-gradient(circle,rgba(100,180,255,0.1),transparent 70%);top:-25%;right:-15%;animation-delay:0s}
+        .mesh .m2{width:500px;height:500px;background:radial-gradient(circle,rgba(56,189,248,0.06),transparent 70%);bottom:-10%;left:-15%;animation-delay:-7s}
+        .mesh .m3{width:400px;height:400px;background:radial-gradient(circle,rgba(129,140,248,0.05),transparent 70%);top:40%;left:30%;animation-delay:-14s}
+        @keyframes mesh-float{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-20px) scale(1.05)}66%{transform:translate(-20px,30px) scale(0.95)}}
+
+        /* Floating particles */
+        .particle{position:absolute;width:2px;height:2px;border-radius:50%;background:rgba(140,210,255,0.5);bottom:-10px;animation:p-up 45s linear infinite,p-glow 8s ease-in-out infinite;pointer-events:none}
+        @keyframes p-up{from{transform:translateY(0);opacity:0}5%{opacity:1}95%{opacity:1}to{transform:translateY(-100vh);opacity:0}}
+        @keyframes p-glow{0%,100%{box-shadow:0 0 4px rgba(140,210,255,0.3)}50%{box-shadow:0 0 12px rgba(140,210,255,0.8)}}
+
+        .content{position:relative;z-index:1}
+
+        /* ── Page Header ── */
+        .page-header{text-align:center;margin-bottom:clamp(48px,8vw,80px)}
+        .page-title{margin-bottom:16px;animation:fade-up .8s var(--ease) both}
+        .page-subtitle{max-width:520px;margin:0 auto;animation:fade-up .8s var(--ease) .2s both}
+        @keyframes fade-up{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+        /* ── Plans Grid ── */
+        .plans-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:clamp(20px,3vw,32px);margin-bottom:clamp(48px,8vw,80px)}
+
+        .plan-card{background:var(--surface);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:20px;padding:clamp(28px,4vw,36px);transition:all .4s var(--ease);cursor:pointer;position:relative;overflow:hidden;animation:card-in .8s var(--ease) both}
+        .plan-card:nth-child(1){animation-delay:.1s}
+        .plan-card:nth-child(2){animation-delay:.2s}
+        .plan-card:nth-child(3){animation-delay:.3s}
+        @keyframes card-in{from{opacity:0;transform:translateY(40px) scale(0.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+
+        .plan-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+        .plan-card:hover,.plan-card.selected{border-color:var(--border-h);transform:translateY(-6px);box-shadow:0 24px 60px rgba(100,180,255,0.12)}
+        .plan-card:hover::before,.plan-card.selected::before{transform:scaleX(1)}
+        .plan-card.selected{background:rgba(100,180,255,0.05);border-color:rgba(100,180,255,0.25)}
+
+        .plan-badge{position:absolute;top:16px;right:16px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#020a14;padding:6px 14px;border-radius:100px;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase}
+
+        .plan-icon{font-size:clamp(2.5rem,5vw,3rem);margin-bottom:16px;display:block}
+
+        .plan-name{font-family:var(--ff-display);font-size:clamp(20px,3vw,28px);font-weight:700;letter-spacing:-0.02em;margin-bottom:8px;color:var(--white)}
+
+        .plan-description{color:var(--muted);font-size:14px;margin-bottom:24px}
+
+        .plan-features{margin-bottom:24px}
+        .plan-features li{padding:10px 0;color:var(--dim);display:flex;align-items:flex-start;gap:12px;font-size:14px;border-bottom:1px solid var(--border)}
+        .plan-features li:last-child{border-bottom:none}
+        .plan-features li::before{content:"✓";color:var(--accent);font-weight:700;font-size:14px;flex-shrink:0;margin-top:1px}
+
+        .plan-price{font-family:var(--ff-display);font-size:clamp(28px,4vw,36px);font-weight:700;background:linear-gradient(135deg,var(--white),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+        .check-icon{position:absolute;top:16px;left:16px;width:28px;height:28px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(0);transition:all .3s var(--ease)}
+        .plan-card.selected .check-icon{opacity:1;transform:scale(1)}
+        .check-icon::after{content:"✓";color:#020a14;font-size:14px;font-weight:700}
+
+        /* ── Email Section ── */
+        .email-section{max-width:520px;margin:0 auto;background:var(--surface);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:20px;padding:clamp(28px,5vw,40px);opacity:0;transform:translateY(20px);transition:all .5s var(--ease);pointer-events:none}
+        .email-section.active{opacity:1;transform:translateY(0);pointer-events:all}
+
+        .email-title{text-align:center;margin-bottom:12px}
+        .email-subtitle{text-align:center;margin-bottom:28px}
+
+        .selected-plan-info{background:rgba(100,180,255,0.05);border:1px solid var(--border-h);border-radius:12px;padding:16px;margin-bottom:28px;text-align:center;font-size:14px;color:var(--dim)}
+        .selected-plan-info strong{color:var(--accent);font-weight:600}
+
+        .form-group{margin-bottom:24px}
+        .form-label{display:block;margin-bottom:8px;font-weight:600;font-size:14px;color:var(--white)}
+        .form-input{width:100%;padding:16px;background:rgba(2,10,20,0.6);border:1px solid var(--border);border-radius:12px;color:var(--white);font-size:16px;font-family:var(--ff-body);transition:all .3s var(--ease)}
+        .form-input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(100,180,255,0.15)}
+        .form-input::placeholder{color:var(--muted)}
+        .form-input.error{border-color:var(--error)}
+
+        .error-message{color:var(--error);font-size:12px;margin-top:8px;display:none}
+        .error-message.show{display:block}
+
+        .btn-group{display:flex;flex-direction:column;gap:12px}
+
+        /* Loading Spinner */
+        .loading{display:inline-block;width:20px;height:20px;border:2px solid rgba(2,10,20,0.3);border-radius:50%;border-top-color:#020a14;animation:spin 1s ease-in-out infinite}
+        @keyframes spin{to{transform:rotate(360deg)}}
+
+        /* ── Success Message ── */
+        .success-message{max-width:520px;margin:0 auto;background:var(--surface);backdrop-filter:blur(10px);border:1px solid var(--green);border-radius:20px;padding:clamp(40px,6vw,56px);text-align:center;display:none}
+        .success-message.show{display:block;animation:fade-up .5s var(--ease)}
+
+        .success-icon{width:72px;height:72px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:32px;color:#020a14;box-shadow:0 0 40px rgba(52,211,153,0.3)}
+
+        .success-title{font-family:var(--ff-display);font-size:clamp(24px,4vw,32px);font-weight:700;margin-bottom:16px;color:var(--green)}
+
+        .success-text{color:var(--dim);font-size:16px;line-height:1.7}
+        .success-text strong{color:var(--white)}
+
+        /* ── Footer ── */
+        .footer{padding:28px 0;border-top:1px solid var(--border)}
+        .f-bottom{text-align:center}
+        .f-bottom span{font-size:12px;color:var(--muted)}
+
+        /* ── Cursor ── */
+        .cursor{position:fixed;width:8px;height:8px;border-radius:50%;background:var(--accent);pointer-events:none;z-index:9997;opacity:0;mix-blend-mode:screen;transition:opacity .3s,width .4s var(--ease),height .4s var(--ease);transform:translate(-50%,-50%)}
+        .cursor.on{opacity:.5}
+        .cursor.big{width:48px;height:48px;opacity:.12}
+        @media(pointer:coarse){.cursor{display:none}}
+
+        /* ── Responsive ── */
+        @media(max-width:767px){
+            .main-section{padding:100px 20px 60px}
+            .plans-grid{grid-template-columns:1fr}
+        }
+    </style>
+</head>
+<body>
+
+<!-- Cursor -->
+<div class="cursor" id="cur"></div>
+
+<!-- ═══════ HEADER ═══════ -->
+<header class="hdr">
+    <div class="hdr-in">
+        <a href="/" class="hdr-logo">Black<span>Ink</span></a>
+    </div>
+</header>
+
+<!-- ═══════ MAIN ═══════ -->
+<main class="main-section">
+    <!-- Background effects -->
+    <div class="mesh">
+        <div class="m1"></div>
+        <div class="m2"></div>
+        <div class="m3"></div>
+    </div>
+    <div class="particle" style="left:10%;animation-delay:0s,-2s"></div>
+    <div class="particle" style="left:25%;animation-delay:-10s,-4s"></div>
+    <div class="particle" style="left:40%;animation-delay:-20s,-6s"></div>
+    <div class="particle" style="left:55%;animation-delay:-30s,-3s"></div>
+    <div class="particle" style="left:70%;animation-delay:-15s,-7s"></div>
+    <div class="particle" style="left:85%;animation-delay:-25s,-5s"></div>
+
+    <div class="content">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1 class="t-xl page-title">Acesso <span class="grad">exclusivo</span></h1>
+                <p class="t-body page-subtitle">
+                    Selecione seu plano para ter acesso antecipado à plataforma BlackInk.
+                </p>
+            </div>
+
+            <!-- Plans Grid -->
+            <div class="plans-grid" id="plansGrid">
+                <div class="plan-card" data-plan="Raso" data-price="114.99">
+                    <span class="plan-icon">🌊</span>
+                    <div class="check-icon"></div>
+                    <h3 class="plan-name">RASO</h3>
+                    <p class="plan-description">Primeiras braçadas</p>
+                    <ul class="plan-features">
+                        <li>10 campanhas ativas</li>
+                        <li>Contas de anúncio ilimitadas</li>
+                        <li>Rastreamento completo do funil</li>
+                        <li>Rastreamento IOS 14+</li>
+                        <li>Métricas Google em tempo real</li>
+                        <li>Dashboard completo de métricas</li>
+                        <li>Funil de métricas estratégico</li>
+                        <li>Conversões automáticas Google Ads</li>
+                        <li>URL Builder completo</li>
+                        <li>Integração plataformas de afiliado</li>
+                        <li>Notificações de vendas</li>
+                        <li>App Mobile</li>
+                        <li>Análise de performance VSL</li>
+                        <li>Blackink Clone</li>
+                        <li>Área de membros com tutoriais</li>
+                        <li>Campanhas extras por R$ 40,00</li>
+                    </ul>
+                    <div class="plan-price">R$ 114,99</div>
+                </div>
+
+                <div class="plan-card" data-plan="Recife" data-price="359.99">
+                    <span class="plan-badge">MAIS POPULAR</span>
+                    <span class="plan-icon">🦈</span>
+                    <div class="check-icon"></div>
+                    <h3 class="plan-name">RECIFE</h3>
+                    <p class="plan-description">Zona de ouro com ML avançado</p>
+                    <ul class="plan-features">
+                        <li>Tudo do Raso +</li>
+                        <li>Proteção do Trafego</li>
+                        <li>Proteção de VPN</li>
+                        <li>Proteção de Bots</li>
+                    </ul>
+                    <div class="plan-price">R$ 359,99</div>
+                </div>
+
+                <div class="plan-card" data-plan="Abissal" data-price="Em Breve">
+                    <span class="plan-icon">🦑</span>
+                    <div class="check-icon"></div>
+                    <h3 class="plan-name">ABISSAL</h3>
+                    <p class="plan-description">Domínio total personalizado</p>
+                    <ul class="plan-features">
+                        <li>Tudo do Recife +</li>
+                        <li>Campanhas ilimitadas</li>
+                        <li>Suporte prioritário</li>
+                    </ul>
+                    <div class="plan-price">R$ 799,99</div>
+                </div>
+            </div>
+
+            <!-- Email Section -->
+            <div class="email-section" id="emailSection">
+                <h2 class="t-lg email-title">Quase lá!</h2>
+                <p class="t-body email-subtitle">Informe seu e-mail para receber o seu link de acesso às profundezas</p>
+
+                <div class="selected-plan-info" id="selectedPlanInfo">
+                    Plano selecionado: <strong id="selectedPlanName"></strong>
+                </div>
+
+                <form id="emailForm">
+                    <div class="form-group">
+                        <label for="email" class="form-label">Seu melhor e-mail</label>
+                        <input
+                            type="email"
+                            id="email"
+                            class="form-input"
+                            placeholder="seu@email.com"
+                            required
+                        >
+                        <div class="error-message" id="emailError">
+                            Por favor, insira um e-mail válido
+                        </div>
+                    </div>
+
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-p" id="submitBtn">
+                            Receber Link de Cadastro
+                        </button>
+                        <button type="button" class="btn btn-o" id="changePlanBtn">
+                            Escolher Outro Plano
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Success Message -->
+            <div class="success-message" id="successMessage">
+                <div class="success-icon">✓</div>
+                <h2 class="success-title">E-mail Enviado!</h2>
+                <p class="success-text">
+                    Enviamos o link do formulário de cadastro para <strong id="confirmedEmail"></strong>.<br><br>
+                    Verifique sua caixa de entrada (e spam) nos próximos minutos.
+                </p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer class="footer">
+    <div class="f-bottom">
+        <span>&copy; 2026 BlackInk. Todos os direitos reservados.</span>
+    </div>
+</footer>
+
+<script>
+    (() => {
+        let selectedPlan = null;
+
+        const planCards = document.querySelectorAll('.plan-card');
+        const emailSection = document.getElementById('emailSection');
+        const selectedPlanName = document.getElementById('selectedPlanName');
+        const emailForm = document.getElementById('emailForm');
+        const emailInput = document.getElementById('email');
+        const emailError = document.getElementById('emailError');
+        const submitBtn = document.getElementById('submitBtn');
+        const changePlanBtn = document.getElementById('changePlanBtn');
+        const successMessage = document.getElementById('successMessage');
+        const confirmedEmail = document.getElementById('confirmedEmail');
+        const plansGrid = document.getElementById('plansGrid');
+
+        // Plan selection
+        planCards.forEach(card => {
+            card.addEventListener('click', () => {
+                planCards.forEach(c => c.classList.remove('selected'));
+                card.classList.add('selected');
+
+                selectedPlan = {
+                    name: card.dataset.plan,
+                    displayName: card.querySelector('.plan-name').textContent,
+                    price: card.dataset.price
+                };
+
+                selectedPlanName.textContent = selectedPlan.displayName;
+                emailSection.classList.add('active');
+
+                setTimeout(() => {
+                    emailSection.scrollIntoView({behavior: 'smooth', block: 'center'});
+                }, 300);
+            });
+        });
+
+        // Change plan button
+        changePlanBtn.addEventListener('click', () => {
+            emailSection.classList.remove('active');
+            planCards.forEach(c => c.classList.remove('selected'));
+            selectedPlan = null;
+            emailInput.value = '';
+            emailError.classList.remove('show');
+            emailInput.classList.remove('error');
+            plansGrid.scrollIntoView({behavior: 'smooth', block: 'start'});
+        });
+
+        // Email validation
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        emailInput.addEventListener('input', () => {
+            if (emailInput.classList.contains('error')) {
+                emailInput.classList.remove('error');
+                emailError.classList.remove('show');
+            }
+        });
+
+        emailForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const email = emailInput.value.trim();
+
+            if (!validateEmail(email)) {
+                emailInput.classList.add('error');
+                emailError.classList.add('show');
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="loading"></span>';
+
+            const registrationData = {
+                email: email,
+                plan: selectedPlan.name,
+                planDisplayName: selectedPlan.displayName,
+                timestamp: new Date().toISOString()
+            };
+
+            const API_ENDPOINT = 'https://api.blackink.cloud/api/closed-beta';
+
+            try {
+                const response = await fetch(API_ENDPOINT, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(registrationData)
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json().catch(() => ({message: 'Erro desconhecido'}));
+                    throw new Error(`Erro ${response.status}: ${errorData.message || response.statusText}`);
+                }
+
+                console.log('Registro enviado com sucesso!', registrationData);
+
+                confirmedEmail.textContent = email;
+                emailSection.classList.remove('active');
+                emailSection.style.display = 'none';
+                successMessage.classList.add('show');
+                successMessage.scrollIntoView({behavior: 'smooth', block: 'center'});
+
+            } catch (error) {
+                console.error('Erro ao enviar o registro:', error);
+                alert(`Ocorreu um erro ao enviar o registro. Por favor, tente novamente.\nDetalhe: ${error.message}`);
+
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Receber Link de Cadastro';
+                emailSection.style.display = 'block';
+                emailSection.classList.add('active');
+            }
+        });
+
+        // ── Cursor follower (desktop) ──
+        const cur = document.getElementById('cur');
+        if (matchMedia('(pointer:fine)').matches && cur) {
+            let cx=0,cy=0,tx=0,ty=0;
+            document.addEventListener('mousemove', e => { tx=e.clientX; ty=e.clientY; if(!cur.classList.contains('on'))cur.classList.add('on'); });
+            (function loop(){ cx+=(tx-cx)*.12; cy+=(ty-cy)*.12; cur.style.left=cx+'px'; cur.style.top=cy+'px'; requestAnimationFrame(loop); })();
+            document.querySelectorAll('a,button,.plan-card').forEach(el => {
+                el.addEventListener('mouseenter', () => cur.classList.add('big'));
+                el.addEventListener('mouseleave', () => cur.classList.remove('big'));
+            });
+            document.addEventListener('mouseleave', () => cur.classList.remove('on'));
+            document.addEventListener('mouseenter', () => cur.classList.add('on'));
+        }
+
+        // ── Magnetic buttons ──
+        if (matchMedia('(pointer:fine)').matches) {
+            document.querySelectorAll('.btn-p').forEach(btn => {
+                btn.addEventListener('mousemove', e => {
+                    const r = btn.getBoundingClientRect();
+                    btn.style.transform = `translate(${(e.clientX-r.left-r.width/2)*.1}px,${(e.clientY-r.top-r.height/2)*.1}px)`;
+                });
+                btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+            });
+        }
+    })();
+</script>
+</body>
+</html>
