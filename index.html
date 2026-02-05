@@ -406,7 +406,40 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
 .audio-vol input::-moz-range-thumb{width:8px;height:8px;border-radius:50%;background:var(--accent);border:none;cursor:pointer}
 .audio-foot{text-align:center;padding:0 16px 10px;border-top:1px solid rgba(100,180,255,0.04);margin-top:0;padding-top:8px}
 .audio-foot p{font-family:'DM Sans',sans-serif;font-size:8px;color:var(--muted);opacity:0.35;margin:0;letter-spacing:0.3px}
-@media(max-width:600px){.audio-ctl{width:calc(100% - 90px);max-width:260px;bottom:16px;left:16px}.audio-head{padding:10px 14px 0}.audio-brand{font-size:7px;letter-spacing:3px;margin-bottom:4px}.audio-title{font-size:16px}.audio-sub{font-size:8.5px;margin-top:3px}.audio-controls{padding:8px 14px}.audio-btn{width:28px;height:28px}.audio-foot{padding:0 14px 8px}.audio-foot p{font-size:7px}}
+@media(max-width:767px){.audio-ctl{display:none}}
+.mob-audio{display:none}
+@media(max-width:767px){.hdr-nav.mob-open{justify-content:flex-start;padding-top:28vh;background:#020a14;backdrop-filter:none;-webkit-backdrop-filter:none}.hdr-nav.mob-open .mob-audio{display:block;margin-top:auto;flex-shrink:0;width:100%;padding:20px 32px calc(20px + env(safe-area-inset-bottom,0px));border-top:1px solid rgba(100,180,255,0.08);text-align:center}}
+.audio-layers{padding:4px 16px 10px}
+.audio-layer{display:flex;align-items:center;gap:6px;margin-bottom:5px}
+.audio-layer:last-child{margin-bottom:0}
+.audio-layer .layer-tog{width:14px;height:14px;border-radius:50%;border:1px solid rgba(100,180,255,0.15);background:transparent;cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;transition:all .2s;-webkit-tap-highlight-color:transparent}
+.audio-layer .layer-tog::after{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);opacity:0;transition:opacity .2s}
+.audio-layer .layer-tog.on{border-color:rgba(100,180,255,0.3)}
+.audio-layer .layer-tog.on::after{opacity:1}
+.audio-layer .layer-tog:active{transform:scale(0.9)}
+.audio-layer span{font-family:'DM Sans',sans-serif;font-size:8px;color:var(--muted);opacity:0.55;min-width:34px;letter-spacing:0.3px}
+.audio-layer input[type="range"]{-webkit-appearance:none;appearance:none;flex:1;height:1.5px;background:rgba(100,180,255,0.06);border-radius:2px;outline:none;cursor:pointer}
+.audio-layer input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:6px;height:6px;border-radius:50%;background:var(--accent);border:none;opacity:0.65;cursor:pointer}
+.audio-layer input[type="range"]::-moz-range-thumb{width:6px;height:6px;border-radius:50%;background:var(--accent);border:none;opacity:0.65;cursor:pointer}
+.mob-audio-main{display:flex;align-items:center;gap:12px;justify-content:center}
+.mob-audio-title{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:300;color:var(--white);letter-spacing:0.5px;white-space:nowrap}
+.mob-audio-title span{color:var(--accent);font-weight:500}
+.mob-audio-vol{flex:1;max-width:120px;display:flex;align-items:center}
+.mob-audio-vol input{-webkit-appearance:none;appearance:none;width:100%;height:2px;background:rgba(100,180,255,0.08);border-radius:2px;outline:none;cursor:pointer}
+.mob-audio-vol input::-webkit-slider-thumb{-webkit-appearance:none;width:10px;height:10px;border-radius:50%;background:var(--accent);border:none;box-shadow:0 0 6px rgba(100,180,255,0.25);cursor:pointer}
+.mob-audio-vol input::-moz-range-thumb{width:10px;height:10px;border-radius:50%;background:var(--accent);border:none;cursor:pointer}
+.mob-audio-btn{width:30px;height:30px}
+.mob-audio-layers{display:flex;gap:8px;margin-top:14px;justify-content:center;flex-wrap:wrap}
+.mob-audio-layer{display:flex;flex-direction:column;align-items:center;gap:5px;width:70px}
+.mob-audio-layer .layer-tog{width:18px;height:18px;border-radius:50%;border:1px solid rgba(100,180,255,0.15);background:transparent;cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;transition:all .2s;-webkit-tap-highlight-color:transparent}
+.mob-audio-layer .layer-tog::after{content:'';width:8px;height:8px;border-radius:50%;background:var(--accent);opacity:0;transition:opacity .2s}
+.mob-audio-layer .layer-tog.on{border-color:rgba(100,180,255,0.3)}
+.mob-audio-layer .layer-tog.on::after{opacity:1}
+.mob-audio-layer .layer-tog:active{transform:scale(0.9)}
+.mob-audio-layer span{font-family:'DM Sans',sans-serif;font-size:9px;color:var(--muted);opacity:0.6;letter-spacing:0.3px}
+.mob-audio-layer input[type="range"]{-webkit-appearance:none;appearance:none;width:100%;height:2px;background:rgba(100,180,255,0.06);border-radius:2px;outline:none;cursor:pointer}
+.mob-audio-layer input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:10px;height:10px;border-radius:50%;background:var(--accent);border:none;opacity:0.65;cursor:pointer}
+.mob-audio-layer input[type="range"]::-moz-range-thumb{width:10px;height:10px;border-radius:50%;background:var(--accent);border:none;opacity:0.65;cursor:pointer}
 
 .wa-f{position:fixed;bottom:24px;right:24px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(37,211,102,0.3);z-index:90;transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
 .wa-f:hover{transform:scale(1.1);box-shadow:0 8px 40px rgba(37,211,102,0.5)}
@@ -604,6 +637,24 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
             <a href="#pricing">Planos</a>
             <a href="#community">Comunidade</a>
             <a href="#faq">FAQ</a>
+            <div class="mob-audio">
+                <div class="mob-audio-main">
+                    <button class="audio-btn mob-audio-btn" id="mob-audio-btn" aria-label="Audio">
+                        <div class="ico-play"><div class="audio-play-tri"></div></div>
+                        <div class="ico-pause"><div class="audio-pause-bars"><span></span><span></span></div></div>
+                    </button>
+                    <span class="mob-audio-title">Ambiente <span>Abissal</span></span>
+                    <div class="audio-vol mob-audio-vol">
+                        <input type="range" min="0" max="100" value="30" id="mob-audio-vol">
+                    </div>
+                </div>
+                <div class="mob-audio-layers">
+                    <div class="mob-audio-layer"><button type="button" class="layer-tog on" data-layer="bio"></button><span>Bolhas</span><input type="range" min="0" max="100" value="43" data-layer="bio"></div>
+                    <div class="mob-audio-layer"><button type="button" class="layer-tog on" data-layer="whale"></button><span>Baleias</span><input type="range" min="0" max="100" value="25" data-layer="whale"></div>
+                    <div class="mob-audio-layer"><button type="button" class="layer-tog on" data-layer="drone"></button><span>Drone</span><input type="range" min="0" max="100" value="35" data-layer="drone"></div>
+                    <div class="mob-audio-layer"><button type="button" class="layer-tog on" data-layer="tide"></button><span>Maré</span><input type="range" min="0" max="100" value="30" data-layer="tide"></div>
+                </div>
+            </div>
         </nav>
         <div class="hdr-cta">
             <a href="https://app.blackink.cloud" class="btn btn-p btn-sm">Acessar</a>
@@ -1431,6 +1482,12 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
             <input type="range" min="0" max="100" value="30" id="audio-vol-range">
         </div>
     </div>
+    <div class="audio-layers">
+        <div class="audio-layer"><button type="button" class="layer-tog on" data-layer="bio"></button><span>Bolhas</span><input type="range" min="0" max="100" value="43" data-layer="bio"></div>
+        <div class="audio-layer"><button type="button" class="layer-tog on" data-layer="whale"></button><span>Baleias</span><input type="range" min="0" max="100" value="25" data-layer="whale"></div>
+        <div class="audio-layer"><button type="button" class="layer-tog on" data-layer="drone"></button><span>Drone</span><input type="range" min="0" max="100" value="35" data-layer="drone"></div>
+        <div class="audio-layer"><button type="button" class="layer-tog on" data-layer="tide"></button><span>Maré</span><input type="range" min="0" max="100" value="30" data-layer="tide"></div>
+    </div>
     <div class="audio-foot">
         <p>Melhor experiência com fones de ouvido</p>
     </div>
@@ -1745,7 +1802,11 @@ class AbyssEngine {
 
     stopBio() {
         if (!this.layers.bio) return;
-        this.layers.bio.g.gain.linearRampToValueAtTime(0, this.ctx.currentTime + 1);
+        const g = this.layers.bio.g.gain;
+        const t = this.ctx.currentTime;
+        g.cancelScheduledValues(t);
+        g.setValueAtTime(g.value, t);
+        g.linearRampToValueAtTime(0, t + 1);
         delete this.layers.bio;
     }
 
@@ -1866,62 +1927,134 @@ class AbyssEngine {
 
     stopWhale() {
         if (!this.layers.whale) return;
-        this.layers.whale.g.gain.linearRampToValueAtTime(0, this.ctx.currentTime + 2);
+        const g = this.layers.whale.g.gain;
+        const t = this.ctx.currentTime;
+        g.cancelScheduledValues(t);
+        g.setValueAtTime(g.value, t);
+        g.linearRampToValueAtTime(0, t + 2);
         delete this.layers.whale;
     }
 
-    // ── MARÉ PROFUNDA — Slow tidal breathing ──
+    // ── DRONE ABISSAL — Cinematic minor pad with subtle tension ──
+    startDrone(vol) {
+        if (vol === undefined) vol = 0.35;
+        if (this.layers.drone) return;
+        const g = this.ctx.createGain();
+        g.gain.value = vol;
+        g.connect(this.master);
+        const oscs = [];
+        // Cm(add b9) — spread voicing, each voice at its own level
+        const voices = [
+            { f: 65.41,  v: 0.18 },  // C2  — sub, felt more than heard
+            { f: 130.81, v: 0.13 },  // C3  — root body
+            { f: 131.5,  v: 0.09 },  // C3 +1cent — detuned, chorus warmth
+            { f: 155.56, v: 0.10 },  // Eb3 — minor third, melancholy beauty
+            { f: 196.0,  v: 0.07 },  // G3  — fifth, openness
+            { f: 233.08, v: 0.05 },  // Bb3 — minor 7th, sophistication
+            { f: 138.59, v: 0.035 }, // Db3 — flat 9, the subtle anxiety
+        ];
+        // Warm lowpass — keeps everything soft, no edge
+        const lp = this.ctx.createBiquadFilter();
+        lp.type = 'lowpass'; lp.frequency.value = 300; lp.Q.value = 0.4;
+        // Slow stereo drift
+        const pan = this.ctx.createStereoPanner();
+        const panLfo = this.ctx.createOscillator();
+        const panG = this.ctx.createGain();
+        panLfo.frequency.value = 0.01; panG.gain.value = 0.25;
+        panLfo.connect(panG); panG.connect(pan.pan);
+        panLfo.start(); oscs.push(panLfo);
+        // Each voice breathes at its own rate — organic, alive
+        voices.forEach((voice, i) => {
+            const o = this.ctx.createOscillator();
+            o.type = 'sine'; o.frequency.value = voice.f;
+            const vg = this.ctx.createGain(); vg.gain.value = voice.v;
+            const bLfo = this.ctx.createOscillator();
+            const bG = this.ctx.createGain();
+            bLfo.frequency.value = 0.015 + i * 0.007;
+            bG.gain.value = voice.v * 0.35;
+            bLfo.connect(bG); bG.connect(vg.gain);
+            o.connect(vg); vg.connect(lp);
+            bLfo.start(); o.start();
+            oscs.push(bLfo, o);
+        });
+        lp.connect(pan); pan.connect(g); pan.connect(this.convolver);
+        // Global slow breathing
+        const mLfo = this.ctx.createOscillator();
+        const mG = this.ctx.createGain();
+        mLfo.frequency.value = 0.022; mG.gain.value = vol * 0.18;
+        mLfo.connect(mG); mG.connect(g.gain);
+        mLfo.start(); oscs.push(mLfo);
+        this.layers.drone = { g, oscs };
+    }
+    stopDrone() {
+        if (!this.layers.drone) return;
+        const l = this.layers.drone;
+        const g = l.g.gain;
+        const t = this.ctx.currentTime;
+        g.cancelScheduledValues(t);
+        g.setValueAtTime(g.value, t);
+        g.linearRampToValueAtTime(0, t + 3);
+        this._delay(() => { try { l.oscs.forEach(o => o.stop()); } catch(e){} }, 3200);
+        delete this.layers.drone;
+    }
+
+    // ── MARÉ — Slow tidal swell, clean oscillators ──
     startTide(vol) {
         if (vol === undefined) vol = 0.3;
         if (this.layers.tide) return;
         const g = this.ctx.createGain();
         g.gain.value = vol;
         g.connect(this.master);
-        // Brown noise base
-        const len = 4 * this.ctx.sampleRate;
-        const buf = this.ctx.createBuffer(2, len, this.ctx.sampleRate);
-        for (let ch = 0; ch < 2; ch++) {
-            const d = buf.getChannelData(ch);
-            let b0 = 0, b1 = 0;
-            for (let i = 0; i < len; i++) {
-                const w = Math.random() * 2 - 1;
-                b0 = 0.997 * b0 + w * 0.06;
-                b1 = 0.95 * b1 + w * 0.15;
-                d[i] = (b0 + b1) * 0.2;
-            }
-        }
-        const src = this.ctx.createBufferSource();
-        src.buffer = buf; src.loop = true;
+        const oscs = [];
+        // Deep tidal tones — F1 and C2 for oceanic depth
+        const voices = [
+            { f: 43.65, v: 0.20 },  // F1 — very deep foundation
+            { f: 65.41, v: 0.15 },  // C2 — body
+            { f: 87.31, v: 0.08 },  // F2 — overtone warmth
+        ];
+        // Lowpass keeps it subby
         const lp = this.ctx.createBiquadFilter();
-        lp.type = 'lowpass'; lp.frequency.value = 200; lp.Q.value = 0.5;
-        // Very slow breathing LFO (0.02Hz ≈ one breath every 50s)
-        const breathLfo = this.ctx.createOscillator();
-        const breathG = this.ctx.createGain();
-        breathLfo.frequency.value = 0.02;
-        breathG.gain.value = vol * 0.7;
-        breathLfo.connect(breathG); breathG.connect(g.gain);
-        // Slow stereo drift
+        lp.type = 'lowpass'; lp.frequency.value = 120; lp.Q.value = 0.5;
+        // Filter modulation — slow "whoosh"
+        const fLfo = this.ctx.createOscillator();
+        const fG = this.ctx.createGain();
+        fLfo.frequency.value = 0.04; fG.gain.value = 50;
+        fLfo.connect(fG); fG.connect(lp.frequency);
+        fLfo.start(); oscs.push(fLfo);
+        // Stereo sway
         const pan = this.ctx.createStereoPanner();
         const panLfo = this.ctx.createOscillator();
         const panG = this.ctx.createGain();
-        panLfo.frequency.value = 0.015; panG.gain.value = 0.5;
+        panLfo.frequency.value = 0.025; panG.gain.value = 0.4;
         panLfo.connect(panG); panG.connect(pan.pan);
-        // Filter modulation
-        const fLfo = this.ctx.createOscillator();
-        const fG = this.ctx.createGain();
-        fLfo.frequency.value = 0.025; fG.gain.value = 80;
-        fLfo.connect(fG); fG.connect(lp.frequency);
-        src.connect(lp); lp.connect(pan); pan.connect(g);
-        pan.connect(this.convolver);
-        [breathLfo, panLfo, fLfo].forEach(o => o.start());
-        src.start();
-        this.layers.tide = { src, g, oscs: [breathLfo, panLfo, fLfo] };
+        panLfo.start(); oscs.push(panLfo);
+        // Voices with slow swell
+        voices.forEach((voice, i) => {
+            const o = this.ctx.createOscillator();
+            o.type = 'sine'; o.frequency.value = voice.f;
+            const vg = this.ctx.createGain(); vg.gain.value = voice.v;
+            // Slow swell LFO — like waves
+            const sLfo = this.ctx.createOscillator();
+            const sG = this.ctx.createGain();
+            sLfo.frequency.value = 0.035 + i * 0.01;
+            sG.gain.value = voice.v * 0.6;
+            sLfo.connect(sG); sG.connect(vg.gain);
+            o.connect(vg); vg.connect(lp);
+            sLfo.start(); o.start();
+            oscs.push(sLfo, o);
+        });
+        lp.connect(pan); pan.connect(g); pan.connect(this.convolver);
+        this.layers.tide = { g, oscs };
     }
     stopTide() {
         if (!this.layers.tide) return;
         const l = this.layers.tide;
-        l.g.gain.linearRampToValueAtTime(0, this.ctx.currentTime + 3);
-        this._delay(() => { try { l.src.stop(); l.oscs.forEach(o => o.stop()); } catch(e){} }, 3200);
+        const g = l.g.gain;
+        const t = this.ctx.currentTime;
+        g.cancelScheduledValues(t);
+        g.setValueAtTime(g.value, t);
+        g.linearRampToValueAtTime(0, t + 3);
+        this._delay(() => { try { l.oscs.forEach(o => o.stop()); } catch(e){} }, 3200);
         delete this.layers.tide;
     }
 
@@ -1938,7 +2071,7 @@ class AbyssEngine {
     destroy() {
         this.timers.forEach(t => (t.type === 'i' ? clearInterval(t.id) : clearTimeout(t.id)));
         this.timers = [];
-        ['Bio', 'Whale', 'Tide'].forEach(n => {
+        ['Bio', 'Whale', 'Drone', 'Tide'].forEach(n => {
             try { this['stop' + n](); } catch(e){}
         });
         try { this.ctx.close(); } catch(e){}
@@ -1949,35 +2082,174 @@ class AbyssEngine {
 // ── Audio Controller ──
 const audioBtn = document.getElementById('audio-btn');
 const audioVol = document.getElementById('audio-vol-range');
+const mobAudioBtn = document.getElementById('mob-audio-btn');
+const mobAudioVol = document.getElementById('mob-audio-vol');
+
+// Layer config
+const LAYERS = ['bio', 'whale', 'drone', 'tide'];
+const layerDefaults = { bio: 43, whale: 25, drone: 35, tide: 30 };
+const layerState = { bio: true, whale: true, drone: true, tide: true };
+const layerMethods = {
+    bio: ['startBio', 'stopBio'],
+    whale: ['startWhale', 'stopWhale'],
+    drone: ['startDrone', 'stopDrone'],
+    tide: ['startTide', 'stopTide']
+};
+
 let abyssEngine = null;
 let isPlaying = false;
 
-audioBtn.addEventListener('click', () => {
-    if (!abyssEngine) {
-        abyssEngine = new AbyssEngine();
-        abyssEngine.init();
+// Get all toggles and sliders for a layer
+function getLayerToggles(layer) {
+    return document.querySelectorAll(`.layer-tog[data-layer="${layer}"]`);
+}
+function getLayerSliders(layer) {
+    return document.querySelectorAll(`input[type="range"][data-layer="${layer}"]`);
+}
+
+// Sync toggle state across all buttons for a layer
+function syncLayerToggle(layer, on) {
+    layerState[layer] = on;
+    getLayerToggles(layer).forEach(btn => btn.classList.toggle('on', on));
+}
+
+// Sync slider value across all sliders for a layer
+function syncLayerSlider(layer, val) {
+    getLayerSliders(layer).forEach(s => s.value = val);
+}
+
+// Get current slider value for a layer
+function getLayerVolume(layer) {
+    const slider = document.querySelector(`input[type="range"][data-layer="${layer}"]`);
+    return slider ? parseInt(slider.value) : layerDefaults[layer];
+}
+
+// Set layer gain directly — cancel any scheduled automations first
+function setLayerGain(layer, vol) {
+    if (!abyssEngine || !abyssEngine.layers[layer] || !abyssEngine.layers[layer].g) return;
+    const gain = abyssEngine.layers[layer].g.gain;
+    const t = abyssEngine.ctx.currentTime;
+    const v = parseInt(vol, 10) / 100;
+    gain.cancelScheduledValues(t);
+    gain.setValueAtTime(v, t);
+}
+
+// Start a single layer
+function startLayer(layer) {
+    if (!abyssEngine || !isPlaying) return;
+    const vol = getLayerVolume(layer) / 100;
+    const method = layerMethods[layer][0];
+    if (!abyssEngine.layers[layer]) {
+        abyssEngine[method](vol);
     }
-    if (abyssEngine.ctx.state === 'suspended') abyssEngine.ctx.resume();
+}
 
-    isPlaying = !isPlaying;
-    audioBtn.classList.toggle('playing', isPlaying);
+// Stop a single layer
+function stopLayer(layer) {
+    if (!abyssEngine) return;
+    const method = layerMethods[layer][1];
+    abyssEngine[method]();
+}
 
+// Toggle layer on/off
+function toggleLayer(layer) {
+    const newState = !layerState[layer];
+    syncLayerToggle(layer, newState);
     if (isPlaying) {
-        abyssEngine.setMasterVolume(audioVol.value / 100);
-        abyssEngine.startBio(0.43);
-        abyssEngine.startWhale(0.25);
-        abyssEngine.startTide(0.55);
-    } else {
-        abyssEngine.stopBio();
-        abyssEngine.stopWhale();
-        abyssEngine.stopTide();
+        if (newState) {
+            startLayer(layer);
+        } else {
+            stopLayer(layer);
+        }
     }
-});
+}
 
-audioVol.addEventListener('input', () => {
-    if (abyssEngine && isPlaying) {
-        abyssEngine.setMasterVolume(audioVol.value / 100);
+// Handle layer volume change
+function handleLayerVolume(layer, val) {
+    syncLayerSlider(layer, val);
+    if (layerState[layer]) {
+        setLayerGain(layer, val);
     }
+}
+
+// Sync master play button state
+function syncPlayingState() {
+    const method = isPlaying ? 'add' : 'remove';
+    audioBtn.classList[method]('playing');
+    if (mobAudioBtn) mobAudioBtn.classList[method]('playing');
+}
+
+// Sync master volume
+function syncMasterVolume(val) {
+    audioVol.value = val;
+    if (mobAudioVol) mobAudioVol.value = val;
+}
+
+// Start all audio
+function startAudio() {
+    if (isPlaying) return;
+    abyssEngine = new AbyssEngine();
+    abyssEngine.init();
+    if (abyssEngine.ctx.state === 'suspended') abyssEngine.ctx.resume();
+    const t = abyssEngine.ctx.currentTime;
+    // Start only enabled layers
+    LAYERS.forEach(layer => {
+        if (layerState[layer]) {
+            const vol = getLayerVolume(layer) / 100;
+            abyssEngine[layerMethods[layer][0]](vol);
+        }
+    });
+    // Fade in master — proper ramp setup
+    const masterVol = parseInt(audioVol.value) / 100;
+    abyssEngine.master.gain.setValueAtTime(0, t);
+    abyssEngine.master.gain.linearRampToValueAtTime(masterVol, t + 2);
+    isPlaying = true;
+    syncPlayingState();
+}
+
+// Stop all audio
+function stopAudio() {
+    if (!abyssEngine || !isPlaying) return;
+    LAYERS.forEach(layer => stopLayer(layer));
+    isPlaying = false;
+    syncPlayingState();
+}
+
+// Master volume change — cancel scheduled automations first
+function handleMasterVolume(val) {
+    syncMasterVolume(val);
+    if (abyssEngine && isPlaying) {
+        const t = abyssEngine.ctx.currentTime;
+        const v = parseInt(val, 10) / 100;
+        abyssEngine.master.gain.cancelScheduledValues(t);
+        abyssEngine.master.gain.setValueAtTime(v, t);
+    }
+}
+
+// Auto-start on first interaction
+const autoStartEvents = ['click', 'touchstart', 'scroll', 'keydown'];
+function onFirstInteraction() {
+    autoStartEvents.forEach(e => document.removeEventListener(e, onFirstInteraction, { capture: true }));
+    startAudio();
+}
+autoStartEvents.forEach(e => document.addEventListener(e, onFirstInteraction, { once: true, capture: true }));
+
+// Event listeners — master play/pause
+audioBtn.addEventListener('click', () => isPlaying ? stopAudio() : startAudio());
+if (mobAudioBtn) mobAudioBtn.addEventListener('click', () => isPlaying ? stopAudio() : startAudio());
+
+// Event listeners — master volume
+audioVol.addEventListener('input', () => handleMasterVolume(audioVol.value));
+if (mobAudioVol) mobAudioVol.addEventListener('input', () => handleMasterVolume(mobAudioVol.value));
+
+// Event listeners — layer toggles and sliders
+LAYERS.forEach(layer => {
+    getLayerToggles(layer).forEach(btn => {
+        btn.addEventListener('click', () => toggleLayer(layer));
+    });
+    getLayerSliders(layer).forEach(slider => {
+        slider.addEventListener('input', () => handleLayerVolume(layer, slider.value));
+    });
 });
 })();
 </script>
