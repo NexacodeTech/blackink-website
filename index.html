@@ -14,6 +14,8 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/spacegrotesk/v16/V8mDoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj62UUsjNsFjTDJK.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v18/UcCo3FwrK3iLTcviYwY.woff2" as="font" type="font/woff2" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Mono:wght@300;400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/abyss-tokens.css">
 <style>
@@ -29,7 +31,7 @@
     --border: rgba(100,180,255,0.08);
     --border-h: rgba(100,180,255,0.18);
     --white: #f0f4f8;
-    --dim: rgba(240,244,248,0.55);
+    --dim: rgba(240,244,248,0.65);
     --muted: rgba(240,244,248,0.3);
     --accent: #64b4ff;
     --accent2: #38bdf8;
@@ -63,16 +65,41 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
 .t-body-lg{font-size:clamp(17px,1.4vw,20px);line-height:1.7;color:var(--dim)}
 .t-label{font-size:12px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent)}
 .grad{background:linear-gradient(135deg,#f0f4f8 0%,var(--accent) 60%,var(--accent2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* Animated gradient for hero "Escale" */
+.grad-hero{
+    background:linear-gradient(135deg,#f0f4f8 0%,var(--accent) 60%,var(--accent2) 100%);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
 .grad-gold{background:linear-gradient(135deg,#fbbf24,#f59e0b 50%,#d97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 
 /* ── Buttons ── */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:none;border-radius:14px;font-family:var(--ff-body);font-weight:600;cursor:pointer;position:relative;overflow:hidden;transition:all .4s var(--ease)}
-.btn-p{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#020a14;font-size:17px;height:60px;padding:0 36px;box-shadow:0 0 0 1px rgba(100,180,255,0.2),0 8px 40px rgba(100,180,255,0.15)}
-.btn-p:hover{transform:translateY(-3px);box-shadow:0 0 0 1px rgba(100,180,255,0.3),0 20px 60px rgba(100,180,255,0.25)}
+.btn-p{
+    background:linear-gradient(135deg,var(--accent),var(--accent2));color:#020a14;font-size:17px;height:60px;padding:0 38px;
+    box-shadow:0 0 0 1px rgba(100,180,255,0.2),0 8px 32px rgba(100,180,255,0.15),0 2px 4px rgba(0,0,0,0.1);
+    letter-spacing:-0.01em;
+}
+/* Shine sweep on primary button */
+.btn-p::before{
+    content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent);
+    transition:left .6s var(--ease);
+}
+.btn-p:hover::before{left:100%}
+.btn-p:hover{transform:translateY(-3px);box-shadow:0 0 0 1px rgba(100,180,255,0.3),0 16px 48px rgba(100,180,255,0.22),0 4px 8px rgba(0,0,0,0.1)}
 .btn-p:active{transform:translateY(0)}
-.btn-o{background:transparent;color:var(--white);font-size:17px;height:60px;padding:0 36px;border:1px solid var(--border-h)}
-.btn-o:hover{border-color:rgba(100,180,255,0.35);background:rgba(100,180,255,0.04);transform:translateY(-3px)}
+.btn-o{
+    background:rgba(100,180,255,0.03);color:var(--white);font-size:17px;height:60px;padding:0 38px;
+    border:1px solid rgba(100,180,255,0.12);letter-spacing:-0.01em;
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+}
+.btn-o:hover{border-color:rgba(100,180,255,0.30);background:rgba(100,180,255,0.06);transform:translateY(-3px)}
 .btn-sm{height:44px;padding:0 22px;font-size:14px;border-radius:10px}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.faq-q:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 
 /* ── Loader ── */
 .loader{position:fixed;inset:0;z-index:9998;background:var(--bg);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:24px;transition:opacity .7s var(--ease),visibility .7s}
@@ -100,13 +127,27 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
    HEADER
    ══════════════════════════════════════════════════════════ */
 .hdr{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;transition:all .5s var(--ease)}
-.hdr.scrolled{background:rgba(2,10,20,0.88);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--border)}
+.hdr.scrolled{
+    background:rgba(2,10,20,0.82);
+    backdrop-filter:blur(20px) saturate(1.2);-webkit-backdrop-filter:blur(20px) saturate(1.2);
+    border-bottom:1px solid rgba(100,180,255,0.05);
+    box-shadow:0 4px 24px rgba(0,0,0,0.15);
+}
+/* Scrolled header shine line */
+.hdr::after{
+    content:'';position:absolute;bottom:0;left:0;right:0;height:1px;
+    background:linear-gradient(90deg,transparent 5%,rgba(100,180,255,0.06) 30%,rgba(100,180,255,0.10) 50%,rgba(100,180,255,0.06) 70%,transparent 95%);
+    opacity:0;transition:opacity .5s var(--ease);
+}
+.hdr.scrolled::after{opacity:1}
 .hdr-in{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:72px}
 .hdr-logo{font-family:var(--ff-display);font-size:24px;font-weight:700;letter-spacing:-0.03em}
 .hdr-logo span{color:var(--accent)}
 .hdr-nav{display:none;align-items:center;gap:40px}
-.hdr-nav a{font-size:14px;font-weight:500;color:var(--dim);transition:color .2s}
+.hdr-nav a{font-size:14px;font-weight:500;color:var(--dim);transition:color .3s var(--ease);letter-spacing:-0.01em;position:relative}
 .hdr-nav a:hover{color:var(--white)}
+.hdr-nav a::after{content:'';position:absolute;bottom:-4px;left:50%;right:50%;height:1px;background:var(--accent);transition:all .3s var(--ease);opacity:0}
+.hdr-nav a:hover::after{left:0;right:0;opacity:0.5}
 @media(min-width:768px){.hdr-nav{display:flex}}
 .hdr-cta{display:none}
 @media(min-width:768px){.hdr-cta{display:flex}}
@@ -119,16 +160,22 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
 @media(max-width:767px){.hdr-nav.mob-open{display:flex;position:fixed;inset:0;flex-direction:column;align-items:center;justify-content:center;gap:32px;background:rgba(2,10,20,0.97);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);z-index:101}.hdr-nav.mob-open a{font-size:20px;color:var(--white)}}
 
 /* ══════════════════════════════════════════════════════════
-   1. HERO
+   1. HERO — Ultra Premium v2
    ══════════════════════════════════════════════════════════ */
 .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:80px 24px 60px;overflow:hidden}
 
-/* Gradient mesh background */
+/* Subtle radial vignette overlay */
+.hero::after{
+    content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
+    background:radial-gradient(ellipse 70% 60% at 50% 45%,transparent 0%,rgba(2,10,20,0.3) 100%);
+}
+
+/* Gradient mesh background — richer */
 .hero-mesh{position:absolute;inset:0;overflow:hidden}
 .hero-mesh div{position:absolute;border-radius:50%;filter:blur(130px);animation:mesh-float 20s ease-in-out infinite}
-.hero-mesh .m1{width:700px;height:700px;background:radial-gradient(circle,rgba(100,180,255,0.12),transparent 70%);top:-25%;right:-15%;animation-delay:0s}
-.hero-mesh .m2{width:500px;height:500px;background:radial-gradient(circle,rgba(56,189,248,0.08),transparent 70%);bottom:-10%;left:-15%;animation-delay:-7s}
-.hero-mesh .m3{width:400px;height:400px;background:radial-gradient(circle,rgba(129,140,248,0.08),transparent 70%);top:35%;left:40%;animation-delay:-14s}
+.hero-mesh .m1{width:800px;height:800px;background:radial-gradient(circle,rgba(100,180,255,0.10),transparent 70%);top:-30%;right:-18%;animation-delay:0s}
+.hero-mesh .m2{width:600px;height:600px;background:radial-gradient(circle,rgba(56,189,248,0.06),transparent 70%);bottom:-15%;left:-18%;animation-delay:-7s}
+.hero-mesh .m3{width:450px;height:450px;background:radial-gradient(circle,rgba(129,140,248,0.06),transparent 70%);top:30%;left:35%;animation-delay:-14s}
 @keyframes mesh-float{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-20px) scale(1.05)}66%{transform:translate(-20px,30px) scale(0.95)}}
 
 /* Particles — bioluminescent deep ocean */
@@ -141,19 +188,112 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
 @keyframes bp-drift{0%,100%{margin-left:0}50%{margin-left:var(--dx,15px)}}
 @keyframes bp-glow{0%,100%{box-shadow:0 0 3px rgba(140,210,255,0.15)}50%{box-shadow:0 0 8px rgba(140,210,255,0.35)}}
 
-.hero-logo{width:clamp(200px,28vw,320px);margin-top:20px;margin-bottom:4px;filter:drop-shadow(0 0 40px rgba(100,180,255,0.15)) drop-shadow(0 0 80px rgba(100,180,255,0.08));animation:hero-logo-in 1.2s var(--ease) .6s both}
-@keyframes hero-logo-in{from{opacity:0;transform:scale(0.8) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
+/* Logo — refined sizing */
+.hero-logo{
+    width:clamp(120px,16vw,190px);margin-top:0;margin-bottom:12px;position:relative;z-index:2;
+    filter:drop-shadow(0 0 24px rgba(100,180,255,0.10)) drop-shadow(0 0 50px rgba(100,180,255,0.05));
+    animation:hero-logo-in 1.2s var(--ease) .6s both;
+}
+@keyframes hero-logo-in{from{opacity:0;transform:scale(0.85) translateY(15px)}to{opacity:1;transform:scale(1) translateY(0)}}
 
-.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;background:rgba(100,180,255,0.05);border:1px solid rgba(100,180,255,0.1);border-radius:100px;margin-bottom:10px;opacity:0;animation:fade-up .8s var(--ease) 1s both}
-.hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 8px rgba(52,211,153,0.6);animation:p-glow 2s ease-in-out infinite}
+/* Badge — Ultra Premium Animated Border Pill */
+.hero-badge{
+    display:inline-flex;align-items:center;gap:0;
+    padding:1px;
+    border-radius:100px;margin-bottom:20px;
+    position:relative;z-index:2;
+    background:conic-gradient(from var(--badge-angle,0deg),
+        rgba(100,180,255,0.03) 0%,
+        rgba(100,180,255,0.45) 6%,
+        rgba(52,211,153,0.35) 12%,
+        rgba(100,180,255,0.03) 20%,
+        rgba(100,180,255,0.03) 50%,
+        rgba(129,140,248,0.35) 56%,
+        rgba(100,180,255,0.45) 62%,
+        rgba(100,180,255,0.03) 70%,
+        rgba(100,180,255,0.03) 100%
+    );
+    animation:fade-up .8s var(--ease) 1s both,badgeRotate 4s linear infinite;
+}
+@property --badge-angle{syntax:'<angle>';initial-value:0deg;inherits:false}
+@keyframes badgeRotate{to{--badge-angle:360deg}}
 
-.hero-title{max-width:900px;margin-bottom:14px;position:relative;z-index:1}
-.hero-sub{max-width:520px;margin:0 auto 24px;opacity:0;animation:fade-up .8s var(--ease) 1.6s both}
-.hero-ctas{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;opacity:0;animation:fade-up .8s var(--ease) 1.8s both}
+/* Inner content container */
+.hero-badge-inner{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:9px 22px;
+    background:linear-gradient(135deg,rgba(8,18,40,0.92),rgba(4,12,28,0.96));
+    border-radius:100px;
+    backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+    position:relative;
+}
+/* Top shine */
+.hero-badge-inner::before{
+    content:'';position:absolute;top:0;left:10%;right:10%;height:1px;border-radius:100px;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,0.08),transparent);
+}
+/* Ambient glow behind badge */
+.hero-badge::after{
+    content:'';position:absolute;inset:-12px;border-radius:100px;
+    background:conic-gradient(from var(--badge-angle,0deg),
+        transparent 0%,rgba(100,180,255,0.12) 6%,rgba(52,211,153,0.08) 12%,transparent 20%,
+        transparent 50%,rgba(129,140,248,0.10) 56%,rgba(100,180,255,0.12) 62%,transparent 70%
+    );
+    filter:blur(16px);pointer-events:none;z-index:-1;
+    animation:badgeRotate 4s linear infinite;
+}
+
+/* Dot */
+.hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 8px rgba(52,211,153,0.6),0 0 16px rgba(52,211,153,0.3);animation:p-glow 2s ease-in-out infinite;flex-shrink:0}
+
+/* Badge separator dot */
+.hero-badge-sep{
+    width:3px;height:3px;border-radius:50%;
+    background:rgba(100,180,255,0.4);
+    flex-shrink:0;margin:0 2px;
+}
+
+/* Badge text styling */
+.hero-badge-text{
+    font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);
+    display:flex;align-items:center;gap:10px;
+}
+
+/* Badge icon — mini shield */
+.hero-badge-icon{
+    width:16px;height:16px;color:var(--accent);opacity:0.7;flex-shrink:0;
+}
+
+/* Title */
+.hero-title{max-width:900px;margin-bottom:20px;position:relative;z-index:2}
+
+/* Decorative line under title */
+.hero-line{
+    width:80px;height:2px;margin:0 auto 20px;position:relative;z-index:2;
+    background:linear-gradient(90deg,transparent,var(--accent),transparent);
+    opacity:0;animation:hero-line-in .8s var(--ease) 1.3s both;
+    box-shadow:0 0 12px rgba(100,180,255,0.3);
+}
+@keyframes hero-line-in{from{opacity:0;width:0}to{opacity:1;width:80px}}
+
+/* Sub */
+.hero-sub{max-width:540px;margin:0 auto 32px;position:relative;z-index:2;opacity:0;animation:fade-up .8s var(--ease) 1.6s both}
+
+/* CTAs */
+.hero-ctas{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;position:relative;z-index:2;opacity:0;animation:fade-up .8s var(--ease) 1.8s both}
 @keyframes fade-up{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 
+/* Trust micro-text below CTAs */
+.hero-trust{
+    display:flex;align-items:center;gap:8px;justify-content:center;
+    margin-top:20px;position:relative;z-index:2;
+    opacity:0;animation:fade-up .6s var(--ease) 2.1s both;
+}
+.hero-trust-icon{width:16px;height:16px;color:var(--green);opacity:0.7}
+.hero-trust-text{font-size:12px;color:var(--muted);font-weight:500;letter-spacing:0.02em}
+
 /* Scroll cue */
-.hero-scroll{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);opacity:0;animation:fade-up .6s var(--ease) 2.2s both}
+.hero-scroll{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);z-index:2;opacity:0;animation:fade-up .6s var(--ease) 2.4s both}
 .hero-scroll-line{width:1px;height:48px;background:linear-gradient(180deg,var(--accent),transparent);animation:scroll-bob 2.5s ease-in-out infinite}
 @keyframes scroll-bob{0%,100%{transform:scaleY(1);opacity:.3}50%{transform:scaleY(1.2);opacity:.6}}
 
@@ -178,17 +318,56 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
 .showcase-text .t-lg{margin-bottom:20px}
 .showcase-text .t-body-lg{margin-bottom:32px}
 
-.showcase-features{display:flex;flex-direction:column;gap:16px}
-.showcase-feat{display:flex;gap:14px;align-items:flex-start}
-.showcase-feat-icon{flex-shrink:0;width:28px;height:28px;border-radius:8px;background:rgba(100,180,255,0.06);border:1px solid rgba(100,180,255,0.1);display:flex;align-items:center;justify-content:center}
-.showcase-feat-icon svg{width:14px;height:14px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.showcase-feat-text{font-size:15px;color:var(--dim);line-height:1.5}
-.showcase-feat-text strong{color:var(--white)}
+.showcase-features{display:flex;flex-direction:column;gap:14px}
+.showcase-feat{
+    display:flex;gap:14px;align-items:flex-start;
+    padding:12px 14px;border-radius:12px;
+    border:1px solid transparent;
+    transition:all .4s var(--ease);
+}
+.showcase-feat:hover{
+    background:rgba(100,180,255,0.02);
+    border-color:rgba(100,180,255,0.06);
+}
+.showcase-feat-icon{
+    flex-shrink:0;width:32px;height:32px;border-radius:10px;
+    background:linear-gradient(145deg,rgba(100,180,255,0.08),rgba(100,180,255,0.02));
+    border:1px solid rgba(100,180,255,0.10);
+    display:flex;align-items:center;justify-content:center;
+    transition:all .4s var(--ease);
+    box-shadow:0 2px 6px rgba(0,0,0,0.12);
+}
+.showcase-feat:hover .showcase-feat-icon{
+    background:linear-gradient(145deg,rgba(100,180,255,0.14),rgba(100,180,255,0.04));
+    border-color:rgba(100,180,255,0.18);
+    box-shadow:0 2px 10px rgba(100,180,255,0.08);
+}
+.showcase-feat-icon svg{width:15px;height:15px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.showcase-feat-text{font-size:15px;color:var(--dim);line-height:1.55}
+.showcase-feat-text strong{color:var(--white);font-weight:600}
 
 /* ── Visual mockup blocks ── */
-.mockup{border-radius:20px;border:1px solid var(--border);background:var(--bg2);overflow:hidden;position:relative;box-shadow:0 32px 80px rgba(0,0,0,0.3);transition:transform .6s var(--ease),box-shadow .6s var(--ease),clip-path .9s var(--ease);clip-path:inset(8% 8% 8% 8% round 20px)}
+.mockup{
+    border-radius:20px;border:1px solid rgba(100,180,255,0.08);
+    background:linear-gradient(180deg,rgba(8,20,44,0.7) 0%,var(--bg2) 100%);
+    overflow:hidden;position:relative;
+    box-shadow:
+        0 2px 8px rgba(0,0,0,0.18),
+        0 16px 48px rgba(0,0,0,0.25),
+        0 32px 80px rgba(0,0,0,0.3),
+        inset 0 1px 0 rgba(255,255,255,0.03);
+    transition:transform .6s var(--ease),box-shadow .6s var(--ease),clip-path .9s var(--ease),border-color .4s;
+    clip-path:inset(8% 8% 8% 8% round 20px);
+}
+.mockup::after{
+    content:'';position:absolute;top:0;left:0;right:0;height:1px;z-index:5;
+    background:linear-gradient(90deg,transparent 5%,rgba(100,180,255,0.10) 30%,rgba(100,180,255,0.18) 50%,rgba(100,180,255,0.10) 70%,transparent 95%);
+}
 .mockup.mock-vis{clip-path:inset(0% 0% 0% 0% round 20px)}
-.mockup:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 40px 100px rgba(0,0,0,0.4)}
+.mockup:hover{
+    transform:translateY(-6px) scale(1.01);border-color:rgba(100,180,255,0.14);
+    box-shadow:0 2px 8px rgba(0,0,0,0.18),0 20px 56px rgba(0,0,0,0.3),0 40px 100px rgba(0,0,0,0.35),0 0 60px rgba(100,180,255,0.03);
+}
 
 /* Mockup: Dashboard */
 .mock-topbar{height:40px;background:rgba(2,10,20,0.6);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 16px;gap:8px}
@@ -218,36 +397,136 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
 @keyframes notif-in{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
 
 /* Protection quality mockup */
-.mock-prot{padding:20px}
-.prot-score{text-align:center;margin-bottom:20px}
-.prot-score-val{font-family:var(--ff-display);font-size:48px;font-weight:700;color:var(--green);line-height:1}
-.prot-score-lbl{font-size:11px;color:var(--muted);margin-top:4px;letter-spacing:.06em}
-.prot-bar-group{display:flex;flex-direction:column;gap:12px}
-.prot-bar-item{display:flex;align-items:center;gap:12px}
-.prot-bar-label{font-size:11px;color:var(--dim);width:100px;flex-shrink:0}
-.prot-bar-track{flex:1;height:8px;border-radius:4px;background:rgba(255,255,255,0.04);overflow:hidden}
-.prot-bar-fill{height:100%;border-radius:4px;transition:width 1.2s var(--ease)}
-.prot-bar-pct{font-size:11px;font-weight:600;width:40px;text-align:right;flex-shrink:0}
-.prot-summary{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;padding-top:16px;border-top:1px solid var(--border)}
-.prot-summary-item{text-align:center}
-.prot-summary-val{font-family:var(--ff-display);font-size:20px;font-weight:700}
-.prot-summary-lbl{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.04em}
-.prot-week{margin-top:20px;padding-top:16px;border-top:1px solid var(--border)}
-.prot-week-title{font-size:10px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
-.prot-week-bars{display:flex;align-items:flex-end;gap:6px;height:48px}
-.prot-week-day{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px}
-.prot-week-bar{width:100%;border-radius:3px 3px 0 0;background:linear-gradient(180deg,var(--green),rgba(52,211,153,0.3));min-height:0;transition:height 1s var(--ease)}
-.prot-week-lbl{font-size:9px;color:var(--muted)}
+/* Old static protection mockup styles removed — replaced by Live Protection Simulator */
+
+/* ══════════════════════════════════════════════════════════
+   LIVE PROTECTION SIMULATOR — Enterprise Security UI
+   ══════════════════════════════════════════════════════════ */
+.prot-sim{padding:0;display:flex;flex-direction:column;min-height:460px;position:relative}
+
+/* Shield glow on threat blocked */
+.prot-sim.sim-threat-pulse{box-shadow:inset 0 0 40px rgba(239,68,68,0.06)}
+.prot-sim.sim-threat-pulse .prot-sim-feed{border-color:rgba(239,68,68,0.15)}
+
+/* ── Top Status Bar ── */
+.prot-sim-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:rgba(2,10,20,0.5);border-bottom:1px solid var(--border)}
+.prot-sim-status{display:flex;align-items:center;gap:8px}
+.prot-sim-pulse{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green),0 0 12px rgba(52,211,153,0.3);animation:simPulse 2s ease-in-out infinite}
+@keyframes simPulse{0%,100%{opacity:1;box-shadow:0 0 6px var(--green),0 0 12px rgba(52,211,153,0.3)}50%{opacity:.5;box-shadow:0 0 10px var(--green),0 0 20px rgba(52,211,153,0.4)}}
+.prot-sim-status-text{display:flex;flex-direction:column;gap:1px}
+.prot-sim-status-title{font-size:11px;font-weight:700;color:var(--green);letter-spacing:.02em;line-height:1}
+.prot-sim-status-sub{font-size:9px;color:var(--muted);letter-spacing:.03em}
+.prot-sim-shield{display:flex;align-items:center;gap:6px}
+.prot-sim-shield svg{width:18px;height:18px;stroke:var(--green);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 4px rgba(52,211,153,0.3))}
+.prot-sim-threat-lvl{display:flex;flex-direction:column;align-items:flex-end;gap:1px}
+.prot-sim-threat-label{font-size:8px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.prot-sim-threat-val{font-size:10px;font-weight:700;color:var(--green);letter-spacing:.02em}
+
+/* ── Threat Level Bar ── */
+.prot-sim-threat-bar{height:3px;margin:0 16px;background:rgba(255,255,255,0.04);border-radius:2px;overflow:hidden;position:relative}
+.prot-sim-threat-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--green),var(--green));width:8%;transition:width .8s var(--ease),background .5s;position:relative}
+.prot-sim-threat-fill::after{content:'';position:absolute;right:0;top:-1px;bottom:-1px;width:6px;border-radius:50%;background:inherit;box-shadow:0 0 8px currentColor;filter:brightness(1.3)}
+
+/* ── Stats Row ── */
+.prot-sim-stats{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:6px;padding:12px 16px}
+.prot-sim-stat{text-align:center;padding:10px 4px 8px;border-radius:10px;background:rgba(255,255,255,0.015);border:1px solid var(--border);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);position:relative;overflow:hidden;transition:border-color .3s}
+.prot-sim-stat::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.06),transparent)}
+.prot-sim-stat:hover{border-color:var(--border-h)}
+.prot-sim-stat-val{font-family:var(--ff-display);font-size:17px;font-weight:700;line-height:1.1;transition:color .3s,transform .2s}
+.prot-sim-stat-lbl{font-size:8px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-top:3px}
+.prot-sim-stat--bump .prot-sim-stat-val{transform:scale(1.08)}
+
+/* ── Live Feed ── */
+.prot-sim-feed{flex:1;display:flex;flex-direction:column;overflow:hidden;margin:0 10px;border-radius:8px;background:rgba(2,10,20,0.6);border:1px solid var(--border);position:relative;transition:border-color .3s}
+.prot-sim-feed-header{display:flex;align-items:center;justify-content:space-between;padding:7px 12px;border-bottom:1px solid rgba(255,255,255,0.04);background:rgba(2,10,20,0.7)}
+.prot-sim-feed-title{font-size:9px;font-weight:600;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+.prot-sim-feed-live{display:flex;align-items:center;gap:5px;font-size:8px;font-weight:700;color:var(--green);letter-spacing:.1em;text-transform:uppercase}
+.prot-sim-feed-live::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--green);box-shadow:0 0 4px var(--green);animation:simPulse 1.5s ease-in-out infinite}
+.prot-sim-feed-body{flex:1;padding:2px 0;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
+
+/* ── Log Entries ── */
+.prot-sim-entry{display:flex;align-items:center;gap:6px;padding:4px 10px;font-family:'DM Mono',monospace;animation:simEntryIn .35s var(--ease) both;border-bottom:1px solid rgba(255,255,255,0.015);min-height:28px}
+.prot-sim-entry:last-child{border-bottom:none}
+@keyframes simEntryIn{from{opacity:0;transform:translateY(10px) scale(0.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes simEntryOut{from{opacity:1;transform:translateY(0);max-height:32px}to{opacity:0;transform:translateY(-8px);max-height:0;padding:0;margin:0}}
+.prot-sim-entry--removing{animation:simEntryOut .25s var(--ease) forwards}
+
+.prot-sim-time{color:rgba(240,244,248,0.25);font-size:9px;flex-shrink:0;width:50px;font-variant-numeric:tabular-nums}
+.prot-sim-icon{width:18px;height:18px;border-radius:5px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.prot-sim-icon svg{width:10px;height:10px;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.prot-sim-icon--allow{background:rgba(52,211,153,0.12);border:1px solid rgba(52,211,153,0.2)}
+.prot-sim-icon--allow svg{stroke:var(--green)}
+.prot-sim-icon--block{background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.2)}
+.prot-sim-icon--block svg{stroke:#ef4444}
+.prot-sim-icon--warn{background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.2)}
+.prot-sim-icon--warn svg{stroke:var(--gold)}
+
+.prot-sim-detail{flex:1;color:var(--dim);font-size:9.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.2}
+.prot-sim-detail strong{color:var(--white);font-weight:600}
+.prot-sim-ip{color:rgba(240,244,248,0.2);font-size:9px}
+
+.prot-sim-verdict{font-size:8px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;flex-shrink:0;padding:2px 7px;border-radius:4px;line-height:1.4}
+.prot-sim-verdict--allow{color:var(--green);background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.12)}
+.prot-sim-verdict--block{color:#ef4444;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.12)}
+.prot-sim-verdict--warn{color:var(--gold);background:rgba(251,191,36,0.08);border:1px solid rgba(251,191,36,0.12)}
+
+/* ── Bottom Bar ── */
+.prot-sim-bottom{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;padding:10px 16px;border-top:1px solid var(--border);background:rgba(2,10,20,0.4)}
+.prot-sim-metric{display:flex;align-items:center;gap:8px}
+.prot-sim-metric-icon{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.prot-sim-metric-icon svg{width:14px;height:14px;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.prot-sim-metric-icon--saved{background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.12)}
+.prot-sim-metric-icon--saved svg{stroke:var(--green)}
+.prot-sim-metric-icon--rate{background:rgba(100,180,255,0.08);border:1px solid rgba(100,180,255,0.12)}
+.prot-sim-metric-icon--rate svg{stroke:var(--accent)}
+.prot-sim-metric-icon--score{background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.12)}
+.prot-sim-metric-icon--score svg{stroke:var(--green)}
+.prot-sim-metric-info{display:flex;flex-direction:column;min-width:0}
+.prot-sim-metric-val{font-family:var(--ff-display);font-size:14px;font-weight:700;line-height:1.2;white-space:nowrap}
+.prot-sim-metric-lbl{font-size:8px;color:var(--muted);letter-spacing:.04em;white-space:nowrap}
+
+/* ── Flash effects ── */
+.prot-sim-entry--flash-block{animation:simEntryIn .35s var(--ease) both,simFlashRed .7s ease-out}
+@keyframes simFlashRed{0%{background:rgba(239,68,68,0.15)}100%{background:transparent}}
+.prot-sim-entry--flash-allow{animation:simEntryIn .35s var(--ease) both,simFlashGreen .5s ease-out}
+@keyframes simFlashGreen{0%{background:rgba(52,211,153,0.06)}100%{background:transparent}}
+.prot-sim-entry--flash-warn{animation:simEntryIn .35s var(--ease) both,simFlashWarn .6s ease-out}
+@keyframes simFlashWarn{0%{background:rgba(251,191,36,0.1)}100%{background:transparent}}
+
+/* ── Responsive ── */
+@media(max-width:768px){
+    .prot-sim{min-height:400px}
+    .prot-sim-stats{grid-template-columns:1fr 1fr;gap:5px;padding:10px 12px}
+    .prot-sim-stat:nth-child(3),.prot-sim-stat:nth-child(4){grid-column:span 1}
+    .prot-sim-stat-val{font-size:14px}
+    .prot-sim-detail{max-width:100px}
+    .prot-sim-time{width:40px;font-size:8px}
+    .prot-sim-feed{margin:0 8px}
+    .prot-sim-bottom{grid-template-columns:1fr 1fr;gap:5px;padding:8px 12px}
+    .prot-sim-metric:nth-child(3){display:none}
+    .prot-sim-header{padding:10px 12px}
+    .prot-sim-ip{display:none}
+}
 
 /* ══════════════════════════════════════════════════════════
    4. STATS STRIP
    ══════════════════════════════════════════════════════════ */
-.stats{padding:80px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg2)}
+.stats{
+    padding:80px 0;position:relative;
+    border-top:1px solid rgba(100,180,255,0.06);
+    border-bottom:1px solid rgba(100,180,255,0.06);
+    background:linear-gradient(180deg,rgba(6,17,31,0.5) 0%,rgba(4,12,24,0.6) 100%);
+}
+.stats::before{
+    content:'';position:absolute;top:0;left:0;right:0;height:1px;
+    background:linear-gradient(90deg,transparent 10%,rgba(100,180,255,0.1) 50%,transparent 90%);
+}
 .stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:48px 24px}
 @media(min-width:768px){.stats-grid{grid-template-columns:repeat(4,1fr)}}
-.stat{text-align:center}
+.stat{text-align:center;position:relative;padding:24px 16px;border-radius:16px;transition:all .4s var(--ease)}
+.stat:hover{background:rgba(100,180,255,0.02)}
 .stat-val{font-family:var(--ff-display);font-size:clamp(40px,6vw,64px);font-weight:700;letter-spacing:-.04em;line-height:1}
-.stat-label{font-size:13px;color:var(--muted);margin-top:6px;letter-spacing:.02em}
+.stat-label{font-size:13px;color:var(--muted);margin-top:8px;letter-spacing:.03em}
 
 /* ══════════════════════════════════════════════════════════
    5. PRICING
@@ -255,8 +534,8 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
 .pricing-grid{display:grid;grid-template-columns:1fr;gap:20px;align-items:start}
 @media(min-width:768px){.pricing-grid{grid-template-columns:repeat(3,1fr)}}
 
-.p-card{border-radius:20px;border:1px solid var(--border);background:var(--bg);padding:clamp(28px,4vw,44px);position:relative;transition:border-color .5s var(--ease),transform .5s var(--ease),box-shadow .5s var(--ease)}
-.p-card:hover{border-color:var(--border-h);transform:translateY(-6px)}
+.p-card{border-radius:20px;border:1px solid var(--border);background:var(--bg);padding:clamp(28px,4vw,44px);position:relative;transition:border-color .5s var(--ease),transform .5s var(--ease),box-shadow .5s var(--ease);transform-style:preserve-3d}
+.p-card:hover{border-color:var(--border-h)}
 
 .p-card--gold{border-color:rgba(251,191,36,0.12);box-shadow:0 0 80px rgba(251,191,36,0.03)}
 .p-card--gold:hover{border-color:rgba(251,191,36,0.25);box-shadow:0 0 100px rgba(251,191,36,0.06)}
@@ -284,23 +563,48 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
 /* ══════════════════════════════════════════════════════════
    6. FAQ
    ══════════════════════════════════════════════════════════ */
-.faq-list{max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:2px}
-.faq-i{overflow:hidden}
-.faq-i:first-child{border-radius:16px 16px 0 0}
-.faq-i:last-child{border-radius:0 0 16px 16px}
-.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;padding:22px 24px;background:var(--surface);border:none;cursor:pointer;list-style:none;font-family:var(--ff-body);font-size:16px;font-weight:500;color:var(--white);text-align:left;transition:background .3s,color .3s}
+.faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:4px}
+.faq-i{overflow:hidden;border-radius:14px;border:1px solid rgba(100,180,255,0.04);transition:border-color .4s var(--ease)}
+.faq-i:hover{border-color:rgba(100,180,255,0.08)}
+.faq-i[open]{border-color:rgba(100,180,255,0.10)}
+.faq-q{
+    width:100%;display:flex;align-items:center;justify-content:space-between;
+    padding:22px 28px;
+    background:linear-gradient(180deg,rgba(10,22,48,0.5) 0%,rgba(8,18,40,0.55) 100%);
+    border:none;cursor:pointer;list-style:none;
+    font-family:var(--ff-body);font-size:16px;font-weight:500;color:var(--white);
+    text-align:left;transition:all .3s var(--ease);
+}
 .faq-q::-webkit-details-marker{display:none}
-.faq-q:hover{background:rgba(8,22,48,0.6)}
-.faq-q::after{content:'+';font-size:20px;font-weight:300;color:var(--muted);flex-shrink:0;margin-left:16px;transition:color .3s}
+.faq-q:hover{background:rgba(10,22,48,0.7)}
+.faq-q::after{
+    content:'+';font-size:20px;font-weight:300;color:var(--muted);
+    flex-shrink:0;margin-left:16px;transition:all .3s var(--ease);
+    width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+    border-radius:8px;background:rgba(100,180,255,0.04);border:1px solid rgba(100,180,255,0.06);
+}
 .faq-i[open] .faq-q{color:var(--accent)}
-.faq-i[open] .faq-q::after{content:'\2212';color:var(--accent)}
-.faq-a{padding:0 24px 22px;background:var(--surface);font-size:15px;line-height:1.75;color:var(--dim)}
+.faq-i[open] .faq-q::after{content:'\2212';color:var(--accent);background:rgba(100,180,255,0.08);border-color:rgba(100,180,255,0.12)}
+.faq-a{padding:0 28px 24px;background:linear-gradient(180deg,rgba(8,18,40,0.55) 0%,rgba(10,22,48,0.5) 100%);font-size:15px;line-height:1.75;color:var(--dim)}
 
 /* ══════════════════════════════════════════════════════════
    7. CTA
    ══════════════════════════════════════════════════════════ */
 .cta-final{text-align:center;position:relative;overflow:hidden}
-.cta-orb{position:absolute;width:600px;height:600px;border-radius:50%;filter:blur(150px);pointer-events:none;background:radial-gradient(circle,rgba(100,180,255,0.08),transparent 70%);top:-200px;left:50%;transform:translateX(-50%)}
+.cta-final::before{
+    content:'';position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(ellipse 60% 50% at 50% 30%,rgba(100,180,255,0.04),transparent 70%);
+}
+.cta-orb{
+    position:absolute;width:700px;height:700px;border-radius:50%;filter:blur(160px);pointer-events:none;
+    background:radial-gradient(circle,rgba(100,180,255,0.10),rgba(56,189,248,0.04) 50%,transparent 70%);
+    top:-250px;left:50%;transform:translateX(-50%);
+    animation:ctaOrbPulse 6s ease-in-out infinite alternate;
+}
+@keyframes ctaOrbPulse{
+    0%{opacity:0.7;transform:translateX(-50%) scale(1)}
+    100%{opacity:1;transform:translateX(-50%) scale(1.08)}
+}
 
 /* ══════════════════════════════════════════════════════════
    GUARANTEE
@@ -451,7 +755,16 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
 .mock-phone-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:380px;height:520px;background:radial-gradient(ellipse,rgba(100,180,255,0.035) 0%,rgba(52,211,153,0.015) 45%,transparent 70%);pointer-events:none;z-index:0}
 
 /* Section separator gradient */
-.sep{height:1px;position:relative;background:linear-gradient(90deg,transparent 5%,rgba(100,180,255,0.1) 50%,transparent 95%)}
+.sep{
+    height:1px;position:relative;max-width:800px;margin:0 auto;
+    background:linear-gradient(90deg,transparent 0%,rgba(100,180,255,0.06) 20%,rgba(100,180,255,0.12) 50%,rgba(100,180,255,0.06) 80%,transparent 100%);
+}
+.sep::after{
+    content:'';position:absolute;top:-1px;left:50%;transform:translateX(-50%);
+    width:60px;height:3px;border-radius:2px;
+    background:linear-gradient(90deg,transparent,rgba(100,180,255,0.25),transparent);
+    filter:blur(1px);
+}
 .sep::after{content:'';position:absolute;top:-0.5px;left:50%;transform:translateX(-50%);width:200px;height:2px;background:linear-gradient(90deg,transparent,rgba(100,180,255,0.45),transparent);border-radius:2px;box-shadow:0 0 12px rgba(100,180,255,0.1),0 0 4px rgba(100,180,255,0.15)}
 
 /* ── Responsive ── */
@@ -462,9 +775,22 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
 @media(min-width:500px){.plat-grid{grid-template-columns:repeat(3,1fr)}}
 @media(min-width:768px){.plat-grid{grid-template-columns:repeat(5,1fr)}}
 @media(min-width:1000px){.plat-grid{grid-template-columns:repeat(7,1fr)}}
-.plat-item{display:flex;flex-direction:column;align-items:center;gap:8px;padding:20px 10px;border-radius:14px;border:1px solid var(--border);background:var(--surface);transition:all .4s var(--ease);text-align:center}
-.plat-item:hover{border-color:var(--border-h);transform:translateY(-3px)}
-.plat-item-icon{font-size:24px;line-height:1}
+.plat-item{
+    display:flex;flex-direction:column;align-items:center;gap:10px;
+    padding:22px 12px;border-radius:16px;
+    border:1px solid rgba(100,180,255,0.06);
+    background:linear-gradient(180deg,rgba(10,22,48,0.5) 0%,rgba(6,14,32,0.6) 100%);
+    transition:all .4s var(--ease);text-align:center;position:relative;overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,0.12);
+}
+.plat-item::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.04),transparent)}
+.plat-item:hover{
+    border-color:rgba(100,180,255,0.15);transform:translateY(-4px);
+    background:linear-gradient(180deg,rgba(10,22,48,0.65) 0%,rgba(6,14,32,0.7) 100%);
+    box-shadow:0 4px 16px rgba(0,0,0,0.18),0 0 20px rgba(100,180,255,0.03);
+}
+.plat-item-icon{font-size:24px;line-height:1;font-weight:700;color:var(--dim);transition:color .3s}
+.plat-item:hover .plat-item-icon{color:var(--accent)}
 .plat-item-name{font-size:11px;font-weight:600;color:var(--dim);letter-spacing:.02em}
 
 /* ── Link decoration mockup ── */
@@ -533,14 +859,119 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
 /* ── Problem agitation ── */
 .problem-grid{display:grid;grid-template-columns:1fr;gap:20px}
 @media(min-width:768px){.problem-grid{grid-template-columns:repeat(3,1fr);gap:24px}}
-.problem-card{padding:clamp(30px,3.5vw,40px);border-radius:20px;border:1px solid rgba(100,180,255,0.12);background:linear-gradient(180deg,rgba(10,22,48,0.82) 0%,rgba(8,18,40,0.85) 50%,rgba(6,14,32,0.88) 100%);position:relative;overflow:hidden;transition:all .5s var(--ease);box-shadow:0 2px 8px rgba(0,0,0,0.2),0 12px 40px rgba(0,0,0,0.2),inset 0 1px 0 rgba(100,180,255,0.07)}
-.problem-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 8%,rgba(100,180,255,0.15) 50%,transparent 92%);z-index:2}
-.problem-card::after{content:'';position:absolute;top:0;left:0;width:140px;height:60px;background:radial-gradient(ellipse at top left,rgba(100,180,255,0.035) 0%,rgba(100,180,255,0.01) 40%,transparent 100%);border-top-left-radius:20px;pointer-events:none;z-index:1}
-.problem-card:hover{border-color:rgba(100,180,255,0.2);transform:translateY(-5px);box-shadow:0 4px 16px rgba(0,0,0,0.25),0 20px 56px rgba(0,0,0,0.25),inset 0 1px 0 rgba(100,180,255,0.1)}
-.problem-stat{font-family:var(--ff-display);font-size:clamp(44px,5.5vw,60px);font-weight:700;line-height:1;letter-spacing:-.04em;margin-bottom:16px}
-.problem-title{font-family:var(--ff-display);font-weight:600;font-size:clamp(16px,1.2vw,18px);color:var(--white);margin-bottom:8px}
-.problem-desc{font-size:14px;color:var(--dim);line-height:1.6}
+
+/* ── Problem Cards — Ultra Premium Glass v3 ── */
+.problem-card{
+    --card-accent:#64b4ff;--card-glow:rgba(100,180,255,0.06);
+    padding:clamp(36px,3.8vw,48px);
+    border-radius:22px;
+    border:1px solid rgba(100,180,255,0.05);
+    background:
+        radial-gradient(ellipse 60% 50% at 50% 0%,var(--card-glow),transparent),
+        linear-gradient(180deg,rgba(14,26,54,0.72) 0%,rgba(10,20,44,0.82) 50%,rgba(6,14,32,0.92) 100%);
+    backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+    position:relative;overflow:hidden;
+    transition:all .6s var(--ease);
+    box-shadow:
+        0 1px 2px rgba(0,0,0,0.15),
+        0 4px 14px rgba(0,0,0,0.14),
+        0 18px 52px rgba(0,0,0,0.20),
+        0 36px 90px rgba(0,0,0,0.14),
+        inset 0 1px 0 rgba(255,255,255,0.04);
+}
+/* Top shine line */
+.problem-card::before{
+    content:'';position:absolute;top:0;left:0;right:0;height:1px;z-index:4;
+    background:linear-gradient(90deg,transparent 5%,rgba(255,255,255,0.04) 20%,rgba(255,255,255,0.1) 50%,rgba(255,255,255,0.04) 80%,transparent 95%);
+}
+/* Bottom accent glow bar */
+.problem-card::after{
+    content:'';position:absolute;bottom:0;left:8%;right:8%;height:2px;z-index:4;
+    background:linear-gradient(90deg,transparent,var(--card-accent),transparent);
+    opacity:0.35;transition:all .6s var(--ease);
+    box-shadow:0 0 12px var(--card-accent),0 0 4px var(--card-accent);
+}
+.problem-card:hover::after{opacity:0.8;left:5%;right:5%;height:2px;box-shadow:0 0 20px var(--card-accent),0 0 8px var(--card-accent)}
+
+/* Ambient glow orb */
+.problem-card-glow{
+    position:absolute;top:-50px;left:50%;transform:translateX(-50%);
+    width:280px;height:180px;border-radius:50%;
+    background:radial-gradient(ellipse,var(--card-glow) 0%,transparent 65%);
+    pointer-events:none;z-index:1;filter:blur(30px);
+    transition:all .7s var(--ease);opacity:0.7;
+}
+.problem-card:hover .problem-card-glow{opacity:1;width:340px;height:220px;top:-80px;filter:blur(35px)}
+
+.problem-card:hover{
+    border-color:rgba(255,255,255,0.07);
+    transform:translateY(-8px) scale(1.015);
+    box-shadow:
+        0 2px 4px rgba(0,0,0,0.14),
+        0 10px 28px rgba(0,0,0,0.20),
+        0 28px 72px rgba(0,0,0,0.24),
+        0 44px 110px rgba(0,0,0,0.14),
+        inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+/* Per-card accent + glow colors */
+.problem-card:nth-child(1){--card-accent:#ef4444;--card-glow:rgba(239,68,68,0.10)}
+.problem-card:nth-child(1):hover{--card-glow:rgba(239,68,68,0.20);border-color:rgba(239,68,68,0.15)}
+.problem-card:nth-child(2){--card-accent:#fbbf24;--card-glow:rgba(251,191,36,0.10)}
+.problem-card:nth-child(2):hover{--card-glow:rgba(251,191,36,0.20);border-color:rgba(251,191,36,0.15)}
+.problem-card:nth-child(3){--card-accent:#64b4ff;--card-glow:rgba(100,180,255,0.08)}
+.problem-card:nth-child(3):hover{--card-glow:rgba(100,180,255,0.18);border-color:rgba(100,180,255,0.13)}
+
+/* Icon container — glassmorphic pill */
+.problem-icon{
+    width:50px;height:50px;border-radius:15px;margin-bottom:22px;
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(145deg,rgba(255,255,255,0.05),rgba(255,255,255,0.01));
+    border:1px solid rgba(255,255,255,0.06);
+    position:relative;z-index:2;
+    transition:all .5s var(--ease);
+    box-shadow:0 2px 8px rgba(0,0,0,0.15),inset 0 1px 0 rgba(255,255,255,0.04);
+}
+.problem-icon svg{width:24px;height:24px;opacity:0.75;transition:all .5s var(--ease)}
+.problem-card:nth-child(1) .problem-icon{background:linear-gradient(145deg,rgba(239,68,68,0.08),rgba(239,68,68,0.02));border-color:rgba(239,68,68,0.10)}
+.problem-card:nth-child(1) .problem-icon svg{color:#ef4444}
+.problem-card:nth-child(2) .problem-icon{background:linear-gradient(145deg,rgba(251,191,36,0.08),rgba(251,191,36,0.02));border-color:rgba(251,191,36,0.10)}
+.problem-card:nth-child(2) .problem-icon svg{color:#fbbf24}
+.problem-card:nth-child(3) .problem-icon{background:linear-gradient(145deg,rgba(100,180,255,0.08),rgba(100,180,255,0.02));border-color:rgba(100,180,255,0.10)}
+.problem-card:nth-child(3) .problem-icon svg{color:#64b4ff}
+.problem-card:hover .problem-icon{
+    background:linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03));
+    border-color:rgba(255,255,255,0.10);
+    box-shadow:0 4px 16px rgba(0,0,0,0.2),0 0 24px var(--card-glow);
+}
+.problem-card:hover .problem-icon svg{opacity:1;transform:scale(1.12)}
+
+/* Stat number — gradient text */
+.problem-stat{
+    font-family:var(--ff-display);font-size:clamp(52px,6vw,72px);font-weight:700;
+    line-height:1;letter-spacing:-.04em;margin-bottom:14px;
+    position:relative;z-index:2;
+    text-shadow:0 0 50px currentColor,0 0 100px currentColor;
+}
+/* Subtle pulse animation on the stat */
+@keyframes statPulse{
+    0%,100%{text-shadow:0 0 50px currentColor,0 0 100px currentColor}
+    50%{text-shadow:0 0 60px currentColor,0 0 120px currentColor}
+}
+.problem-card:hover .problem-stat{animation:statPulse 2.5s ease-in-out infinite}
+
+.problem-title{
+    font-family:var(--ff-display);font-weight:600;font-size:clamp(16px,1.2vw,18px);
+    color:var(--white);margin-bottom:12px;position:relative;z-index:2;
+    letter-spacing:-0.01em;
+}
+.problem-desc{font-size:14px;color:var(--dim);line-height:1.7;position:relative;z-index:2}
+
+/* Resolve line */
 .problem-resolve{text-align:center;margin-top:clamp(36px,4vw,52px);font-family:var(--ff-display);font-weight:600;font-size:clamp(18px,2vw,24px);color:var(--white);letter-spacing:-.02em}
+.problem-resolve .grad{position:relative}
+.problem-resolve .grad::after{content:'';position:absolute;bottom:-6px;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0.5}
+
 
 /* ── Social proof ── */
 .proof-grid{display:grid;grid-template-columns:1fr;gap:16px}
@@ -589,10 +1020,320 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
 .btn-soon{background:var(--surface);color:var(--muted);border:1px solid var(--border);cursor:not-allowed;opacity:0.7}
 .btn-soon:hover{transform:none;box-shadow:none;background:var(--surface)}
 
+/* ── Trust Strip ── */
+.trust-strip{padding:48px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:rgba(6,17,31,0.4)}
+.trust-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px 16px}
+@media(min-width:768px){.trust-grid{grid-template-columns:repeat(5,1fr)}}
+.trust-item{text-align:center;padding:16px 8px}
+.trust-val{font-family:var(--ff-display);font-size:clamp(22px,3vw,32px);font-weight:700;letter-spacing:-.03em;line-height:1}
+.trust-lbl{font-size:11px;color:var(--muted);margin-top:6px;letter-spacing:.04em}
+
+/* ── ROI Calculator — Ultra Premium Slider ── */
+.calc-wrap{max-width:860px;margin:0 auto}
+.calc-card{
+    border-radius:22px;border:1px solid rgba(100,180,255,0.06);
+    background:
+        radial-gradient(ellipse 50% 40% at 50% 0%,rgba(100,180,255,0.04),transparent),
+        linear-gradient(180deg,rgba(12,26,54,0.75) 0%,rgba(8,18,40,0.88) 50%,rgba(6,14,32,0.92) 100%);
+    padding:clamp(36px,4.5vw,56px);position:relative;overflow:hidden;
+    backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+    box-shadow:
+        0 2px 8px rgba(0,0,0,0.18),
+        0 16px 48px rgba(0,0,0,0.22),
+        0 36px 90px rgba(0,0,0,0.14),
+        inset 0 1px 0 rgba(255,255,255,0.04);
+}
+.calc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 5%,rgba(100,180,255,0.08) 30%,rgba(100,180,255,0.15) 50%,rgba(100,180,255,0.08) 70%,transparent 95%)}
+.calc-card::after{content:'';position:absolute;bottom:0;left:8%;right:8%;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0.2;box-shadow:0 0 12px rgba(100,180,255,0.3)}
+
+/* Slider section */
+.calc-slider-wrap{margin-bottom:36px}
+.calc-slider-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:20px}
+.calc-slider-label{font-size:14px;color:var(--dim);font-weight:500}
+.calc-slider-value{
+    font-family:var(--ff-display);font-size:clamp(28px,3.5vw,40px);font-weight:700;
+    color:var(--white);letter-spacing:-0.03em;
+    text-shadow:0 0 30px rgba(100,180,255,0.2);
+}
+.calc-slider-value span{color:var(--accent)}
+
+/* Custom slider track + thumb */
+.calc-slider{
+    -webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:3px;outline:none;cursor:pointer;
+    background:linear-gradient(90deg,var(--accent) 0%,var(--accent) var(--fill,20%),rgba(100,180,255,0.08) var(--fill,20%),rgba(100,180,255,0.08) 100%);
+    transition:background .15s;
+}
+.calc-slider::-webkit-slider-thumb{
+    -webkit-appearance:none;width:24px;height:24px;border-radius:50%;
+    background:radial-gradient(circle at 40% 35%,#fff,var(--accent));
+    border:3px solid var(--bg);cursor:grab;
+    box-shadow:0 0 0 4px rgba(100,180,255,0.15),0 2px 8px rgba(0,0,0,0.3),0 0 20px rgba(100,180,255,0.2);
+    transition:box-shadow .3s var(--ease),transform .2s var(--ease);
+}
+.calc-slider::-webkit-slider-thumb:hover{
+    box-shadow:0 0 0 6px rgba(100,180,255,0.2),0 4px 16px rgba(0,0,0,0.4),0 0 30px rgba(100,180,255,0.3);
+    transform:scale(1.1);
+}
+.calc-slider::-webkit-slider-thumb:active{cursor:grabbing;transform:scale(0.95)}
+.calc-slider::-moz-range-thumb{
+    width:24px;height:24px;border-radius:50%;border:3px solid var(--bg);cursor:grab;
+    background:radial-gradient(circle at 40% 35%,#fff,var(--accent));
+    box-shadow:0 0 0 4px rgba(100,180,255,0.15),0 2px 8px rgba(0,0,0,0.3),0 0 20px rgba(100,180,255,0.2);
+}
+.calc-slider-ticks{display:flex;justify-content:space-between;margin-top:10px;padding:0 2px}
+.calc-slider-tick{font-size:11px;color:var(--muted);font-family:var(--ff-mono)}
+
+/* Results grid */
+.calc-results{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+@media(max-width:600px){.calc-results{grid-template-columns:1fr}}
+
+.calc-result{
+    padding:24px 20px 28px;border-radius:16px;
+    border:1px solid var(--border);
+    background:rgba(2,10,20,0.4);
+    text-align:center;transition:all .5s var(--ease);
+    position:relative;overflow:hidden;
+}
+.calc-result:hover{border-color:var(--border-h);transform:translateY(-2px)}
+.calc-result::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.04),transparent)}
+
+/* Result bar animation */
+.calc-result-bar{
+    position:absolute;bottom:0;left:0;height:3px;border-radius:0 2px 0 0;
+    transition:width .8s var(--ease);width:0;
+}
+.calc-result:nth-child(1) .calc-result-bar{background:linear-gradient(90deg,#ef4444,#f87171)}
+.calc-result:nth-child(2) .calc-result-bar{background:linear-gradient(90deg,#fbbf24,#fcd34d)}
+
+.calc-result-val{
+    font-family:var(--ff-display);font-size:clamp(26px,3.2vw,38px);font-weight:700;
+    letter-spacing:-.03em;line-height:1;margin-bottom:8px;
+    transition:all .4s var(--ease);
+}
+.calc-result-lbl{font-size:12px;color:var(--muted);letter-spacing:.03em;text-transform:uppercase;font-weight:500}
+.calc-result-icon{font-size:20px;margin-bottom:6px;display:block}
+
+/* Total lost — accent red */
+.calc-result--total{
+    grid-column:1/-1;
+    border-color:rgba(239,68,68,0.12);
+    background:linear-gradient(180deg,rgba(239,68,68,0.04),rgba(239,68,68,0.01));
+}
+.calc-result--total .calc-result-bar{background:linear-gradient(90deg,#ef4444,#dc2626);height:3px}
+
+/* ROI — accent green */
+.calc-result--roi{
+    grid-column:1/-1;
+    border-color:rgba(52,211,153,0.12);
+    background:linear-gradient(180deg,rgba(52,211,153,0.04),rgba(52,211,153,0.01));
+}
+.calc-result--roi .calc-result-bar{background:linear-gradient(90deg,#34d399,#10b981);height:3px}
+
+/* Hours saved pill */
+.calc-result--hours{
+    border-color:rgba(100,180,255,0.10);
+    background:linear-gradient(180deg,rgba(100,180,255,0.04),rgba(100,180,255,0.01));
+}
+.calc-result--hours .calc-result-bar{background:linear-gradient(90deg,var(--accent),#a78bfa);height:3px}
+
+.calc-cta{text-align:center;margin-top:36px}
+.calc-cta-text{font-size:15px;color:var(--dim);margin-bottom:18px;line-height:1.6}
+.calc-cta-text strong{color:var(--white)}
+@keyframes calcPulse{0%,100%{box-shadow:0 0 0 0 rgba(100,180,255,0.2)}50%{box-shadow:0 0 0 8px rgba(100,180,255,0)}}
+
+/* ── How It Works ── */
+.how-steps{display:grid;grid-template-columns:1fr;gap:24px}
+@media(min-width:768px){.how-steps{grid-template-columns:repeat(3,1fr);gap:32px}}
+.how-step{padding:clamp(28px,3.5vw,40px);border-radius:20px;border:1px solid var(--border);background:linear-gradient(180deg,rgba(10,22,48,0.82) 0%,rgba(8,18,40,0.85) 50%,rgba(6,14,32,0.88) 100%);position:relative;overflow:hidden;transition:all .5s var(--ease);box-shadow:0 2px 8px rgba(0,0,0,0.2),0 8px 32px rgba(0,0,0,0.15),inset 0 1px 0 rgba(100,180,255,0.06)}
+.how-step::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 10%,rgba(100,180,255,0.12) 50%,transparent 90%)}
+.how-step:hover{border-color:rgba(100,180,255,0.2);transform:translateY(-4px)}
+.how-step-num{width:44px;height:44px;border-radius:12px;background:rgba(100,180,255,0.06);border:1px solid rgba(100,180,255,0.12);display:flex;align-items:center;justify-content:center;font-family:var(--ff-display);font-size:18px;font-weight:700;color:var(--accent);margin-bottom:16px}
+.how-step-title{font-family:var(--ff-display);font-weight:600;font-size:clamp(16px,1.2vw,18px);color:var(--white);margin-bottom:8px}
+.how-step-desc{font-size:14px;color:var(--dim);line-height:1.6}
+.how-step-time{display:inline-flex;align-items:center;gap:6px;margin-top:12px;padding:4px 12px;border-radius:100px;background:rgba(52,211,153,0.06);border:1px solid rgba(52,211,153,0.1);font-size:11px;font-weight:600;color:var(--green);letter-spacing:.04em}
+.how-connector{display:none}
+@media(min-width:768px){.how-connector{display:flex;align-items:center;justify-content:center;position:absolute;right:-20px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:18px;z-index:2}}
+
+/* ── Video Demo ── */
+.video-wrap{position:relative;max-width:800px;margin:0 auto;border-radius:20px;overflow:hidden;aspect-ratio:16/9;cursor:pointer;border:1px solid var(--border);background:linear-gradient(180deg,rgba(10,22,48,0.7) 0%,rgba(6,14,32,0.9) 100%);transition:all .5s var(--ease)}
+.video-wrap:hover{border-color:rgba(100,180,255,0.2);box-shadow:0 0 60px rgba(100,180,255,0.06);transform:translateY(-4px)}
+.video-wrap::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at center,rgba(100,180,255,0.05) 0%,transparent 60%);z-index:1;pointer-events:none}
+.video-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;width:80px;height:80px;border-radius:50%;background:rgba(100,180,255,0.12);border:2px solid rgba(100,180,255,0.3);display:flex;align-items:center;justify-content:center;transition:all .4s var(--ease);backdrop-filter:blur(12px)}
+.video-wrap:hover .video-play{background:rgba(100,180,255,0.2);border-color:rgba(100,180,255,0.5);box-shadow:0 0 40px rgba(100,180,255,0.15);transform:translate(-50%,-50%) scale(1.1)}
+.video-play-icon{width:0;height:0;border-style:solid;border-width:14px 0 14px 24px;border-color:transparent transparent transparent var(--accent);margin-left:4px}
+.video-info{position:absolute;bottom:0;left:0;right:0;padding:24px 32px;background:linear-gradient(0deg,rgba(2,10,20,0.95) 0%,transparent 100%);z-index:2;display:flex;align-items:center;gap:16px}
+.video-info-text{font-size:14px;color:var(--dim)}
+.video-info-text strong{color:var(--white);display:block;font-size:16px;margin-bottom:2px}
+.video-info-dur{font-size:12px;color:var(--muted);background:rgba(100,180,255,0.06);border:1px solid rgba(100,180,255,0.1);padding:4px 12px;border-radius:100px;font-weight:600;letter-spacing:.04em;white-space:nowrap}
+.video-highlights{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:800px;margin:24px auto 0}
+.video-hl{padding:16px 20px;border-radius:14px;border:1px solid var(--border);background:rgba(10,22,48,0.5);text-align:center;transition:all .4s var(--ease)}
+.video-hl:hover{border-color:rgba(100,180,255,0.15);transform:translateY(-2px)}
+.video-hl-icon{font-size:20px;margin-bottom:8px}
+.video-hl-text{font-size:13px;color:var(--dim);line-height:1.4}
+.video-hl-text strong{color:var(--white);display:block;margin-bottom:2px}
+@media(max-width:640px){.video-highlights{grid-template-columns:1fr;gap:10px}}
+
+/* ── Before / After Comparison ── */
+.ba-container{position:relative;max-width:900px;margin:0 auto;border-radius:20px;overflow:hidden;border:1px solid var(--border);background:linear-gradient(180deg,rgba(10,22,48,0.7) 0%,rgba(6,14,32,0.85) 100%);aspect-ratio:16/9;user-select:none;cursor:col-resize}
+.ba-side{position:absolute;inset:0;display:flex;flex-direction:column;padding:clamp(24px,4vw,48px);width:100%}
+.ba-side .ba-metrics{max-width:48%;min-width:280px}
+.ba-after .ba-metrics{margin-left:auto}
+.ba-before{background:linear-gradient(135deg,rgba(20,10,10,0.95) 0%,rgba(30,15,15,0.9) 100%);clip-path:inset(0 50% 0 0);transition:clip-path 0s}
+.ba-after{background:linear-gradient(135deg,rgba(4,16,36,0.95) 0%,rgba(8,24,52,0.9) 100%)}
+.ba-label{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:100px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:clamp(16px,2.5vw,28px);width:fit-content}
+.ba-label--before{background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.2);color:#ef4444}
+.ba-label--after{background:rgba(100,180,255,0.08);border:1px solid rgba(100,180,255,0.15);color:var(--accent);margin-left:auto}
+.ba-label-dot{width:8px;height:8px;border-radius:50%}
+.ba-label--before .ba-label-dot{background:#ef4444;box-shadow:0 0 8px rgba(239,68,68,0.4)}
+.ba-label--after .ba-label-dot{background:var(--accent);box-shadow:0 0 8px rgba(100,180,255,0.4);animation:pulse-dot 2s ease-in-out infinite}
+@keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.5}}
+.ba-title{font-family:var(--ff-display);font-weight:700;font-size:clamp(16px,2vw,22px);margin-bottom:clamp(12px,2vw,20px)}
+.ba-before .ba-title{color:rgba(255,255,255,0.5)}
+.ba-after .ba-title{color:var(--white);text-align:right}
+.ba-metrics{display:flex;flex-direction:column;gap:clamp(8px,1.5vw,14px)}
+.ba-metric{display:flex;align-items:center;gap:10px;font-size:clamp(12px,1.2vw,15px)}
+.ba-metric-icon{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+.ba-before .ba-metric-icon{background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.12)}
+.ba-after .ba-metric-icon{background:rgba(100,180,255,0.06);border:1px solid rgba(100,180,255,0.1)}
+.ba-metric-label{color:var(--muted);flex:1}
+.ba-metric-val{font-family:var(--ff-mono);font-weight:700;font-size:clamp(13px,1.3vw,16px)}
+.ba-before .ba-metric-val{color:rgba(239,68,68,0.7)}
+.ba-after .ba-metric-val{color:var(--green)}
+.ba-divider{position:absolute;top:0;bottom:0;left:50%;width:3px;background:var(--white);z-index:10;transform:translateX(-50%);pointer-events:none}
+.ba-divider::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:40px;height:40px;border-radius:50%;background:var(--white);display:flex;align-items:center;justify-content:center;box-shadow:0 0 20px rgba(255,255,255,0.3)}
+.ba-divider::after{content:'⟷';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:16px;color:var(--bg);font-weight:700;z-index:1}
+.ba-hint{text-align:center;margin-top:16px;font-size:13px;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:8px}
+.ba-hint svg{animation:ba-hint-slide 2s ease-in-out infinite}
+@keyframes ba-hint-slide{0%,100%{transform:translateX(-4px)}50%{transform:translateX(4px)}}
+
+@media(max-width:768px){
+.ba-container{aspect-ratio:auto;min-height:420px}
+.ba-side{padding:clamp(16px,3vw,24px)}
+.ba-side .ba-metrics{max-width:55%;min-width:140px}
+.ba-title{font-size:clamp(14px,3.5vw,18px)}
+.ba-metric{gap:6px}
+.ba-metric-icon{width:22px;height:22px;font-size:11px}
+.ba-metric-label{font-size:11px}
+.ba-metric-val{font-size:12px}
+.ba-label{font-size:10px;padding:4px 10px}
+.ba-divider::before{width:32px;height:32px}
+.ba-divider::after{font-size:13px}
+}
+
+/* ── Competitor Comparison ── */
+.comp-table{max-width:900px;margin:0 auto;border-radius:20px;overflow:hidden;border:1px solid var(--border);background:linear-gradient(180deg,rgba(10,22,48,0.7) 0%,rgba(6,14,32,0.85) 100%)}
+.comp-row{display:grid;grid-template-columns:1.8fr repeat(3,1fr);gap:0;align-items:center;border-bottom:1px solid rgba(100,180,255,0.04)}
+.comp-row:last-child{border-bottom:none}
+.comp-row--header{background:rgba(100,180,255,0.03);border-bottom:1px solid rgba(100,180,255,0.08)}
+.comp-cell{padding:14px 16px;font-size:13px;color:var(--dim);text-align:center;display:flex;align-items:center;justify-content:center;min-height:48px}
+.comp-cell:first-child{text-align:left;justify-content:flex-start;font-weight:500;color:var(--white);font-size:14px}
+.comp-row--header .comp-cell{font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding:18px 16px}
+.comp-cell--bi{position:relative;color:var(--accent);font-weight:600}
+.comp-row--header .comp-cell--bi{color:var(--accent)}
+.comp-col-bi{background:rgba(100,180,255,0.03)}
+.comp-check{color:var(--green);font-size:16px;font-weight:700}
+.comp-cross{color:rgba(239,68,68,0.5);font-size:16px}
+.comp-partial{color:var(--gold);font-size:12px;font-weight:500}
+.comp-row:hover{background:rgba(100,180,255,0.02)}
+.comp-row--header:hover{background:rgba(100,180,255,0.03)}
+@media(max-width:640px){
+.comp-row{grid-template-columns:1.4fr repeat(3,1fr)}
+.comp-cell{padding:10px 8px;font-size:11px}
+.comp-cell:first-child{font-size:12px}
+}
+
+/* ── Pricing micro-copy ── */
+.p-micro{font-size:12px;color:var(--muted);text-align:center;margin-top:12px;line-height:1.5}
+
+/* ── Recife highlighted card ── */
+.p-card--rec{border-color:rgba(100,180,255,0.22);box-shadow:0 0 80px rgba(100,180,255,0.06);position:relative;overflow:hidden}
+.p-card--rec::before{content:'';position:absolute;inset:-2px;border-radius:inherit;padding:2px;background:conic-gradient(from var(--shimmer-angle,0deg),transparent 35%,rgba(100,180,255,0.4) 50%,transparent 65%);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;-webkit-mask-composite:xor;animation:shimmer-rotate 3s linear infinite;pointer-events:none;z-index:1}
+.p-card--rec:hover{border-color:rgba(100,180,255,0.35);box-shadow:0 0 100px rgba(100,180,255,0.1)}
+@media(min-width:768px){.p-card--rec{transform:translateY(-12px) scale(1.03)}.p-card--rec:hover{transform:translateY(-18px) scale(1.03)}}
+
 /* ── Price display ── */
 .p-price-wrap{min-height:90px;display:flex;flex-direction:column;justify-content:flex-end;margin-bottom:28px}
 .p-price[data-period]{display:none}
 .p-price[data-period].active{display:flex}
+
+/* ── Feature comparison table ── */
+.cmp-wrap{margin-top:clamp(64px,8vw,96px);overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:20px;border:1px solid var(--border);scrollbar-width:thin;scrollbar-color:var(--border) transparent;background:rgba(4,11,24,0.5)}
+.cmp-wrap::-webkit-scrollbar{height:6px}
+.cmp-wrap::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+.cmp-table{width:100%;min-width:720px;border-collapse:collapse;font-size:14px}
+.cmp-table thead{position:sticky;top:0;z-index:2}
+.cmp-table th{padding:18px 16px;text-align:center;font-weight:600;font-family:var(--ff-display);font-size:13px;letter-spacing:.04em;background:rgba(6,17,31,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.cmp-table th:first-child{text-align:left;padding-left:24px;min-width:240px}
+.cmp-th-plan{display:flex;flex-direction:column;align-items:center;gap:2px}
+.cmp-th-name{font-size:15px;font-weight:700;letter-spacing:-.01em}
+.cmp-th-price{font-size:11px;color:var(--muted);font-weight:400;letter-spacing:.02em}
+.cmp-th-trackers{color:var(--muted);font-size:12px}
+.cmp-table td{padding:13px 16px;text-align:center;border-bottom:1px solid rgba(100,180,255,0.04);color:var(--dim);transition:background .2s}
+.cmp-table td:first-child{text-align:left;padding-left:24px;color:var(--white);font-weight:500;font-size:13px}
+.cmp-table tbody tr:hover td{background:rgba(100,180,255,0.02)}
+.cmp-yes{color:var(--green);font-weight:700;font-size:16px}
+.cmp-no{color:rgba(240,244,248,0.15);font-size:14px}
+.cmp-partial{color:var(--gold);font-size:12px;font-weight:500}
+.cmp-table th.cmp-col-rec{background:rgba(100,180,255,0.08)}
+.cmp-table td.cmp-col-rec{background:rgba(100,180,255,0.025)}
+.cmp-table tbody tr:hover td.cmp-col-rec{background:rgba(100,180,255,0.055)}
+.cmp-table th.cmp-col-old{background:rgba(240,244,248,0.015);color:var(--muted)}
+
+/* Category header rows — premium separators */
+.cmp-cat-row td{padding:0;border-bottom:none}
+.cmp-cat-header{padding:28px 24px 14px;display:flex;align-items:center;gap:14px}
+.cmp-cat-header:first-child{padding-top:20px}
+.cmp-cat-icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cmp-cat-icon svg{width:20px;height:20px;stroke-width:1.8}
+.cmp-cat-icon--tracker{background:rgba(100,180,255,0.08);border:1px solid rgba(100,180,255,0.12);color:var(--accent)}
+.cmp-cat-icon--shield{background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.12);color:#f87171}
+.cmp-cat-icon--app{background:rgba(52,211,153,0.06);border:1px solid rgba(52,211,153,0.12);color:var(--green)}
+.cmp-cat-info{display:flex;flex-direction:column;gap:2px}
+.cmp-cat-name{font-family:var(--ff-display);font-weight:700;font-size:15px;letter-spacing:-.01em;color:var(--white)}
+.cmp-cat-desc{font-size:11px;color:var(--muted);letter-spacing:.02em;line-height:1.4}
+.cmp-cat-badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:100px;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-left:auto;flex-shrink:0}
+.cmp-cat-badge--core{background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.15);color:#f87171}
+.cmp-cat-divider{height:1px;background:linear-gradient(90deg,var(--border) 0%,rgba(100,180,255,0.12) 50%,var(--border) 100%);margin:0}
+.cmp-cat-divider--shield{background:linear-gradient(90deg,transparent 0%,rgba(239,68,68,0.2) 50%,transparent 100%)}
+
+/* ── Scroll progress indicator ── */
+.scroll-progress{position:fixed;top:0;left:0;width:0%;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:10001;pointer-events:none;transition:none}
+
+/* ── Sticky CTA mobile ── */
+/* ── Sticky CTA Bar (all screens) ── */
+.sticky-cta{
+    position:fixed;bottom:0;left:0;right:0;z-index:9997;
+    padding:12px 24px;
+    background:rgba(4,11,24,0.92);
+    backdrop-filter:blur(20px) saturate(1.2);-webkit-backdrop-filter:blur(20px) saturate(1.2);
+    border-top:1px solid rgba(100,180,255,0.06);
+    transform:translateY(100%);transition:transform .5s var(--ease);
+    box-shadow:0 -4px 24px rgba(0,0,0,0.2);
+}
+.sticky-cta::before{
+    content:'';position:absolute;top:0;left:0;right:0;height:1px;
+    background:linear-gradient(90deg,transparent 10%,rgba(100,180,255,0.10) 50%,transparent 90%);
+}
+.sticky-cta.visible{transform:translateY(0)}
+.sticky-cta-inner{
+    max-width:1200px;margin:0 auto;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.sticky-cta-text{font-size:14px;color:var(--dim);display:none}
+.sticky-cta-text strong{color:var(--white)}
+@media(min-width:768px){.sticky-cta-text{display:block}}
+.sticky-cta .btn-p{height:48px;font-size:14px;border-radius:12px;padding:0 28px;white-space:nowrap}
+.sticky-cta-close{
+    background:none;border:none;color:var(--muted);cursor:pointer;padding:6px;
+    font-size:18px;line-height:1;transition:color .3s;display:flex;align-items:center;
+}
+.sticky-cta-close:hover{color:var(--white)}
+@media(max-width:767px){
+    .sticky-cta .btn-p{width:100%;flex:1}
+}
+
+/* ── 3D tilt perspective ── */
+.pricing-grid{perspective:1000px}
 </style>
 </head>
 <body>
@@ -625,14 +1366,14 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
 
 <!-- Loader -->
 <div class="loader" id="loader">
-    <img src="images/logo-blue.png" alt="">
+    <img src="images/logo-blue.png" alt="BlackInk — Carregando">
 </div>
 
 <!-- ═══════ HEADER ═══════ -->
 <header class="hdr" id="hdr">
     <div class="hdr-in">
         <a href="#" class="hdr-logo">Black<span>Ink</span></a>
-        <nav class="hdr-nav">
+        <nav class="hdr-nav" aria-label="Navegação principal">
             <a href="#features">Features</a>
             <a href="#pricing">Planos</a>
             <a href="#community">Comunidade</a>
@@ -674,15 +1415,24 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
     <img src="images/logo-full.png" alt="BlackInk" class="hero-logo">
 
     <div class="hero-badge">
-        <span class="hero-badge-dot"></span>
-        <span style="font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)">Proteção Anti-Fraude · Tracking Server-Side</span>
+        <div class="hero-badge-inner">
+            <span class="hero-badge-dot"></span>
+            <span class="hero-badge-text">
+                <svg class="hero-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Proteção Anti-Fraude
+                <span class="hero-badge-sep"></span>
+                Tracking Server-Side
+            </span>
+        </div>
     </div>
 
     <h1 class="t-xl hero-title" id="hero-title">
         <span class="ln"><span class="ln-i">Proteja</span></span>
         <span class="ln"><span class="ln-i">Controle</span></span>
-        <span class="ln"><span class="ln-i grad">Escale</span></span>
+        <span class="ln"><span class="ln-i grad-hero">Escale</span></span>
     </h1>
+
+    <div class="hero-line"></div>
 
     <p class="t-body-lg hero-sub">
         Filtre tráfego falso, rastreie cada venda server-side e controle suas
@@ -690,8 +1440,13 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
     </p>
 
     <div class="hero-ctas">
-        <a href="https://app.blackink.cloud/#" class="btn btn-p">Começar Agora</a>
+        <a href="#features" class="btn btn-p">Conhecer a Plataforma</a>
         <a href="#pricing" class="btn btn-o">Ver Planos</a>
+    </div>
+
+    <div class="hero-trust">
+        <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        <span class="hero-trust-text">Setup em 5 minutos · Sem impacto na velocidade · Cancele quando quiser</span>
     </div>
 
     <div class="hero-scroll"><div class="hero-scroll-line"></div></div>
@@ -742,25 +1497,50 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
 
         <div class="problem-grid">
             <div class="problem-card rv">
+                <div class="problem-card-glow"></div>
+                <div class="problem-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/><line x1="1" y1="1" x2="23" y2="23" stroke-width="1.5"/></svg>
+                </div>
                 <div class="problem-stat" style="color:#ef4444">40%</div>
                 <div class="problem-title">Conversões invisíveis</div>
                 <div class="problem-desc">iOS 14+, ad blockers e cookies de terceiros eliminam quase metade dos dados. O Google Ads mostra números errados — e você otimiza em cima deles.</div>
             </div>
             <div class="problem-card rv rv-d1">
+                <div class="problem-card-glow"></div>
+                <div class="problem-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
+                </div>
                 <div class="problem-stat" style="color:var(--gold)">1 em 5</div>
                 <div class="problem-title">Cliques são falsos</div>
                 <div class="problem-desc">Bots, VPNs e tráfego de datacenter consomem seu orçamento sem gerar uma única venda. Suas métricas mentem — e sua conta corre risco.</div>
             </div>
             <div class="problem-card rv rv-d2">
-                <div class="problem-stat" style="color:var(--muted)">3h+</div>
+                <div class="problem-card-glow"></div>
+                <div class="problem-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/><path d="M4 4l2 2" opacity="0.4"/><path d="M20 4l-2 2" opacity="0.4"/></svg>
+                </div>
+                <div class="problem-stat" style="color:#64b4ff">3h+</div>
                 <div class="problem-title">Perdidas por dia</div>
                 <div class="problem-desc">Alternar entre Google Ads, planilhas e dashboards pra ajustar CPA, pausar campanha e checar ROAS. Horas jogadas fora todo dia.</div>
             </div>
         </div>
 
-        <p class="problem-resolve rv">BlackInk resolve os três.</p>
+        <p class="problem-resolve rv">BlackInk <span class="grad">resolve os três</span>.</p>
     </div>
 </section>
+
+<!-- ═══════ TRUST STRIP ═══════ -->
+<div class="trust-strip">
+    <div class="container">
+        <div class="trust-grid">
+            <div class="trust-item rv"><div class="trust-val grad">&lt;50ms</div><div class="trust-lbl">Latência</div></div>
+            <div class="trust-item rv rv-d1"><div class="trust-val" style="color:var(--green)">99.9%</div><div class="trust-lbl">Uptime</div></div>
+            <div class="trust-item rv rv-d2"><div class="trust-val">10M+</div><div class="trust-lbl">Eventos/dia</div></div>
+            <div class="trust-item rv rv-d3"><div class="trust-val" style="color:var(--accent)">30+</div><div class="trust-lbl">Integrações</div></div>
+            <div class="trust-item rv rv-d4"><div class="trust-val" style="color:var(--green)">LGPD</div><div class="trust-lbl">Compliance</div></div>
+        </div>
+    </div>
+</div>
 
 <!-- ═══════ FEATURE #1: PROTEÇÃO DO TRÁFEGO ═══════ -->
 <section class="section" id="features">
@@ -789,50 +1569,89 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
                 <div class="mockup">
                     <div class="mock-topbar">
                         <span class="mock-dot mock-dot--r"></span><span class="mock-dot mock-dot--y"></span><span class="mock-dot mock-dot--g"></span>
-                        <span class="mock-topbar-title">Qualidade do Tráfego — Hoje</span>
+                        <span class="mock-topbar-title">Proteção do Tráfego — Ao Vivo</span>
                     </div>
-                    <div class="mock-prot" id="prot-mockup">
-                        <div class="prot-score">
-                            <div class="prot-score-val" id="prot-score-num">0%</div>
-                            <div class="prot-score-lbl">TRÁFEGO LEGÍTIMO</div>
-                        </div>
-                        <div class="prot-bar-group">
-                            <div class="prot-bar-item">
-                                <div class="prot-bar-label">Visitantes reais</div>
-                                <div class="prot-bar-track"><div class="prot-bar-fill" data-width="94" style="width:0;background:var(--green)"></div></div>
-                                <div class="prot-bar-pct" style="color:var(--green)">94.2%</div>
+                    <div class="prot-sim" id="prot-sim">
+                        <!-- Status Bar -->
+                        <div class="prot-sim-header">
+                            <div class="prot-sim-status">
+                                <div class="prot-sim-pulse"></div>
+                                <div class="prot-sim-status-text">
+                                    <span class="prot-sim-status-title">Escudo Ativo</span>
+                                    <span class="prot-sim-status-sub">Monitorando em tempo real</span>
+                                </div>
                             </div>
-                            <div class="prot-bar-item">
-                                <div class="prot-bar-label">Bots / crawlers</div>
-                                <div class="prot-bar-track"><div class="prot-bar-fill" data-width="4" style="width:0;background:#ef4444"></div></div>
-                                <div class="prot-bar-pct" style="color:#ef4444">3.8%</div>
-                            </div>
-                            <div class="prot-bar-item">
-                                <div class="prot-bar-label">VPN / proxy</div>
-                                <div class="prot-bar-track"><div class="prot-bar-fill" data-width="2" style="width:0;background:var(--gold)"></div></div>
-                                <div class="prot-bar-pct" style="color:var(--gold)">2.0%</div>
+                            <div class="prot-sim-shield">
+                                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                                <div class="prot-sim-threat-lvl">
+                                    <span class="prot-sim-threat-label">Threat Level</span>
+                                    <span class="prot-sim-threat-val" id="prot-sim-threat">Baixo</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="prot-summary">
-                            <div class="prot-summary-item">
-                                <div class="prot-summary-val" style="color:var(--green)">R$ 1.240</div>
-                                <div class="prot-summary-lbl">ECONOMIZADO HOJE</div>
+
+                        <!-- Threat Level Progress -->
+                        <div class="prot-sim-threat-bar">
+                            <div class="prot-sim-threat-fill" id="prot-sim-threat-fill"></div>
+                        </div>
+
+                        <!-- Stats Row -->
+                        <div class="prot-sim-stats">
+                            <div class="prot-sim-stat" id="prot-sim-stat-allowed">
+                                <div class="prot-sim-stat-val" style="color:var(--green)" id="prot-sim-allowed">0</div>
+                                <div class="prot-sim-stat-lbl">Permitidos</div>
                             </div>
-                            <div class="prot-summary-item">
-                                <div class="prot-summary-val" style="color:var(--accent)">12.847</div>
-                                <div class="prot-summary-lbl">VISITANTES VERIFICADOS</div>
+                            <div class="prot-sim-stat" id="prot-sim-stat-blocked">
+                                <div class="prot-sim-stat-val" style="color:#ef4444" id="prot-sim-blocked">0</div>
+                                <div class="prot-sim-stat-lbl">Bloqueados</div>
+                            </div>
+                            <div class="prot-sim-stat">
+                                <div class="prot-sim-stat-val" style="color:var(--accent)" id="prot-sim-legit">0%</div>
+                                <div class="prot-sim-stat-lbl">Legítimo</div>
+                            </div>
+                            <div class="prot-sim-stat">
+                                <div class="prot-sim-stat-val" style="color:var(--green)" id="prot-sim-score">0</div>
+                                <div class="prot-sim-stat-lbl">Shield Score</div>
                             </div>
                         </div>
-                        <div class="prot-week">
-                            <div class="prot-week-title">Economia esta semana — R$ 7.820</div>
-                            <div class="prot-week-bars">
-                                <div class="prot-week-day"><div class="prot-week-bar" data-height="55" style="height:0"></div><div class="prot-week-lbl">Seg</div></div>
-                                <div class="prot-week-day"><div class="prot-week-bar" data-height="72" style="height:0"></div><div class="prot-week-lbl">Ter</div></div>
-                                <div class="prot-week-day"><div class="prot-week-bar" data-height="48" style="height:0"></div><div class="prot-week-lbl">Qua</div></div>
-                                <div class="prot-week-day"><div class="prot-week-bar" data-height="85" style="height:0"></div><div class="prot-week-lbl">Qui</div></div>
-                                <div class="prot-week-day"><div class="prot-week-bar" data-height="65" style="height:0"></div><div class="prot-week-lbl">Sex</div></div>
-                                <div class="prot-week-day"><div class="prot-week-bar" data-height="90" style="height:0"></div><div class="prot-week-lbl">Sáb</div></div>
-                                <div class="prot-week-day"><div class="prot-week-bar" data-height="100" style="height:0"></div><div class="prot-week-lbl">Dom</div></div>
+
+                        <!-- Live Feed -->
+                        <div class="prot-sim-feed">
+                            <div class="prot-sim-feed-header">
+                                <span class="prot-sim-feed-title">Decision Log</span>
+                                <span class="prot-sim-feed-live">Live</span>
+                            </div>
+                            <div class="prot-sim-feed-body" id="prot-sim-feed"></div>
+                        </div>
+
+                        <!-- Bottom Metrics -->
+                        <div class="prot-sim-bottom">
+                            <div class="prot-sim-metric">
+                                <div class="prot-sim-metric-icon prot-sim-metric-icon--saved">
+                                    <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                </div>
+                                <div class="prot-sim-metric-info">
+                                    <div class="prot-sim-metric-val" style="color:var(--green)" id="prot-sim-saved">R$ 0</div>
+                                    <div class="prot-sim-metric-lbl">Economizado</div>
+                                </div>
+                            </div>
+                            <div class="prot-sim-metric">
+                                <div class="prot-sim-metric-icon prot-sim-metric-icon--rate">
+                                    <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                                </div>
+                                <div class="prot-sim-metric-info">
+                                    <div class="prot-sim-metric-val" style="color:var(--accent)" id="prot-sim-rate">0/s</div>
+                                    <div class="prot-sim-metric-lbl">Req/segundo</div>
+                                </div>
+                            </div>
+                            <div class="prot-sim-metric">
+                                <div class="prot-sim-metric-icon prot-sim-metric-icon--score">
+                                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                </div>
+                                <div class="prot-sim-metric-info">
+                                    <div class="prot-sim-metric-val" style="color:var(--green)" id="prot-sim-uptime">99.9%</div>
+                                    <div class="prot-sim-metric-lbl">Uptime</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1159,6 +1978,77 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
 
 <div class="sep"></div>
 
+<!-- ═══════ ROI CALCULATOR ═══════ -->
+<section class="section" id="roi-calc">
+    <div class="container">
+        <div class="t-label rv" style="text-align:center;margin-bottom:16px">Calculadora de Perdas</div>
+        <h2 class="t-lg rv rv-d1" style="text-align:center;max-width:600px;margin:0 auto 16px">Quanto você está<br><span class="grad">jogando fora?</span></h2>
+        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:500px;margin:0 auto clamp(40px,5vw,56px)">Arraste o slider para seu investimento mensal em Google Ads e veja o que está perdendo sem tracking server-side.</p>
+
+        <div class="calc-wrap rv rv-d3">
+            <div class="calc-card">
+                <!-- Slider -->
+                <div class="calc-slider-wrap">
+                    <div class="calc-slider-header">
+                        <span class="calc-slider-label">Investimento mensal em Google Ads</span>
+                        <div class="calc-slider-value" id="calc-display">R$ <span>10.000</span></div>
+                    </div>
+                    <input type="range" class="calc-slider" id="calc-budget" min="1000" max="500000" step="1000" value="10000" aria-label="Investimento mensal em Google Ads em reais">
+                    <div class="calc-slider-ticks">
+                        <span class="calc-slider-tick">R$ 1k</span>
+                        <span class="calc-slider-tick">R$ 50k</span>
+                        <span class="calc-slider-tick">R$ 100k</span>
+                        <span class="calc-slider-tick">R$ 250k</span>
+                        <span class="calc-slider-tick">R$ 500k</span>
+                    </div>
+                </div>
+
+                <!-- Results Grid -->
+                <div class="calc-results">
+                    <div class="calc-result">
+                        <div class="calc-result-icon">👁️‍🗨️</div>
+                        <div class="calc-result-val" style="color:#ef4444" id="calc-invisible">R$ 0</div>
+                        <div class="calc-result-lbl">Conversões invisíveis (~10%)</div>
+                        <div class="calc-result-bar"></div>
+                    </div>
+                    <div class="calc-result">
+                        <div class="calc-result-icon">🤖</div>
+                        <div class="calc-result-val" style="color:var(--gold)" id="calc-fraud">R$ 0</div>
+                        <div class="calc-result-lbl">Tráfego falso &amp; fraude (~5%)</div>
+                        <div class="calc-result-bar"></div>
+                    </div>
+                    <div class="calc-result calc-result--hours">
+                        <div class="calc-result-icon">⏱️</div>
+                        <div class="calc-result-val" style="color:var(--accent)" id="calc-hours">0h</div>
+                        <div class="calc-result-lbl">Horas desperdiçadas / semana</div>
+                        <div class="calc-result-bar"></div>
+                    </div>
+                    <div class="calc-result calc-result--total">
+                        <div class="calc-result-icon">💸</div>
+                        <div class="calc-result-val" style="color:#ef4444" id="calc-total">R$ 0</div>
+                        <div class="calc-result-lbl">Total perdido por mês</div>
+                        <div class="calc-result-bar"></div>
+                    </div>
+                    <div class="calc-result calc-result--roi">
+                        <div class="calc-result-icon">🚀</div>
+                        <div class="calc-result-val" style="color:var(--green)" id="calc-roi">0x</div>
+                        <div class="calc-result-lbl">ROI estimado com BlackInk</div>
+                        <div class="calc-result-bar"></div>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="calc-cta">
+                    <p class="calc-cta-text" id="calc-cta-msg">Mova o slider para ver quanto você está perdendo.</p>
+                    <a href="#pricing" class="btn btn-p">Recuperar Essas Vendas</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="sep"></div>
+
 <!-- ═══════ MOBILE ═══════ -->
 <section class="section mobile-section">
     <div class="container">
@@ -1188,17 +2078,17 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
                     <div class="mock-phone-status"><span></span></div>
                     <div class="mock-phone-body">
                         <div class="mock-notif">
-                            <div class="mock-notif-head"><div class="mock-notif-logo"><img src="images/logo-blue.png" alt="BI"></div><span class="mock-notif-title">O Polvo trouxe sua comissão</span><span class="mock-notif-time">agora</span></div>
+                            <div class="mock-notif-head"><div class="mock-notif-logo"><img src="images/logo-blue.png" alt="BI" loading="lazy"></div><span class="mock-notif-title">O Polvo trouxe sua comissão</span><span class="mock-notif-time">agora</span></div>
                             <div class="mock-notif-body">O Polvo registrou mais uma venda e garantiu R$ 297,00 de comissão</div>
                             <div class="mock-notif-amount">+ R$ 297,00</div>
                         </div>
                         <div class="mock-notif">
-                            <div class="mock-notif-head"><div class="mock-notif-logo"><img src="images/logo-blue.png" alt="BI"></div><span class="mock-notif-title">Tesouro de afiliado capturado</span><span class="mock-notif-time">2min</span></div>
+                            <div class="mock-notif-head"><div class="mock-notif-logo"><img src="images/logo-blue.png" alt="BI" loading="lazy"></div><span class="mock-notif-title">Tesouro de afiliado capturado</span><span class="mock-notif-time">2min</span></div>
                             <div class="mock-notif-body">Mergulho produtivo que resultou em R$ 497,00 de comissão</div>
                             <div class="mock-notif-amount">+ R$ 497,00</div>
                         </div>
                         <div class="mock-notif">
-                            <div class="mock-notif-head"><div class="mock-notif-logo"><img src="images/logo-blue.png" alt="BI"></div><span class="mock-notif-title">Maré de comissões</span><span class="mock-notif-time">5min</span></div>
+                            <div class="mock-notif-head"><div class="mock-notif-logo"><img src="images/logo-blue.png" alt="BI" loading="lazy"></div><span class="mock-notif-title">Maré de comissões</span><span class="mock-notif-time">5min</span></div>
                             <div class="mock-notif-body">A maré está alta e você adicionou R$ 197,00 ao seu baú</div>
                             <div class="mock-notif-amount">+ R$ 197,00</div>
                         </div>
@@ -1208,6 +2098,248 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
         </div>
     </div>
 </section>
+
+<!-- ═══════ VIDEO DEMO ═══════ -->
+<section class="section" id="video-demo">
+    <div class="container">
+        <div class="t-label rv" style="text-align:center;margin-bottom:16px">Demo</div>
+        <h2 class="t-lg rv rv-d1" style="text-align:center;max-width:550px;margin:0 auto 16px">Veja o BlackInk <span class="grad">em ação</span></h2>
+        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:480px;margin:0 auto clamp(32px,4vw,48px)">2 minutos para entender como recuperar cada venda perdida.</p>
+
+        <div class="video-wrap rv rv-d3" id="video-trigger">
+            <!-- Play button -->
+            <div class="video-play">
+                <div class="video-play-icon"></div>
+            </div>
+            <!-- Bottom info bar -->
+            <div class="video-info">
+                <div class="video-info-text">
+                    <strong>Tour pelo Dashboard BlackInk</strong>
+                    Setup, rastreamento e proteção em tempo real
+                </div>
+                <div class="video-info-dur">▶ 2:14</div>
+            </div>
+        </div>
+
+        <div class="video-highlights rv rv-d4">
+            <div class="video-hl">
+                <div class="video-hl-icon">🔧</div>
+                <div class="video-hl-text"><strong>Setup em 2 min</strong>Instale o script e conecte o Google Ads</div>
+            </div>
+            <div class="video-hl">
+                <div class="video-hl-icon">📊</div>
+                <div class="video-hl-text"><strong>Dashboard ao vivo</strong>Métricas, funil e conversões em real-time</div>
+            </div>
+            <div class="video-hl">
+                <div class="video-hl-icon">🛡️</div>
+                <div class="video-hl-text"><strong>Proteção ativa</strong>Veja bots sendo bloqueados ao vivo</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ═══════ COMO FUNCIONA ═══════ -->
+<section class="section" id="how-it-works">
+    <div class="container">
+        <div class="t-label rv" style="text-align:center;margin-bottom:16px">Como Funciona</div>
+        <h2 class="t-lg rv rv-d1" style="text-align:center;max-width:550px;margin:0 auto 16px">3 passos para<br><span class="grad">dados reais</span></h2>
+        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:480px;margin:0 auto clamp(40px,5vw,56px)">Configure o BlackInk em minutos. Sem código, sem complicação.</p>
+
+        <div class="how-steps">
+            <div class="how-step rv" style="position:relative">
+                <div class="how-step-num">1</div>
+                <div class="how-step-title">Instale o Script</div>
+                <div class="how-step-desc">Copie e cole um snippet no seu site ou landing page. Funciona em qualquer plataforma — WordPress, ClickFunnels, páginas customizadas.</div>
+                <div class="how-step-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 2 minutos</div>
+                <div class="how-connector">&#8594;</div>
+            </div>
+            <div class="how-step rv rv-d1" style="position:relative">
+                <div class="how-step-num">2</div>
+                <div class="how-step-title">Conecte o Google Ads</div>
+                <div class="how-step-desc">Autorize via OAuth e selecione as campanhas que quer rastrear. O BlackInk puxa dados direto da API do Google Ads.</div>
+                <div class="how-step-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 5 minutos</div>
+                <div class="how-connector">&#8594;</div>
+            </div>
+            <div class="how-step rv rv-d2">
+                <div class="how-step-num">3</div>
+                <div class="how-step-title">Escale com Dados Reais</div>
+                <div class="how-step-desc">Veja cada conversão rastreada, filtre bots, controle budget e escale suas campanhas com confiança — tudo em um só lugar.</div>
+                <div class="how-step-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg> Tempo real</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ═══════ BEFORE / AFTER COMPARISON ═══════ -->
+<section class="section" id="before-after">
+    <div class="container">
+        <div class="t-label rv" style="text-align:center;margin-bottom:16px">Antes vs Depois</div>
+        <h2 class="t-lg rv rv-d1" style="text-align:center;max-width:550px;margin:0 auto 16px">Veja a diferença em <span class="grad">dados reais</span></h2>
+        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:480px;margin:0 auto clamp(32px,4vw,48px)">Arraste para comparar seus resultados sem e com o BlackInk.</p>
+
+        <div class="ba-container rv rv-d3" id="ba-slider">
+            <!-- AFTER (background layer) -->
+            <div class="ba-side ba-after">
+                <div class="ba-label ba-label--after"><div class="ba-label-dot"></div>Com BlackInk</div>
+                <div class="ba-title">Dashboard Completo</div>
+                <div class="ba-metrics">
+                    <div class="ba-metric">
+                        <div class="ba-metric-icon">📊</div>
+                        <span class="ba-metric-label">Conversões rastreadas</span>
+                        <span class="ba-metric-val">100%</span>
+                    </div>
+                    <div class="ba-metric">
+                        <div class="ba-metric-icon">🎯</div>
+                        <span class="ba-metric-label">CPA real</span>
+                        <span class="ba-metric-val">R$ 12,40</span>
+                    </div>
+                    <div class="ba-metric">
+                        <div class="ba-metric-icon">📈</div>
+                        <span class="ba-metric-label">ROAS</span>
+                        <span class="ba-metric-val">4.8x</span>
+                    </div>
+                    <div class="ba-metric">
+                        <div class="ba-metric-icon">🛡️</div>
+                        <span class="ba-metric-label">Tráfego falso</span>
+                        <span class="ba-metric-val">Bloqueado</span>
+                    </div>
+                    <div class="ba-metric">
+                        <div class="ba-metric-icon">⚡</div>
+                        <span class="ba-metric-label">Decisões baseadas em</span>
+                        <span class="ba-metric-val">Dados reais</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BEFORE (foreground, clipped) -->
+            <div class="ba-side ba-before" id="ba-before">
+                <div class="ba-label ba-label--before"><div class="ba-label-dot"></div>Sem BlackInk</div>
+                <div class="ba-title">Dashboard Incompleto</div>
+                <div class="ba-metrics">
+                    <div class="ba-metric">
+                        <div class="ba-metric-icon">📊</div>
+                        <span class="ba-metric-label">Conversões rastreadas</span>
+                        <span class="ba-metric-val">~60%</span>
+                    </div>
+                    <div class="ba-metric">
+                        <div class="ba-metric-icon">🎯</div>
+                        <span class="ba-metric-label">CPA real</span>
+                        <span class="ba-metric-val">???</span>
+                    </div>
+                    <div class="ba-metric">
+                        <div class="ba-metric-icon">📈</div>
+                        <span class="ba-metric-label">ROAS</span>
+                        <span class="ba-metric-val">Impreciso</span>
+                    </div>
+                    <div class="ba-metric">
+                        <div class="ba-metric-icon">🛡️</div>
+                        <span class="ba-metric-label">Tráfego falso</span>
+                        <span class="ba-metric-val">Invisível</span>
+                    </div>
+                    <div class="ba-metric">
+                        <div class="ba-metric-icon">⚡</div>
+                        <span class="ba-metric-label">Decisões baseadas em</span>
+                        <span class="ba-metric-val">Achismo</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Divider handle -->
+            <div class="ba-divider" id="ba-divider"></div>
+        </div>
+
+        <div class="ba-hint rv rv-d4">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            Arraste para comparar
+        </div>
+    </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ═══════ COMPETITOR COMPARISON ═══════ -->
+<section class="section" id="comparison">
+    <div class="container">
+        <div class="t-label rv" style="text-align:center;margin-bottom:16px">Comparativo</div>
+        <h2 class="t-lg rv rv-d1" style="text-align:center;max-width:550px;margin:0 auto 16px">Por que escolher o <span class="grad">BlackInk</span>?</h2>
+        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:480px;margin:0 auto clamp(32px,4vw,48px)">Compare funcionalidades lado a lado e veja porque somos diferentes.</p>
+
+        <div class="comp-table rv rv-d3">
+            <div class="comp-row comp-row--header">
+                <div class="comp-cell">Funcionalidade</div>
+                <div class="comp-cell comp-cell--bi comp-col-bi">BlackInk</div>
+                <div class="comp-cell">Alternativa A</div>
+                <div class="comp-cell">Manual / Planilha</div>
+            </div>
+            <div class="comp-row">
+                <div class="comp-cell">Tracking server-side</div>
+                <div class="comp-cell comp-col-bi"><span class="comp-check">✓</span></div>
+                <div class="comp-cell"><span class="comp-partial">Parcial</span></div>
+                <div class="comp-cell"><span class="comp-cross">✗</span></div>
+            </div>
+            <div class="comp-row">
+                <div class="comp-cell">Controle Google Ads direto</div>
+                <div class="comp-cell comp-col-bi"><span class="comp-check">✓</span></div>
+                <div class="comp-cell"><span class="comp-cross">✗</span></div>
+                <div class="comp-cell"><span class="comp-cross">✗</span></div>
+            </div>
+            <div class="comp-row">
+                <div class="comp-cell">Proteção anti-fraude</div>
+                <div class="comp-cell comp-col-bi"><span class="comp-check">✓</span></div>
+                <div class="comp-cell"><span class="comp-partial">Básico</span></div>
+                <div class="comp-cell"><span class="comp-cross">✗</span></div>
+            </div>
+            <div class="comp-row">
+                <div class="comp-cell">Cloaker + Safe Page</div>
+                <div class="comp-cell comp-col-bi"><span class="comp-check">✓</span></div>
+                <div class="comp-cell"><span class="comp-check">✓</span></div>
+                <div class="comp-cell"><span class="comp-cross">✗</span></div>
+            </div>
+            <div class="comp-row">
+                <div class="comp-cell">App mobile (iOS/Android)</div>
+                <div class="comp-cell comp-col-bi"><span class="comp-check">✓</span></div>
+                <div class="comp-cell"><span class="comp-cross">✗</span></div>
+                <div class="comp-cell"><span class="comp-cross">✗</span></div>
+            </div>
+            <div class="comp-row">
+                <div class="comp-cell">Funil de 7 etapas</div>
+                <div class="comp-cell comp-col-bi"><span class="comp-check">✓</span></div>
+                <div class="comp-cell"><span class="comp-cross">✗</span></div>
+                <div class="comp-cell"><span class="comp-partial">Manual</span></div>
+            </div>
+            <div class="comp-row">
+                <div class="comp-cell">30+ integrações nativas</div>
+                <div class="comp-cell comp-col-bi"><span class="comp-check">✓</span></div>
+                <div class="comp-cell"><span class="comp-partial">10-15</span></div>
+                <div class="comp-cell"><span class="comp-cross">✗</span></div>
+            </div>
+            <div class="comp-row">
+                <div class="comp-cell">Suporte em PT-BR</div>
+                <div class="comp-cell comp-col-bi"><span class="comp-check">✓</span></div>
+                <div class="comp-cell"><span class="comp-cross">✗</span></div>
+                <div class="comp-cell"><span class="comp-partial">—</span></div>
+            </div>
+            <div class="comp-row">
+                <div class="comp-cell">Latência &lt; 50ms</div>
+                <div class="comp-cell comp-col-bi"><span class="comp-check">✓</span></div>
+                <div class="comp-cell"><span class="comp-partial">~200ms</span></div>
+                <div class="comp-cell"><span class="comp-partial">—</span></div>
+            </div>
+            <div class="comp-row">
+                <div class="comp-cell">Setup sem código</div>
+                <div class="comp-cell comp-col-bi"><span class="comp-check">✓</span></div>
+                <div class="comp-cell"><span class="comp-partial">Parcial</span></div>
+                <div class="comp-cell"><span class="comp-cross">✗</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="sep"></div>
 
 <!-- ═══════ 5. PRICING ═══════ -->
 <section class="section" id="pricing" style="background:var(--bg2)">
@@ -1264,10 +2396,11 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
                     <li class="p-feat p-feat--off"><span class="p-check"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span>Proteção do Tráfego</span></li>
                 </ul>
                 <button class="btn btn-p btn-full btn-soon" disabled>Em breve</button>
+                <p class="p-micro">Garantia de 7 dias · Sem contrato</p>
             </div>
 
             <!-- RECIFE -->
-            <div class="p-card rv rv-d2">
+            <div class="p-card p-card--rec rv rv-d2">
                 <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
                     <div class="p-name" style="color:var(--accent)">Recife</div>
                     <span class="p-badge p-badge--pop">Mais Popular</span>
@@ -1301,6 +2434,7 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
                     <li class="p-feat"><span class="p-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Decision logs + <strong>mais campanhas</strong></span></li>
                 </ul>
                 <button class="btn btn-p btn-full btn-soon" disabled>Em breve</button>
+                <p class="p-micro">Garantia de 7 dias · Sem contrato</p>
             </div>
 
             <!-- ABISSAL -->
@@ -1336,10 +2470,156 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
                     <li class="p-feat"><span class="p-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Multi-conta Google Ads</strong> (MCC)</span></li>
                 </ul>
                 <button class="btn btn-p btn-full btn-soon" disabled>Em breve</button>
+                <p class="p-micro">Garantia de 7 dias · Sem contrato</p>
             </div>
         </div>
 
         <p class="rv" style="text-align:center;margin-top:40px;font-size:14px;color:var(--muted)">Sem contrato. Upgrade, downgrade ou cancele a qualquer momento.</p>
+
+        <!-- Feature Comparison Table -->
+        <div class="cmp-wrap rv rv-d2">
+            <table class="cmp-table">
+                <thead>
+                    <tr>
+                        <th>Funcionalidade</th>
+                        <th>
+                            <div class="cmp-th-plan"><span class="cmp-th-name" style="color:var(--accent)">Raso</span></div>
+                        </th>
+                        <th class="cmp-col-rec">
+                            <div class="cmp-th-plan"><span class="cmp-th-name" style="color:var(--accent)">Recife</span></div>
+                        </th>
+                        <th>
+                            <div class="cmp-th-plan"><span class="cmp-th-name" style="color:var(--gold)">Abissal</span></div>
+                        </th>
+                        <th class="cmp-col-old">
+                            <div class="cmp-th-plan"><span class="cmp-th-trackers">Trackers<br>Tradicionais</span></div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <!-- ═══════════════════════════════════════════
+                         CATEGORIA 1: TRACKER + INTEGRAÇÃO GOOGLE ADS
+                         ═══════════════════════════════════════════ -->
+                    <tr class="cmp-cat-row"><td colspan="5" style="padding:0">
+                        <div class="cmp-cat-header">
+                            <div class="cmp-cat-icon cmp-cat-icon--tracker">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+                            </div>
+                            <div class="cmp-cat-info">
+                                <span class="cmp-cat-name">Tracker + Google Ads</span>
+                                <span class="cmp-cat-desc">Tracking server-side, conversões automáticas e controle completo de campanhas</span>
+                            </div>
+                        </div>
+                        <div class="cmp-cat-divider"></div>
+                    </td></tr>
+
+                    <!-- Tracking Core -->
+                    <tr><td>Tracking server-side (imune a iOS 14+ e ad blockers)</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Arquitetura dual-path (server + client com fallback)</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Captura GCLID / WBRAID / GBRAID automático</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-partial">Parcial</td></tr>
+                    <tr><td>Cookies server-side anti-ITP (Safari)</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Latência sub-50ms</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-partial">Varia</td></tr>
+
+                    <!-- Conversões -->
+                    <tr><td>Conversões automáticas via Google Ads API</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-partial">Parcial</td></tr>
+                    <tr><td>Decoração automática de 30+ checkouts</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-partial">Parcial</td></tr>
+                    <tr><td>Postback para 12+ plataformas de vendas</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td></tr>
+                    <tr><td>Funil de 7 etapas com análise de perda color-coded</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Rastreamento de upsells, reembolsos e inferidas</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-partial">Parcial</td></tr>
+                    <tr><td>Tracking de cancelamentos e reembolsos</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+
+                    <!-- Controle Google Ads -->
+                    <tr><td>Pausar / despausar campanhas direto do BlackInk</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Alterar orçamento diário e estratégia de lance</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Termos de busca com ROAS, custo e lucro por termo</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Keywords com CPA, ROAS e margem de lucro</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Consulta de públicos (demografia, geo, horário, device, redes, audiência)</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Auction Insights (monitore concorrentes)</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Impressões, CTR, CPC Médio e Custo Total do Google Ads</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Parcela de impressões (perdida por orçamento / ranking / topo)</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Detecção de cliques inválidos do Google</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Ajustar targets de CPA e ROAS</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+
+                    <!-- Inteligência e Analytics -->
+                    <tr><td>BlackInk Intelligence — insights automáticos por IA</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Metas com 3 projeções + pace tracking</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Teste A/B com significância estatística</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-partial">Básico</td></tr>
+                    <tr><td>Dashboard financeiro (Simulador, Break-even, Fluxo de Caixa, Custos, Taxas)</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Métricas em tempo real (Lucro, ROAS, ROI, CPA, Receita)</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td></tr>
+                    <tr><td>Tracking de vídeo (VTurb, YouTube, Vimeo, Wistia)</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-partial">Parcial</td></tr>
+                    <tr><td>Tracking comportamental (scroll depth, tempo ativo, cliques)</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-partial">Parcial</td></tr>
+                    <tr><td>Filtros UTM avançados (Source, Medium, Content, Campaign, Keyword)</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-partial">Parcial</td></tr>
+                    <tr><td>Análise de tempo de visualização do vídeo (% assistido, pitch)</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Gráficos de performance temporal (Receita x Cliques x Conversões)</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-partial">Parcial</td></tr>
+                    <tr><td>URL Builder integrado com UTMs</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td></tr>
+                    <tr><td>Contas Google Ads ilimitadas</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-partial">Varia</td></tr>
+                    <tr><td>Campanhas ativas ilimitadas</td><td class="cmp-no">&#10007;</td><td class="cmp-col-rec cmp-no">&#10007;</td><td class="cmp-yes">&#10003;</td><td class="cmp-partial">Varia</td></tr>
+
+                    <!-- ═══════════════════════════════════════════
+                         CATEGORIA 2: PROTEÇÃO DO TRÁFEGO (CORE)
+                         ═══════════════════════════════════════════ -->
+                    <tr class="cmp-cat-row"><td colspan="5" style="padding:0">
+                        <div class="cmp-cat-header">
+                            <div class="cmp-cat-icon cmp-cat-icon--shield">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                            <div class="cmp-cat-info">
+                                <span class="cmp-cat-name">Proteção do Tráfego</span>
+                                <span class="cmp-cat-desc">A melhor proteção anti-fraude do mercado — nosso maior diferencial</span>
+                            </div>
+                            <span class="cmp-cat-badge cmp-cat-badge--core">Core</span>
+                        </div>
+                        <div class="cmp-cat-divider cmp-cat-divider--shield"></div>
+                    </td></tr>
+
+                    <tr><td>Detecção de bots e crawlers</td><td class="cmp-no">&#10007;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-partial">Básico</td></tr>
+                    <tr><td>Bloqueio de VPNs e proxies</td><td class="cmp-no">&#10007;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-partial">Parcial</td></tr>
+                    <tr><td>Filtragem de IPs de datacenter</td><td class="cmp-no">&#10007;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Bloqueio de ISPs suspeitos</td><td class="cmp-no">&#10007;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Bloqueio de verificadores de anúncio</td><td class="cmp-no">&#10007;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Geo-targeting (país, região)</td><td class="cmp-no">&#10007;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Device filtering (mobile, desktop, tablet)</td><td class="cmp-no">&#10007;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Filtragem por sistema operacional</td><td class="cmp-no">&#10007;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Filtragem por navegador</td><td class="cmp-no">&#10007;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Filtragem por idioma</td><td class="cmp-no">&#10007;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Decision logs completos com audit trail</td><td class="cmp-no">&#10007;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Dashboard dedicado de proteção</td><td class="cmp-no">&#10007;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Rate limiting e alertas de fraude</td><td class="cmp-no">&#10007;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Detecção de padrões negativos e anomalias</td><td class="cmp-no">&#10007;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+
+                    <!-- ═══════════════════════════════════════════
+                         CATEGORIA 3: APP MOBILE
+                         ═══════════════════════════════════════════ -->
+                    <tr class="cmp-cat-row"><td colspan="5" style="padding:0">
+                        <div class="cmp-cat-header">
+                            <div class="cmp-cat-icon cmp-cat-icon--app">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+                            </div>
+                            <div class="cmp-cat-info">
+                                <span class="cmp-cat-name">App Mobile</span>
+                                <span class="cmp-cat-desc">Suas vendas no bolso, em tempo real — iOS e Android</span>
+                            </div>
+                        </div>
+                        <div class="cmp-cat-divider"></div>
+                    </td></tr>
+
+                    <tr><td>App nativo iOS + Android</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Push notification a cada venda (campanha + valor)</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Dashboard mobile completo com funil e métricas</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Performance em tempo real no celular</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Autenticação biométrica (Face ID, fingerprint)</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Suporte a 8 idiomas (PT-BR, EN, ES, FR, DE, ZH, RU)</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Funciona em segundo plano</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Análise de proteção no mobile (ameaças, geo, devices, ISPs)</td><td class="cmp-no">&#10007;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Funil de conversão visual no mobile</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Filtros por campanha, data e UTMs no mobile</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Detalhes de cliques individuais (device, país, query)</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Suporte via chat ao vivo no app</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+
+                </tbody>
+            </table>
+        </div>
     </div>
 </section>
 
@@ -1423,19 +2703,21 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
 </section>
 
 <!-- ═══════ 7. FAQ ═══════ -->
-<section class="section" id="faq" style="background:var(--bg2)">
+<section class="section" id="faq" style="background:var(--bg2)" aria-label="Perguntas Frequentes">
     <div class="container">
         <div class="t-label rv" style="text-align:center;margin-bottom:16px">Perguntas Frequentes</div>
         <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:56px">FAQ</h2>
         <div class="faq-list">
-            <details class="faq-i rv"><summary class="faq-q">Consigo pausar campanhas e mudar orçamento pelo BlackInk?</summary><div class="faq-a">Sim. Direto do dashboard do BlackInk você pode pausar/despausar campanhas do Google Ads, alterar o orçamento diário, mudar a estratégia de lance (Target CPA, Target ROAS, Maximize Conversions, Maximize Conversion Value) e ajustar os targets — tudo sem abrir o painel do Google Ads.</div></details>
-            <details class="faq-i rv rv-d1"><summary class="faq-q">Como funciona a análise de termos de busca e keywords?</summary><div class="faq-a">O BlackInk consulta a API do Google Ads e mostra cada termo de busca com ROAS, custo e lucro, color-coded por performance (verde = excelente, amarelo = atenção, vermelho = negativar). A análise de keywords mostra sessões, checkouts, conversões, CPA, ROAS e margem de lucro por keyword. Você também pode consultar públicos (demographics, locations, devices, networks, audiences) direto do BlackInk.</div></details>
-            <details class="faq-i rv rv-d2"><summary class="faq-q">O que é o BlackInk Intelligence?</summary><div class="faq-a">É o sistema de IA do BlackInk que gera insights automaticamente: detecta anomalias (ex: CPA subiu 34%), identifica gargalos no funil, encontra oportunidades de escala e sugere ações. Os insights têm severidade (Critical, Warning, Opportunity, Info) e você pode fixar, dispensar ou dar feedback. Também inclui metas com projeções em 3 cenários (otimista, realista, pessimista) e pace tracking.</div></details>
-            <details class="faq-i rv rv-d3"><summary class="faq-q">Qual a diferença entre Raso, Recife e Abissal?</summary><div class="faq-a">O <strong>Raso</strong> (R$ 149,90) inclui o tracker completo com todas as funcionalidades: controle de campanhas, termos de busca, keywords, consulta de públicos, BlackInk Intelligence, funil de 7 etapas, postback de 12 plataformas, decoração de 30+ checkouts, metas com projeções, teste A/B, dashboard financeiro, app mobile e mais. O <strong>Recife</strong> (R$ 249,99) adiciona a Proteção do Tráfego (bots, VPNs, geo-targeting, safe page/money page) e Auction Insights (concorrência). O <strong>Abissal</strong> (R$ 399,99) libera campanhas ilimitadas, contas adicionais (até 50), suporte prioritário e multi-conta Google Ads (MCC).</div></details>
-            <details class="faq-i rv rv-d4"><summary class="faq-q">Como funciona o funil de 7 etapas?</summary><div class="faq-a">O BlackInk rastreia 7 etapas do funil: Cliques Pagos → Cliques Totais → Chegaram na VSL → Assistiram VSL (Play) → Foram para Oferta → Checkout → Compra. Entre cada etapa, o dashboard mostra a taxa de perda color-coded: verde (&lt;15%), amarelo (15-30%), vermelho (&gt;30%). Isso permite identificar exatamente onde o funil está perdendo visitantes.</div></details>
+            <details class="faq-i rv"><summary class="faq-q">Quanto tempo leva para configurar?</summary><div class="faq-a">15 minutos. Você cola um snippet no seu site (2 min), conecta sua conta Google Ads via OAuth (5 min) e configura o postback da sua plataforma de vendas (5 min). Sem código, sem desenvolvedor. Se precisar, a equipe ajuda na configuração.</div></details>
+            <details class="faq-i rv rv-d1"><summary class="faq-q">O BlackInk se paga? Quanto posso economizar?</summary><div class="faq-a">Sim. Estudos mostram que até 40% das conversões são invisíveis sem tracking server-side, e 1 em cada 5 cliques é fraudulento. Se você investe R$ 10.000/mês em Google Ads, pode estar perdendo R$ 6.000/mês em dados incorretos e tráfego falso. O plano Raso custa R$ 114,99/mês — um ROI de mais de 50x. Use nossa <a href="#roi-calc" style="color:var(--accent);text-decoration:underline">calculadora de perdas</a> para ver o número exato.</div></details>
+            <details class="faq-i rv rv-d2"><summary class="faq-q">Qual a diferença do BlackInk para outros trackers?</summary><div class="faq-a">A maioria dos trackers depende de cookies e scripts client-side — que são bloqueados pelo iOS 14+, Safari ITP e ad blockers. O BlackInk rastreia server-side, direto na infraestrutura, imune a bloqueios. Além disso, oferece controle de campanhas do Google Ads (pausar, editar budget, mudar estratégia), análise de termos de busca com ROAS, proteção anti-fraude e IA que sugere ações — tudo em uma plataforma só.</div></details>
+            <details class="faq-i rv rv-d3"><summary class="faq-q">Qual a diferença entre Raso, Recife e Abissal?</summary><div class="faq-a">O <strong>Raso</strong> (R$ 114,99/mês) inclui o tracker completo: controle de campanhas, termos de busca, keywords, consulta de públicos, BlackInk Intelligence, funil de 7 etapas, postback de 12 plataformas, decoração de 30+ checkouts, metas com projeções, teste A/B, dashboard financeiro, app mobile e mais. O <strong>Recife</strong> (R$ 359,99/mês) adiciona a Proteção do Tráfego (bots, VPNs, geo-targeting, safe page/money page) e Auction Insights. O <strong>Abissal</strong> (R$ 799,99/mês) libera campanhas ilimitadas, contas adicionais (até 50), suporte prioritário e multi-conta Google Ads (MCC).</div></details>
+            <details class="faq-i rv rv-d4"><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">Garantia blindada de 7 dias. Teste cada funcionalidade do plano escolhido sem restrição. Se em qualquer momento você sentir que não entregou mais controle e resultado — devolvemos 100% do investimento. Sem perguntas, sem burocracia, sem letras miúdas.</div></details>
             <details class="faq-i rv rv-d5"><summary class="faq-q">Como funciona o tracking server-side?</summary><div class="faq-a">O BlackInk injeta um tracker.js nas suas páginas e captura dados diretamente no servidor: visitor_id, session_uuid, gclid/wbraid/gbraid, UTMs, device, keyword e match_type. Parâmetros de rastreamento são injetados server-side em 30+ checkouts. Os dados de conversão são enviados direto para o Google Ads API — bypassa iOS 14+, ad blockers e cookies de terceiros.</div></details>
-            <details class="faq-i rv rv-d6"><summary class="faq-q">Posso mudar de plano?</summary><div class="faq-a">Sim. Upgrade ou downgrade a qualquer momento. Cobramos apenas a diferença proporcional. Sem multas, sem burocracia.</div></details>
-            <details class="faq-i rv"><summary class="faq-q">O que é a Proteção do Tráfego?</summary><div class="faq-a">Disponível nos planos Recife e Abissal, a Proteção do Tráfego detecta e bloqueia tráfego inválido: bots, VPNs, IPs de datacenter, proxies e verificadores de anúncio. Inclui geo-targeting, device filtering, sistema de safe page/money page e rate limiting. Tudo com decision logs e dashboard dedicado. O Recife também inclui Auction Insights para monitorar a concorrência.</div></details>
+            <details class="faq-i rv rv-d6"><summary class="faq-q">Consigo pausar campanhas e mudar orçamento pelo BlackInk?</summary><div class="faq-a">Sim. Direto do dashboard do BlackInk você pode pausar/despausar campanhas do Google Ads, alterar o orçamento diário, mudar a estratégia de lance (Target CPA, Target ROAS, Maximize Conversions, Maximize Conversion Value) e ajustar os targets — tudo sem abrir o painel do Google Ads.</div></details>
+            <details class="faq-i rv"><summary class="faq-q">Posso falar com alguém se precisar de ajuda?</summary><div class="faq-a">Sim. Oferecemos suporte por ticket dentro da plataforma e pela comunidade VIP no WhatsApp. No plano Abissal, o suporte é prioritário. A equipe também ajuda na configuração inicial se você precisar.</div></details>
+            <details class="faq-i rv rv-d1"><summary class="faq-q">O que é o BlackInk Intelligence?</summary><div class="faq-a">É o sistema de IA do BlackInk que gera insights automaticamente: detecta anomalias (ex: CPA subiu 34%), identifica gargalos no funil, encontra oportunidades de escala e sugere ações. Os insights têm severidade (Critical, Warning, Opportunity, Info) e você pode fixar, dispensar ou dar feedback. Também inclui metas com projeções em 3 cenários (otimista, realista, pessimista) e pace tracking.</div></details>
+            <details class="faq-i rv rv-d2"><summary class="faq-q">Posso mudar de plano?</summary><div class="faq-a">Sim. Upgrade ou downgrade a qualquer momento. Cobramos apenas a diferença proporcional. Sem multas, sem burocracia.</div></details>
         </div>
     </div>
 </section>
@@ -1446,8 +2728,12 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
     <div class="container" style="position:relative;z-index:1">
         <div class="t-label rv" style="text-align:center;margin-bottom:16px">Comece agora</div>
         <h2 class="t-lg rv rv-d1" style="text-align:center">Pronto para rastrear<br><span class="grad">de verdade?</span></h2>
-
-
+        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:520px;margin:16px auto 36px">Pare de perder 40% dos dados e de pagar por tráfego falso. Configure em 15 minutos e veja seus números reais pela primeira vez.</p>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center" class="rv rv-d3">
+            <a href="#pricing" class="btn btn-p">Ver Planos</a>
+            <a href="https://chat.whatsapp.com/D3slD0HlbLZFazU41H08Ih" target="_blank" rel="noopener noreferrer" class="btn btn-o">Falar com a Equipe</a>
+        </div>
+        <p class="rv rv-d4" style="text-align:center;margin-top:24px;font-size:13px;color:var(--muted)">Garantia de 7 dias · Sem contrato · Setup em 15 minutos</p>
     </div>
 </section>
 
@@ -1497,6 +2783,18 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
+<!-- Scroll progress indicator -->
+<div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+<!-- Sticky CTA Bar -->
+<div class="sticky-cta" id="sticky-cta">
+    <div class="sticky-cta-inner">
+        <span class="sticky-cta-text"><strong>BlackInk</strong> — Proteja suas campanhas e recupere conversões invisíveis</span>
+        <a href="#pricing" class="btn btn-p">Ver Planos — 7 Dias Grátis</a>
+        <button class="sticky-cta-close" id="sticky-cta-close" aria-label="Fechar">&times;</button>
+    </div>
+</div>
+
 <script>
 (() => {
 const loader = document.getElementById('loader');
@@ -1506,7 +2804,7 @@ const heroTitle = document.getElementById('hero-title');
 let globalCharIdx = 0;
 heroTitle.querySelectorAll('.ln-i').forEach(lnI => {
     const text = lnI.textContent;
-    const isGrad = lnI.classList.contains('grad');
+    const isGrad = lnI.classList.contains('grad') || lnI.classList.contains('grad-hero');
     lnI.innerHTML = '';
     for (const char of text) {
         const span = document.createElement('span');
@@ -1618,37 +2916,219 @@ const staggerObs = new IntersectionObserver(entries => {
 }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.stagger-parent').forEach(el => staggerObs.observe(el));
 
-// ── Protection mockup animated bars + score counter ──
-const protMockup = document.getElementById('prot-mockup');
-if (protMockup) {
-    const protObs = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-            if (!e.isIntersecting) return;
-            // Animate horizontal bars
-            protMockup.querySelectorAll('.prot-bar-fill[data-width]').forEach((bar, i) => {
-                setTimeout(() => { bar.style.width = bar.dataset.width + '%'; }, i * 150);
-            });
-            // Animate weekly vertical bars
-            protMockup.querySelectorAll('.prot-week-bar[data-height]').forEach((bar, i) => {
-                setTimeout(() => { bar.style.height = bar.dataset.height + '%'; }, 400 + i * 100);
-            });
-            // Animate score counter 0% → 94.2%
-            const scoreEl = document.getElementById('prot-score-num');
-            if (scoreEl) {
-                const target = 94.2;
-                const dur = 1400;
-                const t0 = performance.now();
-                (function tick(now) {
-                    const p = Math.min((now - t0) / dur, 1);
-                    const ease = 1 - Math.pow(1 - p, 3);
-                    scoreEl.textContent = (ease * target).toFixed(1) + '%';
-                    if (p < 1) requestAnimationFrame(tick);
-                })(t0);
+// ══════════════════════════════════════════════════════════
+// LIVE PROTECTION SIMULATOR — Enterprise Security Engine
+// ══════════════════════════════════════════════════════════
+const protSim = document.getElementById('prot-sim');
+if (protSim) {
+    const feed = document.getElementById('prot-sim-feed');
+    const elAllowed = document.getElementById('prot-sim-allowed');
+    const elBlocked = document.getElementById('prot-sim-blocked');
+    const elLegit = document.getElementById('prot-sim-legit');
+    const elSaved = document.getElementById('prot-sim-saved');
+    const elRate = document.getElementById('prot-sim-rate');
+    const elScore = document.getElementById('prot-sim-score');
+    const elThreat = document.getElementById('prot-sim-threat');
+    const elThreatFill = document.getElementById('prot-sim-threat-fill');
+    const statAllowed = document.getElementById('prot-sim-stat-allowed');
+    const statBlocked = document.getElementById('prot-sim-stat-blocked');
+
+    let allowed = 0, blocked = 0, saved = 0, simRunning = false, simInterval = null;
+    let threatLevel = 0; // 0-100
+    const MAX_ENTRIES = 7;
+
+    // SVG icons
+    const SVG_CHECK = '<svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>';
+    const SVG_BLOCK = '<svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+    const SVG_WARN = '<svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>';
+
+    // Fake IP generator
+    function fakeIP(type) {
+        if (type === 'br') return (177 + Math.floor(Math.random()*3)) + '.' + Math.floor(Math.random()*255) + '.' + Math.floor(Math.random()*255) + '.' + Math.floor(Math.random()*255);
+        if (type === 'dc') return (34 + Math.floor(Math.random()*10)) + '.' + Math.floor(Math.random()*255) + '.' + Math.floor(Math.random()*255) + '.' + Math.floor(Math.random()*255);
+        return Math.floor(Math.random()*223+1) + '.' + Math.floor(Math.random()*255) + '.' + Math.floor(Math.random()*255) + '.' + Math.floor(Math.random()*255);
+    }
+
+    // Legit traffic pool — more variety
+    const legit = [
+        {city:'São Paulo',device:'Mobile',browser:'Chrome',os:'Android'},
+        {city:'Rio de Janeiro',device:'Mobile',browser:'Safari',os:'iOS'},
+        {city:'Belo Horizonte',device:'Desktop',browser:'Chrome',os:'Windows'},
+        {city:'Curitiba',device:'Mobile',browser:'Chrome',os:'Android'},
+        {city:'Salvador',device:'Desktop',browser:'Firefox',os:'macOS'},
+        {city:'Fortaleza',device:'Mobile',browser:'Chrome',os:'Android'},
+        {city:'Brasília',device:'Mobile',browser:'Samsung',os:'Android'},
+        {city:'Recife',device:'Desktop',browser:'Chrome',os:'Windows'},
+        {city:'Porto Alegre',device:'Mobile',browser:'Safari',os:'iOS'},
+        {city:'Manaus',device:'Mobile',browser:'Chrome',os:'Android'},
+        {city:'Goiânia',device:'Desktop',browser:'Edge',os:'Windows'},
+        {city:'Campinas',device:'Mobile',browser:'Chrome',os:'Android'},
+        {city:'Florianópolis',device:'Desktop',browser:'Chrome',os:'macOS'},
+        {city:'Vitória',device:'Mobile',browser:'Safari',os:'iOS'},
+        {city:'Belém',device:'Mobile',browser:'Chrome',os:'Android'},
+        {city:'Natal',device:'Desktop',browser:'Chrome',os:'Windows'},
+    ];
+
+    // Threat pool — richer data
+    const threats = [
+        {type:'Bot',reason:'Headless browser detectado',kind:'block',flag:'--',ip:'dc',sev:15},
+        {type:'Bot',reason:'Crawler automatizado',kind:'block',flag:'--',ip:'dc',sev:12},
+        {type:'Bot',reason:'User-agent falsificado',kind:'block',flag:'--',ip:'dc',sev:18},
+        {type:'Bot',reason:'Puppeteer/Playwright',kind:'block',flag:'US',ip:'dc',sev:20},
+        {type:'VPN',reason:'NordVPN detectada',kind:'block',flag:'DE',ip:'other',sev:10},
+        {type:'VPN',reason:'ExpressVPN detectada',kind:'block',flag:'NL',ip:'other',sev:10},
+        {type:'VPN',reason:'Proxy anônimo',kind:'block',flag:'US',ip:'other',sev:14},
+        {type:'VPN',reason:'Tor exit node',kind:'block',flag:'--',ip:'other',sev:22},
+        {type:'Datacenter',reason:'AWS IP range',kind:'block',flag:'US',ip:'dc',sev:16},
+        {type:'Datacenter',reason:'Google Cloud IP',kind:'block',flag:'US',ip:'dc',sev:16},
+        {type:'Datacenter',reason:'DigitalOcean IP',kind:'block',flag:'US',ip:'dc',sev:14},
+        {type:'Geo',reason:'Fora da região alvo',kind:'warn',flag:'RU',ip:'other',sev:5},
+        {type:'Geo',reason:'País bloqueado',kind:'warn',flag:'CN',ip:'other',sev:5},
+        {type:'Geo',reason:'Região restrita',kind:'warn',flag:'IN',ip:'other',sev:4},
+        {type:'ISP',reason:'ISP suspeito detectado',kind:'block',flag:'BD',ip:'other',sev:12},
+        {type:'Verificador',reason:'Ad verification bot',kind:'block',flag:'US',ip:'dc',sev:8},
+        {type:'Verificador',reason:'Competitor click',kind:'block',flag:'BR',ip:'br',sev:18},
+        {type:'Fraude',reason:'Click flooding detectado',kind:'block',flag:'--',ip:'dc',sev:25},
+    ];
+
+    function getTime() {
+        const d = new Date();
+        return d.getHours().toString().padStart(2,'0') + ':' + d.getMinutes().toString().padStart(2,'0') + ':' + d.getSeconds().toString().padStart(2,'0');
+    }
+
+    function updateThreatLevel(delta) {
+        threatLevel = Math.max(0, Math.min(100, threatLevel + delta));
+        // Decay toward low over time
+        const pct = threatLevel;
+        elThreatFill.style.width = Math.max(3, pct) + '%';
+        if (pct < 25) {
+            elThreat.textContent = 'Baixo';
+            elThreat.style.color = 'var(--green)';
+            elThreatFill.style.background = 'linear-gradient(90deg,var(--green),var(--green))';
+        } else if (pct < 55) {
+            elThreat.textContent = 'Moderado';
+            elThreat.style.color = 'var(--gold)';
+            elThreatFill.style.background = 'linear-gradient(90deg,var(--gold),var(--gold))';
+        } else {
+            elThreat.textContent = 'Elevado';
+            elThreat.style.color = '#ef4444';
+            elThreatFill.style.background = 'linear-gradient(90deg,#ef4444,#ef4444)';
+        }
+    }
+
+    function bumpStat(statEl) {
+        statEl.classList.add('prot-sim-stat--bump');
+        setTimeout(() => statEl.classList.remove('prot-sim-stat--bump'), 200);
+    }
+
+    function removeOldEntries() {
+        while (feed.children.length > MAX_ENTRIES) {
+            const old = feed.firstChild;
+            // Remove from DOM immediately to prevent infinite loop
+            feed.removeChild(old);
+        }
+    }
+
+    function createEntry(isAllowed) {
+        const el = document.createElement('div');
+        el.className = 'prot-sim-entry';
+        const time = getTime();
+
+        if (isAllowed) {
+            const c = legit[Math.floor(Math.random() * legit.length)];
+            const ip = fakeIP('br');
+            el.classList.add('prot-sim-entry--flash-allow');
+            el.innerHTML =
+                '<span class="prot-sim-time">' + time + '</span>' +
+                '<span class="prot-sim-icon prot-sim-icon--allow">' + SVG_CHECK + '</span>' +
+                '<span class="prot-sim-detail"><strong>BR</strong> · ' + c.browser + ' · ' + c.device + ' · ' + c.city + ' <span class="prot-sim-ip">' + ip + '</span></span>' +
+                '<span class="prot-sim-verdict prot-sim-verdict--allow">PASS</span>';
+            allowed++;
+            updateThreatLevel(-2);
+            bumpStat(statAllowed);
+        } else {
+            const t = threats[Math.floor(Math.random() * threats.length)];
+            const isWarn = t.kind === 'warn';
+            const ip = fakeIP(t.ip);
+            el.classList.add(isWarn ? 'prot-sim-entry--flash-warn' : 'prot-sim-entry--flash-block');
+            const verdictLabel = isWarn ? 'GEO' : (t.type === 'Fraude' ? 'FRAUD' : 'BLOCK');
+            el.innerHTML =
+                '<span class="prot-sim-time">' + time + '</span>' +
+                '<span class="prot-sim-icon prot-sim-icon--' + (isWarn ? 'warn' : 'block') + '">' + (isWarn ? SVG_WARN : SVG_BLOCK) + '</span>' +
+                '<span class="prot-sim-detail"><strong>' + t.type + '</strong> · ' + t.flag + ' · ' + t.reason + ' <span class="prot-sim-ip">' + ip + '</span></span>' +
+                '<span class="prot-sim-verdict prot-sim-verdict--' + (isWarn ? 'warn' : 'block') + '">' + verdictLabel + '</span>';
+            blocked++;
+            saved += 3 + Math.floor(Math.random() * 12);
+            updateThreatLevel(t.sev);
+            bumpStat(statBlocked);
+
+            // Red pulse on mockup border for blocks
+            if (!isWarn) {
+                protSim.classList.add('sim-threat-pulse');
+                setTimeout(() => protSim.classList.remove('sim-threat-pulse'), 600);
             }
-            protObs.unobserve(e.target);
+        }
+
+        feed.appendChild(el);
+        removeOldEntries();
+
+        // Update all stats
+        const total = allowed + blocked;
+        elAllowed.textContent = allowed.toLocaleString('pt-BR');
+        elBlocked.textContent = blocked.toLocaleString('pt-BR');
+        elLegit.textContent = total > 0 ? (allowed / total * 100).toFixed(1) + '%' : '0%';
+        elSaved.textContent = 'R$ ' + saved.toLocaleString('pt-BR');
+        elRate.textContent = (1.8 + Math.random() * 2.7).toFixed(1) + '/s';
+
+        // Shield score (based on block rate effectiveness)
+        const score = total > 2 ? Math.min(100, Math.round(92 + (blocked / total) * 8)) : 0;
+        elScore.textContent = score;
+    }
+
+    function tick() {
+        const isAllowed = Math.random() < 0.72;
+        createEntry(isAllowed);
+    }
+
+    // Natural threat level decay
+    let decayTimer = null;
+    function startDecay() {
+        decayTimer = setInterval(() => { if (simRunning && threatLevel > 0) updateThreatLevel(-3); }, 2000);
+    }
+
+    function scheduleNext() {
+        if (!simRunning) return;
+        const delay = 1100 + Math.random() * 1500;
+        simInterval = setTimeout(() => {
+            tick();
+            if (Math.random() < 0.3) {
+                setTimeout(() => { if (simRunning) tick(); }, 200 + Math.random() * 300);
+            }
+            // Rare triple burst (attack simulation)
+            if (Math.random() < 0.08) {
+                setTimeout(() => { if (simRunning) { createEntry(false); createEntry(false); } }, 400);
+            }
+            scheduleNext();
+        }, delay);
+    }
+
+    const simObs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting && !simRunning) {
+                simRunning = true;
+                for (let i = 0; i < 6; i++) {
+                    setTimeout(() => { if (simRunning) tick(); }, i * 160);
+                }
+                setTimeout(scheduleNext, 1000);
+                startDecay();
+            } else if (!e.isIntersecting && simRunning) {
+                simRunning = false;
+                if (simInterval) { clearTimeout(simInterval); simInterval = null; }
+                if (decayTimer) { clearInterval(decayTimer); decayTimer = null; }
+            }
         });
-    }, { threshold: 0.2 });
-    protObs.observe(protMockup);
+    }, { threshold: 0.15 });
+    simObs.observe(protSim);
 }
 
 // ── Period Toggle for Pricing ──
@@ -1672,6 +3152,176 @@ periodBtns.forEach(btn => {
         });
     });
 });
+
+// ── ROI Calculator (Slider) ──
+const calcSlider = document.getElementById('calc-budget');
+const calcDisplay = document.getElementById('calc-display');
+const calcInvisible = document.getElementById('calc-invisible');
+const calcFraud = document.getElementById('calc-fraud');
+const calcHours = document.getElementById('calc-hours');
+const calcTotal = document.getElementById('calc-total');
+const calcRoi = document.getElementById('calc-roi');
+const calcMsg = document.getElementById('calc-cta-msg');
+
+if (calcSlider) {
+    const fmt = v => 'R$ ' + Math.round(v).toLocaleString('pt-BR');
+    const animNum = (el, target, prefix, suffix) => {
+        const start = parseFloat(el.dataset.current || '0');
+        el.dataset.current = String(target);
+        const dur = 500;
+        const t0 = performance.now();
+        (function tick(now) {
+            const p = Math.min((now - t0) / dur, 1);
+            const ease = 1 - Math.pow(1 - p, 3);
+            const val = start + (target - start) * ease;
+            el.textContent = prefix + Math.round(val).toLocaleString('pt-BR') + suffix;
+            if (p < 1) requestAnimationFrame(tick);
+        })(t0);
+    };
+
+    const updateCalc = () => {
+        const val = parseInt(calcSlider.value, 10) || 0;
+        const pct = ((val - 1000) / (500000 - 1000)) * 100;
+
+        // Update slider fill via CSS custom property
+        calcSlider.style.setProperty('--fill', pct + '%');
+
+        // Display formatted value
+        calcDisplay.innerHTML = 'R$ <span>' + val.toLocaleString('pt-BR') + '</span>';
+
+        // Calculate losses — REALISTIC values
+        // Sem server-side tracking, ~30% das conversões não são rastreadas,
+        // causando ~10% de ineficiência nas otimizações (bid errado, pausar o que funciona, etc.)
+        const invisible = val * 0.10;
+        // Tráfego inválido: estudos indicam 4-7% em Google Ads Search, maior em Display
+        const fraud = val * 0.05;
+        const total = invisible + fraud;
+        // Plano adequado ao investimento
+        const planCost = val <= 20000 ? 114.99 : val <= 100000 ? 359.99 : 799.99;
+        const planName = val <= 20000 ? 'Raso' : val <= 100000 ? 'Recife' : 'Abissal';
+        const roi = planCost > 0 ? Math.round((total / planCost) * 10) / 10 : 0;
+        // Horas: 4-8h/semana dependendo do volume (sublinear)
+        const hours = Math.min(Math.round(4 + Math.sqrt(val / 10000) * 2.5), 12);
+
+        // Animate numbers
+        animNum(calcInvisible, invisible, 'R$ ', '');
+        animNum(calcFraud, fraud, 'R$ ', '');
+        animNum(calcTotal, total, 'R$ ', '');
+        animNum(calcHours, hours, '', 'h');
+        calcRoi.textContent = roi.toFixed(1) + 'x';
+
+        // Animate result bars (width proportional to max values)
+        const maxTotal = 500000 * 0.15;
+        document.querySelectorAll('.calc-result').forEach((card, i) => {
+            const bar = card.querySelector('.calc-result-bar');
+            if (!bar) return;
+            let w = 0;
+            if (i === 0) w = (invisible / maxTotal) * 100;
+            else if (i === 1) w = (fraud / maxTotal) * 100;
+            else if (i === 2) w = (hours / 12) * 100;
+            else if (i === 3) w = (total / maxTotal) * 100;
+            else if (i === 4) w = Math.min((roi / 15) * 100, 100);
+            bar.style.width = Math.max(w, 2) + '%';
+        });
+
+        // CTA message
+        if (val > 0) {
+            calcMsg.innerHTML = 'Com o plano <strong>' + planName + ' (R$ ' + planCost.toFixed(2).replace('.', ',') + '/mês)</strong> você pode recuperar até <strong>' + fmt(total) + '/mês</strong>. ROI estimado de <strong>' + roi.toFixed(1) + 'x</strong>.';
+        }
+    };
+
+    calcSlider.addEventListener('input', updateCalc);
+    // Initialize on load
+    updateCalc();
+}
+
+// ══════════════════════════════════════════════════════════
+// BEFORE / AFTER SLIDER
+// ══════════════════════════════════════════════════════════
+{
+    const container = document.getElementById('ba-slider');
+    const before = document.getElementById('ba-before');
+    const divider = document.getElementById('ba-divider');
+    if (container && before && divider) {
+        let isDragging = false;
+        const updatePosition = (x) => {
+            const rect = container.getBoundingClientRect();
+            let pct = ((x - rect.left) / rect.width) * 100;
+            pct = Math.max(5, Math.min(95, pct));
+            before.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
+            divider.style.left = pct + '%';
+        };
+        container.addEventListener('mousedown', (e) => { isDragging = true; updatePosition(e.clientX); });
+        window.addEventListener('mousemove', (e) => { if (isDragging) { e.preventDefault(); updatePosition(e.clientX); } });
+        window.addEventListener('mouseup', () => { isDragging = false; });
+        container.addEventListener('touchstart', (e) => { isDragging = true; updatePosition(e.touches[0].clientX); }, { passive: true });
+        window.addEventListener('touchmove', (e) => { if (isDragging) { updatePosition(e.touches[0].clientX); } }, { passive: true });
+        window.addEventListener('touchend', () => { isDragging = false; });
+    }
+}
+
+// ══════════════════════════════════════════════════════════
+// 3D TILT — Pricing Cards
+// ══════════════════════════════════════════════════════════
+if (window.matchMedia('(pointer:fine)').matches) {
+    document.querySelectorAll('.p-card').forEach(card => {
+        const maxTilt = 6;
+        card.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width;
+            const y = (e.clientY - rect.top) / rect.height;
+            const rotateX = (0.5 - y) * maxTilt;
+            const rotateY = (x - 0.5) * maxTilt;
+            const isRec = card.classList.contains('p-card--rec');
+            const isEntry = card.classList.contains('p-card--entry');
+            const base = isRec ? 'translateY(-12px) scale(1.03)' : isEntry ? 'translateY(-8px)' : 'translateY(-6px)';
+            card.style.transform = base + ' perspective(1000px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)';
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+        });
+    });
+}
+
+// ══════════════════════════════════════════════════════════
+// SCROLL PROGRESS + STICKY CTA BAR
+// ══════════════════════════════════════════════════════════
+const scrollBar = document.getElementById('scroll-progress');
+const stickyCta = document.getElementById('sticky-cta');
+const stickyClose = document.getElementById('sticky-cta-close');
+const heroSection = document.querySelector('.hero');
+const footerSection = document.querySelector('.footer');
+let stickyDismissed = false;
+
+if (stickyClose) {
+    stickyClose.addEventListener('click', () => {
+        stickyDismissed = true;
+        stickyCta.classList.remove('visible');
+    });
+}
+
+if (scrollBar || stickyCta) {
+    let ticking = false;
+    const heroBottom = heroSection ? heroSection.offsetTop + heroSection.offsetHeight : 600;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                const scrollTop = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                if (scrollBar && docHeight > 0) {
+                    scrollBar.style.width = (scrollTop / docHeight * 100) + '%';
+                }
+                if (stickyCta && !stickyDismissed) {
+                    const footerTop = footerSection ? footerSection.offsetTop : Infinity;
+                    const inRange = scrollTop > heroBottom && (scrollTop + window.innerHeight) < footerTop + 100;
+                    stickyCta.classList.toggle('visible', inRange);
+                }
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
+}
 
 // ══════════════════════════════════════════════════════════
 // ABYSS ENGINE v2 — Ultra Premium Procedural Ocean Sound
