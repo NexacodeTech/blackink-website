@@ -53,7 +53,7 @@ ul{list-style:none}
 body::before{content:'';position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse 120% 80% at 20% 85%,rgba(6,28,60,0.5) 0%,transparent 55%),radial-gradient(ellipse 100% 70% at 80% 15%,rgba(8,24,55,0.4) 0%,transparent 50%),radial-gradient(ellipse 80% 50% at 55% 50%,rgba(5,18,42,0.35) 0%,transparent 45%),radial-gradient(ellipse 60% 40% at 10% 20%,rgba(4,16,38,0.3) 0%,transparent 40%);pointer-events:none}
 
 /* Grain */
-body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:0.022;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:256px}
+body::after{content:'';position:fixed;inset:0;z-index:2;pointer-events:none;opacity:0.022;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:256px}
 
 /* ── Layout ── */
 .container{max-width:1200px;margin:0 auto;padding:0 24px}
@@ -129,7 +129,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 /* ══════════════════════════════════════════════════════════
    HEADER
    ══════════════════════════════════════════════════════════ */
-.hdr{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;transition:background .5s var(--ease),box-shadow .5s var(--ease),border-color .5s var(--ease)}
+.hdr{position:fixed;top:0;left:0;right:0;z-index:9998;padding:0 24px;transition:background .5s var(--ease),box-shadow .5s var(--ease),border-color .5s var(--ease)}
 .hdr.scrolled{
     background:rgba(2,10,20,0.82);
     backdrop-filter:blur(20px) saturate(1.2);-webkit-backdrop-filter:blur(20px) saturate(1.2);
@@ -1438,6 +1438,9 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 @media(max-width:767px){
     body{overflow-x:hidden}
     .container{padding:0 20px}
+
+    /* Header — solid background on mobile for readability */
+    .hdr.scrolled{background:rgba(2,10,20,0.95);backdrop-filter:blur(24px) saturate(1.2);-webkit-backdrop-filter:blur(24px) saturate(1.2)}
 
     /* Global mobile typography */
     .t-lg{font-size:clamp(28px,7vw,42px)}
