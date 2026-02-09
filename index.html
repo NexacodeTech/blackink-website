@@ -154,13 +154,13 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 @media(min-width:768px){.hdr-nav{display:flex}}
 .hdr-cta{display:none}
 @media(min-width:768px){.hdr-cta{display:flex}}
-.mob-tog{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:102}
+.mob-tog{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:10000;position:relative}
 .mob-tog span{width:22px;height:1.5px;background:var(--white);border-radius:2px;transition:transform .3s var(--ease),opacity .3s var(--ease)}
 .mob-tog.active span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
 .mob-tog.active span:nth-child(2){opacity:0}
 .mob-tog.active span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
 @media(min-width:768px){.mob-tog{display:none}}
-@media(max-width:767px){.hdr-nav.mob-open{display:flex;position:fixed;inset:0;flex-direction:column;align-items:center;justify-content:center;gap:32px;background:rgba(2,10,20,0.97);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);z-index:101}.hdr-nav.mob-open a{font-size:20px;color:var(--white)}}
+@media(max-width:767px){.hdr-nav.mob-open{display:flex;position:fixed;top:0;left:0;right:0;bottom:0;width:100vw;height:100vh;height:100dvh;flex-direction:column;align-items:center;justify-content:center;gap:32px;background:#020a14;z-index:9999}.hdr-nav.mob-open a{font-size:20px;color:var(--white)}}
 
 /* ══════════════════════════════════════════════════════════
    1. HERO — Ultra Premium v2
@@ -527,9 +527,10 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
     .prot-sim-stats{grid-template-columns:1fr 1fr;gap:5px;padding:10px 12px}
     .prot-sim-stat:nth-child(3),.prot-sim-stat:nth-child(4){grid-column:span 1}
     .prot-sim-stat-val{font-size:15px}
-    .prot-sim-detail{max-width:120px;mask-image:linear-gradient(90deg,#000 80%,transparent);-webkit-mask-image:linear-gradient(90deg,#000 80%,transparent)}
-    .prot-sim-time{width:40px;font-size:8px}
+    .prot-sim-detail{max-width:none;flex:1;min-width:0;mask-image:none;-webkit-mask-image:none}
+    .prot-sim-time{width:52px;font-size:9px}
     .prot-sim-feed{margin:0 8px}
+    .prot-sim-entry{gap:8px;padding:5px 12px;min-height:32px}
     .prot-sim-header{padding:10px 12px}
     .prot-sim-ip{display:none}
 }
@@ -745,7 +746,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .audio-foot p{font-family:'DM Sans',sans-serif;font-size:7px;color:var(--muted);opacity:0.3;margin:0;letter-spacing:0.3px}
 @media(max-width:767px){.audio-ctl{display:none}}
 .mob-audio{display:none}
-@media(max-width:767px){.hdr-nav.mob-open{justify-content:flex-start;padding-top:28vh;background:#020a14;backdrop-filter:none;-webkit-backdrop-filter:none}.hdr-nav.mob-open .mob-audio{display:block;margin-top:auto;flex-shrink:0;width:100%;padding:20px 32px calc(20px + env(safe-area-inset-bottom,0px));border-top:1px solid rgba(100,180,255,0.08);text-align:center}}
+@media(max-width:767px){.hdr-nav.mob-open{justify-content:flex-start;padding-top:28vh}.hdr-nav.mob-open .mob-audio{display:block;margin-top:auto;flex-shrink:0;width:100%;padding:20px 32px calc(20px + env(safe-area-inset-bottom,0px));border-top:1px solid rgba(100,180,255,0.08);text-align:center}}
 .audio-layers{padding:4px 16px 10px}
 .audio-layer{display:flex;align-items:center;gap:6px;margin-bottom:5px}
 .audio-layer:last-child{margin-bottom:0}
@@ -1546,7 +1547,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
     /* Protection simulator — Etapa 5 */
     .prot-sim{min-height:380px}
     .prot-sim-stat-val{font-size:15px}
-    .prot-sim-detail{max-width:120px;mask-image:linear-gradient(90deg,#000 75%,transparent);-webkit-mask-image:linear-gradient(90deg,#000 75%,transparent)}
+    .prot-sim-detail{max-width:none;flex:1;min-width:0}
     .prot-sim-bottom{grid-template-columns:1fr 1fr 1fr;gap:4px;padding:8px 10px}
     .prot-sim-metric:nth-child(3){display:flex}
     .prot-sim-metric-val{font-size:12px}
