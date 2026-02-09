@@ -192,8 +192,8 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 
 /* Logo — refined sizing */
 .hero-logo{
-    width:clamp(120px,16vw,190px);margin-top:0;margin-bottom:12px;position:relative;z-index:2;
-    filter:drop-shadow(0 0 24px rgba(100,180,255,0.10)) drop-shadow(0 0 50px rgba(100,180,255,0.05));
+    width:clamp(160px,22vw,220px);margin-top:0;margin-bottom:16px;position:relative;z-index:2;
+    filter:drop-shadow(0 0 30px rgba(100,180,255,0.15)) drop-shadow(0 0 60px rgba(100,180,255,0.08)) drop-shadow(0 0 100px rgba(100,180,255,0.04));
     animation:hero-logo-in 1.2s var(--ease) .6s both;
 }
 @keyframes hero-logo-in{from{opacity:0;transform:scale(0.85) translateY(15px)}to{opacity:1;transform:scale(1) translateY(0)}}
@@ -526,12 +526,10 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
     .prot-sim{min-height:400px}
     .prot-sim-stats{grid-template-columns:1fr 1fr;gap:5px;padding:10px 12px}
     .prot-sim-stat:nth-child(3),.prot-sim-stat:nth-child(4){grid-column:span 1}
-    .prot-sim-stat-val{font-size:14px}
-    .prot-sim-detail{max-width:100px}
+    .prot-sim-stat-val{font-size:15px}
+    .prot-sim-detail{max-width:120px;mask-image:linear-gradient(90deg,#000 80%,transparent);-webkit-mask-image:linear-gradient(90deg,#000 80%,transparent)}
     .prot-sim-time{width:40px;font-size:8px}
     .prot-sim-feed{margin:0 8px}
-    .prot-sim-bottom{grid-template-columns:1fr 1fr;gap:5px;padding:8px 12px}
-    .prot-sim-metric:nth-child(3){display:none}
     .prot-sim-header{padding:10px 12px}
     .prot-sim-ip{display:none}
 }
@@ -644,8 +642,8 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 /* ══════════════════════════════════════════════════════════
    GUARANTEE
    ══════════════════════════════════════════════════════════ */
-.guarantee{position:relative;overflow:hidden}
-.guarantee::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:1000px;height:1000px;background:radial-gradient(circle,rgba(52,211,153,0.04) 0%,rgba(100,180,255,0.02) 40%,transparent 65%);pointer-events:none}
+.guarantee{position:relative}
+.guarantee::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;height:100%;max-width:800px;max-height:800px;background:radial-gradient(circle,rgba(52,211,153,0.04) 0%,rgba(100,180,255,0.02) 40%,transparent 65%);pointer-events:none}
 
 .guarantee-card{max-width:860px;margin:0 auto;background:linear-gradient(180deg,rgba(14,28,56,0.7) 0%,rgba(10,22,48,0.6) 50%,rgba(14,28,56,0.7) 100%);border:1px solid rgba(52,211,153,0.1);border-radius:24px;padding:clamp(40px,6vw,72px) clamp(28px,5vw,64px);position:relative;text-align:center;overflow:hidden;box-shadow:0 4px 80px rgba(0,0,0,0.3),0 0 120px rgba(52,211,153,0.02),inset 0 1px 0 rgba(255,255,255,0.03)}
 .guarantee-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 5%,rgba(52,211,153,0.25) 50%,transparent 95%)}
@@ -802,8 +800,8 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 }
 .sep::after{content:'';position:absolute;top:-0.5px;left:50%;transform:translateX(-50%);width:200px;height:2px;background:linear-gradient(90deg,transparent,rgba(100,180,255,0.45),transparent);border-radius:2px;box-shadow:0 0 12px rgba(100,180,255,0.1),0 0 4px rgba(100,180,255,0.15)}
 
-/* ── Responsive (legacy — see mobile overhaul block below) ── */
-@media(max-width:767px){.hero-scroll{display:none}.bp:nth-child(n+8){display:none}}
+/* ── Responsive ── */
+@media(max-width:767px){.hero-scroll{display:none}.p-card{padding:28px}}
 
 /* ── Platforms grid ── */
 .plat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
@@ -1112,7 +1110,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .period-btn:hover{color:var(--white)}
 .period-btn.active{background:rgba(100,180,255,0.1);color:var(--white);box-shadow:0 2px 12px rgba(100,180,255,0.1)}
 .period-discount{font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px;background:rgba(52,211,153,0.15);color:var(--green);letter-spacing:.02em}
-@media(max-width:600px){.period-switcher{flex-direction:column;width:100%;max-width:280px}.period-btn{justify-content:center}}
+/* Period switcher column layout handled in 480px breakpoint */
 
 /* ── "Em breve" button ── */
 .btn-soon{background:var(--surface);color:var(--muted);border:1px solid var(--border);cursor:not-allowed;opacity:0.7}
@@ -1307,11 +1305,11 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 
 /* Responsive */
 @media(max-width:768px){
-.ba-grid{grid-template-columns:1fr;gap:1px}
-.ba-grid-divider{top:auto;bottom:auto;left:24px;right:24px;width:auto;height:1px;top:50%;transform:translateY(-50%);background:linear-gradient(90deg,transparent,rgba(100,180,255,0.12) 20%,rgba(100,180,255,0.12) 80%,transparent)}
-.ba-grid-divider::before{top:50%;left:50%}
-.ba-card{padding:clamp(20px,4vw,32px)}
-.ba-score{width:44px;height:44px;font-size:14px}
+.ba-grid{grid-template-columns:1fr;gap:0}
+.ba-grid-divider{top:auto;bottom:auto;left:0;right:0;width:auto;height:1px;top:50%;transform:translateY(-50%);background:linear-gradient(90deg,transparent 5%,rgba(100,180,255,0.15) 25%,rgba(100,180,255,0.15) 75%,transparent 95%)}
+.ba-grid-divider::before{top:50%;left:50%;background:rgba(4,12,28,0.97);padding:10px 10px;font-size:11px}
+.ba-card{padding:24px}
+.ba-score{width:44px;height:44px;font-size:14px;box-shadow:0 0 16px rgba(100,180,255,0.06)}
 .ba-row-label{font-size:13px}
 .ba-row-val{font-size:13px}
 .ba-row-ico{width:28px;height:28px}
@@ -1337,8 +1335,9 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .comp-row--header:hover{background:rgba(100,180,255,0.03)}
 @media(max-width:640px){
 .comp-row{grid-template-columns:1.6fr 1fr 1fr}
-.comp-cell{padding:12px 12px;font-size:13px}
+.comp-cell{padding:12px 10px;font-size:13px}
 .comp-cell:first-child{font-size:13px}
+.comp-table{overflow-x:auto;-webkit-overflow-scrolling:touch}
 }
 
 /* ── Pricing micro-copy ── */
@@ -1428,213 +1427,211 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 }
 .sticky-cta-close:hover{color:var(--white)}
 @media(max-width:767px){
-    .sticky-cta .btn-p{width:100%;flex:1}
+    .sticky-cta .btn-p{flex:1}
 }
 
 /* ── 3D tilt perspective ── */
 .pricing-grid{perspective:1000px}
 
-/* ══════════════════════════════════════════════
-   MOBILE OVERHAUL — Ultra Premium Mobile Experience
-   ══════════════════════════════════════════════ */
-
-/* ── Mobile: 768px and below ── */
+/* ── Mobile refinements (767px) ── */
 @media(max-width:767px){
-    /* Global spacing */
-    .section{padding:clamp(48px,10vw,72px) 0}
+    body{overflow-x:hidden}
     .container{padding:0 20px}
 
-    /* Typography refinement */
-    .t-xl{font-size:clamp(40px,11vw,56px);line-height:0.95;letter-spacing:-0.04em}
-    .t-lg{font-size:clamp(28px,7vw,40px);line-height:1.08}
-    .t-body-lg{font-size:clamp(15px,3.8vw,17px);line-height:1.65}
-    .t-label{font-size:11px;letter-spacing:0.12em}
+    /* Global mobile typography */
+    .t-lg{font-size:clamp(28px,7vw,42px)}
+    .t-body-lg{font-size:16px;line-height:1.65}
+    :root{--section-py:clamp(64px,10vh,120px)}
 
-    /* Hero polish */
+    /* Hero — Etapa 2 */
     .hero{padding:100px 20px 48px;min-height:92dvh;min-height:92vh}
-    .hero-logo{width:clamp(80px,20vw,120px) !important;height:auto !important}
-    .hero-badge{margin-bottom:20px}
-    .hero-badge-text{font-size:11px}
-    .hero-badge-sep{display:none}
-    .hero-badge-text::after{display:none}
-    .hero-line{margin:16px auto 20px;width:40px}
-    .hero-sub{font-size:clamp(14px,3.6vw,16px);max-width:90vw;margin-bottom:24px}
-    .hero-ctas{flex-direction:column;width:100%;max-width:300px;gap:12px}
-    .hero-ctas .btn{width:100%;justify-content:center;text-align:center}
-    .hero-trust{flex-wrap:wrap;justify-content:center;gap:6px;padding:0 12px}
-    .hero-trust-text{font-size:11px;text-align:center;line-height:1.5}
-    .hero-mesh .m1{width:400px;height:400px;opacity:0.5}
-    .hero-mesh .m2{width:300px;height:300px;opacity:0.4}
-    .hero-mesh .m3{width:220px;height:220px;opacity:0.3}
+    .hero-sub{max-width:85vw;font-size:16px}
+    .hero-badge-inner{padding:10px 24px}
+    .hero-badge-text{font-size:10px}
+    .hero-ctas{gap:14px}
+    .hero-ctas .btn-p,.hero-ctas .btn-o{height:52px}
+    .hero-trust{flex-wrap:wrap;justify-content:center;gap:6px}
+    .hero-trust-text{font-size:12px;text-align:center;line-height:1.5}
+    .hero-mesh .m1{width:350px;height:350px;opacity:0.6}
+    .hero-mesh .m2{width:250px;height:250px;opacity:0.4}
+    .hero-mesh .m3{width:180px;height:180px;opacity:0.3}
 
-    /* Marquee */
-    .marquee{padding:16px 0}
-    .marquee-item{font-size:12px;padding:0 20px}
-
-    /* Showcase features */
-    .showcase{gap:32px}
-    .showcase-text .t-lg{margin-bottom:14px}
-    .showcase-text .t-body-lg{margin-bottom:20px}
-    .showcase-features{gap:14px;margin-bottom:0}
-    .showcase-feat{gap:12px}
-    .showcase-feat-icon{width:32px;height:32px;min-width:32px}
-    .showcase-feat-icon svg{width:14px;height:14px}
-    .showcase-feat-text{font-size:13px;line-height:1.5}
-
-    /* Problem cards */
-    .problem-grid{gap:16px}
-    .problem-card{padding:clamp(24px,5vw,32px);border-radius:18px}
+    /* Problem cards — Etapa 3 */
+    .problem-grid{gap:20px}
+    .problem-card{padding:clamp(28px,5vw,36px)}
     .problem-stat{font-size:clamp(40px,10vw,56px)}
-    .problem-title{font-size:clamp(15px,4vw,17px)}
-    .problem-desc{font-size:13px;line-height:1.55}
-    .problem-card-glow{width:150px;height:90px}
+    .problem-card-glow{opacity:0.35}
 
-    /* Stats grid */
-    .stats-grid{gap:12px}
-    .stat{padding:20px 16px;border-radius:14px}
-    .stat-val{font-size:clamp(28px,7vw,36px)}
-    .stat-label{font-size:11px}
+    /* Showcase sections — Etapa 4 */
+    .showcase-text{overflow:hidden;word-break:break-word}
+    .showcase-feat-text{font-size:14px;line-height:1.55}
+    .showcase-feat{padding:12px 14px}
+    .showcase-feat-icon{width:32px;height:32px;min-width:32px;border-radius:10px}
+    .showcase-feat-icon svg{width:15px;height:15px}
+    .showcase-text .t-body-lg{margin-bottom:24px}
 
-    /* Mock phone — responsive */
-    .mock-phone{width:100%;max-width:320px}
+    /* Mockup blocks — Etapa 4 */
+    .mockup{border-radius:16px;clip-path:none !important;overflow:hidden}
+    .mock-topbar{height:32px;padding:0 10px;gap:5px}
+    .mock-topbar-title{font-size:9px}
+    .mock-tab{font-size:9px;padding:6px 8px}
+    .mock-tabs{padding:0 8px;gap:2px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+    .mock-summary{padding:0;margin:8px 10px 4px}
+    .mock-summary-item{padding:8px 6px}
+    .mock-summary-val{font-size:11px}
+    .mock-summary-lbl{font-size:7px}
+    .mock-live{font-size:8px}
+    .mock-dot{width:6px;height:6px}
+
+    /* Ctrl metrics inside mockups */
+    .ctrl-metrics{gap:6px;padding:0 8px 8px}
+    .ctrl-metric-card{padding:10px 10px}
+    .ctrl-metric-val{font-size:15px}
+    .ctrl-metric-label{font-size:8px}
+    .ctrl-metric-sub{font-size:8px}
+    .ctrl-sparkline{width:32px;height:14px}
+
+    /* Term rows inside mockups */
+    .mock-terms{padding:6px 8px 10px}
+    .mock-terms-header{padding:0 8px 4px;font-size:7px}
+    .mock-terms-header .th-custo,
+    .mock-terms-header .th-lucro{display:none}
+    .mock-terms-header .th-roas{width:44px}
+    .mock-terms-header .th-status{width:56px}
+    .term-row{padding:7px 8px;gap:6px;font-size:10px;border-radius:8px}
+    .term-metric{display:none}
+    .term-num{width:12px;font-size:8px}
+    .term-roas-wrap{width:44px}
+    .term-roas-bar{display:none}
+    .term-badge{padding:2px 6px;font-size:7px}
+    .term-badge svg{width:7px;height:7px}
+    .term-kw{font-size:10px}
+
+    /* Mock phone — Etapa 6 */
+    .mock-phone{width:88%;max-width:320px;margin:0 auto}
+    .mock-phone-glow{width:340px;height:460px}
     .mock-phone-body{padding:14px}
-    .mock-notif{padding:14px;margin-bottom:10px;border-radius:14px}
+    .mock-notif{padding:13px;border-radius:14px;margin-bottom:10px}
     .mock-notif-title{font-size:12px}
-    .mock-notif-body{font-size:11px}
-    .mock-notif-amount{font-size:18px}
-    .mock-notif-logo{width:22px;height:22px}
+    .mock-notif-body{font-size:10.5px}
+    .mock-notif-amount{font-size:17px}
+    .mock-notif-logo{width:22px;height:22px;border-radius:7px}
     .mock-notif-logo img{width:15px;height:15px}
+    .mock-notif-head{gap:8px;margin-bottom:6px}
 
-    /* Protection simulator */
-    .prot-sim{border-radius:14px}
+    /* Feature comparison table — mobile optimized: hide last column, fit without scroll */
+    .cmp-wrap{display:block;overflow-x:hidden;border-radius:14px}
+    .cmp-table{font-size:12px;min-width:0;width:100%;table-layout:fixed}
+    .cmp-table th{padding:12px 8px;font-size:10px}
+    .cmp-table td{padding:10px 8px;font-size:11px}
+    .cmp-table th:first-child{min-width:0;padding-left:12px;width:auto}
+    .cmp-table td:first-child{padding-left:12px;font-size:11px;line-height:1.35;word-wrap:break-word}
+    /* Hide "Trackers Tradicionais" column on mobile */
+    .cmp-table th:nth-child(5),
+    .cmp-table td:nth-child(5){display:none}
+    .cmp-table th.cmp-col-old{display:none}
+    /* Plan header names */
+    .cmp-th-name{font-size:12px}
+    .cmp-th-trackers{font-size:10px}
+    .cmp-th-price{font-size:9px}
+    /* Category header compact */
+    .cmp-cat-header{padding:18px 12px 10px;gap:10px}
+    .cmp-cat-icon{width:32px;height:32px;border-radius:10px}
+    .cmp-cat-icon svg{width:16px;height:16px}
+    .cmp-cat-name{font-size:13px}
+    .cmp-cat-desc{font-size:10px}
+    .cmp-cat-badge{font-size:8px;padding:2px 8px}
 
-    /* Before/After */
-    .ba-grid{gap:16px}
-    .ba-card{border-radius:16px}
+    /* Protection simulator — Etapa 5 */
+    .prot-sim{min-height:380px}
+    .prot-sim-stat-val{font-size:15px}
+    .prot-sim-detail{max-width:120px;mask-image:linear-gradient(90deg,#000 75%,transparent);-webkit-mask-image:linear-gradient(90deg,#000 75%,transparent)}
+    .prot-sim-bottom{grid-template-columns:1fr 1fr 1fr;gap:4px;padding:8px 10px}
+    .prot-sim-metric:nth-child(3){display:flex}
+    .prot-sim-metric-val{font-size:12px}
+    .prot-sim-metric-lbl{font-size:7px}
+    .prot-sim-metric-icon{width:26px;height:26px;border-radius:6px}
+    .prot-sim-metric-icon svg{width:12px;height:12px}
+
+    /* ROI Calculator — Etapa 6 */
+    .calc-slider::-webkit-slider-thumb{width:28px;height:28px}
+    .calc-slider::-moz-range-thumb{width:28px;height:28px}
+
+    /* Before/After — Etapa 7 */
+    .ba-card{padding:24px}
+
+    /* Pricing — Etapa 8 */
+    .p-card--rec{border-width:1.5px;border-color:rgba(100,180,255,0.25);box-shadow:0 0 60px rgba(100,180,255,0.08),0 0 0 1px rgba(100,180,255,0.06)}
+    .period-switcher{flex-direction:row;width:auto;max-width:none}
+    .period-btn{font-size:13px;padding:10px 16px}
+
+    /* FAQ — Etapa 10: More elegant spacing */
+    .faq-q{padding:18px 22px;font-size:15px}
+    .faq-a{padding:0 22px 20px;font-size:14px;line-height:1.7}
+    .faq-i{border-radius:16px}
+    .faq-list{gap:6px}
+
+    /* Sticky CTA — Etapa 9 */
+    .sticky-cta{padding:12px 24px;padding-bottom:calc(12px + env(safe-area-inset-bottom,0px))}
+    .sticky-cta .btn-p{width:auto;flex:1;margin-right:64px}
 
     /* How steps */
-    .how-steps{gap:20px}
-    .how-step{padding:clamp(24px,5vw,32px);border-radius:18px}
     .how-connector{display:none !important}
-    .how-step-num{width:36px;height:36px;font-size:15px}
-    .how-step-title{font-size:16px}
-    .how-step-desc{font-size:13px;line-height:1.55}
 
-    /* Platform items */
-    .plat-item{padding:16px 10px;border-radius:12px}
-    .plat-item span:last-child{font-size:10px}
+    /* WhatsApp button — Etapa 9 */
+    .wa-f{bottom:calc(16px + env(safe-area-inset-bottom,0px));right:16px;width:50px;height:50px;z-index:9998}
 
-    /* Pricing */
-    .pricing-grid{gap:20px}
-    .p-card{padding:24px 20px;border-radius:18px}
-    .p-name{font-size:18px}
-    .p-val{font-size:clamp(40px,10vw,52px)}
-    .p-feat{font-size:12px;padding:8px 0}
-    .p-feat--highlight{margin:0 -20px;padding:8px 20px}
-    .p-micro{font-size:11px}
-    .period-switcher{gap:4px}
-    .period-btn{font-size:12px;padding:8px 14px}
-    .period-discount{font-size:9px}
+    /* Move WhatsApp up when sticky CTA is visible */
+    body:has(.sticky-cta.visible) .wa-f{bottom:calc(72px + env(safe-area-inset-bottom,0px))}
+    .wa-f svg{width:22px;height:22px}
 
-    /* Comparison table: 2-column */
-    .comp-row{gap:0}
-    .comp-cell{padding:10px;font-size:12px}
-    .comp-cell:first-child{font-size:12px}
-    .comp-head .comp-cell{font-size:10px;padding:10px 8px}
+    /* Guarantee — Etapa 10 */
+    .guarantee-card{padding:32px 24px}
+    .guarantee-pillars{gap:16px}
 
-    /* Feature comparison scroll hint */
-    .cmp-wrap{margin:0 -20px;padding:0 20px;border-radius:0}
-    .cmp-table{min-width:600px}
+    /* Community — Etapa 10 */
+    .comm-inner{text-align:center}
+    .comm-feats{gap:16px}
 
-    /* ROI Calculator */
-    .calc-wrap{padding:clamp(24px,5vw,36px)}
-    .calc-wrap .t-lg{font-size:clamp(24px,6vw,32px)}
-    .calc-slider-val{font-size:clamp(28px,7vw,36px)}
-    .calc-loss-val{font-size:clamp(20px,5vw,26px)}
-    .calc-summary-val{font-size:clamp(22px,5.5vw,28px)}
+    /* Footer — Etapa 10 */
+    .f-grid{gap:32px}
+    .f-bottom{flex-direction:column;gap:14px;text-align:center;padding-bottom:calc(20px + env(safe-area-inset-bottom,0px))}
 
-    /* FAQ */
-    .faq-q{padding:18px 20px;font-size:14px}
-    .faq-a{padding:0 20px 18px;font-size:13px;line-height:1.6}
-
-    /* Guarantee */
-    .guarantee-card{padding:clamp(32px,6vw,48px) clamp(20px,5vw,32px);border-radius:20px}
-    .guarantee-shield{width:80px;height:80px;margin-bottom:20px}
-    .guarantee-shield svg{width:40px;height:40px}
-    .guarantee-badge{font-size:10px;padding:6px 14px}
-    .guarantee-title{font-size:clamp(24px,6vw,36px);margin-bottom:18px}
-    .guarantee-text{font-size:14px;margin-bottom:32px}
-    .guarantee-pillars{gap:10px;margin-bottom:32px}
-    .guarantee-pillar{padding:20px 16px}
-
-    /* Community */
-    .comm-feats{gap:10px}
-
-    /* Footer */
-    .f-grid{gap:28px}
-    .f-bottom{flex-direction:column;gap:12px;text-align:center;padding-top:24px;font-size:12px}
-
-    /* Final CTA section */
-    .cta-orb{width:400px;height:400px}
-
-    /* Separator */
-    .sep::after{width:120px}
-
-    /* Buttons refinement */
-    .btn{font-size:14px;padding:14px 28px}
-    .btn-full{padding:14px 20px}
-    .btn-sm{font-size:12px;padding:10px 18px}
+    /* Particles — fade gracefully instead of abrupt hide */
+    .bp:nth-child(n+8){opacity:0.3}
+    .bp:nth-child(n+12){opacity:0.15}
+    .bp:nth-child(n+16){display:none}
 }
 
-/* ── Small phones: 480px and below ── */
+/* ── Small phones (480px) ── */
 @media(max-width:480px){
-    .container{padding:0 16px}
-    .t-xl{font-size:clamp(34px,10vw,44px)}
-    .t-lg{font-size:clamp(24px,6.5vw,32px)}
-    .hero{padding:90px 16px 40px}
+    .container{padding:0 20px}
+    .hero{padding:92px 20px 40px}
     .hero-mesh .m1{width:280px;height:280px;opacity:0.35}
     .hero-mesh .m2{width:200px;height:200px;opacity:0.25}
     .hero-mesh .m3{display:none}
-
-    /* Problem cards tighter */
-    .problem-card{padding:20px}
-    .problem-stat{font-size:clamp(36px,9vw,44px)}
-
-    /* Pricing tighter */
-    .p-card{padding:20px 16px}
-    .p-feat{font-size:11.5px}
-    .p-feat--highlight{margin:0 -16px;padding:8px 16px}
-
-    /* Stats */
-    .stat{padding:16px 12px}
-    .stat-val{font-size:clamp(24px,6vw,30px)}
-
-    /* Guarantee */
-    .guarantee-card{padding:24px 16px}
-
-    /* Mock phone scale down */
-    .mock-phone{max-width:280px}
-
-    /* How steps */
-    .how-step{padding:20px 16px}
-
-    /* Comp table */
-    .comp-cell{padding:8px 6px;font-size:11px}
-
-    /* CTA orb */
-    .cta-orb{width:280px;height:280px}
+    .mock-phone{width:88%;max-width:280px}
+    .mock-phone-glow{width:280px;height:400px}
+    .prot-sim{min-height:340px}
+    .wa-f{bottom:calc(12px + env(safe-area-inset-bottom,0px));right:12px;width:46px;height:46px}
+    .wa-f svg{width:20px;height:20px}
+    .period-switcher{flex-direction:column;width:100%;max-width:280px}
+    .period-btn{justify-content:center}
 }
 
-/* ── Very small phones: 360px and below ── */
-@media(max-width:360px){
-    .container{padding:0 14px}
-    .t-xl{font-size:32px}
-    .t-lg{font-size:22px}
-    .hero{padding:80px 14px 36px}
-    .p-card{padding:18px 14px}
-    .p-feat{font-size:11px}
-    .problem-card{padding:18px}
-    .mock-phone{max-width:260px}
+/* ── Ultra-small phones (390px — iPhone 14 Pro and below) ── */
+@media(max-width:390px){
+    .container{padding:0 16px}
+    .hero{padding:88px 16px 36px}
+    .hero-badge-inner{padding:9px 20px}
+    .hero-badge-text{font-size:9px}
+    .hero-ctas{gap:10px}
+    .hero-ctas .btn-p,.hero-ctas .btn-o{height:48px;font-size:15px;padding:0 24px}
+    .problem-card{padding:24px}
+    .problem-stat{font-size:clamp(36px,9vw,48px)}
+    .ba-card{padding:20px}
+    .guarantee-card{padding:28px 20px}
+    .calc-card{padding:28px 20px}
 }
 
 /* ── Reduced Motion ── */
