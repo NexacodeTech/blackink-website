@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escolha Seu Plano — BlackInk</title>
-    <meta name="description" content="Selecione seu plano para ter acesso antecipado à plataforma BlackInk.">
+    <meta name="description" content="Selecione seu plano e comece a rastrear suas campanhas com o tracker mais avançado do mercado.">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -102,11 +102,20 @@
         @keyframes card-in{from{opacity:0;transform:translateY(40px) scale(0.95)}to{opacity:1;transform:translateY(0) scale(1)}}
 
         .plan-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
-        .plan-card:hover,.plan-card.selected{border-color:var(--border-h);transform:translateY(-6px);box-shadow:0 24px 60px rgba(100,180,255,0.12)}
-        .plan-card:hover::before,.plan-card.selected::before{transform:scaleX(1)}
-        .plan-card.selected{background:rgba(100,180,255,0.05);border-color:rgba(100,180,255,0.25)}
+        .plan-card:hover,.plan-card.hovered{border-color:var(--border-h);transform:translateY(-6px);box-shadow:0 24px 60px rgba(100,180,255,0.12)}
+        .plan-card:hover::before,.plan-card.hovered::before{transform:scaleX(1)}
+
+        /* Featured Plan */
+        .plan-card--featured{border-color:rgba(100,180,255,0.2);box-shadow:0 0 60px rgba(100,180,255,0.08)}
+        .plan-card--featured:hover{border-color:rgba(100,180,255,0.35);box-shadow:0 24px 80px rgba(100,180,255,0.18)}
+
+        /* Gold Plan */
+        .plan-card--gold{border-color:rgba(251,191,36,0.15)}
+        .plan-card--gold::before{background:linear-gradient(90deg,#fbbf24,#f59e0b)}
+        .plan-card--gold:hover{border-color:rgba(251,191,36,0.3);box-shadow:0 24px 60px rgba(251,191,36,0.1)}
 
         .plan-badge{position:absolute;top:16px;right:16px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#020a14;padding:6px 14px;border-radius:100px;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase}
+        .plan-badge--gold{background:linear-gradient(135deg,#fbbf24,#f59e0b)}
 
         .plan-icon{font-size:clamp(2.5rem,5vw,3rem);margin-bottom:16px;display:block}
 
@@ -114,53 +123,38 @@
 
         .plan-description{color:var(--muted);font-size:14px;margin-bottom:24px}
 
-        .plan-features{margin-bottom:24px}
+        .plan-features{margin-bottom:24px;min-height:200px}
         .plan-features li{padding:10px 0;color:var(--dim);display:flex;align-items:flex-start;gap:12px;font-size:14px;border-bottom:1px solid var(--border)}
         .plan-features li:last-child{border-bottom:none}
         .plan-features li::before{content:"✓";color:var(--accent);font-weight:700;font-size:14px;flex-shrink:0;margin-top:1px}
 
-        .plan-price{font-family:var(--ff-display);font-size:clamp(28px,4vw,36px);font-weight:700;background:linear-gradient(135deg,var(--white),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        /* Plan Price Wrapper */
+        .plan-price-wrap{position:relative;height:50px;margin-bottom:24px}
+        .plan-price{font-family:var(--ff-display);font-size:clamp(28px,4vw,36px);font-weight:700;background:linear-gradient(135deg,var(--white),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:absolute;opacity:0;transform:translateY(10px);transition:all .3s var(--ease)}
+        .plan-price.active{opacity:1;transform:translateY(0)}
+        .plan-price span{font-size:14px;font-weight:500;opacity:0.6}
+
+        /* Plan CTA Button */
+        .plan-cta{width:100%;margin-top:auto}
 
         .check-icon{position:absolute;top:16px;left:16px;width:28px;height:28px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(0);transition:all .3s var(--ease)}
-        .plan-card.selected .check-icon{opacity:1;transform:scale(1)}
         .check-icon::after{content:"✓";color:#020a14;font-size:14px;font-weight:700}
 
-        /* ── Email Section ── */
-        .email-section{max-width:520px;margin:0 auto;background:var(--surface);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:20px;padding:clamp(28px,5vw,40px);opacity:0;transform:translateY(20px);transition:all .5s var(--ease);pointer-events:none}
-        .email-section.active{opacity:1;transform:translateY(0);pointer-events:all}
+        /* ── Period Toggle ── */
+        .period-toggle{margin-bottom:clamp(32px,5vw,48px)}
+        .period-switcher{display:inline-flex;background:rgba(8,22,48,0.6);border:1px solid var(--border);border-radius:100px;padding:4px;gap:4px}
+        .period-btn{padding:12px 24px;border:none;border-radius:100px;background:transparent;color:var(--dim);font-family:var(--ff-body);font-size:14px;font-weight:600;cursor:pointer;transition:all .3s var(--ease);display:inline-flex;align-items:center;gap:8px}
+        .period-btn:hover{color:var(--white)}
+        .period-btn.active{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#020a14}
+        .period-discount{padding:3px 8px;background:rgba(52,211,153,0.15);border-radius:100px;font-size:10px;font-weight:700;color:var(--green)}
+        .period-btn.active .period-discount{background:rgba(2,10,20,0.2);color:#020a14}
 
-        .email-title{text-align:center;margin-bottom:12px}
-        .email-subtitle{text-align:center;margin-bottom:28px}
-
-        .selected-plan-info{background:rgba(100,180,255,0.05);border:1px solid var(--border-h);border-radius:12px;padding:16px;margin-bottom:28px;text-align:center;font-size:14px;color:var(--dim)}
-        .selected-plan-info strong{color:var(--accent);font-weight:600}
-
-        .form-group{margin-bottom:24px}
-        .form-label{display:block;margin-bottom:8px;font-weight:600;font-size:14px;color:var(--white)}
-        .form-input{width:100%;padding:16px;background:rgba(2,10,20,0.6);border:1px solid var(--border);border-radius:12px;color:var(--white);font-size:16px;font-family:var(--ff-body);transition:all .3s var(--ease)}
-        .form-input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(100,180,255,0.15)}
-        .form-input::placeholder{color:var(--muted)}
-        .form-input.error{border-color:var(--error)}
-
-        .error-message{color:var(--error);font-size:12px;margin-top:8px;display:none}
-        .error-message.show{display:block}
-
-        .btn-group{display:flex;flex-direction:column;gap:12px}
-
-        /* Loading Spinner */
-        .loading{display:inline-block;width:20px;height:20px;border:2px solid rgba(2,10,20,0.3);border-radius:50%;border-top-color:#020a14;animation:spin 1s ease-in-out infinite}
-        @keyframes spin{to{transform:rotate(360deg)}}
-
-        /* ── Success Message ── */
-        .success-message{max-width:520px;margin:0 auto;background:var(--surface);backdrop-filter:blur(10px);border:1px solid var(--green);border-radius:20px;padding:clamp(40px,6vw,56px);text-align:center;display:none}
-        .success-message.show{display:block;animation:fade-up .5s var(--ease)}
-
-        .success-icon{width:72px;height:72px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:32px;color:#020a14;box-shadow:0 0 40px rgba(52,211,153,0.3)}
-
-        .success-title{font-family:var(--ff-display);font-size:clamp(24px,4vw,32px);font-weight:700;margin-bottom:16px;color:var(--green)}
-
-        .success-text{color:var(--dim);font-size:16px;line-height:1.7}
-        .success-text strong{color:var(--white)}
+        /* ── Trust Section ── */
+        .trust-section{display:flex;justify-content:center;flex-wrap:wrap;gap:24px;margin-top:48px;padding-top:32px;border-top:1px solid var(--border)}
+        .trust-badge{display:flex;align-items:center;gap:10px;padding:12px 20px;background:rgba(100,180,255,0.02);border:1px solid var(--border);border-radius:100px;transition:all .3s var(--ease)}
+        .trust-badge:hover{border-color:var(--border-h);background:rgba(100,180,255,0.04)}
+        .trust-icon{font-size:18px}
+        .trust-text{font-size:13px;color:var(--dim);font-weight:500}
 
         /* ── Footer ── */
         .footer{padding:28px 0;border-top:1px solid var(--border)}
@@ -177,6 +171,9 @@
         @media(max-width:767px){
             .main-section{padding:100px 20px 60px}
             .plans-grid{grid-template-columns:1fr}
+            .period-switcher{flex-direction:column;border-radius:16px}
+            .period-btn{border-radius:12px;justify-content:center}
+            .trust-section{flex-direction:column;align-items:center}
         }
     </style>
 </head>
@@ -211,112 +208,106 @@
         <div class="container">
             <!-- Page Header -->
             <div class="page-header">
-                <h1 class="t-xl page-title">Acesso <span class="grad">exclusivo</span></h1>
+                <h1 class="t-xl page-title">Escolha sua <span class="grad">profundidade</span></h1>
                 <p class="t-body page-subtitle">
-                    Selecione seu plano para ter acesso antecipado à plataforma BlackInk.
+                    Selecione seu plano e comece a rastrear suas campanhas hoje mesmo.
                 </p>
+            </div>
+
+                        <!-- Period Toggle -->
+            <div class="period-toggle" style="display:flex;justify-content:center;margin-bottom:clamp(32px,5vw,48px)">
+                <div class="period-switcher">
+                    <button class="period-btn active" data-period="monthly">Mensal</button>
+                    <button class="period-btn" data-period="quarterly">Trimestral <span class="period-discount">-10%</span></button>
+                    <button class="period-btn" data-period="yearly">Anual <span class="period-discount">-20%</span></button>
+                </div>
             </div>
 
             <!-- Plans Grid -->
             <div class="plans-grid" id="plansGrid">
-                <div class="plan-card" data-plan="Raso" data-price="114.99">
+                <div class="plan-card" data-plan="Raso" data-price-monthly="114.99" data-price-quarterly="310.47" data-price-yearly="1103.90">
                     <span class="plan-icon">🌊</span>
                     <div class="check-icon"></div>
                     <h3 class="plan-name">RASO</h3>
-                    <p class="plan-description">Primeiras braçadas</p>
+                    <p class="plan-description">Tracker completo para escalar</p>
                     <ul class="plan-features">
-                        <li>10 campanhas ativas</li>
-                        <li>Contas de anúncio ilimitadas</li>
-                        <li>Rastreamento completo do funil</li>
-                        <li>Rastreamento IOS 14+</li>
-                        <li>Métricas Google em tempo real</li>
-                        <li>Dashboard completo de métricas</li>
-                        <li>Funil de métricas estratégico</li>
-                        <li>Conversões automáticas Google Ads</li>
-                        <li>URL Builder completo</li>
-                        <li>Integração plataformas de afiliado</li>
-                        <li>Notificações de vendas</li>
-                        <li>App Mobile</li>
-                        <li>Análise de performance VSL</li>
-                        <li>Blackink Clone</li>
-                        <li>Área de membros com tutoriais</li>
-                        <li>Campanhas extras por R$ 40,00</li>
+                        <li>Tracker server-side completo</li>
+                        <li>Controle de campanhas Google Ads</li>
+                        <li>Termos de busca com ROAS</li>
+                        <li>BlackInk Intelligence (IA)</li>
+                        <li>Funil de 7 etapas</li>
+                        <li>30+ checkouts suportados</li>
+                        <li>Dashboard financeiro</li>
+                        <li>App Mobile + Push</li>
+                        <li>Teste A/B integrado</li>
                     </ul>
-                    <div class="plan-price">R$ 114,99</div>
+                    <div class="plan-price-wrap">
+                        <div class="plan-price active" data-period="monthly">R$ 114,99<span>/mês</span></div>
+                        <div class="plan-price" data-period="quarterly">R$ 310,47<span>/tri</span></div>
+                        <div class="plan-price" data-period="yearly">R$ 1.103,90<span>/ano</span></div>
+                    </div>
+                    <button class="btn btn-p plan-cta" data-plan="Raso">Começar Agora</button>
                 </div>
 
-                <div class="plan-card" data-plan="Recife" data-price="359.99">
+                <div class="plan-card plan-card--featured" data-plan="Recife" data-price-monthly="359.99" data-price-quarterly="971.97" data-price-yearly="3455.90">
                     <span class="plan-badge">MAIS POPULAR</span>
                     <span class="plan-icon">🦈</span>
                     <div class="check-icon"></div>
                     <h3 class="plan-name">RECIFE</h3>
-                    <p class="plan-description">Zona de ouro com ML avançado</p>
+                    <p class="plan-description">Tracker + Proteção do Tráfego</p>
                     <ul class="plan-features">
                         <li>Tudo do Raso +</li>
-                        <li>Proteção do Trafego</li>
-                        <li>Proteção de VPN</li>
-                        <li>Proteção de Bots</li>
+                        <li>Proteção do Tráfego completa</li>
+                        <li>Detecção de bots e VPNs</li>
+                        <li>Geo-targeting e device filtering</li>
+                        <li>Safe page / Money page</li>
+                        <li>Auction Insights</li>
+                        <li>Decision logs completos</li>
                     </ul>
-                    <div class="plan-price">R$ 359,99</div>
+                    <div class="plan-price-wrap">
+                        <div class="plan-price active" data-period="monthly">R$ 359,99<span>/mês</span></div>
+                        <div class="plan-price" data-period="quarterly">R$ 971,97<span>/tri</span></div>
+                        <div class="plan-price" data-period="yearly">R$ 3.455,90<span>/ano</span></div>
+                    </div>
+                    <button class="btn btn-p plan-cta" data-plan="Recife">Começar Agora</button>
                 </div>
 
-                <div class="plan-card" data-plan="Abissal" data-price="Em Breve">
+                <div class="plan-card plan-card--gold" data-plan="Abissal" data-price-monthly="799.99" data-price-quarterly="2159.97" data-price-yearly="7679.90">
+                    <span class="plan-badge plan-badge--gold">SEM LIMITES</span>
                     <span class="plan-icon">🦑</span>
                     <div class="check-icon"></div>
                     <h3 class="plan-name">ABISSAL</h3>
-                    <p class="plan-description">Domínio total personalizado</p>
+                    <p class="plan-description">Tudo liberado + suporte VIP</p>
                     <ul class="plan-features">
                         <li>Tudo do Recife +</li>
                         <li>Campanhas ilimitadas</li>
+                        <li>Multi-conta Google Ads (MCC)</li>
                         <li>Suporte prioritário</li>
+                        <li>Contas extras (até 50)</li>
                     </ul>
-                    <div class="plan-price">R$ 799,99</div>
+                    <div class="plan-price-wrap">
+                        <div class="plan-price active" data-period="monthly">R$ 799,99<span>/mês</span></div>
+                        <div class="plan-price" data-period="quarterly">R$ 2.159,97<span>/tri</span></div>
+                        <div class="plan-price" data-period="yearly">R$ 7.679,90<span>/ano</span></div>
+                    </div>
+                    <button class="btn btn-p plan-cta" data-plan="Abissal">Começar Agora</button>
                 </div>
             </div>
 
-            <!-- Email Section -->
-            <div class="email-section" id="emailSection">
-                <h2 class="t-lg email-title">Quase lá!</h2>
-                <p class="t-body email-subtitle">Informe seu e-mail para receber o seu link de acesso às profundezas</p>
-
-                <div class="selected-plan-info" id="selectedPlanInfo">
-                    Plano selecionado: <strong id="selectedPlanName"></strong>
+            <!-- Trust Badges -->
+            <div class="trust-section">
+                <div class="trust-badge">
+                    <span class="trust-icon">🔒</span>
+                    <span class="trust-text">Pagamento seguro</span>
                 </div>
-
-                <form id="emailForm">
-                    <div class="form-group">
-                        <label for="email" class="form-label">Seu melhor e-mail</label>
-                        <input
-                            type="email"
-                            id="email"
-                            class="form-input"
-                            placeholder="seu@email.com"
-                            required
-                        >
-                        <div class="error-message" id="emailError">
-                            Por favor, insira um e-mail válido
-                        </div>
-                    </div>
-
-                    <div class="btn-group">
-                        <button type="submit" class="btn btn-p" id="submitBtn">
-                            Receber Link de Cadastro
-                        </button>
-                        <button type="button" class="btn btn-o" id="changePlanBtn">
-                            Escolher Outro Plano
-                        </button>
-                    </div>
-                </form>
-            </div>
-
-            <!-- Success Message -->
-            <div class="success-message" id="successMessage">
-                <div class="success-icon">✓</div>
-                <h2 class="success-title">E-mail Enviado!</h2>
-                <p class="success-text">
-                    Enviamos o link do formulário de cadastro para <strong id="confirmedEmail"></strong>.<br><br>
-                    Verifique sua caixa de entrada (e spam) nos próximos minutos.
-                </p>
+                <div class="trust-badge">
+                    <span class="trust-icon">✓</span>
+                    <span class="trust-text">7 dias de garantia</span>
+                </div>
+                <div class="trust-badge">
+                    <span class="trust-icon">📅</span>
+                    <span class="trust-text">Cancele quando quiser</span>
+                </div>
             </div>
         </div>
     </div>
@@ -331,119 +322,48 @@
 
 <script>
     (() => {
-        let selectedPlan = null;
+        let currentPeriod = 'monthly';
 
         const planCards = document.querySelectorAll('.plan-card');
-        const emailSection = document.getElementById('emailSection');
-        const selectedPlanName = document.getElementById('selectedPlanName');
-        const emailForm = document.getElementById('emailForm');
-        const emailInput = document.getElementById('email');
-        const emailError = document.getElementById('emailError');
-        const submitBtn = document.getElementById('submitBtn');
-        const changePlanBtn = document.getElementById('changePlanBtn');
-        const successMessage = document.getElementById('successMessage');
-        const confirmedEmail = document.getElementById('confirmedEmail');
-        const plansGrid = document.getElementById('plansGrid');
+        const periodBtns = document.querySelectorAll('.period-btn');
+        const planPrices = document.querySelectorAll('.plan-price');
+        const planCTAs = document.querySelectorAll('.plan-cta');
 
-        // Plan selection
-        planCards.forEach(card => {
-            card.addEventListener('click', () => {
-                planCards.forEach(c => c.classList.remove('selected'));
-                card.classList.add('selected');
+        // Period switcher
+        periodBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                periodBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentPeriod = btn.dataset.period;
 
-                selectedPlan = {
-                    name: card.dataset.plan,
-                    displayName: card.querySelector('.plan-name').textContent,
-                    price: card.dataset.price
-                };
-
-                selectedPlanName.textContent = selectedPlan.displayName;
-                emailSection.classList.add('active');
-
-                setTimeout(() => {
-                    emailSection.scrollIntoView({behavior: 'smooth', block: 'center'});
-                }, 300);
+                // Update visible prices
+                planPrices.forEach(price => {
+                    if (price.dataset.period === currentPeriod) {
+                        price.classList.add('active');
+                    } else {
+                        price.classList.remove('active');
+                    }
+                });
             });
         });
 
-        // Change plan button
-        changePlanBtn.addEventListener('click', () => {
-            emailSection.classList.remove('active');
-            planCards.forEach(c => c.classList.remove('selected'));
-            selectedPlan = null;
-            emailInput.value = '';
-            emailError.classList.remove('show');
-            emailInput.classList.remove('error');
-            plansGrid.scrollIntoView({behavior: 'smooth', block: 'start'});
+        // Plan card hover effects
+        planCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.classList.add('hovered');
+            });
+            card.addEventListener('mouseleave', () => {
+                card.classList.remove('hovered');
+            });
         });
 
-        // Email validation
-        function validateEmail(email) {
-            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return re.test(email);
-        }
-
-        emailInput.addEventListener('input', () => {
-            if (emailInput.classList.contains('error')) {
-                emailInput.classList.remove('error');
-                emailError.classList.remove('show');
-            }
-        });
-
-        emailForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            const email = emailInput.value.trim();
-
-            if (!validateEmail(email)) {
-                emailInput.classList.add('error');
-                emailError.classList.add('show');
-                return;
-            }
-
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<span class="loading"></span>';
-
-            const registrationData = {
-                email: email,
-                plan: selectedPlan.name,
-                planDisplayName: selectedPlan.displayName,
-                timestamp: new Date().toISOString()
-            };
-
-            const API_ENDPOINT = 'https://api.blackink.cloud/api/closed-beta';
-
-            try {
-                const response = await fetch(API_ENDPOINT, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(registrationData)
-                });
-
-                if (!response.ok) {
-                    const errorData = await response.json().catch(() => ({message: 'Erro desconhecido'}));
-                    throw new Error(`Erro ${response.status}: ${errorData.message || response.statusText}`);
-                }
-
-                console.log('Registro enviado com sucesso!', registrationData);
-
-                confirmedEmail.textContent = email;
-                emailSection.classList.remove('active');
-                emailSection.style.display = 'none';
-                successMessage.classList.add('show');
-                successMessage.scrollIntoView({behavior: 'smooth', block: 'center'});
-
-            } catch (error) {
-                console.error('Erro ao enviar o registro:', error);
-                alert(`Ocorreu um erro ao enviar o registro. Por favor, tente novamente.\nDetalhe: ${error.message}`);
-
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Receber Link de Cadastro';
-                emailSection.style.display = 'block';
-                emailSection.classList.add('active');
-            }
+        // CTA buttons - redirect to cadastro
+        planCTAs.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const plan = btn.dataset.plan;
+                window.location.href = `/cadastro/?plan=${encodeURIComponent(plan)}&period=${encodeURIComponent(currentPeriod)}`;
+            });
         });
 
         // ── Cursor follower (desktop) ──
