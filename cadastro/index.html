@@ -471,9 +471,9 @@
 
     // Plans Data
     const PLANS = {
-        'Raso': { icon: '🌊', price: 'R$ 114,99/mês', priceValue: 114.99 },
-        'Recife': { icon: '🦈', price: 'R$ 359,99/mês', priceValue: 359.99 },
-        'Abissal': { icon: '🦑', price: 'R$ 799,99/mês', priceValue: 799.99 }
+        'Raso': { icon: '🌊', price: 'R$ 119,99/mês', priceValue: 119.99 },
+        'Recife': { icon: '🦈', price: 'R$ 469,99/mês', priceValue: 469.99 },
+        'Abissal': { icon: '🦑', price: 'R$ 999,99/mês', priceValue: 999.99 }
     };
 
     // Get URL params
@@ -498,7 +498,7 @@
         const quarterlyPrice = (planData.priceValue * 3 * 0.9).toFixed(2).replace('.', ',');
         priceDisplay = `R$ ${quarterlyPrice}/tri`;
     } else if (period === 'yearly') {
-        const yearlyPrice = (planData.priceValue * 12 * 0.8).toFixed(2).replace('.', ',');
+        const yearlyPrice = (planData.priceValue * 12 * 0.85).toFixed(2).replace('.', ',');
         priceDisplay = `R$ ${yearlyPrice}/ano`;
     }
     document.getElementById('planPrice').textContent = priceDisplay;
