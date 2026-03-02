@@ -219,6 +219,130 @@
         .toast-message{font-size:13px;color:var(--dim)}
         .toast-close{flex-shrink:0;background:none;border:none;color:var(--muted);cursor:pointer;padding:4px}
         .toast-close:hover{color:var(--white)}
+
+        /* ══════════════════════════════════════════════════════════
+           WhatsApp Widget Premium — Balão com mensagens rotativas
+           ══════════════════════════════════════════════════════════ */
+        .wa-widget{position:fixed;bottom:24px;right:24px;z-index:9990;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+
+        /* Balão de mensagem */
+        .wa-bubble{
+            position:relative;
+            max-width:280px;
+            padding:14px 18px;
+            background:linear-gradient(145deg,rgba(12,28,54,0.98) 0%,rgba(6,18,40,0.99) 100%);
+            border:1px solid rgba(37,211,102,0.15);
+            border-radius:18px 18px 4px 18px;
+            box-shadow:0 4px 24px rgba(0,0,0,0.3),0 8px 48px rgba(37,211,102,0.08),inset 0 1px 0 rgba(255,255,255,0.03);
+            backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+            opacity:0;
+            transform:translateY(10px) scale(0.95);
+            transition:opacity .4s var(--ease),transform .4s var(--ease);
+            pointer-events:none;
+            cursor:pointer;
+        }
+        .wa-bubble.visible{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
+        .wa-bubble::before{
+            content:'';position:absolute;top:0;left:10%;right:10%;height:1px;
+            background:linear-gradient(90deg,transparent,rgba(37,211,102,0.2),transparent);
+        }
+        /* Seta do balão */
+        .wa-bubble::after{
+            content:'';position:absolute;bottom:8px;right:-6px;
+            width:12px;height:12px;
+            background:linear-gradient(135deg,transparent 50%,rgba(6,18,40,0.99) 50%);
+            border-right:1px solid rgba(37,211,102,0.15);
+            border-bottom:1px solid rgba(37,211,102,0.15);
+            transform:rotate(-45deg);
+        }
+
+        .wa-bubble-header{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+        .wa-bubble-avatar{
+            width:32px;height:32px;border-radius:50%;
+            background:linear-gradient(145deg,#25D366,#128C7E);
+            display:flex;align-items:center;justify-content:center;
+            box-shadow:0 2px 8px rgba(37,211,102,0.3);
+        }
+        .wa-bubble-avatar svg{width:16px;height:16px;fill:#fff}
+        .wa-bubble-info{display:flex;flex-direction:column;gap:1px}
+        .wa-bubble-name{font-size:13px;font-weight:600;color:var(--white);letter-spacing:-0.01em}
+        .wa-bubble-status{display:flex;align-items:center;gap:5px;font-size:10px;color:var(--green)}
+        .wa-bubble-status::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);animation:waPulse 2s ease-in-out infinite}
+        @keyframes waPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.2)}}
+
+        .wa-bubble-close{
+            position:absolute;top:8px;right:8px;
+            width:20px;height:20px;border-radius:50%;
+            background:rgba(255,255,255,0.05);
+            border:none;cursor:pointer;
+            display:flex;align-items:center;justify-content:center;
+            opacity:0;transition:opacity .3s,background .3s;
+        }
+        .wa-bubble:hover .wa-bubble-close{opacity:1}
+        .wa-bubble-close:hover{background:rgba(255,255,255,0.1)}
+        .wa-bubble-close svg{width:10px;height:10px;stroke:var(--muted);stroke-width:2}
+
+        .wa-bubble-msg{
+            font-size:14px;line-height:1.5;color:var(--dim);
+            min-height:42px;
+            display:flex;align-items:center;
+        }
+        .wa-bubble-msg span{
+            display:block;
+            animation:waMsgIn .4s var(--ease) both;
+        }
+        @keyframes waMsgIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+
+        .wa-bubble-cta{
+            display:flex;align-items:center;gap:6px;
+            margin-top:10px;padding-top:10px;
+            border-top:1px solid rgba(255,255,255,0.05);
+            font-size:12px;font-weight:600;color:var(--green);
+            transition:color .3s;
+        }
+        .wa-bubble-cta svg{width:14px;height:14px;fill:var(--green);transition:transform .3s var(--ease)}
+        .wa-bubble:hover .wa-bubble-cta svg{transform:translateX(3px)}
+
+        /* Botão principal do WhatsApp */
+        .wa-btn{
+            position:relative;
+            width:60px;height:60px;
+            background:linear-gradient(145deg,#25D366,#128C7E);
+            border-radius:50%;
+            display:flex;align-items:center;justify-content:center;
+            box-shadow:0 4px 20px rgba(37,211,102,0.35),0 8px 40px rgba(37,211,102,0.15);
+            cursor:pointer;
+            transition:transform .4s var(--ease),box-shadow .4s var(--ease);
+            animation:waBtnPulse 3s ease-in-out infinite;
+        }
+        @keyframes waBtnPulse{
+            0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.35),0 8px 40px rgba(37,211,102,0.15),0 0 0 0 rgba(37,211,102,0.3)}
+            50%{box-shadow:0 4px 24px rgba(37,211,102,0.45),0 8px 48px rgba(37,211,102,0.2),0 0 0 12px rgba(37,211,102,0)}
+        }
+        .wa-btn:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,0.5),0 12px 56px rgba(37,211,102,0.25)}
+        .wa-btn svg{width:30px;height:30px;fill:#fff}
+
+        /* Badge de notificação */
+        .wa-btn-badge{
+            position:absolute;top:-2px;right:-2px;
+            min-width:20px;height:20px;padding:0 6px;
+            background:#ef4444;
+            border-radius:10px;
+            font-size:11px;font-weight:700;color:#fff;
+            display:flex;align-items:center;justify-content:center;
+            box-shadow:0 2px 8px rgba(239,68,68,0.4);
+            animation:waBadgeBounce 2s ease-in-out infinite;
+        }
+        @keyframes waBadgeBounce{0%,100%{transform:scale(1)}10%{transform:scale(1.2)}20%{transform:scale(1)}}
+
+        /* Responsive */
+        @media(max-width:767px){
+            .wa-widget{bottom:calc(16px + env(safe-area-inset-bottom,0px));right:16px}
+            .wa-btn{width:52px;height:52px}
+            .wa-btn svg{width:26px;height:26px}
+            .wa-bubble{max-width:260px;padding:12px 14px}
+            .wa-bubble-msg{font-size:13px;min-height:38px}
+        }
     </style>
 </head>
 <body>
@@ -464,6 +588,37 @@
         </div>
     </div>
 </main>
+
+<!-- ═══════ WhatsApp Widget Flutuante ═══════ -->
+<div class="wa-widget" id="wa-widget">
+    <!-- Balão de mensagem -->
+    <div class="wa-bubble" id="wa-bubble">
+        <button class="wa-bubble-close" id="wa-bubble-close" aria-label="Fechar">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor"/></svg>
+        </button>
+        <div class="wa-bubble-header">
+            <div class="wa-bubble-avatar">
+                <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </div>
+            <div class="wa-bubble-info">
+                <span class="wa-bubble-name">Suporte BlackInk</span>
+                <span class="wa-bubble-status">Online agora</span>
+            </div>
+        </div>
+        <div class="wa-bubble-msg" id="wa-msg">
+            <span>👋 Precisa de ajuda com o cadastro?</span>
+        </div>
+        <div class="wa-bubble-cta">
+            <span>Iniciar conversa</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+    </div>
+    <!-- Botão principal -->
+    <a href="https://wa.me/5562999133986?text=Ol%C3%A1!%20Estou%20fazendo%20meu%20cadastro%20no%20BlackInk%20e%20preciso%20de%20ajuda." target="_blank" rel="noopener noreferrer" class="wa-btn" id="wa-btn" aria-label="WhatsApp">
+        <span class="wa-btn-badge">1</span>
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+</div>
 
 <!-- ═══════ FOOTER ═══════ -->
 <footer class="footer">
@@ -740,6 +895,91 @@
         document.addEventListener('mouseleave', () => cur.classList.remove('on'));
         document.addEventListener('mouseenter', () => cur.classList.add('on'));
     }
+
+    // ══════════════════════════════════════════════════════════
+    // WhatsApp Widget — Mensagens Rotativas
+    // ══════════════════════════════════════════════════════════
+    const waWidget = document.getElementById('wa-widget');
+    const waBubble = document.getElementById('wa-bubble');
+    const waBubbleClose = document.getElementById('wa-bubble-close');
+    const waMsg = document.getElementById('wa-msg');
+    const waBtn = document.getElementById('wa-btn');
+
+    const waMessages = [
+        '👋 Precisa de ajuda com o cadastro?',
+        '📝 Alguma dúvida sobre os dados? Estou aqui!',
+        '💳 Quer saber mais sobre formas de pagamento?',
+        '🎯 Tem alguma pergunta sobre os planos?',
+        '⚡ Precisa de ajuda imediata? Chama aqui!',
+        '🔐 Dúvidas sobre segurança dos dados? Me pergunte!',
+        '✨ Qualquer dificuldade, é só chamar!'
+    ];
+
+    let waMsgIndex = 0;
+    let waBubbleVisible = false;
+    let waBubbleClosed = false;
+    let waMsgInterval = null;
+
+    function showWaBubble() {
+        if (waBubbleClosed) return;
+        waBubble.classList.add('visible');
+        waBubbleVisible = true;
+        startMsgRotation();
+    }
+
+    function hideWaBubble() {
+        waBubble.classList.remove('visible');
+        waBubbleVisible = false;
+        stopMsgRotation();
+    }
+
+    function rotateWaMsg() {
+        waMsgIndex = (waMsgIndex + 1) % waMessages.length;
+        waMsg.innerHTML = `<span>${waMessages[waMsgIndex]}</span>`;
+    }
+
+    function startMsgRotation() {
+        if (waMsgInterval) return;
+        waMsgInterval = setInterval(rotateWaMsg, 5000);
+    }
+
+    function stopMsgRotation() {
+        if (waMsgInterval) {
+            clearInterval(waMsgInterval);
+            waMsgInterval = null;
+        }
+    }
+
+    waBubbleClose.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        hideWaBubble();
+        waBubbleClosed = true;
+    });
+
+    waBubble.addEventListener('click', () => {
+        window.open('https://wa.me/5562999133986?text=Ol%C3%A1!%20Estou%20fazendo%20meu%20cadastro%20no%20BlackInk%20e%20preciso%20de%20ajuda.', '_blank');
+    });
+
+    waBtn.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768 && !waBubbleVisible && !waBubbleClosed) {
+            e.preventDefault();
+            showWaBubble();
+        }
+    });
+
+    // Show bubble after 3 seconds
+    setTimeout(showWaBubble, 3000);
+
+    // Hide on scroll (mobile)
+    let lastScrollY = 0;
+    window.addEventListener('scroll', () => {
+        const currentScrollY = window.scrollY;
+        if (currentScrollY > lastScrollY + 200 && waBubbleVisible && !waBubbleClosed) {
+            hideWaBubble();
+        }
+        lastScrollY = currentScrollY;
+    }, { passive: true });
 })();
 </script>
 </body>
