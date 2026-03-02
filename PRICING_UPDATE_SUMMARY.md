@@ -25,39 +25,52 @@ Todos os preços dos planos foram atualizados conforme solicitado:
 - ✅ Atualizado pricing section com novos valores
 - ✅ Corrigido desconto anual de -20% para -15%
 - ✅ Atualizado FAQ com novos valores
-- ✅ **Botões "Começar Agora" redirecionam DIRETO para `/cadastro/?plan=NomePlano&period=monthly`**
-- ✅ CTA final também redireciona para cadastro com plano Recife (mais popular)
+- ✅ **Botões "Começar Agora" dos planos redirecionam DIRETO para `/cadastro/?plan=NomePlano&period=monthly`**
+- ✅ **CTA final redireciona para `/subscribe/` (permite escolher período)**
+- ✅ Já possui botão de WhatsApp na seção CTA final
 
 ### 2. `/website/subscribe/index.html`
 - ✅ Atualizado todos os preços nos cards de planos
 - ✅ Corrigido desconto anual de -20% para -15%
 - ✅ Atualizado data-attributes nos cards (data-price-monthly, data-price-quarterly, data-price-yearly)
 - ✅ Botões já redirecionam corretamente para `/cadastro/` com parâmetros plan e period
+- ✅ **Adicionado seção de WhatsApp antes dos trust badges**
 
 ### 3. `/website/cadastro/index.html`
 - ✅ Atualizado objeto PLANS no JavaScript com novos valores
 - ✅ Corrigido cálculo do desconto anual de 0.8 (20%) para 0.85 (15%)
 - ✅ Página já recebe corretamente os parâmetros de plan e period via URL
+- ✅ **Adicionado botão de WhatsApp no rodapé do formulário**
 
 ## Fluxo de Assinatura
 
-O fluxo de assinatura foi otimizado:
+O fluxo de assinatura foi otimizado com duas opções principais:
 
-### Fluxo Principal (Index → Cadastro)
-1. **Index (/)** → Usuário vê os planos e clica em "Começar Agora"
+### Fluxo 1: Direto dos Planos (Index → Cadastro)
+1. **Index (/)** → Usuário escolhe um plano específico e clica em "Começar Agora"
    - Link DIRETO: `/cadastro/?plan=NomePlano&period=monthly`
-   - Vai direto para o cadastro com período mensal pré-selecionado
+   - Vai direto para o cadastro com o plano escolhido e período mensal pré-selecionado
+   - **Ideal para quem já decidiu o plano**
 
-### Fluxo Alternativo (Subscribe → Cadastro)
-Usuários que acessam `/subscribe/` diretamente podem escolher o período:
+### Fluxo 2: CTA Geral ou Subscribe (Index → Subscribe → Cadastro)
+1. **Index (/)** → Usuário clica no CTA final "Começar Agora" (sem plano específico)
+   - Link: `/subscribe/`
+   - Vai para página de seleção onde pode comparar e escolher o período
 
-1. **Subscribe (/subscribe/)** → Usuário escolhe o período (mensal/trimestral/anual) e clica em "Começar Agora"
+2. **Subscribe (/subscribe/)** → Usuário escolhe o plano e período (mensal/trimestral/anual)
    - Link: `/cadastro/?plan=NomePlano&period=monthly|quarterly|yearly`
+   - **Ideal para quem quer comparar períodos e descontos**
 
-2. **Cadastro (/cadastro/)** → Usuário preenche os dados e finaliza a assinatura
+3. **Cadastro (/cadastro/)** → Preenche os dados e finaliza
    - Recebe plan e period via URL
    - Calcula o preço correto baseado no período selecionado
    - Envia para a API de cadastro
+
+### Suporte via WhatsApp
+Todas as páginas agora possuem opção de contato via WhatsApp:
+- **Index**: Seção CTA final
+- **Subscribe**: Seção antes dos trust badges
+- **Cadastro**: Rodapé do formulário
 
 ## Cálculos dos Descontos
 
@@ -83,12 +96,22 @@ Exemplos:
 
 ## Testes Recomendados
 
-1. ✅ Verificar se os preços estão corretos na página inicial
-2. ✅ Verificar se ao clicar em "Começar Agora" na index, redireciona DIRETO para `/cadastro/?plan=NomePlano&period=monthly`
-3. ✅ Verificar se o preço mostrado em /cadastro/ está correto (R$ 119,99 para Raso, R$ 469,99 para Recife, R$ 999,99 para Abissal)
-4. ✅ Verificar se os preços mudam corretamente ao alternar entre mensal/trimestral/anual em /subscribe/
-5. ✅ Verificar se ao clicar em "Começar Agora" em /subscribe/, redireciona para /cadastro/ com plano e período corretos
-6. ✅ Verificar se o CTA final da index redireciona para Recife mensal
+### Preços e Descontos
+1. ✅ Verificar se os preços estão corretos na página inicial (R$ 119,99, R$ 469,99, R$ 999,99)
+2. ✅ Verificar se os preços mudam corretamente ao alternar entre mensal/trimestral/anual em /subscribe/
+3. ✅ Verificar desconto trimestral (10%) e anual (15%) aplicados corretamente
+
+### Fluxo de Navegação
+4. ✅ **Index → Cadastro**: Clicar em "Começar Agora" de qualquer plano deve redirecionar DIRETO para `/cadastro/?plan=NomePlano&period=monthly`
+5. ✅ **Index → Subscribe**: CTA final "Começar Agora" (genérico) deve redirecionar para `/subscribe/`
+6. ✅ **Subscribe → Cadastro**: Ao escolher período e clicar em "Começar Agora" deve redirecionar para `/cadastro/?plan=NomePlano&period=escolhido`
+7. ✅ Verificar se o preço mostrado em /cadastro/ está correto baseado no plano e período
+
+### WhatsApp
+8. ✅ Verificar botão WhatsApp na index (seção CTA final)
+9. ✅ Verificar seção WhatsApp em /subscribe/ (antes dos trust badges)
+10. ✅ Verificar botão WhatsApp em /cadastro/ (rodapé do formulário)
+11. ✅ Verificar se todos os links do WhatsApp funcionam corretamente
 
 ## Data da Atualização
 2026-03-02
