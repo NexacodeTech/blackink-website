@@ -67,7 +67,19 @@ O fluxo de assinatura foi otimizado com duas opções principais:
    - Envia para a API de cadastro
 
 ### Suporte via WhatsApp
-Todas as páginas agora possuem opção de contato via WhatsApp:
+Todas as páginas agora possuem **DUAS** opções de contato via WhatsApp:
+
+#### **1. Widget Flutuante (Todas as páginas)**
+- Botão verde flutuante no canto inferior direito
+- Balão com mensagens rotativas personalizadas
+- Badge de notificação (número 1)
+- Animações suaves e responsivo
+- Mensagens contextualizadas por página:
+  - **Index**: "Olá! Vim pelo site e gostaria de saber mais sobre os planos."
+  - **Subscribe**: "Olá! Vim da página de planos e gostaria de tirar algumas dúvidas."
+  - **Cadastro**: "Olá! Estou fazendo meu cadastro no BlackInk e preciso de ajuda."
+
+#### **2. Botão Estático (Subscribe e Cadastro)**
 - **Index**: Seção CTA final
 - **Subscribe**: Seção antes dos trust badges
 - **Cadastro**: Rodapé do formulário
@@ -108,10 +120,16 @@ Exemplos:
 7. ✅ Verificar se o preço mostrado em /cadastro/ está correto baseado no plano e período
 
 ### WhatsApp
-8. ✅ Verificar botão WhatsApp na index (seção CTA final)
-9. ✅ Verificar seção WhatsApp em /subscribe/ (antes dos trust badges)
-10. ✅ Verificar botão WhatsApp em /cadastro/ (rodapé do formulário)
-11. ✅ Verificar se todos os links do WhatsApp funcionam corretamente
+8. ✅ **Widget Flutuante** funcionando em todas as páginas (index, subscribe, cadastro)
+9. ✅ Balão de mensagens aparece após 3 segundos
+10. ✅ Mensagens rotativas funcionando corretamente
+11. ✅ Botão de fechar funciona no balão
+12. ✅ Click no balão abre WhatsApp com mensagem personalizada
+13. ✅ Click no botão verde abre WhatsApp diretamente
+14. ✅ Responsivo em mobile (botão menor, posicionamento correto)
+15. ✅ Verificar seção estática de WhatsApp em /subscribe/ (antes dos trust badges)
+16. ✅ Verificar botão estático de WhatsApp em /cadastro/ (rodapé do formulário)
+17. ✅ Verificar se todos os links do WhatsApp funcionam corretamente
 
 ## Data da Atualização
 2026-03-02
