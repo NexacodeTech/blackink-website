@@ -25,7 +25,8 @@ Todos os preços dos planos foram atualizados conforme solicitado:
 - ✅ Atualizado pricing section com novos valores
 - ✅ Corrigido desconto anual de -20% para -15%
 - ✅ Atualizado FAQ com novos valores
-- ✅ **Adicionado links de assinatura** nos botões "Começar Agora" que redirecionam para `/subscribe/?plan=NomePlano`
+- ✅ **Botões "Começar Agora" redirecionam DIRETO para `/cadastro/?plan=NomePlano&period=monthly`**
+- ✅ CTA final também redireciona para cadastro com plano Recife (mais popular)
 
 ### 2. `/website/subscribe/index.html`
 - ✅ Atualizado todos os preços nos cards de planos
@@ -40,15 +41,20 @@ Todos os preços dos planos foram atualizados conforme solicitado:
 
 ## Fluxo de Assinatura
 
-O fluxo de assinatura agora funciona completamente:
+O fluxo de assinatura foi otimizado:
 
+### Fluxo Principal (Index → Cadastro)
 1. **Index (/)** → Usuário vê os planos e clica em "Começar Agora"
-   - Link: `/subscribe/?plan=NomePlano`
+   - Link DIRETO: `/cadastro/?plan=NomePlano&period=monthly`
+   - Vai direto para o cadastro com período mensal pré-selecionado
 
-2. **Subscribe (/subscribe/)** → Usuário escolhe o período (mensal/trimestral/anual) e clica em "Começar Agora"
+### Fluxo Alternativo (Subscribe → Cadastro)
+Usuários que acessam `/subscribe/` diretamente podem escolher o período:
+
+1. **Subscribe (/subscribe/)** → Usuário escolhe o período (mensal/trimestral/anual) e clica em "Começar Agora"
    - Link: `/cadastro/?plan=NomePlano&period=monthly|quarterly|yearly`
 
-3. **Cadastro (/cadastro/)** → Usuário preenche os dados e finaliza a assinatura
+2. **Cadastro (/cadastro/)** → Usuário preenche os dados e finaliza a assinatura
    - Recebe plan e period via URL
    - Calcula o preço correto baseado no período selecionado
    - Envia para a API de cadastro
@@ -78,10 +84,11 @@ Exemplos:
 ## Testes Recomendados
 
 1. ✅ Verificar se os preços estão corretos na página inicial
-2. ✅ Verificar se os preços mudam corretamente ao alternar entre mensal/trimestral/anual em /subscribe/
-3. ✅ Verificar se ao clicar em "Começar Agora" na index, redireciona para /subscribe/ com o plano correto
-4. ✅ Verificar se ao clicar em "Começar Agora" em /subscribe/, redireciona para /cadastro/ com plano e período corretos
-5. ✅ Verificar se o preço mostrado em /cadastro/ está correto baseado no período selecionado
+2. ✅ Verificar se ao clicar em "Começar Agora" na index, redireciona DIRETO para `/cadastro/?plan=NomePlano&period=monthly`
+3. ✅ Verificar se o preço mostrado em /cadastro/ está correto (R$ 119,99 para Raso, R$ 469,99 para Recife, R$ 999,99 para Abissal)
+4. ✅ Verificar se os preços mudam corretamente ao alternar entre mensal/trimestral/anual em /subscribe/
+5. ✅ Verificar se ao clicar em "Começar Agora" em /subscribe/, redireciona para /cadastro/ com plano e período corretos
+6. ✅ Verificar se o CTA final da index redireciona para Recife mensal
 
 ## Data da Atualização
 2026-03-02
