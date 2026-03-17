@@ -826,6 +826,13 @@
             period: period
         };
 
+        // Incluir dados de referral (parceiro) se presentes
+        var refParam = urlParams.get('ref');
+        var storedToken = localStorage.getItem('blackink_referral_token');
+        var storedCode = localStorage.getItem('blackink_referral_code');
+        if (storedToken) registrationData.cookie_token = storedToken;
+        if (refParam || storedCode) registrationData.referral_code = refParam || storedCode;
+
         try {
             const response = await fetch(`${API_BASE_URL}/api/users/register`, {
                 method: 'POST',
@@ -841,6 +848,10 @@
             if (!response.ok) {
                 throw new Error(data.message || 'Erro ao cadastrar usuário');
             }
+
+            // Limpar dados de referral apos registro bem-sucedido
+            localStorage.removeItem('blackink_referral_token');
+            localStorage.removeItem('blackink_referral_code');
 
             // Redirect to checkout
             if (data.checkout_url) {
@@ -982,5 +993,6 @@
     }, { passive: true });
 })();
 </script>
+<script src="/js/referral-tracking.js"></script>
 </body>
 </html>

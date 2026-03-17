@@ -519,12 +519,15 @@
             });
         });
 
-        // CTA buttons - redirect to cadastro
+        // CTA buttons - redirect to cadastro (propagate ref param if present)
+        const urlRef = new URLSearchParams(window.location.search).get('ref');
         planCTAs.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
                 const plan = btn.dataset.plan;
-                window.location.href = `/cadastro/?plan=${encodeURIComponent(plan)}&period=${encodeURIComponent(currentPeriod)}`;
+                let url = `/cadastro/?plan=${encodeURIComponent(plan)}&period=${encodeURIComponent(currentPeriod)}`;
+                if (urlRef) url += `&ref=${encodeURIComponent(urlRef)}`;
+                window.location.href = url;
             });
         });
 
@@ -639,5 +642,6 @@
         }, { passive: true });
     })();
 </script>
+<script src="/js/referral-tracking.js"></script>
 </body>
 </html>
