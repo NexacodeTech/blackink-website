@@ -646,9 +646,10 @@
     const plan = urlParams.get('plan');
     const period = urlParams.get('period') || 'monthly';
 
-    // Check if plan is selected
+    // Check if plan is selected — preservar ref param ao redirecionar
     if (!plan || !PLANS[plan]) {
-        window.location.href = '/subscribe/';
+        const refForRedirect = urlParams.get('ref') || localStorage.getItem('blackink_referral_code');
+        window.location.href = refForRedirect ? '/subscribe/?ref=' + encodeURIComponent(refForRedirect) : '/subscribe/';
         return;
     }
 

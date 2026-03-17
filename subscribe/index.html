@@ -520,7 +520,8 @@
         });
 
         // CTA buttons - redirect to cadastro (propagate ref param if present)
-        const urlRef = new URLSearchParams(window.location.search).get('ref');
+        // Prioridade: URL param > localStorage (visitante pode ter chegado sem ?ref= na URL)
+        const urlRef = new URLSearchParams(window.location.search).get('ref') || localStorage.getItem('blackink_referral_code');
         planCTAs.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
