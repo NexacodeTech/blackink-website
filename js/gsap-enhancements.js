@@ -35,6 +35,7 @@
   };
 
   // ── Inicializar módulos ──
+  initHeroTimeline();
   initCounters(dur.counter);
   initRoiCalculator(dur.roiSmooth);
   initPricingToggle();
@@ -266,6 +267,104 @@
         duration: dur.baCard,
         ease: 'power3.out',
       }, '+=0.2');
+    }
+  }
+
+  // ══════════════════════════════════════════════════════════
+  // HERO TIMELINE — Fase 2
+  // Orquestra entrada sequencial dos elementos do hero via GSAP
+  // ══════════════════════════════════════════════════════════
+
+  function initHeroTimeline() {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+
+    const logo   = hero.querySelector('.hero-logo');
+    const badge  = hero.querySelector('.hero-badge');
+    const line   = hero.querySelector('.hero-line');
+    const sub    = hero.querySelector('.hero-sub');
+    const ctas   = hero.querySelector('.hero-ctas');
+    const trust  = hero.querySelector('.hero-trust');
+    const scroll = hero.querySelector('.hero-scroll');
+
+    // Remove CSS animations — GSAP takes over.
+    // Uses a CSS class so that if GSAP never loaded, the class
+    // is never added and original CSS animations play as fallback.
+    const animatedEls = [logo, badge, line, sub, ctas, trust, scroll].filter(Boolean);
+    animatedEls.forEach(el => {
+      el.classList.add('gsap-hero');
+    });
+
+    const tl = gsap.timeline({
+      delay: 0.6, // match loader dismiss timing
+      defaults: { ease: 'power3.out' },
+    });
+
+    // t=0.0s → Logo (scale + fade)
+    if (logo) {
+      tl.fromTo(logo,
+        { opacity: 0, scale: 0.9, y: 12 },
+        { opacity: 1, scale: 1, y: 0, duration: 1 },
+        0
+      );
+    }
+
+    // t=0.3s → Badge (slide-down + fade)
+    if (badge) {
+      tl.fromTo(badge,
+        { opacity: 0, y: 15 },
+        { opacity: 1, y: 0, duration: 0.7 },
+        0.3
+      );
+    }
+
+    // Title characters (.ch) are animated by the vanilla split system.
+    // The existing JS adds .go class at ~300ms after loader, which
+    // works in concert with this timeline since both fire post-loader.
+
+    // t=0.8s → Hero line (scaleX reveal)
+    if (line) {
+      tl.fromTo(line,
+        { opacity: 0, scaleX: 0 },
+        { opacity: 1, scaleX: 1, duration: 0.8, transformOrigin: 'left center' },
+        0.8
+      );
+    }
+
+    // t=1.2s → Subtitle
+    if (sub) {
+      tl.fromTo(sub,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.7 },
+        1.2
+      );
+    }
+
+    // t=1.5s → CTA buttons
+    if (ctas) {
+      tl.fromTo(ctas,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.6 },
+        1.5
+      );
+    }
+
+    // t=1.8s → Trust badge
+    if (trust) {
+      tl.fromTo(trust,
+        { opacity: 0, y: 15 },
+        { opacity: 1, y: 0, duration: 0.5 },
+        1.8
+      );
+    }
+
+    // t=2.2s → Scroll indicator
+    if (scroll) {
+      tl.fromTo(scroll,
+        { opacity: 0 },
+        { opacity: 1, duration: 0.5 },
+        2.2
+      );
     }
   }
 })();

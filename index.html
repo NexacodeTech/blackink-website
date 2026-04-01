@@ -327,6 +327,9 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .hero-scroll-line{width:1px;height:48px;background:linear-gradient(180deg,var(--accent),transparent);animation:scroll-bob 2.5s ease-in-out infinite}
 @keyframes scroll-bob{0%,100%{transform:scaleY(1);opacity:.3}50%{transform:scaleY(1.2);opacity:.6}}
 
+/* GSAP hero takeover — if GSAP loads, it adds this class to disable CSS animations */
+.gsap-hero{animation:none !important;opacity:0}
+
 /* ══════════════════════════════════════════════════════════
    2. MARQUEE
    ══════════════════════════════════════════════════════════ */
