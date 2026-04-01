@@ -277,7 +277,7 @@
         opacity: 0,
         duration: dur.baCard,
         ease: 'power3.out',
-      }, '+=0.2');
+      }, '+=0.5');
     }
   }
 
