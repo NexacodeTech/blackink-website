@@ -79,7 +79,37 @@
   }
 
   function initRoiCalculator(duration) {
-    // Task 4
+    const calcSlider = document.getElementById('calc-budget');
+    if (!calcSlider) return;
+
+    const targets = {
+      invisible: document.getElementById('calc-invisible'),
+      fraud: document.getElementById('calc-fraud'),
+      total: document.getElementById('calc-total'),
+      hours: document.getElementById('calc-hours'),
+    };
+
+    const tweens = {};
+    Object.entries(targets).forEach(([key, el]) => {
+      if (!el) return;
+      tweens[key] = { el, current: 0 };
+    });
+
+    window.__gsapAnimNum = (el, target, prefix, suffix) => {
+      const key = Object.keys(targets).find(k => targets[k] === el);
+      if (!key || !tweens[key]) return;
+
+      const obj = tweens[key];
+      gsap.to(obj, {
+        current: target,
+        duration: duration,
+        ease: 'power2.out',
+        overwrite: true,
+        onUpdate: () => {
+          el.textContent = prefix + Math.round(obj.current).toLocaleString('pt-BR') + suffix;
+        },
+      });
+    };
   }
 
   function initPricingToggle() {

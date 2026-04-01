@@ -3716,7 +3716,7 @@ const calcRoiBar = document.getElementById('calc-roi-bar');
 
 if (calcSlider) {
     const fmt = v => 'R$ ' + Math.round(v).toLocaleString('pt-BR');
-    const animNum = (el, target, prefix, suffix) => {
+    const animNum = window.__gsapAnimNum || ((el, target, prefix, suffix) => {
         const start = parseFloat(el.dataset.current || '0');
         el.dataset.current = String(target);
         const dur = 500;
@@ -3728,7 +3728,7 @@ if (calcSlider) {
             el.textContent = prefix + Math.round(val).toLocaleString('pt-BR') + suffix;
             if (p < 1) requestAnimationFrame(tick);
         })(t0);
-    };
+    });
 
     const updateCalc = () => {
         const val = parseInt(calcSlider.value, 10) || 0;
