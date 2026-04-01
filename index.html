@@ -379,6 +379,19 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .showcase-feat-text{font-size:15px;color:var(--dim);line-height:1.55}
 .showcase-feat-text strong{color:var(--white);font-weight:600}
 
+/* ── Horizontal Scroll Container (desktop >900px) ── */
+@media(min-width:901px){
+  .features-hscroll{display:flex;flex-wrap:nowrap;overflow:hidden;width:100%}
+  .features-hscroll>section{min-width:100vw;width:100vw;flex-shrink:0;box-sizing:border-box}
+  .features-hscroll>.sep{display:none}
+  .features-hscroll>.stats{display:none}
+}
+@media(max-width:900px){.features-hscroll{display:block}}
+.hscroll-nav{position:fixed;right:30px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:100;opacity:0;pointer-events:none;transition:opacity .4s var(--ease)}
+.hscroll-nav.active{opacity:1;pointer-events:auto}
+.hscroll-dot{width:8px;height:8px;border-radius:50%;background:rgba(100,180,255,0.2);border:1px solid rgba(100,180,255,0.3);transition:all .3s var(--ease);cursor:pointer}
+.hscroll-dot.active{background:var(--accent);transform:scale(1.3);box-shadow:0 0 8px rgba(100,180,255,0.4)}
+
 /* ── Visual mockup blocks ── */
 .mockup{
     border-radius:20px;border:1px solid rgba(100,180,255,0.08);
@@ -1973,6 +1986,8 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
     </div>
 </div>
 
+<div class="features-hscroll">
+
 <!-- ═══════ FEATURE #1: PROTEÇÃO DO TRÁFEGO ═══════ -->
 <section class="section" id="features">
     <div class="container">
@@ -2437,6 +2452,8 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
         </div>
     </div>
 </section>
+
+</div><!-- .features-hscroll -->
 
 <div class="sep"></div>
 
@@ -4405,6 +4422,15 @@ LAYERS.forEach(layer => {
 });
 })();
 </script>
+<!-- Horizontal scroll progress dots -->
+<nav class="hscroll-nav" id="hscroll-nav" aria-label="Feature sections">
+  <div class="hscroll-dot" data-panel="0"></div>
+  <div class="hscroll-dot" data-panel="1"></div>
+  <div class="hscroll-dot" data-panel="2"></div>
+  <div class="hscroll-dot" data-panel="3"></div>
+  <div class="hscroll-dot" data-panel="4"></div>
+</nav>
+
 <script src="/js/referral-tracking.js"></script>
 <!-- GSAP — defer garante execução após parse do HTML -->
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
