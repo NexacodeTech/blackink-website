@@ -494,24 +494,34 @@
     const heroTitle = document.getElementById('hero-title');
     if (!heroTitle) return;
 
+    const lines = heroTitle.querySelectorAll('.ln');
+    const lineInners = heroTitle.querySelectorAll('.ln-i');
     const chars = heroTitle.querySelectorAll('.ch');
     if (!chars.length) return;
 
-    // Remove CSS transitions — GSAP takes over
+    // Disable CSS transition system — GSAP takes over completely
+    lines.forEach(ln => {
+      ln.style.overflow = 'visible'; // allow rotateX to extend outside
+    });
+    lineInners.forEach(lnI => {
+      lnI.style.transition = 'none';
+      lnI.style.transform = 'translateY(0)'; // override the 115% offset
+    });
     chars.forEach(ch => {
       ch.style.transition = 'none';
     });
 
-    // Wait for the hero timeline to start (matches the title area ~0.3s)
+    // Force .go class so vanilla JS doesn't fight with GSAP
+    heroTitle.classList.add('go');
+
+    // Animate characters with 3D rotation
     gsap.from(chars, {
       opacity: 0,
-      rotateX: 80,
-      y: 20,
-      transformOrigin: 'bottom center',
-      duration: 0.6,
-      ease: 'back.out(1.2)',
+      y: 15,
+      duration: 0.5,
+      ease: 'power3.out',
       stagger: 0.015,
-      delay: 0.5, // compressed — after loader dismiss + logo/badge
+      delay: 0.5,
     });
   }
 
