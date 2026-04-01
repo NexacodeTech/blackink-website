@@ -194,7 +194,55 @@
   }
 
   function initGuaranteeReveal(dur) {
-    // Task 8
+    const section = document.querySelector('.guarantee');
+    if (!section) return;
+
+    const shield = section.querySelector('.guarantee-shield');
+    const badge = section.querySelector('.guarantee-badge');
+    const pillars = section.querySelectorAll('.guarantee-pillar');
+
+    if (shield) {
+      gsap.from(shield, {
+        scale: 0.8,
+        opacity: 0,
+        duration: dur.guaranteeShield,
+        ease: 'back.out(1.7)',
+        scrollTrigger: {
+          trigger: shield,
+          start: 'top 85%',
+          once: true,
+        },
+      });
+    }
+
+    if (badge) {
+      gsap.from(badge, {
+        y: 15,
+        opacity: 0,
+        duration: 0.5,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: badge,
+          start: 'top 85%',
+          once: true,
+        },
+      });
+    }
+
+    if (pillars.length) {
+      gsap.from(pillars, {
+        y: 20,
+        opacity: 0,
+        duration: dur.guaranteeItems,
+        ease: 'power3.out',
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: pillars[0].closest('.guarantee-pillars') || pillars[0],
+          start: 'top 85%',
+          once: true,
+        },
+      });
+    }
   }
 
   function initBeforeAfterReveal(dur) {
