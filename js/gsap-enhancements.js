@@ -135,7 +135,29 @@
   }
 
   function initParallaxOrbs(duration) {
-    // Task 6
+    const orbs = document.querySelectorAll('.hero-mesh div');
+    if (!orbs.length) return;
+
+    const factors = [0.02, -0.015, 0.01];
+
+    const orbTweens = Array.from(orbs).map((orb, i) => {
+      const f = factors[i] || 0.01;
+      return {
+        xTo: gsap.quickTo(orb, 'x', { duration: duration, ease: 'power3.out' }),
+        yTo: gsap.quickTo(orb, 'y', { duration: duration, ease: 'power3.out' }),
+        factor: f,
+      };
+    });
+
+    document.addEventListener('mousemove', e => {
+      const mx = (e.clientX / window.innerWidth - 0.5) * 2;
+      const my = (e.clientY / window.innerHeight - 0.5) * 2;
+
+      orbTweens.forEach(({ xTo, yTo, factor }) => {
+        xTo(mx * factor * 100);
+        yTo(my * factor * 100);
+      });
+    }, { passive: true });
   }
 
   function initCardTilt(duration) {
