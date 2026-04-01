@@ -301,7 +301,7 @@
     const scroll = hero.querySelector('.hero-scroll');
 
     const tl = gsap.timeline({
-      delay: 0.6, // match loader dismiss timing
+      delay: 0.3, // compressed — match loader dismiss timing
       defaults: { ease: 'power3.out' },
     });
 
@@ -309,17 +309,17 @@
     if (logo) {
       tl.fromTo(logo,
         { opacity: 0, scale: 0.9, y: 12 },
-        { opacity: 1, scale: 1, y: 0, duration: 1 },
+        { opacity: 1, scale: 1, y: 0, duration: 0.8 },
         0
       );
     }
 
-    // t=0.3s → Badge (slide-down + fade)
+    // t=0.2s → Badge (slide-down + fade)
     if (badge) {
       tl.fromTo(badge,
         { opacity: 0, y: 15 },
-        { opacity: 1, y: 0, duration: 0.7 },
-        0.3
+        { opacity: 1, y: 0, duration: 0.6 },
+        0.2
       );
     }
 
@@ -327,48 +327,48 @@
     // The existing JS adds .go class at ~300ms after loader, which
     // works in concert with this timeline since both fire post-loader.
 
-    // t=0.8s → Hero line (scaleX reveal)
+    // t=0.4s → Hero line (scaleX reveal)
     if (line) {
       tl.fromTo(line,
         { opacity: 0, scaleX: 0 },
-        { opacity: 1, scaleX: 1, duration: 0.8, transformOrigin: 'left center' },
+        { opacity: 1, scaleX: 1, duration: 0.6, transformOrigin: 'left center' },
+        0.4
+      );
+    }
+
+    // t=0.6s → Subtitle
+    if (sub) {
+      tl.fromTo(sub,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.6 },
+        0.6
+      );
+    }
+
+    // t=0.8s → CTA buttons
+    if (ctas) {
+      tl.fromTo(ctas,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.5 },
         0.8
       );
     }
 
-    // t=1.2s → Subtitle
-    if (sub) {
-      tl.fromTo(sub,
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.7 },
-        1.2
-      );
-    }
-
-    // t=1.5s → CTA buttons
-    if (ctas) {
-      tl.fromTo(ctas,
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.6 },
-        1.5
-      );
-    }
-
-    // t=1.8s → Trust badge
+    // t=1.0s → Trust badge
     if (trust) {
       tl.fromTo(trust,
         { opacity: 0, y: 15 },
-        { opacity: 1, y: 0, duration: 0.5 },
-        1.8
+        { opacity: 1, y: 0, duration: 0.4 },
+        1.0
       );
     }
 
-    // t=2.2s → Scroll indicator
+    // t=1.3s → Scroll indicator
     if (scroll) {
       tl.fromTo(scroll,
         { opacity: 0 },
-        { opacity: 1, duration: 0.5 },
-        2.2
+        { opacity: 1, duration: 0.4 },
+        1.3
       );
     }
   }
@@ -502,7 +502,7 @@
       ch.style.transition = 'none';
     });
 
-    // Wait for the hero timeline to start (matches the title area ~0.5s)
+    // Wait for the hero timeline to start (matches the title area ~0.3s)
     gsap.from(chars, {
       opacity: 0,
       rotateX: 80,
@@ -510,8 +510,8 @@
       transformOrigin: 'bottom center',
       duration: 0.6,
       ease: 'back.out(1.2)',
-      stagger: 0.02,
-      delay: 0.9, // after loader dismiss + logo/badge
+      stagger: 0.015,
+      delay: 0.5, // compressed — after loader dismiss + logo/badge
     });
   }
 
