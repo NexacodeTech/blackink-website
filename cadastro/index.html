@@ -646,10 +646,16 @@
     const plan = urlParams.get('plan');
     const period = urlParams.get('period') || 'monthly';
 
-    // Check if plan is selected — preservar ref param ao redirecionar
+    // Check if plan is selected — preservar ref/fref param ao redirecionar
     if (!plan || !PLANS[plan]) {
         const refForRedirect = urlParams.get('ref') || localStorage.getItem('blackink_referral_code');
-        window.location.href = refForRedirect ? '/subscribe/?ref=' + encodeURIComponent(refForRedirect) : '/subscribe/';
+        const frefForRedirect = urlParams.get('fref') || localStorage.getItem('blackink_friend_referral_code');
+        var redirectUrl = '/subscribe/';
+        var redirectParams = [];
+        if (refForRedirect) redirectParams.push('ref=' + encodeURIComponent(refForRedirect));
+        if (frefForRedirect) redirectParams.push('fref=' + encodeURIComponent(frefForRedirect));
+        if (redirectParams.length) redirectUrl += '?' + redirectParams.join('&');
+        window.location.href = redirectUrl;
         return;
     }
 
@@ -834,6 +840,13 @@
         if (storedToken) registrationData.cookie_token = storedToken;
         if (refParam || storedCode) registrationData.referral_code = refParam || storedCode;
 
+        // Incluir dados de friend referral (indicacao de amigo) se presentes
+        var frefParam = urlParams.get('fref');
+        var friendToken = localStorage.getItem('blackink_friend_referral_token');
+        var friendCode = localStorage.getItem('blackink_friend_referral_code');
+        if (friendToken) registrationData.friend_cookie_token = friendToken;
+        if (frefParam || friendCode) registrationData.friend_referral_code = frefParam || friendCode;
+
         try {
             const response = await fetch(`${API_BASE_URL}/api/users/register`, {
                 method: 'POST',
@@ -853,6 +866,8 @@
             // Limpar dados de referral apos registro bem-sucedido
             localStorage.removeItem('blackink_referral_token');
             localStorage.removeItem('blackink_referral_code');
+            localStorage.removeItem('blackink_friend_referral_token');
+            localStorage.removeItem('blackink_friend_referral_code');
 
             // Redirect to checkout
             if (data.checkout_url) {

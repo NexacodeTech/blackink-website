@@ -519,15 +519,17 @@
             });
         });
 
-        // CTA buttons - redirect to cadastro (propagate ref param if present)
+        // CTA buttons - redirect to cadastro (propagate ref/fref param if present)
         // Prioridade: URL param > localStorage (visitante pode ter chegado sem ?ref= na URL)
         const urlRef = new URLSearchParams(window.location.search).get('ref') || localStorage.getItem('blackink_referral_code');
+        const urlFref = new URLSearchParams(window.location.search).get('fref') || localStorage.getItem('blackink_friend_referral_code');
         planCTAs.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
                 const plan = btn.dataset.plan;
                 let url = `/cadastro/?plan=${encodeURIComponent(plan)}&period=${encodeURIComponent(currentPeriod)}`;
                 if (urlRef) url += `&ref=${encodeURIComponent(urlRef)}`;
+                if (urlFref) url += `&fref=${encodeURIComponent(urlFref)}`;
                 window.location.href = url;
             });
         });
