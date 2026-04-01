@@ -51,6 +51,8 @@
     initSectionParallax();
   }
 
+  initHorizontalScroll();
+
   initDividerAnimations();
   initMockupInternals();
 
@@ -381,7 +383,7 @@
 
   function initSectionParallax() {
     // Mockups with subtle parallax — move slower than scroll
-    document.querySelectorAll('.mockup').forEach(mockup => {
+    document.querySelectorAll('.mockup:not(.features-hscroll .mockup)').forEach(mockup => {
       gsap.to(mockup, {
         y: -25,
         ease: 'none',
@@ -485,5 +487,59 @@
         }
       });
     }
+  }
+
+  // ══════════════════════════════════════════════════════════
+  // Fase 3 — Horizontal Scroll (desktop only)
+  // ══════════════════════════════════════════════════════════
+
+  function initHorizontalScroll() {
+    const container = document.querySelector('.features-hscroll');
+    if (!container) return;
+
+    const nav = document.getElementById('hscroll-nav');
+    const dots = nav ? nav.querySelectorAll('.hscroll-dot') : [];
+
+    gsap.matchMedia({
+      '(min-width: 901px)': () => {
+        const sections = gsap.utils.toArray('.features-hscroll > section');
+        if (sections.length < 2) return;
+
+        const tween = gsap.to(sections, {
+          xPercent: -100 * (sections.length - 1),
+          ease: 'none',
+          scrollTrigger: {
+            trigger: container,
+            pin: true,
+            scrub: 1,
+            end: () => '+=' + (container.offsetWidth * (sections.length - 1)),
+            onUpdate: (self) => {
+              if (!dots.length) return;
+              const progress = self.progress;
+              const activeIndex = Math.round(progress * (sections.length - 1));
+              dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === activeIndex);
+              });
+            },
+            onToggle: (self) => {
+              if (nav) nav.classList.toggle('active', self.isActive);
+            },
+          },
+        });
+
+        // Click dots to scroll to panel
+        dots.forEach((dot, i) => {
+          dot.addEventListener('click', () => {
+            const scrollTarget = tween.scrollTrigger.start +
+              (tween.scrollTrigger.end - tween.scrollTrigger.start) * (i / (sections.length - 1));
+            window.scrollTo({ top: scrollTarget, behavior: 'smooth' });
+          });
+        });
+
+        return () => {
+          // gsap.matchMedia handles cleanup automatically
+        };
+      },
+    });
   }
 })();
