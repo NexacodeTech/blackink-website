@@ -52,6 +52,7 @@
   }
 
   initDividerAnimations();
+  initMockupInternals();
 
   // ══════════════════════════════════════════════════════════
   // MÓDULOS
@@ -433,5 +434,56 @@
         },
       });
     });
+  }
+
+  // ══════════════════════════════════════════════════════════
+  // Fase 2 — Mockup Internal Animations
+  // ══════════════════════════════════════════════════════════
+
+  function initMockupInternals() {
+    // Search Terms mockup — ROAS bars fill progressively
+    const termRows = document.querySelectorAll('.term-roas-bar-fill');
+    if (termRows.length) {
+      termRows.forEach(bar => {
+        const targetWidth = bar.style.width || '0%';
+        // Set initial width to 0, animate to target
+        gsap.fromTo(bar,
+          { width: '0%' },
+          {
+            width: targetWidth,
+            duration: 1,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: bar.closest('.mockup') || bar,
+              start: 'top 75%',
+              once: true,
+            },
+          }
+        );
+      });
+    }
+
+    // Dashboard mockup — sparklines draw
+    const sparklines = document.querySelectorAll('.ctrl-sparkline polyline, .ctrl-sparkline path');
+    if (sparklines.length) {
+      sparklines.forEach(line => {
+        const length = line.getTotalLength ? line.getTotalLength() : 0;
+        if (length > 0) {
+          gsap.fromTo(line,
+            { strokeDasharray: length, strokeDashoffset: length },
+            {
+              strokeDashoffset: 0,
+              duration: 1.2,
+              ease: 'power2.out',
+              scrollTrigger: {
+                trigger: line.closest('.mockup') || line,
+                start: 'top 75%',
+                once: true,
+              },
+            }
+          );
+        }
+      });
+    }
   }
 })();
