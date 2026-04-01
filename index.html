@@ -412,8 +412,12 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 @media(max-width:900px){.features-hscroll{display:block}}
 .hscroll-nav{position:fixed;right:30px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:100;opacity:0;pointer-events:none;transition:opacity .4s var(--ease)}
 .hscroll-nav.active{opacity:1;pointer-events:auto}
-.hscroll-dot{width:8px;height:8px;border-radius:50%;background:rgba(100,180,255,0.2);border:1px solid rgba(100,180,255,0.3);transition:all .3s var(--ease);cursor:pointer}
-.hscroll-dot.active{background:var(--accent);transform:scale(1.3);box-shadow:0 0 8px rgba(100,180,255,0.4)}
+.hscroll-dot{width:12px;height:12px;border-radius:50%;background:rgba(100,180,255,0.3);border:1px solid rgba(100,180,255,0.4);transition:all .3s var(--ease);cursor:pointer}
+.hscroll-dot:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.hscroll-dot.active{background:var(--accent);transform:scale(1.3);box-shadow:0 0 10px rgba(100,180,255,0.5)}
+.hscroll-counter{font-size:11px;color:rgba(100,180,255,0.6);text-align:center;font-family:'DM Mono',monospace;margin-top:4px}
+.hscroll-skip{display:block;margin-top:12px;font-size:11px;color:var(--accent);text-decoration:none;text-align:center;opacity:0.7;transition:opacity .3s var(--ease)}
+.hscroll-skip:hover{opacity:1}
 
 /* ── Visual mockup blocks ── */
 .mockup{
@@ -4446,12 +4450,14 @@ LAYERS.forEach(layer => {
 })();
 </script>
 <!-- Horizontal scroll progress dots -->
-<nav class="hscroll-nav" id="hscroll-nav" aria-label="Feature sections">
-  <div class="hscroll-dot" data-panel="0"></div>
-  <div class="hscroll-dot" data-panel="1"></div>
-  <div class="hscroll-dot" data-panel="2"></div>
-  <div class="hscroll-dot" data-panel="3"></div>
-  <div class="hscroll-dot" data-panel="4"></div>
+<nav class="hscroll-nav" id="hscroll-nav" aria-label="Seções de features">
+  <div class="hscroll-dot" data-panel="0" tabindex="0" role="button" aria-label="Proteção do Tráfego"></div>
+  <div class="hscroll-dot" data-panel="1" tabindex="0" role="button" aria-label="Dashboard e Controle"></div>
+  <div class="hscroll-dot" data-panel="2" tabindex="0" role="button" aria-label="Google Ads Intelligence"></div>
+  <div class="hscroll-dot" data-panel="3" tabindex="0" role="button" aria-label="BlackInk Intelligence"></div>
+  <div class="hscroll-dot" data-panel="4" tabindex="0" role="button" aria-label="Decoração de Links"></div>
+  <div class="hscroll-counter" id="hscroll-counter">1 / 5</div>
+  <a href="#pricing" class="hscroll-skip" id="hscroll-skip">Ver Planos ↓</a>
 </nav>
 
 <!-- Cursor glow -->

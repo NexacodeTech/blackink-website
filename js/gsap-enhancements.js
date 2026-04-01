@@ -583,6 +583,9 @@
               dots.forEach((dot, i) => {
                 dot.classList.toggle('active', i === activeIndex);
               });
+              // Update counter
+              const counter = document.getElementById('hscroll-counter');
+              if (counter) counter.textContent = (activeIndex + 1) + ' / ' + sections.length;
             },
             onToggle: (self) => {
               if (nav) nav.classList.toggle('active', self.isActive);
@@ -596,6 +599,26 @@
             const scrollTarget = tween.scrollTrigger.start +
               (tween.scrollTrigger.end - tween.scrollTrigger.start) * (i / (sections.length - 1));
             window.scrollTo({ top: scrollTarget, behavior: 'smooth' });
+          });
+        });
+
+        // Keyboard navigation for dots
+        dots.forEach((dot, i) => {
+          dot.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              dot.click();
+            }
+            if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+              e.preventDefault();
+              const next = dots[Math.min(i + 1, dots.length - 1)];
+              if (next) { next.focus(); next.click(); }
+            }
+            if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+              e.preventDefault();
+              const prev = dots[Math.max(i - 1, 0)];
+              if (prev) { prev.focus(); prev.click(); }
+            }
           });
         });
 
