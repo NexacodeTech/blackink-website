@@ -19,6 +19,16 @@
     <!-- GSAP preload — inicia download sem bloquear render -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" as="script" crossorigin>
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" as="script" crossorigin>
+    <script>
+    // GSAP hero takeover: hide hero elements immediately via CSS class
+    // If GSAP doesn't load within 3s, remove class and let CSS animations play
+    document.documentElement.classList.add('gsap-loading');
+    setTimeout(function() {
+      if (!window.__gsapReady) {
+        document.documentElement.classList.remove('gsap-loading');
+      }
+    }, 3000);
+    </script>
     <link rel="preload" href="https://fonts.gstatic.com/s/spacegrotesk/v16/V8mDoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj62UUsjNsFjTDJK.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="https://fonts.gstatic.com/s/inter/v18/UcCo3FwrK3iLTcviYwY.woff2" as="font" type="font/woff2" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Mono:wght@300;400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
@@ -331,8 +341,17 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .hero-scroll-line{width:1px;height:48px;background:linear-gradient(180deg,var(--accent),transparent);animation:scroll-bob 2.5s ease-in-out infinite}
 @keyframes scroll-bob{0%,100%{transform:scaleY(1);opacity:.3}50%{transform:scaleY(1.2);opacity:.6}}
 
-/* GSAP hero takeover — if GSAP loads, it adds this class to disable CSS animations */
-.gsap-hero{animation:none !important;opacity:0}
+/* GSAP hero takeover — .gsap-loading on <html> hides elements from first paint */
+.gsap-loading .hero-logo,
+.gsap-loading .hero-badge,
+.gsap-loading .hero-line,
+.gsap-loading .hero-sub,
+.gsap-loading .hero-ctas,
+.gsap-loading .hero-trust,
+.gsap-loading .hero-scroll {
+  animation: none !important;
+  opacity: 0;
+}
 
 /* ══════════════════════════════════════════════════════════
    2. MARQUEE

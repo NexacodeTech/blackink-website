@@ -287,6 +287,8 @@
   // ══════════════════════════════════════════════════════════
 
   function initHeroTimeline() {
+    window.__gsapReady = true;
+
     const hero = document.querySelector('.hero');
     if (!hero) return;
 
@@ -297,14 +299,6 @@
     const ctas   = hero.querySelector('.hero-ctas');
     const trust  = hero.querySelector('.hero-trust');
     const scroll = hero.querySelector('.hero-scroll');
-
-    // Remove CSS animations — GSAP takes over.
-    // Uses a CSS class so that if GSAP never loaded, the class
-    // is never added and original CSS animations play as fallback.
-    const animatedEls = [logo, badge, line, sub, ctas, trust, scroll].filter(Boolean);
-    animatedEls.forEach(el => {
-      el.classList.add('gsap-hero');
-    });
 
     const tl = gsap.timeline({
       delay: 0.6, // match loader dismiss timing
