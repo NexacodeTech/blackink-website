@@ -3444,25 +3444,6 @@ const mockObs = new IntersectionObserver(entries => {
 }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.mockup').forEach(el => mockObs.observe(el));
 
-// ── Animated number counters ──
-const countObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-        if (!e.isIntersecting) return;
-        const el = e.target;
-        const target = parseInt(el.dataset.count, 10);
-        const suffix = el.dataset.suffix || '';
-        const dur = 1200;
-        const t0 = performance.now();
-        (function tick(now) {
-            const p = Math.min((now - t0) / dur, 1);
-            const ease = 1 - Math.pow(1 - p, 3);
-            el.textContent = Math.round(ease * target) + suffix;
-            if (p < 1) requestAnimationFrame(tick);
-        })(t0);
-        countObs.unobserve(el);
-    });
-}, { threshold: 0.5 });
-document.querySelectorAll('[data-count]').forEach(el => countObs.observe(el));
 
 // ── Parallax hero orbs ──
 if (matchMedia('(pointer:fine)').matches) {

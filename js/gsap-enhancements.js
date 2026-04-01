@@ -51,7 +51,31 @@
   // ══════════════════════════════════════════════════════════
 
   function initCounters(duration) {
-    // Task 3
+    const counters = document.querySelectorAll('[data-count]');
+    if (!counters.length) return;
+
+    counters.forEach(el => {
+      const target = parseInt(el.dataset.count, 10);
+      const suffix = el.dataset.suffix || '';
+      const prefix = el.dataset.prefix || '';
+
+      const obj = { val: 0 };
+
+      gsap.to(obj, {
+        val: target,
+        duration: duration,
+        ease: 'power4.out',
+        snap: { val: 1 },
+        scrollTrigger: {
+          trigger: el.closest('.stat, .trust-item, .problem-card') || el,
+          start: 'top 85%',
+          once: true,
+        },
+        onUpdate: () => {
+          el.textContent = prefix + Math.round(obj.val) + suffix;
+        },
+      });
+    });
   }
 
   function initRoiCalculator(duration) {
