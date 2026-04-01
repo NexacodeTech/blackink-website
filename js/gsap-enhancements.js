@@ -246,6 +246,34 @@
   }
 
   function initBeforeAfterReveal(dur) {
-    // Task 9
+    const grid = document.querySelector('.ba-grid');
+    if (!grid) return;
+
+    const beforeCard = grid.querySelector('.ba-card--before');
+    const afterCard = grid.querySelector('.ba-card--after');
+
+    if (beforeCard && afterCard) {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: grid,
+          start: 'top 80%',
+          once: true,
+        },
+      });
+
+      tl.from(beforeCard, {
+        x: -30,
+        opacity: 0,
+        duration: dur.baCard,
+        ease: 'power3.out',
+      });
+
+      tl.from(afterCard, {
+        x: 30,
+        opacity: 0,
+        duration: dur.baCard,
+        ease: 'power3.out',
+      }, '+=0.2');
+    }
   }
 })();
