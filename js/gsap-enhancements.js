@@ -36,6 +36,7 @@
 
   // ── Inicializar módulos ──
   initHeroTimeline();
+  initHeroTextEnhancement();
   initCounters(dur.counter);
   initRoiCalculator(dur.roiSmooth);
   initPricingToggle();
@@ -45,6 +46,7 @@
   if (isFinePointer) {
     initParallaxOrbs(dur.orbParallax);
     initCardTilt(dur.cardTilt);
+    initCursorGlow();
   }
 
   if (isDesktop) {
@@ -487,6 +489,73 @@
         }
       });
     }
+  }
+
+  // ══════════════════════════════════════════════════════════
+  // Fase 4 — Hero Text Split 3D Enhancement
+  // Override CSS transitions com GSAP rotateX para reveal 3D
+  // ══════════════════════════════════════════════════════════
+
+  function initHeroTextEnhancement() {
+    const heroTitle = document.getElementById('hero-title');
+    if (!heroTitle) return;
+
+    const chars = heroTitle.querySelectorAll('.ch');
+    if (!chars.length) return;
+
+    // Remove CSS transitions — GSAP takes over
+    chars.forEach(ch => {
+      ch.style.transition = 'none';
+    });
+
+    // Wait for the hero timeline to start (matches the title area ~0.5s)
+    gsap.from(chars, {
+      opacity: 0,
+      rotateX: 80,
+      y: 20,
+      transformOrigin: 'bottom center',
+      duration: 0.6,
+      ease: 'back.out(1.2)',
+      stagger: 0.02,
+      delay: 0.9, // after loader dismiss + logo/badge
+    });
+  }
+
+  // ══════════════════════════════════════════════════════════
+  // Fase 4 — Cursor Glow Bioluminescente (desktop only)
+  // Radial gradient segue o mouse via gsap.quickTo()
+  // ══════════════════════════════════════════════════════════
+
+  function initCursorGlow() {
+    const glow = document.getElementById('cursor-glow');
+    if (!glow) return;
+
+    const xTo = gsap.quickTo(glow, 'left', { duration: 0.6, ease: 'power3.out' });
+    const yTo = gsap.quickTo(glow, 'top', { duration: 0.6, ease: 'power3.out' });
+
+    // Fade in on first mouse move
+    let shown = false;
+
+    document.addEventListener('mousemove', e => {
+      xTo(e.clientX);
+      yTo(e.clientY);
+
+      if (!shown) {
+        gsap.to(glow, { opacity: 1, duration: 0.5 });
+        shown = true;
+      }
+    }, { passive: true });
+
+    // Hide when mouse leaves window
+    document.addEventListener('mouseleave', () => {
+      gsap.to(glow, { opacity: 0, duration: 0.3 });
+      shown = false;
+    });
+
+    document.addEventListener('mouseenter', () => {
+      gsap.to(glow, { opacity: 1, duration: 0.3 });
+      shown = true;
+    });
   }
 
   // ══════════════════════════════════════════════════════════
