@@ -3779,32 +3779,6 @@ if (calcSlider) {
 }
 
 // ══════════════════════════════════════════════════════════
-// 3D TILT — Pricing Cards
-// ══════════════════════════════════════════════════════════
-if (window.matchMedia('(pointer:fine)').matches) {
-    document.querySelectorAll('.p-card').forEach(card => {
-        const maxTilt = 6;
-        let cardRect;
-        card.addEventListener('mouseenter', () => { cardRect = card.getBoundingClientRect(); });
-        card.addEventListener('mousemove', e => {
-            if (!cardRect) return;
-            const x = (e.clientX - cardRect.left) / cardRect.width;
-            const y = (e.clientY - cardRect.top) / cardRect.height;
-            const rotateX = (0.5 - y) * maxTilt;
-            const rotateY = (x - 0.5) * maxTilt;
-            const isRec = card.classList.contains('p-card--rec');
-            const isEntry = card.classList.contains('p-card--entry');
-            const base = isRec ? 'translateY(-12px)' : isEntry ? 'translateY(-8px)' : 'translateY(-6px)';
-            card.style.transform = base + ' perspective(1000px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)';
-        });
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = '';
-            cardRect = null;
-        });
-    });
-}
-
-// ══════════════════════════════════════════════════════════
 // SCROLL PROGRESS + STICKY CTA BAR
 // ══════════════════════════════════════════════════════════
 const scrollBar = document.getElementById('scroll-progress');

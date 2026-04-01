@@ -161,7 +161,36 @@
   }
 
   function initCardTilt(duration) {
-    // Task 7
+    const cards = document.querySelectorAll('.p-card');
+    if (!cards.length) return;
+
+    const maxTilt = 6;
+
+    cards.forEach(card => {
+      const rotateXTo = gsap.quickTo(card, 'rotateX', { duration: duration, ease: 'power2.out' });
+      const rotateYTo = gsap.quickTo(card, 'rotateY', { duration: duration, ease: 'power2.out' });
+
+      let cardRect;
+
+      card.addEventListener('mouseenter', () => {
+        cardRect = card.getBoundingClientRect();
+        card.style.perspective = '1000px';
+      });
+
+      card.addEventListener('mousemove', e => {
+        if (!cardRect) return;
+        const x = (e.clientX - cardRect.left) / cardRect.width;
+        const y = (e.clientY - cardRect.top) / cardRect.height;
+        rotateXTo((0.5 - y) * maxTilt);
+        rotateYTo((x - 0.5) * maxTilt);
+      });
+
+      card.addEventListener('mouseleave', () => {
+        rotateXTo(0);
+        rotateYTo(0);
+        cardRect = null;
+      });
+    });
   }
 
   function initGuaranteeReveal(dur) {
