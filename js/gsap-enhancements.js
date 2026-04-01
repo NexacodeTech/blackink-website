@@ -206,9 +206,10 @@
     const pillars = section.querySelectorAll('.guarantee-pillar');
 
     if (shield) {
-      gsap.from(shield, {
-        scale: 0.8,
-        opacity: 0,
+      gsap.set(shield, { opacity: 0, scale: 0.8 });
+      gsap.to(shield, {
+        scale: 1,
+        opacity: 1,
         duration: dur.guaranteeShield,
         ease: 'back.out(1.7)',
         scrollTrigger: {
@@ -220,9 +221,10 @@
     }
 
     if (badge) {
-      gsap.from(badge, {
-        y: 15,
-        opacity: 0,
+      gsap.set(badge, { opacity: 0, y: 15 });
+      gsap.to(badge, {
+        y: 0,
+        opacity: 1,
         duration: 0.5,
         ease: 'power3.out',
         scrollTrigger: {
@@ -234,9 +236,10 @@
     }
 
     if (pillars.length) {
-      gsap.from(pillars, {
-        y: 20,
-        opacity: 0,
+      gsap.set(pillars, { opacity: 0, y: 20 });
+      gsap.to(pillars, {
+        y: 0,
+        opacity: 1,
         duration: dur.guaranteeItems,
         ease: 'power3.out',
         stagger: 0.1,
@@ -257,6 +260,9 @@
     const afterCard = grid.querySelector('.ba-card--after');
 
     if (beforeCard && afterCard) {
+      gsap.set(beforeCard, { opacity: 0, x: -30 });
+      gsap.set(afterCard, { opacity: 0, x: 30 });
+
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: grid,
@@ -265,16 +271,16 @@
         },
       });
 
-      tl.from(beforeCard, {
-        x: -30,
-        opacity: 0,
+      tl.to(beforeCard, {
+        x: 0,
+        opacity: 1,
         duration: dur.baCard,
         ease: 'power3.out',
       });
 
-      tl.from(afterCard, {
-        x: 30,
-        opacity: 0,
+      tl.to(afterCard, {
+        x: 0,
+        opacity: 1,
         duration: dur.baCard,
         ease: 'power3.out',
       }, '+=0.5');
@@ -288,6 +294,7 @@
 
   function initHeroTimeline() {
     window.__gsapReady = true;
+    document.documentElement.classList.remove('gsap-loading');
 
     const hero = document.querySelector('.hero');
     if (!hero) return;
@@ -420,8 +427,9 @@
     if (!seps.length) return;
 
     seps.forEach(sep => {
-      gsap.from(sep, {
-        scaleX: 0,
+      gsap.set(sep, { scaleX: 0, transformOrigin: 'left center' });
+      gsap.to(sep, {
+        scaleX: 1,
         transformOrigin: 'left center',
         duration: 0.8,
         ease: 'power2.out',
@@ -515,9 +523,10 @@
     heroTitle.classList.add('go');
 
     // Animate characters with 3D rotation
-    gsap.from(chars, {
-      opacity: 0,
-      y: 15,
+    gsap.set(chars, { opacity: 0, y: 15 });
+    gsap.to(chars, {
+      opacity: 1,
+      y: 0,
       duration: 0.5,
       ease: 'power3.out',
       stagger: 0.015,
@@ -534,8 +543,8 @@
     const glow = document.getElementById('cursor-glow');
     if (!glow) return;
 
-    const xTo = gsap.quickTo(glow, 'left', { duration: 0.6, ease: 'power3.out' });
-    const yTo = gsap.quickTo(glow, 'top', { duration: 0.6, ease: 'power3.out' });
+    const xTo = gsap.quickTo(glow, 'x', { duration: 0.6, ease: 'power3.out' });
+    const yTo = gsap.quickTo(glow, 'y', { duration: 0.6, ease: 'power3.out' });
 
     // Fade in on first mouse move
     let shown = false;
