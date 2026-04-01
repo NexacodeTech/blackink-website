@@ -170,15 +170,8 @@
       const rotateXTo = gsap.quickTo(card, 'rotateX', { duration: duration, ease: 'power2.out' });
       const rotateYTo = gsap.quickTo(card, 'rotateY', { duration: duration, ease: 'power2.out' });
 
-      let cardRect;
-
-      card.addEventListener('mouseenter', () => {
-        cardRect = card.getBoundingClientRect();
-        card.style.perspective = '1000px';
-      });
-
       card.addEventListener('mousemove', e => {
-        if (!cardRect) return;
+        const cardRect = card.getBoundingClientRect();
         const x = (e.clientX - cardRect.left) / cardRect.width;
         const y = (e.clientY - cardRect.top) / cardRect.height;
         rotateXTo((0.5 - y) * maxTilt);
@@ -188,7 +181,6 @@
       card.addEventListener('mouseleave', () => {
         rotateXTo(0);
         rotateYTo(0);
-        cardRect = null;
       });
     });
   }

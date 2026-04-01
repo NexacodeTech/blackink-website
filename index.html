@@ -2645,7 +2645,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
         <h2 class="t-lg rv rv-d1" style="text-align:center;max-width:550px;margin:0 auto 16px">Veja a diferença em <span class="grad">dados reais</span></h2>
         <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:480px;margin:0 auto clamp(32px,4vw,48px)">Seus números antes e depois do tracking server-side.</p>
 
-        <div class="ba-grid rv rv-d3">
+        <div class="ba-grid">
             <!-- BEFORE card -->
             <div class="ba-card ba-card--before">
                 <div class="ba-card-head">
@@ -3094,26 +3094,26 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 <!-- ═══════ GUARANTEE ═══════ -->
 <section class="section guarantee" id="guarantee">
     <div class="container">
-        <div class="guarantee-card rv">
-            <div class="guarantee-shield rv rv-d1">
+        <div class="guarantee-card">
+            <div class="guarantee-shield">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                     <polyline points="9 12 11 14 15 10"/>
                 </svg>
             </div>
 
-            <div class="guarantee-badge rv rv-d2">Risco Zero</div>
+            <div class="guarantee-badge">Risco Zero</div>
 
-            <h2 class="guarantee-title rv rv-d2">Teste sem risco por <span>7 dias</span></h2>
+            <h2 class="guarantee-title">Teste sem risco por <span>7 dias</span></h2>
 
-            <p class="guarantee-text rv rv-d3">
+            <p class="guarantee-text">
                 Assine, configure e teste o BlackInk por <strong>7 dias completos</strong>.
                 Se em qualquer momento você sentir que a plataforma não entregou
                 <strong>mais clareza, mais controle e mais resultado</strong> para suas campanhas
                 — devolvemos 100% do seu investimento. Sem perguntas, sem burocracia, sem letras miúdas.
             </p>
 
-            <div class="guarantee-pillars rv rv-d4">
+            <div class="guarantee-pillars">
                 <div class="guarantee-pillar">
                     <div class="guarantee-pillar-ico"><svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
                     <h4>Reembolso Imediato</h4>
@@ -3131,7 +3131,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
                 </div>
             </div>
 
-            <div class="guarantee-sig rv rv-d5">
+            <div class="guarantee-sig">
                 <blockquote>
                     "Eu sei que quando você vir seus dados reais pela primeira vez —
                     <strong>cada clique rastreado, cada real calculado, cada bot bloqueado</strong> —
@@ -3702,7 +3702,7 @@ const calcRoiBar = document.getElementById('calc-roi-bar');
 
 if (calcSlider) {
     const fmt = v => 'R$ ' + Math.round(v).toLocaleString('pt-BR');
-    const animNum = window.__gsapAnimNum || ((el, target, prefix, suffix) => {
+    const _vanillaAnimNum = (el, target, prefix, suffix) => {
         const start = parseFloat(el.dataset.current || '0');
         el.dataset.current = String(target);
         const dur = 500;
@@ -3714,7 +3714,10 @@ if (calcSlider) {
             el.textContent = prefix + Math.round(val).toLocaleString('pt-BR') + suffix;
             if (p < 1) requestAnimationFrame(tick);
         })(t0);
-    });
+    };
+    const animNum = (el, target, prefix, suffix) => {
+        (window.__gsapAnimNum || _vanillaAnimNum)(el, target, prefix, suffix);
+    };
 
     const updateCalc = () => {
         const val = parseInt(calcSlider.value, 10) || 0;
