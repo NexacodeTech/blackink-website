@@ -51,6 +51,8 @@
     initSectionParallax();
   }
 
+  initDividerAnimations();
+
   // ══════════════════════════════════════════════════════════
   // MÓDULOS
   // ══════════════════════════════════════════════════════════
@@ -408,5 +410,28 @@
         });
       }
     }
+  }
+
+  // ══════════════════════════════════════════════════════════
+  // Fase 2 — Section Dividers Animados
+  // ══════════════════════════════════════════════════════════
+
+  function initDividerAnimations() {
+    const seps = document.querySelectorAll('.sep');
+    if (!seps.length) return;
+
+    seps.forEach(sep => {
+      gsap.from(sep, {
+        scaleX: 0,
+        transformOrigin: 'left center',
+        duration: 0.8,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: sep,
+          start: 'top 90%',
+          once: true,
+        },
+      });
+    });
   }
 })();
