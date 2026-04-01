@@ -47,6 +47,10 @@
     initCardTilt(dur.cardTilt);
   }
 
+  if (isDesktop) {
+    initSectionParallax();
+  }
+
   // ══════════════════════════════════════════════════════════
   // MÓDULOS
   // ══════════════════════════════════════════════════════════
@@ -365,6 +369,44 @@
         { opacity: 1, duration: 0.5 },
         2.2
       );
+    }
+  }
+
+  // ══════════════════════════════════════════════════════════
+  // Fase 2 — Parallax por Seção (desktop only)
+  // ══════════════════════════════════════════════════════════
+
+  function initSectionParallax() {
+    // Mockups with subtle parallax — move slower than scroll
+    document.querySelectorAll('.mockup').forEach(mockup => {
+      gsap.to(mockup, {
+        y: -25,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: mockup.closest('.section') || mockup.parentElement,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: 1.5,
+        },
+      });
+    });
+
+    // CTA final section glow parallax
+    const ctaFinal = document.querySelector('.cta-final');
+    if (ctaFinal) {
+      const ctaGlow = ctaFinal.querySelector('.cta-orb');
+      if (ctaGlow) {
+        gsap.to(ctaGlow, {
+          y: -40,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: ctaFinal,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 1.5,
+          },
+        });
+      }
     }
   }
 })();
