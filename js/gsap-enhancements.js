@@ -113,7 +113,25 @@
   }
 
   function initPricingToggle() {
-    // Task 5
+    const periodBtns = document.querySelectorAll('.period-btn');
+    const cards = document.querySelectorAll('.p-card');
+    if (!periodBtns.length || !cards.length) return;
+
+    periodBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        gsap.fromTo(cards,
+          { scale: 1 },
+          {
+            scale: 1.015,
+            duration: 0.15,
+            ease: 'power2.out',
+            yoyo: true,
+            repeat: 1,
+            stagger: 0.05,
+          }
+        );
+      });
+    });
   }
 
   function initParallaxOrbs(duration) {
