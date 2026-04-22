@@ -54,6 +54,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
     <!-- GSAP preload — inicia download sem bloquear render -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" as="script" crossorigin>
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" as="script" crossorigin>
@@ -67,9 +69,8 @@
       }
     }, 3000);
     </script>
-    <link rel="preload" href="https://fonts.gstatic.com/s/spacegrotesk/v16/V8mDoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj62UUsjNsFjTDJK.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v18/UcCo3FwrK3iLTcviYwY.woff2" as="font" type="font/woff2" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Mono:wght@300;400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -345,8 +346,8 @@
    BLACKINK — Ultra Premium Landing Page v3
    ══════════════════════════════════════════════════════════ */
 :root {
-    --ff-display: 'Space Grotesk', sans-serif;
-    --ff-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --ff-display: 'General Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+    --ff-body: 'General Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', system-ui, sans-serif;
     --bg: #020a14;
     --bg2: #06111f;
     --surface: rgba(8,22,48,0.45);
@@ -1051,7 +1052,8 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .comm-feats{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:40px 0;text-align:left}
 @media(max-width:500px){.comm-feats{grid-template-columns:1fr}}
 .comm-f{display:flex;gap:10px;align-items:flex-start}
-.comm-f-ico{flex-shrink:0;width:28px;height:28px;border-radius:8px;background:rgba(37,211,102,0.06);border:1px solid rgba(37,211,102,0.1);display:flex;align-items:center;justify-content:center;font-size:14px}
+.comm-f-ico{flex-shrink:0;width:28px;height:28px;border-radius:8px;background:rgba(37,211,102,0.06);border:1px solid rgba(37,211,102,0.1);display:flex;align-items:center;justify-content:center;color:#25D366}
+.comm-f-ico svg{width:14px;height:14px}
 .comm-f-txt{font-size:14px;color:var(--dim);line-height:1.5}
 .comm-f-txt strong{color:var(--white)}
 .btn-wa{display:inline-flex;align-items:center;gap:10px;height:56px;padding:0 32px;background:#25D366;color:#fff;border-radius:14px;font-weight:600;font-size:16px;border:none;cursor:pointer;transition:transform .4s var(--ease),box-shadow .4s var(--ease);box-shadow:0 0 0 1px rgba(37,211,102,0.2),0 8px 40px rgba(37,211,102,0.2)}
@@ -1084,9 +1086,9 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .audio-ctl:hover{border-color:rgba(100,180,255,0.12);box-shadow:0 4px 40px rgba(0,0,0,0.4),0 0 80px rgba(0,0,0,0.2),0 0 30px rgba(100,180,255,0.02),inset 0 1px 0 rgba(100,180,255,0.07)}
 .audio-head{padding:10px 14px 0;text-align:center}
 .audio-brand{font-family:'DM Mono',monospace;font-size:7px;letter-spacing:3px;color:var(--muted);opacity:0.4;margin-bottom:4px}
-.audio-title{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:300;color:var(--white);letter-spacing:0.6px;line-height:1.2;margin:0}
+.audio-title{font-family:var(--ff-display);font-size:15px;font-weight:300;color:var(--white);letter-spacing:0.3px;line-height:1.2;margin:0}
 .audio-title span{color:var(--accent);font-weight:500}
-.audio-sub{font-family:'DM Sans',sans-serif;font-size:8px;color:var(--muted);opacity:0.4;margin-top:2px;letter-spacing:0.3px;font-style:italic}
+.audio-sub{font-family:var(--ff-body);font-size:8px;color:var(--muted);opacity:0.4;margin-top:2px;letter-spacing:0.3px;font-style:italic}
 .audio-controls{display:flex;align-items:center;gap:8px;padding:8px 14px}
 .audio-btn{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,0.02);border:1.5px solid rgba(100,180,255,0.08);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .6s var(--ease),border-color .6s var(--ease);position:relative;flex-shrink:0}
 .audio-btn:hover{border-color:rgba(100,180,255,0.2);background:rgba(100,180,255,0.03)}
@@ -1104,7 +1106,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .audio-vol input::-webkit-slider-thumb{-webkit-appearance:none;width:8px;height:8px;border-radius:50%;background:var(--accent);border:none;box-shadow:0 0 6px rgba(100,180,255,0.25);cursor:pointer}
 .audio-vol input::-moz-range-thumb{width:8px;height:8px;border-radius:50%;background:var(--accent);border:none;cursor:pointer}
 .audio-foot{text-align:center;padding:0 14px 8px;border-top:1px solid rgba(100,180,255,0.04);margin-top:0;padding-top:6px}
-.audio-foot p{font-family:'DM Sans',sans-serif;font-size:7px;color:var(--muted);opacity:0.3;margin:0;letter-spacing:0.3px}
+.audio-foot p{font-family:var(--ff-body);font-size:7px;color:var(--muted);opacity:0.3;margin:0;letter-spacing:0.3px}
 @media(max-width:767px){.audio-ctl{display:none}}
 .mob-audio{display:none}
 @media(max-width:767px){.hdr-nav.mob-open{justify-content:flex-start;padding-top:28vh}.hdr-nav.mob-open .mob-audio{display:block;margin-top:auto;flex-shrink:0;width:100%;padding:20px 32px calc(20px + env(safe-area-inset-bottom,0px));border-top:1px solid rgba(100,180,255,0.08);text-align:center}}
@@ -1116,12 +1118,12 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .audio-layer .layer-tog.on{border-color:rgba(100,180,255,0.3)}
 .audio-layer .layer-tog.on::after{opacity:1}
 .audio-layer .layer-tog:active{transform:scale(0.9)}
-.audio-layer span{font-family:'DM Sans',sans-serif;font-size:8px;color:var(--muted);opacity:0.55;min-width:34px;letter-spacing:0.3px}
+.audio-layer span{font-family:var(--ff-body);font-size:8px;color:var(--muted);opacity:0.55;min-width:34px;letter-spacing:0.3px}
 .audio-layer input[type="range"]{-webkit-appearance:none;appearance:none;flex:1;height:1.5px;background:rgba(100,180,255,0.06);border-radius:2px;outline:none;cursor:pointer}
 .audio-layer input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:6px;height:6px;border-radius:50%;background:var(--accent);border:none;opacity:0.65;cursor:pointer}
 .audio-layer input[type="range"]::-moz-range-thumb{width:6px;height:6px;border-radius:50%;background:var(--accent);border:none;opacity:0.65;cursor:pointer}
 .mob-audio-main{display:flex;align-items:center;gap:12px;justify-content:center}
-.mob-audio-title{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:300;color:var(--white);letter-spacing:0.5px;white-space:nowrap}
+.mob-audio-title{font-family:var(--ff-display);font-size:16px;font-weight:300;color:var(--white);letter-spacing:0.3px;white-space:nowrap}
 .mob-audio-title span{color:var(--accent);font-weight:500}
 .mob-audio-vol{flex:1;max-width:120px;display:flex;align-items:center}
 .mob-audio-vol input{-webkit-appearance:none;appearance:none;width:100%;height:2px;background:rgba(100,180,255,0.08);border-radius:2px;outline:none;cursor:pointer}
@@ -1135,7 +1137,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .mob-audio-layer .layer-tog.on{border-color:rgba(100,180,255,0.3)}
 .mob-audio-layer .layer-tog.on::after{opacity:1}
 .mob-audio-layer .layer-tog:active{transform:scale(0.9)}
-.mob-audio-layer span{font-family:'DM Sans',sans-serif;font-size:9px;color:var(--muted);opacity:0.6;letter-spacing:0.3px}
+.mob-audio-layer span{font-family:var(--ff-body);font-size:9px;color:var(--muted);opacity:0.6;letter-spacing:0.3px}
 .mob-audio-layer input[type="range"]{-webkit-appearance:none;appearance:none;width:100%;height:2px;background:rgba(100,180,255,0.06);border-radius:2px;outline:none;cursor:pointer}
 .mob-audio-layer input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:10px;height:10px;border-radius:50%;background:var(--accent);border:none;opacity:0.65;cursor:pointer}
 .mob-audio-layer input[type="range"]::-moz-range-thumb{width:10px;height:10px;border-radius:50%;background:var(--accent);border:none;opacity:0.65;cursor:pointer}
@@ -3529,10 +3531,10 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
             <h2 class="t-lg rv rv-d1" style="margin-bottom:16px">Junte-se à<br>comunidade VIP</h2>
             <p class="t-body-lg rv rv-d2">Estratégias avançadas de tráfego, networking com profissionais e suporte direto da equipe.</p>
             <div class="comm-feats rv rv-d3">
-                <div class="comm-f"><div class="comm-f-ico">📚</div><div class="comm-f-txt"><strong>Treinamentos</strong> exclusivos</div></div>
-                <div class="comm-f"><div class="comm-f-ico">🤝</div><div class="comm-f-txt"><strong>Networking</strong> premium</div></div>
-                <div class="comm-f"><div class="comm-f-ico">⚡</div><div class="comm-f-txt"><strong>Suporte direto</strong> da equipe</div></div>
-                <div class="comm-f"><div class="comm-f-ico">📊</div><div class="comm-f-txt"><strong>Cases reais</strong> testados</div></div>
+                <div class="comm-f"><div class="comm-f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H2z"/><path d="M22 4h-6a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h6z"/></svg></div><div class="comm-f-txt"><strong>Treinamentos</strong> exclusivos</div></div>
+                <div class="comm-f"><div class="comm-f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="comm-f-txt"><strong>Networking</strong> premium</div></div>
+                <div class="comm-f"><div class="comm-f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="comm-f-txt"><strong>Suporte direto</strong> da equipe</div></div>
+                <div class="comm-f"><div class="comm-f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="3" y1="20" x2="21" y2="20"/></svg></div><div class="comm-f-txt"><strong>Cases reais</strong> testados</div></div>
             </div>
             <a href="https://chat.whatsapp.com/D3slD0HlbLZFazU41H08Ih" target="_blank" rel="noopener noreferrer" class="btn-wa rv rv-d4">
                 <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
