@@ -1,24 +1,42 @@
-# Abyss Design System — Blackink Web
+# Abyss Design System — Web Implementation
 
-The web implementation of the Blackink design system, extracted from the React Native app (`blackink-app`).
+A implementação web do **Abyss Design System** traduz para HTML/CSS os contratos visuais, semânticos e operacionais definidos para a BlackInk. O objetivo não é apenas reproduzir estilo, mas garantir que **app e web falem a mesma língua** e que novas funcionalidades possam ser implementadas por humanos ou IA sem quebrar consistência.
+
+O Abyss é um sistema **dark-first, dual-theme capable**. O modo dark representa sua assinatura premium oficial, baseada em **profundidade oceânica, bioluminescência contida e simplicidade percebida**. O light theme existe como compatibilidade controlada, não como redefinição da identidade central.
+
+---
+
+## Ordem correta de leitura
+
+| Ordem | Arquivo | Papel |
+|---:|---|---|
+| 1 | `../../blackink-app/src/theme/ABYSS_DESIGN_SYSTEM.md` | Doutrina oficial, arquitetura, princípios e contratos globais |
+| 2 | [`AI_IMPLEMENTATION_PROTOCOL.md`](AI_IMPLEMENTATION_PROTOCOL.md) | Regras operacionais para Manus AI, Claude Code e outras IAs |
+| 3 | [`TOKENS.md`](TOKENS.md) | Tokens semânticos e estéticos do sistema |
+| 4 | [`COMPONENTS.md`](COMPONENTS.md) | Componentes oficiais e contratos de uso |
+| 5 | [`../css/abyss-tokens.css`](../css/abyss-tokens.css) | Materialização dos tokens em CSS |
+
+Se a implementação divergir da documentação, a documentação oficial deve ser consultada primeiro e a divergência precisa ser corrigida ou explicitamente versionada.
+
+---
 
 ## Quick Start
 
-Import the CSS tokens file in your HTML:
+Importe o arquivo de tokens CSS no HTML:
 
 ```html
 <link rel="stylesheet" href="css/abyss-tokens.css">
 ```
 
-This gives you 150+ CSS custom properties (colors, spacing, typography, shadows) and utility classes (animation, typography).
-
-Apply the dark theme (default) or light theme:
+Aplique o tema oficial:
 
 ```html
-<body class="theme-dark">  <!-- or theme-light -->
+<body class="theme-dark">
 ```
 
-Use tokens in your CSS:
+O `theme-dark` é o ponto de partida recomendado para experiências premium do Abyss. O `theme-light` só deve ser usado quando o contexto do produto justificar compatibilidade específica.
+
+Use tokens no CSS:
 
 ```css
 .my-element {
@@ -31,7 +49,7 @@ Use tokens in your CSS:
 }
 ```
 
-Use typography classes directly in HTML:
+Use tipografia oficial no HTML:
 
 ```html
 <h1 class="bt bt-h1">Heading</h1>
@@ -39,47 +57,61 @@ Use typography classes directly in HTML:
 <span class="bt bt-metric-lg">R$ 12.450</span>
 ```
 
-## Documentation
+---
 
-| File | Description |
+## Como pensar o sistema
+
+A forma correta de construir no Abyss é sempre esta:
+
+| Passo | Regra |
+|---:|---|
+| 1 | Definir o contexto: dashboard, tabela, formulário, detalhe, alerta ou marketing |
+| 2 | Escolher primeiro os tokens **semânticos** |
+| 3 | Aplicar a assinatura visual oceânica correspondente |
+| 4 | Limitar a complexidade visível com **progressive disclosure** |
+| 5 | Validar foco, contraste, motion e estados |
+
+O erro clássico é começar por glow, blur, partículas e gradiente. No Abyss, **efeito nunca vem antes de função**.
+
+---
+
+## Documentação principal
+
+| Arquivo | Descrição |
 |------|-------------|
-| [`css/abyss-tokens.css`](../css/abyss-tokens.css) | CSS custom properties, typography classes, animation keyframes |
-| [`TOKENS.md`](TOKENS.md) | Complete token reference — every color, spacing, shadow, radius value |
-| [`COMPONENTS.md`](COMPONENTS.md) | 12 web components with copy-paste HTML + CSS |
-| [`SALES-PAGE.md`](SALES-PAGE.md) | 7 sales page sections with complete HTML + CSS |
+| `../../blackink-app/src/theme/ABYSS_DESIGN_SYSTEM.md` | Fonte de verdade do sistema |
+| [`AI_IMPLEMENTATION_PROTOCOL.md`](AI_IMPLEMENTATION_PROTOCOL.md) | Protocolo para implementação consistente por IA |
+| [`../css/abyss-tokens.css`](../css/abyss-tokens.css) | CSS custom properties, tipografia e motion básico |
+| [`TOKENS.md`](TOKENS.md) | Referência completa de tokens |
+| [`COMPONENTS.md`](COMPONENTS.md) | Componentes oficiais e regras de uso |
+| [`SALES-PAGE.md`](SALES-PAGE.md) | Padrões de sales page |
 
-## Design Principles
+---
 
-1. **Abyss Depth** — Dark backgrounds use a 5-stop ocean gradient from `#0a1628` to `#020608`. Glass morphism creates depth through translucent layers.
+## Princípios oficiais do web system
 
-2. **Bioluminescent Light** — Color is used sparingly. Borders at 15% opacity, top-line highlights at 10%, ambient glows at 3%. The light whispers; it never shouts.
+| Princípio | Implicação prática |
+|---|---|
+| **Profundidade sem ruído** | Glass, bordas e glow devem ser sentidos, não gritados |
+| **Poder sem susto** | A UI precisa transmitir robustez sem despejar complexidade |
+| **Legibilidade sob pressão** | Dados, alertas e ações devem vencer a atmosfera visual |
+| **Consistência multi-superfície** | App e web devem manter a mesma linguagem |
+| **Acessibilidade premium** | Foco, contraste, teclado e reduced motion fazem parte da experiência |
 
-3. **Precision Typography** — 25+ variants with calibrated letter-spacing. Negative tracking for headings (tighter), positive for labels (readable). Tabular nums for aligned columns.
+---
 
-## Source of Truth
+## Status atual
 
-All values are extracted from the React Native app:
+| Área | Status |
+|---|---|
+| **Doutrina do sistema** | Atualizada |
+| **Protocolo para IA** | Atualizado |
+| **Tokens CSS** | Existentes, precisam convergir cada vez mais para semântica oficial |
+| **Componentes web** | Base disponível, ainda precisam evoluir com contratos mais rígidos |
+| **Padrões de produto denso** | Devem ser ampliados nas próximas iterações |
 
-| App Source | Web Output |
-|------------|-----------|
-| `src/theme/abyssTokens.js` | Depth, glass, bio colors, shadows, particles |
-| `src/theme/colors.js` | Dark/Light theme tokens |
-| `src/components/ui/BText.jsx` | Typography scale (25+ variants) |
-| `src/components/ui/BButton.jsx` | Button variants and sizes |
-| `src/components/ui/BCard.jsx` | Card glass morphism |
-| `src/components/ui/BInput.jsx` | Input styles |
-| `src/components/ui/BFilterButton.jsx` | Filter button with accent bar |
-| `src/components/ui/B3DCard.jsx` | 3D perspective card |
-| `src/components/ui/BAccentBar.jsx` | Multi-layer accent bar |
-| `src/components/ui/BGlassIcon.jsx` | Radial glow icon |
-| `src/components/ui/BAnimateEntry.jsx` | Entry animations |
-| `src/components/ui/BAbyssBackground.jsx` | Background + particles |
-| `src/components/ui/index.jsx` | Spacing, radius, font-size scales |
+---
 
-## Status
+## Regra final
 
-- CSS tokens: complete (dark + light themes, all token categories)
-- Token docs: complete (every value with copy-paste CSS)
-- Component docs: 12 components translated to web HTML/CSS
-- Sales page patterns: 7 sections with full markup
-- Not yet covered: complex interactive components (tab bar, modals) that need JS frameworks
+> O Abyss não existe para deixar a BlackInk apenas mais bonita. Ele existe para fazer a BlackInk parecer e operar como um SaaS premium de classe mundial.
