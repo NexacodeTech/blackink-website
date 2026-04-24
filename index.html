@@ -414,7 +414,8 @@ body::after{content:'';position:fixed;inset:0;z-index:2;pointer-events:none;opac
     transition:left .6s var(--ease);
 }
 .btn-p:hover::before{left:100%}
-.btn-p:hover{transform:translateY(-3px);box-shadow:0 0 0 1px rgba(100,180,255,0.3),0 16px 48px rgba(100,180,255,0.22),0 4px 8px rgba(0,0,0,0.1)}
+/* Ultra premium: hover sutil, sem neon */
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(100,180,255,0.2),0 12px 36px rgba(100,180,255,0.10),0 2px 6px rgba(0,0,0,0.08)}
 .btn-p:active{transform:translateY(0)}
 .btn-o{
     background:rgba(100,180,255,0.03);color:var(--white);font-size:17px;height:60px;padding:0 38px;
@@ -547,7 +548,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
     mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
     -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
     mask-composite:exclude;-webkit-mask-composite:xor;
-    animation:badgeRotate 5s linear infinite;
+    /* Ultra premium: borda estática, sem rotação */
     pointer-events:none;
 }
 @property --badge-angle{syntax:'<angle>';initial-value:0deg;inherits:false}
@@ -561,7 +562,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
         transparent 50%,rgba(100,180,255,0.18) 58%,rgba(129,140,248,0.10) 64%,transparent 76%
     );
     filter:blur(14px);pointer-events:none;z-index:-1;
-    animation:badgeRotate 5s linear infinite;
+    /* Ultra premium: borda estática, sem rotação */
 }
 
 /* Inner content container */
@@ -583,7 +584,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .hero-badge-inner::after{
     content:'';position:absolute;top:0;bottom:0;left:0;width:40%;
     background:linear-gradient(100deg,transparent 20%,rgba(100,180,255,0.05) 45%,rgba(100,180,255,0.08) 50%,rgba(100,180,255,0.05) 55%,transparent 80%);
-    animation:badgeShimmer 6s ease-in-out infinite;
+    animation:badgeShimmer 10s ease-in-out infinite; /* Ultra premium: lento = cinematográfico */
     pointer-events:none;
 }
 @keyframes badgeShimmer{0%{transform:translateX(-200%);opacity:0}10%{opacity:1}45%{transform:translateX(300%);opacity:1}50%{opacity:0}100%{opacity:0;transform:translateX(300%)}}
@@ -592,10 +593,12 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .hero-badge-dot{
     width:7px;height:7px;border-radius:50%;flex-shrink:0;
     background:var(--green);
-    box-shadow:0 0 6px rgba(52,211,153,0.6),0 0 14px rgba(52,211,153,0.25);
+    /* Ultra premium: dot glow sutil */
+    box-shadow:0 0 4px rgba(52,211,153,0.3),0 0 10px rgba(52,211,153,0.12);
     animation:dotPulse 3s ease-in-out infinite;
 }
-@keyframes dotPulse{0%,100%{opacity:.8;transform:scale(1)}50%{opacity:1;transform:scale(1.3)}}
+/* Ultra premium: pulso quase imperceptível */
+@keyframes dotPulse{0%,100%{opacity:.7;transform:scale(1)}50%{opacity:1;transform:scale(1.1)}}
 
 /* Badge separator */
 .hero-badge-sep{
@@ -624,7 +627,8 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
     width:80px;height:2px;margin:0 auto 20px;position:relative;z-index:2;
     background:linear-gradient(90deg,transparent,var(--accent),transparent);
     opacity:0;animation:hero-line-in .8s var(--ease) 1.3s both;
-    box-shadow:0 0 12px rgba(100,180,255,0.3);
+    /* Ultra premium: glow sutil */
+    box-shadow:0 0 8px rgba(100,180,255,0.12);
 }
 @keyframes hero-line-in{from{opacity:0;transform:scaleX(0)}to{opacity:1;transform:scaleX(1)}}
 
@@ -723,7 +727,8 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .hscroll-nav.active{opacity:1;pointer-events:auto}
 .hscroll-dot{width:12px;height:12px;border-radius:50%;background:rgba(100,180,255,0.3);border:1px solid rgba(100,180,255,0.4);transition:all .3s var(--ease);cursor:pointer}
 .hscroll-dot:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-.hscroll-dot.active{background:var(--accent);transform:scale(1.3);box-shadow:0 0 10px rgba(100,180,255,0.5)}
+/* Ultra premium: dot ativo sutil */
+.hscroll-dot.active{background:var(--accent);transform:scale(1.2);box-shadow:0 0 6px rgba(100,180,255,0.2)}
 .hscroll-counter{font-size:11px;color:rgba(100,180,255,0.6);text-align:center;font-family:'DM Mono',monospace;margin-top:4px}
 .hscroll-skip{display:block;margin-top:12px;font-size:11px;color:var(--accent);text-decoration:none;text-align:center;opacity:0.7;transition:opacity .3s var(--ease)}
 .hscroll-skip:hover{opacity:1}
@@ -794,8 +799,9 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 /* ── Top Status Bar ── */
 .prot-sim-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:rgba(2,10,20,0.5);border-bottom:1px solid var(--border)}
 .prot-sim-status{display:flex;align-items:center;gap:8px}
-.prot-sim-pulse{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green),0 0 12px rgba(52,211,153,0.3);animation:simPulse 2s ease-in-out infinite}
-@keyframes simPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.15)}}
+/* Ultra premium: pulso de proteção sutil */
+.prot-sim-pulse{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 4px rgba(52,211,153,0.2),0 0 8px rgba(52,211,153,0.1);animation:simPulse 3s ease-in-out infinite}
+@keyframes simPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.08)}}
 .prot-sim-status-text{display:flex;flex-direction:column;gap:1px}
 .prot-sim-status-title{font-size:11px;font-weight:700;color:var(--green);letter-spacing:.02em;line-height:1}
 .prot-sim-status-sub{font-size:9px;color:var(--muted);letter-spacing:.03em}
@@ -918,12 +924,14 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 @media(min-width:768px){.pricing-grid{grid-template-columns:repeat(3,1fr)}}
 
 .p-card{border-radius:20px;border:1px solid rgba(100,180,255,0.08);background:linear-gradient(180deg,rgba(8,22,48,0.5) 0%,rgba(4,12,28,0.7) 100%);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:clamp(28px,4vw,44px);position:relative;transition:border-color .5s var(--ease),transform .5s var(--ease),box-shadow .5s var(--ease);transform-style:preserve-3d;overflow:hidden}
-.p-card::before{content:'';position:absolute;top:0;left:15%;right:15%;height:1px;background:linear-gradient(90deg,transparent,rgba(100,180,255,0.12),transparent)}
+/* Ultra premium: sem linha de luz genérica no topo dos cards */
+.p-card::before{display:none}
 .p-card::after{content:'';position:absolute;top:0;left:0;width:100px;height:60px;background:radial-gradient(ellipse at top left,rgba(100,180,255,0.03) 0%,transparent 70%);border-top-left-radius:inherit;pointer-events:none}
 .p-card:hover{border-color:var(--border-h)}
 
-.p-card--gold{border-color:rgba(251,191,36,0.12);box-shadow:0 0 80px rgba(251,191,36,0.03)}
-.p-card--gold:hover{border-color:rgba(251,191,36,0.25);box-shadow:0 0 100px rgba(251,191,36,0.06)}
+/* Ultra premium: Abissal — gold sutil, sem glow excessivo */
+.p-card--gold{border-color:rgba(251,191,36,0.08);box-shadow:none}
+.p-card--gold:hover{border-color:rgba(251,191,36,0.16);box-shadow:0 0 60px rgba(251,191,36,0.03)}
 
 .p-name{font-family:var(--ff-display);font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
 .p-sub{font-size:13px;color:var(--muted);margin-bottom:20px}
@@ -985,15 +993,12 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
     content:'';position:absolute;inset:0;pointer-events:none;
     background:radial-gradient(ellipse 60% 50% at 50% 30%,rgba(100,180,255,0.04),transparent 70%);
 }
+/* Ultra premium: CTA orb — estático, bloom cinematográfico sem pulsação */
 .cta-orb{
-    position:absolute;width:700px;height:700px;border-radius:50%;filter:blur(160px);pointer-events:none;
-    background:radial-gradient(circle,rgba(100,180,255,0.10),rgba(56,189,248,0.04) 50%,transparent 70%);
+    position:absolute;width:700px;height:700px;border-radius:50%;filter:blur(180px);pointer-events:none;
+    background:radial-gradient(circle,rgba(100,180,255,0.07),rgba(56,189,248,0.03) 50%,transparent 70%);
     top:-250px;left:50%;transform:translateX(-50%);
-    animation:ctaOrbPulse 6s ease-in-out infinite alternate;
-}
-@keyframes ctaOrbPulse{
-    0%{opacity:0.7;transform:translateX(-50%) scale(1)}
-    100%{opacity:1;transform:translateX(-50%) scale(1.08)}
+    opacity:0.8;
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -1003,11 +1008,13 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .guarantee::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;height:100%;max-width:800px;max-height:800px;background:radial-gradient(circle,rgba(52,211,153,0.04) 0%,rgba(100,180,255,0.02) 40%,transparent 65%);pointer-events:none}
 
 .guarantee-card{max-width:860px;margin:0 auto;background:linear-gradient(180deg,rgba(14,28,56,0.7) 0%,rgba(10,22,48,0.6) 50%,rgba(14,28,56,0.7) 100%);border:1px solid rgba(52,211,153,0.1);border-radius:24px;padding:clamp(40px,6vw,72px) clamp(28px,5vw,64px);position:relative;text-align:center;overflow:hidden;box-shadow:0 4px 80px rgba(0,0,0,0.3),0 0 120px rgba(52,211,153,0.02),inset 0 1px 0 rgba(255,255,255,0.03)}
-.guarantee-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 5%,rgba(52,211,153,0.25) 50%,transparent 95%)}
-.guarantee-card::after{content:'';position:absolute;top:-1px;left:50%;transform:translateX(-50%);width:140px;height:2px;background:linear-gradient(90deg,transparent,var(--green),transparent);border-radius:0 0 4px 4px}
+/* Ultra premium: linhas decorativas sutis */
+.guarantee-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 10%,rgba(52,211,153,0.12) 50%,transparent 90%)}
+.guarantee-card::after{content:'';position:absolute;top:-0.5px;left:50%;transform:translateX(-50%);width:80px;height:1px;background:linear-gradient(90deg,transparent,rgba(52,211,153,0.2),transparent);border-radius:0 0 4px 4px}
 
 .guarantee-shield{width:100px;height:100px;margin:0 auto 28px;position:relative;display:flex;align-items:center;justify-content:center}
-.guarantee-shield::before{content:'';position:absolute;inset:-16px;border-radius:50%;background:radial-gradient(circle,rgba(52,211,153,0.12) 0%,rgba(52,211,153,0.02) 65%,transparent 100%);animation:g-pulse 3.5s ease-in-out infinite}
+/* Ultra premium: guarantee shield — glow estático, sem pulsação */
+.guarantee-shield::before{content:'';position:absolute;inset:-16px;border-radius:50%;background:radial-gradient(circle,rgba(52,211,153,0.08) 0%,rgba(52,211,153,0.02) 65%,transparent 100%)}
 .guarantee-shield::after{content:'';position:absolute;inset:-32px;border-radius:50%;background:radial-gradient(circle,rgba(52,211,153,0.04) 0%,transparent 70%)}
 .guarantee-shield svg{width:52px;height:52px;color:var(--green);filter:drop-shadow(0 0 24px rgba(52,211,153,0.35));position:relative;z-index:1}
 @keyframes g-pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.12);opacity:.65}}
@@ -1056,8 +1063,9 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .comm-f-ico svg{width:14px;height:14px}
 .comm-f-txt{font-size:14px;color:var(--dim);line-height:1.5}
 .comm-f-txt strong{color:var(--white)}
-.btn-wa{display:inline-flex;align-items:center;gap:10px;height:56px;padding:0 32px;background:#25D366;color:#fff;border-radius:14px;font-weight:600;font-size:16px;border:none;cursor:pointer;transition:transform .4s var(--ease),box-shadow .4s var(--ease);box-shadow:0 0 0 1px rgba(37,211,102,0.2),0 8px 40px rgba(37,211,102,0.2)}
-.btn-wa:hover{transform:translateY(-3px);box-shadow:0 0 0 1px rgba(37,211,102,0.3),0 20px 60px rgba(37,211,102,0.3)}
+/* Ultra premium: WA button sutil */
+.btn-wa{display:inline-flex;align-items:center;gap:10px;height:56px;padding:0 32px;background:#25D366;color:#fff;border-radius:14px;font-weight:600;font-size:16px;border:none;cursor:pointer;transition:transform .4s var(--ease),box-shadow .4s var(--ease);box-shadow:0 0 0 1px rgba(37,211,102,0.12),0 8px 32px rgba(37,211,102,0.10)}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(37,211,102,0.18),0 12px 40px rgba(37,211,102,0.14)}
 .btn-wa svg{width:22px;height:22px;fill:currentColor}
 
 /* ══════════════════════════════════════════════════════════
@@ -1263,17 +1271,17 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .mock-phone-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:440px;height:600px;background:radial-gradient(ellipse,rgba(100,180,255,0.03) 0%,rgba(52,211,153,0.01) 45%,transparent 70%);pointer-events:none;z-index:0}
 
 /* Section separator gradient */
+/* Ultra premium: separador cinematográfico — quase invisível, bloom sutil */
 .sep{
-    height:1px;position:relative;max-width:800px;margin:0 auto;
-    background:linear-gradient(90deg,transparent 0%,rgba(100,180,255,0.06) 20%,rgba(100,180,255,0.12) 50%,rgba(100,180,255,0.06) 80%,transparent 100%);
+    height:1px;position:relative;max-width:600px;margin:0 auto;
+    background:linear-gradient(90deg,transparent 0%,rgba(100,180,255,0.04) 30%,rgba(100,180,255,0.07) 50%,rgba(100,180,255,0.04) 70%,transparent 100%);
 }
 .sep::after{
-    content:'';position:absolute;top:-1px;left:50%;transform:translateX(-50%);
-    width:60px;height:3px;border-radius:2px;
-    background:linear-gradient(90deg,transparent,rgba(100,180,255,0.25),transparent);
-    filter:blur(1px);
+    content:'';position:absolute;top:-0.5px;left:50%;transform:translateX(-50%);
+    width:80px;height:1px;border-radius:2px;
+    background:linear-gradient(90deg,transparent,rgba(100,180,255,0.12),transparent);
+    box-shadow:0 0 16px rgba(100,180,255,0.03);
 }
-.sep::after{content:'';position:absolute;top:-0.5px;left:50%;transform:translateX(-50%);width:200px;height:2px;background:linear-gradient(90deg,transparent,rgba(100,180,255,0.45),transparent);border-radius:2px;box-shadow:0 0 12px rgba(100,180,255,0.1),0 0 4px rgba(100,180,255,0.15)}
 
 /* ── Responsive ── */
 @media(max-width:767px){.hero-scroll{display:none}.p-card{padding:28px}}
@@ -1559,12 +1567,13 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .proof-metric-lbl{font-size:11px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
 
 /* ── Pricing highlight (Raso) ── */
-.p-card--entry{border-color:rgba(100,180,255,0.18);box-shadow:0 0 80px rgba(100,180,255,0.06);position:relative;overflow:hidden}
-.p-card--entry::before{content:'';position:absolute;inset:-2px;border-radius:inherit;padding:2px;background:conic-gradient(from var(--shimmer-angle,0deg),transparent 40%,rgba(100,180,255,0.35) 50%,transparent 60%);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;-webkit-mask-composite:xor;animation:shimmer-rotate 3s linear infinite;pointer-events:none;z-index:1}
+/* Ultra premium: card Raso — estático, discreto, sem competição visual com Recife */
+.p-card--entry{border-color:rgba(100,180,255,0.08);position:relative;overflow:hidden}
+.p-card--entry::before{display:none}
 @keyframes shimmer-rotate{to{--shimmer-angle:360deg}}
 @property --shimmer-angle{syntax:'<angle>';initial-value:0deg;inherits:false}
-.p-card--entry:hover{border-color:rgba(100,180,255,0.3);box-shadow:0 0 100px rgba(100,180,255,0.1)}
-@media(min-width:768px){.p-card--entry{transform:translateY(-8px)}.p-card--entry:hover{transform:translateY(-14px)}}
+.p-card--entry:hover{border-color:rgba(100,180,255,0.14)}
+@media(min-width:768px){.p-card--entry{transform:translateY(0)}.p-card--entry:hover{transform:translateY(-3px)}}
 
 /* ── Stagger reveal for mockup children ── */
 .stagger-parent>.term-row,.stagger-parent>.insight-card,.stagger-parent>.ctrl-row,.stagger-parent>.flow-node,.stagger-parent>.flow-conn{opacity:0;transform:translateY(18px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
@@ -1616,7 +1625,8 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
         inset 0 1px 0 rgba(255,255,255,0.04);
 }
 .calc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 5%,rgba(100,180,255,0.08) 30%,rgba(100,180,255,0.15) 50%,rgba(100,180,255,0.08) 70%,transparent 95%)}
-.calc-card::after{content:'';position:absolute;bottom:0;left:8%;right:8%;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0.2;box-shadow:0 0 12px rgba(100,180,255,0.3)}
+/* Ultra premium: calc card — linha base sutil sem glow excessivo */
+.calc-card::after{content:'';position:absolute;bottom:0;left:15%;right:15%;height:1px;background:linear-gradient(90deg,transparent,rgba(100,180,255,0.08),transparent);opacity:1}
 
 /* Slider section */
 .calc-slider-wrap{margin-bottom:40px}
@@ -1818,11 +1828,13 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 /* ── Pricing micro-copy ── */
 .p-micro{font-size:12px;color:var(--muted);text-align:center;margin-top:12px;line-height:1.5}
 
-/* ── Recife highlighted card ── */
-.p-card--rec{border-color:rgba(100,180,255,0.22);box-shadow:0 0 80px rgba(100,180,255,0.06);position:relative;overflow:hidden}
-.p-card--rec::before{content:'';position:absolute;inset:-2px;border-radius:inherit;padding:2px;background:conic-gradient(from var(--shimmer-angle,0deg),transparent 35%,rgba(100,180,255,0.4) 50%,transparent 65%);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;-webkit-mask-composite:xor;animation:shimmer-rotate 3s linear infinite;pointer-events:none;z-index:1}
-.p-card--rec:hover{border-color:rgba(100,180,255,0.35);box-shadow:0 0 100px rgba(100,180,255,0.1)}
-@media(min-width:768px){.p-card--rec{transform:translateY(-12px)}.p-card--rec:hover{transform:translateY(-18px)}}
+/* Ultra premium: Recife — único card com shimmer cinematográfico lento + elevação */
+.p-card--rec{border-color:rgba(100,180,255,0.16);box-shadow:0 0 60px rgba(100,180,255,0.04),0 0 0 1px rgba(100,180,255,0.06);position:relative;overflow:hidden}
+/* Ultra premium: Recife — linha de luz respirante no topo, ultra suave */
+.p-card--rec::before{content:'';display:block;position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(100,180,255,0.14),transparent);pointer-events:none;z-index:1;animation:rec-breathe 6s var(--ease) infinite}
+@keyframes rec-breathe{0%,100%{opacity:0.3}50%{opacity:0.9}}
+.p-card--rec:hover{border-color:rgba(100,180,255,0.16);box-shadow:0 0 60px rgba(100,180,255,0.04)}
+@media(min-width:768px){.p-card--rec{transform:translateY(-8px)}.p-card--rec:hover{transform:translateY(-12px)}}
 
 /* ── Price display ── */
 .p-price-wrap{min-height:90px;display:flex;flex-direction:column;justify-content:flex-end;margin-bottom:28px}
@@ -2094,7 +2106,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
     .ba-card{padding:24px}
 
     /* Pricing — Etapa 8 */
-    .p-card--rec{border-width:1.5px;border-color:rgba(100,180,255,0.25);box-shadow:0 0 60px rgba(100,180,255,0.08),0 0 0 1px rgba(100,180,255,0.06)}
+    .p-card--rec{border-width:1.5px;border-color:rgba(100,180,255,0.16);box-shadow:0 0 40px rgba(100,180,255,0.04),0 0 0 1px rgba(100,180,255,0.04)}
     .period-switcher{flex-direction:row;width:auto;max-width:none}
     .period-btn{font-size:13px;padding:10px 16px}
 
@@ -3330,7 +3342,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
                     <li class="p-feat"><span class="p-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>App mobile</strong> + notificações push</span></li>
                     <li class="p-feat p-feat--off"><span class="p-check"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span>Proteção do Tráfego</span></li>
                 </ul>
-                <a href="/cadastro/?plan=Raso&period=monthly" class="btn btn-p btn-full">Começar Agora</a>
+                <a href="/cadastro/?plan=Raso&period=monthly" class="btn btn-o btn-full">Começar Agora</a>
                 <p class="p-micro">Garantia de 7 dias · Sem contrato</p>
             </div>
 
@@ -3406,7 +3418,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
                     <li class="p-feat"><span class="p-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Campanhas <strong>ilimitadas</strong></span></li>
                     <li class="p-feat"><span class="p-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Suporte prioritário</strong></span></li>
                 </ul>
-                <a href="/cadastro/?plan=Abissal&period=monthly" class="btn btn-p btn-full">Começar Agora</a>
+                <a href="/cadastro/?plan=Abissal&period=monthly" class="btn btn-o btn-full">Começar Agora</a>
                 <p class="p-micro">Garantia de 7 dias · Sem contrato</p>
             </div>
         </div>
