@@ -46,4 +46,19 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Regra**: todo `!important` novo precisa de comentário na linha anterior explicando porquê (ex: sobrescrevendo HeroUI inline, ou fighting com Tailwind reset). Auto-review rejeita sem comentário.
 **Status**: ativo
 
+## 2026-04-24 — Reestruturação: 20 seções → 10 seções
+**Contexto**: análise ultra premium identificou fadiga cognitiva (20 seções vs 6 da Stripe). Sonar (diferenciador único) estava enterrado na posição 15.
+**Mudanças**: Sonar subiu para posição 4. Removidos: App Mobile, Como Funciona, Widget WhatsApp (HTML+JS), Community section. Hero copy mudou de "Proteja/Controle/Escale" para "Tracking/Proteção/Memória". Subtitle agora: "A infraestrutura completa para o afiliado que opera no Google Ads".
+**Status**: ativo
+
+## 2026-04-24 — WhatsApp Widget removido do body e JS
+**Contexto**: emojis, badge vermelho falso e mensagens rotativas intrusivas violavam Quiet Luxury. Link WhatsApp mantido no footer e CTA final.
+**Regra**: não restaurar widget flutuante. CSS do widget permanece no `<style>` (inócuo) para não arriscar desbalancear braces.
+**Status**: ativo
+
+## 2026-04-24 — Sonar tabs reduzidos de 7 para 3
+**Contexto**: 7 tabs causavam fadiga no final da página. Mantidos: Testes, Ofertas, Headlines.
+**Regra**: se adicionar tabs ao Sonar, manter máximo 4 para progressive disclosure.
+**Status**: ativo
+
 <!-- Novas entradas abaixo -->
