@@ -1905,6 +1905,60 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
     .sticky-cta .btn-p{flex:1}
 }
 
+/* ══════════════════════════════════════════════════════════
+   SONAR — Memória operacional por nicho
+   ══════════════════════════════════════════════════════════ */
+#sonar{position:relative}
+.sonar-intro{text-align:center;max-width:640px;margin:0 auto 72px;font-size:clamp(16px,1.8vw,18px);color:var(--dim);line-height:1.7}
+.sonar-intro strong{color:#f0f4f8;font-weight:600}
+
+.sonar-pain{display:grid;grid-template-columns:repeat(3,1fr);gap:21px;max-width:1100px;margin:0 auto 89px}
+.sonar-pain-card{padding:34px 28px;background:linear-gradient(180deg,rgba(251,191,36,0.02),rgba(0,0,0,0.25));border:1px solid rgba(251,191,36,0.08);border-radius:21px;position:relative;overflow:hidden}
+.sonar-pain-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(251,191,36,0.3),transparent)}
+.sonar-pain-num{font-family:var(--ff-display);font-size:clamp(28px,3.2vw,34px);font-weight:700;color:var(--gold);margin-bottom:13px;letter-spacing:-0.02em;line-height:1}
+.sonar-pain-text{font-size:14px;color:var(--dim);line-height:1.65}
+.sonar-pain-text strong{color:#f0f4f8;font-weight:600;display:block;margin-bottom:6px;font-size:15px}
+
+.sonar-lib{max-width:960px;margin:0 auto 89px;background:linear-gradient(180deg,rgba(100,180,255,0.03),rgba(0,0,0,0.3));border:1px solid rgba(100,180,255,0.1);border-radius:21px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,0.2),0 4px 8px rgba(0,0,0,0.2),0 16px 32px rgba(0,0,0,0.25)}
+.sonar-lib-head{padding:21px 34px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(100,180,255,0.08);background:rgba(100,180,255,0.02);gap:16px;flex-wrap:wrap}
+.sonar-lib-nicho{display:flex;align-items:center;gap:13px}
+.sonar-lib-icon{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,rgba(100,180,255,0.18),rgba(100,180,255,0.05));display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:15px;font-weight:700;font-family:var(--ff-display)}
+.sonar-lib-name{font-family:var(--ff-display);font-size:20px;font-weight:600;color:#f0f4f8;letter-spacing:-0.01em}
+.sonar-lib-stats{display:flex;gap:21px;flex-wrap:wrap}
+.sonar-lib-stat{font-size:12px;color:var(--muted);letter-spacing:0.02em}
+.sonar-lib-stat strong{color:var(--accent);font-weight:600;font-size:13px;font-family:var(--ff-display)}
+.sonar-lib-tabs{display:flex;gap:0;padding:0 34px;border-bottom:1px solid rgba(100,180,255,0.06);overflow-x:auto;scrollbar-width:none}
+.sonar-lib-tabs::-webkit-scrollbar{display:none}
+.sonar-lib-tab{padding:14px 0;margin-right:21px;font-size:13px;color:var(--muted);border-bottom:2px solid transparent;cursor:pointer;transition:color .3s var(--ease),border-color .3s var(--ease);white-space:nowrap;font-weight:500}
+.sonar-lib-tab--active{color:var(--accent);border-bottom-color:var(--accent)}
+.sonar-lib-tab:hover{color:var(--dim)}
+.sonar-lib-list{padding:8px 34px}
+.sonar-lib-row{display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:1px solid rgba(100,180,255,0.04);font-size:13px;gap:16px}
+.sonar-lib-row:last-child{border-bottom:none}
+.sonar-lib-row-name{color:var(--dim);line-height:1.5}
+.sonar-lib-row-roas{font-family:var(--ff-display);font-weight:600;font-size:12px;padding:4px 10px;border-radius:6px;white-space:nowrap;letter-spacing:0.02em}
+.sonar-lib-row-roas--good{color:var(--green);background:rgba(52,211,153,0.09)}
+.sonar-lib-row-roas--bad{color:#ff7a7a;background:rgba(255,107,107,0.08)}
+.sonar-lib-row--more{color:var(--muted);font-size:12px;font-style:italic;justify-content:center;padding:16px 0 13px}
+
+.sonar-callout{max-width:720px;margin:0 auto 55px;text-align:center}
+.sonar-callout-text{font-family:var(--ff-display);font-size:clamp(22px,3.2vw,34px);font-weight:600;line-height:1.3;letter-spacing:-0.02em;color:#f0f4f8}
+.sonar-callout-was{color:var(--muted);text-decoration:line-through;text-decoration-color:rgba(255,122,122,0.55);text-decoration-thickness:2px}
+
+.sonar-diff{max-width:640px;margin:0 auto;text-align:center;font-size:14px;color:var(--dim);line-height:1.7}
+.sonar-diff-label{display:block;margin-bottom:10px;font-family:var(--ff-display);font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.2em}
+.sonar-diff strong{color:#f0f4f8;font-weight:600}
+
+@media(max-width:767px){
+    .sonar-pain{grid-template-columns:1fr;gap:13px;margin-bottom:55px}
+    .sonar-intro{margin-bottom:48px}
+    .sonar-lib{margin-bottom:55px}
+    .sonar-lib-head{flex-direction:column;align-items:flex-start;gap:13px;padding:18px 21px}
+    .sonar-lib-tabs{padding:0 21px}
+    .sonar-lib-list{padding:4px 21px}
+    .sonar-lib-stats{gap:13px}
+}
+
 /* ── 3D tilt perspective ── */
 .pricing-grid{perspective:1000px}
 
@@ -3189,6 +3243,90 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
                 <div class="comp-cell comp-col-bi"><span class="comp-check">✓</span></div>
                 <div class="comp-cell"><span class="comp-partial">~200ms</span></div>
             </div>
+        </div>
+    </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ═══════ SONAR — Memória Operacional ═══════ -->
+<section class="section" id="sonar">
+    <div class="container">
+        <div class="t-label rv" style="text-align:center;margin-bottom:16px">Sonar · Memória Operacional</div>
+        <h2 class="t-lg rv rv-d1" style="text-align:center;max-width:760px;margin:0 auto 20px">
+            Você já esqueceu<br>o que <span class="grad">funcionou no seu nicho?</span>
+        </h2>
+        <p class="sonar-intro rv rv-d2">
+            O afiliado testa 20 ofertas, queima 17 e escala 3. Em 6 meses, <strong>não lembra qual VSL vendeu</strong>, qual headline converteu, qual oferta pagou. Todo real gasto testando virou amnésia. <strong>O Sonar acaba com isso.</strong>
+        </p>
+
+        <div class="sonar-pain rv rv-d3">
+            <div class="sonar-pain-card">
+                <div class="sonar-pain-num">6 meses</div>
+                <div class="sonar-pain-text"><strong>Depois, você não lembra.</strong>Qual oferta rodou, qual VSL vendeu, qual página converteu. O cérebro romanceia o passado — e você repete o mesmo erro.</div>
+            </div>
+            <div class="sonar-pain-card">
+                <div class="sonar-pain-num">R$ 0</div>
+                <div class="sonar-pain-text"><strong>De patrimônio acumulado.</strong>Todo criativo testado, toda VSL produzida, toda oferta validada: evapora na pasta "Downloads" ou na cabeça de quem saiu da equipe.</div>
+            </div>
+            <div class="sonar-pain-card">
+                <div class="sonar-pain-num">3 a 6 meses</div>
+                <div class="sonar-pain-text"><strong>De rampa perdida por nicho.</strong>Toda retomada é começo do zero. Com histórico, você entraria direto no ponto onde parou — e avançaria.</div>
+            </div>
+        </div>
+
+        <div class="sonar-lib rv rv-d4">
+            <div class="sonar-lib-head">
+                <div class="sonar-lib-nicho">
+                    <div class="sonar-lib-icon">E</div>
+                    <div class="sonar-lib-name">Emagrecimento</div>
+                </div>
+                <div class="sonar-lib-stats">
+                    <span class="sonar-lib-stat"><strong>47</strong> testes</span>
+                    <span class="sonar-lib-stat"><strong>R$ 89.340</strong> investidos</span>
+                    <span class="sonar-lib-stat"><strong>18</strong> meses</span>
+                </div>
+            </div>
+            <div class="sonar-lib-tabs">
+                <div class="sonar-lib-tab sonar-lib-tab--active">Testes</div>
+                <div class="sonar-lib-tab">Páginas</div>
+                <div class="sonar-lib-tab">VSLs</div>
+                <div class="sonar-lib-tab">Ofertas</div>
+                <div class="sonar-lib-tab">Headlines</div>
+                <div class="sonar-lib-tab">Descrições</div>
+                <div class="sonar-lib-tab">Criativos</div>
+            </div>
+            <div class="sonar-lib-list">
+                <div class="sonar-lib-row">
+                    <span class="sonar-lib-row-name">VSL "Método 21 dias" + Oferta Nutra A</span>
+                    <span class="sonar-lib-row-roas sonar-lib-row-roas--good">ROAS 2.4x</span>
+                </div>
+                <div class="sonar-lib-row">
+                    <span class="sonar-lib-row-name">Quiz personalizado + Headline "perder 8kg"</span>
+                    <span class="sonar-lib-row-roas sonar-lib-row-roas--good">ROAS 1.9x</span>
+                </div>
+                <div class="sonar-lib-row">
+                    <span class="sonar-lib-row-name">Artigo "5 erros" + Oferta Nutra B</span>
+                    <span class="sonar-lib-row-roas sonar-lib-row-roas--bad">ROAS 0.6x</span>
+                </div>
+                <div class="sonar-lib-row">
+                    <span class="sonar-lib-row-name">VSL curta + Headline "30 dias sem dieta"</span>
+                    <span class="sonar-lib-row-roas sonar-lib-row-roas--bad">ROAS 0.4x</span>
+                </div>
+                <div class="sonar-lib-row sonar-lib-row--more">+ 43 outros testes rastreados automaticamente</div>
+            </div>
+        </div>
+
+        <div class="sonar-callout rv rv-d5">
+            <div class="sonar-callout-text">
+                Todo real testado <span class="sonar-callout-was">virava despesa</span>.<br>
+                Agora vira <span class="grad">patrimônio</span>.
+            </div>
+        </div>
+
+        <div class="sonar-diff rv rv-d6">
+            <span class="sonar-diff-label">Categoria nova</span>
+            Nenhum tracker brasileiro faz isso. UTMify, Hyros, Redtrack, Voluum <strong>rastreiam</strong>.<br>O Sonar <strong>lembra</strong>.
         </div>
     </div>
 </section>
