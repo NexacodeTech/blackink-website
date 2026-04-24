@@ -437,7 +437,7 @@ Real Blackink plans: Raso, Recife, Abissal (source: `PlanSeed.php`, `UpgradePlan
 | **Funil de métricas completo** | — | &#10003; | &#10003; | &#10003; |
 | **Conversões automáticas no Google Ads** | — | &#10003; | &#10003; | &#10003; |
 | **URL Builder completo** | — | &#10003; | &#10003; | &#10003; |
-| **Integrações (ClickBank, Buygoods, CartPanda…)** | — | &#10003; | &#10003; | &#10003; |
+| **Integrações (ClickBank, Buygoods, GuruMidia, MaxWeb, CartPanda)** | — | &#10003; | &#10003; | &#10003; |
 | **Notificações de vendas** | — | &#10003; | &#10003; | &#10003; |
 | **App Mobile** | — | &#10003; | &#10003; | &#10003; |
 | **Análise de performance das VSL** | — | &#10003; | &#10003; | &#10003; |
@@ -488,7 +488,7 @@ Real Blackink plans: Raso, Recife, Abissal (source: `PlanSeed.php`, `UpgradePlan
                         <li class="bt bt-body-sm"><span class="pricing-check">&#10003;</span> <strong>Funil de métricas completo</strong> (Review, topo, fundo de funil etc.)</li>
                         <li class="bt bt-body-sm"><span class="pricing-check">&#10003;</span> <strong>Conversões automáticas</strong> no Google Ads</li>
                         <li class="bt bt-body-sm"><span class="pricing-check">&#10003;</span> <strong>URL Builder completo</strong></li>
-                        <li class="bt bt-body-sm"><span class="pricing-check">&#10003;</span> <strong>Integrações</strong> (ClickBank, Buygoods, CartPanda + outras por demanda)</li>
+                        <li class="bt bt-body-sm"><span class="pricing-check">&#10003;</span> <strong>Integrações</strong> (ClickBank, Buygoods, GuruMidia, MaxWeb, CartPanda + outras por demanda)</li>
                         <li class="bt bt-body-sm"><span class="pricing-check">&#10003;</span> <strong>Notificações</strong> de vendas</li>
                         <li class="bt bt-body-sm"><span class="pricing-check">&#10003;</span> <strong>App Mobile</strong></li>
                         <li class="bt bt-body-sm"><span class="pricing-check">&#10003;</span> <strong>Análise de performance das VSL</strong></li>
