@@ -21,7 +21,8 @@ jobs:
           username: github@blackink.cloud
           password: Acesso@24
           protocol: ftp
-          server-dir: public_html/
+          local-dir: ./
+          server-dir: 
           exclude: |
             **/.git*
             **/.git/**
