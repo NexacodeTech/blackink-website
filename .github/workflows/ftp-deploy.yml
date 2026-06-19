@@ -17,7 +17,7 @@ jobs:
       - name: Deploy FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ftp.blackink.cloud
+          server: ftp.census.inf.br
           username: github@blackink.cloud
           password: Acesso@24
           protocol: ftp
