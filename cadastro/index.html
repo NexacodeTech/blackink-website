@@ -555,8 +555,8 @@
                         </div>
 
                         <div class="btn-group">
-                            <button type="submit" class="btn btn-p" id="submitBtn">
-                                Continuar para Pagamento
+                            <button type="submit" class="btn btn-p" id="submitBtn" disabled style="opacity:.55;cursor:not-allowed">
+                                Inscrições em breve
                             </button>
                         </div>
                     </form>
@@ -765,6 +765,9 @@
     // Form submission
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
+        // ponytail: inscrições pausadas — bloqueia cadastro/checkout no front.
+        // Reativar: remover este return + o disabled do #submitBtn.
+        return;
 
         const name = nameInput.value.trim();
         const email = emailInput.value.trim();
