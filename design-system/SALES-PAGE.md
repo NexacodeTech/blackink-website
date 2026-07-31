@@ -443,9 +443,9 @@ Real Blackink plans: Raso, Recife, Abissal (source: `PlanSeed.php`, `UpgradePlan
 | **Análise de performance das VSL** | — | &#10003; | &#10003; | &#10003; |
 | **Blackink Clone** | — | &#10003; | &#10003; | &#10003; |
 | **Área de membros + tutoriais** | — | &#10003; | &#10003; | &#10003; |
-| **Proteção do tráfego** | &#10005; | &#10005; | &#10003; | &#10003; |
-| **Proteção de VPN** | &#10005; | &#10005; | &#10003; | &#10003; |
-| **Proteção de Bots** | &#10005; | &#10005; | &#10003; | &#10003; |
+| **Cloaker server-side** | &#10005; | &#10005; | &#10003; | &#10003; |
+| **Filtragem de VPNs** | &#10005; | &#10005; | &#10003; | &#10003; |
+| **Filtragem de bots** | &#10005; | &#10005; | &#10003; | &#10003; |
 | **Suporte prioritário** | &#10005; | &#10005; | &#10005; | &#10003; |
 | **Custo campanha extra** | R$ 40 | R$ 40 | R$ 40 | **R$ 6** |
 
@@ -495,9 +495,9 @@ Real Blackink plans: Raso, Recife, Abissal (source: `PlanSeed.php`, `UpgradePlan
                         <li class="bt bt-body-sm"><span class="pricing-check">&#10003;</span> <strong>Blackink Clone</strong></li>
                         <li class="bt bt-body-sm"><span class="pricing-check">&#10003;</span> <strong>Área de membros</strong> com tutoriais completos</li>
                         <li class="bt bt-body-sm"><span class="pricing-check">&#10003;</span> Campanhas extras por <strong>R$ 40,00</strong> cada</li>
-                        <li class="bt bt-body-sm pricing-disabled"><span class="pricing-x">&#10005;</span> Proteção do tráfego</li>
-                        <li class="bt bt-body-sm pricing-disabled"><span class="pricing-x">&#10005;</span> Proteção de VPN</li>
-                        <li class="bt bt-body-sm pricing-disabled"><span class="pricing-x">&#10005;</span> Proteção de Bots</li>
+                        <li class="bt bt-body-sm pricing-disabled"><span class="pricing-x">&#10005;</span> Cloaker server-side</li>
+                        <li class="bt bt-body-sm pricing-disabled"><span class="pricing-x">&#10005;</span> Filtragem de VPNs</li>
+                        <li class="bt bt-body-sm pricing-disabled"><span class="pricing-x">&#10005;</span> Filtragem de bots</li>
                     </ul>
 
                     <button class="b-btn b-btn--outline b-btn--large b-btn--full" style="margin-top: var(--space-xl);">
@@ -523,10 +523,9 @@ Real Blackink plans: Raso, Recife, Abissal (source: `PlanSeed.php`, `UpgradePlan
 
                     <ul class="pricing-features">
                         <li class="bt bt-body-sm"><span class="pricing-check">&#10003;</span> Tudo do <strong>Raso +</strong></li>
-                        <li class="bt bt-body-sm"><span class="pricing-check">&#10003;</span> <strong>Proteção</strong> do tráfego</li>
-                        <li class="bt bt-body-sm"><span class="pricing-check">&#10003;</span> <strong>Proteção de VPN</strong></li>
-                        <li class="bt bt-body-sm"><span class="pricing-check">&#10003;</span> <strong>Proteção de Bots</strong></li>
-                        <li class="bt bt-body-sm"><span class="pricing-check">&#10003;</span> Serviço de <strong>Cloaker</strong> incluso</li>
+                        <li class="bt bt-body-sm"><span class="pricing-check">&#10003;</span> <strong>Cloaker server-side</strong> (safe page / offer page)</li>
+                        <li class="bt bt-body-sm"><span class="pricing-check">&#10003;</span> <strong>Filtragem de VPNs</strong></li>
+                        <li class="bt bt-body-sm"><span class="pricing-check">&#10003;</span> <strong>Filtragem de bots</strong> e crawlers</li>
                     </ul>
 
                     <button class="b-btn b-btn--primary b-btn--large b-btn--full" style="margin-top: var(--space-xl);">

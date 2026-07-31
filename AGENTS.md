@@ -49,6 +49,13 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 ## 2026-04-24 — Reestruturação: 20 seções → 10 seções
 **Contexto**: análise ultra premium identificou fadiga cognitiva (20 seções vs 6 da Stripe). Sonar (diferenciador único) estava enterrado na posição 15.
 **Mudanças**: Sonar subiu para posição 4. Removidos: App Mobile, Como Funciona, Widget WhatsApp (HTML+JS), Community section. Hero copy mudou de "Proteja/Controle/Escale" para "Tracking/Proteção/Memória". Subtitle agora: "A infraestrutura completa para o afiliado que opera no Google Ads".
+**Status**: superseded por reposicionamento cloaker (2026-07-31)
+
+## 2026-07-31 — Cloaker como produto principal
+**Contexto**: cloaker passou a ser o core do produto; copy "Proteção do Tráfego" escondia o diferencial.
+**Mudanças**: hero H1/badge lideram com Cloaker; seção features antes do Sonar; nav/footer "Features" → "Cloaker"; FAQ + JSON-LD com pergunta explícita sobre cloaker; zero "proteção" em copy visível ao usuário na landing.
+**Regra**: não voltar a usar "proteção" como framing de produto — falar de cloaker, safe page, offer page, filtragem de bots/VPNs.
+**Status**: ativo
 **Status**: ativo
 
 ## 2026-04-24 — WhatsApp Widget removido do body e JS
