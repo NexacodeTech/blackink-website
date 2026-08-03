@@ -71,7 +71,7 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 ## 2026-08-03 — Plano Maré (cloaker-only R$399,99)
 **Contexto**: novo tier entre Raso e Recife; CTAs liberados; cadastro reativado.
 **Mudanças**: plano Maré em index/subscribe/cadastro/termos; comparison table 5 cols; cadastro sidebar plan-aware; submit "Continuar para Pagamento" ativo.
-**Regra**: Maré = só cloaker (sem tracker/app/sonar); Recife = tracker + cloaker.
+**Regra**: Maré = cloaker-only com App Mobile (sem tracker/sonar); Recife = tracker + cloaker.
 **Status**: ativo
 
 <!-- Novas entradas abaixo -->

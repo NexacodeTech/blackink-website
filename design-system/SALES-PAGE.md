@@ -438,8 +438,8 @@ Real Blackink plans: Raso, Maré, Recife, Abissal (source: landing `index.html`,
 | **Conversões automáticas no Google Ads** | — | &#10003; | &#10005; | &#10003; | &#10003; |
 | **URL Builder completo** | — | &#10003; | &#10005; | &#10003; | &#10003; |
 | **Integrações (ClickBank, Buygoods, GuruMidia, MaxWeb, CartPanda)** | — | &#10003; | &#10005; | &#10003; | &#10003; |
-| **Notificações de vendas** | — | &#10003; | &#10005; | &#10003; | &#10003; |
-| **App Mobile** | — | &#10003; | &#10005; | &#10003; | &#10003; |
+| **Notificações de vendas** | — | &#10003; | &#10003; | &#10003; | &#10003; |
+| **App Mobile** | — | &#10003; | &#10003; | &#10003; | &#10003; |
 | **Análise de performance das VSL** | — | &#10003; | &#10005; | &#10003; | &#10003; |
 | **Blackink Clone** | — | &#10003; | &#10005; | &#10003; | &#10003; |
 | **Área de membros + tutoriais** | — | &#10003; | &#10005; | &#10003; | &#10003; |

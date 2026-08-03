@@ -93,9 +93,11 @@
         @keyframes fade-up{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 
         /* ── Plans Grid ── */
-        .plans-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:clamp(20px,3vw,32px);margin-bottom:clamp(48px,8vw,80px)}
+        .plans-grid{display:grid;grid-template-columns:1fr;gap:clamp(20px,3vw,32px);margin-bottom:clamp(48px,8vw,80px);width:100%;max-width:100%}
+        @media(min-width:640px){.plans-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+        @media(min-width:1200px){.plans-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
 
-        .plan-card{background:var(--surface);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:20px;padding:clamp(28px,4vw,36px);transition:all .4s var(--ease);cursor:pointer;position:relative;overflow:hidden;animation:card-in .8s var(--ease) both}
+        .plan-card{background:var(--surface);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:20px;padding:clamp(28px,4vw,36px);transition:all .4s var(--ease);cursor:pointer;position:relative;overflow:hidden;animation:card-in .8s var(--ease) both;min-width:0;display:flex;flex-direction:column;height:100%}
         .plan-card:nth-child(1){animation-delay:.1s}
         .plan-card:nth-child(2){animation-delay:.2s}
         .plan-card:nth-child(3){animation-delay:.3s}
@@ -129,8 +131,8 @@
 
         .plan-description{color:var(--muted);font-size:14px;margin-bottom:24px}
 
-        .plan-features{margin-bottom:24px;min-height:200px}
-        .plan-features li{padding:10px 0;color:var(--dim);display:flex;align-items:flex-start;gap:12px;font-size:14px;border-bottom:1px solid var(--border)}
+        .plan-features{margin-bottom:24px;flex:1}
+        .plan-features li{padding:10px 0;color:var(--dim);display:flex;align-items:flex-start;gap:12px;font-size:14px;border-bottom:1px solid var(--border);overflow-wrap:break-word}
         .plan-features li:last-child{border-bottom:none}
         .plan-features li::before{content:"✓";color:var(--accent);font-weight:700;font-size:14px;flex-shrink:0;margin-top:1px}
 
@@ -148,7 +150,7 @@
 
         /* ── Period Toggle ── */
         .period-toggle{margin-bottom:clamp(32px,5vw,48px)}
-        .period-switcher{display:inline-flex;background:rgba(8,22,48,0.6);border:1px solid var(--border);border-radius:100px;padding:4px;gap:4px}
+        .period-switcher{display:inline-flex;flex-wrap:wrap;justify-content:center;max-width:100%;background:rgba(8,22,48,0.6);border:1px solid var(--border);border-radius:100px;padding:4px;gap:4px}
         .period-btn{padding:12px 24px;border:none;border-radius:100px;background:transparent;color:var(--dim);font-family:var(--ff-body);font-size:14px;font-weight:600;cursor:pointer;transition:all .3s var(--ease);display:inline-flex;align-items:center;gap:8px}
         .period-btn:hover{color:var(--white)}
         .period-btn.active{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#020a14}
@@ -388,6 +390,7 @@
                         <li>Regras por OS, idioma e ISP</li>
                         <li>Decision logs completos</li>
                         <li>Até 10 campanhas cloaker</li>
+                        <li>App Mobile + Push</li>
                     </ul>
                     <div class="plan-price-wrap">
                         <div class="plan-price active" data-period="monthly">R$ 399,99<span>/mês</span></div>

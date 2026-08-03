@@ -139,7 +139,7 @@
         {
           "@type": "Offer",
           "name": "Maré",
-          "description": "Cloaker server-side completo: safe page, offer page, filtragem de bots, VPNs, proxies, geo-targeting e device filtering. Sem tracker.",
+          "description": "Cloaker server-side completo: safe page, offer page, filtragem de bots, VPNs, proxies, geo-targeting e device filtering. App mobile com push. Sem tracker.",
           "price": "399.99",
           "priceCurrency": "BRL",
           "priceSpecification": {
@@ -241,7 +241,7 @@
           "name": "Qual a diferença entre os planos Raso, Maré, Recife e Abissal?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "O plano Raso (R$ 119,99/mês) inclui o tracker server-side completo — sem cloaker. O plano Maré (R$ 399,99/mês) é somente cloaker: safe page, offer page, filtragem de bots, VPNs, proxies, geo-targeting e device filtering — ideal para quem já tem tracker e precisa só filtrar tráfego. O plano Recife (R$ 469,99/mês) une tracker + cloaker completo com Auction Insights. O plano Abissal (R$ 999,99/mês) libera campanhas ilimitadas, até 50 contas adicionais, suporte prioritário e multi-conta Google Ads (MCC). Todos os planos incluem garantia de 7 dias."
+            "text": "O plano Raso (R$ 119,99/mês) inclui o tracker server-side completo — sem cloaker. O plano Maré (R$ 399,99/mês) é somente cloaker: safe page, offer page, filtragem de bots, VPNs, proxies, geo-targeting, device filtering e app mobile com push — ideal para quem já tem tracker e precisa só filtrar tráfego. O plano Recife (R$ 469,99/mês) une tracker + cloaker completo com Auction Insights. O plano Abissal (R$ 999,99/mês) libera campanhas ilimitadas, até 50 contas adicionais, suporte prioritário e multi-conta Google Ads (MCC). Todos os planos incluem garantia de 7 dias."
           }
         },
         {
@@ -944,11 +944,11 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 /* ══════════════════════════════════════════════════════════
    5. PRICING
    ══════════════════════════════════════════════════════════ */
-.pricing-grid{display:grid;grid-template-columns:1fr;gap:20px;align-items:start}
-@media(min-width:640px){.pricing-grid{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1200px){.pricing-grid{grid-template-columns:repeat(4,1fr)}}
+.pricing-grid{display:grid;grid-template-columns:1fr;gap:clamp(16px,2.5vw,20px);align-items:stretch;width:100%;max-width:100%}
+@media(min-width:640px){.pricing-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1200px){.pricing-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
 
-.p-card{border-radius:20px;border:1px solid rgba(100,180,255,0.08);background:linear-gradient(180deg,rgba(8,22,48,0.5) 0%,rgba(4,12,28,0.7) 100%);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:clamp(28px,4vw,44px);position:relative;transition:border-color .5s var(--ease),transform .5s var(--ease),box-shadow .5s var(--ease);transform-style:preserve-3d;overflow:hidden}
+.p-card{border-radius:20px;border:1px solid rgba(100,180,255,0.08);background:linear-gradient(180deg,rgba(8,22,48,0.5) 0%,rgba(4,12,28,0.7) 100%);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:clamp(28px,4vw,44px);position:relative;transition:border-color .5s var(--ease),transform .5s var(--ease),box-shadow .5s var(--ease);transform-style:preserve-3d;overflow:hidden;min-width:0;display:flex;flex-direction:column;height:100%}
 /* Ultra premium: sem linha de luz genérica no topo dos cards */
 .p-card::before{display:none}
 .p-card::after{content:'';position:absolute;top:0;left:0;width:100px;height:60px;background:radial-gradient(ellipse at top left,rgba(100,180,255,0.03) 0%,transparent 70%);border-top-left-radius:inherit;pointer-events:none}
@@ -966,8 +966,11 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .p-val{font-family:var(--ff-display);font-size:clamp(44px,5vw,60px);font-weight:700;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
 .p-per{font-size:13px;color:var(--muted)}
 .p-div{width:100%;height:1px;background:var(--border);margin-bottom:20px}
-.p-feats{display:flex;flex-direction:column;gap:0;margin-bottom:28px}
-.p-feat{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--dim);line-height:1.4;padding:9px 0;border-bottom:1px solid rgba(100,180,255,0.04)}
+.p-feats{display:flex;flex-direction:column;gap:0;margin-bottom:28px;flex:1}
+.p-feat{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--dim);line-height:1.4;padding:9px 0;border-bottom:1px solid rgba(100,180,255,0.04)}
+.p-feat>span:last-child{min-width:0;overflow-wrap:break-word}
+.p-card-head{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:4px}
+.p-card-head .p-badge{margin-left:0}
 .p-feat:last-child{border-bottom:none}
 .p-feat strong{color:var(--white);font-weight:600}
 .p-feat--highlight{background:linear-gradient(90deg,rgba(100,180,255,0.04),transparent);margin:0 -20px;padding:9px 20px;border-radius:8px;border-bottom:none}
@@ -1614,7 +1617,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .stagger-parent.stagger-vis>:nth-child(9){transition-delay:.56s}
 
 /* ── Period Toggle ── */
-.period-switcher{display:inline-flex;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:4px;gap:4px}
+.period-switcher{display:inline-flex;flex-wrap:wrap;justify-content:center;max-width:100%;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:4px;gap:4px}
 .period-btn{background:transparent;border:none;padding:12px 20px;font-family:var(--ff-body);font-size:14px;font-weight:500;color:var(--dim);border-radius:10px;cursor:pointer;transition:color .3s var(--ease),background .3s var(--ease);display:inline-flex;align-items:center;gap:8px}
 .period-btn:hover{color:var(--white)}
 .period-btn.active{background:rgba(100,180,255,0.1);color:var(--white);box-shadow:0 2px 12px rgba(100,180,255,0.1)}
@@ -1865,7 +1868,8 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .p-card--rec::before{content:'';display:block;position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(100,180,255,0.14),transparent);pointer-events:none;z-index:1;animation:rec-breathe 6s var(--ease) infinite}
 @keyframes rec-breathe{0%,100%{opacity:0.3}50%{opacity:0.9}}
 .p-card--rec:hover{border-color:rgba(100,180,255,0.16);box-shadow:0 0 60px rgba(100,180,255,0.04)}
-@media(min-width:768px){.p-card--rec{transform:translateY(-8px)}.p-card--rec:hover{transform:translateY(-12px)}}
+@media(min-width:768px){.p-card--rec:hover{transform:translateY(-4px)}}
+@media(min-width:1200px){.p-card{padding:clamp(24px,2.5vw,36px)}.p-feat{font-size:12px}.p-val{font-size:clamp(36px,3.5vw,52px)}.p-monthly-eq{font-size:11px;line-height:1.4}}
 
 /* ── Price display ── */
 .p-price-wrap{min-height:90px;display:flex;flex-direction:column;justify-content:flex-end;margin-bottom:28px}
@@ -1873,7 +1877,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .p-price[data-period].active{display:flex}
 
 /* ── Feature comparison table ── */
-.cmp-wrap{margin-top:clamp(64px,8vw,96px);overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:20px;border:1px solid var(--border);scrollbar-width:thin;scrollbar-color:var(--border) transparent;background:rgba(4,11,24,0.5)}
+.cmp-wrap{margin-top:clamp(64px,8vw,96px);overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:20px;border:1px solid var(--border);scrollbar-width:thin;scrollbar-color:var(--border) transparent;background:rgba(4,11,24,0.5);max-width:100%;box-sizing:border-box}
 .cmp-wrap::-webkit-scrollbar{height:6px}
 .cmp-wrap::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
 .cmp-table{width:100%;min-width:860px;border-collapse:collapse;font-size:14px}
@@ -3344,7 +3348,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
         <div class="pricing-grid">
             <!-- RASO — Highlighted as entry point -->
             <div class="p-card p-card--entry rv rv-d1">
-                <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+                <div class="p-card-head">
                     <div class="p-name" style="color:var(--accent)">Raso</div>
                     <span class="p-badge p-badge--pop">Essencial</span>
                 </div>
@@ -3384,7 +3388,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 
             <!-- MARÉ — Cloaker only -->
             <div class="p-card p-card--mare rv rv-d2">
-                <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+                <div class="p-card-head">
                     <div class="p-name" style="color:var(--green)">Maré</div>
                     <span class="p-badge" style="background:rgba(52,211,153,0.12);color:var(--green);border:1px solid rgba(52,211,153,0.18)">Só Cloaker</span>
                 </div>
@@ -3416,6 +3420,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
                     <li class="p-feat"><span class="p-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Detecção de <strong>bots, VPNs</strong> e proxies</span></li>
                     <li class="p-feat"><span class="p-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Geo-targeting</strong> e device filtering</span></li>
                     <li class="p-feat"><span class="p-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Decision logs + regras por OS/idioma</span></li>
+                    <li class="p-feat"><span class="p-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>App mobile</strong> + notificações push</span></li>
                     <li class="p-feat p-feat--off"><span class="p-check"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span>Tracker server-side</span></li>
                 </ul>
                 <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p btn-full plan-link" data-plan="Maré">Ativar Cloaker</a>
@@ -3424,7 +3429,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 
             <!-- RECIFE -->
             <div class="p-card p-card--rec rv rv-d3">
-                <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+                <div class="p-card-head">
                     <div class="p-name" style="color:var(--accent)">Recife</div>
                     <span class="p-badge p-badge--pop">Mais Popular</span>
                 </div>
@@ -3464,7 +3469,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 
             <!-- ABISSAL -->
             <div class="p-card p-card--gold rv rv-d4">
-                <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+                <div class="p-card-head">
                     <div class="p-name" style="color:var(--gold)">Abissal</div>
                     <span class="p-badge p-badge--gold">Sem Limites</span>
                 </div>
@@ -3625,14 +3630,14 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
                         <div class="cmp-cat-divider"></div>
                     </td></tr>
 
-                    <tr><td>App nativo iOS + Android</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-mare cmp-no">&#10007;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
-                    <tr><td>Push notification a cada venda (campanha + valor)</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-mare cmp-no">&#10007;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>App nativo iOS + Android</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-mare cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Push notification a cada venda (campanha + valor)</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-mare cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
                     <tr><td>Dashboard mobile completo com funil e métricas</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-mare cmp-no">&#10007;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
                     <tr><td>Performance em tempo real no celular</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-mare cmp-no">&#10007;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
-                    <tr><td>Análise de cloaker no mobile (filtros, geo, devices, ISPs)</td><td class="cmp-no">&#10007;</td><td class="cmp-col-mare cmp-no">&#10007;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Análise de cloaker no mobile (filtros, geo, devices, ISPs)</td><td class="cmp-no">&#10007;</td><td class="cmp-col-mare cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
                     <tr><td>Filtros por campanha, data e UTMs no mobile</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-mare cmp-no">&#10007;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
                     <tr><td>Detalhes de cliques individuais (device, país, query)</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-mare cmp-no">&#10007;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
-                    <tr><td>Suporte via chat ao vivo no app</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-mare cmp-no">&#10007;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
+                    <tr><td>Suporte via chat ao vivo no app</td><td class="cmp-yes">&#10003;</td><td class="cmp-col-mare cmp-yes">&#10003;</td><td class="cmp-col-rec cmp-yes">&#10003;</td><td class="cmp-yes">&#10003;</td><td class="cmp-no">&#10007;</td></tr>
 
                     <!-- ═══════════════════════════════════════════
                          CATEGORIA 4: SONAR (MEMÓRIA OPERACIONAL)
@@ -3717,7 +3722,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
             <details class="faq-i rv rv-d1"><summary class="faq-q">Já uso outro tracker. É difícil migrar?</summary><div class="faq-a">Não. O BlackInk tem tutoriais passo a passo que guiam toda a configuração e migração das suas campanhas. A maioria dos usuários finaliza em menos de 30 minutos. Se tiver qualquer dificuldade, nossa equipe de suporte ajuda você diretamente até tudo estar funcionando.</div></details>
             <details class="faq-i rv rv-d2"><summary class="faq-q">O BlackInk se paga? Quanto posso economizar?</summary><div class="faq-a">O retorno depende do seu volume de investimento em Google Ads. Sem tracking server-side, uma parte significativa das conversões fica invisível — e sem cloaker, bots e tráfego inválido consomem orçamento sem gerar vendas. Use a <a href="#roi-calc" style="color:var(--accent);text-decoration:underline">calculadora de perdas</a> para simular com seu orçamento real e ver o impacto no seu cenário específico.</div></details>
             <details class="faq-i rv rv-d2"><summary class="faq-q">Qual a diferença do BlackInk para outros trackers?</summary><div class="faq-a">Trackers convencionais contam conversões. A BlackInk é uma infraestrutura completa: além do tracking 100% server-side (imune a iOS 14+, Safari ITP e ad blockers), ela integra cloaker em tempo real, controle direto de campanhas do Google Ads e memória operacional (Sonar) — tudo no mesmo servidor, com latência inferior a 50ms. Você não precisa de ferramentas separadas para filtrar tráfego, rastrear e gerenciar.</div></details>
-            <details class="faq-i rv rv-d3"><summary class="faq-q">Qual a diferença entre os planos?</summary><div class="faq-a"><strong>Raso</strong> (R$ 119,99/mês) — tracker completo, sem cloaker. <strong>Maré</strong> (R$ 399,99/mês) — somente cloaker: safe page, offer page, filtragem de bots/VPNs e regras geo/device. <strong>Recife</strong> (R$ 469,99/mês) — tracker + cloaker + Auction Insights. <strong>Abissal</strong> (R$ 999,99/mês) — tudo ilimitado com suporte prioritário. Todos com garantia de 7 dias.</div></details>
+            <details class="faq-i rv rv-d3"><summary class="faq-q">Qual a diferença entre os planos?</summary><div class="faq-a"><strong>Raso</strong> (R$ 119,99/mês) — tracker completo, sem cloaker. <strong>Maré</strong> (R$ 399,99/mês) — somente cloaker: safe page, offer page, filtragem de bots/VPNs, regras geo/device e app mobile com push. <strong>Recife</strong> (R$ 469,99/mês) — tracker + cloaker + Auction Insights. <strong>Abissal</strong> (R$ 999,99/mês) — tudo ilimitado com suporte prioritário. Todos com garantia de 7 dias.</div></details>
             <details class="faq-i rv rv-d4"><summary class="faq-q">Como funciona o cloaker do BlackInk?</summary><div class="faq-a">O cloaker analisa cada visitante antes de servir qualquer página — IP, fingerprint, ISP, geo, device e mais de 15 sinais em tempo real. Bots, crawlers, VPNs, proxies e revisores de anúncio do Google são roteados para uma safe page. Tráfego qualificado segue para a offer page. Tudo server-side, integrado ao tracker, com latência inferior a 50ms. Você configura regras por geo, dispositivo, OS e idioma direto no dashboard.</div></details>
             <details class="faq-i rv rv-d4"><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">O BlackInk oferece garantia incondicional de 7 dias em todos os planos. Você pode testar todas as funcionalidades sem restrição durante esse período. Se não ficar satisfeito, o reembolso é de 100% do valor pago — sem perguntas, sem burocracia e sem letras miúdas.</div></details>
             <details class="faq-i rv rv-d5"><summary class="faq-q">Como funciona o tracking server-side?</summary><div class="faq-a">O tracking server-side do BlackInk funciona em 3 etapas. Primeiro, um tracker.js captura dados diretamente no servidor: visitor_id, session_uuid, gclid/wbraid/gbraid, UTMs, dispositivo, keyword e match_type. Segundo, parâmetros de rastreamento são injetados automaticamente nas principais plataformas de afiliação (ClickBank, Buygoods, GuruMidia, MaxWeb, CartPanda e outras). Terceiro, os dados de conversão são enviados direto para a Google Ads API — sem depender de cookies de terceiros, imune a iOS 14+ e ad blockers.</div></details>
