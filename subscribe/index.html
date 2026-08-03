@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escolha Seu Plano — BlackInk</title>
-    <meta name="description" content="Selecione seu plano e comece a rastrear suas campanhas com o tracker mais avançado do mercado.">
+    <meta name="description" content="Escolha seu plano BlackInk — cloaker a partir de R$ 399,99/mês ou stack completo com tracker. Garantia de 7 dias.">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -99,6 +99,7 @@
         .plan-card:nth-child(1){animation-delay:.1s}
         .plan-card:nth-child(2){animation-delay:.2s}
         .plan-card:nth-child(3){animation-delay:.3s}
+        .plan-card:nth-child(4){animation-delay:.4s}
         @keyframes card-in{from{opacity:0;transform:translateY(40px) scale(0.95)}to{opacity:1;transform:translateY(0) scale(1)}}
 
         .plan-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
@@ -108,6 +109,11 @@
         /* Featured Plan */
         .plan-card--featured{border-color:rgba(100,180,255,0.2);box-shadow:0 0 60px rgba(100,180,255,0.08)}
         .plan-card--featured:hover{border-color:rgba(100,180,255,0.35);box-shadow:0 24px 80px rgba(100,180,255,0.18)}
+
+        /* Maré Plan — cloaker-only */
+        .plan-card--mare{border-color:rgba(52,211,153,0.18)}
+        .plan-card--mare::before{background:linear-gradient(90deg,#34d399,#10b981)}
+        .plan-card--mare:hover{border-color:rgba(52,211,153,0.35);box-shadow:0 24px 60px rgba(52,211,153,0.1)}
 
         /* Gold Plan */
         .plan-card--gold{border-color:rgba(251,191,36,0.15)}
@@ -328,9 +334,9 @@
         <div class="container">
             <!-- Page Header -->
             <div class="page-header">
-                <h1 class="t-xl page-title">Escolha sua <span class="grad">profundidade</span></h1>
+                <h1 class="t-xl page-title">Escolha seu <span class="grad">cloaker</span></h1>
                 <p class="t-body page-subtitle">
-                    Selecione seu plano e comece a rastrear suas campanhas hoje mesmo.
+                    Cloaker puro a partir de R$ 399,99/mês — ou stack completo com tracker integrado.
                 </p>
             </div>
 
@@ -365,7 +371,30 @@
                         <div class="plan-price" data-period="quarterly">R$ 323,97<span>/tri</span></div>
                         <div class="plan-price" data-period="yearly">R$ 1.223,90<span>/ano</span></div>
                     </div>
-                    <button class="btn btn-p plan-cta" data-plan="Raso" disabled style="opacity:.55;cursor:not-allowed">Em Breve</button>
+                    <button class="btn btn-p plan-cta" data-plan="Raso">Começar Agora</button>
+                </div>
+
+                <div class="plan-card plan-card--mare" data-plan="Maré" data-price-monthly="399.99" data-price-quarterly="1079.97" data-price-yearly="4079.90">
+                    <span class="plan-badge" style="background:linear-gradient(135deg,#34d399,#10b981)">SÓ CLOAKER</span>
+                    <span class="plan-icon">🌀</span>
+                    <div class="check-icon"></div>
+                    <h3 class="plan-name">MARÉ</h3>
+                    <p class="plan-description">Cloaker server-side — sem tracker</p>
+                    <ul class="plan-features">
+                        <li>Cloaker server-side completo</li>
+                        <li>Safe page / Offer page</li>
+                        <li>Detecção de bots, VPNs e proxies</li>
+                        <li>Geo-targeting e device filtering</li>
+                        <li>Regras por OS, idioma e ISP</li>
+                        <li>Decision logs completos</li>
+                        <li>Até 10 campanhas cloaker</li>
+                    </ul>
+                    <div class="plan-price-wrap">
+                        <div class="plan-price active" data-period="monthly">R$ 399,99<span>/mês</span></div>
+                        <div class="plan-price" data-period="quarterly">R$ 1.079,97<span>/tri</span></div>
+                        <div class="plan-price" data-period="yearly">R$ 4.079,90<span>/ano</span></div>
+                    </div>
+                    <button class="btn btn-p plan-cta" data-plan="Maré">Ativar Cloaker</button>
                 </div>
 
                 <div class="plan-card plan-card--featured" data-plan="Recife" data-price-monthly="469.99" data-price-quarterly="1268.97" data-price-yearly="4793.90">
@@ -373,7 +402,7 @@
                     <span class="plan-icon">🦈</span>
                     <div class="check-icon"></div>
                     <h3 class="plan-name">RECIFE</h3>
-                    <p class="plan-description">Tracker + Cloaker</p>
+                    <p class="plan-description">Tracker + Cloaker completo</p>
                     <ul class="plan-features">
                         <li>Tudo do Raso +</li>
                         <li>Cloaker server-side completo</li>
@@ -388,7 +417,7 @@
                         <div class="plan-price" data-period="quarterly">R$ 1.268,97<span>/tri</span></div>
                         <div class="plan-price" data-period="yearly">R$ 4.793,90<span>/ano</span></div>
                     </div>
-                    <button class="btn btn-p plan-cta" data-plan="Recife" disabled style="opacity:.55;cursor:not-allowed">Em Breve</button>
+                    <button class="btn btn-p plan-cta" data-plan="Recife">Começar Agora</button>
                 </div>
 
                 <div class="plan-card plan-card--gold" data-plan="Abissal" data-price-monthly="999.99" data-price-quarterly="2699.97" data-price-yearly="10199.90">
@@ -409,7 +438,7 @@
                         <div class="plan-price" data-period="quarterly">R$ 2.699,97<span>/tri</span></div>
                         <div class="plan-price" data-period="yearly">R$ 10.199,90<span>/ano</span></div>
                     </div>
-                    <button class="btn btn-p plan-cta" data-plan="Abissal" disabled style="opacity:.55;cursor:not-allowed">Em Breve</button>
+                    <button class="btn btn-p plan-cta" data-plan="Abissal">Começar Agora</button>
                 </div>
             </div>
 

@@ -390,14 +390,14 @@
                     <div class="register-info-logo">
                         <img src="../logo-full-clean.png" alt="BlackInk">
                     </div>
-                    <h1 class="t-xl register-info-title">
+                    <h1 class="t-xl register-info-title" id="infoTitle">
                         Rastreie como <span class="grad">nunca antes</span>
                     </h1>
-                    <p class="t-body register-info-subtitle">
+                    <p class="t-body register-info-subtitle" id="infoSubtitle">
                         Crie sua conta e tenha acesso ao tracker mais avançado do mercado brasileiro.
                     </p>
 
-                    <div class="register-features">
+                    <div class="register-features" id="infoFeatures">
                         <div class="register-feature">
                             <div class="register-feature-icon">
                                 <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
@@ -453,7 +453,7 @@
                         <div class="selected-plan-icon" id="planIcon">🌊</div>
                         <div class="selected-plan-info">
                             <div class="selected-plan-name" id="planName">Raso</div>
-                            <div class="selected-plan-price" id="planPrice">R$ 114,99/mês</div>
+                            <div class="selected-plan-price" id="planPrice">R$ 119,99/mês</div>
                         </div>
                         <div class="selected-plan-change">
                             <a href="/subscribe/">Alterar</a>
@@ -555,8 +555,8 @@
                         </div>
 
                         <div class="btn-group">
-                            <button type="submit" class="btn btn-p" id="submitBtn" disabled style="opacity:.55;cursor:not-allowed">
-                                Inscrições em breve
+                            <button type="submit" class="btn btn-p" id="submitBtn">
+                                Continuar para Pagamento
                             </button>
                         </div>
                     </form>
@@ -628,6 +628,7 @@
     // Plans Data
     const PLANS = {
         'Raso': { icon: '🌊', price: 'R$ 119,99/mês', priceValue: 119.99 },
+        'Maré': { icon: '🌀', price: 'R$ 399,99/mês', priceValue: 399.99 },
         'Recife': { icon: '🦈', price: 'R$ 469,99/mês', priceValue: 469.99 },
         'Abissal': { icon: '🦑', price: 'R$ 999,99/mês', priceValue: 999.99 }
     };
@@ -665,6 +666,61 @@
         priceDisplay = `R$ ${yearlyPrice}/ano`;
     }
     document.getElementById('planPrice').textContent = priceDisplay;
+
+    // Sidebar copy by plan
+    const PLAN_SIDEBAR = {
+        'Maré': {
+            title: 'Ative seu <span class="grad">cloaker</span>',
+            subtitle: 'Bots veem uma página. Compradores veem outra. Configure em minutos e filtre tráfego antes de gastar.',
+            features: [
+                { strong: 'Safe Page / Offer Page', span: 'Roteamento server-side em menos de 50ms' },
+                { strong: 'Filtragem de Bots & VPNs', span: 'Crawlers, proxies e revisores do Google bloqueados' },
+                { strong: 'Regras por Geo & Device', span: 'Geo-targeting, OS, idioma e device filtering no dashboard' }
+            ]
+        },
+        'Raso': {
+            title: 'Rastreie como <span class="grad">nunca antes</span>',
+            subtitle: 'Tracker server-side imune a iOS 14+ e ad blockers — dados reais para escalar no Google Ads.',
+            features: [
+                { strong: 'Tracking Server-Side', span: 'Funciona mesmo com iOS 14+ e ad blockers' },
+                { strong: 'Métricas em Tempo Real', span: 'ROAS, CPA, Lucro e ROI atualizados a cada segundo' },
+                { strong: 'App Mobile', span: 'Push notification a cada venda, onde você estiver' }
+            ]
+        },
+        'Recife': {
+            title: 'Cloaker + Tracker <span class="grad">unificados</span>',
+            subtitle: 'Filtre bots e rastreie conversões no mesmo dashboard — a stack completa para Google Ads.',
+            features: [
+                { strong: 'Cloaker Server-Side', span: 'Safe page, offer page e filtragem em tempo real' },
+                { strong: 'Tracking Server-Side', span: 'Conversões imunes a iOS 14+ e ad blockers' },
+                { strong: 'Auction Insights', span: 'Monitore concorrentes e otimize lances' }
+            ]
+        },
+        'Abissal': {
+            title: 'Escale sem <span class="grad">limites</span>',
+            subtitle: 'Cloaker, tracker e suporte VIP — campanhas ilimitadas para quem opera em volume.',
+            features: [
+                { strong: 'Cloaker + Tracker Completo', span: 'Tudo do Recife sem teto de campanhas' },
+                { strong: 'Multi-conta Google Ads (MCC)', span: 'Até 50 contas adicionais' },
+                { strong: 'Suporte Prioritário', span: 'Atendimento VIP para operações críticas' }
+            ]
+        }
+    };
+
+    const sidebar = PLAN_SIDEBAR[plan] || PLAN_SIDEBAR['Raso'];
+    document.getElementById('infoTitle').innerHTML = sidebar.title;
+    document.getElementById('infoSubtitle').textContent = sidebar.subtitle;
+    document.getElementById('infoFeatures').innerHTML = sidebar.features.map(f => `
+        <div class="register-feature">
+            <div class="register-feature-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="register-feature-text">
+                <strong>${f.strong}</strong>
+                <span>${f.span}</span>
+            </div>
+        </div>
+    `).join('');
 
     // Form elements
     const form = document.getElementById('registerForm');
@@ -765,9 +821,6 @@
     // Form submission
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        // ponytail: inscrições pausadas — bloqueia cadastro/checkout no front.
-        // Reativar: remover este return + o disabled do #submitBtn.
-        return;
 
         const name = nameInput.value.trim();
         const email = emailInput.value.trim();

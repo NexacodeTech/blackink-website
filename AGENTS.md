@@ -68,4 +68,10 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Regra**: se adicionar tabs ao Sonar, manter máximo 4 para progressive disclosure.
 **Status**: ativo
 
+## 2026-08-03 — Plano Maré (cloaker-only R$399,99)
+**Contexto**: novo tier entre Raso e Recife; CTAs liberados; cadastro reativado.
+**Mudanças**: plano Maré em index/subscribe/cadastro/termos; comparison table 5 cols; cadastro sidebar plan-aware; submit "Continuar para Pagamento" ativo.
+**Regra**: Maré = só cloaker (sem tracker/app/sonar); Recife = tracker + cloaker.
+**Status**: ativo
+
 <!-- Novas entradas abaixo -->
