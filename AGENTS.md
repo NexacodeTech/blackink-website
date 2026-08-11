@@ -85,6 +85,11 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Mudanças**: removido `.github/workflows/deploy.yml` (S3 sync + invalidação CloudFront); deploy ativo é `.github/workflows/ftp-deploy.yml` no push à branch `production`.
 **Regra**: não reintroduzir workflow AWS; credencial FTP via secret `FTP_PASSWORD` no GitHub (nunca hardcode).
 **Status**: ativo
+
+## 2026-08-11 — Produto único R$399,99 (sem tiers)
+**Contexto**: tiers Maré/Recife/Abissal removidos; BlackInk vende um único cloaker a R$ 399,99/mês.
+**Mudanças**: pricing single-card na landing; subscribe redireciona para cadastro; cadastro default plan=Maré (nome API interno); comparison table entre tiers removida; FAQ sem comparação de planos.
+**Regra**: não reintroduzir tiers ou seleção de plano no site — um produto, um preço. API `plan_name` continua `Maré` até backend migrar.
 **Status**: ativo
 
 <!-- Novas entradas abaixo -->

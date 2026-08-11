@@ -418,27 +418,24 @@ Cards with avatar, quote, and author info.
 
 ## 4. Pricing
 
-Real Blackink plans: Maré, Recife, Abissal (source: landing `index.html`, `cadastro/index.html`). Cloaker-only product — Raso removed.
+Real Blackink product: **BlackInk Cloaker** — single product at R$ 399,99/mês (API plan name: `Maré`). Cloaker-only, no tiers.
 
 ### Plan Data Reference
 
-| | Free | Maré | Recife | Abissal |
-|---|---|---|---|---|
-| **Preço** | R$ 0 | R$ 399,99/mês | R$ 469,99/mês | R$ 999,99/mês |
-| **Campanhas cloaker** | 1 | 10 | 25 | Ilimitado |
-| **Cloaker server-side** | básico | &#10003; | &#10003; | &#10003; |
-| **Safe / Offer page** | — | &#10003; | &#10003; | &#10003; |
-| **Filtragem bots/VPNs** | básico | &#10003; | &#10003; | &#10003; |
-| **Decision logs** | — | &#10003; | &#10003; | &#10003; |
-| **Auction Insights** | — | &#10005; | &#10003; | &#10003; |
-| **Rate limiting / ISP lists** | — | &#10005; | &#10003; | &#10003; |
-| **Contas Google Ads** | 1 | 1 | 5 | Até 50 (MCC) |
-| **App Mobile + Push** | — | &#10003; | &#10003; | &#10003; |
-| **Suporte WhatsApp prioritário** | &#10005; | &#10005; | &#10003; | &#10003; VIP |
+| | Free | BlackInk Cloaker |
+|---|---|---|
+| **Preço** | R$ 0 (7 dias) | R$ 399,99/mês |
+| **Cloaker server-side** | básico | &#10003; |
+| **Safe / Offer page** | — | &#10003; |
+| **Filtragem bots/VPNs/revisores** | básico | &#10003; |
+| **Decision logs** | — | &#10003; |
+| **Geo/device filtering** | — | &#10003; |
+| **App Mobile + Push** | — | &#10003; |
+| **Períodos** | — | Mensal / Trimestral (-10%) / Anual (-15%) |
 
 ### HTML
 
-> **Nota:** O exemplo abaixo é legado (pré-pivot cloaker-only). Fonte de verdade: `index.html` seção `#pricing` e `subscribe/index.html`.
+> **Nota:** Fonte de verdade: `index.html` seção `#pricing` (single card) e `cadastro/index.html`. `subscribe/index.html` redireciona para cadastro.
 
 ```html
 <section class="section">

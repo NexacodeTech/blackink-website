@@ -1,5 +1,7 @@
 # Atualização de Preços - BlackInk
 
+> **⚠️ OBSOLETO (2026-08-11):** Este documento descreve o modelo antigo com múltiplos planos (Raso/Recife/Abissal). O produto atual é **um único cloaker a R$ 399,99/mês**. Fonte de verdade: `index.html` seção `#pricing`, `cadastro/index.html`, `termos-de-uso/index.html`.
+
 ## Resumo das Alterações
 
 Todos os preços dos planos foram atualizados conforme solicitado:

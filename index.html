@@ -2556,7 +2556,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
             <div class="showcase-text">
                 <div class="t-label">Filtragem Avançada</div>
                 <h2 class="t-lg">Regras granulares.<br><span class="grad">Controle total do tráfego.</span></h2>
-                <p class="t-body-lg">Geo, device, OS, idioma, ISP e listas customizadas. No plano Recife+, Auction Insights para monitorar concorrentes enquanto o cloaker filtra.</p>
+                <p class="t-body-lg">Geo, device, OS, idioma, ISP e listas customizadas. Rate limiting e decision logs para controle total do tráfego enquanto o cloaker filtra bots e revisores.</p>
                 <div class="showcase-features">
                     <div class="showcase-feat">
                         <div class="showcase-feat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
@@ -2564,7 +2564,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
                     </div>
                     <div class="showcase-feat">
                         <div class="showcase-feat-icon"><svg viewBox="0 0 24 24"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg></div>
-                        <div class="showcase-feat-text"><strong>Auction Insights</strong> — Share de impressão e posição vs concorrentes (Recife+).</div>
+                        <div class="showcase-feat-text"><strong>Decision logs</strong> — Motivo de bloqueio por visitante em tempo real.</div>
                     </div>
                     <div class="showcase-feat">
                         <div class="showcase-feat-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg></div>
@@ -2779,7 +2779,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
                 <!-- CTA -->
                 <div class="calc-cta">
                     <p class="calc-cta-text" id="calc-cta-msg">Mova o slider para ver quanto você está perdendo.</p>
-                    <a href="#pricing" class="btn btn-p">Parar de Pagar por Bots</a>
+                    <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link" data-plan="Maré">Parar de Pagar por Bots</a>
                 </div>
             </div>
         </div>
@@ -2896,7 +2896,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
                 <div class="guarantee-pillar">
                     <div class="guarantee-pillar-ico"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
                     <h4>Acesso Total</h4>
-                    <p>Teste cada funcionalidade do plano escolhido sem restrição nenhuma.</p>
+                    <p>Teste cada funcionalidade do cloaker sem restrição nenhuma.</p>
                 </div>
             </div>
 
@@ -3007,7 +3007,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
     <div class="container">
         <div class="f-grid">
             <div class="f-brand"><a href="#" class="hdr-logo" style="font-size:22px">Black<span>Ink</span></a><p>Cloaker server-side para quem opera Google Ads a sério.</p></div>
-            <div><div class="f-col-t">Produto</div><div class="f-links"><a href="#features">Cloaker</a><a href="#pricing">Planos</a><a href="https://app.blackink.cloud">Dashboard</a></div></div>
+            <div><div class="f-col-t">Produto</div><div class="f-links"><a href="#features">Cloaker</a><a href="#pricing">Preço</a><a href="https://app.blackink.cloud">Dashboard</a></div></div>
             <div><div class="f-col-t">Comunidade</div><div class="f-links"><a href="https://chat.whatsapp.com/D3slD0HlbLZFazU41H08Ih" target="_blank" rel="noopener">WhatsApp</a><a href="#faq">FAQ</a></div></div>
             <div><div class="f-col-t">Legal</div><div class="f-links"><a href="/politica-de-privacidade/">Política de Privacidade</a><a href="/termos-de-uso/">Termos de Uso</a></div></div>
         </div>
@@ -3428,8 +3428,7 @@ if (calcSlider) {
         const fraud = val * 0.22;
         const reviewers = val * 0.03;
         const total = fraud + reviewers;
-        const planCost = val <= 50000 ? 399.99 : val <= 150000 ? 469.99 : 999.99;
-        const planName = val <= 50000 ? 'Maré' : val <= 150000 ? 'Recife' : 'Abissal';
+        const planCost = 399.99;
         const roi = planCost > 0 ? Math.round((total / planCost) * 10) / 10 : 0;
         const hours = Math.min(Math.round(4 + Math.sqrt(val / 10000) * 2.5), 12);
 
@@ -3445,7 +3444,7 @@ if (calcSlider) {
         if (calcRoiBar) calcRoiBar.style.width = Math.max(Math.min((roi / 15) * 100, 100), 2) + '%';
 
         if (val > 0) {
-            calcMsg.innerHTML = 'Com o plano <strong>' + planName + ' (R$ ' + planCost.toFixed(2).replace('.', ',') + '/mês)</strong> você pode recuperar até <strong>' + fmt(total) + '/mês</strong>. ROI de <strong>' + roi.toFixed(1) + 'x</strong>.';
+            calcMsg.innerHTML = 'O cloaker a <strong>R$ 399,99/mês</strong> pode recuperar até <strong>' + fmt(total) + '/mês</strong> do seu budget. ROI de <strong>' + roi.toFixed(1) + 'x</strong>.';
         }
     };
 
@@ -4107,7 +4106,7 @@ LAYERS.forEach(layer => {
   <div class="hscroll-dot" data-panel="1" tabindex="0" role="button" aria-label="Dashboard Cloaker"></div>
   <div class="hscroll-dot" data-panel="2" tabindex="0" role="button" aria-label="Filtragem Avançada"></div>
   <div class="hscroll-counter" id="hscroll-counter">1 / 3</div>
-  <a href="#pricing" class="hscroll-skip" id="hscroll-skip">Ver Planos ↓</a>
+  <a href="#pricing" class="hscroll-skip" id="hscroll-skip">Ver Preço ↓</a>
 </nav>
 
 <!-- Cursor glow -->
@@ -4117,7 +4116,7 @@ LAYERS.forEach(layer => {
 <!-- Sticky CTA -->
 <div class="sticky-cta" id="sticky-cta" aria-hidden="true">
     <div class="sticky-cta-inner">
-        <p class="sticky-cta-text">Cloaker server-side a partir de <strong>R$ 399,99/mês</strong> — filtre bots antes de gastar</p>
+        <p class="sticky-cta-text">Cloaker server-side — <strong>R$ 399,99/mês</strong>. Bots veem safe page, compradores veem offer page.</p>
         <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link" data-plan="Maré">Ativar Cloaker</a>
         <button class="sticky-cta-close" id="sticky-cta-close" aria-label="Fechar">&times;</button>
     </div>
