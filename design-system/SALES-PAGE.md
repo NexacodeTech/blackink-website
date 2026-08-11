@@ -435,7 +435,7 @@ Real Blackink product: **BlackInk Cloaker** — single product at R$ 399,99/mês
 
 ### HTML
 
-> **Nota:** Fonte de verdade: `index.html` seção `#pricing` (single card) e `cadastro/index.html`. `subscribe/index.html` redireciona para cadastro.
+> **Nota:** Fonte de verdade: `index.html` seção `#pricing` (narrativa em 3 atos + reveal de preço) e `cadastro/index.html`. `subscribe/index.html` redireciona para cadastro.
 
 ```html
 <section class="section">

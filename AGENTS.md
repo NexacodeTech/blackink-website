@@ -92,4 +92,10 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Regra**: não reintroduzir tiers ou seleção de plano no site — um produto, um preço. API `plan_name` continua `Maré` até backend migrar.
 **Status**: ativo
 
+## 2026-08-11 — Pricing narrativo (produto único)
+**Contexto**: preço não pode parecer lista de planos — usuário escolhe só periodicidade (mensal/trimestral/anual).
+**Mudanças**: seção `#pricing` em 3 atos (custo → valor → investimento); switcher "Como prefere pagar?"; nav "Investimento"; cadastro "Resumo da assinatura" com linha de cobrança.
+**Regra**: framing de billing period, nunca de tier/plano múltiplo.
+**Status**: ativo
+
 <!-- Novas entradas abaixo -->
