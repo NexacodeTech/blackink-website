@@ -391,10 +391,10 @@
                         <img src="../logo-full-clean.png" alt="BlackInk">
                     </div>
                     <h1 class="t-xl register-info-title" id="infoTitle">
-                        Rastreie como <span class="grad">nunca antes</span>
+                        Ative seu <span class="grad">cloaker</span>
                     </h1>
                     <p class="t-body register-info-subtitle" id="infoSubtitle">
-                        Crie sua conta e tenha acesso ao tracker mais avançado do mercado brasileiro.
+                        Crie sua conta e filtre bots, VPNs e revisores antes de gastar no Google Ads.
                     </p>
 
                     <div class="register-features" id="infoFeatures">
@@ -403,8 +403,8 @@
                                 <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                             </div>
                             <div class="register-feature-text">
-                                <strong>Tracking Server-Side</strong>
-                                <span>Funciona mesmo com iOS 14+ e ad blockers</span>
+                                <strong>Safe Page / Offer Page</strong>
+                                <span>Roteamento server-side em menos de 50ms</span>
                             </div>
                         </div>
                         <div class="register-feature">
@@ -412,8 +412,8 @@
                                 <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
                             </div>
                             <div class="register-feature-text">
-                                <strong>Métricas em Tempo Real</strong>
-                                <span>ROAS, CPA, Lucro e ROI atualizados a cada segundo</span>
+                                <strong>Filtragem Multi-Sinal</strong>
+                                <span>Bots, VPNs, proxies e revisores bloqueados em tempo real</span>
                             </div>
                         </div>
                         <div class="register-feature">
@@ -422,7 +422,7 @@
                             </div>
                             <div class="register-feature-text">
                                 <strong>App Mobile</strong>
-                                <span>Push notification a cada venda, onde você estiver</span>
+                                <span>Push de alertas quando bots ou revisores são detectados</span>
                             </div>
                         </div>
                     </div>
@@ -452,7 +452,7 @@
                     <div class="selected-plan" id="selectedPlan">
                         <div class="selected-plan-icon" id="planIcon">🌊</div>
                         <div class="selected-plan-info">
-                            <div class="selected-plan-name" id="planName">Raso</div>
+                            <div class="selected-plan-name" id="planName">Maré</div>
                             <div class="selected-plan-price" id="planPrice">R$ 119,99/mês</div>
                         </div>
                         <div class="selected-plan-change">
@@ -627,7 +627,6 @@
 
     // Plans Data
     const PLANS = {
-        'Raso': { icon: '🌊', price: 'R$ 119,99/mês', priceValue: 119.99 },
         'Maré': { icon: '🌀', price: 'R$ 399,99/mês', priceValue: 399.99 },
         'Recife': { icon: '🦈', price: 'R$ 469,99/mês', priceValue: 469.99 },
         'Abissal': { icon: '🦑', price: 'R$ 999,99/mês', priceValue: 999.99 }
@@ -671,43 +670,34 @@
     const PLAN_SIDEBAR = {
         'Maré': {
             title: 'Ative seu <span class="grad">cloaker</span>',
-            subtitle: 'Bots veem uma página. Compradores veem outra. Configure em minutos e filtre tráfego antes de gastar.',
+            subtitle: 'Bots veem safe page. Compradores veem offer page. Configure em minutos e filtre tráfego antes de gastar.',
             features: [
                 { strong: 'Safe Page / Offer Page', span: 'Roteamento server-side em menos de 50ms' },
                 { strong: 'Filtragem de Bots & VPNs', span: 'Crawlers, proxies e revisores do Google bloqueados' },
-                { strong: 'App Mobile', span: 'Push notification a cada venda, onde você estiver' }
-            ]
-        },
-        'Raso': {
-            title: 'Rastreie como <span class="grad">nunca antes</span>',
-            subtitle: 'Tracker server-side imune a iOS 14+ e ad blockers — dados reais para escalar no Google Ads.',
-            features: [
-                { strong: 'Tracking Server-Side', span: 'Funciona mesmo com iOS 14+ e ad blockers' },
-                { strong: 'Métricas em Tempo Real', span: 'ROAS, CPA, Lucro e ROI atualizados a cada segundo' },
-                { strong: 'App Mobile', span: 'Push notification a cada venda, onde você estiver' }
+                { strong: 'App Mobile', span: 'Push de alertas quando bots ou revisores são detectados' }
             ]
         },
         'Recife': {
-            title: 'Cloaker + Tracker <span class="grad">unificados</span>',
-            subtitle: 'Filtre bots e rastreie conversões no mesmo dashboard — a stack completa para Google Ads.',
+            title: 'Cloaker <span class="grad">avançado</span>',
+            subtitle: 'Até 25 campanhas, Auction Insights e filtragem avançada — para quem escala no Google Ads.',
             features: [
-                { strong: 'Cloaker Server-Side', span: 'Safe page, offer page e filtragem em tempo real' },
-                { strong: 'Tracking Server-Side', span: 'Conversões imunes a iOS 14+ e ad blockers' },
-                { strong: 'Auction Insights', span: 'Monitore concorrentes e otimize lances' }
+                { strong: 'Auction Insights', span: 'Monitore concorrentes enquanto filtra tráfego' },
+                { strong: 'Rate Limiting', span: 'Bloqueio automático de picos anômalos e ISPs suspeitos' },
+                { strong: 'Suporte WhatsApp', span: 'Atendimento prioritário para operações críticas' }
             ]
         },
         'Abissal': {
             title: 'Escale sem <span class="grad">limites</span>',
-            subtitle: 'Cloaker, tracker e suporte VIP — campanhas ilimitadas para quem opera em volume.',
+            subtitle: 'Cloaker enterprise com campanhas ilimitadas e suporte VIP — para quem opera em volume.',
             features: [
-                { strong: 'Cloaker + Tracker Completo', span: 'Tudo do Recife sem teto de campanhas' },
+                { strong: 'Campanhas Ilimitadas', span: 'Sem teto de campanhas cloaker ativas' },
                 { strong: 'Multi-conta Google Ads (MCC)', span: 'Até 50 contas adicionais' },
-                { strong: 'Suporte Prioritário', span: 'Atendimento VIP para operações críticas' }
+                { strong: 'Suporte VIP', span: 'Atendimento dedicado para operações críticas' }
             ]
         }
     };
 
-    const sidebar = PLAN_SIDEBAR[plan] || PLAN_SIDEBAR['Raso'];
+    const sidebar = PLAN_SIDEBAR[plan] || PLAN_SIDEBAR['Maré'];
     document.getElementById('infoTitle').innerHTML = sidebar.title;
     document.getElementById('infoSubtitle').textContent = sidebar.subtitle;
     document.getElementById('infoFeatures').innerHTML = sidebar.features.map(f => `

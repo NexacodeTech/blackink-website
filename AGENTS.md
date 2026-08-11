@@ -72,6 +72,12 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Contexto**: novo tier entre Raso e Recife; CTAs liberados; cadastro reativado.
 **Mudanças**: plano Maré em index/subscribe/cadastro/termos; comparison table 5 cols; cadastro sidebar plan-aware; submit "Continuar para Pagamento" ativo.
 **Regra**: Maré = cloaker-only com App Mobile (sem tracker/sonar); Recife = tracker + cloaker.
+**Status**: superseded por pivot cloaker-only (2026-08-11)
+
+## 2026-08-11 — Pivot cloaker-only (produto único)
+**Contexto**: tracker removido como produto; BlackInk é 100% cloaker server-side para Google Ads.
+**Mudanças**: plano Raso removido; 3 tiers cloaker (Maré/Recife/Abissal); Sonar, postback, funil e seções tracker removidas da landing; comparison table só cloaker; cadastro PLANS sem Raso.
+**Regra**: não reintroduzir tracker como produto ou plano — falar de cloaker, safe page, offer page, bots, VPNs, revisores Google Ads.
 **Status**: ativo
 
 <!-- Novas entradas abaixo -->

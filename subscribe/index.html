@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escolha Seu Plano — BlackInk</title>
-    <meta name="description" content="Escolha seu plano BlackInk — cloaker a partir de R$ 399,99/mês ou stack completo com tracker. Garantia de 7 dias.">
+    <meta name="description" content="Escolha seu plano BlackInk — cloaker server-side a partir de R$ 399,99/mês. Garantia de 7 dias.">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -95,13 +95,12 @@
         /* ── Plans Grid ── */
         .plans-grid{display:grid;grid-template-columns:1fr;gap:clamp(20px,3vw,32px);margin-bottom:clamp(48px,8vw,80px);width:100%;max-width:100%}
         @media(min-width:640px){.plans-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-        @media(min-width:1200px){.plans-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+        @media(min-width:900px){.plans-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 
         .plan-card{background:var(--surface);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:20px;padding:clamp(28px,4vw,36px);transition:all .4s var(--ease);cursor:pointer;position:relative;overflow:hidden;animation:card-in .8s var(--ease) both;min-width:0;display:flex;flex-direction:column;height:100%}
         .plan-card:nth-child(1){animation-delay:.1s}
         .plan-card:nth-child(2){animation-delay:.2s}
         .plan-card:nth-child(3){animation-delay:.3s}
-        .plan-card:nth-child(4){animation-delay:.4s}
         @keyframes card-in{from{opacity:0;transform:translateY(40px) scale(0.95)}to{opacity:1;transform:translateY(0) scale(1)}}
 
         .plan-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
@@ -338,7 +337,7 @@
             <div class="page-header">
                 <h1 class="t-xl page-title">Escolha seu <span class="grad">cloaker</span></h1>
                 <p class="t-body page-subtitle">
-                    Cloaker puro a partir de R$ 399,99/mês — ou stack completo com tracker integrado.
+                    Cloaker server-side a partir de R$ 399,99/mês. Três tiers — escale conforme seu volume.
                 </p>
             </div>
 
@@ -353,41 +352,17 @@
 
             <!-- Plans Grid -->
             <div class="plans-grid" id="plansGrid">
-                <div class="plan-card" data-plan="Raso" data-price-monthly="119.99" data-price-quarterly="323.97" data-price-yearly="1223.90">
-                    <span class="plan-icon">🌊</span>
-                    <div class="check-icon"></div>
-                    <h3 class="plan-name">RASO</h3>
-                    <p class="plan-description">Tracker completo para escalar</p>
-                    <ul class="plan-features">
-                        <li>Tracker server-side completo</li>
-                        <li>Controle de campanhas Google Ads</li>
-                        <li>Termos de busca com ROAS</li>
-                        <li>Funil de 7 etapas</li>
-                        <li>30+ checkouts suportados</li>
-                        <li>Dashboard financeiro</li>
-                        <li>App Mobile + Push</li>
-                        <li>Teste A/B integrado</li>
-                    </ul>
-                    <div class="plan-price-wrap">
-                        <div class="plan-price active" data-period="monthly">R$ 119,99<span>/mês</span></div>
-                        <div class="plan-price" data-period="quarterly">R$ 323,97<span>/tri</span></div>
-                        <div class="plan-price" data-period="yearly">R$ 1.223,90<span>/ano</span></div>
-                    </div>
-                    <button class="btn btn-p plan-cta" data-plan="Raso">Começar Agora</button>
-                </div>
-
                 <div class="plan-card plan-card--mare" data-plan="Maré" data-price-monthly="399.99" data-price-quarterly="1079.97" data-price-yearly="4079.90">
-                    <span class="plan-badge" style="background:linear-gradient(135deg,#34d399,#10b981)">SÓ CLOAKER</span>
+                    <span class="plan-badge" style="background:linear-gradient(135deg,#34d399,#10b981)">ENTRADA</span>
                     <span class="plan-icon">🌀</span>
                     <div class="check-icon"></div>
                     <h3 class="plan-name">MARÉ</h3>
-                    <p class="plan-description">Cloaker server-side — sem tracker</p>
+                    <p class="plan-description">Cloaker essencial — até 10 campanhas</p>
                     <ul class="plan-features">
                         <li>Cloaker server-side completo</li>
                         <li>Safe page / Offer page</li>
                         <li>Detecção de bots, VPNs e proxies</li>
                         <li>Geo-targeting e device filtering</li>
-                        <li>Regras por OS, idioma e ISP</li>
                         <li>Decision logs completos</li>
                         <li>Até 10 campanhas cloaker</li>
                         <li>App Mobile + Push</li>
@@ -405,15 +380,14 @@
                     <span class="plan-icon">🦈</span>
                     <div class="check-icon"></div>
                     <h3 class="plan-name">RECIFE</h3>
-                    <p class="plan-description">Tracker + Cloaker completo</p>
+                    <p class="plan-description">Cloaker avançado — até 25 campanhas</p>
                     <ul class="plan-features">
-                        <li>Tudo do Raso +</li>
-                        <li>Cloaker server-side completo</li>
-                        <li>Detecção de bots e VPNs</li>
-                        <li>Geo-targeting e device filtering</li>
-                        <li>Safe page / Money page</li>
+                        <li>Tudo do Maré +</li>
+                        <li>Até 25 campanhas cloaker</li>
                         <li>Auction Insights</li>
-                        <li>Decision logs completos</li>
+                        <li>Rate limiting + listas ISP</li>
+                        <li>Até 5 contas Google Ads</li>
+                        <li>Suporte WhatsApp prioritário</li>
                     </ul>
                     <div class="plan-price-wrap">
                         <div class="plan-price active" data-period="monthly">R$ 469,99<span>/mês</span></div>
@@ -428,13 +402,13 @@
                     <span class="plan-icon">🦑</span>
                     <div class="check-icon"></div>
                     <h3 class="plan-name">ABISSAL</h3>
-                    <p class="plan-description">Tudo liberado + suporte VIP</p>
+                    <p class="plan-description">Cloaker enterprise + suporte VIP</p>
                     <ul class="plan-features">
                         <li>Tudo do Recife +</li>
                         <li>Campanhas ilimitadas</li>
                         <li>Multi-conta Google Ads (MCC)</li>
-                        <li>Suporte prioritário</li>
-                        <li>Contas extras (até 50)</li>
+                        <li>Até 50 contas adicionais</li>
+                        <li>Suporte VIP dedicado</li>
                     </ul>
                     <div class="plan-price-wrap">
                         <div class="plan-price active" data-period="monthly">R$ 999,99<span>/mês</span></div>

@@ -418,38 +418,27 @@ Cards with avatar, quote, and author info.
 
 ## 4. Pricing
 
-Real Blackink plans: Raso, Maré, Recife, Abissal (source: landing `index.html`, `cadastro/index.html`).
+Real Blackink plans: Maré, Recife, Abissal (source: landing `index.html`, `cadastro/index.html`). Cloaker-only product — Raso removed.
 
 ### Plan Data Reference
 
-| | Free | Raso | Maré | Recife | Abissal |
-|---|---|---|---|---|---|
-| **Preço** | R$ 0 | R$ 119,99/mês | R$ 399,99/mês | R$ 469,99/mês | R$ 999,99/mês |
-| **Duração** | 7 dias | 30 dias | 30 dias | 30 dias | 30 dias |
-| **Campanhas ativas** | 1 | 10 | 10 | 10 | Ilimitado |
-| **Tracker** | &#10003; | &#10003; | &#10005; | &#10003; | &#10003; |
-| **Cloaker** | &#10003; | &#10005; | &#10003; | &#10003; | &#10003; |
-| **Contas de anúncio ilimitadas** | — | &#10003; | &#10003; | &#10003; | &#10003; |
-| **Rastreamento completo do funil** | — | &#10003; | &#10005; | &#10003; | &#10003; |
-| **Rastreamento iOS 14+** | — | &#10003; | &#10005; | &#10003; | &#10003; |
-| **Métricas do Google em tempo real** | — | &#10003; | &#10005; | &#10003; | &#10003; |
-| **Dashboard completo de métricas** | — | &#10003; | &#10005; | &#10003; | &#10003; |
-| **Funil de métricas completo** | — | &#10003; | &#10005; | &#10003; | &#10003; |
-| **Conversões automáticas no Google Ads** | — | &#10003; | &#10005; | &#10003; | &#10003; |
-| **URL Builder completo** | — | &#10003; | &#10005; | &#10003; | &#10003; |
-| **Integrações (ClickBank, Buygoods, GuruMidia, MaxWeb, CartPanda)** | — | &#10003; | &#10005; | &#10003; | &#10003; |
-| **Notificações de vendas** | — | &#10003; | &#10003; | &#10003; | &#10003; |
-| **App Mobile** | — | &#10003; | &#10003; | &#10003; | &#10003; |
-| **Análise de performance das VSL** | — | &#10003; | &#10005; | &#10003; | &#10003; |
-| **Blackink Clone** | — | &#10003; | &#10005; | &#10003; | &#10003; |
-| **Área de membros + tutoriais** | — | &#10003; | &#10005; | &#10003; | &#10003; |
-| **Cloaker server-side** | &#10005; | &#10005; | &#10003; | &#10003; | &#10003; |
-| **Filtragem de VPNs** | &#10005; | &#10005; | &#10003; | &#10003; | &#10003; |
-| **Filtragem de bots** | &#10005; | &#10005; | &#10003; | &#10003; | &#10003; |
-| **Suporte prioritário** | &#10005; | &#10005; | &#10005; | &#10005; | &#10003; |
-| **Custo campanha extra** | R$ 40 | R$ 40 | R$ 40 | R$ 40 | **R$ 6** |
+| | Free | Maré | Recife | Abissal |
+|---|---|---|---|---|
+| **Preço** | R$ 0 | R$ 399,99/mês | R$ 469,99/mês | R$ 999,99/mês |
+| **Campanhas cloaker** | 1 | 10 | 25 | Ilimitado |
+| **Cloaker server-side** | básico | &#10003; | &#10003; | &#10003; |
+| **Safe / Offer page** | — | &#10003; | &#10003; | &#10003; |
+| **Filtragem bots/VPNs** | básico | &#10003; | &#10003; | &#10003; |
+| **Decision logs** | — | &#10003; | &#10003; | &#10003; |
+| **Auction Insights** | — | &#10005; | &#10003; | &#10003; |
+| **Rate limiting / ISP lists** | — | &#10005; | &#10003; | &#10003; |
+| **Contas Google Ads** | 1 | 1 | 5 | Até 50 (MCC) |
+| **App Mobile + Push** | — | &#10003; | &#10003; | &#10003; |
+| **Suporte WhatsApp prioritário** | &#10005; | &#10005; | &#10003; | &#10003; VIP |
 
 ### HTML
+
+> **Nota:** O exemplo abaixo é legado (pré-pivot cloaker-only). Fonte de verdade: `index.html` seção `#pricing` e `subscribe/index.html`.
 
 ```html
 <section class="section">
