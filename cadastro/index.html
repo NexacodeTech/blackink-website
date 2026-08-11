@@ -666,38 +666,17 @@
     }
     document.getElementById('planPrice').textContent = priceDisplay;
 
-    // Sidebar copy by plan
-    const PLAN_SIDEBAR = {
-        'Maré': {
-            title: 'Ative seu <span class="grad">cloaker</span>',
-            subtitle: 'Bots veem safe page. Compradores veem offer page. Configure em minutos e filtre tráfego antes de gastar.',
-            features: [
-                { strong: 'Safe Page / Offer Page', span: 'Roteamento server-side em menos de 50ms' },
-                { strong: 'Filtragem de Bots & VPNs', span: 'Crawlers, proxies e revisores do Google bloqueados' },
-                { strong: 'App Mobile', span: 'Push de alertas quando bots ou revisores são detectados' }
-            ]
-        },
-        'Recife': {
-            title: 'Cloaker <span class="grad">avançado</span>',
-            subtitle: 'Até 25 campanhas, Auction Insights e filtragem avançada — para quem escala no Google Ads.',
-            features: [
-                { strong: 'Auction Insights', span: 'Monitore concorrentes enquanto filtra tráfego' },
-                { strong: 'Rate Limiting', span: 'Bloqueio automático de picos anômalos e ISPs suspeitos' },
-                { strong: 'Suporte WhatsApp', span: 'Atendimento prioritário para operações críticas' }
-            ]
-        },
-        'Abissal': {
-            title: 'Escale sem <span class="grad">limites</span>',
-            subtitle: 'Cloaker enterprise com campanhas ilimitadas e suporte VIP — para quem opera em volume.',
-            features: [
-                { strong: 'Campanhas Ilimitadas', span: 'Sem teto de campanhas cloaker ativas' },
-                { strong: 'Multi-conta Google Ads (MCC)', span: 'Até 50 contas adicionais' },
-                { strong: 'Suporte VIP', span: 'Atendimento dedicado para operações críticas' }
-            ]
-        }
+    // Sidebar copy — single product
+    const sidebar = {
+        title: 'Bots veem <span class="grad">safe page</span>',
+        subtitle: 'Compradores veem offer page. Cloaker server-side que filtra bots, VPNs, click farms e revisores do Google Ads antes de servir qualquer página.',
+        features: [
+            { strong: 'Safe Page / Offer Page', span: 'Roteamento server-side em menos de 50ms — 15+ sinais por visitante' },
+            { strong: 'Filtragem de Bots & VPNs', span: 'Crawlers, proxies, datacenters e revisores bloqueados' },
+            { strong: 'App Mobile + Push', span: 'Alertas instantâneos quando tráfego suspeito é detectado' }
+        ]
     };
 
-    const sidebar = PLAN_SIDEBAR[plan] || PLAN_SIDEBAR['Maré'];
     document.getElementById('infoTitle').innerHTML = sidebar.title;
     document.getElementById('infoSubtitle').textContent = sidebar.subtitle;
     document.getElementById('infoFeatures').innerHTML = sidebar.features.map(f => `
