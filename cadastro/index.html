@@ -132,15 +132,15 @@
         .register-card-title{margin-bottom:8px}
         .register-card-subtitle{font-size:14px;color:var(--muted)}
 
-        /* ── Selected Plan Info ── */
-        .selected-plan{background:rgba(100,180,255,0.04);border:1px solid var(--border-h);border-radius:14px;padding:18px;margin-bottom:28px;display:flex;align-items:center;gap:16px}
+        /* ── Order summary (single product) ── */
+        .selected-plan{background:rgba(100,180,255,0.04);border:1px solid var(--border-h);border-radius:14px;padding:18px;margin-bottom:28px}
+        .selected-plan-label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:13px}
+        .selected-plan-row{display:flex;align-items:center;gap:16px}
         .selected-plan-icon{flex-shrink:0;font-size:32px}
         .selected-plan-info{flex:1}
-        .selected-plan-name{font-family:var(--ff-display);font-weight:700;font-size:18px;color:var(--accent);margin-bottom:2px}
-        .selected-plan-price{font-size:14px;color:var(--dim)}
-        .selected-plan-change{flex-shrink:0}
-        .selected-plan-change a{font-size:13px;color:var(--accent);font-weight:600;transition:color .3s}
-        .selected-plan-change a:hover{color:var(--accent2)}
+        .selected-plan-name{font-family:var(--ff-display);font-weight:700;font-size:18px;color:var(--accent);margin-bottom:4px}
+        .selected-plan-price{font-size:14px;color:var(--dim);line-height:1.5}
+        .selected-plan-billing{font-size:12px;color:var(--muted);margin-top:2px}
 
         /* ── Form ── */
         .form-group{margin-bottom:20px}
@@ -448,18 +448,22 @@
                         </div>
                     </div>
 
-                    <!-- Selected Plan -->
+                    <!-- Order summary -->
                     <div class="selected-plan" id="selectedPlan">
-                        <div class="selected-plan-icon" id="planIcon">🛡️</div>
-                        <div class="selected-plan-info">
-                            <div class="selected-plan-name" id="planName">BlackInk Cloaker</div>
-                            <div class="selected-plan-price" id="planPrice">R$ 399,99/mês</div>
+                        <div class="selected-plan-label">Resumo da assinatura</div>
+                        <div class="selected-plan-row">
+                            <div class="selected-plan-icon" id="planIcon">🛡️</div>
+                            <div class="selected-plan-info">
+                                <div class="selected-plan-name" id="planName">BlackInk Cloaker</div>
+                                <div class="selected-plan-price" id="planPrice">R$ 399,99/mês</div>
+                                <div class="selected-plan-billing" id="planBilling">Cobrança mensal</div>
+                            </div>
                         </div>
                     </div>
 
                     <div class="register-card-header">
-                        <h2 class="t-md register-card-title">Crie sua conta</h2>
-                        <p class="register-card-subtitle">Preencha seus dados para continuar</p>
+                        <h2 class="t-md register-card-title">Confirme seus dados</h2>
+                        <p class="register-card-subtitle">Último passo antes do pagamento</p>
                     </div>
 
                     <form id="registerForm">
@@ -642,16 +646,22 @@
     document.getElementById('planIcon').textContent = planData.icon;
     document.getElementById('planName').textContent = planData.displayName || plan;
 
-    // Calculate price based on period
+    // Calculate price based on billing period
     let priceDisplay = planData.price;
+    let billingDisplay = 'Cobrança mensal';
     if (period === 'quarterly') {
-        const quarterlyPrice = (planData.priceValue * 3 * 0.9).toFixed(2).replace('.', ',');
-        priceDisplay = `R$ ${quarterlyPrice}/tri`;
+        const monthlyEq = (planData.priceValue * 0.9).toFixed(2).replace('.', ',');
+        const quarterlyTotal = (planData.priceValue * 3 * 0.9).toFixed(2).replace('.', ',');
+        priceDisplay = `R$ ${monthlyEq}/mês`;
+        billingDisplay = `Cobrado R$ ${quarterlyTotal} a cada 3 meses`;
     } else if (period === 'yearly') {
-        const yearlyPrice = (planData.priceValue * 12 * 0.85).toFixed(2).replace('.', ',');
-        priceDisplay = `R$ ${yearlyPrice}/ano`;
+        const monthlyEq = (planData.priceValue * 0.85).toFixed(2).replace('.', ',');
+        const yearlyTotal = (planData.priceValue * 12 * 0.85).toFixed(2).replace('.', ',');
+        priceDisplay = `R$ ${monthlyEq}/mês`;
+        billingDisplay = `Cobrado R$ ${yearlyTotal} a cada 12 meses`;
     }
     document.getElementById('planPrice').textContent = priceDisplay;
+    document.getElementById('planBilling').textContent = billingDisplay;
 
     // Sidebar copy — single product
     const sidebar = {

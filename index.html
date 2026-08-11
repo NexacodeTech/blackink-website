@@ -1714,9 +1714,46 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 @media(min-width:1200px){.p-card{padding:clamp(24px,2.5vw,36px)}.p-feat{font-size:12px}.p-val{font-size:clamp(36px,3.5vw,52px)}.p-monthly-eq{font-size:11px;line-height:1.4}}
 
 /* ── Price display ── */
-.p-price-wrap{min-height:90px;display:flex;flex-direction:column;justify-content:flex-end;margin-bottom:28px}
+.p-price-wrap{min-height:90px;display:flex;flex-direction:column;justify-content:center;align-items:center;margin-bottom:24px}
 .p-price[data-period]{display:none}
-.p-price[data-period].active{display:flex}
+.p-price[data-period].active{display:flex;justify-content:center}
+
+/* ── Pricing narrative (single product) ── */
+.pricing-narrative{max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(48px,7vw,80px)}
+.pricing-act{text-align:center}
+.pricing-act .t-label{margin-bottom:16px}
+.pricing-act .t-lg{max-width:560px;margin:0 auto 20px}
+.pricing-lead{max-width:520px;margin:0 auto;color:var(--dim);line-height:1.75}
+.pricing-lead strong{color:var(--white);font-weight:600}
+.pricing-value-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:28px;text-align:left}
+@media(min-width:640px){.pricing-value-grid{grid-template-columns:repeat(3,1fr);gap:13px}}
+.pricing-value-item{padding:20px 18px;border-radius:16px;border:1px solid rgba(100,180,255,0.06);background:linear-gradient(180deg,rgba(8,22,48,0.4) 0%,rgba(4,12,28,0.55) 100%);transition:border-color .4s var(--ease),transform .4s var(--ease)}
+.pricing-value-item:hover{border-color:rgba(100,180,255,0.12)}
+@media(min-width:768px){.pricing-value-item:hover{transform:translateY(-2px)}}
+.pricing-value-icon{width:36px;height:36px;border-radius:10px;background:rgba(100,180,255,0.08);display:flex;align-items:center;justify-content:center;margin-bottom:13px}
+.pricing-value-icon svg{width:18px;height:18px;stroke:var(--accent);fill:none;stroke-width:1.75}
+.pricing-value-item h3{font-family:var(--ff-display);font-size:14px;font-weight:600;color:var(--white);margin-bottom:6px;letter-spacing:-.01em}
+.pricing-value-item p{font-size:13px;color:var(--muted);line-height:1.55;margin:0}
+.pricing-bridge{font-size:15px;color:var(--dim);line-height:1.7;max-width:480px;margin:0 auto;padding-top:8px;border-top:1px solid rgba(100,180,255,0.06)}
+.pricing-reveal-block{display:flex;flex-direction:column;gap:clamp(32px,4vw,48px)}
+.pricing-reveal-inner{text-align:center;padding:clamp(36px,5vw,56px) clamp(24px,4vw,44px);border-radius:24px;border:1px solid rgba(100,180,255,0.1);background:linear-gradient(180deg,rgba(10,26,54,0.65) 0%,rgba(6,14,32,0.85) 100%);position:relative;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,0.25),inset 0 1px 0 rgba(255,255,255,0.04)}
+.pricing-reveal-inner::before{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(100,180,255,0.2),transparent);pointer-events:none}
+.pricing-reveal-title{font-family:var(--ff-display);font-size:clamp(28px,4vw,36px);font-weight:700;letter-spacing:-.03em;margin-bottom:8px;color:var(--white)}
+.pricing-reveal-sub{font-size:15px;color:var(--muted);margin-bottom:clamp(28px,4vw,40px);line-height:1.6}
+.period-toggle-label{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:13px}
+.pricing-reveal-inner .period-toggle{display:flex;justify-content:center;margin-bottom:clamp(28px,4vw,36px)}
+.pricing-reveal-inner .p-curr,.pricing-reveal-inner .p-per{font-size:clamp(14px,2vw,16px)}
+.pricing-reveal-inner .p-val{font-size:clamp(52px,8vw,72px)}
+.pricing-reveal-inner .p-monthly-eq{text-align:center;font-size:14px;color:var(--dim);margin-top:8px}
+.pricing-reveal-inner .pricing-cta{margin-top:8px}
+.pricing-includes{padding:0 clamp(8px,2vw,16px)}
+.pricing-includes-label{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:20px}
+.pricing-includes-list{display:grid;grid-template-columns:1fr;gap:8px;list-style:none;margin:0;padding:0}
+@media(min-width:640px){.pricing-includes-list{grid-template-columns:repeat(2,1fr);gap:8px 21px}}
+.pricing-includes-list li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--dim);line-height:1.45;padding:8px 0}
+.pricing-includes-list li strong{color:var(--white);font-weight:600}
+.pricing-includes-check{flex-shrink:0;width:18px;height:18px;border-radius:50%;background:rgba(52,211,153,0.1);display:flex;align-items:center;justify-content:center;margin-top:1px}
+.pricing-includes-check svg{width:10px;height:10px;stroke:var(--green);fill:none;stroke-width:2.5}
 
 /* ── Feature comparison table ── */
 .cmp-wrap{margin-top:clamp(64px,8vw,96px);overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:20px;border:1px solid var(--border);scrollbar-width:thin;scrollbar-color:var(--border) transparent;background:rgba(4,11,24,0.5);max-width:100%;box-sizing:border-box}
@@ -2161,7 +2198,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
         <a href="#" class="hdr-logo">Black<span>Ink</span></a>
         <nav class="hdr-nav" aria-label="Navegação principal">
             <a href="#features">Cloaker</a>
-            <a href="#pricing">Preço</a>
+            <a href="#pricing">Investimento</a>
             <a href="https://chat.whatsapp.com/D3slD0HlbLZFazU41H08Ih" target="_blank" rel="noopener">Comunidade</a>
             <a href="#faq">FAQ</a>
             <div class="mob-audio">
@@ -2226,7 +2263,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 
     <div class="hero-ctas">
         <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link" data-plan="Maré">Começar agora — R$399,99</a>
-        <a href="#pricing" class="btn btn-o">Ver o que inclui</a>
+        <a href="#pricing" class="btn btn-o">Ver investimento</a>
     </div>
 
     <div class="hero-trust">
@@ -2818,47 +2855,81 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 <!-- ═══════ 9. PRICING ═══════ -->
 <section class="section" id="pricing" style="background:var(--bg2)">
     <div class="container">
-        <div class="t-label rv" style="text-align:center;margin-bottom:16px">Preço</div>
-        <h2 class="t-lg rv rv-d1" style="text-align:center;max-width:560px;margin:0 auto 16px"><span class="grad">R$399,99/mês.</span><br>Cloaker completo. Sem tiers.</h2>
-        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:480px;margin:0 auto 32px">Um produto. Tudo incluído. Sem contrato — cancele quando quiser.</p>
+        <div class="pricing-narrative">
 
-        <!-- Period Toggle -->
-        <div class="period-toggle rv rv-d3" style="display:flex;justify-content:center;margin-bottom:clamp(48px,6vw,72px)">
-            <div class="period-switcher">
-                <button class="period-btn active" data-period="monthly">Mensal</button>
-                <button class="period-btn" data-period="quarterly">Trimestral <span class="period-discount">-10%</span></button>
-                <button class="period-btn" data-period="yearly">Anual <span class="period-discount">-15%</span></button>
+            <!-- Act 1: Problem cost -->
+            <div class="pricing-act pricing-act--problem rv">
+                <div class="t-label">O custo real</div>
+                <h2 class="t-lg">Cada clique inválido sai do <span class="grad">seu bolso</span></h2>
+                <p class="pricing-lead">Bots, VPNs, click farms e revisores do Google Ads consomem em média <strong>22% do budget</strong> de campanhas no Brasil. Você paga por tráfego que nunca vira venda — e ainda corre risco de banimento por página exposta.</p>
             </div>
-        </div>
 
-        <div class="pricing-grid pricing-grid--single">
-            <div class="p-card p-card--mare rv rv-d1">
-                <div class="p-card-head">
-                    <div class="p-name" style="color:var(--accent)">BlackInk Cloaker</div>
+            <!-- Act 2: What you get -->
+            <div class="pricing-act pricing-act--value rv rv-d1">
+                <div class="t-label">O que você recebe</div>
+                <h2 class="t-lg">Cloaker server-side <span class="grad">completo</span></h2>
+                <div class="pricing-value-grid">
+                    <div class="pricing-value-item">
+                        <div class="pricing-value-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                        <h3>Safe page para inválidos</h3>
+                        <p>Bots, VPNs e revisores veem conteúdo compliant — sua conta protegida.</p>
+                    </div>
+                    <div class="pricing-value-item">
+                        <div class="pricing-value-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+                        <h3>Offer page para compradores</h3>
+                        <p>Tráfego qualificado passa pelos filtros e vê sua money page.</p>
+                    </div>
+                    <div class="pricing-value-item">
+                        <div class="pricing-value-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                        <h3>Decisão em &lt;50ms</h3>
+                        <p>15+ sinais por visitante, 100% server-side, decision logs completos.</p>
+                    </div>
                 </div>
-                <div class="p-sub">Cloaker server-side para Google Ads — tudo incluído</div>
-                <div class="p-price-wrap">
-                    <div class="p-price active" data-period="monthly"><span class="p-curr">R$</span><span class="p-val">399</span><span class="p-per">,99/mês</span></div>
-                    <div class="p-price" data-period="quarterly"><span class="p-curr">R$</span><span class="p-val">359</span><span class="p-per">,99/mês</span><span class="p-monthly-eq">ou cobrado R$1.079,97 a cada 3 meses</span></div>
-                    <div class="p-price" data-period="yearly"><span class="p-curr">R$</span><span class="p-val">339</span><span class="p-per">,99/mês</span><span class="p-monthly-eq">ou cobrado R$4.079,90 a cada 12 meses</span></div>
-                </div>
-                <div class="p-div"></div>
-                <ul class="p-feats">
-                    <li class="p-feat p-feat--highlight"><span class="p-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Safe page</strong> para bots, VPNs e revisores</span></li>
-                    <li class="p-feat p-feat--highlight"><span class="p-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Offer page</strong> para tráfego que compra</span></li>
-                    <li class="p-feat"><span class="p-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Cloaker <strong>100% server-side</strong> (&lt;50ms)</span></li>
-                    <li class="p-feat"><span class="p-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>15+ sinais</strong> — IP, fingerprint, ISP, geo, device</span></li>
-                    <li class="p-feat"><span class="p-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Bloqueio de <strong>bots, crawlers, VPNs</strong> e proxies</span></li>
-                    <li class="p-feat"><span class="p-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Detecção de <strong>revisores Google Ads</strong></span></li>
-                    <li class="p-feat"><span class="p-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Geo-targeting</strong>, device filtering e decision logs</span></li>
-                    <li class="p-feat"><span class="p-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>App mobile</strong> + push de alertas</span></li>
-                </ul>
-                <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p btn-full plan-link" data-plan="Maré">Ativar Cloaker — R$399,99</a>
-                <p class="p-micro">Garantia de 7 dias · Sem contrato · Setup em 15 min</p>
+                <p class="pricing-bridge">Um produto. Sem módulos extras, sem upgrade escondido, sem contrato.</p>
             </div>
-        </div>
 
-        <p class="rv" style="text-align:center;margin-top:40px;font-size:14px;color:var(--muted)">Sem contrato. Cancele quando quiser.</p>
+            <!-- Act 3: Investment + price reveal -->
+            <div class="pricing-reveal-block rv rv-d2">
+                <div class="pricing-reveal-inner">
+                    <div class="t-label">Seu investimento</div>
+                    <h2 class="pricing-reveal-title">BlackInk Cloaker</h2>
+                    <p class="pricing-reveal-sub">Tudo incluído — filtragem, roteamento, dashboard e app mobile.</p>
+
+                    <div class="period-toggle-label">Como prefere pagar?</div>
+                    <div class="period-toggle">
+                        <div class="period-switcher">
+                            <button class="period-btn active" data-period="monthly">Mensal</button>
+                            <button class="period-btn" data-period="quarterly">Trimestral <span class="period-discount">-10%</span></button>
+                            <button class="period-btn" data-period="yearly">Anual <span class="period-discount">-15%</span></button>
+                        </div>
+                    </div>
+
+                    <div class="p-price-wrap">
+                        <div class="p-price active" data-period="monthly"><span class="p-curr">R$</span><span class="p-val">399</span><span class="p-per">,99/mês</span></div>
+                        <div class="p-price" data-period="quarterly"><span class="p-curr">R$</span><span class="p-val">359</span><span class="p-per">,99/mês</span><span class="p-monthly-eq">equivalente mensal · cobrado R$1.079,97 a cada 3 meses</span></div>
+                        <div class="p-price" data-period="yearly"><span class="p-curr">R$</span><span class="p-val">339</span><span class="p-per">,99/mês</span><span class="p-monthly-eq">equivalente mensal · cobrado R$4.079,90 a cada 12 meses</span></div>
+                    </div>
+
+                    <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p btn-full plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
+                    <p class="p-micro">Garantia de 7 dias · Sem contrato · Setup em 15 min</p>
+                </div>
+
+                <div class="pricing-includes">
+                    <div class="pricing-includes-label">Tudo isso incluído</div>
+                    <ul class="pricing-includes-list">
+                        <li><span class="pricing-includes-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Safe page</strong> e <strong>offer page</strong> configuráveis</span></li>
+                        <li><span class="pricing-includes-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Cloaker <strong>100% server-side</strong> com latência sub-50ms</span></li>
+                        <li><span class="pricing-includes-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>15+ sinais</strong> — IP, fingerprint, ISP, geo, device, ASN</span></li>
+                        <li><span class="pricing-includes-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Bloqueio de <strong>bots, crawlers, VPNs</strong> e proxies</span></li>
+                        <li><span class="pricing-includes-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Detecção de <strong>revisores Google Ads</strong></span></li>
+                        <li><span class="pricing-includes-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Geo-targeting</strong>, device filtering e decision logs</span></li>
+                        <li><span class="pricing-includes-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>App mobile</strong> com push de alertas em tempo real</span></li>
+                        <li><span class="pricing-includes-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Suporte na configuração inicial <strong>gratuito</strong></span></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
     </div>
 </section>
 <section class="section guarantee" id="guarantee">
@@ -3007,7 +3078,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
     <div class="container">
         <div class="f-grid">
             <div class="f-brand"><a href="#" class="hdr-logo" style="font-size:22px">Black<span>Ink</span></a><p>Cloaker server-side para quem opera Google Ads a sério.</p></div>
-            <div><div class="f-col-t">Produto</div><div class="f-links"><a href="#features">Cloaker</a><a href="#pricing">Preço</a><a href="https://app.blackink.cloud">Dashboard</a></div></div>
+            <div><div class="f-col-t">Produto</div><div class="f-links"><a href="#features">Cloaker</a><a href="#pricing">Investimento</a><a href="https://app.blackink.cloud">Dashboard</a></div></div>
             <div><div class="f-col-t">Comunidade</div><div class="f-links"><a href="https://chat.whatsapp.com/D3slD0HlbLZFazU41H08Ih" target="_blank" rel="noopener">WhatsApp</a><a href="#faq">FAQ</a></div></div>
             <div><div class="f-col-t">Legal</div><div class="f-links"><a href="/politica-de-privacidade/">Política de Privacidade</a><a href="/termos-de-uso/">Termos de Uso</a></div></div>
         </div>
@@ -3351,6 +3422,18 @@ if (protSim) {
 // ── Period Toggle for Pricing ──
 const periodBtns = document.querySelectorAll('.period-btn');
 const allPrices = document.querySelectorAll('.p-price[data-period]');
+const PRICING_CTA_LABELS = {
+    monthly: 'Ativar Cloaker — R$399,99/mês',
+    quarterly: 'Ativar Cloaker — R$359,99/mês',
+    yearly: 'Ativar Cloaker — R$339,99/mês'
+};
+
+function updatePricingCtaLabel(period) {
+    const label = PRICING_CTA_LABELS[period] || PRICING_CTA_LABELS.monthly;
+    document.querySelectorAll('.pricing-cta').forEach(btn => {
+        btn.textContent = label;
+    });
+}
 
 periodBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -3369,6 +3452,7 @@ periodBtns.forEach(btn => {
         });
 
         updatePlanLinks(period);
+        updatePricingCtaLabel(period);
     });
 });
 
@@ -4106,7 +4190,7 @@ LAYERS.forEach(layer => {
   <div class="hscroll-dot" data-panel="1" tabindex="0" role="button" aria-label="Dashboard Cloaker"></div>
   <div class="hscroll-dot" data-panel="2" tabindex="0" role="button" aria-label="Filtragem Avançada"></div>
   <div class="hscroll-counter" id="hscroll-counter">1 / 3</div>
-  <a href="#pricing" class="hscroll-skip" id="hscroll-skip">Ver Preço ↓</a>
+  <a href="#pricing" class="hscroll-skip" id="hscroll-skip">Ver investimento ↓</a>
 </nav>
 
 <!-- Cursor glow -->
