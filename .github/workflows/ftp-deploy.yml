@@ -19,7 +19,7 @@ jobs:
         with:
           server: ftp.census.inf.br
           username: github@blackink.cloud
-          password: Acesso@24
+          password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftp
           local-dir: ./
           server-dir: 

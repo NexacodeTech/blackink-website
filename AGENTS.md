@@ -80,4 +80,11 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Regra**: não reintroduzir tracker como produto ou plano — falar de cloaker, safe page, offer page, bots, VPNs, revisores Google Ads.
 **Status**: ativo
 
+## 2026-08-11 — Deploy HostGator-only (AWS removido)
+**Contexto**: site estático migrou de AWS S3 + CloudFront para HostGator via FTP.
+**Mudanças**: removido `.github/workflows/deploy.yml` (S3 sync + invalidação CloudFront); deploy ativo é `.github/workflows/ftp-deploy.yml` no push à branch `production`.
+**Regra**: não reintroduzir workflow AWS; credencial FTP via secret `FTP_PASSWORD` no GitHub (nunca hardcode).
+**Status**: ativo
+**Status**: ativo
+
 <!-- Novas entradas abaixo -->
