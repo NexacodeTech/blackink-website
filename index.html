@@ -100,16 +100,41 @@
       "description": "Cloaker server-side para Google Ads. Bots, VPNs, crawlers e revisores veem safe page — tráfego qualificado vê offer page. Filtragem com 15+ sinais, latência sub-50ms, decision logs. R$ 399,99/mês.",
       "url": "https://theblack.ink",
       "provider": { "@id": "https://theblack.ink/#organization" },
-      "offers": {
+      "offers": [
+        {
           "@type": "Offer",
-          "name": "BlackInk Cloaker",
-          "description": "Cloaker server-side completo: safe/offer page, filtragem bots/VPNs/proxies/revisores, geo/device rules, decision logs, app mobile.",
+          "name": "BlackInk Cloaker — Mensal",
+          "sku": "price_1U3P54QzDnhxvuPStf85pYdh",
+          "description": "Cloaker server-side completo. Cobrança mensal.",
           "price": "399.99",
           "priceCurrency": "BRL",
           "priceSpecification": { "@type": "UnitPriceSpecification", "price": "399.99", "priceCurrency": "BRL", "billingDuration": "P1M", "unitText": "MONTH" },
           "availability": "https://schema.org/InStock",
           "url": "https://theblack.ink/cadastro/?plan=Maré&period=monthly"
-      },
+        },
+        {
+          "@type": "Offer",
+          "name": "BlackInk Cloaker — Trimestral (-10%)",
+          "sku": "price_1U3P55QzDnhxvuPSb1c8mrU8",
+          "description": "Cloaker server-side completo. Cobrança a cada 3 meses (equiv. R$359,99/mês).",
+          "price": "1079.97",
+          "priceCurrency": "BRL",
+          "priceSpecification": { "@type": "UnitPriceSpecification", "price": "1079.97", "priceCurrency": "BRL", "billingDuration": "P3M", "unitText": "QUARTER" },
+          "availability": "https://schema.org/InStock",
+          "url": "https://theblack.ink/cadastro/?plan=Maré&period=quarterly"
+        },
+        {
+          "@type": "Offer",
+          "name": "BlackInk Cloaker — Anual (-15%)",
+          "sku": "price_1U3P55QzDnhxvuPS62TzVcBG",
+          "description": "Cloaker server-side completo. Cobrança anual (equiv. R$339,99/mês).",
+          "price": "4079.88",
+          "priceCurrency": "BRL",
+          "priceSpecification": { "@type": "UnitPriceSpecification", "price": "4079.88", "priceCurrency": "BRL", "billingDuration": "P1Y", "unitText": "YEAR" },
+          "availability": "https://schema.org/InStock",
+          "url": "https://theblack.ink/cadastro/?plan=Maré&period=yearly"
+        }
+      ],
       "featureList": [
         "Cloaker server-side em tempo real (bots, VPNs, proxies, datacenter, safe page / offer page)",
         "Detecção de revisores Google Ads",
@@ -2907,7 +2932,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
                     <div class="p-price-wrap">
                         <div class="p-price active" data-period="monthly"><span class="p-curr">R$</span><span class="p-val">399</span><span class="p-per">,99/mês</span></div>
                         <div class="p-price" data-period="quarterly"><span class="p-curr">R$</span><span class="p-val">359</span><span class="p-per">,99/mês</span><span class="p-monthly-eq">equivalente mensal · cobrado R$1.079,97 a cada 3 meses</span></div>
-                        <div class="p-price" data-period="yearly"><span class="p-curr">R$</span><span class="p-val">339</span><span class="p-per">,99/mês</span><span class="p-monthly-eq">equivalente mensal · cobrado R$4.079,90 a cada 12 meses</span></div>
+                        <div class="p-price" data-period="yearly"><span class="p-curr">R$</span><span class="p-val">339</span><span class="p-per">,99/mês</span><span class="p-monthly-eq">equivalente mensal · cobrado R$4.079,88 a cada 12 meses</span></div>
                     </div>
 
                     <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p btn-full plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
@@ -3422,10 +3447,16 @@ if (protSim) {
 // ── Period Toggle for Pricing ──
 const periodBtns = document.querySelectorAll('.period-btn');
 const allPrices = document.querySelectorAll('.p-price[data-period]');
+// Alinhado aos Stripe Prices live: cloaker_monthly / cloaker_quarterly / cloaker_yearly
+const STRIPE_CLOAKER_PRICES = {
+    monthly:   { id: 'price_1U3P54QzDnhxvuPStf85pYdh', charge: 399.99,  displayMonthly: '399,99' },
+    quarterly: { id: 'price_1U3P55QzDnhxvuPSb1c8mrU8', charge: 1079.97, displayMonthly: '359,99' },
+    yearly:    { id: 'price_1U3P55QzDnhxvuPS62TzVcBG', charge: 4079.88, displayMonthly: '339,99' }
+};
 const PRICING_CTA_LABELS = {
-    monthly: 'Ativar Cloaker — R$399,99/mês',
-    quarterly: 'Ativar Cloaker — R$359,99/mês',
-    yearly: 'Ativar Cloaker — R$339,99/mês'
+    monthly:   `Ativar Cloaker — R$${STRIPE_CLOAKER_PRICES.monthly.displayMonthly}/mês`,
+    quarterly: `Ativar Cloaker — R$${STRIPE_CLOAKER_PRICES.quarterly.displayMonthly}/mês`,
+    yearly:    `Ativar Cloaker — R$${STRIPE_CLOAKER_PRICES.yearly.displayMonthly}/mês`
 };
 
 function updatePricingCtaLabel(period) {
