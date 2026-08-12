@@ -98,4 +98,11 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Regra**: framing de billing period, nunca de tier/plano múltiplo.
 **Status**: ativo
 
+**Status**: ativo
+
+## 2026-08-12 — Headlines sem ponto final
+**Contexto**: ponto final em frases de destaque (hero, H2 banner) parece pesado e quebra ritmo visual.
+**Regra**: H1/H2 e linhas de billboard (hero `.ln-i`, marquee, sticky CTA punch) sem `.` no final; parágrafos, FAQ e meta mantêm pontuação normal.
+**Status**: ativo
+
 <!-- Novas entradas abaixo -->
