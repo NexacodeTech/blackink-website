@@ -112,6 +112,7 @@
       },
       "featureList": [
         "Cloaker server-side em tempo real (bots, VPNs, proxies, datacenter, safe page / offer page)",
+        "Cadastro de páginas na plataforma e BlackInk Clone",
         "Detecção de revisores Google Ads",
         "Geo-targeting e device filtering",
         "Decision logs com motivo de bloqueio",
@@ -126,18 +127,42 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Como funciona o cloaker do BlackInk?",
+          "name": "Quanto tempo leva para configurar?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "O cloaker analisa cada visitante antes de servir qualquer página — IP, fingerprint, ISP, geo, device e mais de 15 sinais. Bots, VPNs, proxies e revisores vão para safe page; tráfego qualificado segue para offer page. Latência inferior a 50ms."
+            "text": "A configuração do cloaker leva aproximadamente 15 minutos. Cadastre safe page e offer page na plataforma, configure regras de filtragem por geo, device e ISP, aponte o tráfego para a URL da BlackInk — e o roteamento funciona imediatamente. A equipe oferece suporte na configuração inicial gratuitamente."
           }
         },
         {
           "@type": "Question",
-          "name": "O que o cloaker do BlackInk faz exatamente?",
+          "name": "Como configuro minhas páginas?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Analisa cada visitante antes de servir qualquer página — IP, fingerprint, ISP, geo, device e 15+ sinais. Bots, VPNs, proxies, crawlers e revisores do Google vão para safe page. Tráfego qualificado segue para offer page. Tudo server-side, latência inferior a 50ms. R$ 399,99/mês."
+            "text": "Cadastre o HTML ou código da safe page e da offer page diretamente no painel da BlackInk. Alternativamente, use o BlackInk Clone para replicar a estrutura de uma página existente. Depois, configure as regras de filtragem e use a URL da BlackInk como destino do anúncio — a plataforma decide qual página servir a cada visitante."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Preciso conectar Google Ads?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. O cloaker não exige OAuth nem conexão com sua conta Google Ads. Você cadastra suas páginas na plataforma, configura as regras e aponta o tráfego para a URL da BlackInk. A plataforma analisa cada visitante e serve safe page ou offer page conforme as regras — sem integração direta com o Google."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O que é o BlackInk Clone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ferramenta da plataforma que clona a estrutura de uma página existente para usar como safe page ou offer page, sem precisar reconstruir o HTML manualmente. Ideal para migrar de outro cloaker ou replicar um layout que já funciona."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como funciona o cloaker do BlackInk?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cada clique passa pela URL da BlackInk antes de ver qualquer página. O servidor analisa IP, fingerprint, ISP, geo, device e mais de 15 sinais. Bots, crawlers, VPNs, proxies e revisores do Google recebem safe page; tráfego qualificado recebe offer page. Tudo server-side, com latência inferior a 50ms."
           }
         },
         {
@@ -146,6 +171,14 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Bots e tráfego inválido consomem em média 22% do orçamento em Google Ads. O cloaker filtra esse tráfego antes de consumir budget — ROI positivo para a maioria dos anunciantes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Preciso de conhecimento técnico?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. O dashboard é visual: cadastre suas páginas, ative filtros e configure geo e device com toggles. O BlackInk Clone facilita ainda mais se você já tem uma página pronta."
           }
         }
       ]
@@ -162,9 +195,9 @@
   "totalTime": "PT15M",
   "estimatedCost": { "@type": "MonetaryAmount", "currency": "BRL", "value": "399.99" },
   "step": [
-    { "@type": "HowToStep", "position": 1, "name": "Conecte Google Ads via OAuth", "text": "Autorize sua conta Google Ads no dashboard do BlackInk. Tempo: 5 minutos." },
-    { "@type": "HowToStep", "position": 2, "name": "Configure safe page e offer page", "text": "Defina URLs da safe page e offer page no painel de Cloaker. Tempo: 3 minutos." },
-    { "@type": "HowToStep", "position": 3, "name": "Ative filtros de tráfego", "text": "Habilite bloqueio de bots, VPNs, proxies, datacenter e revisores. Configure geo e device. Tempo: 5 minutos." },
+    { "@type": "HowToStep", "position": 1, "name": "Cadastre safe page e offer page", "text": "Insira o HTML ou código das páginas no painel da BlackInk — ou use o BlackInk Clone para replicar uma estrutura existente. Tempo: 5 minutos." },
+    { "@type": "HowToStep", "position": 2, "name": "Configure regras de filtragem", "text": "Habilite bloqueio de bots, VPNs, proxies, datacenter e revisores. Defina geo, device, OS e idioma. Tempo: 5 minutos." },
+    { "@type": "HowToStep", "position": 3, "name": "Aponte tráfego para a URL BlackInk", "text": "Use a URL da BlackInk como destino final do anúncio no Google Ads. A plataforma analisa cada visitante e serve a página correta. Tempo: 3 minutos." },
     { "@type": "HowToStep", "position": 4, "name": "Monitore decision logs", "text": "Acompanhe bloqueios em tempo real no dashboard e receba alertas push no app mobile." }
   ]
 }
@@ -2335,7 +2368,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
     <!-- Quick Answer Block — GEO: seção semântica indexável por AI engines e crawlers, visualmente oculta pra manter hero limpo -->
     <section class="hero-qab" aria-label="Resumo BlackInk para crawlers e AI engines">
         <h2>BlackInk — Cloaker Server-Side para Google Ads no Brasil</h2>
-        <p>BlackInk é cloaker server-side para Google Ads. Bots, crawlers, VPNs, proxies e revisores de anúncio veem safe page — tráfego qualificado vê offer page. Filtragem com 15+ sinais, latência sub-50ms, decision logs. R$ 399,99/mês. Garantia de 7 dias.</p>
+        <p>BlackInk é plataforma cloaker server-side para Google Ads. Cadastre safe page e offer page na plataforma (ou use BlackInk Clone), aponte o tráfego para a URL da BlackInk — bots e revisores veem safe page, tráfego qualificado vê offer page. R$ 399,99/mês. Garantia de 7 dias.</p>
     </section>
 
     <div class="hero-ctas">
@@ -2473,7 +2506,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
         <div class="trust-badges rv rv-d5">
             <div class="trust-badge-item"><div class="trust-badge-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div><span class="trust-badge-text"><strong>LGPD</strong> Compliant</span></div>
             <div class="trust-badge-item"><div class="trust-badge-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div><span class="trust-badge-text"><strong>SSL/TLS</strong> Criptografia</span></div>
-            <div class="trust-badge-item"><div class="trust-badge-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><span class="trust-badge-text"><strong>Google Ads API</strong> Integração Oficial</span></div>
+            <div class="trust-badge-item"><div class="trust-badge-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><span class="trust-badge-text"><strong>Server-Side</strong> Camada Intermediária</span></div>
             <div class="trust-badge-item"><div class="trust-badge-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><span class="trust-badge-text"><strong>Pagamento Seguro</strong> PIX e Cartão</span></div>
         </div>
     </div>
@@ -2578,7 +2611,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
             <div class="showcase-text">
                 <div class="t-label">Plataforma Cloaker</div>
                 <h2 class="t-lg">Controle de acesso<br><span class="grad">com cloaking profissional</span></h2>
-                <p class="t-body-lg">Infraestrutura server-side integrada ao Google Ads. Antes do visitante chegar na sua oferta, a plataforma classifica o tráfego: bots, crawlers, VPNs e revisores vão para a safe page; compradores reais seguem para a offer page.</p>
+                <p class="t-body-lg">Infraestrutura server-side entre o clique e a página final. Você cadastra safe page e offer page na plataforma, aponta o tráfego para a URL da BlackInk — e cada visitante é classificado antes de ver qualquer conteúdo: bots, crawlers, VPNs e revisores vão para a safe page; compradores reais seguem para a offer page.</p>
                 <div class="showcase-features">
                     <div class="showcase-feat">
                         <div class="showcase-feat-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
@@ -3144,14 +3177,17 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
         <div class="t-label rv" style="text-align:center;margin-bottom:16px">Perguntas Frequentes</div>
         <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:56px">Tire suas <span class="grad">dúvidas</span></h2>
         <div class="faq-list">
-            <details class="faq-i rv"><summary class="faq-q">Quanto tempo leva para configurar?</summary><div class="faq-a">A configuração do cloaker leva aproximadamente 15 minutos. Conecte sua conta Google Ads via OAuth, defina safe page e offer page, configure regras de filtragem por geo, device e ISP — e o roteamento funciona imediatamente. A equipe oferece suporte na configuração inicial gratuitamente.</div></details>
-            <details class="faq-i rv rv-d1"><summary class="faq-q">Já uso outro cloaker. É difícil migrar?</summary><div class="faq-a">Não. Tutoriais passo a passo guiam a migração das suas campanhas. A maioria dos usuários finaliza em menos de 30 minutos. Se tiver dificuldade, nossa equipe ajuda até tudo estar funcionando.</div></details>
-            <details class="faq-i rv rv-d2"><summary class="faq-q">O BlackInk se paga? Quanto posso economizar?</summary><div class="faq-a">Bots e tráfego inválido consomem em média 22% do orçamento em Google Ads. Use a <a href="#roi-calc" style="color:var(--accent);text-decoration:underline">calculadora de perdas</a> para simular com seu budget real.</div></details>
-            <details class="faq-i rv rv-d2"><summary class="faq-q">Qual a diferença do BlackInk para outros cloakers?</summary><div class="faq-a">Cloakers tradicionais usam redirects client-side ou filtragem básica por IP. O BlackInk processa cada visitante no servidor com mais de 15 sinais, latência sub-50ms, decision logs completos e detecção de revisores Google Ads — tudo por R$ 399,99/mês.</div></details>
-            <details class="faq-i rv rv-d4"><summary class="faq-q">Como funciona o cloaker do BlackInk?</summary><div class="faq-a">O cloaker analisa cada visitante antes de servir qualquer página — IP, fingerprint, ISP, geo, device e mais de 15 sinais em tempo real. Bots, crawlers, VPNs, proxies e revisores de anúncio do Google são roteados para uma safe page. Tráfego qualificado segue para a offer page. Tudo server-side, com latência inferior a 50ms.</div></details>
+            <details class="faq-i rv"><summary class="faq-q">Quanto tempo leva para configurar?</summary><div class="faq-a">A configuração do cloaker leva aproximadamente 15 minutos. Cadastre safe page e offer page na plataforma, configure regras de filtragem por geo, device e ISP, aponte o tráfego para a URL da BlackInk — e o roteamento funciona imediatamente. A equipe oferece suporte na configuração inicial gratuitamente.</div></details>
+            <details class="faq-i rv rv-d1"><summary class="faq-q">Como configuro minhas páginas?</summary><div class="faq-a">Cadastre o HTML ou código da safe page e da offer page diretamente no painel da BlackInk. Alternativamente, use o <strong>BlackInk Clone</strong> para replicar a estrutura de uma página existente. Depois, configure as regras de filtragem e use a URL da BlackInk como destino do anúncio — a plataforma decide qual página servir a cada visitante.</div></details>
+            <details class="faq-i rv rv-d1"><summary class="faq-q">Preciso conectar Google Ads?</summary><div class="faq-a">Não. O cloaker não exige OAuth nem conexão com sua conta Google Ads. Você cadastra suas páginas na plataforma, configura as regras e aponta o tráfego para a URL da BlackInk. A plataforma analisa cada visitante e serve safe page ou offer page conforme as regras — sem integração direta com o Google.</div></details>
+            <details class="faq-i rv rv-d2"><summary class="faq-q">O que é o BlackInk Clone?</summary><div class="faq-a">Ferramenta da plataforma que clona a estrutura de uma página existente para usar como safe page ou offer page, sem precisar reconstruir o HTML manualmente. Ideal para migrar de outro cloaker ou replicar um layout que já funciona.</div></details>
+            <details class="faq-i rv rv-d2"><summary class="faq-q">Já uso outro cloaker. É difícil migrar?</summary><div class="faq-a">Não. Cadastre suas páginas na plataforma (ou use o BlackInk Clone), ajuste as regras e troque a URL de destino do anúncio para a URL da BlackInk. Tutoriais passo a passo guiam a migração — a maioria finaliza em menos de 30 minutos. Se tiver dificuldade, nossa equipe ajuda até tudo estar funcionando.</div></details>
+            <details class="faq-i rv rv-d3"><summary class="faq-q">O BlackInk se paga? Quanto posso economizar?</summary><div class="faq-a">Bots e tráfego inválido consomem em média 22% do orçamento em Google Ads. Use a <a href="#roi-calc" style="color:var(--accent);text-decoration:underline">calculadora de perdas</a> para simular com seu budget real.</div></details>
+            <details class="faq-i rv rv-d3"><summary class="faq-q">Qual a diferença do BlackInk para outros cloakers?</summary><div class="faq-a">Cloakers tradicionais usam redirects client-side ou filtragem básica por IP. O BlackInk processa cada visitante no servidor com mais de 15 sinais, latência sub-50ms, decision logs completos e detecção de revisores Google Ads — tudo por R$ 399,99/mês.</div></details>
+            <details class="faq-i rv rv-d4"><summary class="faq-q">Como funciona o cloaker do BlackInk?</summary><div class="faq-a">Cada clique passa pela URL da BlackInk antes de ver qualquer página. O servidor analisa IP, fingerprint, ISP, geo, device e mais de 15 sinais. Bots, crawlers, VPNs, proxies e revisores do Google recebem safe page; tráfego qualificado recebe offer page. Tudo server-side, com latência inferior a 50ms.</div></details>
             <details class="faq-i rv rv-d4"><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">Garantia incondicional de 7 dias. Reembolso de 100% — sem perguntas, sem burocracia.</div></details>
-            <details class="faq-i rv rv-d5"><summary class="faq-q">O que é safe page e offer page?</summary><div class="faq-a">Safe page é servida a bots, revisores e tráfego inválido — conteúdo compliant que passa revisão do Google. Offer page (money page) é servida apenas a visitantes qualificados que passaram por todos os filtros. O roteamento ocorre server-side em menos de 50ms.</div></details>
-            <details class="faq-i rv rv-d6"><summary class="faq-q">Preciso de conhecimento técnico?</summary><div class="faq-a">Não. O dashboard é visual: defina URLs, ative filtros, configure geo e device com toggles. Compatível com WordPress, ClickFunnels, Webflow e HTML puro.</div></details>
+            <details class="faq-i rv rv-d5"><summary class="faq-q">O que é safe page e offer page?</summary><div class="faq-a">Safe page é servida a bots, revisores e tráfego inválido — conteúdo compliant que passa revisão do Google. Offer page (money page) é servida apenas a visitantes qualificados que passaram por todos os filtros. Ambas ficam cadastradas na plataforma; o roteamento ocorre server-side em menos de 50ms.</div></details>
+            <details class="faq-i rv rv-d6"><summary class="faq-q">Preciso de conhecimento técnico?</summary><div class="faq-a">Não. O dashboard é visual: cadastre suas páginas, ative filtros e configure geo e device com toggles. O BlackInk Clone facilita ainda mais se você já tem uma página pronta.</div></details>
             <details class="faq-i rv"><summary class="faq-q">Posso falar com alguém se precisar de ajuda?</summary><div class="faq-a">Sim. Suporte por ticket na plataforma, comunidade VIP no WhatsApp e assistência gratuita na configuração inicial do cloaker.</div></details>
         </div>
     </div>
@@ -3201,7 +3237,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 
     <article itemscope itemtype="https://schema.org/DefinedTerm">
         <h3 itemprop="name">Safe Page e Offer Page</h3>
-        <p itemprop="description">No cloaker do BlackInk, a safe page é servida a visitantes classificados como inválidos — bots, revisores, VPNs e tráfego de datacenter. A offer page (money page) é servida apenas a tráfego qualificado que passou por todos os filtros. O roteamento ocorre server-side em menos de 50ms, sem redirect visível que alerte revisores.</p>
+        <p itemprop="description">No cloaker do BlackInk, safe page e offer page ficam cadastradas na plataforma (HTML/código ou via BlackInk Clone). A safe page é servida a visitantes inválidos — bots, revisores, VPNs. A offer page só para tráfego qualificado. O tráfego do anúncio aponta para a URL da BlackInk; o roteamento ocorre server-side em menos de 50ms.</p>
     </article>
 
 </aside>
@@ -3212,8 +3248,8 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
     <h3>Como o BlackInk Implementa Cloaker Server-Side para Google Ads</h3>
 
     <section>
-        <h4>Etapa 1: Interceptação no Servidor</h4>
-        <p>Cada requisição à landing page passa pelo edge do BlackInk antes de qualquer HTML ser servido. O sistema captura IP, user-agent, headers, fingerprint e sinais de rede em menos de 50ms.</p>
+        <h4>Etapa 1: Tráfego na URL BlackInk</h4>
+        <p>O anúncio aponta para a URL da BlackInk — camada intermediária entre o clique e a página final. Safe page e offer page ficam cadastradas na plataforma. Cada requisição é interceptada no edge antes de servir HTML; IP, user-agent, headers, fingerprint e sinais de rede são capturados em menos de 50ms.</p>
     </section>
 
     <section>

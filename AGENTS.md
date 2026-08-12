@@ -111,4 +111,9 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Regra**: usar "proteção de campanhas" e "plataforma" como framing profissional; evitar tom de script barato. "Proteção do tráfego" genérico continua evitado — ser específico (campanhas, contas Google Ads).
 **Status**: ativo
 
+## 2026-08-12 — Narrativa correta de setup do cloaker
+**Contexto**: copy antiga dizia conectar Google Ads via OAuth e "definir URLs" — o cloaker não integra com Google; páginas são cadastradas na plataforma (ou via BlackInk Clone) e o tráfego aponta para URL da BlackInk.
+**Regra**: setup = cadastrar safe/offer page na plataforma → configurar regras → apontar tráfego para URL BlackInk. Nunca OAuth/conexão Google Ads como passo de setup. FAQ, HowTo JSON-LD e trust badges devem refletir camada intermediária server-side, não "integração Google Ads".
+**Status**: ativo
+
 <!-- Novas entradas abaixo -->
