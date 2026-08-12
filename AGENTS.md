@@ -105,4 +105,10 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Regra**: H1/H2 e linhas de billboard (hero `.ln-i`, marquee, sticky CTA punch) sem `.` no final; parágrafos, FAQ e meta mantêm pontuação normal.
 **Status**: ativo
 
+## 2026-08-12 — Posicionamento plataforma profissional
+**Contexto**: landing precisa transmitir plataforma enterprise (proteção de campanhas, controle de acesso, infraestrutura) — não script/tool improvisado.
+**Mudanças**: seção `#como-funciona` com fluxo visual Visitante → BlackInk → Análise → Safe/Offer; 8 pilares; hero/marquee/nav/footer/sticky CTA com tom de plataforma; nav link "Como funciona".
+**Regra**: usar "proteção de campanhas" e "plataforma" como framing profissional; evitar tom de script barato. "Proteção do tráfego" genérico continua evitado — ser específico (campanhas, contas Google Ads).
+**Status**: ativo
+
 <!-- Novas entradas abaixo -->

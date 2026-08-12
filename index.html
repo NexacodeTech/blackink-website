@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlackInk — Cloaker Server-Side para Google Ads</title>
-    <meta name="description" content="Cloaker server-side para Google Ads — R$ 399,99/mês. Bots veem safe page, compradores veem offer page. Filtra VPNs, crawlers, click farms e revisores em menos de 50ms. Garantia de 7 dias.">
+    <title>BlackInk — Plataforma Cloaker para Google Ads</title>
+    <meta name="description" content="Plataforma cloaker server-side para Google Ads — proteção de campanhas, controle de acesso e filtragem de tráfego. R$ 399,99/mês. Garantia de 7 dias.">
     <meta property="og:title" content="BlackInk — Cloaker Server-Side para Google Ads">
     <meta property="og:description" content="Cloaker server-side para Google Ads. Bots veem safe page, tráfego real vê offer page — filtragem de VPNs, proxies e revisores. Teste grátis 7 dias.">
     <meta property="og:url" content="https://theblack.ink">
@@ -1598,6 +1598,64 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .how-connector{display:none}
 @media(min-width:768px){.how-connector{display:flex;align-items:center;justify-content:center;position:absolute;right:-20px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:18px;z-index:2}}
 
+/* ── Cloaking Flow (Como funciona) ── */
+.flow-diagram{max-width:980px;margin:0 auto clamp(36px,5vw,52px);padding:clamp(28px,4vw,44px);border-radius:24px;border:1px solid rgba(100,180,255,0.08);background:linear-gradient(180deg,rgba(10,26,54,0.55) 0%,rgba(6,14,32,0.75) 100%);position:relative;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.18),inset 0 1px 0 rgba(255,255,255,0.04)}
+.flow-diagram::before{content:'';position:absolute;top:0;left:8%;right:8%;height:1px;background:linear-gradient(90deg,transparent,rgba(100,180,255,0.18),transparent);pointer-events:none}
+.flow-track{display:flex;flex-direction:column;align-items:center;gap:0}
+.flow-node{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-width:0;width:100%;max-width:280px;padding:18px 20px;border-radius:16px;border:1px solid rgba(100,180,255,0.1);background:linear-gradient(180deg,rgba(12,28,58,0.7) 0%,rgba(8,18,40,0.85) 100%);transition:border-color .45s var(--ease),transform .45s var(--ease),box-shadow .45s var(--ease)}
+.flow-node:hover{border-color:rgba(100,180,255,0.2);transform:translateY(-2px)}
+.flow-node-ico{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;background:rgba(100,180,255,0.08);border:1px solid rgba(100,180,255,0.12)}
+.flow-node-ico svg{width:20px;height:20px;stroke:var(--accent);fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.flow-node-label{font-family:var(--ff-display);font-size:15px;font-weight:600;color:var(--white);letter-spacing:-.01em;line-height:1.25}
+.flow-node-sub{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.4}
+.flow-node--core{border-color:rgba(100,180,255,0.22);background:linear-gradient(180deg,rgba(16,36,72,0.85) 0%,rgba(10,24,52,0.92) 100%);box-shadow:0 0 32px rgba(100,180,255,0.08);animation:flow-core-glow 4s var(--ease) infinite}
+.flow-node--core .flow-node-ico{background:rgba(100,180,255,0.14);border-color:rgba(100,180,255,0.25)}
+.flow-node--core .flow-node-label{color:var(--accent)}
+@keyframes flow-core-glow{0%,100%{box-shadow:0 0 24px rgba(100,180,255,0.06)}50%{box-shadow:0 0 40px rgba(100,180,255,0.14)}}
+.flow-connector{display:flex;align-items:center;justify-content:center;width:2px;height:28px;margin:4px 0;background:linear-gradient(180deg,rgba(100,180,255,0.04),rgba(100,180,255,0.35),rgba(100,180,255,0.04));position:relative;flex-shrink:0}
+.flow-connector::after{content:'';position:absolute;bottom:-2px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid rgba(100,180,255,0.45)}
+.flow-branch-wrap{display:flex;flex-direction:column;align-items:center;width:100%;gap:13px;margin-top:4px}
+.flow-branch-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.flow-branch{display:grid;grid-template-columns:1fr 1fr;gap:13px;width:100%;max-width:420px}
+.flow-dest{padding:16px 14px;border-radius:14px;text-align:center;transition:border-color .45s var(--ease),transform .45s var(--ease)}
+.flow-dest:hover{transform:translateY(-2px)}
+.flow-dest-tag{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+.flow-dest-name{font-family:var(--ff-display);font-size:14px;font-weight:600;line-height:1.25}
+.flow-dest-desc{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.4}
+.flow-dest--safe{border:1px solid rgba(239,68,68,0.15);background:linear-gradient(180deg,rgba(239,68,68,0.06) 0%,rgba(239,68,68,0.02) 100%)}
+.flow-dest--safe .flow-dest-tag{color:rgba(239,68,68,0.75)}
+.flow-dest--safe .flow-dest-name{color:rgba(239,68,68,0.9)}
+.flow-dest--offer{border:1px solid rgba(52,211,153,0.15);background:linear-gradient(180deg,rgba(52,211,153,0.06) 0%,rgba(52,211,153,0.02) 100%)}
+.flow-dest--offer .flow-dest-tag{color:var(--green)}
+.flow-dest--offer .flow-dest-name{color:var(--green)}
+.flow-lead{max-width:580px;margin:0 auto clamp(40px,5vw,56px);text-align:center;font-size:clamp(15px,1.7vw,17px);color:var(--dim);line-height:1.75}
+.flow-lead strong{color:var(--white);font-weight:600}
+.flow-pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:13px;max-width:880px;margin:0 auto}
+.flow-pillar{display:flex;align-items:flex-start;gap:12px;padding:16px 14px;border-radius:14px;border:1px solid rgba(100,180,255,0.06);background:rgba(8,20,44,0.45);transition:border-color .4s var(--ease),transform .4s var(--ease)}
+.flow-pillar:hover{border-color:rgba(100,180,255,0.12);transform:translateY(-1px)}
+.flow-pillar-ico{width:32px;height:32px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:rgba(100,180,255,0.07);border:1px solid rgba(100,180,255,0.1)}
+.flow-pillar-ico svg{width:16px;height:16px;stroke:var(--accent);fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.flow-pillar-text{font-size:13px;line-height:1.45;color:var(--dim)}
+.flow-pillar-text strong{display:block;font-family:var(--ff-display);font-size:13px;font-weight:600;color:var(--white);margin-bottom:2px;letter-spacing:-.01em}
+@media(min-width:640px){.flow-pillars{grid-template-columns:repeat(4,1fr);gap:13px}}
+@media(min-width:768px){
+.flow-track{flex-direction:row;align-items:center;justify-content:center;flex-wrap:nowrap;gap:0}
+.flow-node{width:auto;flex:0 0 auto;min-width:140px;max-width:168px;padding:20px 16px}
+.flow-connector{width:36px;height:2px;margin:0 4px;background:linear-gradient(90deg,rgba(100,180,255,0.04),rgba(100,180,255,0.35),rgba(100,180,255,0.04))}
+.flow-connector::after{bottom:auto;right:-2px;left:auto;top:50%;transform:translateY(-50%);border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:6px solid rgba(100,180,255,0.45);border-right:none}
+.flow-branch-wrap{flex:0 0 auto;width:auto;margin-top:0;margin-left:4px;align-items:flex-start}
+.flow-branch{grid-template-columns:1fr;max-width:148px;gap:10px}
+.flow-dest{padding:14px 12px}
+}
+@media(max-width:480px){.flow-branch{grid-template-columns:1fr;max-width:280px}}
+@media(max-width:390px){
+.flow-diagram{padding:20px 16px;border-radius:18px}
+.flow-node{padding:14px 16px;max-width:none}
+.flow-node-label{font-size:14px}
+.flow-pillar{padding:13px 12px}
+.flow-pillar-text{font-size:12px}
+}
+
 /* ── Video Demo ── */
 .video-wrap{position:relative;max-width:800px;margin:0 auto;border-radius:20px;overflow:hidden;aspect-ratio:16/9;cursor:pointer;border:1px solid var(--border);background:linear-gradient(180deg,rgba(10,22,48,0.7) 0%,rgba(6,14,32,0.9) 100%);transition:transform .5s var(--ease),border-color .5s var(--ease)}
 .video-wrap:hover{border-color:rgba(100,180,255,0.2);box-shadow:0 0 60px rgba(100,180,255,0.06);transform:translateY(-4px)}
@@ -2214,6 +2272,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
     <div class="hdr-in">
         <a href="#" class="hdr-logo">Black<span>Ink</span></a>
         <nav class="hdr-nav" aria-label="Navegação principal">
+            <a href="#como-funciona">Como funciona</a>
             <a href="#features">Cloaker</a>
             <a href="#pricing">Investimento</a>
             <a href="https://chat.whatsapp.com/D3slD0HlbLZFazU41H08Ih" target="_blank" rel="noopener">Comunidade</a>
@@ -2255,7 +2314,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
             <span class="hero-badge-dot"></span>
             <span class="hero-badge-text">
                 <svg class="hero-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                Cloaker Server-Side · Google Ads
+                Plataforma Cloaker · Google Ads
             </span>
         </div>
     </div>
@@ -2270,7 +2329,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
     <div class="hero-line"></div>
 
     <p class="t-body-lg hero-sub">
-        Cloaker server-side para Google Ads. Filtra bots, crawlers, VPNs, click farms e revisores antes de servir qualquer página — em menos de 50ms, com 15+ sinais por visitante.
+        Plataforma server-side para proteger e controlar suas campanhas no Google Ads. Cada visitante passa pelo BlackInk antes de ver qualquer página — filtragem de tráfego, regras avançadas e roteamento em menos de 50ms.
     </p>
 
     <!-- Quick Answer Block — GEO: seção semântica indexável por AI engines e crawlers, visualmente oculta pra manter hero limpo -->
@@ -2286,7 +2345,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 
     <div class="hero-trust">
         <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-        <span class="hero-trust-text">Setup em 5 minutos · Sem impacto na velocidade · Cancele quando quiser</span>
+        <span class="hero-trust-text">Infraestrutura 99,9% uptime · Setup em 15 min · Cancele quando quiser</span>
     </div>
 
     <div class="hero-scroll"><div class="hero-scroll-line"></div></div>
@@ -2295,28 +2354,26 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 <!-- ═══════ 2. MARQUEE ═══════ -->
 <div class="marquee">
     <div class="marquee-track">
+        <span class="marquee-item">Proteção de Campanhas</span>
         <span class="marquee-item">Cloaker Server-Side</span>
-        <span class="marquee-item">Safe Page & Offer Page</span>
-        <span class="marquee-item">Filtragem de Bots & VPNs</span>
-        <span class="marquee-item">Detecção de Revisores Google</span>
-        <span class="marquee-item">Geo-Targeting</span>
-        <span class="marquee-item">Device Filtering</span>
+        <span class="marquee-item">Controle de Acesso</span>
+        <span class="marquee-item">Filtragem de Tráfego</span>
+        <span class="marquee-item">Regras Avançadas</span>
+        <span class="marquee-item">Infraestrutura Robusta</span>
+        <span class="marquee-item">Segurança &amp; Confiabilidade</span>
+        <span class="marquee-item">Performance &lt;50ms</span>
+        <span class="marquee-item">Safe Page &amp; Offer Page</span>
         <span class="marquee-item">Decision Logs</span>
-        <span class="marquee-item">Rate Limiting</span>
-        <span class="marquee-item">Auction Insights</span>
-        <span class="marquee-item">Latência &lt;50ms</span>
-        <span class="marquee-item">App Mobile + Push</span>
+        <span class="marquee-item">Proteção de Campanhas</span>
         <span class="marquee-item">Cloaker Server-Side</span>
-        <span class="marquee-item">Safe Page & Offer Page</span>
-        <span class="marquee-item">Filtragem de Bots & VPNs</span>
-        <span class="marquee-item">Detecção de Revisores Google</span>
-        <span class="marquee-item">Geo-Targeting</span>
-        <span class="marquee-item">Device Filtering</span>
+        <span class="marquee-item">Controle de Acesso</span>
+        <span class="marquee-item">Filtragem de Tráfego</span>
+        <span class="marquee-item">Regras Avançadas</span>
+        <span class="marquee-item">Infraestrutura Robusta</span>
+        <span class="marquee-item">Segurança &amp; Confiabilidade</span>
+        <span class="marquee-item">Performance &lt;50ms</span>
+        <span class="marquee-item">Safe Page &amp; Offer Page</span>
         <span class="marquee-item">Decision Logs</span>
-        <span class="marquee-item">Rate Limiting</span>
-        <span class="marquee-item">Auction Insights</span>
-        <span class="marquee-item">Latência &lt;50ms</span>
-        <span class="marquee-item">App Mobile + Push</span>
     </div>
 </div>
 
@@ -2358,7 +2415,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
             </div>
         </div>
 
-        <p class="problem-resolve rv">O cloaker do BlackInk <span class="grad">resolve os três</span>.</p>
+        <p class="problem-resolve rv">A plataforma BlackInk <span class="grad">resolve os três</span></p>
     </div>
 </section>
 <section class="section" id="fraud-stats" style="padding-top:0;padding-bottom:clamp(40px,5vw,60px)">
@@ -2394,7 +2451,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
                 </div>
             </div>
             <p style="font-size:14px;line-height:1.7;color:var(--dim);text-align:center;max-width:620px;margin:0 auto 20px">
-                BlackInk foi desenvolvido para filtrar tráfego fraudulento e revisores antes de servir qualquer página — protegendo orçamento e conta Google Ads com cloaker server-side.
+                BlackInk é a plataforma de cloaking profissional para filtrar tráfego fraudulento e revisores antes de servir qualquer página — protegendo campanhas e conta Google Ads com infraestrutura server-side.
             </p>
             <div class="geo-sources">
                 <p>[1] Juniper Research, Digital Ad Fraud Report 2025 · [2] Lunio, Invalid Clicks Report 2024 · [3] Benchmark interno BlackInk cruzado com Lunio e Flurry 2024 · [4] Flurry Analytics, iOS ATT Opt-in Rates · [5] Statista, Ad Blocking Usage in Brazil 2024 · [6] Medição contínua da infraestrutura BlackInk — média dos últimos 30 dias</p>
@@ -2425,6 +2482,92 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 
 <div class="sep"></div>
 
+<!-- ═══════ COMO FUNCIONA — Cloaking Flow ═══════ -->
+<section class="section" id="como-funciona">
+    <div class="container">
+        <p class="t-label rv" style="text-align:center">Como funciona</p>
+        <h2 class="t-lg rv rv-d1" style="text-align:center;max-width:620px;margin:12px auto 16px">BlackInk fica entre o visitante<br><span class="grad">e o destino certo</span></h2>
+        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:540px;margin:0 auto clamp(36px,5vw,48px)">Nenhum visitante acessa sua página direto. Cada clique passa pela plataforma — regras são aplicadas e o tráfego é roteado para o destino correspondente.</p>
+
+        <div class="flow-diagram rv rv-d3" aria-label="Fluxo de cloaking: visitante, BlackInk, análise de regras, destino">
+            <div class="flow-track">
+                <div class="flow-node">
+                    <div class="flow-node-ico"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                    <div class="flow-node-label">Visitante</div>
+                    <div class="flow-node-sub">Clique no anúncio</div>
+                </div>
+                <div class="flow-connector" aria-hidden="true"></div>
+                <div class="flow-node flow-node--core">
+                    <div class="flow-node-ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                    <div class="flow-node-label">BlackInk</div>
+                    <div class="flow-node-sub">Camada intermediária</div>
+                </div>
+                <div class="flow-connector" aria-hidden="true"></div>
+                <div class="flow-node">
+                    <div class="flow-node-ico"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+                    <div class="flow-node-label">Análise das regras</div>
+                    <div class="flow-node-sub">Geo, device, origem</div>
+                </div>
+                <div class="flow-connector" aria-hidden="true"></div>
+                <div class="flow-branch-wrap">
+                    <div class="flow-branch-label">Destino correspondente</div>
+                    <div class="flow-branch">
+                        <div class="flow-dest flow-dest--safe">
+                            <div class="flow-dest-tag">Tráfego inválido</div>
+                            <div class="flow-dest-name">Safe Page</div>
+                            <div class="flow-dest-desc">Bots, VPNs, revisores</div>
+                        </div>
+                        <div class="flow-dest flow-dest--offer">
+                            <div class="flow-dest-tag">Tráfego qualificado</div>
+                            <div class="flow-dest-name">Offer Page</div>
+                            <div class="flow-dest-desc">Compradores reais</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p class="flow-lead rv rv-d4">O BlackInk não é um script na sua página — é <strong>infraestrutura server-side</strong> que analisa cada visitante, aplica suas regras de acesso e entrega o destino certo. Proteção de campanhas, controle total e performance abaixo de 50ms.</p>
+
+        <div class="flow-pillars rv rv-d5">
+            <div class="flow-pillar">
+                <div class="flow-pillar-ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                <div class="flow-pillar-text"><strong>Segurança</strong>Filtragem server-side antes de servir HTML</div>
+            </div>
+            <div class="flow-pillar">
+                <div class="flow-pillar-ico"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+                <div class="flow-pillar-text"><strong>Performance</strong>Decisão em menos de 50ms por visitante</div>
+            </div>
+            <div class="flow-pillar">
+                <div class="flow-pillar-ico"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                <div class="flow-pillar-text"><strong>Confiabilidade</strong>99,9% uptime e decision logs completos</div>
+            </div>
+            <div class="flow-pillar">
+                <div class="flow-pillar-ico"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div>
+                <div class="flow-pillar-text"><strong>Infraestrutura</strong>Plataforma robusta, não script improvisado</div>
+            </div>
+            <div class="flow-pillar">
+                <div class="flow-pillar-ico"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+                <div class="flow-pillar-text"><strong>Controle de acesso</strong>Quem vê o quê, por campanha</div>
+            </div>
+            <div class="flow-pillar">
+                <div class="flow-pillar-ico"><svg viewBox="0 0 24 24"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg></div>
+                <div class="flow-pillar-text"><strong>Filtragem de tráfego</strong>Bots, VPNs, proxies e datacenters</div>
+            </div>
+            <div class="flow-pillar">
+                <div class="flow-pillar-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div>
+                <div class="flow-pillar-text"><strong>Regras avançadas</strong>Geo, device, OS e listas customizadas</div>
+            </div>
+            <div class="flow-pillar">
+                <div class="flow-pillar-ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+                <div class="flow-pillar-text"><strong>Proteção de campanhas</strong>Safe page para quem não deve ver a oferta</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="sep"></div>
+
 <!-- ═══════ 3. CLOAKER + FEATURES ═══════ -->
 <div class="features-hscroll">
 
@@ -2433,9 +2576,9 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
     <div class="container">
         <div class="showcase rv">
             <div class="showcase-text">
-                <div class="t-label">Cloaker</div>
-                <h2 class="t-lg">Bots veem uma página<br><span class="grad">Compradores&nbsp;veem outra</span></h2>
-                <p class="t-body-lg">Cloaker server-side integrado ao Google Ads. Antes do visitante chegar na sua oferta, o BlackInk classifica o tráfego: bots, crawlers, VPNs e revisores vão para a safe page; compradores reais seguem para a página de vendas.</p>
+                <div class="t-label">Plataforma Cloaker</div>
+                <h2 class="t-lg">Controle de acesso<br><span class="grad">com cloaking profissional</span></h2>
+                <p class="t-body-lg">Infraestrutura server-side integrada ao Google Ads. Antes do visitante chegar na sua oferta, a plataforma classifica o tráfego: bots, crawlers, VPNs e revisores vão para a safe page; compradores reais seguem para a offer page.</p>
                 <div class="showcase-features">
                     <div class="showcase-feat">
                         <div class="showcase-feat-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
@@ -2847,8 +2990,8 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 <section class="section" id="comparison">
     <div class="container">
         <div class="t-label rv" style="text-align:center;margin-bottom:16px">Comparativo</div>
-        <h2 class="t-lg rv rv-d1" style="text-align:center;max-width:600px;margin:0 auto 16px">Cloaker server-side<br><span class="grad">Não script na página</span></h2>
-        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:520px;margin:0 auto clamp(32px,4vw,48px)">BlackInk filtra bots, VPNs e revisores antes de servir qualquer página — com latência sub-50ms e decision logs completos.</p>
+        <h2 class="t-lg rv rv-d1" style="text-align:center;max-width:600px;margin:0 auto 16px">Plataforma server-side<br><span class="grad">Não script na página</span></h2>
+        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:520px;margin:0 auto clamp(32px,4vw,48px)">BlackInk protege suas campanhas com filtragem profissional — latência sub-50ms, regras avançadas e decision logs completos.</p>
         <div class="rv rv-d2" style="max-width:680px;margin:0 auto clamp(24px,3vw,36px);text-align:center">
             <p style="font-size:15px;line-height:1.8;color:var(--dim)">Cloakers tradicionais rodam no client-side ou via redirect lento — expostos a detecção e com filtragem básica. O BlackInk processa cada visitante no servidor com mais de 15 sinais (IP, fingerprint, ISP, geo, device, ASN) e roteia para safe page ou offer page em menos de 50ms.</p>
         </div>
@@ -2885,7 +3028,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
             <!-- Act 2: What you get -->
             <div class="pricing-act pricing-act--value rv rv-d1">
                 <div class="t-label">O que você recebe</div>
-                <h2 class="t-lg">Cloaker server-side <span class="grad">completo</span></h2>
+                <h2 class="t-lg">Cloaker server-side <span class="grad">de plataforma</span></h2>
                 <div class="pricing-value-grid">
                     <div class="pricing-value-item">
                         <div class="pricing-value-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
@@ -3019,8 +3162,8 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
     <div class="cta-orb"></div>
     <div class="container" style="position:relative;z-index:1">
         <div class="t-label rv" style="text-align:center;margin-bottom:16px">Comece agora</div>
-        <h2 class="t-lg rv rv-d1" style="text-align:center">Bots consomem seu budget<br>O cloaker <span class="grad">para isso hoje</span></h2>
-        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:520px;margin:16px auto 36px">Ative o cloaker em 15 minutos. Safe page para bots e revisores, offer page para tráfego que compra.</p>
+        <h2 class="t-lg rv rv-d1" style="text-align:center">Proteja suas campanhas<br>O cloaker <span class="grad">profissional está pronto</span></h2>
+        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:520px;margin:16px auto 36px">Ative a plataforma em 15 minutos. Controle de acesso, filtragem de tráfego e proteção de campanhas — tudo server-side.</p>
         <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center" class="rv rv-d3">
             <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link" data-plan="Maré">Ativar Cloaker — R$399,99</a>
         </div>
@@ -3095,8 +3238,8 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 <footer class="footer">
     <div class="container">
         <div class="f-grid">
-            <div class="f-brand"><a href="#" class="hdr-logo" style="font-size:22px">Black<span>Ink</span></a><p>Cloaker server-side para quem opera Google Ads a sério.</p></div>
-            <div><div class="f-col-t">Produto</div><div class="f-links"><a href="#features">Cloaker</a><a href="#pricing">Investimento</a><a href="https://app.blackink.cloud">Dashboard</a></div></div>
+            <div class="f-brand"><a href="#" class="hdr-logo" style="font-size:22px">Black<span>Ink</span></a><p>Plataforma cloaker server-side para proteger e controlar campanhas no Google Ads.</p></div>
+            <div><div class="f-col-t">Produto</div><div class="f-links"><a href="#como-funciona">Como funciona</a><a href="#features">Cloaker</a><a href="#pricing">Investimento</a><a href="https://app.blackink.cloud">Dashboard</a></div></div>
             <div><div class="f-col-t">Comunidade</div><div class="f-links"><a href="https://chat.whatsapp.com/D3slD0HlbLZFazU41H08Ih" target="_blank" rel="noopener">WhatsApp</a><a href="#faq">FAQ</a></div></div>
             <div><div class="f-col-t">Legal</div><div class="f-links"><a href="/politica-de-privacidade/">Política de Privacidade</a><a href="/termos-de-uso/">Termos de Uso</a></div></div>
         </div>
@@ -4218,7 +4361,7 @@ LAYERS.forEach(layer => {
 <!-- Sticky CTA -->
 <div class="sticky-cta" id="sticky-cta" aria-hidden="true">
     <div class="sticky-cta-inner">
-        <p class="sticky-cta-text">Cloaker server-side — <strong>R$ 399,99/mês</strong> · Bots veem safe page, compradores veem offer page</p>
+        <p class="sticky-cta-text">Plataforma cloaker — <strong>proteção de campanhas</strong> · R$ 399,99/mês</p>
         <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link" data-plan="Maré">Ativar Cloaker</a>
         <button class="sticky-cta-close" id="sticky-cta-close" aria-label="Fechar">&times;</button>
     </div>
