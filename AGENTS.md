@@ -77,7 +77,7 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 ## 2026-08-11 — Pivot cloaker-only (produto único)
 **Contexto**: tracker removido como produto; BlackInk é 100% cloaker server-side para Google Ads.
 **Mudanças**: plano Raso removido; 3 tiers cloaker (Maré/Recife/Abissal); Sonar, postback, funil e seções tracker removidas da landing; comparison table só cloaker; cadastro PLANS sem Raso.
-**Regra**: não reintroduzir tracker como produto ou plano — falar de cloaker, safe page, offer page, bots, VPNs, revisores Google Ads.
+**Regra**: não reintroduzir tracker como produto ou plano — falar de cloaker, safe page, offer page, bots, VPNs, revisores de anúncio.
 **Status**: ativo
 
 ## 2026-08-11 — Deploy HostGator-only (AWS removido)
@@ -108,12 +108,18 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 ## 2026-08-12 — Posicionamento plataforma profissional
 **Contexto**: landing precisa transmitir plataforma enterprise (proteção de campanhas, controle de acesso, infraestrutura) — não script/tool improvisado.
 **Mudanças**: seção `#como-funciona` com fluxo visual Visitante → BlackInk → Análise → Safe/Offer; 8 pilares; hero/marquee/nav/footer/sticky CTA com tom de plataforma; nav link "Como funciona".
-**Regra**: usar "proteção de campanhas" e "plataforma" como framing profissional; evitar tom de script barato. "Proteção do tráfego" genérico continua evitado — ser específico (campanhas, contas Google Ads).
+**Regra**: usar "proteção de campanhas" e "plataforma" como framing profissional; evitar tom de script barato. "Proteção do tráfego" genérico continua evitado — ser específico (campanhas, contas de anúncios).
 **Status**: ativo
 
 ## 2026-08-12 — Narrativa correta de setup do cloaker
 **Contexto**: copy antiga dizia conectar Google Ads via OAuth e "definir URLs" — o cloaker não integra com Google; páginas são cadastradas na plataforma (ou via BlackInk Clone) e o tráfego aponta para URL da BlackInk.
-**Regra**: setup = cadastrar safe/offer page na plataforma → configurar regras → apontar tráfego para URL BlackInk. Nunca OAuth/conexão Google Ads como passo de setup. FAQ, HowTo JSON-LD e trust badges devem refletir camada intermediária server-side, não "integração Google Ads".
+**Regra**: setup = cadastrar safe/offer page na plataforma → configurar regras → apontar tráfego para URL BlackInk. Nunca OAuth/conexão com conta de anúncios como passo de setup. FAQ, HowTo JSON-LD e trust badges devem refletir camada intermediária server-side, não "integração" com Google, Meta ou TikTok.
 **Status**: ativo
 
 <!-- Novas entradas abaixo -->
+
+## 2026-08-18 — Posicionamento multi-plataforma (tráfego pago)
+**Contexto**: produto funciona igual para Google Ads, Meta, TikTok e outras — anunciante aponta destino do anúncio para URL BlackInk; não há OAuth com nenhuma rede.
+**Regra**: copy user-facing usa "tráfego pago", "revisores de anúncio", "conta de anúncios" — nunca Google Ads sozinho como canal exclusivo. SEO/JSON-LD pode listar Google Ads + Meta + TikTok juntos. Padrão de substituição: "para Google Ads" → "para tráfego pago" ou "Google Ads, Meta, TikTok e outras plataformas".
+**Validação pós-edit**: `grep -i "Google Ads"` — deve restar só em listas multi-plataforma ou tags SEO; zero frases que impliquem exclusividade.
+**Status**: ativo
