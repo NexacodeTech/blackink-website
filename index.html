@@ -282,6 +282,7 @@ strong{font-weight:600}
 .hdr-nav{display:flex;align-items:center;gap:22px;margin-left:auto}
 .hdr-nav a{font-size:13px;font-weight:500;color:var(--dim);transition:color .3s var(--ease)}
 .hdr-nav a:hover{color:var(--white)}
+.hdr-nav-login,.hdr-nav-cta{display:none}
 .hdr-cta{display:flex;align-items:center;gap:8px}
 .mob-tog{display:none;flex-direction:column;gap:5px;width:40px;height:40px;align-items:center;justify-content:center;margin-left:8px}
 .mob-tog span{display:block;width:18px;height:2px;background:var(--white);border-radius:2px;transition:transform .3s var(--ease),opacity .3s var(--ease)}
@@ -307,10 +308,26 @@ strong{font-weight:600}
 .hero-title .ln-i{display:inline-block}
 .hero-sub{margin:0 auto 24px;max-width:560px;font-size:clamp(14px,1.5vw,17px);color:var(--dim);line-height:1.65;animation:heroIn .9s var(--ease) .15s both}
 .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:18px;animation:heroIn .9s var(--ease) .2s both}
-.hero-trust{display:flex;align-items:center;justify-content:center;gap:8px;font-size:12px;color:var(--muted);animation:heroIn .9s var(--ease) .25s both}
+.hero-trust{display:flex;align-items:center;justify-content:center;gap:8px;font-size:12px;color:rgba(240,244,248,0.62);animation:heroIn .9s var(--ease) .25s both}
 .hero-trust-icon{width:14px;height:14px;stroke:var(--green);flex-shrink:0}
 @keyframes heroIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 @keyframes simPulse{0%,100%{opacity:1}50%{opacity:.45}}
+/* Problem punch — compact */
+.problem-strip{padding:clamp(48px,8vh,88px) 0;text-align:center}
+.problem-strip .t-lg{margin:12px auto 16px;max-width:640px}
+.problem-strip .t-body-lg{margin:0 auto 36px}
+.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:960px;margin:0 auto}
+.problem-card{padding:28px 22px;border-radius:18px;border:1px solid var(--border);background:linear-gradient(180deg,rgba(10,22,40,0.75),rgba(6,14,28,0.92));text-align:left;position:relative;overflow:hidden}
+.problem-card::before{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(100,180,255,0.18),transparent)}
+.problem-stat{font-family:var(--ff-display);font-size:clamp(28px,3vw,36px);font-weight:700;letter-spacing:-0.03em;margin-bottom:8px;line-height:1.1}
+.problem-title{font-size:16px;font-weight:600;margin-bottom:8px;color:var(--white)}
+.problem-desc{font-size:14px;color:var(--dim);line-height:1.65}
+.problem-resolve{margin-top:28px;font-size:clamp(16px,1.8vw,18px);color:var(--dim)}
+.problem-resolve .grad{font-weight:600}
+.mid-cta-strip{padding:clamp(40px,6vh,72px) 0;text-align:center;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:linear-gradient(180deg,rgba(100,180,255,.04),transparent)}
+.mid-cta-strip p{font-size:clamp(15px,1.6vw,18px);color:var(--dim);max-width:38ch;margin:0 auto 20px;line-height:1.55}
+.mid-cta-strip .btn{min-width:min(100%,320px)}
+.mid-cta{display:flex;justify-content:center;margin-top:36px}
 /* Education — o que é */
 .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px}
 .edu-card{padding:clamp(24px,3vw,36px);border-radius:20px;border:1px solid var(--border);background:linear-gradient(180deg,rgba(10,22,40,0.7),rgba(6,14,28,0.9));position:relative;overflow:hidden}
@@ -509,7 +526,8 @@ strong{font-weight:600}
 .p-val{font-family:var(--ff-display);font-size:clamp(48px,8vw,64px);font-weight:700;letter-spacing:-0.03em;line-height:1}
 .p-per{font-size:18px;color:var(--dim);font-weight:500}
 .p-monthly-eq{display:block;font-size:13px;color:var(--muted);margin-top:8px}
-.p-micro{font-size:13px;color:var(--muted);margin-top:14px}
+.p-micro{font-size:13px;color:rgba(240,244,248,0.62);margin-top:14px;line-height:1.55}
+.p-save{display:block;font-size:13px;color:var(--green);margin-top:6px;font-weight:500}
 .pricing-includes{margin-top:28px;padding-top:24px;border-top:1px solid var(--border);text-align:left}
 .pricing-includes-label{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;text-align:center}
 .pricing-includes-list{display:grid;grid-template-columns:1fr 1fr;gap:10px 20px}
@@ -565,6 +583,8 @@ main{position:relative;z-index:1}
   .hdr-nav{position:fixed;inset:var(--hdr-h) 0 0 0;background:rgba(2,10,20,0.97);backdrop-filter:blur(20px);flex-direction:column;align-items:stretch;padding:24px 20px;gap:0;margin:0;transform:translateX(100%);transition:transform .4s var(--ease);z-index:999}
   .hdr-nav.mob-open{transform:translateX(0)}
   .hdr-nav a{padding:16px 8px;border-bottom:1px solid var(--border);font-size:16px}
+  .hdr-nav .hdr-nav-login{display:block;color:var(--dim);border-bottom:none;padding-top:20px}
+  .hdr-nav .hdr-nav-cta{display:inline-flex;margin-top:8px;justify-content:center;border-bottom:none;width:100%;color:#021018}
   .hdr-cta{display:none}
   .mob-tog{display:flex}
   .hero{padding:calc(var(--hdr-h) + 8px) 16px 20px;justify-content:flex-start;padding-top:calc(var(--hdr-h) + 12px)}
@@ -575,6 +595,7 @@ main{position:relative;z-index:1}
   .hero-ctas{flex-direction:column;width:100%;max-width:320px}
   .hero-ctas .btn{width:100%}
   .hero-trust{font-size:11px;max-width:280px}
+  .problem-grid{grid-template-columns:1fr;max-width:420px}
   .edu-grid{grid-template-columns:1fr}
   .setup-steps{grid-template-columns:1fr}
   .flow-pillars{grid-template-columns:1fr 1fr}
@@ -656,6 +677,8 @@ main{position:relative;z-index:1}
             <a href="#redes">Redes</a>
             <a href="#pricing">Investimento</a>
             <a href="#faq">FAQ</a>
+            <a href="https://app.blackink.cloud" class="hdr-nav-login">Entrar</a>
+            <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link hdr-nav-cta" data-plan="Maré">Começar agora</a>
         </nav>
         <div class="hdr-cta">
             <a href="https://app.blackink.cloud" class="btn btn-g btn-sm">Entrar</a>
@@ -687,12 +710,44 @@ main{position:relative;z-index:1}
     </h1>
     <p class="hero-sub">Controle de acesso server-side para Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras — filtragem em &lt;50ms, sem OAuth</p>
     <div class="hero-ctas">
-        <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link" data-plan="Maré">Começar agora — R$399,99</a>
+        <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link hero-cta" data-plan="Maré">Começar agora — R$399,99/mês</a>
         <a href="#pricing" class="btn btn-o">Ver investimento</a>
     </div>
     <div class="hero-trust">
         <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-        <span>99,9% uptime · Setup em 15 min · Garantia 7 dias</span>
+        <span>PIX e cartão · Setup em 15 min · Garantia 7 dias</span>
+    </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- 1b. Problema (punch híbrido) -->
+<section class="problem-strip" id="problema" aria-label="O problema">
+    <div class="container">
+        <p class="t-label rv">O problema</p>
+        <h2 class="t-lg rv rv-d1">Você paga o clique.<br><span class="grad">O bot não compra</span></h2>
+        <p class="t-body-lg rv rv-d2">Enquanto a offer page fica no destino do anúncio, revisores e tráfego inválido chegam nela — e o budget some antes da venda</p>
+        <div class="problem-grid">
+            <div class="problem-card rv">
+                <div class="problem-stat" style="color:#ef4444">Conta</div>
+                <div class="problem-title">Revisor vê a offer</div>
+                <div class="problem-desc">Sem camada intermediária, a revisão manual chega na money page. Conta avisada ou limitada não é azar — é destino errado.</div>
+            </div>
+            <div class="problem-card rv rv-d1">
+                <div class="problem-stat" style="color:var(--gold)">~22%</div>
+                <div class="problem-title">Budget em clique sujo</div>
+                <div class="problem-desc">Estimativa setorial de tráfego inválido (bots, VPN, datacenter) — ordem de grandeza, não métrica da sua conta. Você otimiza campanha em cima de ruído.</div>
+            </div>
+            <div class="problem-card rv rv-d2">
+                <div class="problem-stat" style="color:var(--accent)">Script</div>
+                <div class="problem-title">Client-side é frágil</div>
+                <div class="problem-desc">Decisão no browser do visitante é detectável. Plataforma server-side decide antes de servir HTML.</div>
+            </div>
+        </div>
+        <p class="problem-resolve rv rv-d3">A plataforma BlackInk <span class="grad">resolve os três</span></p>
+        <div class="mid-cta rv rv-d4">
+            <a href="#como-funciona" class="btn btn-o">Ver como a plataforma resolve</a>
+        </div>
     </div>
 </section>
 
@@ -927,6 +982,13 @@ main{position:relative;z-index:1}
     </div>
 </section>
 
+<section class="mid-cta-strip" aria-label="Chamada para ação">
+    <div class="container">
+        <p>Safe page para revisores. Offer page para quem compra. Mesma URL BlackInk no anúncio</p>
+        <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
+    </div>
+</section>
+
 <div class="sep"></div>
 
 <!-- 5. Multi-rede -->
@@ -1096,11 +1158,11 @@ main{position:relative;z-index:1}
                     </div>
                     <div class="p-price-wrap">
                         <div class="p-price active" data-period="monthly"><span class="p-curr">R$</span><span class="p-val">399</span><span class="p-per">,99/mês</span></div>
-                        <div class="p-price" data-period="quarterly"><span class="p-curr">R$</span><span class="p-val">359</span><span class="p-per">,99/mês</span><span class="p-monthly-eq">equivalente mensal · cobrado R$1.079,97 a cada 3 meses</span></div>
-                        <div class="p-price" data-period="yearly"><span class="p-curr">R$</span><span class="p-val">339</span><span class="p-per">,99/mês</span><span class="p-monthly-eq">equivalente mensal · cobrado R$4.079,90 a cada 12 meses</span></div>
+                        <div class="p-price" data-period="quarterly"><span class="p-curr">R$</span><span class="p-val">359</span><span class="p-per">,99/mês</span><span class="p-monthly-eq">equivalente mensal · cobrado R$1.079,97 a cada 3 meses</span><span class="p-save">Economia de ~R$120 vs mensal no trimestre</span></div>
+                        <div class="p-price" data-period="yearly"><span class="p-curr">R$</span><span class="p-val">339</span><span class="p-per">,99/mês</span><span class="p-monthly-eq">equivalente mensal · cobrado R$4.079,90 a cada 12 meses</span><span class="p-save">Economia de ~R$720 vs mensal no ano</span></div>
                     </div>
                     <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p btn-full plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
-                    <p class="p-micro">Sem contrato · Setup em 15 min · Cancele quando quiser</p>
+                    <p class="p-micro">PIX ou cartão · Sem contrato · Setup em 15 min · Garantia de 7 dias</p>
                     <div class="pricing-includes">
                         <div class="pricing-includes-label">Tudo isso incluído</div>
                         <ul class="pricing-includes-list">
@@ -1142,7 +1204,7 @@ main{position:relative;z-index:1}
             <details class="faq-i rv rv-d3"><summary class="faq-q">Qual a diferença do BlackInk para outros cloakers?</summary><div class="faq-a">Comparado a scripts client-side e redirects simples, BlackInk é SaaS server-side com URL própria, decision logs, sem PHP no seu host, suporte BR e preço único (R$ 399,99/mês).</div></details>
             <details class="faq-i rv rv-d4"><summary class="faq-q">O BlackInk é um tracker?</summary><div class="faq-a">Não. BlackInk é cloaker server-side: controla quem vê safe page ou offer page. Não vende tracker, pixel de conversão ou atribuição como produto.</div></details>
             <details class="faq-i rv rv-d4"><summary class="faq-q">O BlackInk se paga? Quanto posso economizar?</summary><div class="faq-a">Estimativa de mercado aponta cerca de 22% do budget em tráfego inválido (varia por campanha). Use a <a href="#roi-calc">calculadora de perdas</a> para simular com seu investimento mensal.</div></details>
-            <details class="faq-i rv rv-d5"><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">Garantia incondicional de 7 dias. Reembolso de 100% — sem perguntas, sem burocracia.</div></details>
+            <details class="faq-i rv rv-d5"><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">Garantia de 7 dias. Teste a plataforma; se não fizer sentido para suas campanhas, reembolso de 100% — sem letras miúdas.</div></details>
             <details class="faq-i rv rv-d5"><summary class="faq-q">Como falo com o suporte?</summary><div class="faq-a">Por e-mail em <a href="mailto:suporte@theblack.ink">suporte@theblack.ink</a> e por ticket/chat dentro da plataforma. Assistência gratuita na configuração inicial.</div></details>
         </div>
     </div>
@@ -1158,7 +1220,7 @@ main{position:relative;z-index:1}
         <div class="rv rv-d3" style="display:flex;justify-content:center">
             <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
         </div>
-        <p class="rv rv-d4" style="text-align:center;margin-top:20px;font-size:13px;color:var(--muted)">Garantia de 7 dias · Sem contrato · Cancele quando quiser</p>
+        <p class="rv rv-d4" style="text-align:center;margin-top:20px;font-size:13px;color:rgba(240,244,248,0.62)">PIX ou cartão · Garantia de 7 dias · Sem contrato · Cancele quando quiser</p>
     </div>
 </section>
 
@@ -1478,19 +1540,33 @@ const PRICING_CTA_LABELS = {
     quarterly: 'Ativar Cloaker — R$359,99/mês · cobrado R$1.079,97',
     yearly: 'Ativar Cloaker — R$339,99/mês · cobrado R$4.079,90'
 };
+const HERO_CTA_LABELS = {
+    monthly: 'Começar agora — R$399,99/mês',
+    quarterly: 'Começar agora — R$359,99/mês',
+    yearly: 'Começar agora — R$339,99/mês'
+};
 const STICKY_PRICE = {
     monthly: 'R$ 399,99/mês',
     quarterly: 'R$ 359,99/mês · cobrado R$1.079,97',
     yearly: 'R$ 339,99/mês · cobrado R$4.079,90'
 };
+const STICKY_BTN = {
+    monthly: 'Ativar Cloaker',
+    quarterly: 'Ativar — R$359,99/mês',
+    yearly: 'Ativar — R$339,99/mês'
+};
 
 function updatePricingCtaLabel(period) {
     const label = PRICING_CTA_LABELS[period] || PRICING_CTA_LABELS.monthly;
     document.querySelectorAll('.pricing-cta').forEach(btn => { btn.textContent = label; });
+    const heroCta = document.querySelector('.hero-cta');
+    if (heroCta) heroCta.textContent = HERO_CTA_LABELS[period] || HERO_CTA_LABELS.monthly;
     const stickyText = document.getElementById('sticky-cta-text');
     if (stickyText) {
         stickyText.innerHTML = 'Plataforma cloaker — <strong>' + (STICKY_PRICE[period] || STICKY_PRICE.monthly) + '</strong>';
     }
+    const stickyBtn = document.getElementById('sticky-cta-btn');
+    if (stickyBtn) stickyBtn.textContent = STICKY_BTN[period] || STICKY_BTN.monthly;
 }
 
 function updatePlanLinks(period) {
@@ -1575,13 +1651,15 @@ if (calcSlider) {
     updateCalc();
 }
 
-// Sticky CTA — hide when #pricing or footer in view; sync aria-hidden
+// Sticky CTA — hide when #pricing or footer in view; persist dismiss
 const stickyCta = document.getElementById('sticky-cta');
 const stickyClose = document.getElementById('sticky-cta-close');
 const heroSection = document.getElementById('hero');
 const pricingSection = document.getElementById('pricing');
 const footerSection = document.querySelector('.footer');
+const STICKY_DISMISS_KEY = 'blackink_sticky_cta_dismissed';
 let stickyDismissed = false;
+try { stickyDismissed = localStorage.getItem(STICKY_DISMISS_KEY) === '1'; } catch (_) {}
 let pricingInView = false;
 let footerInView = false;
 
@@ -1596,6 +1674,7 @@ function syncStickyVisibility() {
 if (stickyClose) {
     stickyClose.addEventListener('click', () => {
         stickyDismissed = true;
+        try { localStorage.setItem(STICKY_DISMISS_KEY, '1'); } catch (_) {}
         syncStickyVisibility();
     });
 }
