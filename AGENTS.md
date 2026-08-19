@@ -128,3 +128,9 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Contexto**: decisão de não expor contato via WhatsApp no site público — links, widget flutuante, comunidade e referências em copy legal/FAQ.
 **Regra**: não reintroduzir links `wa.me`, `chat.whatsapp.com`, widget `.wa-widget` nem menções a suporte/comunidade via WhatsApp. Contato via email (`suporte@theblack.ink`) e ticket/chat na plataforma.
 **Status**: ativo
+
+## 2026-08-19 — Rewrite cloaker multiplataforma
+**Contexto**: rewrite vertical do `index.html` — seções enxutas, tom híbrido (hero/checkout Quiet Luxury; ROI punchy; meio técnico).
+**Mudanças**: redes = Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras; hero cabe em 100vh (logo menor no mobile); sem hscroll pin, GSAP, loader fullscreen, Sonar ou áudio; sticky CTA sync período + hide em `#pricing`/footer; comparação por arquétipo (client-side / redirect / SaaS).
+**Regra**: lista de redes completa em copy user-facing; vanilla JS only; `scroll-padding-top: 72px`.
+**Status**: ativo
