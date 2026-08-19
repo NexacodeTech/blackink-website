@@ -999,7 +999,6 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .f-legal a{color:var(--muted);text-decoration:none;transition:color .2s var(--ease)}
 .f-legal a:hover{color:var(--primary)}
 
-/* WhatsApp float */
 /* Ambient audio control — premium glass card */
 .audio-ctl{position:fixed;bottom:24px;left:24px;z-index:90;width:180px;border-radius:12px;background:linear-gradient(180deg,rgba(10,22,48,0.88) 0%,rgba(6,14,32,0.92) 50%,rgba(4,10,24,0.95) 100%);border:1px solid rgba(100,180,255,0.08);box-shadow:0 4px 40px rgba(0,0,0,0.4),0 0 80px rgba(0,0,0,0.2),inset 0 1px 0 rgba(100,180,255,0.05);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);overflow:hidden;transition:opacity .6s var(--ease),transform .6s var(--ease)}
 .audio-ctl::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 10%,rgba(100,180,255,0.15) 50%,transparent 90%)}
@@ -1062,121 +1061,6 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .mob-audio-layer input[type="range"]{-webkit-appearance:none;appearance:none;width:100%;height:2px;background:rgba(100,180,255,0.06);border-radius:2px;outline:none;cursor:pointer}
 .mob-audio-layer input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:10px;height:10px;border-radius:50%;background:var(--accent);border:none;opacity:0.65;cursor:pointer}
 .mob-audio-layer input[type="range"]::-moz-range-thumb{width:10px;height:10px;border-radius:50%;background:var(--accent);border:none;opacity:0.65;cursor:pointer}
-
-/* ══════════════════════════════════════════════════════════
-   WhatsApp Widget Premium — Balão com mensagens rotativas
-   ══════════════════════════════════════════════════════════ */
-.wa-widget{position:fixed;bottom:24px;right:24px;z-index:9990;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
-
-/* Balão de mensagem */
-.wa-bubble{
-    position:relative;
-    max-width:280px;
-    padding:14px 18px;
-    background:linear-gradient(145deg,rgba(12,28,54,0.98) 0%,rgba(6,18,40,0.99) 100%);
-    border:1px solid rgba(37,211,102,0.15);
-    border-radius:18px 18px 4px 18px;
-    box-shadow:0 4px 24px rgba(0,0,0,0.3),0 8px 48px rgba(37,211,102,0.08),inset 0 1px 0 rgba(255,255,255,0.03);
-    backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-    opacity:0;
-    transform:translateY(10px) scale(0.95);
-    transition:opacity .4s var(--ease),transform .4s var(--ease);
-    pointer-events:none;
-    cursor:pointer;
-}
-.wa-bubble.visible{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
-.wa-bubble::before{
-    content:'';position:absolute;top:0;left:10%;right:10%;height:1px;
-    background:linear-gradient(90deg,transparent,rgba(37,211,102,0.2),transparent);
-}
-/* Seta do balão */
-.wa-bubble::after{
-    content:'';position:absolute;bottom:8px;right:-6px;
-    width:12px;height:12px;
-    background:linear-gradient(135deg,transparent 50%,rgba(6,18,40,0.99) 50%);
-    border-right:1px solid rgba(37,211,102,0.15);
-    border-bottom:1px solid rgba(37,211,102,0.15);
-    transform:rotate(-45deg);
-}
-
-.wa-bubble-header{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-.wa-bubble-avatar{
-    width:32px;height:32px;border-radius:50%;
-    background:linear-gradient(145deg,#25D366,#128C7E);
-    display:flex;align-items:center;justify-content:center;
-    box-shadow:0 2px 8px rgba(37,211,102,0.3);
-}
-.wa-bubble-avatar svg{width:16px;height:16px;fill:#fff}
-.wa-bubble-info{display:flex;flex-direction:column;gap:1px}
-.wa-bubble-name{font-size:13px;font-weight:600;color:var(--white);letter-spacing:-0.01em}
-.wa-bubble-status{display:flex;align-items:center;gap:5px;font-size:10px;color:var(--green)}
-.wa-bubble-status::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);animation:waPulse 2s ease-in-out infinite}
-@keyframes waPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.2)}}
-
-.wa-bubble-close{
-    position:absolute;top:8px;right:8px;
-    width:20px;height:20px;border-radius:50%;
-    background:rgba(255,255,255,0.05);
-    border:none;cursor:pointer;
-    display:flex;align-items:center;justify-content:center;
-    opacity:0;transition:opacity .3s,background .3s;
-}
-.wa-bubble:hover .wa-bubble-close{opacity:1}
-.wa-bubble-close:hover{background:rgba(255,255,255,0.1)}
-.wa-bubble-close svg{width:10px;height:10px;stroke:var(--muted);stroke-width:2}
-
-.wa-bubble-msg{
-    font-size:14px;line-height:1.5;color:var(--dim);
-    min-height:42px;
-    display:flex;align-items:center;
-}
-.wa-bubble-msg span{
-    display:block;
-    animation:waMsgIn .4s var(--ease) both;
-}
-@keyframes waMsgIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
-
-.wa-bubble-cta{
-    display:flex;align-items:center;gap:6px;
-    margin-top:10px;padding-top:10px;
-    border-top:1px solid rgba(255,255,255,0.05);
-    font-size:12px;font-weight:600;color:var(--green);
-    transition:color .3s;
-}
-.wa-bubble-cta svg{width:14px;height:14px;fill:var(--green);transition:transform .3s var(--ease)}
-.wa-bubble:hover .wa-bubble-cta svg{transform:translateX(3px)}
-
-/* Botão principal do WhatsApp */
-.wa-btn{
-    position:relative;
-    width:60px;height:60px;
-    background:linear-gradient(145deg,#25D366,#128C7E);
-    border-radius:50%;
-    display:flex;align-items:center;justify-content:center;
-    box-shadow:0 4px 20px rgba(37,211,102,0.35),0 8px 40px rgba(37,211,102,0.15);
-    cursor:pointer;
-    transition:transform .4s var(--ease),box-shadow .4s var(--ease);
-    animation:waBtnPulse 3s ease-in-out infinite;
-}
-@keyframes waBtnPulse{
-    0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.35),0 8px 40px rgba(37,211,102,0.15),0 0 0 0 rgba(37,211,102,0.3)}
-    50%{box-shadow:0 4px 24px rgba(37,211,102,0.45),0 8px 48px rgba(37,211,102,0.2),0 0 0 12px rgba(37,211,102,0)}
-}
-.wa-btn:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,0.5),0 12px 56px rgba(37,211,102,0.25)}
-.wa-btn svg{width:30px;height:30px;fill:#fff}
-
-/* Badge de notificação */
-.wa-btn-badge{
-    position:absolute;top:-2px;right:-2px;
-    min-width:20px;height:20px;padding:0 6px;
-    background:#ef4444;
-    border-radius:10px;
-    font-size:11px;font-weight:700;color:#fff;
-    display:flex;align-items:center;justify-content:center;
-    box-shadow:0 2px 8px rgba(239,68,68,0.4);
-    animation:waBadgeBounce 2s ease-in-out infinite;
-}
-@keyframes waBadgeBounce{0%,100%{transform:scale(1)}10%{transform:scale(1.2)}20%{transform:scale(1)}}
 
 /* Mobile section */
 .mobile-section{position:relative;overflow:hidden}
@@ -2145,16 +2029,6 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
     /* How steps */
     .how-connector{display:none !important}
 
-    /* WhatsApp widget — mobile */
-    .wa-widget{bottom:calc(16px + env(safe-area-inset-bottom,0px));right:16px}
-    .wa-btn{width:52px;height:52px}
-    .wa-btn svg{width:26px;height:26px}
-    .wa-bubble{max-width:260px;padding:12px 14px}
-    .wa-bubble-msg{font-size:13px;min-height:38px}
-
-    /* Move WhatsApp up when sticky CTA is visible */
-    body:has(.sticky-cta.visible) .wa-widget{bottom:calc(72px + env(safe-area-inset-bottom,0px))}
-
     /* Guarantee — Etapa 10 */
     .guarantee-card{padding:32px 24px}
     .guarantee-pillars{gap:16px}
@@ -2185,10 +2059,6 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
     .mock-phone{width:88%;max-width:280px}
     .mock-phone-glow{width:280px;height:400px}
     .prot-sim{min-height:340px}
-    .wa-widget{bottom:calc(12px + env(safe-area-inset-bottom,0px));right:12px}
-    .wa-btn{width:48px;height:48px}
-    .wa-btn svg{width:22px;height:22px}
-    .wa-bubble{max-width:220px;padding:10px 12px;font-size:12px}
     .period-switcher{flex-direction:column;width:100%;max-width:280px;margin:0 auto}
     .period-btn{justify-content:center;width:100%;flex:none}
     .pricing-reveal-inner .p-monthly-eq{font-size:12px}
@@ -2315,7 +2185,6 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
             <a href="#como-funciona">Como funciona</a>
             <a href="#features">Cloaker</a>
             <a href="#pricing">Investimento</a>
-            <a href="https://chat.whatsapp.com/D3slD0HlbLZFazU41H08Ih" target="_blank" rel="noopener">Comunidade</a>
             <a href="#faq">FAQ</a>
             <div class="mob-audio">
                 <div class="mob-audio-main">
@@ -3196,7 +3065,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
             <details class="faq-i rv rv-d4"><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">Garantia incondicional de 7 dias. Reembolso de 100% — sem perguntas, sem burocracia.</div></details>
             <details class="faq-i rv rv-d5"><summary class="faq-q">O que é safe page e offer page?</summary><div class="faq-a">Safe page é servida a bots, revisores e tráfego inválido — conteúdo compliant que passa revisão de anúncio. Offer page (money page) é servida apenas a visitantes qualificados que passaram por todos os filtros. Ambas ficam cadastradas na plataforma; o roteamento ocorre server-side em menos de 50ms.</div></details>
             <details class="faq-i rv rv-d6"><summary class="faq-q">Preciso de conhecimento técnico?</summary><div class="faq-a">Não. O dashboard é visual: cadastre suas páginas, ative filtros e configure geo e device com toggles. O BlackInk Clone facilita ainda mais se você já tem uma página pronta.</div></details>
-            <details class="faq-i rv"><summary class="faq-q">Posso falar com alguém se precisar de ajuda?</summary><div class="faq-a">Sim. Suporte por ticket na plataforma, comunidade VIP no WhatsApp e assistência gratuita na configuração inicial do cloaker.</div></details>
+            <details class="faq-i rv"><summary class="faq-q">Posso falar com alguém se precisar de ajuda?</summary><div class="faq-a">Sim. Suporte por ticket na plataforma e assistência gratuita na configuração inicial do cloaker.</div></details>
         </div>
     </div>
 </section>
@@ -3283,8 +3152,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
     <div class="container">
         <div class="f-grid">
             <div class="f-brand"><a href="#" class="hdr-logo" style="font-size:22px">Black<span>Ink</span></a><p>Plataforma cloaker server-side para proteger e controlar campanhas de tráfego pago — Google Ads, Meta, TikTok e outras plataformas.</p></div>
-            <div><div class="f-col-t">Produto</div><div class="f-links"><a href="#como-funciona">Como funciona</a><a href="#features">Cloaker</a><a href="#pricing">Investimento</a><a href="https://app.blackink.cloud">Dashboard</a></div></div>
-            <div><div class="f-col-t">Comunidade</div><div class="f-links"><a href="https://chat.whatsapp.com/D3slD0HlbLZFazU41H08Ih" target="_blank" rel="noopener">WhatsApp</a><a href="#faq">FAQ</a></div></div>
+            <div><div class="f-col-t">Produto</div><div class="f-links"><a href="#como-funciona">Como funciona</a><a href="#features">Cloaker</a><a href="#pricing">Investimento</a><a href="#faq">FAQ</a><a href="https://app.blackink.cloud">Dashboard</a></div></div>
             <div><div class="f-col-t">Legal</div><div class="f-links"><a href="/politica-de-privacidade/">Política de Privacidade</a><a href="/termos-de-uso/">Termos de Uso</a></div></div>
         </div>
         <div class="f-bottom">
@@ -3292,7 +3160,7 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
                 <strong>BLACKINK TECNOLOGIA LTDA</strong>
                 <span>CNPJ 66.362.785/0001-50</span>
                 <span>Av. Deputado Jamel Cecilio, 2496, Sala 143A &mdash; Jd. Goi&aacute;s, Goi&acirc;nia/GO &mdash; CEP 74810-100</span>
-                <span><a href="https://wa.me/5562999133986" target="_blank" rel="noopener noreferrer">WhatsApp: (62) 99913-3986</a></span>
+                <span><a href="mailto:suporte@theblack.ink">suporte@theblack.ink</a></span>
             </div>
             <span>&copy; 2026 BlackInk. Todos os direitos reservados.</span>
         </div>

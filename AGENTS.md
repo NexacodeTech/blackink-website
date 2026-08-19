@@ -123,3 +123,8 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Regra**: copy user-facing usa "tráfego pago", "revisores de anúncio", "conta de anúncios" — nunca Google Ads sozinho como canal exclusivo. SEO/JSON-LD pode listar Google Ads + Meta + TikTok juntos. Padrão de substituição: "para Google Ads" → "para tráfego pago" ou "Google Ads, Meta, TikTok e outras plataformas".
 **Validação pós-edit**: `grep -i "Google Ads"` — deve restar só em listas multi-plataforma ou tags SEO; zero frases que impliquem exclusividade.
 **Status**: ativo
+
+## 2026-08-19 — WhatsApp removido do site
+**Contexto**: decisão de não expor contato via WhatsApp no site público — links, widget flutuante, comunidade e referências em copy legal/FAQ.
+**Regra**: não reintroduzir links `wa.me`, `chat.whatsapp.com`, widget `.wa-widget` nem menções a suporte/comunidade via WhatsApp. Contato via email (`suporte@theblack.ink`) e ticket/chat na plataforma.
+**Status**: ativo

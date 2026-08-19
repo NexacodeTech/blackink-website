@@ -39,7 +39,6 @@ Pressupõe as 5 Regras do `Blackink/CLAUDE.md` raiz.
 ## Armadilhas conhecidas
 
 - **`<details>` não suporta CSS transition** no `open/close` nativamente — usar JS ou workaround com `max-height` em elemento interno.
-- **`body:has()`** é usado para reposicionar o WhatsApp FAB quando sticky CTA está visível — cuidado em mudanças que afetem esse seletor.
 - **CSS brace balance**: depois de editar o `<style>`, validar com script Python (contagem de `{` vs `}`).
 - **`:root` pode ser aninhado em `@media`** — é válido CSS.
 - **Period switcher** mantém layout row no mobile médio, só vira column em 480px.
