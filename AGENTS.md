@@ -164,3 +164,8 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Contexto**: quem chega no cadastro pelo CTA mensal não conseguia mudar para trimestral/anual sem voltar.
 **Regra**: switcher Mensal/Trimestral/Anual no resumo da assinatura; atualiza preço, billing e `?period=` via `history.replaceState`; trimestral marcado Rec.
 **Status**: ativo
+
+## 2026-08-20 — Sticky some no CTA final + padding body
+**Contexto**: sticky competia com `#comecar`/`.cta-final` e cobria conteúdo no fim das seções.
+**Regra**: sticky esconde em pricing + cta-final + footer; `body.has-sticky-cta` adiciona padding-bottom; CTA final aponta desconto para `#pricing` (não FAQ).
+**Status**: ativo

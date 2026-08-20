@@ -582,6 +582,10 @@ strong{font-weight:600}
 .faq-a a{color:var(--accent);text-decoration:underline}
 /* CTA final */
 .cta-final{text-align:center;position:relative;overflow:hidden;padding:clamp(72px,12vh,120px) 0}
+.cta-final-trust{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 18px;margin-top:4px;max-width:520px}
+.cta-final-trust span{font-size:12px;color:rgba(240,244,248,0.62);display:inline-flex;align-items:center;gap:6px}
+.cta-final-trust span::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--green);opacity:.85;flex-shrink:0}
+body.has-sticky-cta{padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
 .cta-orb{position:absolute;width:480px;height:480px;left:50%;top:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(100,180,255,0.18),transparent 70%);pointer-events:none;filter:blur(40px)}
 /* Footer */
 .footer{padding:56px 0 28px;border-top:1px solid var(--border)}
@@ -661,6 +665,7 @@ main{position:relative;z-index:1}
 @media (min-width:768px){
   .sticky-cta-text{display:block}
   .sticky-cta-price{display:none}
+  body.has-sticky-cta{padding-bottom:calc(68px + env(safe-area-inset-bottom,0px))}
 }
 @media (max-width:640px){
   .networks-grid{grid-template-columns:1fr 1fr}
@@ -1046,6 +1051,7 @@ main{position:relative;z-index:1}
             <div class="network-chip network-chip--more"><strong>E outras</strong><span>Mesmo fluxo server-side</span></div>
         </div>
         <div class="mid-cta rv rv-d4" style="margin-top:32px">
+            <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
             <a href="#pricing" class="btn btn-o">Como prefere pagar</a>
         </div>
     </div>
@@ -1282,7 +1288,7 @@ main{position:relative;z-index:1}
 </section>
 
 <!-- 10. CTA final -->
-<section class="section cta-final">
+<section class="section cta-final" id="comecar">
     <div class="cta-orb" aria-hidden="true"></div>
     <div class="container" style="position:relative;z-index:1">
         <p class="t-label rv" style="text-align:center;margin-bottom:16px">Pronto</p>
@@ -1290,8 +1296,13 @@ main{position:relative;z-index:1}
         <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:500px;margin:16px auto 28px">Safe page para revisores. Offer page para compradores. Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras — setup em 15 minutos</p>
         <div class="rv rv-d3" style="display:flex;flex-direction:column;align-items:center;gap:14px">
             <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
-            <span style="font-size:13px;color:rgba(240,244,248,0.62)">PIX ou cartão · Garantia de 7 dias · Sem contrato</span>
-            <a href="#faq" style="font-size:13px;color:var(--accent);font-weight:500">Ver preço e garantia no FAQ</a>
+            <div class="cta-final-trust">
+                <span>PIX ou cartão</span>
+                <span>Garantia 7 dias</span>
+                <span>Sem contrato</span>
+                <span>Empresa BR · CNPJ</span>
+            </div>
+            <a href="#pricing" style="font-size:13px;color:var(--accent);font-weight:500">Ver trimestral (−10%) e anual (−15%)</a>
         </div>
     </div>
 </section>
@@ -1686,19 +1697,22 @@ const stickyCta = document.getElementById('sticky-cta');
 const stickyClose = document.getElementById('sticky-cta-close');
 const heroSection = document.getElementById('hero');
 const pricingSection = document.getElementById('pricing');
+const ctaFinalSection = document.querySelector('.cta-final');
 const footerSection = document.querySelector('.footer');
 const STICKY_DISMISS_KEY = 'blackink_sticky_cta_dismissed';
 let stickyDismissed = false;
 try { stickyDismissed = localStorage.getItem(STICKY_DISMISS_KEY) === '1'; } catch (_) {}
 let pricingInView = false;
+let ctaFinalInView = false;
 let footerInView = false;
 
 function syncStickyVisibility() {
     if (!stickyCta) return;
     const pastHero = window.scrollY > (heroSection ? heroSection.offsetHeight * 0.7 : 400);
-    const show = !stickyDismissed && pastHero && !pricingInView && !footerInView;
+    const show = !stickyDismissed && pastHero && !pricingInView && !ctaFinalInView && !footerInView;
     stickyCta.classList.toggle('visible', show);
     stickyCta.setAttribute('aria-hidden', show ? 'false' : 'true');
+    document.body.classList.toggle('has-sticky-cta', show);
 }
 
 if (stickyClose) {
@@ -1715,6 +1729,11 @@ if (pricingSection) {
     new IntersectionObserver(entries => {
         entries.forEach(e => { pricingInView = e.isIntersecting; syncStickyVisibility(); });
     }, { threshold: 0.12 }).observe(pricingSection);
+}
+if (ctaFinalSection) {
+    new IntersectionObserver(entries => {
+        entries.forEach(e => { ctaFinalInView = e.isIntersecting; syncStickyVisibility(); });
+    }, { threshold: 0.2 }).observe(ctaFinalSection);
 }
 if (footerSection) {
     new IntersectionObserver(entries => {
