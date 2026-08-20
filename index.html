@@ -907,8 +907,10 @@ main{position:relative;z-index:1}
   #redes .t-label{display:none}
   #redes .t-lg{margin:0 auto 4px;font-size:clamp(20px,2.4vw,26px)}
   #redes .networks-grid{margin-top:6px}
-  /* Ciclo 127: why-line redundante com chips de pricing no desktop */
+  /* Ciclo 127/185: why + redes — chips/FAQ/hero cobrem multi-rede no desktop */
   #por-que.redes-why{display:none}
+  #redes.redes-strip,
+  #redes + .sep{display:none}
   #pricing.section--compact{padding:clamp(12px,1.8vh,24px) 0}
   #pricing .period-toggle{margin-bottom:6px}
   #pricing .period-btn{padding:8px 12px;font-size:13px}
