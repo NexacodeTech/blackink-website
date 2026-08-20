@@ -818,8 +818,14 @@ main{position:relative;z-index:1}
   #pricing .pricing-reveal-inner{padding:14px 16px}
   #faq .faq-outro{margin-top:10px;padding:10px}
   #faq .faq-list{gap:6px}
-  #faq .faq-a{padding:0 14px 10px;font-size:12px}
-  #faq .t-lg{margin-bottom:10px}
+  #faq .faq-a{padding:0 14px 10px;font-size:12px;line-height:1.4}
+  #faq .t-lg{margin-bottom:8px}
+  #faq .faq-q{padding:10px 14px;font-size:13px}
+  #faq .faq-more-toggle{margin-top:8px;padding:8px 14px;min-height:40px;font-size:12px}
+  #faq .faq-inline-cta{margin-top:4px}
+  #faq .faq-outro p{font-size:12px;margin-bottom:8px}
+  /* Ciclo 101: FAQ outro em row no desktop — CTA + atalho lado a lado */
+  #faq .faq-outro-cta{flex-direction:row;gap:14px;align-items:center}
   #problema.problem-strip{padding:clamp(18px,2.5vh,28px) 0}
   #o-que-e.edu-strip{padding:clamp(18px,2.5vh,32px) 0}
   #o-que-e .t-body-lg{margin:0 auto 8px}
@@ -840,12 +846,19 @@ main{position:relative;z-index:1}
   #roi-calc .calc-slider-ticks{font-size:9px;margin-top:2px}
   #roi-calc .calc-divider{margin:8px 0}
   #roi-calc .calc-cta-text{font-size:12px;margin-bottom:8px}
+  #roi-calc .calc-slider-header{margin-bottom:6px}
+  #roi-calc .calc-summary{gap:6px;margin-top:6px}
+  #roi-calc .calc-summary-card{padding:10px}
+  #roi-calc .calc-summary-val{font-size:20px}
+  #pricing .pricing-reveal-title{margin:2px 0 6px;font-size:clamp(20px,2.4vw,26px)}
+  #pricing .pricing-lead{margin-bottom:10px;font-size:13px}
+  #pricing .p-micro{margin-top:8px;font-size:11px}
+  #pricing .pricing-trust-chips{margin-top:8px}
+  #pricing .period-toggle-label{margin-bottom:4px}
   #roi-calc .calc-cta{margin-top:8px}
   #cloaker .showcase-text .t-body-lg{font-size:14px}
-  #faq .faq-q{padding:10px 14px}
   #comecar.cta-final{padding:clamp(24px,4vh,48px) 0}
   #comecar .t-body-lg{margin:6px auto 10px}
-  #pricing .period-toggle-label{margin-bottom:4px}
 }
 @media (max-width:640px){
   .networks-grid{grid-template-columns:1fr 1fr}
@@ -1030,7 +1043,7 @@ main{position:relative;z-index:1}
     <div class="container">
         <p class="t-label rv" style="text-align:center">Como funciona</p>
         <h2 class="t-lg rv rv-d1" style="text-align:center;margin:6px auto 6px;max-width:520px">Três passos · <span class="grad">Sem OAuth</span></h2>
-        <p class="t-body-lg rv rv-d2" style="text-align:center;margin:0 auto 4px;max-width:440px;font-size:clamp(13px,1.4vw,15px)">Cadastre páginas, configure regras e aponte o anúncio para a URL BlackInk</p>
+        <p class="t-body-lg rv rv-d2" style="text-align:center;margin:0 auto 4px;max-width:440px;font-size:clamp(13px,1.4vw,15px)">Páginas → regras → destino do anúncio = URL BlackInk</p>
 
         <div class="setup-steps">
             <div class="setup-step rv">
@@ -1066,7 +1079,7 @@ main{position:relative;z-index:1}
             <div class="showcase-text">
                 <div class="t-label">Prova</div>
                 <h2 class="t-lg">Cloaker <span class="grad">Ao Vivo</span></h2>
-                <p class="t-body-lg">15+ sinais · PASS/BLOCK/GEO em tempo real</p>
+                <p class="t-body-lg">15+ sinais · PASS/BLOCK/GEO · &lt;50ms</p>
                 <div class="showcase-features">
                     <div class="showcase-feat">
                         <div class="showcase-feat-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
