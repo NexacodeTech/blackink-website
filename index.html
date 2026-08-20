@@ -910,34 +910,56 @@ main{position:relative;z-index:1}
   #como-funciona .t-lg{font-size:clamp(12px,3.4vw,15px);margin:1px auto}
   #como-funciona .mid-cta{margin-top:1px}
   #como-funciona .mid-cta .btn{height:30px;font-size:10px}
-  #comecar.cta-final{padding:clamp(1px,0.5vh,4px) 0}
-  #comecar .cta-final-title{font-size:clamp(12px,3.6vw,16px)}
-  #comecar .t-body-lg{font-size:7px;margin:0 auto 2px}
-  #comecar .cta-final-trust span{font-size:6px}
-  #comecar .t-label{display:none}
-  #comecar .pricing-cta{height:30px;font-size:10px;padding:0 10px}
-  #comecar .cta-final-trust span:nth-child(n+3){display:none}
-  .footer{padding:1px 0 1px}
-  .f-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px 4px;margin-bottom:0}
+  #comecar.cta-final{padding:clamp(1px,0.3vh,3px) 0}
+  #comecar .cta-final-title{font-size:clamp(11px,3.2vw,14px)}
+  #comecar .t-body-lg{font-size:6px;margin:0 auto 1px}
+  #comecar .pricing-cta{height:28px;font-size:9px;padding:0 8px}
+  #comecar .cta-final-trust span{font-size:5px}
+  #comecar .cta-final-trust span:nth-child(n+2){display:none}
+  .footer{padding:0}
+  .f-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 3px;margin-bottom:0}
   .footer .f-brand{grid-column:1 / -1}
-  .footer .f-brand p{font-size:6px;line-height:1.1;max-width:28ch;margin-top:0}
-  .footer .f-brand .hdr-logo{font-size:13px}
-  .f-col-t{margin-bottom:0;font-size:6px}
+  .footer .f-brand p{font-size:5px;line-height:1.05;max-width:24ch;margin-top:0}
+  .footer .f-brand .hdr-logo{font-size:11px}
+  .f-col-t{margin-bottom:0;font-size:5px}
   .f-links{gap:0}
-  .f-links a{font-size:7px}
+  .f-links a{font-size:6px}
   .footer .f-links a[href="#redes"],
   .footer .f-links a[href="#faq"],
   .footer .f-links a[href*="login"],
-  .footer .f-links a[href="#cloaker"]{display:none}
-  .f-bottom{gap:0;margin-top:0;padding-top:2px;font-size:6px}
-  .f-legal{font-size:6px;line-height:1.05;gap:0}
+  .footer .f-links a[href="#cloaker"],
+  .footer .f-links a[href="#pricing"]{display:none}
+  .f-bottom{gap:0;margin-top:0;padding-top:1px;font-size:5px}
+  .f-legal{font-size:5px;line-height:1.02;gap:0}
   .f-legal-addr{display:none}
   .f-legal-addr-short{display:inline}
   .f-legal a[href^="mailto"]{display:none}
   .f-bottom > span{display:none}
+  #cloaker .showcase-text .t-body-lg{display:none}
+  #cloaker .showcase-cta{margin-top:1px}
+  #cloaker .showcase-cta .btn{height:26px;font-size:9px}
+  #cloaker .prot-sim-header{padding:1px 3px}
+  #cloaker .prot-sim-status-label{font-size:7px}
+  #cloaker .prot-sim-stat-val{font-size:8px}
+  #cloaker .prot-sim-stat-lbl{font-size:5px}
+  #cloaker .showcase-text .t-lg{font-size:clamp(10px,3vw,13px);margin:0}
+  #problema .problem-resolve{margin-top:1px;font-size:8px}
+  #problema .mid-cta .btn{height:28px;font-size:9px}
+  #problema .problem-stat{font-size:10px}
+  #problema .problem-title{font-size:9px}
+  #problema .problem-card{padding:3px 4px}
+  #como-funciona .setup-step{padding:2px 1px}
+  #como-funciona .setup-step h3{font-size:7px}
+  #como-funciona .t-lg{font-size:clamp(11px,3.2vw,14px);margin:0 auto}
+  #como-funciona .mid-cta .btn{height:26px;font-size:9px}
+  #faq .faq-outro .btn{height:26px;font-size:9px}
+  #faq .t-lg{font-size:clamp(9px,2.6vw,11px)}
+  #faq .faq-q{padding:1px 3px;font-size:7px}
+  #faq .faq-a{padding:0 3px 1px;font-size:7px;line-height:1.05}
+  #faq .faq-more-toggle{min-height:12px;font-size:6px;padding:0 2px}
+  .sep{height:1px;opacity:.08;width:min(120px,28%);margin:0 auto}
   .trust-rail span:nth-child(n+3){display:none}
   .trust-rail{padding:4px 8px;gap:4px 8px}
-  .sep{height:1px;opacity:.1;width:min(160px,35%);margin:0 auto}
   .sticky-cta-inner{gap:10px}
   .sticky-cta-price{display:block}
   .sticky-cta .btn-p{flex:1.2;min-width:0;padding:0 14px;font-size:13px}
@@ -947,8 +969,6 @@ main{position:relative;z-index:1}
   .calc-cta-actions .btn{width:100%;max-width:320px}
   .arch-cta .btn{width:100%;max-width:320px}
   .showcase-cta .btn{width:100%;max-width:320px}
-  /* Ciclo 92/181: seps quase invisíveis — menos “ar” entre atos do funil */
-  .sep{height:1px;opacity:.18;width:min(280px,45%);margin:0 auto}
   #pricing .btn-full{border-radius:12px}
 }
 @media (min-width:768px){
@@ -1299,30 +1319,57 @@ main{position:relative;z-index:1}
   #como-funciona .t-lg{font-size:clamp(13px,1.5vw,17px);margin:0 auto}
   #redes.redes-strip{padding:0}
   #comecar .cta-final-trust span:nth-child(n+3){display:none}
-  #comecar.cta-final{padding:clamp(1px,0.2vh,2px) 0}
-  #comecar .cta-final-title{font-size:clamp(12px,1.5vw,15px)}
-  #comecar .t-body-lg{margin:0 auto 1px;font-size:7px}
-  #comecar .pricing-cta{height:24px;font-size:9px;padding:0 10px}
+  #comecar.cta-final{padding:0}
+  #comecar .cta-final-title{font-size:clamp(11px,1.4vw,14px)}
+  #comecar .t-body-lg{margin:0 auto 0;font-size:6px}
+  #comecar .pricing-cta{height:22px;font-size:8px;padding:0 8px}
   #comecar .cta-final-trust{display:none}
-  .footer{padding:clamp(1px,0.2vh,2px) 0 1px}
-  .f-grid{gap:2px;margin-bottom:1px}
-  .f-bottom{margin-top:1px;padding-top:2px;font-size:7px}
-  .f-brand p{font-size:8px;margin-top:0;line-height:1.1;max-width:26ch}
-  #problema.problem-strip{padding:clamp(1px,0.2vh,3px) 0}
-  #problema .mid-cta .btn{height:26px;font-size:9px}
-  #problema .problem-grid{gap:3px}
-  #como-funciona.section--compact{padding:clamp(1px,0.2vh,3px) 0}
-  #como-funciona .mid-cta .btn{height:26px;font-size:9px}
-  #como-funciona .setup-steps{gap:2px;margin:1px 0}
+  .footer{padding:0}
+  .f-grid{gap:1px;margin-bottom:0}
+  .f-bottom{margin-top:0;padding-top:1px;font-size:6px}
+  .f-brand p{font-size:7px;margin-top:0;line-height:1.05;max-width:22ch}
+  .f-col-t{font-size:7px;margin-bottom:0}
+  .f-links a{font-size:8px}
+  #problema.problem-strip{padding:clamp(1px,0.2vh,2px) 0}
+  #problema .mid-cta .btn{height:22px;font-size:8px}
+  #problema .problem-grid{gap:2px}
+  #problema .problem-card{padding:2px 3px}
+  #problema .problem-stat{font-size:11px}
+  #problema .problem-title{font-size:9px}
+  #problema .problem-resolve{font-size:8px;margin-top:0}
+  #como-funciona.section--compact{padding:clamp(1px,0.2vh,2px) 0}
+  #como-funciona .mid-cta .btn{height:22px;font-size:8px}
+  #como-funciona .setup-steps{gap:2px;margin:0}
+  #como-funciona .setup-step{padding:2px 3px}
+  #como-funciona .setup-step h3{font-size:9px;margin-bottom:0}
+  #como-funciona .t-lg{font-size:clamp(12px,1.4vw,15px);margin:0 auto}
+  #faq.section--compact{padding:0}
+  #faq .faq-outro .btn{height:18px;font-size:8px}
+  #faq .faq-q{padding:1px 3px;font-size:7px}
+  #faq .faq-a{padding:0 3px 0;font-size:6px}
+  #faq .t-lg{font-size:clamp(10px,1.1vw,12px)}
+  #faq .faq-more-toggle{min-height:14px;padding:0 3px;font-size:6px}
+  #faq .faq-outro{margin-top:0;padding:1px 2px}
+  #cloaker .prot-sim{min-height:56px}
+  #cloaker .showcase-cta .btn{height:20px;font-size:8px}
+  #cloaker .prot-sim-header{padding:1px 2px}
+  #cloaker .prot-sim-stat-lbl{font-size:5px}
+  #cloaker .prot-sim-stat-val{font-size:10px}
+  #cloaker .showcase-text .t-lg{font-size:clamp(11px,1.3vw,14px)}
+  #cloaker .showcase-text .t-body-lg{font-size:8px}
+  #pricing .btn-full{height:20px;font-size:8px}
+  #pricing .p-val{font-size:clamp(13px,1.6vw,18px)}
+  #pricing .period-btn{padding:1px;font-size:7px;min-height:20px}
+  #roi-calc .calc-cta .btn{height:18px;font-size:8px}
+  #roi-calc .t-lg{font-size:clamp(9px,1.1vw,12px)}
+  #roi-calc .calc-summary-val{font-size:8px}
+  .sep{opacity:.08;width:min(140px,22%)}
   .footer .f-links a[href="#cloaker"],
-  .footer .f-links a[href="#pricing"]{display:none}
+  .footer .f-links a[href="#pricing"],
+  .footer .f-links a[href="#como-funciona"]{display:none}
   .f-legal span:not(.f-legal-addr-short):not(:first-child){display:none}
   .f-legal-addr-short{display:inline}
   .f-bottom > span{display:none}
-  #cloaker .prot-sim-header{padding:1px 3px}
-  #cloaker .prot-sim-stat-lbl{font-size:6px}
-  #cloaker .prot-sim{min-height:64px}
-  #cloaker .showcase-cta .btn{height:22px;font-size:9px}
 }
 @media (max-width:640px){
   .networks-grid{grid-template-columns:1fr 1fr}
@@ -1380,10 +1427,10 @@ main{position:relative;z-index:1}
   #pricing .p-val{font-size:clamp(15px,4.2vw,19px)}
   #pricing .btn-full{height:28px;font-size:10px}
   #roi-calc .calc-cta .btn{height:28px;font-size:10px}
-  #faq .faq-outro .btn{height:28px;font-size:10px}
-  #cloaker .showcase-cta .btn{height:28px;font-size:10px}
-  #como-funciona .mid-cta .btn{height:28px;font-size:10px}
-  #problema .mid-cta .btn{height:28px;font-size:10px}
+  #faq .faq-outro .btn{height:26px;font-size:9px}
+  #cloaker .showcase-cta .btn{height:26px;font-size:9px}
+  #como-funciona .mid-cta .btn{height:26px;font-size:9px}
+  #problema .mid-cta .btn{height:26px;font-size:9px}
 }
 @media (prefers-reduced-motion:reduce){
   .rv{opacity:1;transform:none}
@@ -1447,7 +1494,7 @@ main{position:relative;z-index:1}
         <span class="ln"><span class="ln-i"><span class="ln-mute">Bots veem</span> <span class="ln-strong">Safe Page</span></span></span>
         <span class="ln"><span class="ln-i"><span class="ln-mute">Compradores veem</span> <span class="ln-strong">Offer Page</span></span></span>
     </h1>
-    <p class="hero-sub">Safe vs offer · multi-rede · &lt;50ms · sem OAuth · R$399,99 · 7 dias</p>
+    <p class="hero-sub">Safe vs offer · multi-rede · &lt;50ms · ~1 dia de sujo = 1 mês · R$399,99 · 7 dias</p>
     <div class="hero-ctas">
         <a href="#roi-calc" class="btn btn-p">Calcular perda</a>
         <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-o plan-link hero-cta" data-plan="Maré">Começar — R$399,99/mês</a>
@@ -1772,7 +1819,7 @@ main{position:relative;z-index:1}
         <p class="t-label rv" style="text-align:center;margin-bottom:4px">FAQ</p>
         <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:4px">Dúvidas · <span class="grad">paga em ~1 dia</span></h2>
         <div class="faq-list">
-            <details class="faq-i rv rv-d1" open><summary class="faq-q">O cloaker se paga?</summary><div class="faq-a" id="faq-savings-a">Perda ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês vs R$399,99 · ~<strong id="faq-savings-payback">1 dia</strong> paga o mês · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar</a></div></details>
+            <details class="faq-i rv rv-d1" open><summary class="faq-q">O cloaker se paga?</summary><div class="faq-a" id="faq-savings-a">Perda ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês · ~<strong id="faq-savings-payback">1 dia</strong> = 1 mês · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar</a></div></details>
             <details class="faq-i faq-i--risk rv rv-d2"><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">7 dias · 100% reembolso · sem fidelidade · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar sem risco</a></div></details>
             <div class="faq-more" id="faq-more">
                 <details class="faq-i"><summary class="faq-q">Quanto custa?</summary><div class="faq-a">R$ 399,99/mês · trimestral −10% · anual −15% · PIX/cartão · sem fidelidade.</div></details>
