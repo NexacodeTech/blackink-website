@@ -1861,6 +1861,8 @@ main{position:relative;z-index:1}
   }
   /* c597 LAST: trimestral active ring — Ideal + −10% no fold */
   #pricing .period-btn.active{border-color:rgba(100,180,255,0.55);background:rgba(100,180,255,0.1)}
+  /* c602 LAST: lead payback equation mais escaneável */
+  #pricing #pricing-lead-payback{color:var(--white);font-weight:700}
   .hero-ctas .btn-o.hero-soft-cta:hover{
     border-color:rgba(52,211,153,0.7);
     background:rgba(52,211,153,0.08)
@@ -2813,6 +2815,8 @@ main{position:relative;z-index:1}
   }
   /* c597 LAST: trimestral active ring — Ideal + −10% no fold */
   #pricing .period-btn.active{border-color:rgba(100,180,255,0.55);background:rgba(100,180,255,0.1)}
+  /* c602 LAST: lead payback equation mais escaneável */
+  #pricing #pricing-lead-payback{color:var(--white);font-weight:700}
   .hero-ctas .btn-o.hero-soft-cta:hover{
     border-color:rgba(52,211,153,0.7);
     background:rgba(52,211,153,0.08)
@@ -3204,6 +3208,8 @@ main{position:relative;z-index:1}
   }
   /* c597 LAST: trimestral active ring — Ideal + −10% no fold */
   #pricing .period-btn.active{border-color:rgba(100,180,255,0.55);background:rgba(100,180,255,0.1)}
+  /* c602 LAST: lead payback equation mais escaneável */
+  #pricing #pricing-lead-payback{color:var(--white);font-weight:700}
   .hero-ctas .btn-o.hero-soft-cta:hover{
     border-color:rgba(52,211,153,0.7);
     background:rgba(52,211,153,0.08)
@@ -3559,6 +3565,8 @@ main{position:relative;z-index:1}
   }
   /* c597 LAST: trimestral active ring — Ideal + −10% no fold */
   #pricing .period-btn.active{border-color:rgba(100,180,255,0.55);background:rgba(100,180,255,0.1)}
+  /* c602 LAST: lead payback equation mais escaneável */
+  #pricing #pricing-lead-payback{color:var(--white);font-weight:700}
   .hero-ctas .btn-o.hero-soft-cta:hover{
     border-color:rgba(52,211,153,0.7);
     background:rgba(52,211,153,0.08)
@@ -3905,6 +3913,8 @@ main{position:relative;z-index:1}
   }
   /* c597 LAST: trimestral active ring — Ideal + −10% no fold */
   #pricing .period-btn.active{border-color:rgba(100,180,255,0.55);background:rgba(100,180,255,0.1)}
+  /* c602 LAST: lead payback equation mais escaneável */
+  #pricing #pricing-lead-payback{color:var(--white);font-weight:700}
   .hero-ctas .btn-o.hero-soft-cta:hover{
     border-color:rgba(52,211,153,0.7);
     background:rgba(52,211,153,0.08)
@@ -4008,7 +4018,7 @@ main{position:relative;z-index:1}
     </div>
     <div class="hero-trust">
         <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-        <span>~1 dia = 1 mês · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link hero-trust-garantia" data-plan="Maré" data-intent="garantia"><strong>Garantia 7 dias · 100%</strong></a> · Google/Meta/TikTok · sem OAuth</span>
+        <span><a href="/cadastro/?plan=Maré&period=monthly" class="plan-link hero-trust-garantia" data-plan="Maré" data-intent="garantia"><strong>Garantia 7 dias · 100%</strong></a> · Google/Meta/TikTok · sem OAuth</span>
     </div>
     </div>
     <div class="trust-rail" aria-label="Sinais de confiança">
@@ -4274,7 +4284,7 @@ main{position:relative;z-index:1}
                 <div class="pricing-reveal-inner">
                     <div class="t-label">Seu investimento</div>
                     <h2 class="pricing-reveal-title">R$399,99 · <span class="grad">~1 dia · Ativar −10%</span></h2>
-                    <p class="pricing-lead" id="pricing-lead">vs perda <strong id="pricing-lead-loss">R$ 12.500</strong>/mês · <strong id="pricing-lead-payback">~1 dia</strong> · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link pricing-lead-cta" data-plan="Maré" id="pricing-lead-verb" aria-label="Ativar cloaker com desconto do período">Ativar −10%</a></p>
+                    <p class="pricing-lead" id="pricing-lead">vs perda <strong id="pricing-lead-loss">R$ 12.500</strong>/mês · <strong id="pricing-lead-payback">~1 dia = 1 mês</strong> · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link pricing-lead-cta" data-plan="Maré" id="pricing-lead-verb" aria-label="Ativar cloaker com desconto do período">Ativar −10%</a></p>
                     <div class="period-toggle-label">Como prefere pagar?</div>
                     <div class="period-toggle">
                         <div class="period-switcher">
@@ -5220,7 +5230,8 @@ if (calcSlider && calcDisplay && calcInvisible && calcFraud && calcTotal && calc
             pricingBridgePayback.textContent = '~' + paybackDays + ' dia' + (paybackDays > 1 ? 's' : '');
         }
         if (pricingLeadPayback) {
-            pricingLeadPayback.textContent = '~' + paybackDays + ' dia' + (paybackDays > 1 ? 's' : '');
+            // c600: equação completa no lead densest — "~1 dia" sozinho era opaco
+            pricingLeadPayback.textContent = '~' + paybackDays + ' dia' + (paybackDays > 1 ? 's' : '') + ' = 1 mês';
         }
         if (ctaFinalPayback) {
             ctaFinalPayback.textContent = '~' + paybackDays + ' dia' + (paybackDays > 1 ? 's' : '');
