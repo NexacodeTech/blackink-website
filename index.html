@@ -843,19 +843,31 @@ main{position:relative;z-index:1}
   #roi-calc .calc-divider{display:none}
   #roi-calc .calc-cta-period{display:none}
   #roi-calc .calc-losses{display:none}
-  #roi-calc .calc-summary-card{padding:1px}
-  #roi-calc .calc-summary-val{font-size:10px}
-  #roi-calc .calc-cta-text{font-size:6px;margin-bottom:0}
-  #roi-calc .calc-cta{margin-top:0}
-  #roi-calc .calc-cta .btn{height:32px;font-size:10px}
+  /* Ciclo 288: buy rails densos — slider/cta sem ar; ROI hide rules acima permanecem */
+  #roi-calc.section--compact{padding:clamp(1px,0.2vh,3px) 0}
+  #roi-calc .t-lg{margin:0 auto 0;font-size:clamp(10px,3.2vw,14px)}
+  #roi-calc .calc-card{padding:1px}
+  #roi-calc .calc-slider-label{font-size:6px}
+  #roi-calc .calc-slider-value{font-size:11px}
   #roi-calc .calc-slider-header{margin-bottom:0}
   #roi-calc .calc-slider{margin:0}
-  #roi-calc .t-lg{margin:0 auto 0;font-size:clamp(11px,3.4vw,15px)}
-  #pricing .btn-full{height:32px;font-size:10px}
-  #pricing .p-val{font-size:clamp(16px,4.5vw,20px)}
-  #pricing.section--compact{padding:clamp(1px,0.4vh,4px) 0}
-  #pricing .pricing-reveal-title{margin:0;font-size:clamp(11px,3.2vw,14px)}
-  #pricing .pricing-lead{font-size:7px;margin-bottom:0;line-height:1.1}
+  #roi-calc .calc-summary{gap:1px;margin-top:0}
+  #roi-calc .calc-summary-card{padding:1px}
+  #roi-calc .calc-summary-val{font-size:9px}
+  #roi-calc .calc-summary-tag{font-size:5px}
+  #roi-calc .calc-cta{margin-top:0}
+  #roi-calc .calc-cta .btn{height:28px;font-size:10px}
+  #pricing .btn-full{height:28px;font-size:10px}
+  #pricing .p-val{font-size:clamp(15px,4.2vw,19px)}
+  #pricing.section--compact{padding:clamp(1px,0.2vh,2px) 0}
+  #pricing .pricing-reveal-inner{padding:1px}
+  #pricing .pricing-reveal-title{margin:0;font-size:clamp(10px,3vw,13px)}
+  #pricing .pricing-lead{font-size:6px;margin-bottom:0;line-height:1.1}
+  #pricing .period-btn{padding:1px;font-size:6px;min-height:22px}
+  #pricing .pricing-trust-chips li{font-size:5px;padding:1px 2px}
+  #pricing .period-discount{font-size:5px;padding:0 1px}
+  #pricing .period-switcher{padding:1px;gap:1px;margin-bottom:0}
+  #pricing .p-price-wrap{min-height:16px}
   #cloaker .prot-sim-stat:nth-child(3){display:none}
   #cloaker .prot-sim-stats{grid-template-columns:1fr 1fr}
   #faq .faq-outro .btn{height:30px;font-size:10px}
@@ -1253,44 +1265,64 @@ main{position:relative;z-index:1}
   #roi-calc .t-lg{font-size:clamp(11px,1.3vw,14px);margin:0}
   #roi-calc .calc-slider-value{font-size:12px}
   #pricing.section--compact{padding:clamp(1px,0.2vh,2px) 0}
-  #pricing .btn-full{height:24px;font-size:9px}
-  #pricing .p-val{font-size:clamp(15px,1.8vw,20px)}
-  #faq .faq-outro .btn{height:22px;font-size:9px}
+  #pricing .btn-full{height:22px;font-size:9px}
+  #pricing .p-val{font-size:clamp(14px,1.7vw,19px)}
+  #pricing .period-btn{padding:1px 2px;font-size:8px;min-height:24px}
+  #pricing .period-rec{display:none}
+  #pricing .pricing-lead{font-size:7px;margin-bottom:0}
+  #pricing .pricing-reveal-title{font-size:clamp(10px,1.2vw,13px)}
+  #pricing .pricing-trust-chips{margin-top:0}
+  #pricing .pricing-trust-chips li{font-size:6px;padding:1px 2px}
+  #roi-calc.section--compact{padding:0}
+  #roi-calc .calc-card{padding:1px}
+  #roi-calc .calc-summary-val{font-size:9px}
+  #roi-calc .calc-summary-card{padding:1px}
+  #roi-calc .calc-cta{margin-top:0}
+  #roi-calc .calc-cta .btn{height:20px;font-size:9px}
+  #roi-calc .t-lg{font-size:clamp(10px,1.2vw,13px);margin:0}
+  #roi-calc .calc-slider-value{font-size:11px}
+  #roi-calc .calc-slider-header{margin-bottom:0}
+  #roi-calc .calc-cta-text{display:none}
+  #faq .faq-outro .btn{height:20px;font-size:9px}
+  #faq .faq-q{padding:1px 4px;font-size:8px}
+  #faq .faq-a{padding:0 4px 1px;font-size:7px}
+  #faq .t-lg{font-size:clamp(11px,1.2vw,13px)}
+  #faq .faq-more-toggle{min-height:16px;padding:0 4px;font-size:7px}
   .footer .f-links a[href="#como-funciona"]{display:none}
   .footer{padding:1px 0 1px}
   .f-bottom{margin-top:1px;padding-top:2px;font-size:7px}
   #faq .faq-i--risk{display:none}
-  #problema .problem-resolve{font-size:10px;margin-top:1px}
-  #problema .problem-card{padding:4px 5px}
+  #problema .problem-resolve{font-size:9px;margin-top:1px}
+  #problema .problem-card{padding:3px 4px}
   #como-funciona .setup-num{display:none}
   #como-funciona .setup-step p{display:none}
-  #como-funciona .t-lg{font-size:clamp(14px,1.6vw,18px);margin:1px auto}
+  #como-funciona .t-lg{font-size:clamp(13px,1.5vw,17px);margin:0 auto}
   #redes.redes-strip{padding:0}
   #comecar .cta-final-trust span:nth-child(n+3){display:none}
   #comecar.cta-final{padding:clamp(1px,0.2vh,2px) 0}
-  #comecar .cta-final-title{font-size:clamp(13px,1.6vw,16px)}
-  #comecar .t-body-lg{margin:0 auto 1px;font-size:8px}
-  #comecar .pricing-cta{height:26px;font-size:10px;padding:0 12px}
+  #comecar .cta-final-title{font-size:clamp(12px,1.5vw,15px)}
+  #comecar .t-body-lg{margin:0 auto 1px;font-size:7px}
+  #comecar .pricing-cta{height:24px;font-size:9px;padding:0 10px}
   #comecar .cta-final-trust{display:none}
   .footer{padding:clamp(1px,0.2vh,2px) 0 1px}
   .f-grid{gap:2px;margin-bottom:1px}
   .f-bottom{margin-top:1px;padding-top:2px;font-size:7px}
-  .f-brand p{font-size:9px;margin-top:0;line-height:1.15;max-width:28ch}
-  #problema.problem-strip{padding:clamp(1px,0.3vh,4px) 0}
-  #problema .mid-cta .btn{height:28px;font-size:10px}
-  #problema .problem-grid{gap:4px}
-  #como-funciona.section--compact{padding:clamp(1px,0.3vh,4px) 0}
-  #como-funciona .mid-cta .btn{height:28px;font-size:10px}
-  #como-funciona .setup-steps{gap:3px;margin:1px 0}
-  #roi-calc .calc-summary-card{padding:1px}
-  #pricing .pricing-trust-chips{margin-top:0}
+  .f-brand p{font-size:8px;margin-top:0;line-height:1.1;max-width:26ch}
+  #problema.problem-strip{padding:clamp(1px,0.2vh,3px) 0}
+  #problema .mid-cta .btn{height:26px;font-size:9px}
+  #problema .problem-grid{gap:3px}
+  #como-funciona.section--compact{padding:clamp(1px,0.2vh,3px) 0}
+  #como-funciona .mid-cta .btn{height:26px;font-size:9px}
+  #como-funciona .setup-steps{gap:2px;margin:1px 0}
   .footer .f-links a[href="#cloaker"],
   .footer .f-links a[href="#pricing"]{display:none}
   .f-legal span:not(.f-legal-addr-short):not(:first-child){display:none}
   .f-legal-addr-short{display:inline}
   .f-bottom > span{display:none}
-  #cloaker .prot-sim-header{padding:2px 4px}
-  #cloaker .prot-sim-stat-lbl{font-size:7px}
+  #cloaker .prot-sim-header{padding:1px 3px}
+  #cloaker .prot-sim-stat-lbl{font-size:6px}
+  #cloaker .prot-sim{min-height:64px}
+  #cloaker .showcase-cta .btn{height:22px;font-size:9px}
 }
 @media (max-width:640px){
   .networks-grid{grid-template-columns:1fr 1fr}
@@ -1314,11 +1346,11 @@ main{position:relative;z-index:1}
   #roi-calc .calc-cta .btn{height:36px;font-size:11px}
   .period-switcher{flex-direction:row;width:100%;max-width:100%;justify-content:center}
   .pricing-reveal-inner .period-toggle{width:100%;justify-content:center}
-  #pricing .period-btn{font-size:7px;padding:2px 1px;min-height:28px}
-  #pricing .p-val{font-size:clamp(17px,4.8vw,22px)}
-  #pricing .btn-full{height:32px;font-size:10px}
+  #pricing .period-btn{font-size:6px;padding:1px;min-height:22px}
+  #pricing .p-val{font-size:clamp(15px,4.2vw,19px)}
+  #pricing .btn-full{height:28px;font-size:10px}
   #pricing .period-nudge{display:none}
-  #roi-calc .calc-cta .btn{height:32px;font-size:10px}
+  #roi-calc .calc-cta .btn{height:28px;font-size:10px}
 }
 @media (max-width:500px){
   .flow-pillars{grid-template-columns:1fr}
@@ -1333,25 +1365,25 @@ main{position:relative;z-index:1}
   .container{width:min(1120px,100% - 28px)}
   .hero-ctas{max-width:100%}
   .networks-grid{grid-template-columns:1fr}
-  /* Ciclo 259/268/276/280/284: pricing permanece denso em 480 */
-  #pricing .period-btn{padding:2px 1px;font-size:7px;min-height:28px}
-  #pricing .p-val{font-size:clamp(16px,4.5vw,20px)}
-  #pricing .btn-full{height:32px;font-size:10px}
+  /* Ciclo 259/268/276/280/284/288: pricing permanece denso em 480 */
+  #pricing .period-btn{padding:1px;font-size:6px;min-height:22px}
+  #pricing .p-val{font-size:clamp(15px,4.2vw,19px)}
+  #pricing .btn-full{height:28px;font-size:10px}
 }
 @media (max-width:390px){
   .hero-logo{width:32px;height:32px}
   .hero-title{font-size:22px}
   .hero-badge-text{font-size:10px}
   .btn{height:48px;font-size:14px;padding:0 20px}
-  /* Ciclo 259/268/276/280/284: não inflar preço/switcher/CTAs densos no iPhone */
-  #pricing .period-btn{font-size:7px;padding:2px 1px;min-height:28px}
-  #pricing .p-val{font-size:clamp(16px,4.5vw,20px)}
-  #pricing .btn-full{height:32px;font-size:10px}
-  #roi-calc .calc-cta .btn{height:32px;font-size:10px}
-  #faq .faq-outro .btn{height:30px;font-size:10px}
-  #cloaker .showcase-cta .btn{height:32px;font-size:10px}
-  #como-funciona .mid-cta .btn{height:32px;font-size:10px}
-  #problema .mid-cta .btn{height:32px;font-size:10px}
+  /* Ciclo 259/268/276/280/284/288: não inflar preço/switcher/CTAs densos no iPhone */
+  #pricing .period-btn{font-size:6px;padding:1px;min-height:22px}
+  #pricing .p-val{font-size:clamp(15px,4.2vw,19px)}
+  #pricing .btn-full{height:28px;font-size:10px}
+  #roi-calc .calc-cta .btn{height:28px;font-size:10px}
+  #faq .faq-outro .btn{height:28px;font-size:10px}
+  #cloaker .showcase-cta .btn{height:28px;font-size:10px}
+  #como-funciona .mid-cta .btn{height:28px;font-size:10px}
+  #problema .mid-cta .btn{height:28px;font-size:10px}
 }
 @media (prefers-reduced-motion:reduce){
   .rv{opacity:1;transform:none}
@@ -1684,7 +1716,7 @@ main{position:relative;z-index:1}
                 <div class="pricing-reveal-inner">
                     <div class="t-label">Seu investimento</div>
                     <h2 class="pricing-reveal-title">Um cloaker · <span class="grad">R$399,99</span></h2>
-                    <p class="pricing-lead" id="pricing-lead"><strong id="pricing-lead-loss">R$ 12.500</strong>/mês de perda · <strong id="pricing-lead-payback">~1 dia</strong> paga o mês · 7 dias</p>
+                    <p class="pricing-lead" id="pricing-lead"><strong id="pricing-lead-loss">R$ 12.500</strong>/mês · <strong id="pricing-lead-payback">~1 dia</strong> = 1 mês · 7 dias</p>
                     <div class="period-toggle-label">Como prefere pagar?</div>
                     <div class="period-toggle">
                         <div class="period-switcher">
