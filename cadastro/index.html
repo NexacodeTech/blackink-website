@@ -581,6 +581,13 @@
                 : ('perda · ~1 dia = 1 mês · Garantia 7 dias · ' + ativarVerb);
         }
         if (submitTrust) submitTrust.innerHTML = '<strong>Garantia 7 dias</strong> · 100% · ' + ativarVerb + ' · sem fidelidade · setup ~15 min';
+        // c482: sidebar subtitle sync período
+        const infoSubtitle = document.getElementById('infoSubtitle');
+        if (infoSubtitle) {
+            infoSubtitle.textContent = simulatedLoss
+                ? ('Perda ~R$ ' + simulatedLoss.toLocaleString('pt-BR') + '/mês · ~1 dia = 1 mês · R$399,99 · 7 dias · ' + ativarVerb + '.')
+                : ('Safe + offer · regras · URL BlackInk — Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras · ' + ativarVerb + '.');
+        }
         try {
             const u = new URL(window.location.href);
             u.searchParams.set('plan', plan);
