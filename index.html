@@ -569,6 +569,7 @@ strong{font-weight:600}
 .pricing-includes-line{font-size:12px;color:var(--dim);line-height:1.45;margin:0 auto 14px;max-width:42ch}
 .pricing-includes-line span{color:var(--white);font-weight:600}
 .pricing-trust-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin:10px 0 0;padding:0;list-style:none}
+.pricing-networks{display:none;text-align:center;font-size:11px;color:var(--dim);margin:6px 0 0;line-height:1.3}
 .pricing-trust-chips li{font-size:11px;font-weight:600;color:var(--dim);padding:5px 10px;border-radius:999px;border:1px solid var(--border);background:rgba(2,10,20,0.35);letter-spacing:.02em}
 .pricing-trust-chips li:first-child{color:var(--green);border-color:rgba(52,211,153,0.25);background:rgba(52,211,153,0.06)}
 /* FAQ — compact (ciclo 45) */
@@ -1469,6 +1470,37 @@ main{position:relative;z-index:1}
   /* c401 LAST: sticky densest — CTA 44px tocável */
   .sticky-cta .btn-p{height:44px;font-size:13px;padding:0 16px}
   .sticky-cta-price{font-size:11px;line-height:1.25}
+  /* c402 LAST: trust chips sob CTA — 7 dias · −10% · sem OAuth */
+  #pricing .pricing-trust-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 6px;margin:6px 0 0;padding:0;list-style:none}
+  #pricing .pricing-trust-chips li{display:inline-flex;font-size:10px;padding:3px 7px;line-height:1.2;border-radius:999px;border:1px solid var(--border);color:var(--dim)}
+  #pricing .pricing-chip-latency{display:none}
+  /* c403 LAST: redes compactas pós-pricing — prova multi-rede */
+  #redes{display:block;padding:4px 0;margin:0;line-height:1}
+  #redes + .sep{display:none}
+  #redes .t-label,#redes .t-lg,#redes .t-body-lg,#redes .why-strip-text,#redes .redes-why,#redes .network-chip--more{display:none}
+  #redes .networks-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:4px;margin:0;line-height:1}
+  #redes .network-chip{padding:3px 8px;font-size:10px;line-height:1.2;border-radius:6px;margin:0}
+  #redes .network-chip span{display:none}
+  #redes .network-chip strong{font-weight:600;font-size:10px}
+  /* c404 LAST: comecar trust de volta — PIX · 7 dias · sem OAuth */
+  #comecar .cta-final-trust{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 10px;margin-top:6px}
+  #comecar .cta-final-trust span{display:inline-flex;font-size:10px;line-height:1.2}
+  #comecar .cta-final-trust span:nth-child(n+4){display:none}
+  #comecar .cta-final-period{display:none}
+  #comecar .t-body-lg{display:none}
+  /* c405 LAST: pricing networks micro-line (fallback se redes falhar) */
+  #pricing .pricing-networks{display:block;text-align:center;font-size:10px;color:var(--dim);margin:6px 0 0;line-height:1.25}
+  /* c406 LAST: trust chips completos + comecar 3 spans; networks line some (redes chips bastam) */
+  #pricing .pricing-trust-chips li{display:inline-flex}
+  #pricing .pricing-trust-chips li:nth-child(2){display:inline-flex}
+  /* especificidade > li genérico — esconde latency */
+  #pricing .pricing-trust-chips li.pricing-chip-latency{display:none}
+  #pricing .pricing-networks{display:none}
+  #comecar .cta-final-trust span{display:inline-flex}
+  #comecar .cta-final-trust span:nth-child(1),
+  #comecar .cta-final-trust span:nth-child(2),
+  #comecar .cta-final-trust span:nth-child(3){display:inline-flex}
+  #comecar .cta-final-trust span:nth-child(n+4){display:none}
 }
 @media (min-width:768px){
   .sticky-cta-text{display:block}
@@ -2200,6 +2232,31 @@ main{position:relative;z-index:1}
   #faq .faq-q::after{display:none}
   #faq .faq-a{display:none}
   .sticky-cta .btn-p{height:44px;font-size:14px}
+  /* c402–c405 desktop densest — trust + redes + comecar */
+  #pricing .pricing-trust-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 8px;margin:6px 0 0;padding:0;list-style:none}
+  #pricing .pricing-trust-chips li{display:inline-flex;font-size:10px;padding:3px 8px;line-height:1.2;border-radius:999px;border:1px solid var(--border);color:var(--dim)}
+  #pricing .pricing-chip-latency{display:none}
+  #redes{display:block;padding:6px 0;margin:0;line-height:1}
+  #redes + .sep{display:none}
+  #redes .t-label,#redes .t-lg,#redes .t-body-lg,#redes .why-strip-text,#redes .redes-why,#redes .network-chip--more{display:none}
+  #redes .networks-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin:0}
+  #redes .network-chip{padding:4px 10px;font-size:11px;line-height:1.2;border-radius:6px}
+  #redes .network-chip span{display:none}
+  #comecar .cta-final-trust{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 12px;margin-top:8px}
+  #comecar .cta-final-trust span{display:inline-flex;font-size:11px}
+  #comecar .cta-final-trust span:nth-child(n+4){display:none}
+  #comecar .cta-final-period,#comecar .t-body-lg{display:none}
+  #pricing .pricing-networks{display:block;text-align:center;font-size:11px;color:var(--dim);margin:6px 0 0}
+  /* c406 desktop densest */
+  #pricing .pricing-trust-chips li{display:inline-flex}
+  #pricing .pricing-trust-chips li:nth-child(2){display:inline-flex}
+  #pricing .pricing-chip-latency{display:none}
+  #pricing .pricing-networks{display:none}
+  #comecar .cta-final-trust span{display:inline-flex}
+  #comecar .cta-final-trust span:nth-child(1),
+  #comecar .cta-final-trust span:nth-child(2),
+  #comecar .cta-final-trust span:nth-child(3){display:inline-flex}
+  #comecar .cta-final-trust span:nth-child(n+4){display:none}
 }
 
 @media (max-width:640px){
@@ -2303,7 +2360,7 @@ main{position:relative;z-index:1}
   #pricing .btn-full,#roi-calc .calc-cta .btn,#cloaker .showcase-cta .btn{height:10px;font-size:5.5px;margin:0}
   #pricing .period-btn{min-height:8px;font-size:3.5px;padding:0;flex-direction:row;align-items:center;gap:2px;line-height:1}
   /* c381–c385: preservar densest em ≤600 */
-  #redes{display:none}
+  #redes{display:block;padding:4px 0;margin:0;line-height:1}
   #problema{display:none}
   #pricing .period-discount{display:none}
   #pricing .period-btn{min-height:6px;font-size:3px;padding:0;flex-direction:row;align-items:center;gap:0;line-height:1}
@@ -2334,11 +2391,35 @@ main{position:relative;z-index:1}
   #faq .faq-q::after{display:none}
   #faq .faq-a{display:none}
   .sticky-cta .btn-p{height:44px;font-size:13px}
+  /* c402–c405: trust + redes + comecar em ≤600 */
+  #pricing .pricing-trust-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 6px;margin:6px 0 0;padding:0;list-style:none}
+  #pricing .pricing-trust-chips li{display:inline-flex;font-size:10px;padding:3px 7px;line-height:1.2;border-radius:999px;border:1px solid var(--border);color:var(--dim)}
+  #pricing .pricing-chip-latency{display:none}
+  #pricing .pricing-networks{display:block;text-align:center;font-size:10px;color:var(--dim);margin:6px 0 0;line-height:1.25}
+  #redes{display:block;padding:4px 0;margin:0;line-height:1}
+  #redes .t-label,#redes .t-lg,#redes .t-body-lg,#redes .why-strip-text,#redes .redes-why,#redes .network-chip--more{display:none}
+  #redes .networks-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:4px;margin:0}
+  #redes .network-chip{padding:3px 8px;font-size:10px;line-height:1.2;border-radius:6px}
+  #redes .network-chip span{display:none}
+  #comecar .cta-final-trust{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 10px;margin-top:6px}
+  #comecar .cta-final-trust span{display:inline-flex;font-size:10px}
+  #comecar .cta-final-trust span:nth-child(n+4){display:none}
+  #comecar .cta-final-period,#comecar .t-body-lg{display:none}
+  /* c406: chips −10% visível; networks line some em ≤600 */
+  #pricing .pricing-trust-chips li{display:inline-flex}
+  #pricing .pricing-trust-chips li:nth-child(2){display:inline-flex}
+  #pricing .pricing-chip-latency{display:none}
+  #pricing .pricing-networks{display:none}
+  #comecar .cta-final-trust span{display:inline-flex}
+  #comecar .cta-final-trust span:nth-child(1),
+  #comecar .cta-final-trust span:nth-child(2),
+  #comecar .cta-final-trust span:nth-child(3){display:inline-flex}
+  #comecar .cta-final-trust span:nth-child(n+4){display:none}
 }
 @media (max-width:500px){
   .flow-pillars{grid-template-columns:1fr}
-  /* Ciclo 331: não reinflar chips — densest 767 vence */
-  #redes .network-chip{padding:1px 2px;font-size:5px;border-radius:4px}
+  /* c403: não esmagar chips redes densest */
+  #redes .network-chip{padding:3px 8px;font-size:10px;border-radius:6px}
 }
 @media (max-width:480px){
   /* Ciclo 81/173: row compacta — CTA de preço sobe no viewport */
@@ -2427,7 +2508,7 @@ main{position:relative;z-index:1}
   #pricing .btn-full,#roi-calc .calc-cta .btn,#cloaker .showcase-cta .btn{height:10px;font-size:5.5px;margin:0}
   #pricing .period-btn{min-height:8px;font-size:3.5px;padding:0;flex-direction:row;align-items:center;gap:2px;line-height:1}
   /* c381–c385: preservar densest em ≤480 */
-  #redes{display:none}
+  #redes{display:block;padding:4px 0;margin:0;line-height:1}
   #problema{display:none}
   #pricing .period-discount{display:none}
   #pricing .period-btn{min-height:6px;font-size:3px;padding:0;flex-direction:row;align-items:center;gap:0;line-height:1}
@@ -2458,6 +2539,30 @@ main{position:relative;z-index:1}
   #faq .faq-q::after{display:none}
   #faq .faq-a{display:none}
   .sticky-cta .btn-p{height:44px;font-size:13px}
+  /* c402–c405: trust + redes + comecar em ≤480 */
+  #pricing .pricing-trust-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 6px;margin:6px 0 0;padding:0;list-style:none}
+  #pricing .pricing-trust-chips li{display:inline-flex;font-size:10px;padding:3px 7px;line-height:1.2;border-radius:999px;border:1px solid var(--border);color:var(--dim)}
+  #pricing .pricing-chip-latency{display:none}
+  #pricing .pricing-networks{display:block;text-align:center;font-size:10px;color:var(--dim);margin:6px 0 0;line-height:1.25}
+  #redes{display:block;padding:4px 0;margin:0;line-height:1}
+  #redes .t-label,#redes .t-lg,#redes .t-body-lg,#redes .why-strip-text,#redes .redes-why,#redes .network-chip--more{display:none}
+  #redes .networks-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:4px;margin:0}
+  #redes .network-chip{padding:3px 8px;font-size:10px;line-height:1.2;border-radius:6px}
+  #redes .network-chip span{display:none}
+  #comecar .cta-final-trust{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 10px;margin-top:6px}
+  #comecar .cta-final-trust span{display:inline-flex;font-size:10px}
+  #comecar .cta-final-trust span:nth-child(n+4){display:none}
+  #comecar .cta-final-period,#comecar .t-body-lg{display:none}
+  /* c406: chips −10% visível; networks line some em ≤480 */
+  #pricing .pricing-trust-chips li{display:inline-flex}
+  #pricing .pricing-trust-chips li:nth-child(2){display:inline-flex}
+  #pricing .pricing-chip-latency{display:none}
+  #pricing .pricing-networks{display:none}
+  #comecar .cta-final-trust span{display:inline-flex}
+  #comecar .cta-final-trust span:nth-child(1),
+  #comecar .cta-final-trust span:nth-child(2),
+  #comecar .cta-final-trust span:nth-child(3){display:inline-flex}
+  #comecar .cta-final-trust span:nth-child(n+4){display:none}
 }
 @media (max-width:390px){
   .hero-logo{width:32px;height:32px}
@@ -2540,7 +2645,7 @@ main{position:relative;z-index:1}
   #pricing .btn-full,#roi-calc .calc-cta .btn,#cloaker .showcase-cta .btn{height:10px;font-size:5.5px;margin:0}
   #pricing .period-btn{min-height:8px;font-size:3.5px;padding:0;flex-direction:row;align-items:center;gap:2px;line-height:1}
   /* c381–c385: preservar densest no iPhone */
-  #redes{display:none}
+  #redes{display:block;padding:4px 0;margin:0;line-height:1}
   #problema{display:none}
   #pricing .period-discount{display:none}
   #pricing .period-btn{min-height:6px;font-size:3px;padding:0;flex-direction:row;align-items:center;gap:0;line-height:1}
@@ -2571,6 +2676,30 @@ main{position:relative;z-index:1}
   #faq .faq-q::after{display:none}
   #faq .faq-a{display:none}
   .sticky-cta .btn-p{height:44px;font-size:13px}
+  /* c402–c405: trust + redes + comecar no iPhone */
+  #pricing .pricing-trust-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 6px;margin:6px 0 0;padding:0;list-style:none}
+  #pricing .pricing-trust-chips li{display:inline-flex;font-size:10px;padding:3px 7px;line-height:1.2;border-radius:999px;border:1px solid var(--border);color:var(--dim)}
+  #pricing .pricing-chip-latency{display:none}
+  #pricing .pricing-networks{display:block;text-align:center;font-size:10px;color:var(--dim);margin:6px 0 0;line-height:1.25}
+  #redes{display:block;padding:4px 0;margin:0;line-height:1}
+  #redes .t-label,#redes .t-lg,#redes .t-body-lg,#redes .why-strip-text,#redes .redes-why,#redes .network-chip--more{display:none}
+  #redes .networks-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:4px;margin:0}
+  #redes .network-chip{padding:3px 8px;font-size:10px;line-height:1.2;border-radius:6px}
+  #redes .network-chip span{display:none}
+  #comecar .cta-final-trust{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 10px;margin-top:6px}
+  #comecar .cta-final-trust span{display:inline-flex;font-size:10px}
+  #comecar .cta-final-trust span:nth-child(n+4){display:none}
+  #comecar .cta-final-period,#comecar .t-body-lg{display:none}
+  /* c406: chips −10% visível; networks line some no iPhone */
+  #pricing .pricing-trust-chips li{display:inline-flex}
+  #pricing .pricing-trust-chips li:nth-child(2){display:inline-flex}
+  #pricing .pricing-chip-latency{display:none}
+  #pricing .pricing-networks{display:none}
+  #comecar .cta-final-trust span{display:inline-flex}
+  #comecar .cta-final-trust span:nth-child(1),
+  #comecar .cta-final-trust span:nth-child(2),
+  #comecar .cta-final-trust span:nth-child(3){display:inline-flex}
+  #comecar .cta-final-trust span:nth-child(n+4){display:none}
   #como-funciona .mid-cta .btn{height:18px;font-size:7px}
   #problema .mid-cta .btn{height:18px;font-size:7px}
 }
@@ -2636,10 +2765,10 @@ main{position:relative;z-index:1}
         <span class="ln"><span class="ln-i"><span class="ln-mute">Bots veem</span> <span class="ln-strong">Safe Page</span></span></span>
         <span class="ln"><span class="ln-i"><span class="ln-mute">Compradores veem</span> <span class="ln-strong">Offer Page</span></span></span>
     </h1>
-    <p class="hero-sub">Safe vs offer · multi-rede · &lt;50ms · ~1 dia = 1 mês · Ativar −10% · 7 dias</p>
+    <p class="hero-sub">Safe vs offer · Google · YouTube · Meta · TikTok · &lt;50ms · ~1 dia = 1 mês · Ativar −10%</p>
     <div class="hero-ctas">
         <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link hero-cta" data-plan="Maré">Ativar — R$399,99/mês</a>
-        <a href="#pricing" class="btn btn-o">Ativar −10% · ver preço</a>
+        <a href="#pricing" class="btn btn-o">Ver perda · Ativar −10%</a>
     </div>
     <div class="hero-trust">
         <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
@@ -2922,6 +3051,7 @@ main{position:relative;z-index:1}
                     </div>
                     <p class="pricing-includes-line">Safe + offer · server-side &lt;50ms · 15+ sinais + logs · App + suporte · Payback <span id="pricing-bridge-payback">~1 dia</span></p>
                     <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p btn-full plan-link pricing-cta" data-plan="Maré">Ativar — R$399,99/mês</a>
+                    <p class="pricing-networks">Google Ads · YouTube Ads · Facebook Ads · TikTok Ads · sem OAuth</p>
                     <ul class="pricing-trust-chips" aria-label="Garantias">
                         <li>Garantia 7 dias</li>
                         <li>Ativar −10%</li>
