@@ -469,7 +469,7 @@
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-p" id="submitBtn">
-                                Continuar para pagamento — R$ 399,99/mês
+                                Ativar — R$ 399,99/mês · 7 dias
                             </button>
                             <p class="form-submit-trust"><strong>Garantia 7 dias</strong> · reembolso 100% · PIX/cartão · sem fidelidade · setup ~15 min</p>
                         </div>
@@ -537,9 +537,9 @@
     document.getElementById('planName').textContent = planData.displayName || plan;
 
     function submitLabelForPeriod(p) {
-        if (p === 'quarterly') return 'Continuar para pagamento — R$ 359,99/mês';
-        if (p === 'yearly') return 'Continuar para pagamento — R$ 339,99/mês';
-        return 'Continuar para pagamento — R$ 399,99/mês';
+        if (p === 'quarterly') return 'Ativar trimestral — R$ 359,99/mês';
+        if (p === 'yearly') return 'Ativar anual — R$ 339,99/mês';
+        return 'Ativar — R$ 399,99/mês · 7 dias';
     }
 
     function applyPeriodPricing(nextPeriod) {
