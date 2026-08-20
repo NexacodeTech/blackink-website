@@ -569,9 +569,17 @@
         const trustEl = document.querySelector('.selected-plan-trust');
         const lossHint = document.getElementById('cadastroLossHint');
         const submitTrust = document.querySelector('.form-submit-trust');
-        const ativarVerb = period === 'yearly' ? 'Ativar −15%' : 'Ativar −10%';
+        const ativarVerb = period === 'yearly' ? 'Ativar −15%' : (period === 'quarterly' ? 'Ativar −10%' : 'Ativar');
+        const lossFmt = simulatedLoss
+            ? ('R$ ' + Math.round(simulatedLoss).toLocaleString('pt-BR'))
+            : null;
         if (trustEl) trustEl.innerHTML = '<strong>Garantia 7 dias</strong> · 100% · ' + ativarVerb + ' · cancele quando quiser';
-        if (lossHint) lossHint.textContent = 'perda · ~1 dia = 1 mês · Garantia 7 dias · ' + ativarVerb;
+        // c467: loss hint com valor real quando veio da landing
+        if (lossHint) {
+            lossHint.textContent = lossFmt
+                ? ('perda ' + lossFmt + '/mês · ~1 dia = 1 mês · Garantia 7 dias · ' + ativarVerb)
+                : ('perda · ~1 dia = 1 mês · Garantia 7 dias · ' + ativarVerb);
+        }
         if (submitTrust) submitTrust.innerHTML = '<strong>Garantia 7 dias</strong> · 100% · ' + ativarVerb + ' · sem fidelidade · setup ~15 min';
         try {
             const u = new URL(window.location.href);
@@ -600,11 +608,12 @@
     })();
 
     // Sidebar copy — plataforma + setup correto (personalizado se veio da calculadora)
+    const ativarSidebar = period === 'yearly' ? 'Ativar −15%' : (period === 'quarterly' ? 'Ativar −10%' : 'Ativar');
     const sidebar = {
         title: 'Ative · <span class="grad">~1 dia = 1 mês</span>',
         subtitle: simulatedLoss
-            ? ('Perda ~R$ ' + simulatedLoss.toLocaleString('pt-BR') + '/mês · ~1 dia = 1 mês · R$399,99 · 7 dias · Ativar −10%.')
-            : 'Safe + offer · regras · URL BlackInk — Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras · Ativar −10%.',
+            ? ('Perda ~R$ ' + simulatedLoss.toLocaleString('pt-BR') + '/mês · ~1 dia = 1 mês · R$399,99 · 7 dias · ' + ativarSidebar + '.')
+            : 'Safe + offer · regras · URL BlackInk — Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras · ' + ativarSidebar + '.',
         features: [
             { strong: '1. Cadastre safe/offer', span: 'Painel ou BlackInk Clone' },
             { strong: '2. Regras multi-sinal', span: 'Geo, device, bots, VPNs, revisores' },

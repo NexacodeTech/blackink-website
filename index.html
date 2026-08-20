@@ -3240,7 +3240,7 @@ main{position:relative;z-index:1}
     <div class="hero-badge">
         <div class="hero-badge-inner">
             <span class="hero-badge-dot" aria-hidden="true"></span>
-                <span class="hero-badge-text">
+                <span class="hero-badge-text" id="hero-badge-label">
                 <svg class="hero-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                 Cloaker multi-rede · ~1 dia · Ativar −10%
             </span>
@@ -4021,6 +4021,11 @@ const PRICING_LEAD_VERB = {
     quarterly: 'Ativar −10%',
     yearly: 'Ativar −15%'
 };
+const HERO_BADGE_LABEL = {
+    monthly: 'Cloaker multi-rede · ~1 dia · Ativar',
+    quarterly: 'Cloaker multi-rede · ~1 dia · Ativar −10%',
+    yearly: 'Cloaker multi-rede · ~1 dia · Ativar −15%'
+};
 const NAV_CTA_LABELS = {
     monthly: 'Ativar — R$399,99',
     quarterly: 'Ativar −10%',
@@ -4092,6 +4097,13 @@ function updatePricingCtaLabel(period) {
     // c461: pricing lead verbo sync período
     const pricingLeadVerb = document.getElementById('pricing-lead-verb');
     if (pricingLeadVerb) pricingLeadVerb.textContent = PRICING_LEAD_VERB[period] || PRICING_LEAD_VERB.monthly;
+    // c468: hero badge sync período (mantém ícone SVG)
+    const badgeLabel = document.getElementById('hero-badge-label');
+    if (badgeLabel) {
+        const svg = badgeLabel.querySelector('svg');
+        badgeLabel.textContent = ' ' + (HERO_BADGE_LABEL[period] || HERO_BADGE_LABEL.monthly);
+        if (svg) badgeLabel.insertBefore(svg, badgeLabel.firstChild);
+    }
     // FAQ price CTAs mirror period (open answer + assure densest)
     const faqPrice = FAQ_PRICE_CTA[period] || FAQ_PRICE_CTA.monthly;
     document.querySelectorAll('.faq-inline-cta--price').forEach(a => { a.textContent = faqPrice; });
