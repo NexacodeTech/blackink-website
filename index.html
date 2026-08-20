@@ -719,17 +719,18 @@ main{position:relative;z-index:1}
   #redes .t-lg,
   #redes .t-body-lg{display:none}
   #redes .networks-grid{margin-top:0;gap:3px}
-  #faq.section--compact{padding:clamp(10px,1.6vh,20px) 0}
+  #faq.section--compact{padding:clamp(6px,1.2vh,14px) 0}
   #faq .t-label{margin-bottom:0;display:none}
-  #faq .t-lg{margin-bottom:2px;font-size:clamp(16px,4.5vw,20px)}
-  #faq .faq-list{gap:3px}
-  #faq .faq-q{padding:6px 8px;font-size:11px}
-  #faq .faq-a{padding:0 8px 5px;font-size:10px;line-height:1.25}
-  #faq .faq-more-toggle{margin-top:2px;padding:4px 8px;min-height:32px;font-size:10px}
-  #faq .faq-outro{margin-top:4px;padding:5px}
+  #faq .t-lg{margin-bottom:2px;font-size:clamp(15px,4.2vw,18px)}
+  #faq .faq-list{gap:2px}
+  #faq .faq-q{padding:5px 8px;font-size:11px}
+  #faq .faq-a{padding:0 8px 4px;font-size:10px;line-height:1.2}
+  #faq .faq-more-toggle{margin-top:2px;padding:3px 8px;min-height:28px;font-size:9px}
+  #faq .faq-outro{margin-top:2px;padding:4px}
   #faq .faq-outro-support{display:none}
   #faq .faq-outro p{font-size:11px;margin-bottom:0}
   #faq .faq-outro .btn{height:44px;font-size:13px}
+  #faq .faq-inline-cta{margin-top:0;padding:0}
   #comecar.cta-final{padding:clamp(16px,2.4vh,28px) 0}
   #comecar .t-lg,#comecar .cta-final-title{font-size:clamp(18px,5vw,24px)}
   #comecar .t-body-lg{margin:2px auto 6px;font-size:11px}
@@ -935,9 +936,17 @@ main{position:relative;z-index:1}
   #redes .t-lg,
   #redes .t-body-lg{display:none}
   #redes .networks-grid{margin-top:0;gap:6px}
-  #pricing.section--compact{padding:clamp(8px,1.4vh,18px) 0}
+  #pricing.section--compact{padding:clamp(6px,1.2vh,14px) 0}
   #pricing .period-toggle{margin-bottom:2px}
-  #pricing .period-btn{padding:5px 8px;font-size:12px}
+  #pricing .period-btn{padding:4px 6px;font-size:11px}
+  #pricing .pricing-reveal-title{margin:0 0 2px;font-size:clamp(16px,2vw,20px)}
+  #pricing .pricing-lead{margin-bottom:2px;font-size:11px}
+  #pricing .p-price-wrap{min-height:32px;margin-bottom:2px}
+  #pricing .period-nudge{margin:-2px auto 2px;font-size:10px}
+  #pricing .p-val{font-size:clamp(28px,3.6vw,36px)}
+  #pricing .btn-full{height:46px;font-size:14px}
+  #pricing .pricing-trust-chips{margin-top:4px}
+  #pricing .pricing-trust-chips li{font-size:10px;padding:3px 7px}
   #roi-calc .t-body-lg{margin:0 auto 4px;font-size:12px}
   #roi-calc .calc-card{padding:8px 10px}
   #roi-calc .calc-summary-lbl{display:none}
@@ -955,19 +964,24 @@ main{position:relative;z-index:1}
   #roi-calc .calc-summary-val{font-size:16px}
   #roi-calc .calc-summary-tag{font-size:8px}
   #pricing .t-label{display:none}
-  #pricing .pricing-reveal-title{margin:0 0 2px;font-size:clamp(18px,2.2vw,22px)}
-  #pricing .pricing-lead{margin-bottom:4px;font-size:12px}
+  /* Ciclo 216: densest pricing last in desktop cascade */
+  #pricing .pricing-reveal-title{margin:0 0 2px;font-size:clamp(16px,2vw,20px)}
+  #pricing .pricing-lead{margin-bottom:2px;font-size:11px}
   #pricing .p-micro{margin-top:8px;font-size:11px}
   #pricing .pricing-trust-chips{margin-top:8px}
   #pricing .period-toggle-label{margin-bottom:4px;display:none}
   /* Ciclo 111: chips cobrem includes+micro no desktop */
   #pricing .pricing-includes-line{display:none}
   #pricing .p-micro{display:none}
-  #pricing .pricing-trust-chips{margin-top:6px;margin-bottom:0}
-  #pricing .p-price-wrap{min-height:36px;margin-bottom:2px}
-  #pricing .period-nudge{margin:-4px auto 4px;font-size:11px}
-  #pricing .p-val{font-size:clamp(32px,4vw,40px)}
-  #pricing .btn-full{height:48px;font-size:15px}
+  #pricing .pricing-trust-chips{margin-top:4px;margin-bottom:0}
+  #pricing .pricing-trust-chips li{font-size:10px;padding:3px 7px}
+  #pricing .p-price-wrap{min-height:32px;margin-bottom:2px}
+  #pricing .period-nudge{margin:-2px auto 2px;font-size:10px}
+  #pricing .p-val{font-size:clamp(28px,3.6vw,36px)}
+  #pricing .btn-full{height:46px;font-size:14px}
+  #pricing.section--compact{padding:clamp(6px,1.2vh,14px) 0}
+  #pricing .period-toggle{margin-bottom:2px}
+  #pricing .period-btn{padding:4px 6px;font-size:11px}
   #roi-calc .calc-cta{margin-top:4px}
   /* Ciclo 202: pricing é o próximo ato — link de período some no desktop */
   #roi-calc .calc-cta-period{display:none}
@@ -1134,7 +1148,7 @@ main{position:relative;z-index:1}
     </h1>
     <p class="hero-sub">Safe vs offer · multi-rede · &lt;50ms · sem OAuth · R$399,99/mês</p>
     <div class="hero-ctas">
-        <a href="#roi-calc" class="btn btn-p">Ver perdas do budget</a>
+        <a href="#roi-calc" class="btn btn-p">Calcular perda do budget</a>
         <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-o plan-link hero-cta" data-plan="Maré">Começar agora — R$399,99/mês</a>
     </div>
     <div class="hero-trust">
@@ -1176,9 +1190,9 @@ main{position:relative;z-index:1}
                 <div class="problem-desc">Decisão no browser é detectável. Server-side decide antes do HTML.</div>
             </div>
         </div>
-        <p class="problem-resolve rv rv-d3">BlackInk corta os três · <span class="grad">sem OAuth · R$399,99</span></p>
+        <p class="problem-resolve rv rv-d3">Corta os três · <span class="grad">sem OAuth · R$399,99</span></p>
         <div class="mid-cta mid-cta--soft rv rv-d4">
-            <a href="#roi-calc" class="btn btn-p">Ver perdas do budget</a>
+            <a href="#roi-calc" class="btn btn-p">Calcular perda do budget</a>
             <a href="#cloaker" class="btn btn-o">Ver prova ao vivo</a>
         </div>
     </div>
@@ -1236,7 +1250,7 @@ main{position:relative;z-index:1}
 
         <div class="mid-cta mid-cta--soft rv rv-d3" style="margin-top:8px">
             <a href="#cloaker" class="btn btn-p">Ver prova ao vivo</a>
-            <a href="#roi-calc" class="btn btn-o">Ver perdas do budget</a>
+            <a href="#roi-calc" class="btn btn-o">Calcular perda</a>
         </div>
     </div>
 </section>
