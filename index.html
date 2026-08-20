@@ -1176,6 +1176,10 @@ main{position:relative;z-index:1}
   #faq .faq-inline-cta--price{font-size:7px}
   #faq .faq-assure{font-size:7px;margin:2px 0 1px}
   #pricing .p-micro{font-size:5.5px}
+  /* Ciclo 335: period-toggle densest — mais espaço pro CTA */
+  #pricing .period-toggle{margin:0}
+  #pricing .period-switcher{min-height:0}
+  #pricing .period-btn{min-height:16px;font-size:5.5px;padding:0}
   /* Ciclo 326: ROI densest — slider chrome mais baixo */
   #roi-calc .calc-slider-header{margin:0;gap:2px}
   #roi-calc .calc-slider-value{font-size:6px;line-height:1}
@@ -1982,7 +1986,7 @@ main{position:relative;z-index:1}
                 <p class="showcase-proof" id="showcase-proof">Simulação ao vivo ao lado — bloqueios e taxa legítima em tempo real</p>
                 <div class="showcase-cta">
                     <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar — R$399,99/mês</a>
-                    <a href="#roi-calc" class="showcase-cta-soft">Ver quanto perde · trim. −10%</a>
+                    <a href="#roi-calc" class="showcase-cta-soft">Ver quanto perde · Ativar −10%</a>
                 </div>
             </div>
             <div class="showcase-visual">
@@ -2101,7 +2105,7 @@ main{position:relative;z-index:1}
                     <p class="calc-cta-text" id="calc-cta-msg">Perda est. · ~1 dia = 1 mês · Ativar −10%</p>
                     <div class="calc-cta-actions">
                         <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar — R$399,99/mês</a>
-                        <a href="#pricing" class="calc-cta-period">Trimestral −10% · Anual −15%</a>
+                        <a href="#pricing" class="calc-cta-period">Ativar −10% · Anual −15%</a>
                     </div>
                 </div>
             </div>
@@ -2128,7 +2132,7 @@ main{position:relative;z-index:1}
                             <button type="button" class="period-btn" data-period="yearly">Anual <span class="period-discount">−15%</span></button>
                         </div>
                     </div>
-                    <p class="period-nudge" id="period-nudge"><button type="button" data-pick-period="quarterly">Trimestral −10%</button> · ~R$120 a menos</p>
+                    <p class="period-nudge" id="period-nudge"><button type="button" data-pick-period="quarterly">Ativar −10%</button> · ~R$120 a menos</p>
                     <div class="p-price-wrap">
                         <div class="p-price active" data-period="monthly"><span class="p-price-line"><span class="p-curr">R$</span><span class="p-val">399</span><span class="p-per">,99/mês</span></span></div>
                         <div class="p-price" data-period="quarterly"><span class="p-price-line"><span class="p-curr">R$</span><span class="p-val">359</span><span class="p-per">,99/mês</span></span><span class="p-monthly-eq">cobrado R$1.079,97 / 3 meses · <span class="p-save">−~R$120</span></span></div>
@@ -2142,7 +2146,7 @@ main{position:relative;z-index:1}
                         <li>Sem OAuth</li>
                         <li class="pricing-chip-latency">Server-side &lt;50ms</li>
                     </ul>
-                    <p class="p-micro"><strong>7 dias</strong> · 100% · trim. −10% · ~15 min</p>
+                    <p class="p-micro"><strong>7 dias</strong> · 100% · Ativar −10% · ~15 min</p>
                 </div>
             </div>
         </div>
@@ -2164,7 +2168,7 @@ main{position:relative;z-index:1}
             <div class="network-chip"><strong>TikTok Ads</strong><span>In-feed &amp; Spark</span></div>
             <div class="network-chip network-chip--more"><strong>E outras</strong><span>Mesmo fluxo</span></div>
         </div>
-        <p class="why-strip-text redes-why rv rv-d4" id="por-que"><strong>SaaS server-side</strong> · decision logs · suporte BR · trim. −10% · <span class="grad">R$399,99/mês</span></p>
+        <p class="why-strip-text redes-why rv rv-d4" id="por-que"><strong>SaaS server-side</strong> · decision logs · suporte BR · Ativar −10% · <span class="grad">R$399,99/mês</span></p>
     </div>
 </section>
 
@@ -2196,7 +2200,7 @@ main{position:relative;z-index:1}
         <div class="faq-outro rv">
             <div class="faq-outro-cta">
                 <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar — R$399,99/mês</a>
-                <a href="#pricing" class="faq-outro-period">Trimestral −10% · ~R$120 a menos</a>
+                <a href="#pricing" class="faq-outro-period">Ativar −10% · ~R$120 a menos</a>
             </div>
             <p class="faq-outro-support">Dúvida? <a href="mailto:suporte@theblack.ink">suporte@theblack.ink</a> · garantia 7 dias</p>
         </div>
@@ -2209,7 +2213,7 @@ main{position:relative;z-index:1}
     <div class="container" style="position:relative;z-index:1">
         <p class="t-label rv" style="text-align:center;margin-bottom:4px">Pronto</p>
         <h2 class="t-lg rv rv-d1 cta-final-title" style="text-align:center">~1 dia = 1 mês · <span class="grad">Ativar −10%</span></h2>
-        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:440px;margin:6px auto 10px;font-size:clamp(13px,1.4vw,15px)" id="cta-final-lead">Perda <strong id="cta-final-loss">R$ 12.500</strong>/mês · <span id="cta-final-payback">~1 dia</span> = 1 mês · 7 dias · trim. −10%</p>
+        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:440px;margin:6px auto 10px;font-size:clamp(13px,1.4vw,15px)" id="cta-final-lead">Perda <strong id="cta-final-loss">R$ 12.500</strong>/mês · <span id="cta-final-payback">~1 dia</span> = 1 mês · 7 dias · Ativar −10%</p>
         <div class="rv rv-d3" style="display:flex;flex-direction:column;align-items:center;gap:8px">
             <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar — R$399,99/mês</a>
             <div class="cta-final-trust">
@@ -2218,7 +2222,7 @@ main{position:relative;z-index:1}
                 <span>Sem OAuth</span>
                 <span>Empresa BR · CNPJ</span>
             </div>
-            <a href="#pricing" class="cta-final-period">Trimestral −10% · Anual −15%</a>
+            <a href="#pricing" class="cta-final-period">Ativar −10% · Anual −15%</a>
         </div>
     </div>
 </section>
@@ -2267,8 +2271,8 @@ main{position:relative;z-index:1}
 
 <div class="sticky-cta" id="sticky-cta" aria-hidden="true">
     <div class="sticky-cta-inner">
-        <p class="sticky-cta-text" id="sticky-cta-text"><strong>R$12.500</strong> → <strong>R$399,99/mês</strong> · Ativar · Trimestral −10%</p>
-        <p class="sticky-cta-price" id="sticky-cta-price"><strong>R$ 399,99/mês</strong><br>Trimestral −10% · 7 dias</p>
+        <p class="sticky-cta-text" id="sticky-cta-text"><strong>R$12.500</strong> → <strong>R$399,99/mês</strong> · Ativar −10%</p>
+        <p class="sticky-cta-price" id="sticky-cta-price"><strong>R$ 399,99/mês</strong><br>Ativar −10% · 7 dias</p>
         <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link" data-plan="Maré" id="sticky-cta-btn">Ativar — R$399,99</a>
         <button type="button" class="sticky-cta-close" id="sticky-cta-close" aria-label="Fechar">&times;</button>
     </div>
@@ -2581,7 +2585,7 @@ const P_MICRO_HTML = {
 };
 
 const PERIOD_NUDGE = {
-    monthly: '<button type="button" data-pick-period="quarterly">Trimestral −10%</button> · ~R$120 a menos',
+    monthly: '<button type="button" data-pick-period="quarterly">Ativar −10%</button> · ~R$120 a menos',
     quarterly: '−10% · cobrado R$1.079,97 / 3 meses',
     yearly: '−15% · cobrado R$4.079,90 / ano'
 };
@@ -2594,7 +2598,7 @@ let autoQuarterlyApplied = false;
 function periodNudgeHtml(period) {
     period = period || 'monthly';
     if (period === 'monthly' && lastCalcLossValue > 0) {
-        return '<button type="button" data-pick-period="quarterly">Trimestral −10%</button> · −~R$120 · vs perda <strong>' + lastCalcLossFmt + '</strong>';
+        return '<button type="button" data-pick-period="quarterly">Ativar −10%</button> · −~R$120 · vs perda <strong>' + lastCalcLossFmt + '</strong>';
     }
     if (period === 'quarterly' && lastCalcLossFmt) {
         return '−10% · vs perda <strong>' + lastCalcLossFmt + '</strong>/mês';
@@ -2662,19 +2666,19 @@ function syncStickyLossCopy(period) {
     const stickyPrice = document.getElementById('sticky-cta-price');
     if (stickyText) {
         const saveHint = period === 'monthly'
-            ? ' · Trimestral −10%'
-            : (period === 'quarterly' ? ' · −10% vs R$399 · 7 dias' : ' · −15% vs R$399 · 7 dias');
+            ? ' · Ativar −10%'
+            : (period === 'quarterly' ? ' · Ativar −10% · 7 dias' : ' · Ativar −15% · 7 dias');
         if (lastCalcLossFmt) {
-            stickyText.innerHTML = '<strong>' + lastCalcLossFmt + '</strong> → <strong>' + priceShort + '</strong> · Ativar' + saveHint;
+            stickyText.innerHTML = '<strong>' + lastCalcLossFmt + '</strong> → <strong>' + priceShort + '</strong>' + saveHint;
         } else {
-            stickyText.innerHTML = '<strong>R$12.500</strong> → <strong>' + priceShort + '</strong> · Ativar' + saveHint;
+            stickyText.innerHTML = '<strong>R$12.500</strong> → <strong>' + priceShort + '</strong>' + saveHint;
         }
     }
     if (stickyPrice) {
         if (lastCalcLossFmt) {
-            stickyPrice.innerHTML = '<strong>' + priceShort + '</strong><br>vs ' + lastCalcLossFmt + (period === 'monthly' ? ' · −10% trim.' : ' · 7 dias');
+            stickyPrice.innerHTML = '<strong>' + priceShort + '</strong><br>vs ' + lastCalcLossFmt + (period === 'monthly' ? ' · Ativar −10%' : ' · 7 dias');
         } else {
-            stickyPrice.innerHTML = '<strong>' + priceShort + '</strong><br>' + (period === 'monthly' ? 'Trimestral −10% · 7 dias' : 'vs R$12.500 · 7 dias');
+            stickyPrice.innerHTML = '<strong>' + priceShort + '</strong><br>' + (period === 'monthly' ? 'Ativar −10% · 7 dias' : 'vs R$12.500 · 7 dias');
         }
     }
 }
