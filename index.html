@@ -1012,7 +1012,9 @@ main{position:relative;z-index:1}
   #faq .faq-a{padding:0 2px 0;font-size:6px;line-height:1.05}
   #faq .faq-more-toggle{min-height:8px;font-size:5px;padding:0 1px;opacity:.7}
   #faq .faq-i[open] .faq-a{padding:0 2px 0}
-  #faq .faq-q{padding:1px 2px;font-size:6px}
+  #faq .faq-q{padding:0 2px;font-size:5px}
+  #faq .faq-a{padding:0 2px 0;font-size:5px;line-height:1.02}
+  #faq .t-lg{font-size:clamp(7px,2.2vw,9px);margin:0}
   .sep{height:0;opacity:0;margin:0;border:0}
   #redes.redes-strip{padding:0;margin:0}
   #pricing .pricing-reveal-inner{padding:0}
@@ -1491,15 +1493,22 @@ main{position:relative;z-index:1}
   #roi-calc .calc-summary{grid-template-columns:1fr;max-width:220px;margin-left:auto;margin-right:auto}
   #roi-calc .calc-summary-card:nth-child(2){display:none}
   #roi-calc .calc-slider-value{font-size:10px;line-height:1}
-  /* Ciclo 299: densest desktop pricing legível (touch/click) */
-  #pricing .btn-full{height:22px;font-size:8px}
-  #pricing .period-btn{padding:1px 2px;font-size:7px;min-height:18px}
-  #pricing .p-val{font-size:clamp(13px,1.5vw,17px)}
-  #pricing .pricing-reveal-title{font-size:clamp(10px,1.2vw,13px)}
-  #pricing .pricing-lead{font-size:7px}
-  #roi-calc .calc-cta .btn{height:18px;font-size:8px}
-  #comecar .pricing-cta{height:22px;font-size:8px}
-  #cloaker .showcase-cta .btn{height:20px;font-size:8px}
+  /* Ciclo 303: densest desktop buy rail — CTA legível, chrome mínimo */
+  #pricing .btn-full{height:20px;font-size:8px}
+  #pricing .period-btn{padding:1px 2px;font-size:6px;min-height:16px}
+  #pricing .p-val{font-size:clamp(12px,1.4vw,16px)}
+  #pricing .pricing-reveal-title{font-size:clamp(9px,1.1vw,12px)}
+  #pricing .pricing-lead{font-size:6px;margin:0}
+  #pricing .p-price-wrap{min-height:16px;margin:0}
+  #pricing .period-switcher{padding:1px;margin:0}
+  #roi-calc .calc-cta .btn{height:16px;font-size:7px}
+  #roi-calc .calc-slider-value{font-size:8px}
+  #comecar .pricing-cta{height:20px;font-size:8px}
+  #cloaker .showcase-cta .btn{height:18px;font-size:7px}
+  #faq .faq-q{padding:0 2px;font-size:5px}
+  #faq .faq-a{padding:0 2px 0;font-size:5px;line-height:1.05}
+  #faq .t-lg{font-size:clamp(7px,0.85vw,9px)}
+  #faq .faq-more-toggle{min-height:8px;font-size:5px}
   #redes .network-chip span{display:none}
   #redes .network-chip{padding:1px 3px;font-size:6px}
   #faq .t-lg{font-size:clamp(8px,0.9vw,10px)}
