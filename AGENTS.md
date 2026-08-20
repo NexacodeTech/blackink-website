@@ -147,7 +147,7 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 
 ## 2026-08-20 — Prova ao vivo mais curta + proof line
 **Contexto**: `#cloaker` ainda era seção cheia com 3 feats redundantes; obj-strip verboso antes do preço.
-**Regra**: cloaker `section--compact`, 2 feats + CTA soft para pricing; proof line sync com stats do simulador; objeções em copy curta.
+**Regra**: cloaker `section--compact`, 2 feats + soft → ROI; simulador sem métricas de rodapé (stats+feed bastam); proof line sync com stats.
 **Status**: ativo
 
 ## 2026-08-20 — Garantia no submit do cadastro
