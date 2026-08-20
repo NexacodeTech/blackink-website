@@ -561,11 +561,8 @@
         btn.addEventListener('click', () => applyPeriodPricing(btn.dataset.period));
     });
 
-    // Bridge from landing ROI calculator (ciclo 36)
-    (function syncLossBridge() {
-        const bridge = document.getElementById('cadastroLossBridge');
-        const valueEl = document.getElementById('cadastroLossValue');
-        if (!bridge || !valueEl) return;
+    // Bridge from landing ROI calculator (ciclo 36/40)
+    const simulatedBudget = (function resolveBudget() {
         let budgetRaw = urlParams.get('budget');
         if (!budgetRaw) {
             try {
@@ -573,21 +570,30 @@
             } catch (_) {}
         }
         const budget = parseInt(budgetRaw, 10);
-        if (!budget || budget < 1000 || budget > 500000) return;
-        const loss = Math.round(budget * 0.25);
-        valueEl.textContent = 'Até R$ ' + loss.toLocaleString('pt-BR') + '/mês';
+        if (!budget || budget < 1000 || budget > 500000) return null;
+        return budget;
+    })();
+    const simulatedLoss = simulatedBudget ? Math.round(simulatedBudget * 0.25) : null;
+
+    (function syncLossBridge() {
+        const bridge = document.getElementById('cadastroLossBridge');
+        const valueEl = document.getElementById('cadastroLossValue');
+        if (!bridge || !valueEl || !simulatedLoss || !simulatedBudget) return;
+        valueEl.textContent = 'Até R$ ' + simulatedLoss.toLocaleString('pt-BR') + '/mês';
         bridge.hidden = false;
         try {
             const u = new URL(window.location.href);
-            u.searchParams.set('budget', String(budget));
+            u.searchParams.set('budget', String(simulatedBudget));
             history.replaceState({}, '', u.pathname + u.search + u.hash);
         } catch (_) {}
     })();
 
-    // Sidebar copy — plataforma + setup correto
+    // Sidebar copy — plataforma + setup correto (personalizado se veio da calculadora)
     const sidebar = {
         title: 'Ative seu <span class="grad">cloaker</span>',
-        subtitle: 'Cadastre safe page e offer page (ou use BlackInk Clone), configure regras e aponte o anúncio para a URL BlackInk — Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras.',
+        subtitle: simulatedLoss
+            ? ('Você simulou cerca de R$ ' + simulatedLoss.toLocaleString('pt-BR') + '/mês em cliques inválidos. Cadastre safe/offer, configure regras e aponte o anúncio para a URL BlackInk — sem OAuth.')
+            : 'Cadastre safe page e offer page (ou use BlackInk Clone), configure regras e aponte o anúncio para a URL BlackInk — Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras.',
         features: [
             { strong: 'Cadastro de páginas', span: 'HTML/código no painel ou BlackInk Clone para replicar estrutura' },
             { strong: 'URL BlackInk', span: 'Destino do anúncio — a plataforma decide qual página servir' },
