@@ -1101,6 +1101,8 @@ main{position:relative;z-index:1}
   #cloaker .prot-sim-header{padding:0 1px}
   #pricing .pricing-lead{font-size:5px}
   #pricing .period-nudge{display:none}
+  /* Ciclo 311: Rec. no switcher; risco fica na FAQ aberta (sem 2ª row) */
+  #pricing .period-rec{display:inline;font-size:5px;padding:0 2px;margin-left:1px;border-radius:3px;line-height:1}
 }
 @media (min-width:768px){
   .sticky-cta-text{display:block}
@@ -1547,6 +1549,8 @@ main{position:relative;z-index:1}
   #faq .faq-q{padding:0 2px;font-size:5px}
   #faq .faq-a{padding:0 2px 0;font-size:5px;line-height:1.02}
   #faq .faq-more-toggle{min-height:8px;font-size:4px;padding:0 2px}
+  /* Ciclo 311: Rec. no switcher; risco na FAQ aberta */
+  #pricing .period-rec{display:inline;font-size:5px;padding:0 2px;line-height:1}
   #comecar.cta-final{padding:0}
   #comecar .cta-final-title{font-size:clamp(10px,1.2vw,13px)}
   #comecar .pricing-cta{height:20px;font-size:8px}
@@ -1623,7 +1627,9 @@ main{position:relative;z-index:1}
   .period-switcher{flex-direction:row;width:100%;max-width:100%;margin:0;flex-wrap:nowrap}
   .period-btn{justify-content:center;width:auto;flex:1 1 0;flex-direction:column;gap:1px;padding:6px 3px;font-size:10px;min-width:0}
   .period-discount{font-size:8px;padding:1px 3px}
+  /* c311: Rec. some no desktop; em ≤480 column stack + Rec. infla — sticky já leva −10% */
   .period-rec{display:none}
+  #pricing .period-rec{display:none}
   .container{width:min(1120px,100% - 28px)}
   .hero-ctas{max-width:100%}
   .networks-grid{grid-template-columns:1fr}
@@ -1994,7 +2000,7 @@ main{position:relative;z-index:1}
                     <div class="period-toggle">
                         <div class="period-switcher">
                             <button type="button" class="period-btn active" data-period="monthly">Mensal</button>
-                            <button type="button" class="period-btn" data-period="quarterly" aria-describedby="period-rec-hint">Trimestral <span class="period-discount">−10%</span> <span class="period-rec" id="period-rec-hint">Recomendado</span></button>
+                            <button type="button" class="period-btn" data-period="quarterly" aria-describedby="period-rec-hint">Trimestral <span class="period-discount">−10%</span> <span class="period-rec" id="period-rec-hint">Rec.</span></button>
                             <button type="button" class="period-btn" data-period="yearly">Anual <span class="period-discount">−15%</span></button>
                         </div>
                     </div>
@@ -2045,8 +2051,8 @@ main{position:relative;z-index:1}
         <p class="t-label rv" style="text-align:center;margin-bottom:4px">FAQ</p>
         <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:4px">Dúvidas · <span class="grad">~1 dia = 1 mês</span></h2>
         <div class="faq-list">
-            <details class="faq-i rv rv-d1" open><summary class="faq-q">Se paga em ~1 dia?</summary><div class="faq-a" id="faq-savings-a">Perda ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês · ~<strong id="faq-savings-payback">1 dia</strong> = 1 mês · sem OAuth · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar</a></div></details>
-            <details class="faq-i faq-i--risk rv rv-d2"><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">7 dias · 100% reembolso · sem fidelidade · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar sem risco</a></div></details>
+            <details class="faq-i rv rv-d1" open><summary class="faq-q">Se paga em ~1 dia?</summary><div class="faq-a" id="faq-savings-a">Perda ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês · ~<strong id="faq-savings-payback">1 dia</strong> = 1 mês · 7 dias reembolso · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar</a></div></details>
+            <details class="faq-i faq-i--risk rv rv-d2"><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">7 dias · 100% reembolso · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar sem risco</a></div></details>
             <div class="faq-more" id="faq-more">
                 <details class="faq-i"><summary class="faq-q">Quanto custa?</summary><div class="faq-a">R$ 399,99/mês · trimestral −10% · anual −15% · PIX/cartão · sem fidelidade.</div></details>
                 <details class="faq-i"><summary class="faq-q">Preciso conectar minha conta de anúncios (OAuth)?</summary><div class="faq-a">Não. Cadastre páginas, configure regras e use a URL BlackInk como destino — Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras · sem OAuth.</div></details>
@@ -2513,18 +2519,18 @@ function syncStickyLossCopy(period) {
     const stickyText = document.getElementById('sticky-cta-text');
     const stickyPrice = document.getElementById('sticky-cta-price');
     if (stickyText) {
+        const saveHint = period === 'monthly' ? ' · Trimestral −10%' : ' · 7 dias';
         if (lastCalcLossFmt) {
-            // Short price only — charge details live in #pricing (ciclo 78)
-            stickyText.innerHTML = '<strong>' + lastCalcLossFmt + '</strong> → <strong>' + priceShort + '</strong> · Ativar · 7 dias';
+            stickyText.innerHTML = '<strong>' + lastCalcLossFmt + '</strong> → <strong>' + priceShort + '</strong> · Ativar' + saveHint;
         } else {
-            stickyText.innerHTML = '<strong>R$12.500</strong> → <strong>' + priceShort + '</strong> · Ativar · 7 dias';
+            stickyText.innerHTML = '<strong>R$12.500</strong> → <strong>' + priceShort + '</strong> · Ativar' + saveHint;
         }
     }
     if (stickyPrice) {
         if (lastCalcLossFmt) {
-            stickyPrice.innerHTML = '<strong>' + priceShort + '</strong><br>vs ' + lastCalcLossFmt;
+            stickyPrice.innerHTML = '<strong>' + priceShort + '</strong><br>vs ' + lastCalcLossFmt + (period === 'monthly' ? ' · −10% trim.' : '');
         } else {
-            stickyPrice.innerHTML = '<strong>' + priceShort + '</strong><br>vs R$12.500 · 7 dias';
+            stickyPrice.innerHTML = '<strong>' + priceShort + '</strong><br>' + (period === 'monthly' ? 'Trimestral −10% · 7 dias' : 'vs R$12.500 · 7 dias');
         }
     }
 }
