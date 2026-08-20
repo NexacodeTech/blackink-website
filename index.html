@@ -579,9 +579,9 @@ strong{font-weight:600}
 .faq-more-toggle:hover{color:var(--white);border-color:rgba(100,180,255,0.28);background:rgba(100,180,255,0.06)}
 .faq-more-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .faq-outro{max-width:720px;margin:16px auto 0;text-align:center;padding:14px 12px;border-radius:12px;border:1px solid var(--border);background:rgba(6,17,31,0.45)}
-.faq-outro p{font-size:12px;color:var(--dim);line-height:1.45;margin:0 0 10px}
-.faq-outro a{color:var(--accent);font-weight:500;transition:color .3s var(--ease)}
-.faq-outro a:hover{color:var(--white)}
+.faq-outro p,.faq-outro-support{font-size:12px;color:var(--dim);line-height:1.45;margin:10px 0 0}
+.faq-outro a,.faq-outro-support a{color:var(--accent);font-weight:500;transition:color .3s var(--ease)}
+.faq-outro a:hover,.faq-outro-support a:hover{color:var(--white)}
 .faq-outro-cta{display:flex;flex-direction:column;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center}
 .faq-outro-period{font-size:12px;color:var(--accent);font-weight:500;text-decoration:none;transition:color .3s var(--ease)}
 .faq-outro-period:hover{color:var(--white)}
@@ -596,6 +596,9 @@ strong{font-weight:600}
 .faq-inline-cta:hover{color:var(--white);text-decoration:underline}
 /* CTA final */
 .cta-final{text-align:center;position:relative;overflow:hidden;padding:clamp(36px,6vh,72px) 0}
+.cta-final-title{max-width:640px;margin:0 auto;line-height:1.2}
+.cta-final-period{font-size:12px;color:var(--accent);font-weight:500;text-decoration:none;transition:color .3s var(--ease)}
+.cta-final-period:hover{color:var(--white)}
 .cta-final-trust{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 14px;margin-top:4px;max-width:520px}
 .cta-final-trust span{font-size:11px;color:rgba(240,244,248,0.62);display:inline-flex;align-items:center;gap:6px}
 .cta-final-trust span::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--green);opacity:.85;flex-shrink:0}
@@ -649,6 +652,7 @@ main{position:relative;z-index:1}
   #por-que.redes-why{display:none}
   #faq .faq-outro-period{display:none}
   #faq .faq-outro{padding:8px 6px}
+  #faq .faq-outro-support{font-size:11px;margin-top:8px}
   .hero-badge{margin-bottom:6px}
   .hero-logo{width:32px;height:32px;margin-bottom:6px}
   .hero-title{font-size:clamp(24px,7vw,30px);margin-bottom:8px;line-height:1.2}
@@ -703,7 +707,8 @@ main{position:relative;z-index:1}
   #faq .faq-q{padding:9px 11px;font-size:12px}
   #faq .faq-a{padding:0 11px 8px;font-size:11px;line-height:1.4}
   #faq .faq-outro{margin-top:10px;padding:8px}
-  #faq .faq-outro p{font-size:11px;margin-bottom:6px}
+  #faq .faq-outro-support{font-size:11px;margin-top:8px}
+  #faq .faq-outro p{font-size:11px;margin-bottom:0}
   #faq .faq-outro-period{font-size:11px}
   #faq .faq-more-toggle{margin-top:6px;padding:7px 12px;min-height:40px;font-size:12px}
   #faq .faq-list{gap:6px}
@@ -829,7 +834,8 @@ main{position:relative;z-index:1}
   #faq .faq-more-toggle{margin-top:6px;padding:7px 12px;min-height:40px;font-size:12px}
   #faq .faq-outro{margin-top:8px;padding:8px 10px}
   #faq .faq-outro-cta{flex-direction:row;gap:14px;align-items:center}
-  #faq .faq-outro p{font-size:12px;margin-bottom:6px}
+  #faq .faq-outro-support{font-size:11px;margin-top:8px}
+  #faq .faq-outro p{font-size:12px;margin-bottom:0}
   #faq .faq-list{gap:6px}
   #faq .faq-inline-cta{margin-top:4px}
   #problema.problem-strip{padding:clamp(16px,2.2vh,26px) 0}
@@ -841,8 +847,17 @@ main{position:relative;z-index:1}
   #o-que-e .edu-pill p{font-size:12px}
   #problema .problem-desc{font-size:11px;line-height:1.35}
   #problema .problem-card{padding:10px 12px}
-  #como-funciona.section--compact{padding:clamp(22px,3.2vh,40px) 0}
-  #como-funciona .setup-steps{margin:10px 0 6px;gap:8px}
+  #como-funciona.section--compact{padding:clamp(18px,2.6vh,32px) 0}
+  #como-funciona .setup-steps{margin:8px 0 4px;gap:6px}
+  #como-funciona .setup-step{padding:12px 10px}
+  #como-funciona .setup-step h3{font-size:14px;margin-bottom:2px}
+  #como-funciona .setup-step p{font-size:11px;line-height:1.35}
+  #como-funciona .mid-cta{margin-top:8px}
+  #comecar.cta-final{padding:clamp(22px,3.5vh,40px) 0}
+  #comecar .cta-final-title{font-size:clamp(22px,3vw,30px)}
+  .footer{padding:clamp(28px,4vh,40px) 0 18px}
+  .f-grid{gap:20px;margin-bottom:20px}
+  .f-brand p{font-size:13px;margin-top:10px;line-height:1.45}
   #redes.redes-strip{padding:clamp(16px,2.4vh,28px) 0}
   #redes .t-body-lg{display:none}
   #redes .networks-grid{margin-top:10px}
@@ -1090,7 +1105,7 @@ main{position:relative;z-index:1}
         </div>
 
         <div class="mid-cta mid-cta--soft rv rv-d3" style="margin-top:8px">
-            <a href="#cloaker" class="btn btn-p">Ver cloaker ao vivo</a>
+            <a href="#cloaker" class="btn btn-p">Ver prova ao vivo</a>
             <a href="#roi-calc" class="btn btn-o">Calcular perdas do budget</a>
         </div>
     </div>
@@ -1309,8 +1324,8 @@ main{position:relative;z-index:1}
 <!-- 9. FAQ -->
 <section class="section section--compact" id="faq" aria-label="Perguntas Frequentes">
     <div class="container">
-        <p class="t-label rv" style="text-align:center;margin-bottom:6px">FAQ</p>
-        <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:14px">Dúvidas <span class="grad">antes de ativar</span></h2>
+        <p class="t-label rv" style="text-align:center;margin-bottom:4px">FAQ</p>
+        <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:8px">Dúvidas <span class="grad">antes de ativar</span></h2>
         <div class="faq-list">
             <details class="faq-i rv rv-d1" open><summary class="faq-q">O cloaker se paga?</summary><div class="faq-a" id="faq-savings-a">Pela <a href="#roi-calc">calculadora</a>: ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês inválidos · R$399,99 se paga em ~<strong id="faq-savings-payback">1 dia</strong>. <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar cloaker</a></div></details>
             <details class="faq-i faq-i--risk rv rv-d2" open><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">Garantia 7 dias · reembolso 100% — sem pergunta capciosa.</div></details>
@@ -1329,11 +1344,11 @@ main{position:relative;z-index:1}
             <button type="button" class="faq-more-toggle" id="faq-more-toggle" aria-expanded="false" aria-controls="faq-more">Ver mais perguntas</button>
         </div>
         <div class="faq-outro rv">
-            <p>Dúvida? <a href="mailto:suporte@theblack.ink">suporte@theblack.ink</a> · garantia 7 dias · sem contrato</p>
             <div class="faq-outro-cta">
                 <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
-                <a href="#pricing" class="faq-outro-period">Ver trimestral (−10%) · anual (−15%)</a>
+                <a href="#pricing" class="faq-outro-period">Trimestral −10% · Anual −15%</a>
             </div>
+            <p class="faq-outro-support">Dúvida? <a href="mailto:suporte@theblack.ink">suporte@theblack.ink</a> · garantia 7 dias</p>
         </div>
     </div>
 </section>
@@ -1342,10 +1357,10 @@ main{position:relative;z-index:1}
 <section class="section cta-final" id="comecar">
     <div class="cta-orb" aria-hidden="true"></div>
     <div class="container" style="position:relative;z-index:1">
-        <p class="t-label rv" style="text-align:center;margin-bottom:6px">Pronto</p>
-        <h2 class="t-lg rv rv-d1" style="text-align:center">Ative o cloaker<br><span class="grad">Pare de financiar o clique inválido</span></h2>
-        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:440px;margin:8px auto 12px;font-size:clamp(13px,1.4vw,15px)" id="cta-final-lead">Até <strong id="cta-final-loss">R$ 12.500</strong>/mês inválidos · payback <span id="cta-final-payback">~1 dia</span> · garantia 7 dias</p>
-        <div class="rv rv-d3" style="display:flex;flex-direction:column;align-items:center;gap:10px">
+        <p class="t-label rv" style="text-align:center;margin-bottom:4px">Pronto</p>
+        <h2 class="t-lg rv rv-d1 cta-final-title" style="text-align:center">Ative o cloaker · <span class="grad">pare o clique inválido</span></h2>
+        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:440px;margin:6px auto 10px;font-size:clamp(13px,1.4vw,15px)" id="cta-final-lead">Até <strong id="cta-final-loss">R$ 12.500</strong>/mês inválidos · payback <span id="cta-final-payback">~1 dia</span> · garantia 7 dias</p>
+        <div class="rv rv-d3" style="display:flex;flex-direction:column;align-items:center;gap:8px">
             <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
             <div class="cta-final-trust">
                 <span>PIX ou cartão</span>
@@ -1353,7 +1368,7 @@ main{position:relative;z-index:1}
                 <span>Sem OAuth</span>
                 <span>Empresa BR · CNPJ</span>
             </div>
-            <a href="#pricing" style="font-size:12px;color:var(--accent);font-weight:500">Ajustar periodicidade</a>
+            <a href="#pricing" class="cta-final-period">Trimestral −10% · Anual −15%</a>
         </div>
     </div>
 </section>
@@ -1783,9 +1798,9 @@ function syncStickyLossCopy(period) {
     if (stickyText) {
         if (lastCalcLossFmt) {
             // Short price only — charge details live in #pricing (ciclo 78)
-            stickyText.innerHTML = 'Até <strong>' + lastCalcLossFmt + '</strong>/mês inválidos — <strong>' + priceShort + '</strong> · 7 dias';
+            stickyText.innerHTML = '<strong>' + lastCalcLossFmt + '</strong>/mês inválidos → <strong>' + priceShort + '</strong> · 7 dias';
         } else {
-            stickyText.innerHTML = 'Safe · Offer — <strong>' + priceShort + '</strong> · garantia 7 dias';
+            stickyText.innerHTML = 'Safe · Offer — <strong>' + priceShort + '</strong> · 7 dias';
         }
     }
     if (stickyPrice) {
