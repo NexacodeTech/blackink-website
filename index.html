@@ -193,7 +193,7 @@
         },
         {
           "@type": "Question",
-          "name": "E se eu não gostar?",
+          "name": "Não gostei?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Garantia de 7 dias. Teste a plataforma; se não fizer sentido para suas campanhas, reembolso de 100% — sem letras miúdas."
@@ -338,7 +338,7 @@ a.hero-trust-garantia strong{color:var(--green)}
 @keyframes chipTrustPulse{0%,100%{border-color:rgba(52,211,153,0.25);background:rgba(52,211,153,0.06)}50%{border-color:rgba(52,211,153,0.55);background:rgba(52,211,153,0.12)}}
 @keyframes softGarantiaPulse{0%,100%{box-shadow:0 0 0 1px rgba(52,211,153,0.1)}50%{box-shadow:0 0 0 2px rgba(52,211,153,0.32)}}
 @keyframes assureClosePulse{0%,100%{box-shadow:0 0 0 1px rgba(52,211,153,0.08)}50%{box-shadow:0 0 0 2px rgba(52,211,153,0.35)}}
-@keyframes idealBadgePulse{0%,100%{background:rgba(100,180,255,0.2);transform:scale(1)}50%{background:rgba(100,180,255,0.4);transform:scale(1.06)}}
+@keyframes idealBadgePulse{0%,100%{background:rgba(52,211,153,0.18);transform:scale(1)}50%{background:rgba(52,211,153,0.42);transform:scale(1.06)}}
 @keyframes heroIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 @keyframes simPulse{0%,100%{opacity:1}50%{opacity:.45}}
 /* Problem punch — denser (ciclo 57) */
@@ -1804,8 +1804,8 @@ main{position:relative;z-index:1}
   /* c554 LAST: redes-buy some — CTA preço já no fold (evita CTA duplicado) */
   #redes .redes-buy{display:none}
   #redes .redes-buy-cta{height:40px;min-height:40px;font-size:13px;padding:0 14px}
-  /* c565/c603 LAST: why one-liner após FAQ — prova SaaS no mid-funnel */
-  #redes .redes-why{display:block;margin:4px auto 0;font-size:12px;line-height:1.35;color:var(--dim);max-width:44ch;font-weight:500}
+  /* c565/c618/c622 LAST: why one-liner — mínimo sob chips no mid-funnel */
+  #redes .redes-why{display:block;margin:2px auto 0;font-size:10px;line-height:1.25;color:var(--dim);max-width:36ch;font-weight:500}
   #redes .redes-why strong,#redes .redes-why .grad{color:var(--white);font-weight:700}
   /* c603 LAST: chips redes logo após toggle — prova multi-rede */
   #redes.redes-strip{padding:2px 0 4px}
@@ -1831,11 +1831,12 @@ main{position:relative;z-index:1}
   /* c530 LAST: assure = outline (sem risco) ≠ savings sólido Ativar */
   /* c560 LAST: assure = fill verde suave — close pós-preço > soft outline */
   #faq .faq-assure a.faq-inline-cta--price{
-    background:rgba(52,211,153,0.14);color:var(--white);
-    border:1px solid rgba(52,211,153,0.55);
-    box-shadow:0 0 0 1px rgba(52,211,153,0.08);
+    background:rgba(52,211,153,0.28);color:#021018;
+    border:1px solid rgba(52,211,153,0.75);
+    box-shadow:0 0 0 1px rgba(52,211,153,0.18),0 8px 22px rgba(52,211,153,0.22);
+    font-weight:800;
     transition:border-color .3s var(--ease),background .3s var(--ease),color .3s var(--ease),box-shadow .3s var(--ease);
-    /* c566: pulsa 1× após soft — reforça close no fold */
+    /* c566/c627: pulsa 1× — fill verde + texto escuro = botão garantia */
     animation:assureClosePulse 2.2s var(--ease) 1 1.1s both
   }
   #faq .faq-assure a.faq-inline-cta--price:hover{
@@ -1843,23 +1844,26 @@ main{position:relative;z-index:1}
   }
   /* c543/c609 LAST: FAQ assure micro = família garantia */
   #faq .faq-assure-micro{color:var(--green);font-weight:700;letter-spacing:.01em;font-size:11px}
-  /* c544 LAST: lead verb accent — soft path paralelo ao CTA full */
-  #pricing a.pricing-lead-cta{color:var(--accent);border-bottom-color:rgba(100,180,255,0.65)}
-  /* c536 LAST: soft = garantia (verde) ≠ primary Ativar (azul) */
+  /* c544/c620/c622 LAST: lead verb accent — soft path paralelo ao CTA full */
+  #pricing a.pricing-lead-cta{color:#6ee7b7;border-bottom:1.5px solid rgba(52,211,153,0.65);font-weight:800}
+  /* c536/c619/c622 LAST: soft = garantia (verde) ≠ primary Ativar (azul) */
   .hero-ctas .btn-o.hero-soft-cta{
-    border-color:rgba(52,211,153,0.5);
-    box-shadow:0 0 0 1px rgba(52,211,153,0.1);
-    color:var(--white);
+    border-color:rgba(52,211,153,0.72);
+    box-shadow:0 0 0 1px rgba(52,211,153,0.28),0 6px 18px rgba(52,211,153,0.16);
+    color:#6ee7b7;
+    font-weight:800;
+    text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;
     animation:softGarantiaPulse 2.4s var(--ease) 1
   }
-  /* c594 LAST: primary Ativar um tick mais dominante que soft */
+  /* c594/c622 LAST: primary Ativar um tick mais dominante que soft */
   .hero-ctas .btn-p.hero-cta,#pricing .btn-full,#pricing a.btn-p.pricing-cta{
-    box-shadow:0 6px 22px rgba(100,180,255,0.28)
+    box-shadow:0 10px 28px rgba(100,180,255,0.42),0 0 0 1px rgba(100,180,255,0.28)
   }
-  /* c595 LAST: Ideal badge legível no densest (era ~7px) */
+  /* c595/c623 LAST: Ideal badge verde — família soft/garantia no fold */
   #pricing .period-btn.active .period-rec{
     display:inline-block;font-size:9px;line-height:1.2;padding:2px 5px;margin-left:3px;
-    border-radius:4px;background:rgba(100,180,255,0.28);color:var(--accent);font-weight:700;
+    border-radius:4px;background:rgba(52,211,153,0.28);color:#6ee7b7;font-weight:800;
+    border:1px solid rgba(52,211,153,0.45);
     letter-spacing:.03em;text-transform:uppercase;animation:idealBadgePulse 2s var(--ease) 1
   }
   /* c597 LAST: trimestral active ring — Ideal + −10% no fold */
@@ -1884,11 +1888,12 @@ main{position:relative;z-index:1}
   #faq .faq-i--risk .faq-q{min-height:30px;padding:6px 10px;font-size:12px}
   #redes.redes-strip{padding:0}
   .hero-ctas .btn-o.hero-soft-cta:hover{
-    border-color:rgba(52,211,153,0.7);
-    background:rgba(52,211,153,0.08)
+    border-color:rgba(52,211,153,0.85);
+    background:rgba(52,211,153,0.16);
+    color:#a7f3d0
   }
-  /* c567 LAST: hero-trust Garantia tap ≥32px no densest */
-  a.hero-trust-garantia{display:inline-flex;align-items:center;min-height:32px;padding:2px 0}
+  /* c567/c623 LAST: hero-trust Garantia tap ≥32px + underline no densest */
+  a.hero-trust-garantia{display:inline-flex;align-items:center;min-height:32px;padding:2px 0;color:#6ee7b7;font-weight:800;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.25px}
   /* c569/c617 LAST: FAQ+redes densest sem reveal delay — chips no fold */
   #faq .faq-list .rv,#redes .rv{opacity:1;transform:none;transition:none}
   /* c572 LAST: risk Q accent — objeção garantia no fold */
@@ -1921,6 +1926,14 @@ main{position:relative;z-index:1}
   /* c604 LAST: comecar H2 densest — payback equation no close */
   #comecar .cta-final-title{font-size:clamp(15px,3.8vw,18px);line-height:1.2;margin:0 0 6px}
   #comecar .comecar-cta{height:40px;min-height:40px;font-size:13px;box-shadow:0 6px 22px rgba(100,180,255,0.28)}
+  /* c624 LAST: +peek Google Ads — gaps only; CTA 40px / period 32px intactos */
+  #faq .faq-more-toggle{margin:3px auto 0;min-height:30px;padding:4px 12px}
+  #faq .faq-i--risk .faq-q{min-height:28px;padding:5px 10px;font-size:11.5px}
+  #pricing .pricing-trust-chips{margin:2px 0 0}
+  #pricing .pricing-trust-chips li{min-height:24px;padding:3px 7px}
+  #faq .faq-assure{margin:1px 0 0;gap:1px}
+  #faq .faq-assure-micro{font-size:10px;line-height:1.2}
+  #redes .networks-grid{gap:4px}
 }
 
 @media (min-width:768px){
@@ -2786,8 +2799,8 @@ main{position:relative;z-index:1}
   /* c554 LAST: redes-buy some — CTA preço já no fold (evita CTA duplicado) */
   #redes .redes-buy{display:none}
   #redes .redes-buy-cta{height:40px;min-height:40px;font-size:13px;padding:0 14px}
-  /* c565/c603 LAST: why one-liner após FAQ — prova SaaS no mid-funnel */
-  #redes .redes-why{display:block;margin:4px auto 0;font-size:12px;line-height:1.35;color:var(--dim);max-width:44ch;font-weight:500}
+  /* c565/c618/c622 LAST: why one-liner — mínimo sob chips no mid-funnel */
+  #redes .redes-why{display:block;margin:2px auto 0;font-size:10px;line-height:1.25;color:var(--dim);max-width:36ch;font-weight:500}
   #redes .redes-why strong,#redes .redes-why .grad{color:var(--white);font-weight:700}
   /* c603 LAST: chips redes logo após toggle — prova multi-rede */
   #redes.redes-strip{padding:2px 0 4px}
@@ -2813,11 +2826,12 @@ main{position:relative;z-index:1}
   /* c530 LAST: assure = outline (sem risco) ≠ savings sólido Ativar */
   /* c560 LAST: assure = fill verde suave — close pós-preço > soft outline */
   #faq .faq-assure a.faq-inline-cta--price{
-    background:rgba(52,211,153,0.14);color:var(--white);
-    border:1px solid rgba(52,211,153,0.55);
-    box-shadow:0 0 0 1px rgba(52,211,153,0.08);
+    background:rgba(52,211,153,0.28);color:#021018;
+    border:1px solid rgba(52,211,153,0.75);
+    box-shadow:0 0 0 1px rgba(52,211,153,0.18),0 8px 22px rgba(52,211,153,0.22);
+    font-weight:800;
     transition:border-color .3s var(--ease),background .3s var(--ease),color .3s var(--ease),box-shadow .3s var(--ease);
-    /* c566: pulsa 1× após soft — reforça close no fold */
+    /* c566/c627: pulsa 1× — fill verde + texto escuro = botão garantia */
     animation:assureClosePulse 2.2s var(--ease) 1 1.1s both
   }
   #faq .faq-assure a.faq-inline-cta--price:hover{
@@ -2825,23 +2839,26 @@ main{position:relative;z-index:1}
   }
   /* c543/c609 LAST: FAQ assure micro = família garantia */
   #faq .faq-assure-micro{color:var(--green);font-weight:700;letter-spacing:.01em;font-size:11px}
-  /* c544 LAST: lead verb accent — soft path paralelo ao CTA full */
-  #pricing a.pricing-lead-cta{color:var(--accent);border-bottom-color:rgba(100,180,255,0.65)}
-  /* c536 LAST: soft = garantia (verde) ≠ primary Ativar (azul) */
+  /* c544/c620/c622 LAST: lead verb accent — soft path paralelo ao CTA full */
+  #pricing a.pricing-lead-cta{color:#6ee7b7;border-bottom:1.5px solid rgba(52,211,153,0.65);font-weight:800}
+  /* c536/c619/c622 LAST: soft = garantia (verde) ≠ primary Ativar (azul) */
   .hero-ctas .btn-o.hero-soft-cta{
-    border-color:rgba(52,211,153,0.5);
-    box-shadow:0 0 0 1px rgba(52,211,153,0.1);
-    color:var(--white);
+    border-color:rgba(52,211,153,0.72);
+    box-shadow:0 0 0 1px rgba(52,211,153,0.28),0 6px 18px rgba(52,211,153,0.16);
+    color:#6ee7b7;
+    font-weight:800;
+    text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;
     animation:softGarantiaPulse 2.4s var(--ease) 1
   }
-  /* c594 LAST: primary Ativar um tick mais dominante que soft */
+  /* c594/c622 LAST: primary Ativar um tick mais dominante que soft */
   .hero-ctas .btn-p.hero-cta,#pricing .btn-full,#pricing a.btn-p.pricing-cta{
-    box-shadow:0 6px 22px rgba(100,180,255,0.28)
+    box-shadow:0 10px 28px rgba(100,180,255,0.42),0 0 0 1px rgba(100,180,255,0.28)
   }
-  /* c595 LAST: Ideal badge legível no densest (era ~7px) */
+  /* c595/c623 LAST: Ideal badge verde — família soft/garantia no fold */
   #pricing .period-btn.active .period-rec{
     display:inline-block;font-size:9px;line-height:1.2;padding:2px 5px;margin-left:3px;
-    border-radius:4px;background:rgba(100,180,255,0.28);color:var(--accent);font-weight:700;
+    border-radius:4px;background:rgba(52,211,153,0.28);color:#6ee7b7;font-weight:800;
+    border:1px solid rgba(52,211,153,0.45);
     letter-spacing:.03em;text-transform:uppercase;animation:idealBadgePulse 2s var(--ease) 1
   }
   /* c597 LAST: trimestral active ring — Ideal + −10% no fold */
@@ -2866,11 +2883,12 @@ main{position:relative;z-index:1}
   #faq .faq-i--risk .faq-q{min-height:30px;padding:6px 10px;font-size:12px}
   #redes.redes-strip{padding:0}
   .hero-ctas .btn-o.hero-soft-cta:hover{
-    border-color:rgba(52,211,153,0.7);
-    background:rgba(52,211,153,0.08)
+    border-color:rgba(52,211,153,0.85);
+    background:rgba(52,211,153,0.16);
+    color:#a7f3d0
   }
-  /* c567 LAST: hero-trust Garantia tap ≥32px no densest */
-  a.hero-trust-garantia{display:inline-flex;align-items:center;min-height:32px;padding:2px 0}
+  /* c567/c623 LAST: hero-trust Garantia tap ≥32px + underline no densest */
+  a.hero-trust-garantia{display:inline-flex;align-items:center;min-height:32px;padding:2px 0;color:#6ee7b7;font-weight:800;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.25px}
   /* c569/c617 LAST: FAQ+redes densest sem reveal delay — chips no fold */
   #faq .faq-list .rv,#redes .rv{opacity:1;transform:none;transition:none}
   /* c572 LAST: risk Q accent — objeção garantia no fold */
@@ -2903,6 +2921,14 @@ main{position:relative;z-index:1}
   /* c604 LAST: comecar H2 densest — payback equation no close */
   #comecar .cta-final-title{font-size:clamp(15px,3.8vw,18px);line-height:1.2;margin:0 0 6px}
   #comecar .comecar-cta{height:40px;min-height:40px;font-size:13px;box-shadow:0 6px 22px rgba(100,180,255,0.28)}
+  /* c624 LAST: +peek Google Ads — gaps only; CTA 40px / period 32px intactos */
+  #faq .faq-more-toggle{margin:3px auto 0;min-height:30px;padding:4px 12px}
+  #faq .faq-i--risk .faq-q{min-height:28px;padding:5px 10px;font-size:11.5px}
+  #pricing .pricing-trust-chips{margin:2px 0 0}
+  #pricing .pricing-trust-chips li{min-height:24px;padding:3px 7px}
+  #faq .faq-assure{margin:1px 0 0;gap:1px}
+  #faq .faq-assure-micro{font-size:10px;line-height:1.2}
+  #redes .networks-grid{gap:4px}
   /* c538 LAST desktop: chip 26px — margem de fold (slack era 1px) */
   #pricing .pricing-trust-chips li{padding:4px 8px;min-height:26px}
   /* c580 LAST desktop: FAQ discoverable (risk+toggle) + peek pro assure no fold */
@@ -2934,6 +2960,14 @@ main{position:relative;z-index:1}
   #faq .faq-list{gap:2px}
   #faq .faq-more-toggle{margin:4px auto 0;min-height:32px}
   #faq .faq-i--risk .faq-q{min-height:32px;padding:6px 12px;font-size:12px}
+  /* c624 LAST desktop: +peek Google Ads pós-toggle */
+  #faq .faq-more-toggle{margin:3px auto 0;min-height:30px}
+  #faq .faq-i--risk .faq-q{min-height:28px;padding:5px 12px;font-size:12px}
+  #pricing .pricing-trust-chips{margin:2px 0 0}
+  #pricing .pricing-trust-chips li{min-height:24px;padding:3px 7px}
+  #faq .faq-assure{margin:1px 0 0;gap:1px}
+  #faq .faq-assure-micro{font-size:11px;line-height:1.2}
+  #redes .networks-grid{gap:4px}
 }
 
 @media (max-width:640px){
@@ -3207,8 +3241,8 @@ main{position:relative;z-index:1}
   /* c554 LAST: redes-buy some — CTA preço já no fold (evita CTA duplicado) */
   #redes .redes-buy{display:none}
   #redes .redes-buy-cta{height:40px;min-height:40px;font-size:13px;padding:0 14px}
-  /* c565/c603 LAST: why one-liner após FAQ — prova SaaS no mid-funnel */
-  #redes .redes-why{display:block;margin:4px auto 0;font-size:12px;line-height:1.35;color:var(--dim);max-width:44ch;font-weight:500}
+  /* c565/c618/c622 LAST: why one-liner — mínimo sob chips no mid-funnel */
+  #redes .redes-why{display:block;margin:2px auto 0;font-size:10px;line-height:1.25;color:var(--dim);max-width:36ch;font-weight:500}
   #redes .redes-why strong,#redes .redes-why .grad{color:var(--white);font-weight:700}
   /* c603 LAST: chips redes logo após toggle — prova multi-rede */
   #redes.redes-strip{padding:2px 0 4px}
@@ -3234,11 +3268,12 @@ main{position:relative;z-index:1}
   /* c530 LAST: assure = outline (sem risco) ≠ savings sólido Ativar */
   /* c560 LAST: assure = fill verde suave — close pós-preço > soft outline */
   #faq .faq-assure a.faq-inline-cta--price{
-    background:rgba(52,211,153,0.14);color:var(--white);
-    border:1px solid rgba(52,211,153,0.55);
-    box-shadow:0 0 0 1px rgba(52,211,153,0.08);
+    background:rgba(52,211,153,0.28);color:#021018;
+    border:1px solid rgba(52,211,153,0.75);
+    box-shadow:0 0 0 1px rgba(52,211,153,0.18),0 8px 22px rgba(52,211,153,0.22);
+    font-weight:800;
     transition:border-color .3s var(--ease),background .3s var(--ease),color .3s var(--ease),box-shadow .3s var(--ease);
-    /* c566: pulsa 1× após soft — reforça close no fold */
+    /* c566/c627: pulsa 1× — fill verde + texto escuro = botão garantia */
     animation:assureClosePulse 2.2s var(--ease) 1 1.1s both
   }
   #faq .faq-assure a.faq-inline-cta--price:hover{
@@ -3246,23 +3281,26 @@ main{position:relative;z-index:1}
   }
   /* c543/c609 LAST: FAQ assure micro = família garantia */
   #faq .faq-assure-micro{color:var(--green);font-weight:700;letter-spacing:.01em;font-size:11px}
-  /* c544 LAST: lead verb accent — soft path paralelo ao CTA full */
-  #pricing a.pricing-lead-cta{color:var(--accent);border-bottom-color:rgba(100,180,255,0.65)}
-  /* c536 LAST: soft = garantia (verde) ≠ primary Ativar (azul) */
+  /* c544/c620/c622 LAST: lead verb accent — soft path paralelo ao CTA full */
+  #pricing a.pricing-lead-cta{color:#6ee7b7;border-bottom:1.5px solid rgba(52,211,153,0.65);font-weight:800}
+  /* c536/c619/c622 LAST: soft = garantia (verde) ≠ primary Ativar (azul) */
   .hero-ctas .btn-o.hero-soft-cta{
-    border-color:rgba(52,211,153,0.5);
-    box-shadow:0 0 0 1px rgba(52,211,153,0.1);
-    color:var(--white);
+    border-color:rgba(52,211,153,0.72);
+    box-shadow:0 0 0 1px rgba(52,211,153,0.28),0 6px 18px rgba(52,211,153,0.16);
+    color:#6ee7b7;
+    font-weight:800;
+    text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;
     animation:softGarantiaPulse 2.4s var(--ease) 1
   }
-  /* c594 LAST: primary Ativar um tick mais dominante que soft */
+  /* c594/c622 LAST: primary Ativar um tick mais dominante que soft */
   .hero-ctas .btn-p.hero-cta,#pricing .btn-full,#pricing a.btn-p.pricing-cta{
-    box-shadow:0 6px 22px rgba(100,180,255,0.28)
+    box-shadow:0 10px 28px rgba(100,180,255,0.42),0 0 0 1px rgba(100,180,255,0.28)
   }
-  /* c595 LAST: Ideal badge legível no densest (era ~7px) */
+  /* c595/c623 LAST: Ideal badge verde — família soft/garantia no fold */
   #pricing .period-btn.active .period-rec{
     display:inline-block;font-size:9px;line-height:1.2;padding:2px 5px;margin-left:3px;
-    border-radius:4px;background:rgba(100,180,255,0.28);color:var(--accent);font-weight:700;
+    border-radius:4px;background:rgba(52,211,153,0.28);color:#6ee7b7;font-weight:800;
+    border:1px solid rgba(52,211,153,0.45);
     letter-spacing:.03em;text-transform:uppercase;animation:idealBadgePulse 2s var(--ease) 1
   }
   /* c597 LAST: trimestral active ring — Ideal + −10% no fold */
@@ -3287,11 +3325,12 @@ main{position:relative;z-index:1}
   #faq .faq-i--risk .faq-q{min-height:30px;padding:6px 10px;font-size:12px}
   #redes.redes-strip{padding:0}
   .hero-ctas .btn-o.hero-soft-cta:hover{
-    border-color:rgba(52,211,153,0.7);
-    background:rgba(52,211,153,0.08)
+    border-color:rgba(52,211,153,0.85);
+    background:rgba(52,211,153,0.16);
+    color:#a7f3d0
   }
-  /* c567 LAST: hero-trust Garantia tap ≥32px no densest */
-  a.hero-trust-garantia{display:inline-flex;align-items:center;min-height:32px;padding:2px 0}
+  /* c567/c623 LAST: hero-trust Garantia tap ≥32px + underline no densest */
+  a.hero-trust-garantia{display:inline-flex;align-items:center;min-height:32px;padding:2px 0;color:#6ee7b7;font-weight:800;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.25px}
   /* c569/c617 LAST: FAQ+redes densest sem reveal delay — chips no fold */
   #faq .faq-list .rv,#redes .rv{opacity:1;transform:none;transition:none}
   /* c572 LAST: risk Q accent — objeção garantia no fold */
@@ -3324,6 +3363,14 @@ main{position:relative;z-index:1}
   /* c604 LAST: comecar H2 densest — payback equation no close */
   #comecar .cta-final-title{font-size:clamp(15px,3.8vw,18px);line-height:1.2;margin:0 0 6px}
   #comecar .comecar-cta{height:40px;min-height:40px;font-size:13px;box-shadow:0 6px 22px rgba(100,180,255,0.28)}
+  /* c624 LAST: +peek Google Ads — gaps only; CTA 40px / period 32px intactos */
+  #faq .faq-more-toggle{margin:3px auto 0;min-height:30px;padding:4px 12px}
+  #faq .faq-i--risk .faq-q{min-height:28px;padding:5px 10px;font-size:11.5px}
+  #pricing .pricing-trust-chips{margin:2px 0 0}
+  #pricing .pricing-trust-chips li{min-height:24px;padding:3px 7px}
+  #faq .faq-assure{margin:1px 0 0;gap:1px}
+  #faq .faq-assure-micro{font-size:10px;line-height:1.2}
+  #redes .networks-grid{gap:4px}
 }
 
 @media (max-width:500px){
@@ -3592,8 +3639,8 @@ main{position:relative;z-index:1}
   /* c554 LAST: redes-buy some — CTA preço já no fold (evita CTA duplicado) */
   #redes .redes-buy{display:none}
   #redes .redes-buy-cta{height:40px;min-height:40px;font-size:13px;padding:0 14px}
-  /* c565/c603 LAST: why one-liner após FAQ — prova SaaS no mid-funnel */
-  #redes .redes-why{display:block;margin:4px auto 0;font-size:12px;line-height:1.35;color:var(--dim);max-width:44ch;font-weight:500}
+  /* c565/c618/c622 LAST: why one-liner — mínimo sob chips no mid-funnel */
+  #redes .redes-why{display:block;margin:2px auto 0;font-size:10px;line-height:1.25;color:var(--dim);max-width:36ch;font-weight:500}
   #redes .redes-why strong,#redes .redes-why .grad{color:var(--white);font-weight:700}
   /* c603 LAST: chips redes logo após toggle — prova multi-rede */
   #redes.redes-strip{padding:2px 0 4px}
@@ -3619,11 +3666,12 @@ main{position:relative;z-index:1}
   /* c530 LAST: assure = outline (sem risco) ≠ savings sólido Ativar */
   /* c560 LAST: assure = fill verde suave — close pós-preço > soft outline */
   #faq .faq-assure a.faq-inline-cta--price{
-    background:rgba(52,211,153,0.14);color:var(--white);
-    border:1px solid rgba(52,211,153,0.55);
-    box-shadow:0 0 0 1px rgba(52,211,153,0.08);
+    background:rgba(52,211,153,0.28);color:#021018;
+    border:1px solid rgba(52,211,153,0.75);
+    box-shadow:0 0 0 1px rgba(52,211,153,0.18),0 8px 22px rgba(52,211,153,0.22);
+    font-weight:800;
     transition:border-color .3s var(--ease),background .3s var(--ease),color .3s var(--ease),box-shadow .3s var(--ease);
-    /* c566: pulsa 1× após soft — reforça close no fold */
+    /* c566/c627: pulsa 1× — fill verde + texto escuro = botão garantia */
     animation:assureClosePulse 2.2s var(--ease) 1 1.1s both
   }
   #faq .faq-assure a.faq-inline-cta--price:hover{
@@ -3631,23 +3679,26 @@ main{position:relative;z-index:1}
   }
   /* c543/c609 LAST: FAQ assure micro = família garantia */
   #faq .faq-assure-micro{color:var(--green);font-weight:700;letter-spacing:.01em;font-size:11px}
-  /* c544 LAST: lead verb accent — soft path paralelo ao CTA full */
-  #pricing a.pricing-lead-cta{color:var(--accent);border-bottom-color:rgba(100,180,255,0.65)}
-  /* c536 LAST: soft = garantia (verde) ≠ primary Ativar (azul) */
+  /* c544/c620/c622 LAST: lead verb accent — soft path paralelo ao CTA full */
+  #pricing a.pricing-lead-cta{color:#6ee7b7;border-bottom:1.5px solid rgba(52,211,153,0.65);font-weight:800}
+  /* c536/c619/c622 LAST: soft = garantia (verde) ≠ primary Ativar (azul) */
   .hero-ctas .btn-o.hero-soft-cta{
-    border-color:rgba(52,211,153,0.5);
-    box-shadow:0 0 0 1px rgba(52,211,153,0.1);
-    color:var(--white);
+    border-color:rgba(52,211,153,0.72);
+    box-shadow:0 0 0 1px rgba(52,211,153,0.28),0 6px 18px rgba(52,211,153,0.16);
+    color:#6ee7b7;
+    font-weight:800;
+    text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;
     animation:softGarantiaPulse 2.4s var(--ease) 1
   }
-  /* c594 LAST: primary Ativar um tick mais dominante que soft */
+  /* c594/c622 LAST: primary Ativar um tick mais dominante que soft */
   .hero-ctas .btn-p.hero-cta,#pricing .btn-full,#pricing a.btn-p.pricing-cta{
-    box-shadow:0 6px 22px rgba(100,180,255,0.28)
+    box-shadow:0 10px 28px rgba(100,180,255,0.42),0 0 0 1px rgba(100,180,255,0.28)
   }
-  /* c595 LAST: Ideal badge legível no densest (era ~7px) */
+  /* c595/c623 LAST: Ideal badge verde — família soft/garantia no fold */
   #pricing .period-btn.active .period-rec{
     display:inline-block;font-size:9px;line-height:1.2;padding:2px 5px;margin-left:3px;
-    border-radius:4px;background:rgba(100,180,255,0.28);color:var(--accent);font-weight:700;
+    border-radius:4px;background:rgba(52,211,153,0.28);color:#6ee7b7;font-weight:800;
+    border:1px solid rgba(52,211,153,0.45);
     letter-spacing:.03em;text-transform:uppercase;animation:idealBadgePulse 2s var(--ease) 1
   }
   /* c597 LAST: trimestral active ring — Ideal + −10% no fold */
@@ -3672,11 +3723,12 @@ main{position:relative;z-index:1}
   #faq .faq-i--risk .faq-q{min-height:30px;padding:6px 10px;font-size:12px}
   #redes.redes-strip{padding:0}
   .hero-ctas .btn-o.hero-soft-cta:hover{
-    border-color:rgba(52,211,153,0.7);
-    background:rgba(52,211,153,0.08)
+    border-color:rgba(52,211,153,0.85);
+    background:rgba(52,211,153,0.16);
+    color:#a7f3d0
   }
-  /* c567 LAST: hero-trust Garantia tap ≥32px no densest */
-  a.hero-trust-garantia{display:inline-flex;align-items:center;min-height:32px;padding:2px 0}
+  /* c567/c623 LAST: hero-trust Garantia tap ≥32px + underline no densest */
+  a.hero-trust-garantia{display:inline-flex;align-items:center;min-height:32px;padding:2px 0;color:#6ee7b7;font-weight:800;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.25px}
   /* c569/c617 LAST: FAQ+redes densest sem reveal delay — chips no fold */
   #faq .faq-list .rv,#redes .rv{opacity:1;transform:none;transition:none}
   /* c572 LAST: risk Q accent — objeção garantia no fold */
@@ -3709,6 +3761,14 @@ main{position:relative;z-index:1}
   /* c604 LAST: comecar H2 densest — payback equation no close */
   #comecar .cta-final-title{font-size:clamp(15px,3.8vw,18px);line-height:1.2;margin:0 0 6px}
   #comecar .comecar-cta{height:40px;min-height:40px;font-size:13px;box-shadow:0 6px 22px rgba(100,180,255,0.28)}
+  /* c624 LAST: +peek Google Ads — gaps only; CTA 40px / period 32px intactos */
+  #faq .faq-more-toggle{margin:3px auto 0;min-height:30px;padding:4px 12px}
+  #faq .faq-i--risk .faq-q{min-height:28px;padding:5px 10px;font-size:11.5px}
+  #pricing .pricing-trust-chips{margin:2px 0 0}
+  #pricing .pricing-trust-chips li{min-height:24px;padding:3px 7px}
+  #faq .faq-assure{margin:1px 0 0;gap:1px}
+  #faq .faq-assure-micro{font-size:10px;line-height:1.2}
+  #redes .networks-grid{gap:4px}
 }
 
 @media (max-width:390px){
@@ -3968,8 +4028,8 @@ main{position:relative;z-index:1}
   /* c554 LAST: redes-buy some — CTA preço já no fold (evita CTA duplicado) */
   #redes .redes-buy{display:none}
   #redes .redes-buy-cta{height:40px;min-height:40px;font-size:13px;padding:0 14px}
-  /* c565/c603 LAST: why one-liner após FAQ — prova SaaS no mid-funnel */
-  #redes .redes-why{display:block;margin:4px auto 0;font-size:12px;line-height:1.35;color:var(--dim);max-width:44ch;font-weight:500}
+  /* c565/c618/c622 LAST: why one-liner — mínimo sob chips no mid-funnel */
+  #redes .redes-why{display:block;margin:2px auto 0;font-size:10px;line-height:1.25;color:var(--dim);max-width:36ch;font-weight:500}
   #redes .redes-why strong,#redes .redes-why .grad{color:var(--white);font-weight:700}
   /* c603 LAST: chips redes logo após toggle — prova multi-rede */
   #redes.redes-strip{padding:2px 0 4px}
@@ -3995,11 +4055,12 @@ main{position:relative;z-index:1}
   /* c530 LAST: assure = outline (sem risco) ≠ savings sólido Ativar */
   /* c560 LAST: assure = fill verde suave — close pós-preço > soft outline */
   #faq .faq-assure a.faq-inline-cta--price{
-    background:rgba(52,211,153,0.14);color:var(--white);
-    border:1px solid rgba(52,211,153,0.55);
-    box-shadow:0 0 0 1px rgba(52,211,153,0.08);
+    background:rgba(52,211,153,0.28);color:#021018;
+    border:1px solid rgba(52,211,153,0.75);
+    box-shadow:0 0 0 1px rgba(52,211,153,0.18),0 8px 22px rgba(52,211,153,0.22);
+    font-weight:800;
     transition:border-color .3s var(--ease),background .3s var(--ease),color .3s var(--ease),box-shadow .3s var(--ease);
-    /* c566: pulsa 1× após soft — reforça close no fold */
+    /* c566/c627: pulsa 1× — fill verde + texto escuro = botão garantia */
     animation:assureClosePulse 2.2s var(--ease) 1 1.1s both
   }
   #faq .faq-assure a.faq-inline-cta--price:hover{
@@ -4007,23 +4068,26 @@ main{position:relative;z-index:1}
   }
   /* c543/c609 LAST: FAQ assure micro = família garantia */
   #faq .faq-assure-micro{color:var(--green);font-weight:700;letter-spacing:.01em;font-size:11px}
-  /* c544 LAST: lead verb accent — soft path paralelo ao CTA full */
-  #pricing a.pricing-lead-cta{color:var(--accent);border-bottom-color:rgba(100,180,255,0.65)}
-  /* c536 LAST: soft = garantia (verde) ≠ primary Ativar (azul) */
+  /* c544/c620/c622 LAST: lead verb accent — soft path paralelo ao CTA full */
+  #pricing a.pricing-lead-cta{color:#6ee7b7;border-bottom:1.5px solid rgba(52,211,153,0.65);font-weight:800}
+  /* c536/c619/c622 LAST: soft = garantia (verde) ≠ primary Ativar (azul) */
   .hero-ctas .btn-o.hero-soft-cta{
-    border-color:rgba(52,211,153,0.5);
-    box-shadow:0 0 0 1px rgba(52,211,153,0.1);
-    color:var(--white);
+    border-color:rgba(52,211,153,0.72);
+    box-shadow:0 0 0 1px rgba(52,211,153,0.28),0 6px 18px rgba(52,211,153,0.16);
+    color:#6ee7b7;
+    font-weight:800;
+    text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;
     animation:softGarantiaPulse 2.4s var(--ease) 1
   }
-  /* c594 LAST: primary Ativar um tick mais dominante que soft */
+  /* c594/c622 LAST: primary Ativar um tick mais dominante que soft */
   .hero-ctas .btn-p.hero-cta,#pricing .btn-full,#pricing a.btn-p.pricing-cta{
-    box-shadow:0 6px 22px rgba(100,180,255,0.28)
+    box-shadow:0 10px 28px rgba(100,180,255,0.42),0 0 0 1px rgba(100,180,255,0.28)
   }
-  /* c595 LAST: Ideal badge legível no densest (era ~7px) */
+  /* c595/c623 LAST: Ideal badge verde — família soft/garantia no fold */
   #pricing .period-btn.active .period-rec{
     display:inline-block;font-size:9px;line-height:1.2;padding:2px 5px;margin-left:3px;
-    border-radius:4px;background:rgba(100,180,255,0.28);color:var(--accent);font-weight:700;
+    border-radius:4px;background:rgba(52,211,153,0.28);color:#6ee7b7;font-weight:800;
+    border:1px solid rgba(52,211,153,0.45);
     letter-spacing:.03em;text-transform:uppercase;animation:idealBadgePulse 2s var(--ease) 1
   }
   /* c597 LAST: trimestral active ring — Ideal + −10% no fold */
@@ -4048,11 +4112,12 @@ main{position:relative;z-index:1}
   #faq .faq-i--risk .faq-q{min-height:30px;padding:6px 10px;font-size:12px}
   #redes.redes-strip{padding:0}
   .hero-ctas .btn-o.hero-soft-cta:hover{
-    border-color:rgba(52,211,153,0.7);
-    background:rgba(52,211,153,0.08)
+    border-color:rgba(52,211,153,0.85);
+    background:rgba(52,211,153,0.16);
+    color:#a7f3d0
   }
-  /* c567 LAST: hero-trust Garantia tap ≥32px no densest */
-  a.hero-trust-garantia{display:inline-flex;align-items:center;min-height:32px;padding:2px 0}
+  /* c567/c623 LAST: hero-trust Garantia tap ≥32px + underline no densest */
+  a.hero-trust-garantia{display:inline-flex;align-items:center;min-height:32px;padding:2px 0;color:#6ee7b7;font-weight:800;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.25px}
   /* c569/c617 LAST: FAQ+redes densest sem reveal delay — chips no fold */
   #faq .faq-list .rv,#redes .rv{opacity:1;transform:none;transition:none}
   /* c572 LAST: risk Q accent — objeção garantia no fold */
@@ -4085,6 +4150,14 @@ main{position:relative;z-index:1}
   /* c604 LAST: comecar H2 densest — payback equation no close */
   #comecar .cta-final-title{font-size:clamp(15px,3.8vw,18px);line-height:1.2;margin:0 0 6px}
   #comecar .comecar-cta{height:40px;min-height:40px;font-size:13px;box-shadow:0 6px 22px rgba(100,180,255,0.28)}
+  /* c624 LAST: +peek Google Ads — gaps only; CTA 40px / period 32px intactos */
+  #faq .faq-more-toggle{margin:3px auto 0;min-height:30px;padding:4px 12px}
+  #faq .faq-i--risk .faq-q{min-height:28px;padding:5px 10px;font-size:11.5px}
+  #pricing .pricing-trust-chips{margin:2px 0 0}
+  #pricing .pricing-trust-chips li{min-height:24px;padding:3px 7px}
+  #faq .faq-assure{margin:1px 0 0;gap:1px}
+  #faq .faq-assure-micro{font-size:10px;line-height:1.2}
+  #redes .networks-grid{gap:4px}
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -4471,7 +4544,7 @@ main{position:relative;z-index:1}
             <a href="#pricing-lead" class="network-chip network-chip--more"><strong>E outras</strong><span>Mesmo fluxo</span></a>
         </div>
         <p class="redes-buy rv rv-d4"><a href="/cadastro/?plan=Maré&period=monthly" class="plan-link btn btn-p redes-buy-cta" data-plan="Maré" id="redes-buy-cta">Ativar — R$399,99/mês</a></p>
-        <p class="why-strip-text redes-why rv rv-d4" id="por-que"><strong>SaaS server-side</strong> · decision logs · suporte BR · Ativar −10% · garantia 7 dias · <span class="grad">R$359,99/mês</span></p>
+        <p class="why-strip-text redes-why rv rv-d4" id="por-que"><strong>~1 dia = 1 mês</strong> · multi-rede · sem OAuth · garantia 7d · <span class="grad">Ativar −10%</span></p>
     </div>
 </section>
 
@@ -4485,7 +4558,7 @@ main{position:relative;z-index:1}
         <div class="faq-list">
             <details class="faq-i rv rv-d1" open><summary class="faq-q" id="faq-hook-q">Paga em ~1 dia? · Ativar −10%</summary><div class="faq-a" id="faq-savings-a">Perda ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês · ~<strong id="faq-savings-payback">1 dia</strong> = 1 mês · garantia 7 dias · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta faq-inline-cta--price" data-plan="Maré">Ativar — R$399,99/mês</a></div></details>
             <p class="faq-assure rv rv-d2"><span class="faq-assure-micro">Garantia 7d · 100% · sem risco</span><a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta faq-inline-cta--price" data-plan="Maré" data-intent="garantia">Ativar sem risco 7d −10% — R$359,99</a></p>
-            <details class="faq-i faq-i--risk rv rv-d2"><summary class="faq-q">E se eu não gostar? · 7d 100%</summary><div class="faq-a">7 dias · 100% reembolso · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré" data-intent="garantia">Ativar 7d sem risco −10% — R$359,99</a></div></details>
+            <details class="faq-i faq-i--risk rv rv-d2"><summary class="faq-q">Não gostei? · 7d 100%</summary><div class="faq-a">7 dias · 100% reembolso · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré" data-intent="garantia">Ativar 7d sem risco −10% — R$359,99</a></div></details>
             <div class="faq-more" id="faq-more">
                 <details class="faq-i faq-i--oauth"><summary class="faq-q">OAuth? Não — sem conectar conta</summary><div class="faq-a">Não. Cadastre páginas, configure regras e use a URL BlackInk como destino — Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras · sem OAuth.</div></details>
                 <details class="faq-i"><summary class="faq-q">Quanto custa? · Ativar −10%</summary><div class="faq-a">R$ 399,99/mês · Ativar −10% trimestral · anual −15% · PIX/cartão · sem fidelidade.</div></details>
@@ -4938,10 +5011,10 @@ const FAQ_HEADING_GRAD = {
     yearly: '~1 dia · Ativar −15%'
 };
 const REDES_WHY_HTML = {
-    // c514: preço do período ativo (não ancorar R$399 no trimestral)
-    monthly: '<strong>SaaS server-side</strong> · decision logs · suporte BR · Ativar · garantia 7 dias · <span class="grad">R$399,99/mês</span>',
-    quarterly: '<strong>SaaS server-side</strong> · decision logs · suporte BR · Ativar −10% · garantia 7 dias · <span class="grad">R$359,99/mês</span>',
-    yearly: '<strong>SaaS server-side</strong> · decision logs · suporte BR · Ativar −15% · garantia 7 dias · <span class="grad">R$339,99/mês</span>'
+    // c514/c626: payback + multi-rede no peek (preço no grad)
+    monthly: '<strong>~1 dia = 1 mês</strong> · multi-rede · sem OAuth · garantia 7d · <span class="grad">R$399,99/mês</span>',
+    quarterly: '<strong>~1 dia = 1 mês</strong> · multi-rede · sem OAuth · garantia 7d · <span class="grad">Ativar −10%</span>',
+    yearly: '<strong>~1 dia = 1 mês</strong> · multi-rede · sem OAuth · garantia 7d · <span class="grad">Ativar −15%</span>'
 };
 const PRICING_LEAD_VERB = {
     monthly: 'Ativar',

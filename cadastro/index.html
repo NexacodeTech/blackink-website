@@ -153,8 +153,9 @@
         .cadastro-garantia-banner strong{color:var(--green);font-weight:700}
         /* c563: submit reforça path garantia */
         body.intent-garantia #submitBtn{
-            box-shadow:0 0 0 1px rgba(52,211,153,0.45),0 4px 20px rgba(52,211,153,0.18);
-            border:1px solid rgba(52,211,153,0.55);
+            box-shadow:0 0 0 2px rgba(52,211,153,0.55),0 8px 24px rgba(52,211,153,0.28);
+            border:1px solid rgba(52,211,153,0.7);
+            font-weight:800;
             transition:box-shadow .3s var(--ease),transform .3s var(--ease),border-color .3s var(--ease)
         }
         body.intent-garantia .form-submit-trust strong{color:var(--green)}
@@ -175,10 +176,12 @@
         .cadastro-period-btn.active{background:rgba(100,180,255,0.1);color:var(--white);border-color:rgba(100,180,255,0.35)}
         /* c615: −10% verde no trimestral ativo — espelha landing */
         .cadastro-period-btn.active .period-discount{background:rgba(52,211,153,0.2);color:var(--green);font-size:10px;padding:2px 6px}
+        /* c621/c622: Ideal badge verde no trimestral — espelha landing soft path */
+        .cadastro-period-btn.active .period-rec{background:rgba(52,211,153,0.28);color:#6ee7b7;border:1px solid rgba(52,211,153,0.5);font-size:9px;font-weight:800;padding:2px 6px}
         .cadastro-period-btn .period-discount{font-size:9px;font-weight:700;padding:2px 5px;border-radius:4px;background:rgba(52,211,153,0.15);color:var(--green)}
-        .cadastro-period-btn .period-rec{font-size:9px;font-weight:700;padding:2px 6px;border-radius:4px;background:rgba(100,180,255,0.28);color:var(--accent);letter-spacing:.03em;text-transform:uppercase}
+        .cadastro-period-btn .period-rec{font-size:9px;font-weight:800;padding:2px 6px;border-radius:4px;background:rgba(52,211,153,0.14);color:#6ee7b7;border:1px solid rgba(52,211,153,0.32);letter-spacing:.03em;text-transform:uppercase}
         .cadastro-period-btn.active .period-rec{animation:idealBadgePulse 2s var(--ease) 1;display:inline-block}
-        @keyframes idealBadgePulse{0%,100%{background:rgba(100,180,255,0.18);transform:scale(1)}50%{background:rgba(100,180,255,0.4);transform:scale(1.06)}}
+        @keyframes idealBadgePulse{0%,100%{background:rgba(52,211,153,0.18);transform:scale(1)}50%{background:rgba(52,211,153,0.4);transform:scale(1.06)}}
         @media(prefers-reduced-motion:reduce){
             .cadastro-period-btn.active .period-rec{animation:none}
         }
