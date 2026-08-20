@@ -767,17 +767,22 @@ main{position:relative;z-index:1}
   #cloaker .prot-sim-feed-header{padding:4px 8px;flex-shrink:0}
   #cloaker .prot-sim-feed-title{letter-spacing:.04em;font-size:10px}
   #cloaker .prot-sim-feed-live{letter-spacing:.04em;font-size:10px}
-  /* Ciclo 141/163/211: feed curto sem clipar o header do log */
-  .prot-sim{min-height:132px}
+  /* Ciclo 141/163/211/231: feed curto sem clipar o header do log */
+  .prot-sim{min-height:120px}
   #cloaker .prot-sim-stat:last-child{display:none}
   #cloaker .prot-sim-stats{grid-template-columns:1fr 1fr 1fr}
-  .prot-sim-feed{min-height:40px;max-height:56px}
+  .prot-sim-feed{min-height:36px;max-height:48px}
   #cloaker .prot-sim-feed-body{min-height:0}
   #cloaker .showcase-cta{margin-top:0}
   #cloaker .showcase-cta .btn{height:44px;font-size:13px}
-  #cloaker.section--compact{padding:clamp(8px,1.4vh,18px) 0}
-  #cloaker .showcase-text .t-lg{font-size:clamp(16px,4.5vw,22px);margin:0 0 1px}
+  #cloaker.section--compact{padding:clamp(6px,1.2vh,14px) 0}
+  #cloaker .showcase-text .t-lg{font-size:clamp(15px,4.2vw,20px);margin:0 0 1px}
   #cloaker .showcase-text .t-body-lg{font-size:9px}
+  #cloaker .prot-sim-header{padding:4px 8px}
+  #cloaker .prot-sim-stats{padding:4px 8px;gap:2px}
+  #cloaker .prot-sim-stat{padding:4px 2px 3px}
+  #cloaker .prot-sim-stat-val{font-size:13px}
+  #cloaker .prot-sim-feed{margin:0 4px 4px}
   .networks-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:12px}
   #redes.redes-strip{padding:clamp(4px,0.8vh,10px) 0}
   #redes .t-lg{margin:0 auto 0;font-size:clamp(16px,4.5vw,20px)}
@@ -973,24 +978,25 @@ main{position:relative;z-index:1}
   #roi-calc .calc-summary-val{font-size:16px}
   #roi-calc .calc-summary-tag{font-size:8px}
   #pricing .t-label{display:none}
-  /* Ciclo 216: densest pricing last in desktop cascade */
-  #pricing .pricing-reveal-title{margin:0 0 2px;font-size:clamp(16px,2vw,20px)}
-  #pricing .pricing-lead{margin-bottom:2px;font-size:11px}
+  /* Ciclo 216/231: densest pricing last in desktop cascade */
+  #pricing .pricing-reveal-title{margin:0 0 1px;font-size:clamp(15px,1.8vw,18px)}
+  #pricing .pricing-lead{margin-bottom:2px;font-size:10px}
   #pricing .p-micro{margin-top:8px;font-size:11px}
   #pricing .pricing-trust-chips{margin-top:8px}
   #pricing .period-toggle-label{margin-bottom:4px;display:none}
   /* Ciclo 111: chips cobrem includes+micro no desktop */
   #pricing .pricing-includes-line{display:none}
   #pricing .p-micro{display:none}
-  #pricing .pricing-trust-chips{margin-top:4px;margin-bottom:0}
-  #pricing .pricing-trust-chips li{font-size:10px;padding:3px 7px}
-  #pricing .p-price-wrap{min-height:32px;margin-bottom:2px}
-  #pricing .period-nudge{margin:-2px auto 2px;font-size:10px}
-  #pricing .p-val{font-size:clamp(28px,3.6vw,36px)}
-  #pricing .btn-full{height:46px;font-size:14px}
-  #pricing.section--compact{padding:clamp(6px,1.2vh,14px) 0}
+  #pricing .pricing-trust-chips{margin-top:2px;margin-bottom:0}
+  #pricing .pricing-trust-chips li{font-size:9px;padding:2px 6px}
+  #pricing .p-price-wrap{min-height:28px;margin-bottom:1px}
+  #pricing .period-nudge{margin:-2px auto 2px;font-size:9px}
+  #pricing .p-val{font-size:clamp(26px,3.2vw,34px)}
+  #pricing .btn-full{height:44px;font-size:14px}
+  #pricing.section--compact{padding:clamp(4px,1vh,12px) 0}
   #pricing .period-toggle{margin-bottom:2px}
-  #pricing .period-btn{padding:4px 6px;font-size:11px}
+  #pricing .period-btn{padding:4px 5px;font-size:10px}
+  #pricing .pricing-reveal-inner{padding:6px 8px}
   #roi-calc .calc-cta{margin-top:4px}
   /* Ciclo 202: pricing é o próximo ato — link de período some no desktop */
   #roi-calc .calc-cta-period{display:none}
@@ -1008,14 +1014,17 @@ main{position:relative;z-index:1}
   #roi-calc .calc-summary-val{font-size:15px}
   #roi-calc .calc-divider{margin:6px 0}
   #roi-calc .calc-cta{margin-top:2px}
-  /* Ciclo 207: FAQ desktop mais curto — 2 perguntas + CTA */
-  #faq.section--compact{padding:clamp(6px,1vh,14px) 0}
-  #faq .t-lg{margin-bottom:2px;font-size:clamp(16px,2vw,20px)}
-  #faq .faq-q{padding:4px 10px;font-size:12px}
-  #faq .faq-a{padding:0 10px 4px;font-size:11px;line-height:1.2}
-  #faq .faq-outro{margin-top:2px;padding:4px 8px}
-  #faq .faq-outro .btn{height:44px;font-size:14px}
-  #faq .faq-more-toggle{margin-top:2px;min-height:28px;padding:3px 8px;font-size:10px}
+  /* Ciclo 207/231: FAQ desktop mais curto — 2 perguntas + CTA */
+  #faq.section--compact{padding:clamp(4px,0.8vh,12px) 0}
+  #faq .t-lg{margin-bottom:2px;font-size:clamp(15px,1.8vw,18px)}
+  #faq .faq-q{padding:4px 8px;font-size:11px}
+  #faq .faq-a{padding:0 8px 3px;font-size:10px;line-height:1.2}
+  #faq .faq-outro{margin-top:2px;padding:4px 6px}
+  #faq .faq-outro .btn{height:42px;font-size:13px}
+  #faq .faq-more-toggle{margin-top:2px;min-height:26px;padding:2px 8px;font-size:10px}
+  #faq .faq-outro-support{display:none}
+  #faq .faq-list{gap:2px;max-width:480px}
+  #faq .faq-outro{max-width:480px}
   /* Ciclo 134: edu desktop em rail mais baixa */
   #o-que-e.edu-strip{padding:clamp(10px,1.6vh,18px) 0}
   #o-que-e .t-lg{margin:2px auto 4px;font-size:clamp(20px,2.4vw,26px)}
@@ -1490,7 +1499,7 @@ main{position:relative;z-index:1}
         <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:8px">Dúvidas · <span class="grad">ative sem risco</span></h2>
         <div class="faq-list">
             <details class="faq-i rv rv-d1" open><summary class="faq-q">O cloaker se paga?</summary><div class="faq-a" id="faq-savings-a">Perda ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês vs R$399,99 · payback ~<strong id="faq-savings-payback">1 dia</strong> · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar agora</a></div></details>
-            <details class="faq-i faq-i--risk rv rv-d2"><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">7 dias · reembolso 100% · sem fidelidade. <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar sem risco</a></div></details>
+            <details class="faq-i faq-i--risk rv rv-d2"><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">7 dias · 100% reembolso · sem fidelidade. <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar sem risco</a></div></details>
             <div class="faq-more" id="faq-more">
                 <details class="faq-i"><summary class="faq-q">Quanto custa?</summary><div class="faq-a">R$ 399,99/mês · trimestral −10% · anual −15% · PIX/cartão · sem fidelidade.</div></details>
                 <details class="faq-i"><summary class="faq-q">Preciso conectar minha conta de anúncios (OAuth)?</summary><div class="faq-a">Não. Cadastre páginas, configure regras e use a URL BlackInk como destino — Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras · sem OAuth.</div></details>
