@@ -1743,6 +1743,8 @@ main{position:relative;z-index:1}
   #hero{min-height:calc(100vh - 160px);min-height:calc(100dvh - 160px)}
   /* c503 LAST: micro cobrança compacto sob CTA */
   #pricing .p-micro{font-size:10px;margin:2px 0 4px;line-height:1.25}
+  /* c510 LAST: padding inferior — fold fecha nos chips (sem redes truncada) */
+  #pricing.section--compact{padding:2px 0 18px}
 }
 @media (min-width:768px){
   .sticky-cta-text{display:block}
@@ -2590,6 +2592,8 @@ main{position:relative;z-index:1}
   .trust-rail{display:none}
   /* c505/c507: peek 180 — chips trust full no fold desktop */
   #hero{min-height:calc(100vh - 180px);min-height:calc(100dvh - 180px)}
+  /* c510 LAST: padding inferior — fold fecha nos chips */
+  #pricing.section--compact{padding:2px 0 20px}
 }
 
 @media (max-width:640px){
@@ -2837,7 +2841,10 @@ main{position:relative;z-index:1}
   .hero-ctas .btn-o.hero-soft-cta{white-space:nowrap;height:40px;min-height:40px;padding:0 12px;line-height:40px}
   .hero-scroll-cue{display:none}
   .trust-rail{display:none}
+  /* c505: peek 160 — chips trust full no fold (mobile) */
   #hero{min-height:calc(100vh - 160px);min-height:calc(100dvh - 160px)}
+  /* c510 LAST: padding inferior — fold fecha nos chips */
+  #pricing.section--compact{padding:2px 0 18px}
 }
 @media (max-width:500px){
   .flow-pillars{grid-template-columns:1fr}
@@ -3079,7 +3086,10 @@ main{position:relative;z-index:1}
   #pricing .period-btn{flex-direction:row}
   .hero-scroll-cue{display:none}
   .trust-rail{display:none}
+  /* c505: peek 160 — chips trust full no fold (mobile) */
   #hero{min-height:calc(100vh - 160px);min-height:calc(100dvh - 160px)}
+  /* c510 LAST: padding inferior — fold fecha nos chips */
+  #pricing.section--compact{padding:2px 0 18px}
 }
 @media (max-width:390px){
   .hero-logo{width:32px;height:32px}
@@ -3312,7 +3322,10 @@ main{position:relative;z-index:1}
   #pricing .period-btn{flex-direction:row}
   .hero-scroll-cue{display:none}
   .trust-rail{display:none}
+  /* c505: peek 160 — chips trust full no fold (mobile) */
   #hero{min-height:calc(100vh - 160px);min-height:calc(100dvh - 160px)}
+  /* c510 LAST: padding inferior — fold fecha nos chips */
+  #pricing.section--compact{padding:2px 0 18px}
 }
 @media (prefers-reduced-motion:reduce){
   .rv{opacity:1;transform:none}
@@ -3668,7 +3681,7 @@ main{position:relative;z-index:1}
                     </div>
                     <p class="pricing-includes-line">Safe + offer · server-side &lt;50ms · 15+ sinais + logs · App + suporte · Payback <span id="pricing-bridge-payback">~1 dia</span></p>
                     <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p btn-full plan-link pricing-cta" data-plan="Maré">Ativar — R$399,99/mês</a>
-                    <p class="p-micro"><strong>7 dias</strong> · PIX · R$399,99/mês · Ativar −10% no trimestral</p>
+                    <p class="p-micro"><strong>Garantia 7 dias</strong> · PIX · R$399,99/mês · Ativar −10% no trimestral</p>
                     <p class="pricing-networks">Google Ads · YouTube Ads · Facebook Ads · TikTok Ads · sem OAuth</p>
                     <ul class="pricing-trust-chips" aria-label="Garantias">
                         <li>Garantia 7 dias · 100%</li>
@@ -4125,9 +4138,10 @@ const FAQ_PRICE_CTA = {
     yearly: 'Ativar sem risco −15% — R$339,99'
 };
 const P_MICRO_HTML = {
-    monthly: '<strong>7 dias</strong> · PIX · R$399,99/mês · Ativar −10% no trimestral',
-    quarterly: '<strong>Ativar −10%</strong> · cobrado R$1.079,97 / 3 meses · PIX · 7 dias',
-    yearly: '<strong>Ativar −15%</strong> · cobrado R$4.079,90 / ano · PIX · 7 dias'
+    // c508: micro espelha soft “com garantia” + chip Garantia
+    monthly: '<strong>Garantia 7 dias</strong> · PIX · R$399,99/mês · Ativar −10% no trimestral',
+    quarterly: '<strong>Ativar −10%</strong> · cobrado R$1.079,97 / 3 meses · PIX · garantia 7 dias',
+    yearly: '<strong>Ativar −15%</strong> · cobrado R$4.079,90 / ano · PIX · garantia 7 dias'
 };
 const COMECAR_CTA_LABELS = {
     monthly: 'Começar agora — R$399,99/mês',
