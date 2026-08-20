@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BlackInk — Cloaker Server-Side para Tráfego Pago</title>
-    <meta name="description" content="Cloaker server-side multi-rede: safe page para bots/revisores, offer page para quem compra. Google Ads, YouTube Ads, Facebook Ads, TikTok Ads — &lt;50ms. R$399,99/mês · ~1 dia de clique sujo = 1 mês · garantia 7 dias.">
+    <meta name="description" content="Cloaker server-side multi-rede: safe page para bots/revisores, offer page para quem compra. Google Ads, YouTube Ads, Facebook Ads, TikTok Ads — &lt;50ms. R$399,99/mês · ~1 dia de clique sujo = 1 mês · trim. −10% · garantia 7 dias.">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta property="og:title" content="BlackInk — Cloaker Server-Side para Tráfego Pago">
-    <meta property="og:description" content="Safe page para revisores. Offer page para quem compra. Cloaker multi-rede — Google Ads, YouTube Ads, Facebook Ads, TikTok Ads. R$399,99/mês · ~1 dia de clique sujo = 1 mês · garantia 7 dias.">
+    <meta property="og:description" content="Safe page para revisores. Offer page para quem compra. Cloaker multi-rede — Google Ads, YouTube Ads, Facebook Ads, TikTok Ads. R$399,99/mês · ~1 dia = 1 mês · trim. −10% · garantia 7 dias.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://theblack.ink">
     <meta property="og:image" content="https://theblack.ink/images/logo-icon-clean.png">
@@ -15,7 +15,7 @@
     <meta property="og:site_name" content="BlackInk">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="BlackInk — Cloaker Server-Side para Tráfego Pago">
-    <meta name="twitter:description" content="Safe page para revisores. Offer page para quem compra. Cloaker multi-rede — Google Ads, YouTube Ads, Facebook Ads, TikTok Ads. R$399,99/mês · ~1 dia = 1 mês · garantia 7 dias.">
+    <meta name="twitter:description" content="Safe page para revisores. Offer page para quem compra. Cloaker multi-rede — Google Ads, YouTube Ads, Facebook Ads, TikTok Ads. R$399,99/mês · ~1 dia = 1 mês · trim. −10% · garantia 7 dias.">
     <meta name="twitter:image" content="https://theblack.ink/images/logo-icon-clean.png">
     <meta name="author" content="BlackInk Tecnologia Ltda">
     <meta name="subject" content="Cloaker server-side para tráfego pago no Brasil — Google Ads, YouTube Ads, Facebook Ads, TikTok Ads — filtragem de bots, VPNs e revisores">
@@ -594,6 +594,9 @@ strong{font-weight:600}
 .faq-a a{color:var(--accent);text-decoration:underline}
 .faq-inline-cta{display:inline-block;margin-top:6px;font-weight:600;text-decoration:none;padding:6px 0;transition:color .3s var(--ease)}
 .faq-inline-cta:hover{color:var(--white);text-decoration:underline}
+.faq-assure{margin:6px 0 0;text-align:center;font-size:12px;color:var(--dim);line-height:1.35}
+.faq-assure a{color:var(--accent);font-weight:600;text-decoration:none}
+.faq-assure a:hover{color:var(--white);text-decoration:underline}
 /* CTA final */
 .cta-final{text-align:center;position:relative;overflow:hidden;padding:clamp(36px,6vh,72px) 0}
 .cta-final-title{max-width:640px;margin:0 auto;line-height:1.2}
@@ -1106,6 +1109,8 @@ main{position:relative;z-index:1}
   /* Ciclo 313: chrome FAQ menor — libera legibilidade do + sem inflar */
   #faq .faq-q::after{font-size:8px;line-height:1}
   #faq .faq-inline-cta{font-size:5px}
+  /* Ciclo 314: assure line (sem details/::after) — objeção sem +21px */
+  #faq .faq-assure{margin:1px 0 0;font-size:5px;line-height:1.1}
 }
 @media (min-width:768px){
   .sticky-cta-text{display:block}
@@ -1557,6 +1562,8 @@ main{position:relative;z-index:1}
   /* Ciclo 313: FAQ + CTA chrome */
   #faq .faq-q::after{font-size:7px;line-height:1}
   #faq .faq-inline-cta{font-size:5px}
+  /* Ciclo 314: assure compacto */
+  #faq .faq-assure{margin:0;font-size:5px;line-height:1.05}
   #comecar.cta-final{padding:0}
   #comecar .cta-final-title{font-size:clamp(10px,1.2vw,13px)}
   #comecar .pricing-cta{height:20px;font-size:8px}
@@ -1732,7 +1739,7 @@ main{position:relative;z-index:1}
         <span class="ln"><span class="ln-i"><span class="ln-mute">Bots veem</span> <span class="ln-strong">Safe Page</span></span></span>
         <span class="ln"><span class="ln-i"><span class="ln-mute">Compradores veem</span> <span class="ln-strong">Offer Page</span></span></span>
     </h1>
-    <p class="hero-sub">Safe vs offer · multi-rede · &lt;50ms · ~1 dia de sujo = 1 mês · R$399,99 · 7 dias</p>
+    <p class="hero-sub">Safe vs offer · multi-rede · &lt;50ms · ~1 dia = 1 mês · R$399,99 · trim. −10%</p>
     <div class="hero-ctas">
         <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link hero-cta" data-plan="Maré">Ativar — R$399,99/mês</a>
         <a href="#roi-calc" class="btn btn-o">Ver quanto perde</a>
@@ -2058,6 +2065,7 @@ main{position:relative;z-index:1}
         <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:4px">Dúvidas · <span class="grad">~1 dia · 7 dias</span></h2>
         <div class="faq-list">
             <details class="faq-i rv rv-d1" open><summary class="faq-q">Se paga em ~1 dia?</summary><div class="faq-a" id="faq-savings-a">Perda ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês · ~<strong id="faq-savings-payback">1 dia</strong> = 1 mês · 7 dias · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar — R$399,99</a></div></details>
+            <p class="faq-assure rv rv-d2">7 dias · 100% reembolso · sem fidelidade · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar sem risco</a></p>
             <details class="faq-i faq-i--risk rv rv-d2"><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">7 dias · 100% reembolso · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar sem risco</a></div></details>
             <div class="faq-more" id="faq-more">
                 <details class="faq-i"><summary class="faq-q">Quanto custa?</summary><div class="faq-a">R$ 399,99/mês · trimestral −10% · anual −15% · PIX/cartão · sem fidelidade.</div></details>
@@ -2088,7 +2096,7 @@ main{position:relative;z-index:1}
     <div class="cta-orb" aria-hidden="true"></div>
     <div class="container" style="position:relative;z-index:1">
         <p class="t-label rv" style="text-align:center;margin-bottom:4px">Pronto</p>
-        <h2 class="t-lg rv rv-d1 cta-final-title" style="text-align:center">~1 dia de sujo = 1 mês · <span class="grad">ative</span></h2>
+        <h2 class="t-lg rv rv-d1 cta-final-title" style="text-align:center">~1 dia = 1 mês · trim. −10% · <span class="grad">ative</span></h2>
         <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:440px;margin:6px auto 10px;font-size:clamp(13px,1.4vw,15px)" id="cta-final-lead">Perda <strong id="cta-final-loss">R$ 12.500</strong>/mês · <span id="cta-final-payback">~1 dia</span> = 1 mês · 7 dias · trim. −10%</p>
         <div class="rv rv-d3" style="display:flex;flex-direction:column;align-items:center;gap:8px">
             <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar — R$399,99/mês</a>
