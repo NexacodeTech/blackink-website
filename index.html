@@ -587,6 +587,8 @@ strong{font-weight:600}
 .faq-i[open] .faq-q::after{transform:rotate(45deg)}
 .faq-a{padding:0 14px 12px;font-size:13px;color:var(--dim);line-height:1.5}
 .faq-a a{color:var(--accent);text-decoration:underline}
+.faq-inline-cta{display:inline-block;margin-top:6px;font-weight:600;text-decoration:none;padding:6px 0;transition:color .3s var(--ease)}
+.faq-inline-cta:hover{color:var(--white);text-decoration:underline}
 /* CTA final */
 .cta-final{text-align:center;position:relative;overflow:hidden;padding:clamp(36px,6vh,72px) 0}
 .cta-final-trust{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 14px;margin-top:4px;max-width:520px}
@@ -638,14 +640,18 @@ main{position:relative;z-index:1}
   .mob-tog{display:flex}
   .hero{padding:calc(var(--hdr-h) + 4px) 16px 0;justify-content:flex-start;min-height:auto;min-height:100dvh}
   .hero-core{justify-content:flex-start;padding-top:2px;padding-bottom:12px;flex:1}
-  .hero-logo{width:34px;height:34px;margin-bottom:8px}
-  .hero-badge{margin-bottom:8px}
+  /* Ciclo 89: why-strip duplica pricing micro no mobile */
+  #por-que{display:none}
+  #faq .faq-outro-period{display:none}
+  #faq .faq-outro{padding:8px 6px}
+  .hero-badge{margin-bottom:6px}
+  .hero-logo{width:32px;height:32px;margin-bottom:6px}
   .hero-title{font-size:clamp(24px,7vw,30px);margin-bottom:8px;line-height:1.2}
-  .hero-sub{font-size:13px;margin-bottom:12px;max-width:34ch;line-height:1.45}
+  .hero-sub{margin-bottom:10px;font-size:12px;max-width:36ch;line-height:1.45}
   .hero-ctas{flex-direction:column;width:100%;max-width:320px;margin-bottom:10px;gap:8px}
   .hero-ctas .btn{width:100%}
-  .hero-trust{font-size:11px;max-width:300px}
-  .trust-rail{padding:10px 12px;gap:6px 12px}
+  .hero-trust{font-size:10px;max-width:300px}
+  .trust-rail{padding:8px 10px;gap:6px 12px}
   .trust-rail span{font-size:10px}
   /* Drop rail chips that duplicate hero-trust (ciclo 69) */
   .trust-rail span:nth-child(3),
@@ -807,6 +813,13 @@ main{position:relative;z-index:1}
   #roi-calc .t-body-lg{margin:0 auto 8px;font-size:13px}
   #roi-calc .calc-card{padding:16px 18px}
   #roi-calc .calc-summary-lbl{display:none}
+  #roi-calc .calc-losses{gap:6px}
+  #roi-calc .calc-loss{padding:8px 6px}
+  #roi-calc .calc-loss-val{font-size:15px}
+  #roi-calc .calc-slider-ticks{font-size:9px;margin-top:2px}
+  #roi-calc .calc-divider{margin:8px 0}
+  #roi-calc .calc-cta-text{font-size:12px;margin-bottom:8px}
+  #cloaker .showcase-text .t-body-lg{font-size:14px}
   #faq .faq-q{padding:11px 14px}
   #comecar.cta-final{padding:clamp(28px,4.5vh,56px) 0}
 }
@@ -1180,7 +1193,7 @@ main{position:relative;z-index:1}
                 <div class="pricing-reveal-inner">
                     <div class="t-label">Seu investimento</div>
                     <h2 class="pricing-reveal-title">BlackInk Cloaker</h2>
-                    <p class="pricing-lead" id="pricing-lead">Corta os <strong id="pricing-lead-loss">R$ 12.500</strong> estimados — safe/offer · &lt;50ms · app + logs · tráfego pago multi-rede</p>
+                    <p class="pricing-lead" id="pricing-lead">Corta os <strong id="pricing-lead-loss">R$ 12.500</strong>/mês estimados · payback <strong id="pricing-lead-payback">~1 dia</strong> · safe/offer · &lt;50ms · multi-rede</p>
                     <div class="period-toggle-label">Como prefere pagar?</div>
                     <div class="period-toggle">
                         <div class="period-switcher">
@@ -1239,7 +1252,7 @@ main{position:relative;z-index:1}
         <p class="t-label rv" style="text-align:center;margin-bottom:6px">FAQ</p>
         <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:14px">Dúvidas <span class="grad">antes de ativar</span></h2>
         <div class="faq-list">
-            <details class="faq-i rv rv-d1" open><summary class="faq-q">O BlackInk se paga? Quanto posso economizar?</summary><div class="faq-a" id="faq-savings-a">Com o budget da <a href="#roi-calc">calculadora</a>, a perda estimada é ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês. Cloaker a R$ 399,99 — estimativa, não garantia.</div></details>
+            <details class="faq-i rv rv-d1" open><summary class="faq-q">O BlackInk se paga? Quanto posso economizar?</summary><div class="faq-a" id="faq-savings-a">Com o budget da <a href="#roi-calc">calculadora</a>, a perda estimada é ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês — cloaker a R$399,99 se paga em ~<strong id="faq-savings-payback">1 dia</strong> (estimativa). <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar cloaker</a></div></details>
             <details class="faq-i rv rv-d2"><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">Garantia de 7 dias · reembolso 100% se não fizer sentido para suas campanhas.</div></details>
             <div class="faq-more" id="faq-more">
                 <details class="faq-i"><summary class="faq-q">Quanto custa?</summary><div class="faq-a">Produto único a R$ 399,99/mês. Trimestral ~10% off (R$ 359,99/mês equiv.) e anual ~15% (R$ 339,99/mês equiv.). PIX ou cartão · sem fidelidade.</div></details>
@@ -1858,6 +1871,8 @@ const pricingBridgePayback = document.getElementById('pricing-bridge-payback');
 const ctaFinalLoss = document.getElementById('cta-final-loss');
 const ctaFinalPayback = document.getElementById('cta-final-payback');
 const faqSavingsLoss = document.getElementById('faq-savings-loss');
+const faqSavingsPayback = document.getElementById('faq-savings-payback');
+const pricingLeadPayback = document.getElementById('pricing-lead-payback');
 
 if (calcSlider && calcDisplay && calcInvisible && calcFraud && calcTotal && calcRoi) {
     const fmt = v => 'R$ ' + Math.round(v).toLocaleString('pt-BR');
@@ -1918,8 +1933,14 @@ if (calcSlider && calcDisplay && calcInvisible && calcFraud && calcTotal && calc
         if (pricingBridgePayback) {
             pricingBridgePayback.textContent = '~' + paybackDays + ' dia' + (paybackDays > 1 ? 's' : '');
         }
+        if (pricingLeadPayback) {
+            pricingLeadPayback.textContent = '~' + paybackDays + ' dia' + (paybackDays > 1 ? 's' : '');
+        }
         if (ctaFinalPayback) {
             ctaFinalPayback.textContent = '~' + paybackDays + ' dia' + (paybackDays > 1 ? 's' : '');
+        }
+        if (faqSavingsPayback) {
+            faqSavingsPayback.textContent = paybackDays + ' dia' + (paybackDays > 1 ? 's' : '');
         }
         // Sticky mirrors loss (ciclo 33)
         lastCalcLossFmt = fmt(total);
