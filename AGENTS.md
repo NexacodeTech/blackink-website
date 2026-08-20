@@ -189,3 +189,8 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Contexto**: share/CTA para trimestral precisava pré-selecionar billing na landing.
 **Regra**: `?period=monthly|quarterly|yearly` ativa o switcher + CTAs; clique no período atualiza a URL via `replaceState`.
 **Status**: ativo
+
+## 2026-08-20 — Prova ao vivo mais curta + proof line
+**Contexto**: `#cloaker` ainda era seção cheia com 3 feats redundantes; obj-strip verboso antes do preço.
+**Regra**: cloaker `section--compact`, 2 feats + CTA soft para pricing; proof line sync com stats do simulador; objeções em copy curta.
+**Status**: ativo
