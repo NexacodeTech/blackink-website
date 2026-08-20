@@ -779,31 +779,35 @@ main{position:relative;z-index:1}
   #cloaker .showcase-text .t-lg{font-size:clamp(16px,4.5vw,22px);margin:0 0 1px}
   #cloaker .showcase-text .t-body-lg{font-size:9px}
   .networks-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:12px}
-  #redes.redes-strip{padding:clamp(8px,1.4vh,14px) 0}
+  #redes.redes-strip{padding:clamp(4px,0.8vh,10px) 0}
   #redes .t-lg{margin:0 auto 0;font-size:clamp(16px,4.5vw,20px)}
   #redes .t-body-lg{display:none}
   #redes .t-label{margin-bottom:0}
-  #redes .network-chip{padding:4px 7px;flex:0 1 auto}
+  #redes .network-chip{padding:3px 6px;flex:0 1 auto}
   #redes .network-chip span{display:none}
-  #redes .network-chip strong{margin:0;font-size:10px}
-  #redes .networks-grid{margin-top:4px;gap:3px}
+  #redes .network-chip strong{margin:0;font-size:9px}
+  #redes .networks-grid{margin-top:2px;gap:2px}
   #o-que-e .t-label{display:none}
   #como-funciona .t-label{font-size:10px;margin-bottom:0}
   #pricing .p-monthly-eq{font-size:10px;margin-top:2px;max-width:28ch;line-height:1.25}
   /* Ciclo 88: eq. cobrança em 1 linha curta no mobile */
   #pricing .p-monthly-eq{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
   #pricing .p-micro{display:none}
-  #pricing .pricing-trust-chips{margin:4px 0 0;gap:3px}
-  #pricing .pricing-trust-chips li{font-size:9px;padding:3px 6px}
-  #pricing .pricing-lead{font-size:10px;margin-bottom:4px;line-height:1.25}
+  #pricing .pricing-trust-chips{margin:2px 0 0;gap:2px}
+  #pricing .pricing-trust-chips li{font-size:8px;padding:2px 5px}
+  #pricing .pricing-lead{font-size:9px;margin-bottom:2px;line-height:1.2}
   #pricing .pricing-includes-line{display:none}
-  #pricing .pricing-reveal-title{margin:0 0 2px;font-size:clamp(16px,4.5vw,20px)}
-  #pricing .period-toggle{margin-bottom:4px}
-  #pricing .period-nudge{font-size:9px;margin:-2px auto 4px;line-height:1.25}
-  #pricing .p-val{font-size:clamp(26px,7vw,32px)}
-  #pricing .p-curr{font-size:12px}
-  #pricing .p-per{font-size:12px}
-  #pricing .btn-full{height:46px;font-size:13px}
+  #pricing .pricing-reveal-title{margin:0 0 1px;font-size:clamp(15px,4.2vw,18px)}
+  #pricing .period-toggle{margin-bottom:2px}
+  #pricing .period-nudge{font-size:8px;margin:-2px auto 2px;line-height:1.2}
+  #pricing .p-val{font-size:clamp(24px,6.5vw,30px)}
+  #pricing .p-curr{font-size:11px}
+  #pricing .p-per{font-size:11px}
+  #pricing .btn-full{height:44px;font-size:13px}
+  #pricing.section--compact{padding:clamp(8px,1.4vh,16px) 0}
+  #pricing .pricing-reveal-inner{padding:6px 6px}
+  #pricing .p-price-wrap{min-height:28px;margin-bottom:1px}
+  #pricing .period-btn{padding:5px 4px;font-size:9px}
   .arch-grid{grid-template-columns:1fr}
   .calc-losses{grid-template-columns:1fr}
   .calc-summary{grid-template-columns:1fr}
@@ -855,7 +859,7 @@ main{position:relative;z-index:1}
   .arch-cta .btn{width:100%;max-width:320px}
   .showcase-cta .btn{width:100%;max-width:320px}
   /* Ciclo 92/181: seps quase invisíveis — menos “ar” entre atos do funil */
-  .sep{height:1px;opacity:.28;width:min(360px,55%)}
+  .sep{height:1px;opacity:.18;width:min(280px,45%);margin:0 auto}
   #pricing .btn-full{border-radius:12px}
 }
 @media (min-width:768px){
@@ -933,11 +937,14 @@ main{position:relative;z-index:1}
   #redes .networks-grid{margin-top:6px}
   /* Ciclo 127/185: why-line redundante; redes = chips-only no desktop */
   #por-que.redes-why{display:none}
-  #redes.redes-strip{padding:clamp(10px,1.4vh,16px) 0}
+  #redes.redes-strip{padding:clamp(6px,1vh,12px) 0}
   #redes .t-label,
   #redes .t-lg,
   #redes .t-body-lg{display:none}
-  #redes .networks-grid{margin-top:0;gap:6px}
+  #redes .networks-grid{margin-top:0;gap:4px}
+  #redes .network-chip{padding:4px 8px}
+  #redes .network-chip strong{font-size:11px}
+  #redes .network-chip span{display:none}
   #pricing.section--compact{padding:clamp(6px,1.2vh,14px) 0}
   #pricing .period-toggle{margin-bottom:2px}
   #pricing .period-btn{padding:4px 6px;font-size:11px}
@@ -1405,7 +1412,7 @@ main{position:relative;z-index:1}
                     </div>
                 </div>
                 <div class="calc-cta">
-                    <p class="calc-cta-text" id="calc-cta-msg">Perda mensal estimada · cloaker a R$399,99 corta a fatia inválida</p>
+                    <p class="calc-cta-text" id="calc-cta-msg">Perda est. · cloaker R$399,99 · payback em dias</p>
                     <div class="calc-cta-actions">
                         <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar agora — R$399,99/mês</a>
                         <a href="#pricing" class="calc-cta-period">Ver mensal · trimestral · anual</a>
