@@ -337,6 +337,7 @@ a.hero-trust-garantia strong{color:var(--green)}
 @keyframes pricingFocusPulse{0%{box-shadow:0 0 0 0 rgba(100,180,255,0.35),0 24px 64px rgba(0,0,0,0.3)}100%{box-shadow:0 0 0 1px rgba(100,180,255,0.2),0 24px 64px rgba(0,0,0,0.3)}}
 @keyframes chipTrustPulse{0%,100%{border-color:rgba(52,211,153,0.25);background:rgba(52,211,153,0.06)}50%{border-color:rgba(52,211,153,0.55);background:rgba(52,211,153,0.12)}}
 @keyframes softGarantiaPulse{0%,100%{box-shadow:0 0 0 1px rgba(52,211,153,0.1)}50%{box-shadow:0 0 0 2px rgba(52,211,153,0.32)}}
+@keyframes assureClosePulse{0%,100%{box-shadow:0 0 0 1px rgba(52,211,153,0.08)}50%{box-shadow:0 0 0 2px rgba(52,211,153,0.35)}}
 @keyframes idealBadgePulse{0%,100%{background:rgba(100,180,255,0.2);transform:scale(1)}50%{background:rgba(100,180,255,0.4);transform:scale(1.06)}}
 @keyframes heroIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 @keyframes simPulse{0%,100%{opacity:1}50%{opacity:.45}}
@@ -1821,7 +1822,9 @@ main{position:relative;z-index:1}
     background:rgba(52,211,153,0.14);color:var(--white);
     border:1px solid rgba(52,211,153,0.55);
     box-shadow:0 0 0 1px rgba(52,211,153,0.08);
-    transition:border-color .3s var(--ease),background .3s var(--ease),color .3s var(--ease),box-shadow .3s var(--ease)
+    transition:border-color .3s var(--ease),background .3s var(--ease),color .3s var(--ease),box-shadow .3s var(--ease);
+    /* c566: pulsa 1× após soft — reforça close no fold */
+    animation:assureClosePulse 2.2s var(--ease) 1 1.1s both
   }
   #faq .faq-assure a.faq-inline-cta--price:hover{
     border-color:rgba(52,211,153,0.8);background:rgba(52,211,153,0.22)
@@ -1841,6 +1844,8 @@ main{position:relative;z-index:1}
     border-color:rgba(52,211,153,0.7);
     background:rgba(52,211,153,0.08)
   }
+  /* c567 LAST: hero-trust Garantia tap ≥32px no densest */
+  a.hero-trust-garantia{display:inline-flex;align-items:center;min-height:32px;padding:2px 0}
   /* c537 LAST: chip Garantia tap ≥28px (slack fold ~18px) */
   #pricing .pricing-trust-chips li{padding:5px 8px;min-height:28px;align-items:center}
 }
@@ -2734,7 +2739,9 @@ main{position:relative;z-index:1}
     background:rgba(52,211,153,0.14);color:var(--white);
     border:1px solid rgba(52,211,153,0.55);
     box-shadow:0 0 0 1px rgba(52,211,153,0.08);
-    transition:border-color .3s var(--ease),background .3s var(--ease),color .3s var(--ease),box-shadow .3s var(--ease)
+    transition:border-color .3s var(--ease),background .3s var(--ease),color .3s var(--ease),box-shadow .3s var(--ease);
+    /* c566: pulsa 1× após soft — reforça close no fold */
+    animation:assureClosePulse 2.2s var(--ease) 1 1.1s both
   }
   #faq .faq-assure a.faq-inline-cta--price:hover{
     border-color:rgba(52,211,153,0.8);background:rgba(52,211,153,0.22)
@@ -2754,6 +2761,8 @@ main{position:relative;z-index:1}
     border-color:rgba(52,211,153,0.7);
     background:rgba(52,211,153,0.08)
   }
+  /* c567 LAST: hero-trust Garantia tap ≥32px no densest */
+  a.hero-trust-garantia{display:inline-flex;align-items:center;min-height:32px;padding:2px 0}
   /* c537 LAST: chip Garantia tap ≥28px (slack fold ~18px) */
   #pricing .pricing-trust-chips li{padding:5px 8px;min-height:28px;align-items:center}
   /* c538 LAST desktop: chip 26px — margem de fold (slack era 1px) */
@@ -3048,7 +3057,9 @@ main{position:relative;z-index:1}
     background:rgba(52,211,153,0.14);color:var(--white);
     border:1px solid rgba(52,211,153,0.55);
     box-shadow:0 0 0 1px rgba(52,211,153,0.08);
-    transition:border-color .3s var(--ease),background .3s var(--ease),color .3s var(--ease),box-shadow .3s var(--ease)
+    transition:border-color .3s var(--ease),background .3s var(--ease),color .3s var(--ease),box-shadow .3s var(--ease);
+    /* c566: pulsa 1× após soft — reforça close no fold */
+    animation:assureClosePulse 2.2s var(--ease) 1 1.1s both
   }
   #faq .faq-assure a.faq-inline-cta--price:hover{
     border-color:rgba(52,211,153,0.8);background:rgba(52,211,153,0.22)
@@ -3068,6 +3079,8 @@ main{position:relative;z-index:1}
     border-color:rgba(52,211,153,0.7);
     background:rgba(52,211,153,0.08)
   }
+  /* c567 LAST: hero-trust Garantia tap ≥32px no densest */
+  a.hero-trust-garantia{display:inline-flex;align-items:center;min-height:32px;padding:2px 0}
   /* c537 LAST: chip Garantia tap ≥28px (slack fold ~18px) */
   #pricing .pricing-trust-chips li{padding:5px 8px;min-height:28px;align-items:center}
 }
@@ -3355,7 +3368,9 @@ main{position:relative;z-index:1}
     background:rgba(52,211,153,0.14);color:var(--white);
     border:1px solid rgba(52,211,153,0.55);
     box-shadow:0 0 0 1px rgba(52,211,153,0.08);
-    transition:border-color .3s var(--ease),background .3s var(--ease),color .3s var(--ease),box-shadow .3s var(--ease)
+    transition:border-color .3s var(--ease),background .3s var(--ease),color .3s var(--ease),box-shadow .3s var(--ease);
+    /* c566: pulsa 1× após soft — reforça close no fold */
+    animation:assureClosePulse 2.2s var(--ease) 1 1.1s both
   }
   #faq .faq-assure a.faq-inline-cta--price:hover{
     border-color:rgba(52,211,153,0.8);background:rgba(52,211,153,0.22)
@@ -3375,6 +3390,8 @@ main{position:relative;z-index:1}
     border-color:rgba(52,211,153,0.7);
     background:rgba(52,211,153,0.08)
   }
+  /* c567 LAST: hero-trust Garantia tap ≥32px no densest */
+  a.hero-trust-garantia{display:inline-flex;align-items:center;min-height:32px;padding:2px 0}
   /* c537 LAST: chip Garantia tap ≥28px (slack fold ~18px) */
   #pricing .pricing-trust-chips li{padding:5px 8px;min-height:28px;align-items:center}
 }
@@ -3653,7 +3670,9 @@ main{position:relative;z-index:1}
     background:rgba(52,211,153,0.14);color:var(--white);
     border:1px solid rgba(52,211,153,0.55);
     box-shadow:0 0 0 1px rgba(52,211,153,0.08);
-    transition:border-color .3s var(--ease),background .3s var(--ease),color .3s var(--ease),box-shadow .3s var(--ease)
+    transition:border-color .3s var(--ease),background .3s var(--ease),color .3s var(--ease),box-shadow .3s var(--ease);
+    /* c566: pulsa 1× após soft — reforça close no fold */
+    animation:assureClosePulse 2.2s var(--ease) 1 1.1s both
   }
   #faq .faq-assure a.faq-inline-cta--price:hover{
     border-color:rgba(52,211,153,0.8);background:rgba(52,211,153,0.22)
@@ -3673,13 +3692,15 @@ main{position:relative;z-index:1}
     border-color:rgba(52,211,153,0.7);
     background:rgba(52,211,153,0.08)
   }
+  /* c567 LAST: hero-trust Garantia tap ≥32px no densest */
+  a.hero-trust-garantia{display:inline-flex;align-items:center;min-height:32px;padding:2px 0}
   /* c537 LAST: chip Garantia tap ≥28px (slack fold ~18px) */
   #pricing .pricing-trust-chips li{padding:5px 8px;min-height:28px;align-items:center}
 }
 
 @media (prefers-reduced-motion:reduce){
   .rv{opacity:1;transform:none}
-  .bp,.hero-logo,.hero-badge,.hero-title,.hero-sub,.hero-ctas,.hero-trust,.prot-sim-pulse,.prot-sim-feed-live::before,.hero-badge-dot,.hero-scroll-cue,.hero-scroll-cue-chevron,#pricing .pricing-trust-chips li:first-child,.hero-ctas .btn-o.hero-soft-cta,#pricing .period-btn.active .period-rec{animation:none}
+  .bp,.hero-logo,.hero-badge,.hero-title,.hero-sub,.hero-ctas,.hero-trust,.prot-sim-pulse,.prot-sim-feed-live::before,.hero-badge-dot,.hero-scroll-cue,.hero-scroll-cue-chevron,#pricing .pricing-trust-chips li:first-child,.hero-ctas .btn-o.hero-soft-cta,#pricing .period-btn.active .period-rec,#faq .faq-assure a.faq-inline-cta--price{animation:none}
   .pricing-reveal-inner.pricing-focus{animation:none}
 }
 
