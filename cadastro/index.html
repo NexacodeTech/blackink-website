@@ -342,8 +342,8 @@
                     </div>
 
                     <div class="register-card-header">
-                        <h2 class="t-md register-card-title">Confirme seus dados</h2>
-                        <p class="register-card-subtitle">Último passo antes do pagamento</p>
+                        <h2 class="t-md register-card-title">Seus dados</h2>
+                        <p class="register-card-subtitle">Leva menos de 2 minutos · depois você escolhe PIX ou cartão</p>
                     </div>
 
                     <form id="registerForm">
@@ -437,7 +437,7 @@
 
                         <div class="btn-group">
                             <button type="submit" class="btn btn-p" id="submitBtn">
-                                Continuar para Pagamento
+                                Continuar para pagamento
                             </button>
                             <p class="form-submit-trust">PIX ou cartão · Garantia de 7 dias · Sem fidelidade</p>
                         </div>
@@ -504,7 +504,7 @@
 
     // Sidebar copy — plataforma + setup correto
     const sidebar = {
-        title: 'Proteja suas <span class="grad">campanhas</span>',
+        title: 'Ative seu <span class="grad">cloaker</span>',
         subtitle: 'Cadastre safe page e offer page (ou use BlackInk Clone), configure regras e aponte o anúncio para a URL BlackInk — Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras.',
         features: [
             { strong: 'Cadastro de páginas', span: 'HTML/código no painel ou BlackInk Clone para replicar estrutura' },
@@ -736,7 +736,7 @@
             console.error('Registration error:', error);
             showToast('error', 'Erro no cadastro', error.message || 'Tente novamente mais tarde.');
             submitBtn.disabled = false;
-            submitBtn.innerHTML = 'Continuar para Pagamento';
+            submitBtn.innerHTML = 'Continuar para pagamento';
         }
     });
 
