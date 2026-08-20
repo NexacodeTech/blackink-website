@@ -3656,11 +3656,11 @@ main{position:relative;z-index:1}
     <p class="hero-sub">Safe vs offer · Google · YouTube · Meta · TikTok · &lt;50ms · ~1 dia = 1 mês</p>
     <div class="hero-ctas">
         <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link hero-cta" data-plan="Maré">Ativar — R$399,99/mês</a>
-        <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-o hero-soft-cta plan-link" data-plan="Maré" aria-label="Ativar com garantia 7 dias">Com garantia −10% · R$359,99</a>
+        <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-o hero-soft-cta plan-link" data-plan="Maré" data-intent="garantia" aria-label="Ativar com garantia 7 dias">Com garantia −10% · R$359,99</a>
     </div>
     <div class="hero-trust">
         <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-        <span>~1 dia = 1 mês · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link hero-trust-garantia" data-plan="Maré"><strong>Garantia 7 dias · 100%</strong></a> · Google/Meta/TikTok · sem OAuth</span>
+        <span>~1 dia = 1 mês · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link hero-trust-garantia" data-plan="Maré" data-intent="garantia"><strong>Garantia 7 dias · 100%</strong></a> · Google/Meta/TikTok · sem OAuth</span>
     </div>
     </div>
     <div class="trust-rail" aria-label="Sinais de confiança">
@@ -3943,10 +3943,10 @@ main{position:relative;z-index:1}
                     </div>
                     <p class="pricing-includes-line">Safe + offer · server-side &lt;50ms · 15+ sinais + logs · App + suporte · Payback <span id="pricing-bridge-payback">~1 dia</span></p>
                     <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p btn-full plan-link pricing-cta" data-plan="Maré">Ativar — R$399,99/mês</a>
-                    <p class="p-micro"><a href="/cadastro/?plan=Maré&period=monthly" class="plan-link p-micro-garantia" data-plan="Maré" aria-label="Ativar com garantia 7 dias"><strong>Garantia 7 dias</strong></a> · PIX · R$399,99/mês · Ativar −10% no trimestral</p>
+                    <p class="p-micro"><a href="/cadastro/?plan=Maré&period=monthly" class="plan-link p-micro-garantia" data-plan="Maré" data-intent="garantia" aria-label="Ativar com garantia 7 dias"><strong>Garantia 7 dias</strong></a> · PIX · R$399,99/mês · Ativar −10% no trimestral</p>
                     <p class="pricing-networks">Google Ads · YouTube Ads · Facebook Ads · TikTok Ads · sem OAuth</p>
                     <ul class="pricing-trust-chips" aria-label="Garantias">
-                        <li class="pricing-chip-garantia"><a href="/cadastro/?plan=Maré&period=monthly" class="plan-link pricing-chip-link" data-plan="Maré" aria-label="Ativar com garantia 7 dias">Garantia 7 dias · 100%</a></li>
+                        <li class="pricing-chip-garantia"><a href="/cadastro/?plan=Maré&period=monthly" class="plan-link pricing-chip-link" data-plan="Maré" data-intent="garantia" aria-label="Ativar com garantia 7 dias">Garantia 7 dias · 100%</a></li>
                         <li>PIX ou cartão</li>
                         <li>Sem OAuth</li>
                         <li class="pricing-chip-latency">Server-side &lt;50ms</li>
@@ -4022,7 +4022,7 @@ main{position:relative;z-index:1}
         <div class="rv rv-d3" style="display:flex;flex-direction:column;align-items:center;gap:0">
             <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta comecar-cta" data-plan="Maré">Começar agora — R$399,99/mês</a>
             <div class="cta-final-trust">
-                <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link cta-final-trust-link" data-plan="Maré" aria-label="Começar com garantia 7 dias">Garantia 7 dias · 100%</a>
+                <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link cta-final-trust-link" data-plan="Maré" data-intent="garantia" aria-label="Começar com garantia 7 dias">Garantia 7 dias · 100%</a>
                 <span>PIX ou cartão</span>
                 <span>Sem OAuth</span>
                 <span>Empresa BR · CNPJ</span>
@@ -4408,9 +4408,9 @@ const SOFT_CTA_LABELS = {
 };
 const P_MICRO_HTML = {
     // c508/c534: micro com link garantia → cadastro (period re-sync via updatePlanLinks)
-    monthly: '<a href="/cadastro/?plan=Maré&period=monthly" class="plan-link p-micro-garantia" data-plan="Maré" aria-label="Ativar com garantia 7 dias"><strong>Garantia 7 dias</strong></a> · PIX · R$399,99/mês · Ativar −10% no trimestral',
-    quarterly: '<strong>Ativar −10%</strong> · cobrado R$1.079,97 / 3 meses · PIX · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link p-micro-garantia" data-plan="Maré" aria-label="Ativar com garantia 7 dias">garantia 7 dias</a>',
-    yearly: '<strong>Ativar −15%</strong> · cobrado R$4.079,90 / ano · PIX · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link p-micro-garantia" data-plan="Maré" aria-label="Ativar com garantia 7 dias">garantia 7 dias</a>'
+    monthly: '<a href="/cadastro/?plan=Maré&period=monthly" class="plan-link p-micro-garantia" data-plan="Maré" data-intent="garantia" aria-label="Ativar com garantia 7 dias"><strong>Garantia 7 dias</strong></a> · PIX · R$399,99/mês · Ativar −10% no trimestral',
+    quarterly: '<strong>Ativar −10%</strong> · cobrado R$1.079,97 / 3 meses · PIX · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link p-micro-garantia" data-plan="Maré" data-intent="garantia" aria-label="Ativar com garantia 7 dias">garantia 7 dias</a>',
+    yearly: '<strong>Ativar −15%</strong> · cobrado R$4.079,90 / ano · PIX · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link p-micro-garantia" data-plan="Maré" data-intent="garantia" aria-label="Ativar com garantia 7 dias">garantia 7 dias</a>'
 };
 const COMECAR_CTA_LABELS = {
     monthly: 'Começar agora — R$399,99/mês',
@@ -4651,6 +4651,8 @@ function updatePlanLinks(period) {
         if (urlRef) url += '&ref=' + encodeURIComponent(urlRef);
         if (urlFref) url += '&fref=' + encodeURIComponent(urlFref);
         if (budget && /^\d+$/.test(budget)) url += '&budget=' + encodeURIComponent(budget);
+        // c541: soft/garantia paths → cadastro reforça risco zero
+        if (link.dataset.intent === 'garantia') url += '&intent=garantia';
         link.href = url;
     });
 }
