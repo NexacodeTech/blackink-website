@@ -743,19 +743,21 @@ main{position:relative;z-index:1}
   #cloaker .prot-sim-threat-lvl{display:none}
   #cloaker .prot-sim-shield{display:none}
   #cloaker .mock-topbar{display:none}
-  #cloaker .prot-sim-header{padding:8px 12px}
+  #cloaker .prot-sim-header{padding:6px 10px}
   #cloaker .prot-sim-status-sub{display:none}
-  #cloaker .prot-sim-stats{padding:8px 12px;gap:4px}
-  #cloaker .prot-sim-stat{padding:6px 2px 5px}
-  #cloaker .prot-sim-stat-val{font-size:15px}
-  #cloaker .prot-sim-feed{margin:0 8px 8px}
-  #cloaker .prot-sim-feed-header{padding:5px 10px;flex-shrink:0}
-  /* Ciclo 141: feed curto sem clipar o header do log */
-  .prot-sim{min-height:168px}
+  #cloaker .prot-sim-stats{padding:6px 10px;gap:3px}
+  #cloaker .prot-sim-stat{padding:5px 2px 4px}
+  #cloaker .prot-sim-stat-val{font-size:14px}
+  #cloaker .prot-sim-feed{margin:0 6px 6px}
+  #cloaker .prot-sim-feed-header{padding:4px 8px;flex-shrink:0}
+  /* Ciclo 141/163: feed curto sem clipar o header do log */
+  .prot-sim{min-height:148px}
   #cloaker .prot-sim-stat:last-child{display:none}
   #cloaker .prot-sim-stats{grid-template-columns:1fr 1fr 1fr}
-  .prot-sim-feed{min-height:56px;max-height:80px}
+  .prot-sim-feed{min-height:48px;max-height:68px}
   #cloaker .prot-sim-feed-body{min-height:0}
+  #cloaker .showcase-cta{margin-top:0}
+  #cloaker .showcase-cta .btn{height:44px;font-size:13px}
   .networks-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:12px}
   #redes.redes-strip{padding:clamp(10px,1.6vh,18px) 0}
   #redes .t-lg{margin:2px auto 2px;font-size:clamp(18px,5vw,22px)}
@@ -942,10 +944,11 @@ main{position:relative;z-index:1}
   #cloaker .showcase-feat-icon{display:none}
   #cloaker .showcase-feat-text{font-size:11px;line-height:1.25;color:var(--dim)}
   #cloaker .showcase-feat-text strong{color:var(--white);font-weight:600}
-  #cloaker .prot-sim{min-height:240px}
-  #cloaker .prot-sim-feed{min-height:72px;max-height:88px}
-  #cloaker .prot-sim-feed-body{min-height:72px}
-  #cloaker .showcase-cta{margin-top:8px}
+  #cloaker .prot-sim{min-height:220px}
+  #cloaker .prot-sim-feed{min-height:64px;max-height:80px}
+  #cloaker .prot-sim-feed-body{min-height:64px}
+  #cloaker .showcase-cta{margin-top:6px}
+  #cloaker .showcase-cta-soft{font-size:12px}
   #cloaker .prot-sim-threat-bar{display:none}
   #cloaker .prot-sim-threat-lvl{display:none}
   #cloaker .prot-sim-status-sub{display:none}
@@ -1030,7 +1033,7 @@ main{position:relative;z-index:1}
         </nav>
         <div class="hdr-cta">
             <a href="https://app.theblack.ink/auth/login" class="btn btn-g btn-sm">Entrar</a>
-            <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p btn-sm plan-link" data-plan="Maré">Ativar</a>
+            <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p btn-sm plan-link" data-plan="Maré">Ativar agora</a>
         </div>
         <button class="mob-tog" aria-label="Menu" type="button"><span></span><span></span><span></span></button>
     </div>
@@ -1333,7 +1336,7 @@ main{position:relative;z-index:1}
                             <button type="button" class="period-btn" data-period="yearly">Anual <span class="period-discount">−15%</span></button>
                         </div>
                     </div>
-                    <p class="period-nudge" id="period-nudge"><button type="button" data-pick-period="quarterly">Escolher trimestral</button> −~R$120 vs mensal · mesmo cloaker, menor custo/mês</p>
+                    <p class="period-nudge" id="period-nudge"><button type="button" data-pick-period="quarterly">Trimestral −10%</button> · economiza ~R$120 · mesmo cloaker</p>
                     <div class="p-price-wrap">
                         <div class="p-price active" data-period="monthly"><span class="p-price-line"><span class="p-curr">R$</span><span class="p-val">399</span><span class="p-per">,99/mês</span></span></div>
                         <div class="p-price" data-period="quarterly"><span class="p-price-line"><span class="p-curr">R$</span><span class="p-val">359</span><span class="p-per">,99/mês</span></span><span class="p-monthly-eq">cobrado R$1.079,97 / 3 meses · <span class="p-save">−~R$120</span></span></div>
@@ -1774,7 +1777,7 @@ const STICKY_BTN = {
 };
 
 const PERIOD_NUDGE = {
-    monthly: '<button type="button" data-pick-period="quarterly">Escolher trimestral</button> −~R$120 vs mensal — mesmo cloaker',
+    monthly: '<button type="button" data-pick-period="quarterly">Trimestral −10%</button> · economiza ~R$120 · mesmo cloaker',
     quarterly: '−10% vs mensal · cobrado R$1.079,97 / 3 meses',
     yearly: '−15% vs mensal · cobrado R$4.079,90 / ano'
 };
@@ -1788,7 +1791,7 @@ function periodNudgeHtml(period) {
     period = period || 'monthly';
     if (period === 'monthly' && lastCalcLossValue > 0) {
         const vsPlan = Math.max(1, Math.round(lastCalcLossValue / 399.99));
-        return '<button type="button" data-pick-period="quarterly">Escolher trimestral</button> −~R$120 vs mensal · perda ~<strong>' + lastCalcLossFmt + '</strong>/mês (~' + vsPlan + '× o cloaker)';
+        return '<button type="button" data-pick-period="quarterly">Trimestral −10%</button> · −~R$120 · perda ~<strong>' + lastCalcLossFmt + '</strong>/mês (~' + vsPlan + '×)';
     }
     if (period === 'quarterly' && lastCalcLossFmt) {
         return '−10% vs mensal · vs ~<strong>' + lastCalcLossFmt + '</strong>/mês sem cloaker';
