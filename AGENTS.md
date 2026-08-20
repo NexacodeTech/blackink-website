@@ -9,12 +9,6 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Motivo**: um único brace desbalanceado silencia CSS de tudo abaixo — regressão visual em cascata.
 **Status**: ativo
 
-## 2026-04-08 — FAQ usa details sem transition
-**Regra**: FAQ é feita com `<details>` nativo. CSS transition em `max-height` do summary/content não funciona nativamente. Se precisar animar, usar JS controlando classe.
-**Status**: ativo
-
----
-
 ## 2026-04-08 — Ordem dos breakpoints é cascata — não reordenar
 **Contexto**: `767 → 768 → 640 → 600 → 500 → 480 → 390`. Alguns blocos dependem do anterior ter rodado (cascade).
 **Regra**: ao adicionar novo breakpoint, inserir respeitando a ordem atual. Nunca mover um `@media` existente.
@@ -71,8 +65,6 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Regra**: framing de billing period, nunca de tier/plano múltiplo.
 **Status**: ativo
 
-**Status**: ativo
-
 ## 2026-08-12 — Headlines sem ponto final
 **Contexto**: ponto final em frases de destaque (hero, H2 banner) parece pesado e quebra ritmo visual.
 **Regra**: H1/H2 e linhas de billboard (hero `.ln-i`, marquee, sticky CTA punch) sem `.` no final; parágrafos, FAQ e meta mantêm pontuação normal.
@@ -116,16 +108,6 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 ## 2026-08-20 — Ciclos CRO: CTA nos beats + FAQ preço aberto
 **Contexto**: ciclos de conversão na landing cloaker multiplataforma.
 **Regra**: CTA hard nos beats de dor/decisão; FAQ lidera com preço/OAuth/redes/garantia (`open` no preço); prova ao vivo em PT; sem mid-CTA redundante após showcase; login unificado `app.theblack.ink`.
-**Status**: ativo
-
-## 2026-08-20 — Sticky mobile com preço + ROI payback
-**Contexto**: no mobile o sticky escondia o preço (`sticky-cta-text` só ≥768px); ROI não amarrava perda ao payback do plano.
-**Regra**: sticky mobile mostra preço curto + CTA com valor; trimestral marcado “Recomendado”; ROI message inclui dias de payback estimado; ponte `#pricing` após calculadora; FAQ outro com e-mail.
-**Status**: ativo
-
-## 2026-08-20 — ROI slider fill alinhado às ticks
-**Contexto**: fill linear 1k–500k deixava R$10k/R$50k visualmente grudados em R$1k (ticks não-lineares).
-**Regra**: `--fill` mapeia por segmentos das ticks (1k→50k→100k→250k→500k); default do slider = R$50.000.
 **Status**: ativo
 
 ## 2026-08-20 — Compressão educação/setup (scroll)
@@ -185,7 +167,7 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 
 ## 2026-08-20 — Bridge ROI → pricing → sticky
 **Contexto**: visitante via a perda na calculadora e esquecia o número no preço/sticky.
-**Regra**: `#pricing-lead-loss` e payback sync com o slider; sticky desktop/mobile espelha a perda estimada + preço do período.
+**Regra**: `#pricing-lead-loss` e payback sync com o slider; sticky desktop/mobile espelha a perda estimada + preço do período; ROI `--fill` mapeia ticks 1k→50k→100k→250k→500k (default 50k).
 **Status**: ativo
 
 ## 2026-08-20 — Reforço pós-preço enxuto
@@ -196,4 +178,9 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 ## 2026-08-20 — CTA final espelha perda
 **Contexto**: fechamento repetia copy genérica depois do visitante já ter quantificado a perda.
 **Regra**: `#cta-final-loss` sync com o slider (mesmo número do pricing/sticky).
+**Status**: ativo
+
+## 2026-08-20 — Cadastro herda budget da calculadora
+**Contexto**: no checkout a perda simulada sumia — o visitante perdia a âncora numérica.
+**Regra**: landing grava `sessionStorage blackink_calc_budget` e passa `?budget=` nos plan-links; cadastro mostra bridge de perda est. (25% do budget).
 **Status**: ativo
