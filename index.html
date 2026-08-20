@@ -686,6 +686,10 @@ main{position:relative;z-index:1}
   .arch-grid{grid-template-columns:1fr}
   .calc-losses{grid-template-columns:1fr}
   .calc-summary{grid-template-columns:1fr}
+  #roi-calc .calc-summary{grid-template-columns:1fr 1fr;gap:6px}
+  #roi-calc .calc-summary-card{padding:10px 8px}
+  #roi-calc .calc-summary-val{font-size:18px}
+  #roi-calc .calc-caveat{display:none}
   .f-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 20px;margin-bottom:18px}
   .footer .f-brand{grid-column:1 / -1}
   .footer .f-brand p{font-size:12px;line-height:1.4;max-width:42ch;margin-top:8px}
@@ -1020,8 +1024,8 @@ main{position:relative;z-index:1}
 <section class="section section--compact" id="roi-calc">
     <div class="container">
         <p class="t-label rv" style="text-align:center">Calculadora</p>
-        <h2 class="t-lg rv rv-d1" style="text-align:center;margin:6px auto 8px;max-width:520px">Quanto do budget <span class="grad">some em cliques inválidos</span></h2>
-        <p class="t-body-lg rv rv-d2" style="text-align:center;margin:0 auto 12px;max-width:400px;font-size:clamp(13px,1.4vw,15px)">Ajuste o investimento — estimativa de mercado</p>
+        <h2 class="t-lg rv rv-d1" style="text-align:center;margin:6px auto 6px;max-width:480px">Quanto do budget <span class="grad">some em cliques inválidos</span></h2>
+        <p class="t-body-lg rv rv-d2" style="text-align:center;margin:0 auto 10px;max-width:360px;font-size:clamp(13px,1.4vw,15px)">Ajuste o investimento — estimativa</p>
         <div class="calc-wrap rv rv-d3">
             <div class="calc-card">
                 <div class="calc-slider-wrap">
