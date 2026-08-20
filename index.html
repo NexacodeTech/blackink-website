@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BlackInk — Cloaker Server-Side para Tráfego Pago</title>
-    <meta name="description" content="Cloaker server-side multi-rede: safe page para bots/revisores, offer page para quem compra. Google Ads, YouTube Ads, Facebook Ads, TikTok Ads — &lt;50ms. R$399,99/mês · ~1 dia de clique sujo = 1 mês · trim. −10% · garantia 7 dias.">
+    <meta name="description" content="Cloaker server-side multi-rede: safe page para bots/revisores, offer page para quem compra. Google Ads, YouTube Ads, Facebook Ads, TikTok Ads — &lt;50ms. R$399,99/mês · ~1 dia de clique sujo = 1 mês · Ativar −10% trimestral · garantia 7 dias.">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta property="og:title" content="BlackInk — Cloaker Server-Side para Tráfego Pago">
-    <meta property="og:description" content="Safe page para revisores. Offer page para quem compra. Cloaker multi-rede — Google Ads, YouTube Ads, Facebook Ads, TikTok Ads. R$399,99/mês · ~1 dia = 1 mês · trim. −10% · garantia 7 dias.">
+    <meta property="og:description" content="Safe page para revisores. Offer page para quem compra. Cloaker multi-rede — Google Ads, YouTube Ads, Facebook Ads, TikTok Ads. R$399,99/mês · ~1 dia = 1 mês · Ativar −10% trimestral · garantia 7 dias.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://theblack.ink">
     <meta property="og:image" content="https://theblack.ink/images/logo-icon-clean.png">
@@ -15,7 +15,7 @@
     <meta property="og:site_name" content="BlackInk">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="BlackInk — Cloaker Server-Side para Tráfego Pago">
-    <meta name="twitter:description" content="Safe page para revisores. Offer page para quem compra. Cloaker multi-rede — Google Ads, YouTube Ads, Facebook Ads, TikTok Ads. R$399,99/mês · ~1 dia = 1 mês · trim. −10% · garantia 7 dias.">
+    <meta name="twitter:description" content="Safe page para revisores. Offer page para quem compra. Cloaker multi-rede — Google Ads, YouTube Ads, Facebook Ads, TikTok Ads. R$399,99/mês · ~1 dia = 1 mês · Ativar −10% trimestral · garantia 7 dias.">
     <meta name="twitter:image" content="https://theblack.ink/images/logo-icon-clean.png">
     <meta name="author" content="BlackInk Tecnologia Ltda">
     <meta name="subject" content="Cloaker server-side para tráfego pago no Brasil — Google Ads, YouTube Ads, Facebook Ads, TikTok Ads — filtragem de bots, VPNs e revisores">
@@ -1172,6 +1172,10 @@ main{position:relative;z-index:1}
   #pricing .pricing-reveal-title{font-size:clamp(9px,2.5vw,12px);line-height:1.15;margin:0 0 1px}
   #redes .t-lg{font-size:clamp(8px,2.4vw,11px);margin:0}
   #redes .t-body-lg{display:none}
+  /* Ciclo 334: FAQ densest — CTA −10% mais escaneável */
+  #faq .faq-inline-cta--price{font-size:7px}
+  #faq .faq-assure{font-size:7px;margin:2px 0 1px}
+  #pricing .p-micro{font-size:5.5px}
   /* Ciclo 326: ROI densest — slider chrome mais baixo */
   #roi-calc .calc-slider-header{margin:0;gap:2px}
   #roi-calc .calc-slider-value{font-size:6px;line-height:1}
@@ -2571,9 +2575,9 @@ const FAQ_PRICE_CTA = {
     yearly: 'Ativar −15% — R$339,99'
 };
 const P_MICRO_HTML = {
-    monthly: '<strong>7 dias</strong> · 100% · trim. −10% · ~15 min',
-    quarterly: '<strong>−10% ativo</strong> · 7 dias · ~15 min',
-    yearly: '<strong>−15% ativo</strong> · 7 dias · ~15 min'
+    monthly: '<strong>7 dias</strong> · 100% · Ativar −10% · ~15 min',
+    quarterly: '<strong>Ativar −10%</strong> · 7 dias · ~15 min',
+    yearly: '<strong>Ativar −15%</strong> · 7 dias · ~15 min'
 };
 
 const PERIOD_NUDGE = {
