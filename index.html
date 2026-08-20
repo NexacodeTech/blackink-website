@@ -543,6 +543,9 @@ strong{font-weight:600}
 .period-toggle-label{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:13px}
 .period-nudge{font-size:13px;color:var(--dim);margin:-8px auto 20px;max-width:42ch;line-height:1.5}
 .period-nudge strong{color:var(--white);font-weight:600}
+.period-nudge button{background:none;border:none;padding:0;font:inherit;color:var(--accent);font-weight:600;cursor:pointer;text-decoration:underline;text-underline-offset:3px;transition:color .3s var(--ease)}
+.period-nudge button:hover{color:var(--white)}
+.period-nudge button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
 .period-toggle{display:flex;justify-content:center;margin-bottom:clamp(24px,3vw,32px)}
 .period-switcher{display:inline-flex;flex-wrap:wrap;justify-content:center;max-width:100%;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:4px;gap:4px}
 .period-btn{background:transparent;border:none;padding:12px 20px;font-family:var(--ff-body);font-size:14px;font-weight:500;color:var(--dim);border-radius:10px;cursor:pointer;transition:color .3s var(--ease),background .3s var(--ease);display:inline-flex;align-items:center;gap:8px}
@@ -577,10 +580,11 @@ strong{font-weight:600}
 .faq-more-toggle{display:block;margin:16px auto 0;background:transparent;border:1px solid var(--border);color:var(--dim);font-family:var(--ff-body);font-size:14px;font-weight:500;padding:12px 20px;border-radius:12px;cursor:pointer;min-height:44px;transition:color .3s var(--ease),border-color .3s var(--ease),background .3s var(--ease)}
 .faq-more-toggle:hover{color:var(--white);border-color:rgba(100,180,255,0.28);background:rgba(100,180,255,0.06)}
 .faq-more-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.faq-outro{max-width:720px;margin:28px auto 0;text-align:center;padding:20px 16px;border-radius:14px;border:1px solid var(--border);background:rgba(6,17,31,0.45)}
-.faq-outro p{font-size:14px;color:var(--dim);line-height:1.55;margin:0}
+.faq-outro{max-width:720px;margin:28px auto 0;text-align:center;padding:22px 18px;border-radius:14px;border:1px solid var(--border);background:rgba(6,17,31,0.45)}
+.faq-outro p{font-size:14px;color:var(--dim);line-height:1.55;margin:0 0 14px}
 .faq-outro a{color:var(--accent);font-weight:500;transition:color .3s var(--ease)}
 .faq-outro a:hover{color:var(--white)}
+.faq-outro-cta{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:center}
 .faq-i{border:1px solid var(--border);border-radius:14px;background:rgba(6,17,31,0.5);overflow:hidden}
 .faq-q{padding:18px 20px;font-size:15px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
 .faq-q::-webkit-details-marker{display:none}
@@ -1230,7 +1234,7 @@ main{position:relative;z-index:1}
                             <button type="button" class="period-btn" data-period="yearly">Anual <span class="period-discount">−15%</span></button>
                         </div>
                     </div>
-                    <p class="period-nudge" id="period-nudge">Trimestral economiza ~R$120 vs mensal no trimestre — mesmo cloaker, menor custo por mês</p>
+                    <p class="period-nudge" id="period-nudge"><button type="button" data-pick-period="quarterly">Escolher trimestral</button> economiza ~R$120 vs mensal — mesmo cloaker, menor custo por mês</p>
                     <div class="p-price-wrap">
                         <div class="p-price active" data-period="monthly"><span class="p-curr">R$</span><span class="p-val">399</span><span class="p-per">,99/mês</span></div>
                         <div class="p-price" data-period="quarterly"><span class="p-curr">R$</span><span class="p-val">359</span><span class="p-per">,99/mês</span><span class="p-monthly-eq">equivalente mensal · cobrado R$1.079,97 a cada 3 meses</span><span class="p-save">Economia de ~R$120 vs mensal no trimestre</span></div>
@@ -1285,7 +1289,11 @@ main{position:relative;z-index:1}
             <button type="button" class="faq-more-toggle" id="faq-more-toggle" aria-expanded="false" aria-controls="faq-more">Ver mais perguntas</button>
         </div>
         <div class="faq-outro rv">
-            <p>Ainda com dúvida antes de ativar? <a href="mailto:suporte@theblack.ink">suporte@theblack.ink</a> · ou <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link" data-plan="Maré">comece agora</a> com garantia de 7 dias</p>
+            <p>Ainda com dúvida? <a href="mailto:suporte@theblack.ink">suporte@theblack.ink</a> — ou ative agora com garantia de 7 dias</p>
+            <div class="faq-outro-cta">
+                <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
+                <a href="/?period=quarterly#pricing" class="btn btn-o">Ver trimestral (−10%)</a>
+            </div>
         </div>
     </div>
 </section>
@@ -1657,7 +1665,7 @@ const STICKY_BTN = {
 };
 
 const PERIOD_NUDGE = {
-    monthly: 'Trimestral economiza ~R$120 vs mensal no trimestre — mesmo cloaker, menor custo por mês',
+    monthly: '<button type="button" data-pick-period="quarterly">Escolher trimestral</button> economiza ~R$120 vs mensal — mesmo cloaker, menor custo por mês',
     quarterly: 'Boa escolha: ~10% a menos vs mensal · cobrado R$1.079,97 a cada 3 meses',
     yearly: 'Máxima economia: ~15% a menos vs mensal · cobrado R$4.079,90 no ano'
 };
@@ -1678,8 +1686,20 @@ function updatePricingCtaLabel(period) {
     const stickyBtn = document.getElementById('sticky-cta-btn');
     if (stickyBtn) stickyBtn.textContent = STICKY_BTN[period] || STICKY_BTN.monthly;
     const nudge = document.getElementById('period-nudge');
-    if (nudge) nudge.textContent = PERIOD_NUDGE[period] || PERIOD_NUDGE.monthly;
+    if (nudge) nudge.innerHTML = PERIOD_NUDGE[period] || PERIOD_NUDGE.monthly;
 }
+
+function selectBillingPeriod(period) {
+    const btn = document.querySelector('.period-btn[data-period="' + period + '"]');
+    if (btn) btn.click();
+}
+
+document.getElementById('period-nudge')?.addEventListener('click', (e) => {
+    const pick = e.target.closest('[data-pick-period]');
+    if (!pick) return;
+    e.preventDefault();
+    selectBillingPeriod(pick.getAttribute('data-pick-period'));
+});
 
 function updatePlanLinks(period) {
     period = period || document.querySelector('.period-btn.active')?.dataset.period || 'monthly';

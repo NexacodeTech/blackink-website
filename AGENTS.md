@@ -199,3 +199,8 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Contexto**: risk reversal ficava só no resumo; no momento do submit a dúvida volta.
 **Regra**: bloco de garantia 7 dias imediatamente acima do CTA “Continuar para pagamento”; trust line reforça PIX/sem fidelidade/setup.
 **Status**: ativo
+
+## 2026-08-20 — Nudge trimestral clicável + FAQ CTA hard
+**Contexto**: economia do trimestral era texto passivo; FAQ outro só tinha link textual.
+**Regra**: nudge mensal inclui botão “Escolher trimestral”; FAQ outro tem CTA hard + atalho trimestral.
+**Status**: ativo
