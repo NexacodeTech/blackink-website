@@ -330,8 +330,9 @@ strong{font-weight:600}
 a.hero-trust-garantia{color:inherit;text-decoration:none;border-bottom:1px solid rgba(52,211,153,0.35);transition:border-color .3s var(--ease),color .3s var(--ease)}
 a.hero-trust-garantia:hover{border-bottom-color:var(--green);color:var(--white)}
 a.hero-trust-garantia strong{color:var(--green)}
-.btn-o.hero-soft-cta{border-color:rgba(100,180,255,0.35);color:var(--white)}
-.btn-o.hero-soft-cta:hover{border-color:rgba(100,180,255,0.55);background:rgba(100,180,255,0.1)}
+/* c536: soft path = garantia (verde) vs primary Ativar (azul) */
+.btn-o.hero-soft-cta{border-color:rgba(52,211,153,0.4);color:var(--white)}
+.btn-o.hero-soft-cta:hover{border-color:rgba(52,211,153,0.6);background:rgba(52,211,153,0.08)}
 .pricing-reveal-inner.pricing-focus{border-color:rgba(100,180,255,0.45);box-shadow:0 0 0 1px rgba(100,180,255,0.2),0 24px 64px rgba(0,0,0,0.3);transition:border-color .45s var(--ease),box-shadow .45s var(--ease);animation:pricingFocusPulse .9s var(--ease) both}
 @keyframes pricingFocusPulse{0%{box-shadow:0 0 0 0 rgba(100,180,255,0.35),0 24px 64px rgba(0,0,0,0.3)}100%{box-shadow:0 0 0 1px rgba(100,180,255,0.2),0 24px 64px rgba(0,0,0,0.3)}}
 @keyframes chipTrustPulse{0%,100%{border-color:rgba(52,211,153,0.25);background:rgba(52,211,153,0.06)}50%{border-color:rgba(52,211,153,0.55);background:rgba(52,211,153,0.12)}}
@@ -1805,6 +1806,18 @@ main{position:relative;z-index:1}
   #faq .faq-assure a.faq-inline-cta--price:hover{
     border-color:rgba(100,180,255,0.7);background:rgba(100,180,255,0.1)
   }
+  /* c536 LAST: soft = garantia (verde) ≠ primary Ativar (azul) */
+  .hero-ctas .btn-o.hero-soft-cta{
+    border-color:rgba(52,211,153,0.5);
+    box-shadow:0 0 0 1px rgba(52,211,153,0.1);
+    color:var(--white)
+  }
+  .hero-ctas .btn-o.hero-soft-cta:hover{
+    border-color:rgba(52,211,153,0.7);
+    background:rgba(52,211,153,0.08)
+  }
+  /* c537 LAST: chip Garantia tap ≥28px (slack fold ~18px) */
+  #pricing .pricing-trust-chips li{padding:5px 8px;min-height:28px;align-items:center}
 }
 
 @media (min-width:768px){
@@ -2690,6 +2703,18 @@ main{position:relative;z-index:1}
   #faq .faq-assure a.faq-inline-cta--price:hover{
     border-color:rgba(100,180,255,0.7);background:rgba(100,180,255,0.1)
   }
+  /* c536 LAST: soft = garantia (verde) ≠ primary Ativar (azul) */
+  .hero-ctas .btn-o.hero-soft-cta{
+    border-color:rgba(52,211,153,0.5);
+    box-shadow:0 0 0 1px rgba(52,211,153,0.1);
+    color:var(--white)
+  }
+  .hero-ctas .btn-o.hero-soft-cta:hover{
+    border-color:rgba(52,211,153,0.7);
+    background:rgba(52,211,153,0.08)
+  }
+  /* c537 LAST: chip Garantia tap ≥28px (slack fold ~18px) */
+  #pricing .pricing-trust-chips li{padding:5px 8px;min-height:28px;align-items:center}
 }
 
 @media (max-width:640px){
@@ -2972,6 +2997,18 @@ main{position:relative;z-index:1}
   #faq .faq-assure a.faq-inline-cta--price:hover{
     border-color:rgba(100,180,255,0.7);background:rgba(100,180,255,0.1)
   }
+  /* c536 LAST: soft = garantia (verde) ≠ primary Ativar (azul) */
+  .hero-ctas .btn-o.hero-soft-cta{
+    border-color:rgba(52,211,153,0.5);
+    box-shadow:0 0 0 1px rgba(52,211,153,0.1);
+    color:var(--white)
+  }
+  .hero-ctas .btn-o.hero-soft-cta:hover{
+    border-color:rgba(52,211,153,0.7);
+    background:rgba(52,211,153,0.08)
+  }
+  /* c537 LAST: chip Garantia tap ≥28px (slack fold ~18px) */
+  #pricing .pricing-trust-chips li{padding:5px 8px;min-height:28px;align-items:center}
 }
 
 @media (max-width:500px){
@@ -3249,6 +3286,18 @@ main{position:relative;z-index:1}
   #faq .faq-assure a.faq-inline-cta--price:hover{
     border-color:rgba(100,180,255,0.7);background:rgba(100,180,255,0.1)
   }
+  /* c536 LAST: soft = garantia (verde) ≠ primary Ativar (azul) */
+  .hero-ctas .btn-o.hero-soft-cta{
+    border-color:rgba(52,211,153,0.5);
+    box-shadow:0 0 0 1px rgba(52,211,153,0.1);
+    color:var(--white)
+  }
+  .hero-ctas .btn-o.hero-soft-cta:hover{
+    border-color:rgba(52,211,153,0.7);
+    background:rgba(52,211,153,0.08)
+  }
+  /* c537 LAST: chip Garantia tap ≥28px (slack fold ~18px) */
+  #pricing .pricing-trust-chips li{padding:5px 8px;min-height:28px;align-items:center}
 }
 
 @media (max-width:390px){
@@ -3517,6 +3566,18 @@ main{position:relative;z-index:1}
   #faq .faq-assure a.faq-inline-cta--price:hover{
     border-color:rgba(100,180,255,0.7);background:rgba(100,180,255,0.1)
   }
+  /* c536 LAST: soft = garantia (verde) ≠ primary Ativar (azul) */
+  .hero-ctas .btn-o.hero-soft-cta{
+    border-color:rgba(52,211,153,0.5);
+    box-shadow:0 0 0 1px rgba(52,211,153,0.1);
+    color:var(--white)
+  }
+  .hero-ctas .btn-o.hero-soft-cta:hover{
+    border-color:rgba(52,211,153,0.7);
+    background:rgba(52,211,153,0.08)
+  }
+  /* c537 LAST: chip Garantia tap ≥28px (slack fold ~18px) */
+  #pricing .pricing-trust-chips li{padding:5px 8px;min-height:28px;align-items:center}
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -3586,7 +3647,7 @@ main{position:relative;z-index:1}
     <p class="hero-sub">Safe vs offer · Google · YouTube · Meta · TikTok · &lt;50ms · ~1 dia = 1 mês</p>
     <div class="hero-ctas">
         <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link hero-cta" data-plan="Maré">Ativar — R$399,99/mês</a>
-        <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-o hero-soft-cta plan-link" data-plan="Maré">Com garantia −10% · R$359,99</a>
+        <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-o hero-soft-cta plan-link" data-plan="Maré" aria-label="Ativar com garantia 7 dias">Com garantia −10% · R$359,99</a>
     </div>
     <div class="hero-trust">
         <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
