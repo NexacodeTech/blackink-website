@@ -499,8 +499,8 @@ strong{font-weight:600}
 .why-strip-text{margin:0 auto;max-width:52ch;font-size:clamp(13px,1.4vw,15px);color:var(--dim);line-height:1.45}
 .why-strip-text strong{color:var(--white);font-weight:600}
 .why-strip-text .grad{font-weight:600}
-/* ROI denser (ciclo 54) */
-#roi-calc.section--compact{padding:clamp(28px,4vh,52px) 0}
+/* ROI denser (ciclo 54/66) */
+#roi-calc.section--compact{padding:clamp(24px,3.5vh,48px) 0}
 .calc-wrap{max-width:640px;margin:0 auto}
 .calc-card{padding:clamp(14px,2vw,22px);border-radius:16px;border:1px solid var(--border);background:linear-gradient(180deg,rgba(10,22,40,0.75),rgba(6,14,28,0.9))}
 .calc-slider-header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:8px;flex-wrap:wrap}
@@ -527,7 +527,9 @@ strong{font-weight:600}
 .calc-cta{margin-top:12px;text-align:center}
 .calc-cta-text{font-size:12px;color:var(--dim);margin-bottom:10px;line-height:1.45}
 .calc-cta-text strong{color:var(--white)}
-.calc-cta-actions{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center}
+.calc-cta-actions{display:flex;flex-direction:column;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center}
+.calc-cta-period{font-size:12px;color:var(--accent);font-weight:500;text-decoration:none;transition:color .3s var(--ease)}
+.calc-cta-period:hover{color:var(--white)}
 /* Pricing — single buy card denser (ciclo 63) */
 .pricing-narrative{max-width:680px;margin:0 auto}
 .pricing-lead{font-size:13px;color:var(--dim);line-height:1.45;max-width:500px;margin:0 auto 12px}
@@ -1040,7 +1042,7 @@ main{position:relative;z-index:1}
                     <p class="calc-cta-text" id="calc-cta-msg">Mova o slider — veja quanto do budget some antes da venda.</p>
                     <div class="calc-cta-actions">
                         <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
-                        <a href="#pricing" class="btn btn-o">Ver periodicidade</a>
+                        <a href="#pricing" class="calc-cta-period">Ver mensal · trimestral · anual</a>
                     </div>
                 </div>
             </div>
