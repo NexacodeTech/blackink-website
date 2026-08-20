@@ -1103,6 +1103,9 @@ main{position:relative;z-index:1}
   #pricing .period-nudge{display:none}
   /* Ciclo 311: Rec. no switcher; risco fica na FAQ aberta (sem 2ª row) */
   #pricing .period-rec{display:inline;font-size:5px;padding:0 2px;margin-left:1px;border-radius:3px;line-height:1}
+  /* Ciclo 313: chrome FAQ menor — libera legibilidade do + sem inflar */
+  #faq .faq-q::after{font-size:8px;line-height:1}
+  #faq .faq-inline-cta{font-size:5px}
 }
 @media (min-width:768px){
   .sticky-cta-text{display:block}
@@ -1551,6 +1554,9 @@ main{position:relative;z-index:1}
   #faq .faq-more-toggle{min-height:8px;font-size:4px;padding:0 2px}
   /* Ciclo 311: Rec. no switcher; risco na FAQ aberta */
   #pricing .period-rec{display:inline;font-size:5px;padding:0 2px;line-height:1}
+  /* Ciclo 313: FAQ + CTA chrome */
+  #faq .faq-q::after{font-size:7px;line-height:1}
+  #faq .faq-inline-cta{font-size:5px}
   #comecar.cta-final{padding:0}
   #comecar .cta-final-title{font-size:clamp(10px,1.2vw,13px)}
   #comecar .pricing-cta{height:20px;font-size:8px}
@@ -1718,7 +1724,7 @@ main{position:relative;z-index:1}
             <span class="hero-badge-dot" aria-hidden="true"></span>
                 <span class="hero-badge-text">
                 <svg class="hero-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                Cloaker multi-rede · ~1 dia = 1 mês · 7 dias
+                Cloaker multi-rede · ~1 dia = 1 mês · trim. −10%
             </span>
         </div>
     </div>
@@ -2049,9 +2055,9 @@ main{position:relative;z-index:1}
 <section class="section section--compact" id="faq" aria-label="Perguntas Frequentes">
     <div class="container">
         <p class="t-label rv" style="text-align:center;margin-bottom:4px">FAQ</p>
-        <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:4px">Dúvidas · <span class="grad">~1 dia = 1 mês</span></h2>
+        <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:4px">Dúvidas · <span class="grad">~1 dia · 7 dias</span></h2>
         <div class="faq-list">
-            <details class="faq-i rv rv-d1" open><summary class="faq-q">Se paga em ~1 dia?</summary><div class="faq-a" id="faq-savings-a">Perda ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês · ~<strong id="faq-savings-payback">1 dia</strong> = 1 mês · 7 dias reembolso · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar</a></div></details>
+            <details class="faq-i rv rv-d1" open><summary class="faq-q">Se paga em ~1 dia?</summary><div class="faq-a" id="faq-savings-a">Perda ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês · ~<strong id="faq-savings-payback">1 dia</strong> = 1 mês · 7 dias · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar — R$399,99</a></div></details>
             <details class="faq-i faq-i--risk rv rv-d2"><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">7 dias · 100% reembolso · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar sem risco</a></div></details>
             <div class="faq-more" id="faq-more">
                 <details class="faq-i"><summary class="faq-q">Quanto custa?</summary><div class="faq-a">R$ 399,99/mês · trimestral −10% · anual −15% · PIX/cartão · sem fidelidade.</div></details>
@@ -2083,7 +2089,7 @@ main{position:relative;z-index:1}
     <div class="container" style="position:relative;z-index:1">
         <p class="t-label rv" style="text-align:center;margin-bottom:4px">Pronto</p>
         <h2 class="t-lg rv rv-d1 cta-final-title" style="text-align:center">~1 dia de sujo = 1 mês · <span class="grad">ative</span></h2>
-        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:440px;margin:6px auto 10px;font-size:clamp(13px,1.4vw,15px)" id="cta-final-lead">Perda <strong id="cta-final-loss">R$ 12.500</strong>/mês · <span id="cta-final-payback">~1 dia</span> de clique sujo = 1 mês · 7 dias</p>
+        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:440px;margin:6px auto 10px;font-size:clamp(13px,1.4vw,15px)" id="cta-final-lead">Perda <strong id="cta-final-loss">R$ 12.500</strong>/mês · <span id="cta-final-payback">~1 dia</span> = 1 mês · 7 dias · trim. −10%</p>
         <div class="rv rv-d3" style="display:flex;flex-direction:column;align-items:center;gap:8px">
             <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar — R$399,99/mês</a>
             <div class="cta-final-trust">
@@ -2729,7 +2735,7 @@ if (calcSlider && calcDisplay && calcInvisible && calcFraud && calcTotal && calc
         if (calcRoiBar) calcRoiBar.style.width = Math.max(Math.min((roi / 15) * 100, 100), 2) + '%';
         const paybackDays = Math.max(1, Math.ceil(planCost / (total / 30)));
         if (calcMsg && val > 0) {
-            calcMsg.innerHTML = 'Perda ~<strong>' + fmt(total) + '</strong>/mês · ~<strong>' + paybackDays + 'd</strong> de clique sujo = 1 mês de cloaker';
+            calcMsg.innerHTML = 'Perda ~<strong>' + fmt(total) + '</strong>/mês · ~<strong>' + paybackDays + 'd</strong> = 1 mês · trim. −10%';
         }
         // Bridge calc → pricing (ciclo 32): keep loss + payback visible in the buy section
         if (pricingLeadLoss) pricingLeadLoss.textContent = fmt(total);
