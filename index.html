@@ -1870,8 +1870,11 @@ main{position:relative;z-index:1}
   #pricing .period-btn.active{border-color:rgba(100,180,255,0.55);background:rgba(100,180,255,0.1)}
   /* c602 LAST: lead payback equation mais escaneável */
   #pricing #pricing-lead-payback{color:var(--white);font-weight:700}
-  /* c605 LAST: chip Garantia = família soft (verde) no fold */
-  #pricing .pricing-chip-garantia a,#pricing .pricing-chip-garantia{color:var(--green);font-weight:700;border-color:rgba(52,211,153,0.35)}
+  /* c605/c629 LAST: chip Garantia = família soft (verde fill) no fold */
+  #pricing .pricing-chip-garantia a,#pricing .pricing-chip-garantia{
+    color:#6ee7b7;font-weight:800;border-color:rgba(52,211,153,0.55);
+    background:rgba(52,211,153,0.12)
+  }
   /* c608 LAST: −10% discount no trimestral mais punch no fold */
   #pricing .period-btn.active .period-discount{background:rgba(52,211,153,0.2);color:var(--green);font-weight:700}
   /* c611 LAST: −10% legível (≥10px) — Ideal já 9px */
@@ -1906,8 +1909,9 @@ main{position:relative;z-index:1}
   #faq .faq-i--risk[open] .faq-inline-cta{
     display:inline-flex;align-items:center;justify-content:center;
     width:min(100%,340px);min-height:40px;margin:8px auto 0;padding:0 12px;
-    border-radius:10px;background:rgba(52,211,153,0.14);color:var(--white);
-    border:1px solid rgba(52,211,153,0.55);font-size:12px;font-weight:700;text-decoration:none
+    border-radius:10px;background:rgba(52,211,153,0.28);color:#021018;
+    border:1px solid rgba(52,211,153,0.75);font-size:12px;font-weight:800;text-decoration:none;
+    box-shadow:0 6px 18px rgba(52,211,153,0.2)
   }
   /* c596 LAST: OAuth FAQ accent — objeção #1 ao abrir dúvidas */
   #faq .faq-more.open .faq-i--oauth{border-color:rgba(100,180,255,0.4);background:rgba(100,180,255,0.06)}
@@ -1934,6 +1938,15 @@ main{position:relative;z-index:1}
   #faq .faq-assure{margin:1px 0 0;gap:1px}
   #faq .faq-assure-micro{font-size:10px;line-height:1.2}
   #redes .networks-grid{gap:4px}
+  /* c628/c631 LAST: p-micro + chip Garantia fill + comecar close */
+  #pricing a.p-micro-garantia,#pricing a.p-micro-garantia strong{color:#6ee7b7;font-weight:800;border-bottom-color:rgba(52,211,153,0.65)}
+  #pricing .p-micro{font-size:10.5px;font-weight:500}
+  #pricing .pricing-chip-garantia,#pricing .pricing-chip-garantia a{
+    color:#6ee7b7;font-weight:800;border-color:rgba(52,211,153,0.55);
+    background:rgba(52,211,153,0.14)
+  }
+  #comecar .comecar-cta{box-shadow:0 10px 28px rgba(100,180,255,0.42),0 0 0 1px rgba(100,180,255,0.28)}
+  #comecar a.cta-final-trust-link{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.25px;color:#6ee7b7;font-weight:800}
 }
 
 @media (min-width:768px){
@@ -2865,8 +2878,11 @@ main{position:relative;z-index:1}
   #pricing .period-btn.active{border-color:rgba(100,180,255,0.55);background:rgba(100,180,255,0.1)}
   /* c602 LAST: lead payback equation mais escaneável */
   #pricing #pricing-lead-payback{color:var(--white);font-weight:700}
-  /* c605 LAST: chip Garantia = família soft (verde) no fold */
-  #pricing .pricing-chip-garantia a,#pricing .pricing-chip-garantia{color:var(--green);font-weight:700;border-color:rgba(52,211,153,0.35)}
+  /* c605/c629 LAST: chip Garantia = família soft (verde fill) no fold */
+  #pricing .pricing-chip-garantia a,#pricing .pricing-chip-garantia{
+    color:#6ee7b7;font-weight:800;border-color:rgba(52,211,153,0.55);
+    background:rgba(52,211,153,0.12)
+  }
   /* c608 LAST: −10% discount no trimestral mais punch no fold */
   #pricing .period-btn.active .period-discount{background:rgba(52,211,153,0.2);color:var(--green);font-weight:700}
   /* c611 LAST: −10% legível (≥10px) — Ideal já 9px */
@@ -2901,8 +2917,9 @@ main{position:relative;z-index:1}
   #faq .faq-i--risk[open] .faq-inline-cta{
     display:inline-flex;align-items:center;justify-content:center;
     width:min(100%,340px);min-height:40px;margin:8px auto 0;padding:0 12px;
-    border-radius:10px;background:rgba(52,211,153,0.14);color:var(--white);
-    border:1px solid rgba(52,211,153,0.55);font-size:12px;font-weight:700;text-decoration:none
+    border-radius:10px;background:rgba(52,211,153,0.28);color:#021018;
+    border:1px solid rgba(52,211,153,0.75);font-size:12px;font-weight:800;text-decoration:none;
+    box-shadow:0 6px 18px rgba(52,211,153,0.2)
   }
   /* c596 LAST: OAuth FAQ accent — objeção #1 ao abrir dúvidas */
   #faq .faq-more.open .faq-i--oauth{border-color:rgba(100,180,255,0.4);background:rgba(100,180,255,0.06)}
@@ -2929,6 +2946,15 @@ main{position:relative;z-index:1}
   #faq .faq-assure{margin:1px 0 0;gap:1px}
   #faq .faq-assure-micro{font-size:10px;line-height:1.2}
   #redes .networks-grid{gap:4px}
+  /* c628/c631 LAST: p-micro + chip Garantia fill + comecar close */
+  #pricing a.p-micro-garantia,#pricing a.p-micro-garantia strong{color:#6ee7b7;font-weight:800;border-bottom-color:rgba(52,211,153,0.65)}
+  #pricing .p-micro{font-size:10.5px;font-weight:500}
+  #pricing .pricing-chip-garantia,#pricing .pricing-chip-garantia a{
+    color:#6ee7b7;font-weight:800;border-color:rgba(52,211,153,0.55);
+    background:rgba(52,211,153,0.14)
+  }
+  #comecar .comecar-cta{box-shadow:0 10px 28px rgba(100,180,255,0.42),0 0 0 1px rgba(100,180,255,0.28)}
+  #comecar a.cta-final-trust-link{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.25px;color:#6ee7b7;font-weight:800}
   /* c538 LAST desktop: chip 26px — margem de fold (slack era 1px) */
   #pricing .pricing-trust-chips li{padding:4px 8px;min-height:26px}
   /* c580 LAST desktop: FAQ discoverable (risk+toggle) + peek pro assure no fold */
@@ -2968,6 +2994,14 @@ main{position:relative;z-index:1}
   #faq .faq-assure{margin:1px 0 0;gap:1px}
   #faq .faq-assure-micro{font-size:11px;line-height:1.2}
   #redes .networks-grid{gap:4px}
+  /* c628/c631 LAST desktop: p-micro + chip fill + comecar close */
+  #pricing a.p-micro-garantia,#pricing a.p-micro-garantia strong{color:#6ee7b7;font-weight:800;border-bottom-color:rgba(52,211,153,0.65)}
+  #pricing .pricing-chip-garantia,#pricing .pricing-chip-garantia a{
+    color:#6ee7b7;font-weight:800;border-color:rgba(52,211,153,0.55);
+    background:rgba(52,211,153,0.14)
+  }
+  #comecar .comecar-cta{box-shadow:0 10px 28px rgba(100,180,255,0.42),0 0 0 1px rgba(100,180,255,0.28)}
+  #comecar a.cta-final-trust-link{text-decoration:underline;text-underline-offset:3px;color:#6ee7b7;font-weight:800}
 }
 
 @media (max-width:640px){
@@ -3307,8 +3341,11 @@ main{position:relative;z-index:1}
   #pricing .period-btn.active{border-color:rgba(100,180,255,0.55);background:rgba(100,180,255,0.1)}
   /* c602 LAST: lead payback equation mais escaneável */
   #pricing #pricing-lead-payback{color:var(--white);font-weight:700}
-  /* c605 LAST: chip Garantia = família soft (verde) no fold */
-  #pricing .pricing-chip-garantia a,#pricing .pricing-chip-garantia{color:var(--green);font-weight:700;border-color:rgba(52,211,153,0.35)}
+  /* c605/c629 LAST: chip Garantia = família soft (verde fill) no fold */
+  #pricing .pricing-chip-garantia a,#pricing .pricing-chip-garantia{
+    color:#6ee7b7;font-weight:800;border-color:rgba(52,211,153,0.55);
+    background:rgba(52,211,153,0.12)
+  }
   /* c608 LAST: −10% discount no trimestral mais punch no fold */
   #pricing .period-btn.active .period-discount{background:rgba(52,211,153,0.2);color:var(--green);font-weight:700}
   /* c611 LAST: −10% legível (≥10px) — Ideal já 9px */
@@ -3343,8 +3380,9 @@ main{position:relative;z-index:1}
   #faq .faq-i--risk[open] .faq-inline-cta{
     display:inline-flex;align-items:center;justify-content:center;
     width:min(100%,340px);min-height:40px;margin:8px auto 0;padding:0 12px;
-    border-radius:10px;background:rgba(52,211,153,0.14);color:var(--white);
-    border:1px solid rgba(52,211,153,0.55);font-size:12px;font-weight:700;text-decoration:none
+    border-radius:10px;background:rgba(52,211,153,0.28);color:#021018;
+    border:1px solid rgba(52,211,153,0.75);font-size:12px;font-weight:800;text-decoration:none;
+    box-shadow:0 6px 18px rgba(52,211,153,0.2)
   }
   /* c596 LAST: OAuth FAQ accent — objeção #1 ao abrir dúvidas */
   #faq .faq-more.open .faq-i--oauth{border-color:rgba(100,180,255,0.4);background:rgba(100,180,255,0.06)}
@@ -3371,6 +3409,15 @@ main{position:relative;z-index:1}
   #faq .faq-assure{margin:1px 0 0;gap:1px}
   #faq .faq-assure-micro{font-size:10px;line-height:1.2}
   #redes .networks-grid{gap:4px}
+  /* c628/c631 LAST: p-micro + chip Garantia fill + comecar close */
+  #pricing a.p-micro-garantia,#pricing a.p-micro-garantia strong{color:#6ee7b7;font-weight:800;border-bottom-color:rgba(52,211,153,0.65)}
+  #pricing .p-micro{font-size:10.5px;font-weight:500}
+  #pricing .pricing-chip-garantia,#pricing .pricing-chip-garantia a{
+    color:#6ee7b7;font-weight:800;border-color:rgba(52,211,153,0.55);
+    background:rgba(52,211,153,0.14)
+  }
+  #comecar .comecar-cta{box-shadow:0 10px 28px rgba(100,180,255,0.42),0 0 0 1px rgba(100,180,255,0.28)}
+  #comecar a.cta-final-trust-link{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.25px;color:#6ee7b7;font-weight:800}
 }
 
 @media (max-width:500px){
@@ -3705,8 +3752,11 @@ main{position:relative;z-index:1}
   #pricing .period-btn.active{border-color:rgba(100,180,255,0.55);background:rgba(100,180,255,0.1)}
   /* c602 LAST: lead payback equation mais escaneável */
   #pricing #pricing-lead-payback{color:var(--white);font-weight:700}
-  /* c605 LAST: chip Garantia = família soft (verde) no fold */
-  #pricing .pricing-chip-garantia a,#pricing .pricing-chip-garantia{color:var(--green);font-weight:700;border-color:rgba(52,211,153,0.35)}
+  /* c605/c629 LAST: chip Garantia = família soft (verde fill) no fold */
+  #pricing .pricing-chip-garantia a,#pricing .pricing-chip-garantia{
+    color:#6ee7b7;font-weight:800;border-color:rgba(52,211,153,0.55);
+    background:rgba(52,211,153,0.12)
+  }
   /* c608 LAST: −10% discount no trimestral mais punch no fold */
   #pricing .period-btn.active .period-discount{background:rgba(52,211,153,0.2);color:var(--green);font-weight:700}
   /* c611 LAST: −10% legível (≥10px) — Ideal já 9px */
@@ -3741,8 +3791,9 @@ main{position:relative;z-index:1}
   #faq .faq-i--risk[open] .faq-inline-cta{
     display:inline-flex;align-items:center;justify-content:center;
     width:min(100%,340px);min-height:40px;margin:8px auto 0;padding:0 12px;
-    border-radius:10px;background:rgba(52,211,153,0.14);color:var(--white);
-    border:1px solid rgba(52,211,153,0.55);font-size:12px;font-weight:700;text-decoration:none
+    border-radius:10px;background:rgba(52,211,153,0.28);color:#021018;
+    border:1px solid rgba(52,211,153,0.75);font-size:12px;font-weight:800;text-decoration:none;
+    box-shadow:0 6px 18px rgba(52,211,153,0.2)
   }
   /* c596 LAST: OAuth FAQ accent — objeção #1 ao abrir dúvidas */
   #faq .faq-more.open .faq-i--oauth{border-color:rgba(100,180,255,0.4);background:rgba(100,180,255,0.06)}
@@ -3769,6 +3820,15 @@ main{position:relative;z-index:1}
   #faq .faq-assure{margin:1px 0 0;gap:1px}
   #faq .faq-assure-micro{font-size:10px;line-height:1.2}
   #redes .networks-grid{gap:4px}
+  /* c628/c631 LAST: p-micro + chip Garantia fill + comecar close */
+  #pricing a.p-micro-garantia,#pricing a.p-micro-garantia strong{color:#6ee7b7;font-weight:800;border-bottom-color:rgba(52,211,153,0.65)}
+  #pricing .p-micro{font-size:10.5px;font-weight:500}
+  #pricing .pricing-chip-garantia,#pricing .pricing-chip-garantia a{
+    color:#6ee7b7;font-weight:800;border-color:rgba(52,211,153,0.55);
+    background:rgba(52,211,153,0.14)
+  }
+  #comecar .comecar-cta{box-shadow:0 10px 28px rgba(100,180,255,0.42),0 0 0 1px rgba(100,180,255,0.28)}
+  #comecar a.cta-final-trust-link{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.25px;color:#6ee7b7;font-weight:800}
 }
 
 @media (max-width:390px){
@@ -4094,8 +4154,11 @@ main{position:relative;z-index:1}
   #pricing .period-btn.active{border-color:rgba(100,180,255,0.55);background:rgba(100,180,255,0.1)}
   /* c602 LAST: lead payback equation mais escaneável */
   #pricing #pricing-lead-payback{color:var(--white);font-weight:700}
-  /* c605 LAST: chip Garantia = família soft (verde) no fold */
-  #pricing .pricing-chip-garantia a,#pricing .pricing-chip-garantia{color:var(--green);font-weight:700;border-color:rgba(52,211,153,0.35)}
+  /* c605/c629 LAST: chip Garantia = família soft (verde fill) no fold */
+  #pricing .pricing-chip-garantia a,#pricing .pricing-chip-garantia{
+    color:#6ee7b7;font-weight:800;border-color:rgba(52,211,153,0.55);
+    background:rgba(52,211,153,0.12)
+  }
   /* c608 LAST: −10% discount no trimestral mais punch no fold */
   #pricing .period-btn.active .period-discount{background:rgba(52,211,153,0.2);color:var(--green);font-weight:700}
   /* c611 LAST: −10% legível (≥10px) — Ideal já 9px */
@@ -4130,8 +4193,9 @@ main{position:relative;z-index:1}
   #faq .faq-i--risk[open] .faq-inline-cta{
     display:inline-flex;align-items:center;justify-content:center;
     width:min(100%,340px);min-height:40px;margin:8px auto 0;padding:0 12px;
-    border-radius:10px;background:rgba(52,211,153,0.14);color:var(--white);
-    border:1px solid rgba(52,211,153,0.55);font-size:12px;font-weight:700;text-decoration:none
+    border-radius:10px;background:rgba(52,211,153,0.28);color:#021018;
+    border:1px solid rgba(52,211,153,0.75);font-size:12px;font-weight:800;text-decoration:none;
+    box-shadow:0 6px 18px rgba(52,211,153,0.2)
   }
   /* c596 LAST: OAuth FAQ accent — objeção #1 ao abrir dúvidas */
   #faq .faq-more.open .faq-i--oauth{border-color:rgba(100,180,255,0.4);background:rgba(100,180,255,0.06)}
@@ -4158,6 +4222,15 @@ main{position:relative;z-index:1}
   #faq .faq-assure{margin:1px 0 0;gap:1px}
   #faq .faq-assure-micro{font-size:10px;line-height:1.2}
   #redes .networks-grid{gap:4px}
+  /* c628/c631 LAST: p-micro + chip Garantia fill + comecar close */
+  #pricing a.p-micro-garantia,#pricing a.p-micro-garantia strong{color:#6ee7b7;font-weight:800;border-bottom-color:rgba(52,211,153,0.65)}
+  #pricing .p-micro{font-size:10.5px;font-weight:500}
+  #pricing .pricing-chip-garantia,#pricing .pricing-chip-garantia a{
+    color:#6ee7b7;font-weight:800;border-color:rgba(52,211,153,0.55);
+    background:rgba(52,211,153,0.14)
+  }
+  #comecar .comecar-cta{box-shadow:0 10px 28px rgba(100,180,255,0.42),0 0 0 1px rgba(100,180,255,0.28)}
+  #comecar a.cta-final-trust-link{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.25px;color:#6ee7b7;font-weight:800}
 }
 
 @media (prefers-reduced-motion:reduce){
