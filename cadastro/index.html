@@ -271,6 +271,8 @@
             /* c522: strength some até digitar — confirma senha sobe no fold */
             .password-strength{display:none}
             .password-strength.is-on{display:flex}
+            /* c523: guarantee box some — sticky já carrega Garantia 7 dias */
+            .cadastro-guarantee{display:none}
             /* c516: sticky Ativar enquanto submit fora do fold */
             .cadastro-sticky{
                 position:fixed;left:0;right:0;bottom:0;z-index:900;
@@ -548,7 +550,7 @@
 <!-- c516: sticky Ativar (mobile) — some quando #submitBtn entra no fold -->
 <div class="cadastro-sticky" id="cadastroSticky" aria-hidden="true">
     <button type="button" class="btn btn-p" id="stickySubmitBtn">Ativar — R$ 399,99/mês · 7 dias</button>
-    <p class="cadastro-sticky-trust"><strong>Garantia 7 dias</strong> · 100% · Ativar com garantia</p>
+    <p class="cadastro-sticky-trust"><strong>Garantia 7 dias</strong> · 100% · Com garantia</p>
 </div>
 
 <!-- ═══════ FOOTER ═══════ -->
@@ -654,7 +656,7 @@
         const stickyBtn = document.getElementById('stickySubmitBtn');
         if (stickyBtn && !stickyBtn.disabled) stickyBtn.textContent = submitLabelForPeriod(period);
         const stickyTrust = document.querySelector('.cadastro-sticky-trust');
-        if (stickyTrust) stickyTrust.innerHTML = '<strong>Garantia 7 dias</strong> · 100% · ' + garantiaVerb;
+        if (stickyTrust) stickyTrust.innerHTML = '<strong>Garantia 7 dias</strong> · 100% · ' + garantiaVerb.replace('Ativar com garantia','Com garantia');
         // c482/c515: sidebar subtitle sync período + preço do período
         const periodPrice = period === 'yearly' ? 'R$339,99' : (period === 'quarterly' ? 'R$359,99' : 'R$399,99');
         const infoSubtitle = document.getElementById('infoSubtitle');

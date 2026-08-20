@@ -596,6 +596,11 @@ a.network-chip:hover,a.network-chip:focus-visible{border-color:rgba(100,180,255,
 .pricing-networks{display:none;text-align:center;font-size:11px;color:var(--dim);margin:6px 0 0;line-height:1.3}
 .pricing-trust-chips li{font-size:11px;font-weight:600;color:var(--dim);padding:5px 10px;border-radius:999px;border:1px solid var(--border);background:rgba(2,10,20,0.35);letter-spacing:.02em}
 .pricing-trust-chips li:first-child{color:var(--green);border-color:rgba(52,211,153,0.25);background:rgba(52,211,153,0.06)}
+/* c523: chip Garantia → cadastro */
+.pricing-trust-chips a.pricing-chip-link{color:inherit;text-decoration:none;display:inline-flex;align-items:center;min-height:100%;transition:color .3s var(--ease)}
+.pricing-trust-chips a.pricing-chip-link:hover{color:var(--white)}
+.pricing-trust-chips li.pricing-chip-garantia{cursor:pointer;transition:border-color .3s var(--ease),background .3s var(--ease),transform .3s var(--ease)}
+.pricing-trust-chips li.pricing-chip-garantia:hover{border-color:rgba(52,211,153,0.45);background:rgba(52,211,153,0.12);transform:translateY(-1px)}
 /* FAQ — compact (ciclo 45) */
 .faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
 .faq-more{display:none;flex-direction:column;gap:8px;margin-top:8px}
@@ -3424,7 +3429,7 @@ main{position:relative;z-index:1}
     <p class="hero-sub">Safe vs offer · Google · YouTube · Meta · TikTok · &lt;50ms · ~1 dia = 1 mês</p>
     <div class="hero-ctas">
         <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link hero-cta" data-plan="Maré">Ativar — R$399,99/mês</a>
-        <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-o hero-soft-cta plan-link" data-plan="Maré">Ativar com garantia −10%</a>
+        <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-o hero-soft-cta plan-link" data-plan="Maré">Com garantia −10% · R$359,99</a>
     </div>
     <div class="hero-trust">
         <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
@@ -3714,7 +3719,7 @@ main{position:relative;z-index:1}
                     <p class="p-micro"><strong>Garantia 7 dias</strong> · PIX · R$399,99/mês · Ativar −10% no trimestral</p>
                     <p class="pricing-networks">Google Ads · YouTube Ads · Facebook Ads · TikTok Ads · sem OAuth</p>
                     <ul class="pricing-trust-chips" aria-label="Garantias">
-                        <li>Garantia 7 dias · 100%</li>
+                        <li class="pricing-chip-garantia"><a href="/cadastro/?plan=Maré&period=monthly" class="plan-link pricing-chip-link" data-plan="Maré">Garantia 7 dias · 100%</a></li>
                         <li>PIX ou cartão</li>
                         <li>Sem OAuth</li>
                         <li class="pricing-chip-latency">Server-side &lt;50ms</li>
@@ -4167,6 +4172,12 @@ const FAQ_PRICE_CTA = {
     quarterly: 'Ativar sem risco −10% — R$359,99',
     yearly: 'Ativar sem risco −15% — R$339,99'
 };
+const SOFT_CTA_LABELS = {
+    // c523: preço no soft (≠ FAQ sem risco; ≠ primary Ativar)
+    monthly: 'Com garantia · R$399,99',
+    quarterly: 'Com garantia −10% · R$359,99',
+    yearly: 'Com garantia −15% · R$339,99'
+};
 const P_MICRO_HTML = {
     // c508: micro espelha soft “com garantia” + chip Garantia
     monthly: '<strong>Garantia 7 dias</strong> · PIX · R$399,99/mês · Ativar −10% no trimestral',
@@ -4333,10 +4344,8 @@ function syncLossPersuasionCopy(period) {
     const loss = lastCalcLossFmt || 'R$ 12.500';
     const soft = document.querySelector('.hero-soft-cta');
     if (soft) {
-        // c506: soft ≠ FAQ "sem risco" — garantia no 2º path (banner blindness)
-        soft.textContent = period === 'yearly'
-            ? 'Ativar com garantia −15%'
-            : (period === 'quarterly' ? 'Ativar com garantia −10%' : 'Ativar com garantia');
+        // c523: soft com preço — distinto de FAQ “sem risco” e primary “Ativar”
+        soft.textContent = SOFT_CTA_LABELS[period] || SOFT_CTA_LABELS.monthly;
     }
     const faqHook = document.getElementById('faq-hook-q');
     if (faqHook) {
