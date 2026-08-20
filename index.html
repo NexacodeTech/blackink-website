@@ -3043,8 +3043,8 @@ main{position:relative;z-index:1}
 
   /* c538 LAST desktop: chip 26px — margem de fold (slack era 1px) */
   #pricing .pricing-trust-chips li{padding:4px 8px;min-height:26px}
-  /* c580/c640 LAST desktop: peek 340 — why payback no fold */
-  #hero{min-height:calc(100vh - 340px);min-height:calc(100dvh - 340px)}
+  /* c580/c640/c719 LAST desktop: peek 360 — why payback FULL no fold */
+  #hero{min-height:calc(100vh - 360px);min-height:calc(100dvh - 360px)}
   #pricing.section--compact{padding:2px 0 2px}
   #faq .faq-list{display:flex;flex-direction:column;gap:4px}
   #faq .faq-assure{order:-1;margin:4px 0 0;gap:4px}
@@ -4882,7 +4882,7 @@ main{position:relative;z-index:1}
                 <details class="faq-i faq-i--tracker"><summary class="faq-q">É um tracker? · Não</summary><div class="faq-a"><strong>Não.</strong> Cloaker server-side (safe vs offer) — sem tracker nem pixel. <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré" data-intent="garantia">Ativar cloaker −10% — R$359,99</a></div></details>
                 <details class="faq-i faq-i--support"><summary class="faq-q">Suporte? · email + chat</summary><div class="faq-a"><a href="mailto:suporte@theblack.ink"><strong>suporte@theblack.ink</strong></a> · ticket/chat na plataforma · setup inicial gratuito. <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré" data-intent="garantia">Ativar com suporte −10% — R$359,99</a></div></details>
             </div>
-            <button type="button" class="faq-more-toggle" id="faq-more-toggle" aria-expanded="false" aria-controls="faq-more">Dúvidas · OAuth · preço · redes</button>
+            <button type="button" class="faq-more-toggle" id="faq-more-toggle" aria-expanded="false" aria-controls="faq-more">Dúvidas · OAuth · preço · migrar</button>
         </div>
         <div class="faq-outro rv">
             <div class="faq-outro-cta">
@@ -5659,7 +5659,7 @@ if (faqMore && faqMoreToggle) {
     faqMoreToggle.addEventListener('click', () => {
         const open = faqMore.classList.toggle('open');
         faqMoreToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-        faqMoreToggle.textContent = open ? 'Fechar dúvidas' : 'Dúvidas · OAuth · preço · redes';
+        faqMoreToggle.textContent = open ? 'Fechar dúvidas' : 'Dúvidas · OAuth · preço · migrar';
         // c590/c598/c641: ao abrir, OAuth (objeção #1) open + no viewport
         if (open) {
             const first = faqMore.querySelector('.faq-i--oauth') || faqMore.querySelector('.faq-i');
