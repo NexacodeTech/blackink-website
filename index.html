@@ -337,6 +337,7 @@ a.hero-trust-garantia strong{color:var(--green)}
 @keyframes pricingFocusPulse{0%{box-shadow:0 0 0 0 rgba(100,180,255,0.35),0 24px 64px rgba(0,0,0,0.3)}100%{box-shadow:0 0 0 1px rgba(100,180,255,0.2),0 24px 64px rgba(0,0,0,0.3)}}
 @keyframes chipTrustPulse{0%,100%{border-color:rgba(52,211,153,0.25);background:rgba(52,211,153,0.06)}50%{border-color:rgba(52,211,153,0.55);background:rgba(52,211,153,0.12)}}
 @keyframes softGarantiaPulse{0%,100%{box-shadow:0 0 0 1px rgba(52,211,153,0.1)}50%{box-shadow:0 0 0 2px rgba(52,211,153,0.32)}}
+@keyframes idealBadgePulse{0%,100%{background:rgba(100,180,255,0.2);transform:scale(1)}50%{background:rgba(100,180,255,0.4);transform:scale(1.06)}}
 @keyframes heroIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 @keyframes simPulse{0%,100%{opacity:1}50%{opacity:.45}}
 /* Problem punch — denser (ciclo 57) */
@@ -1628,7 +1629,7 @@ main{position:relative;z-index:1}
   #faq .faq-assure-micro{font-size:11px;font-weight:600;letter-spacing:.01em}
   /* c429 LAST: Rec. no period ativo (trimestral óbvio) */
   #pricing .period-btn .period-rec{display:none}
-  #pricing .period-btn.active .period-rec{display:inline;font-size:8px;padding:0 3px;margin-left:2px;border-radius:4px;background:rgba(100,180,255,0.2);color:var(--accent);font-weight:700}
+  #pricing .period-btn.active .period-rec{display:inline-block;font-size:8px;padding:0 3px;margin-left:2px;border-radius:4px;background:rgba(100,180,255,0.2);color:var(--accent);font-weight:700;animation:idealBadgePulse 2s var(--ease) 2}
   /* c430 LAST: FAQ hook Q com perda — tipografia punch */
   #faq #faq-hook-q,#faq .faq-q{font-size:13px;line-height:1.25;font-weight:700}
   /* c431 LAST: soft CTA pode wrap (perda R$XX · Ativar) sem cortar */
@@ -2624,7 +2625,7 @@ main{position:relative;z-index:1}
   .sticky-cta .btn-p{height:44px;font-size:13px;padding:0 16px}
   #faq .faq-assure-micro{font-size:12px;font-weight:600}
   #pricing .period-btn .period-rec{display:none}
-  #pricing .period-btn.active .period-rec{display:inline;font-size:9px;padding:0 4px;margin-left:3px;border-radius:4px;background:rgba(100,180,255,0.2);color:var(--accent);font-weight:700}
+  #pricing .period-btn.active .period-rec{display:inline-block;font-size:9px;padding:0 4px;margin-left:3px;border-radius:4px;background:rgba(100,180,255,0.2);color:var(--accent);font-weight:700;animation:idealBadgePulse 2s var(--ease) 2}
   #faq #faq-hook-q,#faq .faq-q{font-size:14px;line-height:1.3;font-weight:700}
   /* c431–c434 desktop densest */
   .hero-ctas .btn-o.hero-soft-cta{white-space:normal;line-height:1.2;height:auto;min-height:44px;padding:10px 16px}
@@ -2918,7 +2919,7 @@ main{position:relative;z-index:1}
   #comecar #cta-final-lead{display:block;font-size:11px;line-height:1.3;margin:0 auto 6px;max-width:42ch;color:var(--dim)}
   #comecar #cta-final-lead strong{color:var(--white);font-weight:700}
   #pricing .period-btn .period-rec{display:none}
-  #pricing .period-btn.active .period-rec{display:inline;font-size:8px;padding:0 3px;margin-left:2px;border-radius:4px;background:rgba(100,180,255,0.2);color:var(--accent);font-weight:700}
+  #pricing .period-btn.active .period-rec{display:inline-block;font-size:8px;padding:0 3px;margin-left:2px;border-radius:4px;background:rgba(100,180,255,0.2);color:var(--accent);font-weight:700;animation:idealBadgePulse 2s var(--ease) 2}
   #faq #faq-hook-q,#faq .faq-q{font-size:13px;line-height:1.25;font-weight:700}
   #faq .faq-assure-micro{font-size:11px;font-weight:600}
   .sticky-cta .btn-p{height:44px;font-size:12px;padding:0 10px}
@@ -3204,7 +3205,7 @@ main{position:relative;z-index:1}
   #comecar #cta-final-lead{display:block;font-size:11px;line-height:1.3;margin:0 auto 6px;max-width:42ch;color:var(--dim)}
   #comecar #cta-final-lead strong{color:var(--white);font-weight:700}
   #pricing .period-btn .period-rec{display:none}
-  #pricing .period-btn.active .period-rec{display:inline;font-size:8px;padding:0 3px;margin-left:2px;border-radius:4px;background:rgba(100,180,255,0.2);color:var(--accent);font-weight:700}
+  #pricing .period-btn.active .period-rec{display:inline-block;font-size:8px;padding:0 3px;margin-left:2px;border-radius:4px;background:rgba(100,180,255,0.2);color:var(--accent);font-weight:700;animation:idealBadgePulse 2s var(--ease) 2}
   #faq #faq-hook-q,#faq .faq-q{font-size:12px;line-height:1.25;font-weight:700}
   #faq .faq-assure-micro{font-size:11px;font-weight:600}
   .sticky-cta .btn-p{height:44px;font-size:11px;padding:0 8px}
@@ -3485,7 +3486,7 @@ main{position:relative;z-index:1}
   #comecar #cta-final-lead{display:block;font-size:10px;line-height:1.3;margin:0 auto 6px;max-width:100%;color:var(--dim)}
   #comecar #cta-final-lead strong{color:var(--white);font-weight:700}
   #pricing .period-btn .period-rec{display:none}
-  #pricing .period-btn.active .period-rec{display:inline;font-size:7px;padding:0 2px;margin-left:1px;border-radius:3px;background:rgba(100,180,255,0.2);color:var(--accent);font-weight:700}
+  #pricing .period-btn.active .period-rec{display:inline-block;font-size:7px;padding:0 2px;margin-left:1px;border-radius:3px;background:rgba(100,180,255,0.2);color:var(--accent);font-weight:700;animation:idealBadgePulse 2s var(--ease) 2}
   #faq #faq-hook-q,#faq .faq-q{font-size:12px;line-height:1.2;font-weight:700}
   #faq .faq-assure-micro{font-size:10px;font-weight:600}
   .sticky-cta .btn-p{height:44px;font-size:11px;padding:0 8px}
@@ -3590,7 +3591,7 @@ main{position:relative;z-index:1}
 
 @media (prefers-reduced-motion:reduce){
   .rv{opacity:1;transform:none}
-  .bp,.hero-logo,.hero-badge,.hero-title,.hero-sub,.hero-ctas,.hero-trust,.prot-sim-pulse,.prot-sim-feed-live::before,.hero-badge-dot,.hero-scroll-cue,.hero-scroll-cue-chevron,#pricing .pricing-trust-chips li:first-child,.hero-ctas .btn-o.hero-soft-cta{animation:none}
+  .bp,.hero-logo,.hero-badge,.hero-title,.hero-sub,.hero-ctas,.hero-trust,.prot-sim-pulse,.prot-sim-feed-live::before,.hero-badge-dot,.hero-scroll-cue,.hero-scroll-cue-chevron,#pricing .pricing-trust-chips li:first-child,.hero-ctas .btn-o.hero-soft-cta,#pricing .period-btn.active .period-rec{animation:none}
   .pricing-reveal-inner.pricing-focus{animation:none}
 }
 
