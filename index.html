@@ -1121,6 +1121,10 @@ main{position:relative;z-index:1}
   /* Ciclo 319: pricing CTA rail — micro + lead sem gap extra */
   #pricing .pricing-lead{margin:0;line-height:1}
   #pricing .p-micro{margin:0;padding:0}
+  /* Ciclo 320: price wrap mais baixo — H2 leva trim; p-val denso */
+  #pricing .p-price-wrap{min-height:12px}
+  #pricing .p-val{font-size:clamp(14px,4vw,18px);line-height:1}
+  #pricing .pricing-reveal-title{font-size:clamp(9px,2.6vw,12px);line-height:1.1}
 }
 @media (min-width:768px){
   .sticky-cta-text{display:block}
@@ -1583,6 +1587,9 @@ main{position:relative;z-index:1}
   #roi-calc .calc-slider-value{font-size:7px}
   #roi-calc .calc-summary-val{font-size:7px}
   #faq .faq-assure{font-size:6px}
+  /* Ciclo 320 desktop densest pricing */
+  #pricing .p-val{font-size:clamp(11px,1.2vw,14px);line-height:1}
+  #pricing .pricing-reveal-title{font-size:clamp(9px,1.05vw,12px);line-height:1.1}
   #comecar.cta-final{padding:0}
   #comecar .cta-final-title{font-size:clamp(10px,1.2vw,13px)}
   #comecar .pricing-cta{height:20px;font-size:8px}
@@ -1905,7 +1912,7 @@ main{position:relative;z-index:1}
                             <div class="prot-sim-status">
                                 <div class="prot-sim-pulse"></div>
                                 <div class="prot-sim-status-text">
-                                    <span class="prot-sim-status-title">PASS/BLOCK · ao vivo</span>
+                                    <span class="prot-sim-status-title">PASS/BLOCK · ~1 dia = 1 mês</span>
                                     <span class="prot-sim-status-sub">Monitorando em tempo real</span>
                                 </div>
                             </div>
@@ -2026,7 +2033,7 @@ main{position:relative;z-index:1}
             <div class="pricing-reveal-block rv">
                 <div class="pricing-reveal-inner">
                     <div class="t-label">Seu investimento</div>
-                    <h2 class="pricing-reveal-title">R$399,99 · <span class="grad">paga em ~1 dia</span></h2>
+                    <h2 class="pricing-reveal-title">R$399,99 · <span class="grad">~1 dia · trim. −10%</span></h2>
                     <p class="pricing-lead" id="pricing-lead">perda <strong id="pricing-lead-loss">R$ 12.500</strong>/mês · <strong id="pricing-lead-payback">~1 dia</strong> · 7 dias · trim. −10%</p>
                     <div class="period-toggle-label">Como prefere pagar?</div>
                     <div class="period-toggle">
@@ -2083,7 +2090,7 @@ main{position:relative;z-index:1}
         <p class="t-label rv" style="text-align:center;margin-bottom:4px">FAQ</p>
         <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:4px">Dúvidas · <span class="grad">~1 dia · 7 dias</span></h2>
         <div class="faq-list">
-            <details class="faq-i rv rv-d1" open><summary class="faq-q">Se paga em ~1 dia?</summary><div class="faq-a" id="faq-savings-a">Perda ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês · ~<strong id="faq-savings-payback">1 dia</strong> = 1 mês · 7 dias · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar — R$399,99</a></div></details>
+            <details class="faq-i rv rv-d1" open><summary class="faq-q">Se paga em ~1 dia?</summary><div class="faq-a" id="faq-savings-a">Perda ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês · ~<strong id="faq-savings-payback">1 dia</strong> = 1 mês · 7 dias · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta faq-inline-cta--price" data-plan="Maré">Ativar — R$399,99</a></div></details>
             <p class="faq-assure rv rv-d2">7 dias · 100% reembolso · sem fidelidade · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar sem risco</a></p>
             <details class="faq-i faq-i--risk rv rv-d2"><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">7 dias · 100% reembolso · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar sem risco</a></div></details>
             <div class="faq-more" id="faq-more">
@@ -2476,6 +2483,11 @@ const STICKY_BTN = {
     quarterly: 'Ativar — R$359,99',
     yearly: 'Ativar — R$339,99'
 };
+const FAQ_PRICE_CTA = {
+    monthly: 'Ativar — R$399,99',
+    quarterly: 'Ativar — R$359,99',
+    yearly: 'Ativar — R$339,99'
+};
 
 const PERIOD_NUDGE = {
     monthly: '<button type="button" data-pick-period="quarterly">Trimestral −10%</button> · ~R$120 a menos',
@@ -2530,6 +2542,9 @@ function maybeAutoQuarterlyFromLoss() {
 function updatePricingCtaLabel(period) {
     const label = PRICING_CTA_LABELS[period] || PRICING_CTA_LABELS.monthly;
     document.querySelectorAll('.pricing-cta').forEach(btn => { btn.textContent = label; });
+    // FAQ open CTA mirrors period price (ciclo 320) — assure stays "Ativar sem risco"
+    const faqPrice = FAQ_PRICE_CTA[period] || FAQ_PRICE_CTA.monthly;
+    document.querySelectorAll('.faq-inline-cta--price').forEach(a => { a.textContent = faqPrice; });
     // Hero keeps list price R$399,99 for anchoring (ciclo 55) — discount lives in #pricing/sticky
     const heroCta = document.querySelector('.hero-cta');
     if (heroCta) heroCta.textContent = HERO_CTA_LABELS.monthly;
@@ -2552,7 +2567,9 @@ function syncStickyLossCopy(period) {
     const stickyText = document.getElementById('sticky-cta-text');
     const stickyPrice = document.getElementById('sticky-cta-price');
     if (stickyText) {
-        const saveHint = period === 'monthly' ? ' · Trimestral −10%' : ' · 7 dias';
+        const saveHint = period === 'monthly'
+            ? ' · Trimestral −10%'
+            : (period === 'quarterly' ? ' · −10% vs R$399 · 7 dias' : ' · −15% vs R$399 · 7 dias');
         if (lastCalcLossFmt) {
             stickyText.innerHTML = '<strong>' + lastCalcLossFmt + '</strong> → <strong>' + priceShort + '</strong> · Ativar' + saveHint;
         } else {
@@ -2561,7 +2578,7 @@ function syncStickyLossCopy(period) {
     }
     if (stickyPrice) {
         if (lastCalcLossFmt) {
-            stickyPrice.innerHTML = '<strong>' + priceShort + '</strong><br>vs ' + lastCalcLossFmt + (period === 'monthly' ? ' · −10% trim.' : '');
+            stickyPrice.innerHTML = '<strong>' + priceShort + '</strong><br>vs ' + lastCalcLossFmt + (period === 'monthly' ? ' · −10% trim.' : ' · 7 dias');
         } else {
             stickyPrice.innerHTML = '<strong>' + priceShort + '</strong><br>' + (period === 'monthly' ? 'Trimestral −10% · 7 dias' : 'vs R$12.500 · 7 dias');
         }
