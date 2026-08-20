@@ -325,6 +325,11 @@ strong{font-weight:600}
 .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:14px;animation:heroIn .9s var(--ease) .2s both}
 .hero-trust{display:flex;align-items:center;justify-content:center;gap:8px;font-size:12px;color:rgba(240,244,248,0.62);animation:heroIn .9s var(--ease) .25s both}
 .hero-trust-icon{width:14px;height:14px;stroke:var(--green);flex-shrink:0}
+.hero-trust strong{color:var(--white);font-weight:600}
+.btn-o.hero-soft-cta{border-color:rgba(100,180,255,0.35);color:var(--white)}
+.btn-o.hero-soft-cta:hover{border-color:rgba(100,180,255,0.55);background:rgba(100,180,255,0.1)}
+.pricing-reveal-inner.pricing-focus{border-color:rgba(100,180,255,0.45);box-shadow:0 0 0 1px rgba(100,180,255,0.2),0 24px 64px rgba(0,0,0,0.3);transition:border-color .45s var(--ease),box-shadow .45s var(--ease);animation:pricingFocusPulse .9s var(--ease) both}
+@keyframes pricingFocusPulse{0%{box-shadow:0 0 0 0 rgba(100,180,255,0.35),0 24px 64px rgba(0,0,0,0.3)}100%{box-shadow:0 0 0 1px rgba(100,180,255,0.2),0 24px 64px rgba(0,0,0,0.3)}}
 @keyframes heroIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 @keyframes simPulse{0%,100%{opacity:1}50%{opacity:.45}}
 /* Problem punch — denser (ciclo 57) */
@@ -1585,6 +1590,19 @@ main{position:relative;z-index:1}
   /* c434 LAST: sticky vs perda — tipografia mais clara */
   .sticky-cta-price{font-size:11px;line-height:1.25}
   .sticky-cta-price strong{font-size:12px;color:var(--white)}
+  /* c435 LAST: soft CTA borda accent (2º path mais visível) */
+  .hero-ctas .btn-o.hero-soft-cta{border-color:rgba(100,180,255,0.4);box-shadow:0 0 0 1px rgba(100,180,255,0.08)}
+  /* c436 LAST: trust-rail compacto no hero — Garantia · CNPJ · PIX */
+  .trust-rail{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 10px;padding:6px 10px;margin-top:auto;border-top:1px solid var(--border);background:rgba(6,17,31,0.55)}
+  .trust-rail span{display:none;font-size:10px;line-height:1.2;color:var(--dim)}
+  .trust-rail span:nth-child(1),
+  .trust-rail span:nth-child(2),
+  .trust-rail span:nth-child(3){display:inline-flex}
+  /* c437 LAST: hero-trust garantia 100% */
+  .hero-trust{font-size:11px;line-height:1.35;max-width:34ch}
+  .hero-trust strong{color:var(--white)}
+  /* c438 LAST: chip PIX no lugar do −10% duplicado */
+  #pricing .pricing-trust-chips li:nth-child(2){display:inline-flex}
 }
 @media (min-width:768px){
   .sticky-cta-text{display:block}
@@ -2389,6 +2407,15 @@ main{position:relative;z-index:1}
   .hero-ctas .btn-o.hero-soft-cta{white-space:normal;line-height:1.2;height:auto;min-height:44px;padding:10px 16px}
   #pricing .pricing-trust-chips li:first-child{color:var(--white);font-weight:700;border-color:rgba(52,211,153,0.28)}
   #comecar .cta-final-trust span:nth-child(2){color:var(--white);font-weight:600}
+  /* c435–c438 desktop densest */
+  .hero-ctas .btn-o.hero-soft-cta{border-color:rgba(100,180,255,0.4)}
+  .trust-rail{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 14px;padding:8px 16px}
+  .trust-rail span{display:none;font-size:11px}
+  .trust-rail span:nth-child(1),
+  .trust-rail span:nth-child(2),
+  .trust-rail span:nth-child(3){display:inline-flex}
+  .hero-trust{font-size:12px;max-width:48ch}
+  .hero-trust strong{color:var(--white)}
 }
 
 @media (max-width:640px){
@@ -2594,6 +2621,15 @@ main{position:relative;z-index:1}
   .hero-ctas .btn-o.hero-soft-cta{white-space:normal;line-height:1.2;height:auto;min-height:40px;padding:8px 12px;text-align:center}
   #pricing .pricing-trust-chips li:first-child{color:var(--white);font-weight:700;border-color:rgba(52,211,153,0.28)}
   #comecar .cta-final-trust span:nth-child(2){color:var(--white);font-weight:600}
+  /* c435–c438 em ≤600 */
+  .hero-ctas .btn-o.hero-soft-cta{border-color:rgba(100,180,255,0.4)}
+  .trust-rail{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 10px;padding:6px 10px}
+  .trust-rail span{display:none;font-size:10px}
+  .trust-rail span:nth-child(1),
+  .trust-rail span:nth-child(2),
+  .trust-rail span:nth-child(3){display:inline-flex}
+  .hero-trust{font-size:11px;max-width:34ch}
+  .hero-trust strong{color:var(--white)}
 }
 @media (max-width:500px){
   .flow-pillars{grid-template-columns:1fr}
@@ -2789,6 +2825,15 @@ main{position:relative;z-index:1}
   .hero-ctas .btn-o.hero-soft-cta{white-space:normal;line-height:1.2;height:auto;min-height:40px;padding:8px 12px;text-align:center}
   #pricing .pricing-trust-chips li:first-child{color:var(--white);font-weight:700;border-color:rgba(52,211,153,0.28)}
   #comecar .cta-final-trust span:nth-child(2){color:var(--white);font-weight:600}
+  /* c435–c438 em ≤480 */
+  .hero-ctas .btn-o.hero-soft-cta{border-color:rgba(100,180,255,0.4)}
+  .trust-rail{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 8px;padding:6px 8px}
+  .trust-rail span{display:none;font-size:9px}
+  .trust-rail span:nth-child(1),
+  .trust-rail span:nth-child(2),
+  .trust-rail span:nth-child(3){display:inline-flex}
+  .hero-trust{font-size:10px;max-width:32ch}
+  .hero-trust strong{color:var(--white)}
 }
 @media (max-width:390px){
   .hero-logo{width:32px;height:32px}
@@ -2975,10 +3020,20 @@ main{position:relative;z-index:1}
   .hero-ctas .btn-o.hero-soft-cta{white-space:normal;line-height:1.2;height:auto;min-height:40px;padding:8px 10px;text-align:center}
   #pricing .pricing-trust-chips li:first-child{color:var(--white);font-weight:700;border-color:rgba(52,211,153,0.28)}
   #comecar .cta-final-trust span:nth-child(2){color:var(--white);font-weight:600}
+  /* c435–c438 no iPhone */
+  .hero-ctas .btn-o.hero-soft-cta{border-color:rgba(100,180,255,0.4)}
+  .trust-rail{display:flex;flex-wrap:wrap;justify-content:center;gap:3px 6px;padding:5px 6px}
+  .trust-rail span{display:none;font-size:9px}
+  .trust-rail span:nth-child(1),
+  .trust-rail span:nth-child(2),
+  .trust-rail span:nth-child(3){display:inline-flex}
+  .hero-trust{font-size:10px;max-width:30ch}
+  .hero-trust strong{color:var(--white)}
 }
 @media (prefers-reduced-motion:reduce){
   .rv{opacity:1;transform:none}
   .bp,.hero-logo,.hero-badge,.hero-title,.hero-sub,.hero-ctas,.hero-trust,.prot-sim-pulse,.prot-sim-feed-live::before,.hero-badge-dot{animation:none}
+  .pricing-reveal-inner.pricing-focus{animation:none}
 }
 
 </style>
@@ -3045,13 +3100,13 @@ main{position:relative;z-index:1}
     </div>
     <div class="hero-trust">
         <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-        <span>~1 dia = 1 mês · 7 dias · Ativar −10% · Google/Meta/TikTok · sem OAuth</span>
+        <span>~1 dia = 1 mês · <strong>Garantia 7 dias · 100%</strong> · Ativar −10% · Google/Meta/TikTok · sem OAuth</span>
     </div>
     </div>
     <div class="trust-rail" aria-label="Sinais de confiança">
-        <span>Garantia 7 dias</span>
+        <span>Garantia 7 dias · 100%</span>
         <span>Empresa BR · CNPJ ativo</span>
-        <span>Cloaker 100% server-side</span>
+        <span>PIX ou cartão</span>
         <span>Setup ~15 minutos</span>
         <span>Suporte em português</span>
     </div>
@@ -3328,7 +3383,7 @@ main{position:relative;z-index:1}
                     <p class="pricing-networks">Google Ads · YouTube Ads · Facebook Ads · TikTok Ads · sem OAuth</p>
                     <ul class="pricing-trust-chips" aria-label="Garantias">
                         <li>Garantia 7 dias · 100%</li>
-                        <li>Ativar −10%</li>
+                        <li>PIX ou cartão</li>
                         <li>Sem OAuth</li>
                         <li class="pricing-chip-latency">Server-side &lt;50ms</li>
                     </ul>
@@ -3511,6 +3566,14 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
             window.setTimeout(() => {
                 const cta = document.querySelector('#pricing .pricing-cta');
                 if (cta) cta.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                // c439: pulse pricing card after soft path land
+                const reveal = document.querySelector('#pricing .pricing-reveal-inner');
+                if (reveal) {
+                    reveal.classList.remove('pricing-focus');
+                    void reveal.offsetWidth;
+                    reveal.classList.add('pricing-focus');
+                    window.setTimeout(() => reveal.classList.remove('pricing-focus'), 1200);
+                }
             }, 420);
         }
     });
