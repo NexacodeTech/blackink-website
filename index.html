@@ -1650,6 +1650,24 @@ const PERIOD_NUDGE = {
     yearly: 'Máxima economia: ~15% a menos vs mensal · cobrado R$4.079,90 no ano'
 };
 
+let lastCalcLossFmt = null;
+let lastCalcLossValue = 0;
+
+function periodNudgeHtml(period) {
+    period = period || 'monthly';
+    if (period === 'monthly' && lastCalcLossValue > 0) {
+        const vsPlan = Math.max(1, Math.round(lastCalcLossValue / 399.99));
+        return '<button type="button" data-pick-period="quarterly">Escolher trimestral</button> economiza ~R$120 vs mensal — sua perda estimada é <strong>' + lastCalcLossFmt + '</strong>/mês (~' + vsPlan + '× o cloaker)';
+    }
+    if (period === 'quarterly' && lastCalcLossFmt) {
+        return 'Boa escolha: ~10% a menos vs mensal · sua perda estimada continua ~<strong>' + lastCalcLossFmt + '</strong>/mês sem cloaker';
+    }
+    if (period === 'yearly' && lastCalcLossFmt) {
+        return 'Máxima economia: ~15% a menos vs mensal · vs ~<strong>' + lastCalcLossFmt + '</strong>/mês de cliques inválidos estimados';
+    }
+    return PERIOD_NUDGE[period] || PERIOD_NUDGE.monthly;
+}
+
 function updatePricingCtaLabel(period) {
     const label = PRICING_CTA_LABELS[period] || PRICING_CTA_LABELS.monthly;
     document.querySelectorAll('.pricing-cta').forEach(btn => { btn.textContent = label; });
@@ -1658,12 +1676,11 @@ function updatePricingCtaLabel(period) {
     const stickyBtn = document.getElementById('sticky-cta-btn');
     if (stickyBtn) stickyBtn.textContent = STICKY_BTN[period] || STICKY_BTN.monthly;
     const nudge = document.getElementById('period-nudge');
-    if (nudge) nudge.innerHTML = PERIOD_NUDGE[period] || PERIOD_NUDGE.monthly;
+    if (nudge) nudge.innerHTML = periodNudgeHtml(period);
     syncStickyLossCopy(period);
 }
 
 // Sticky mirrors ROI loss (ciclo 33) so the bar restates quantified waste + price
-let lastCalcLossFmt = null;
 function syncStickyLossCopy(period) {
     period = period || document.querySelector('.period-btn.active')?.dataset.period || 'monthly';
     const price = STICKY_PRICE[period] || STICKY_PRICE.monthly;
@@ -1896,7 +1913,12 @@ if (calcSlider && calcDisplay && calcInvisible && calcFraud && calcHours && calc
         }
         // Sticky mirrors loss (ciclo 33)
         lastCalcLossFmt = fmt(total);
+        lastCalcLossValue = total;
         syncStickyLossCopy();
+        // Period nudge ties savings to loss (ciclo 41)
+        const activePeriod = document.querySelector('.period-btn.active')?.dataset.period || 'monthly';
+        const nudge = document.getElementById('period-nudge');
+        if (nudge) nudge.innerHTML = periodNudgeHtml(activePeriod);
         // Final CTA mirrors loss (ciclo 35)
         if (ctaFinalLoss) ctaFinalLoss.textContent = fmt(total);
         // FAQ savings mirrors loss (ciclo 37)

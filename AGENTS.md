@@ -157,7 +157,7 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 
 ## 2026-08-20 — Nudge trimestral clicável + FAQ CTA hard
 **Contexto**: economia do trimestral era texto passivo; FAQ outro só tinha link textual.
-**Regra**: nudge mensal inclui botão “Escolher trimestral”; FAQ outro tem CTA hard + atalho trimestral.
+**Regra**: nudge mensal inclui botão “Escolher trimestral” e cita perda estimada do ROI (~Nx o cloaker); FAQ outro tem CTA hard + atalho trimestral.
 **Status**: ativo
 
 ## 2026-08-20 — Funil prova → ROI → preço
