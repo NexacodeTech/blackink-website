@@ -493,34 +493,34 @@ strong{font-weight:600}
 .arch-card h3{font-family:var(--ff-display);font-size:16px;font-weight:700}
 .arch-card p{font-size:12px;color:var(--dim);line-height:1.45;margin:0}
 .arch-cta{margin-top:22px}
-/* ROI calc compact */
-.calc-wrap{max-width:720px;margin:0 auto}
-.calc-card{padding:clamp(24px,3vw,36px);border-radius:20px;border:1px solid var(--border);background:linear-gradient(180deg,rgba(10,22,40,0.75),rgba(6,14,28,0.9))}
-.calc-slider-header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:14px;flex-wrap:wrap}
-.calc-slider-label{font-size:13px;color:var(--muted);font-weight:500}
-.calc-slider-value{font-family:var(--ff-display);font-size:28px;font-weight:700}
+/* ROI calc compact (ciclo 44) */
+.calc-wrap{max-width:680px;margin:0 auto}
+.calc-card{padding:clamp(18px,2.5vw,28px);border-radius:18px;border:1px solid var(--border);background:linear-gradient(180deg,rgba(10,22,40,0.75),rgba(6,14,28,0.9))}
+.calc-slider-header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px;flex-wrap:wrap}
+.calc-slider-label{font-size:12px;color:var(--muted);font-weight:500}
+.calc-slider-value{font-family:var(--ff-display);font-size:24px;font-weight:700}
 .calc-slider{width:100%;-webkit-appearance:none;appearance:none;height:6px;border-radius:100px;background:linear-gradient(90deg,var(--accent) var(--fill,2%),rgba(255,255,255,0.08) var(--fill,2%));outline:none;cursor:pointer}
-.calc-slider::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--white);border:3px solid var(--accent);box-shadow:0 2px 12px rgba(100,180,255,0.4);cursor:pointer}
-.calc-slider::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--white);border:3px solid var(--accent);cursor:pointer}
-.calc-slider-ticks{display:flex;justify-content:space-between;margin-top:8px;font-size:11px;color:var(--muted)}
-.calc-caveat{font-size:12px;color:var(--muted);margin-top:10px;line-height:1.5}
-.calc-divider{height:1px;background:var(--border);margin:24px 0}
-.calc-losses{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
-.calc-loss{text-align:center;padding:16px 8px;border-radius:12px;border:1px solid var(--border);background:rgba(2,10,20,0.4)}
-.calc-loss-val{font-family:var(--ff-display);font-size:20px;font-weight:700;margin:8px 0 4px}
-.calc-loss-lbl{font-size:11px;color:var(--muted);line-height:1.4}
-.calc-summary{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
-.calc-summary-card{padding:18px;border-radius:14px;border:1px solid var(--border);background:rgba(2,10,20,0.35)}
+.calc-slider::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--white);border:3px solid var(--accent);box-shadow:0 2px 12px rgba(100,180,255,0.4);cursor:pointer}
+.calc-slider::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--white);border:3px solid var(--accent);cursor:pointer}
+.calc-slider-ticks{display:flex;justify-content:space-between;margin-top:6px;font-size:10px;color:var(--muted)}
+.calc-caveat{font-size:11px;color:var(--muted);margin-top:8px;line-height:1.45}
+.calc-divider{height:1px;background:var(--border);margin:14px 0}
+.calc-losses{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.calc-loss{text-align:center;padding:12px 8px;border-radius:12px;border:1px solid var(--border);background:rgba(2,10,20,0.4)}
+.calc-loss-val{font-family:var(--ff-display);font-size:18px;font-weight:700;margin:4px 0 2px}
+.calc-loss-lbl{font-size:11px;color:var(--muted);line-height:1.35}
+.calc-summary{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.calc-summary-card{padding:14px;border-radius:12px;border:1px solid var(--border);background:rgba(2,10,20,0.35)}
 .calc-summary-card--roi{border-color:rgba(52,211,153,0.15)}
-.calc-summary-tag{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
-.calc-summary-val{font-family:var(--ff-display);font-size:28px;font-weight:700}
-.calc-summary-lbl{font-size:12px;color:var(--muted);margin:4px 0 10px}
+.calc-summary-tag{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.calc-summary-val{font-family:var(--ff-display);font-size:24px;font-weight:700}
+.calc-summary-lbl{font-size:11px;color:var(--muted);margin:2px 0 8px}
 .calc-summary-bar{height:3px;border-radius:2px;background:linear-gradient(90deg,#ef4444,#f87171);width:2%;transition:width .5s var(--ease)}
 .calc-summary-card--roi .calc-summary-bar{background:linear-gradient(90deg,#34d399,#10b981)}
-.calc-cta{margin-top:24px;text-align:center}
-.calc-cta-text{font-size:14px;color:var(--dim);margin-bottom:16px;line-height:1.6}
+.calc-cta{margin-top:16px;text-align:center}
+.calc-cta-text{font-size:13px;color:var(--dim);margin-bottom:12px;line-height:1.5}
 .calc-cta-text strong{color:var(--white)}
-.calc-cta-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center}
+.calc-cta-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:center}
 /* Pricing — compact buy block (ciclo 43) */
 .pricing-narrative{max-width:800px;margin:0 auto}
 .pricing-act{margin-bottom:clamp(20px,3vw,32px);text-align:center}
@@ -571,27 +571,27 @@ strong{font-weight:600}
 .pricing-guarantee svg{width:22px;height:22px;stroke:var(--green);fill:none;stroke-width:1.6;flex-shrink:0}
 .pricing-guarantee strong{display:block;font-size:13px;margin-bottom:2px;color:var(--white)}
 .pricing-guarantee p{font-size:12px;color:var(--dim);line-height:1.45;margin:0}
-/* FAQ */
-.faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
-.faq-more{display:none;flex-direction:column;gap:10px;margin-top:10px}
+/* FAQ — compact (ciclo 45) */
+.faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
+.faq-more{display:none;flex-direction:column;gap:8px;margin-top:8px}
 .faq-more.open{display:flex}
-.faq-more-toggle{display:block;margin:16px auto 0;background:transparent;border:1px solid var(--border);color:var(--dim);font-family:var(--ff-body);font-size:14px;font-weight:500;padding:12px 20px;border-radius:12px;cursor:pointer;min-height:44px;transition:color .3s var(--ease),border-color .3s var(--ease),background .3s var(--ease)}
+.faq-more-toggle{display:block;margin:12px auto 0;background:transparent;border:1px solid var(--border);color:var(--dim);font-family:var(--ff-body);font-size:13px;font-weight:500;padding:10px 18px;border-radius:12px;cursor:pointer;min-height:44px;transition:color .3s var(--ease),border-color .3s var(--ease),background .3s var(--ease)}
 .faq-more-toggle:hover{color:var(--white);border-color:rgba(100,180,255,0.28);background:rgba(100,180,255,0.06)}
 .faq-more-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.faq-outro{max-width:720px;margin:28px auto 0;text-align:center;padding:22px 18px;border-radius:14px;border:1px solid var(--border);background:rgba(6,17,31,0.45)}
-.faq-outro p{font-size:14px;color:var(--dim);line-height:1.55;margin:0 0 14px}
+.faq-outro{max-width:720px;margin:20px auto 0;text-align:center;padding:16px 14px;border-radius:12px;border:1px solid var(--border);background:rgba(6,17,31,0.45)}
+.faq-outro p{font-size:13px;color:var(--dim);line-height:1.5;margin:0 0 12px}
 .faq-outro a{color:var(--accent);font-weight:500;transition:color .3s var(--ease)}
 .faq-outro a:hover{color:var(--white)}
 .faq-outro-cta{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:center}
-.faq-i{border:1px solid var(--border);border-radius:14px;background:rgba(6,17,31,0.5);overflow:hidden}
-.faq-q{padding:18px 20px;font-size:15px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq-i{border:1px solid var(--border);border-radius:12px;background:rgba(6,17,31,0.5);overflow:hidden}
+.faq-q{padding:14px 16px;font-size:14px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
 .faq-q::-webkit-details-marker{display:none}
 .faq-q::after{content:'+';color:var(--accent);font-size:18px;font-weight:400;transition:transform .3s var(--ease)}
 .faq-i[open] .faq-q::after{transform:rotate(45deg)}
-.faq-a{padding:0 20px 18px;font-size:14px;color:var(--dim);line-height:1.7}
+.faq-a{padding:0 16px 14px;font-size:13px;color:var(--dim);line-height:1.6}
 .faq-a a{color:var(--accent);text-decoration:underline}
 /* CTA final */
-.cta-final{text-align:center;position:relative;overflow:hidden;padding:clamp(72px,12vh,120px) 0}
+.cta-final{text-align:center;position:relative;overflow:hidden;padding:clamp(48px,8vh,88px) 0}
 .cta-final-trust{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 18px;margin-top:4px;max-width:520px}
 .cta-final-trust span{font-size:12px;color:rgba(240,244,248,0.62);display:inline-flex;align-items:center;gap:6px}
 .cta-final-trust span::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--green);opacity:.85;flex-shrink:0}
@@ -1048,8 +1048,8 @@ main{position:relative;z-index:1}
 <section class="section section--compact" id="roi-calc">
     <div class="container">
         <p class="t-label rv" style="text-align:center">Calculadora</p>
-        <h2 class="t-lg rv rv-d1" style="text-align:center;margin:12px auto 16px;max-width:600px">Quanto do budget <span class="grad">some em cliques inválidos</span></h2>
-        <p class="t-body-lg rv rv-d2" style="text-align:center;margin:0 auto clamp(28px,4vw,40px);max-width:500px">Ajuste o investimento mensal. Estimativa de mercado — seu caso pode variar.</p>
+        <h2 class="t-lg rv rv-d1" style="text-align:center;margin:8px auto 10px;max-width:560px">Quanto do budget <span class="grad">some em cliques inválidos</span></h2>
+        <p class="t-body-lg rv rv-d2" style="text-align:center;margin:0 auto 16px;max-width:440px;font-size:clamp(14px,1.5vw,16px)">Ajuste o investimento mensal — estimativa de mercado</p>
         <div class="calc-wrap rv rv-d3">
             <div class="calc-card">
                 <div class="calc-slider-wrap">
@@ -1061,21 +1061,17 @@ main{position:relative;z-index:1}
                     <div class="calc-slider-ticks" aria-hidden="true">
                         <span>R$ 1k</span><span>R$ 50k</span><span>R$ 100k</span><span>R$ 250k</span><span>R$ 500k</span>
                     </div>
-                    <p class="calc-caveat">Estimativa setorial ~22% de tráfego inválido + ~3% revisores/crawlers. Não é garantia de resultado — use como ordem de grandeza.</p>
+                    <p class="calc-caveat">~22% inválidos + ~3% revisores/crawlers — ordem de grandeza, não garantia</p>
                 </div>
                 <div class="calc-divider"></div>
                 <div class="calc-losses">
                     <div class="calc-loss">
                         <div class="calc-loss-val" style="color:#ef4444" id="calc-invisible">R$ 0</div>
-                        <div class="calc-loss-lbl">Revisores &amp; crawlers<br>(~3%)</div>
+                        <div class="calc-loss-lbl">Revisores &amp; crawlers (~3%)</div>
                     </div>
                     <div class="calc-loss">
                         <div class="calc-loss-val" style="color:var(--gold)" id="calc-fraud">R$ 0</div>
-                        <div class="calc-loss-lbl">Bots &amp; fraude<br>(~22%)</div>
-                    </div>
-                    <div class="calc-loss">
-                        <div class="calc-loss-val" style="color:var(--accent)" id="calc-hours">0h</div>
-                        <div class="calc-loss-lbl">Horas potencial<br>/ mês</div>
+                        <div class="calc-loss-lbl">Bots &amp; fraude (~22%)</div>
                     </div>
                 </div>
                 <div class="calc-summary">
@@ -1096,7 +1092,7 @@ main{position:relative;z-index:1}
                     <p class="calc-cta-text" id="calc-cta-msg">Mova o slider — veja quanto do budget some antes da venda.</p>
                     <div class="calc-cta-actions">
                         <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
-                        <a href="#pricing" class="btn btn-o">Ver periodicidade e garantia</a>
+                        <a href="#pricing" class="btn btn-o">Ver periodicidade</a>
                     </div>
                 </div>
             </div>
@@ -1245,10 +1241,10 @@ main{position:relative;z-index:1}
 <div class="sep"></div>
 
 <!-- 9. FAQ -->
-<section class="section" id="faq" aria-label="Perguntas Frequentes">
+<section class="section section--compact" id="faq" aria-label="Perguntas Frequentes">
     <div class="container">
-        <p class="t-label rv" style="text-align:center;margin-bottom:16px">FAQ</p>
-        <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:40px">Perguntas <span class="grad">frequentes</span></h2>
+        <p class="t-label rv" style="text-align:center;margin-bottom:8px">FAQ</p>
+        <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:20px">Perguntas <span class="grad">frequentes</span></h2>
         <div class="faq-list">
             <details class="faq-i rv" open><summary class="faq-q">Quanto custa e como funciona o pagamento?</summary><div class="faq-a">Produto único a R$ 399,99/mês. Trimestral com ~10% de desconto (R$ 359,99/mês equivalente) e anual com ~15% (R$ 339,99/mês equivalente). PIX ou cartão. Sem contrato de fidelidade — cancele quando quiser.</div></details>
             <details class="faq-i rv rv-d1"><summary class="faq-q">O BlackInk se paga? Quanto posso economizar?</summary><div class="faq-a" id="faq-savings-a">Com o budget simulado na <a href="#roi-calc">calculadora</a>, a perda estimada é cerca de <strong id="faq-savings-loss">R$ 12.500</strong>/mês (~25% inválidos+revisores). Cloaker a R$ 399,99 — estimativa, não garantia. Ajuste o slider para o seu caso.</div></details>
@@ -1280,9 +1276,9 @@ main{position:relative;z-index:1}
 <section class="section cta-final" id="comecar">
     <div class="cta-orb" aria-hidden="true"></div>
     <div class="container" style="position:relative;z-index:1">
-        <p class="t-label rv" style="text-align:center;margin-bottom:16px">Pronto</p>
+        <p class="t-label rv" style="text-align:center;margin-bottom:10px">Pronto</p>
         <h2 class="t-lg rv rv-d1" style="text-align:center">Ative o cloaker<br><span class="grad">Controle quem vê o quê</span></h2>
-        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:520px;margin:16px auto 28px" id="cta-final-lead">Pare de financiar até <strong id="cta-final-loss">R$ 12.500</strong>/mês em cliques inválidos — safe page para revisores, offer page para compradores. Setup em 15 minutos</p>
+        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:480px;margin:12px auto 20px;font-size:clamp(14px,1.5vw,16px)" id="cta-final-lead">Pare de financiar até <strong id="cta-final-loss">R$ 12.500</strong>/mês em cliques inválidos — setup em 15 minutos</p>
         <div class="rv rv-d3" style="display:flex;flex-direction:column;align-items:center;gap:14px">
             <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
             <div class="cta-final-trust">
@@ -1850,7 +1846,7 @@ const pricingBridgePayback = document.getElementById('pricing-bridge-payback');
 const ctaFinalLoss = document.getElementById('cta-final-loss');
 const faqSavingsLoss = document.getElementById('faq-savings-loss');
 
-if (calcSlider && calcDisplay && calcInvisible && calcFraud && calcHours && calcTotal && calcRoi) {
+if (calcSlider && calcDisplay && calcInvisible && calcFraud && calcTotal && calcRoi) {
     const fmt = v => 'R$ ' + Math.round(v).toLocaleString('pt-BR');
     const animNum = (el, target, prefix, suffix) => {
         if (!el) return;
@@ -1895,7 +1891,7 @@ if (calcSlider && calcDisplay && calcInvisible && calcFraud && calcHours && calc
         animNum(calcInvisible, reviewers, 'R$ ', '');
         animNum(calcFraud, fraud, 'R$ ', '');
         animNum(calcTotal, total, 'R$ ', '');
-        animNum(calcHours, hours, '', 'h');
+        if (calcHours) animNum(calcHours, hours, '', 'h');
         calcRoi.textContent = roi.toFixed(1) + 'x';
         const maxTotal = 500000 * 0.25;
         if (calcTotalBar) calcTotalBar.style.width = Math.max((total / maxTotal) * 100, 2) + '%';

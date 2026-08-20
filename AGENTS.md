@@ -189,3 +189,7 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Regra**: `blackink_calc_budget` em sessionStorage + localStorage; landing restaura o slider; cadastro lê URL/`session`/`local`.
 **Status**: ativo
 
+## 2026-08-20 — ROI/FAQ/CTA densos
+**Contexto**: `#roi-calc` (~1kpx) e `#faq` atrasavam o fechamento após o preço.
+**Regra**: calc em 2 métricas (sem “horas”); FAQ `section--compact` com padding menor; CTA final mais curto — mantém loss live.
+**Status**: ativo
