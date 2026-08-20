@@ -1344,6 +1344,37 @@ main{position:relative;z-index:1}
   #faq .faq-a{font-size:4px;line-height:1;padding:0 1px}
   #faq .faq-q{font-size:4.5px;padding:0 1px;line-height:1}
   #faq .faq-assure{font-size:4px;line-height:1;margin:0}
+  /* c368 LAST: problema/como H2 some — cards/steps + resolve bastam */
+  #problema .t-lg{display:none}
+  #como-funciona .t-lg{display:none}
+  #problema .problem-resolve{font-size:4.5px;line-height:1;margin:0}
+  #problema .problem-stat{font-size:5px}
+  #problema .problem-title{font-size:4px}
+  #como-funciona .setup-step h3{font-size:4.5px;line-height:1}
+  #como-funciona .setup-num{font-size:3.5px}
+  /* c369 LAST: ROI slider header some — track+CTA; lead/sticky levam perda */
+  #roi-calc .calc-slider-header{display:none}
+  #roi-calc .calc-slider-wrap{gap:0;margin:0;padding:0}
+  /* c370 LAST: pricing lead chrome — 1 linha; CTA −10% já leva preço */
+  #pricing .pricing-lead{font-size:4px;line-height:1;margin:0}
+  #comecar .cta-final-title{font-size:clamp(7px,2vw,10px);line-height:1;margin:0}
+  /* c371 LAST: cloaker chrome 0 — só CTA Ativar −10% */
+  #cloaker.section--compact{padding:0}
+  #cloaker .showcase,#cloaker .showcase-text,#cloaker .showcase-cta{margin:0;padding:0;gap:0;line-height:1}
+  /* c372 LAST: pricing lead some — perda já em FAQ/sticky */
+  #pricing .pricing-lead{display:none}
+  /* c373 LAST: FAQ answer some — Q + assure Ativar −10% bastam */
+  #faq .faq-a{display:none}
+  #faq .faq-i{margin:0;padding:0;line-height:1}
+  #faq .faq-q{font-size:5px;padding:0 2px;line-height:1.05}
+  #faq .faq-assure{font-size:4.5px;line-height:1.05;margin:0}
+  /* c374 LAST: comecar title some — CTA Ativar −10% basta */
+  #comecar .cta-final-title{display:none}
+  #comecar .pricing-cta{height:12px;font-size:6px;margin:0}
+  /* c375 LAST: redes densest — chips only, zero padding */
+  #redes{padding:0;margin:0;line-height:1}
+  #redes .networks-grid{gap:0;margin:0;line-height:1}
+  #redes .network-chip{padding:0 1px;font-size:4px;line-height:1;min-height:0}
 }
 @media (min-width:768px){
   .sticky-cta-text{display:block}
@@ -1966,6 +1997,37 @@ main{position:relative;z-index:1}
   #faq .faq-a{font-size:4px;line-height:1;padding:0 1px}
   #faq .faq-q{font-size:4.5px;padding:0 1px;line-height:1}
   #faq .faq-assure{font-size:4px;line-height:1;margin:0}
+  /* c368 desktop densest — problema/como H2 some */
+  #problema .t-lg{display:none}
+  #como-funciona .t-lg{display:none}
+  #problema .problem-resolve{font-size:4.5px;line-height:1;margin:0}
+  #problema .problem-stat{font-size:5px}
+  #problema .problem-title{font-size:4px}
+  #como-funciona .setup-step h3{font-size:5px;line-height:1}
+  #como-funciona .setup-num{font-size:4px}
+  /* c369 desktop densest — ROI slider header some */
+  #roi-calc .calc-slider-header{display:none}
+  #roi-calc .calc-slider-wrap{gap:0;margin:0;padding:0}
+  /* c370 desktop densest — pricing lead chrome */
+  #pricing .pricing-lead{font-size:4px;line-height:1;margin:0}
+  #comecar .cta-final-title{font-size:clamp(7px,0.9vw,10px);line-height:1;margin:0}
+  /* c371 desktop densest — cloaker chrome 0 */
+  #cloaker.section--compact{padding:0}
+  #cloaker .showcase,#cloaker .showcase-text,#cloaker .showcase-cta{margin:0;padding:0;gap:0;line-height:1}
+  /* c372 desktop densest — pricing lead some */
+  #pricing .pricing-lead{display:none}
+  /* c373 desktop densest — FAQ answer some */
+  #faq .faq-a{display:none}
+  #faq .faq-i{margin:0;padding:0;line-height:1}
+  #faq .faq-q{font-size:5px;padding:0 2px;line-height:1.05}
+  #faq .faq-assure{font-size:4.5px;line-height:1.05;margin:0}
+  /* c374 desktop densest — comecar title some */
+  #comecar .cta-final-title{display:none}
+  #comecar .pricing-cta{height:12px;font-size:6px;margin:0}
+  /* c375 desktop densest — redes chrome */
+  #redes{padding:0;margin:0;line-height:1}
+  #redes .networks-grid{gap:0;margin:0}
+  #redes .network-chip{padding:0 1px;font-size:4.5px;line-height:1}
 }
 @media (max-width:640px){
   .networks-grid{grid-template-columns:1fr 1fr}
@@ -2049,6 +2111,17 @@ main{position:relative;z-index:1}
   #comecar .pricing-cta{height:12px;font-size:6px;margin:0}
   #faq .faq-more-toggle{display:none}
   #faq .t-lg{display:none}
+  /* c368–c370: preservar densest em ≤600 */
+  #problema .t-lg{display:none}
+  #como-funciona .t-lg{display:none}
+  #roi-calc .calc-slider-header{display:none}
+  #pricing .pricing-lead{display:none}
+  /* c371–c373: preservar densest em ≤600 */
+  #cloaker.section--compact{padding:0}
+  #faq .faq-a{display:none}
+  /* c374–c375: preservar densest em ≤600 */
+  #comecar .cta-final-title{display:none}
+  #comecar .pricing-cta{height:12px;font-size:6px;margin:0}
 }
 @media (max-width:500px){
   .flow-pillars{grid-template-columns:1fr}
@@ -2123,6 +2196,17 @@ main{position:relative;z-index:1}
   #comecar .pricing-cta{height:12px;font-size:6px;margin:0}
   #faq .faq-more-toggle{display:none}
   #faq .t-lg{display:none}
+  /* c368–c370: preservar densest em ≤480 */
+  #problema .t-lg{display:none}
+  #como-funciona .t-lg{display:none}
+  #roi-calc .calc-slider-header{display:none}
+  #pricing .pricing-lead{display:none}
+  /* c371–c373: preservar densest em ≤480 */
+  #cloaker.section--compact{padding:0}
+  #faq .faq-a{display:none}
+  /* c374–c375: preservar densest em ≤480 */
+  #comecar .cta-final-title{display:none}
+  #comecar .pricing-cta{height:12px;font-size:6px;margin:0}
 }
 @media (max-width:390px){
   .hero-logo{width:32px;height:32px}
@@ -2186,6 +2270,17 @@ main{position:relative;z-index:1}
   #comecar .pricing-cta{height:12px;font-size:6px;margin:0}
   #faq .faq-more-toggle{display:none}
   #faq .t-lg{display:none}
+  /* c368–c370: preservar densest no iPhone */
+  #problema .t-lg{display:none}
+  #como-funciona .t-lg{display:none}
+  #roi-calc .calc-slider-header{display:none}
+  #pricing .pricing-lead{display:none}
+  /* c371–c373: preservar densest no iPhone */
+  #cloaker.section--compact{padding:0}
+  #faq .faq-a{display:none}
+  /* c374–c375: preservar densest no iPhone */
+  #comecar .cta-final-title{display:none}
+  #comecar .pricing-cta{height:12px;font-size:6px;margin:0}
   #como-funciona .mid-cta .btn{height:18px;font-size:7px}
   #problema .mid-cta .btn{height:18px;font-size:7px}
 }
@@ -2577,8 +2672,8 @@ main{position:relative;z-index:1}
         <p class="t-label rv" style="text-align:center;margin-bottom:4px">FAQ</p>
         <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:4px">Dúvidas · <span class="grad">~1 dia · Ativar −10%</span></h2>
         <div class="faq-list">
-            <details class="faq-i rv rv-d1" open><summary class="faq-q">Paga em ~1 dia?</summary><div class="faq-a" id="faq-savings-a">Perda ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês · ~<strong id="faq-savings-payback">1 dia</strong> = 1 mês · 7 dias · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta faq-inline-cta--price" data-plan="Maré">Ativar — R$399,99</a></div></details>
-            <p class="faq-assure rv rv-d2">7 dias · 100% · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar −10% sem risco</a></p>
+            <details class="faq-i rv rv-d1" open><summary class="faq-q">Paga em ~1 dia? · Ativar −10%</summary><div class="faq-a" id="faq-savings-a">Perda ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês · ~<strong id="faq-savings-payback">1 dia</strong> = 1 mês · 7 dias · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta faq-inline-cta--price" data-plan="Maré">Ativar — R$399,99</a></div></details>
+            <p class="faq-assure rv rv-d2">7 dias · 100% · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta faq-inline-cta--price" data-plan="Maré">Ativar −10% — R$359,99</a></p>
             <details class="faq-i faq-i--risk rv rv-d2"><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">7 dias · 100% reembolso · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar −10% sem risco</a></div></details>
             <div class="faq-more" id="faq-more">
                 <details class="faq-i"><summary class="faq-q">Quanto custa?</summary><div class="faq-a">R$ 399,99/mês · Ativar −10% trimestral · anual −15% · PIX/cartão · sem fidelidade.</div></details>
