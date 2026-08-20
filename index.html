@@ -1564,6 +1564,18 @@ main{position:relative;z-index:1}
   #redes .network-chip strong{font-size:11px}
   /* c425 LAST: micro cobrança logo sob CTA (HTML: antes dos chips) */
   #pricing .p-micro{margin:2px 0 4px}
+  /* c426 LAST: comecar lead perda visível — fecha funil com número */
+  #comecar #cta-final-lead{display:block;font-size:11px;line-height:1.3;margin:0 auto 6px;max-width:42ch;color:var(--dim)}
+  #comecar #cta-final-lead strong{color:var(--white);font-weight:700}
+  /* c427 LAST: sticky CTA label completo (paridade pricing) */
+  .sticky-cta .btn-p{height:44px;font-size:12px;padding:0 12px;white-space:nowrap}
+  /* c428 LAST: FAQ assure micro = garantia explícita */
+  #faq .faq-assure-micro{font-size:11px;font-weight:600;letter-spacing:.01em}
+  /* c429 LAST: Rec. no period ativo (trimestral óbvio) */
+  #pricing .period-btn .period-rec{display:none}
+  #pricing .period-btn.active .period-rec{display:inline;font-size:8px;padding:0 3px;margin-left:2px;border-radius:4px;background:rgba(100,180,255,0.2);color:var(--accent);font-weight:700}
+  /* c430 LAST: FAQ hook Q com perda — tipografia punch */
+  #faq #faq-hook-q,#faq .faq-q{font-size:13px;line-height:1.25;font-weight:700}
 }
 @media (min-width:768px){
   .sticky-cta-text{display:block}
@@ -2356,6 +2368,14 @@ main{position:relative;z-index:1}
   #pricing .p-micro strong{color:var(--white);font-weight:700}
   #redes .network-chip{padding:5px 11px;font-size:12px}
   #faq .faq-q{margin:0 0 2px;padding:2px 0}
+  /* c426–c430 desktop densest */
+  #comecar #cta-final-lead{display:block;font-size:12px;line-height:1.35;margin:0 auto 8px;max-width:48ch;color:var(--dim)}
+  #comecar #cta-final-lead strong{color:var(--white);font-weight:700}
+  .sticky-cta .btn-p{height:44px;font-size:13px;padding:0 16px}
+  #faq .faq-assure-micro{font-size:12px;font-weight:600}
+  #pricing .period-btn .period-rec{display:none}
+  #pricing .period-btn.active .period-rec{display:inline;font-size:9px;padding:0 4px;margin-left:3px;border-radius:4px;background:rgba(100,180,255,0.2);color:var(--accent);font-weight:700}
+  #faq #faq-hook-q,#faq .faq-q{font-size:14px;line-height:1.3;font-weight:700}
 }
 
 @media (max-width:640px){
@@ -2549,6 +2569,14 @@ main{position:relative;z-index:1}
   #pricing .p-micro{display:block;font-size:11px;line-height:1.3;margin:4px 0 0;text-align:center;color:var(--dim)}
   #pricing .p-micro strong{color:var(--white);font-weight:700}
   #redes .network-chip{padding:4px 9px;font-size:11px}
+  /* c426–c430 em ≤600 */
+  #comecar #cta-final-lead{display:block;font-size:11px;line-height:1.3;margin:0 auto 6px;max-width:42ch;color:var(--dim)}
+  #comecar #cta-final-lead strong{color:var(--white);font-weight:700}
+  #pricing .period-btn .period-rec{display:none}
+  #pricing .period-btn.active .period-rec{display:inline;font-size:8px;padding:0 3px;margin-left:2px;border-radius:4px;background:rgba(100,180,255,0.2);color:var(--accent);font-weight:700}
+  #faq #faq-hook-q,#faq .faq-q{font-size:13px;line-height:1.25;font-weight:700}
+  #faq .faq-assure-micro{font-size:11px;font-weight:600}
+  .sticky-cta .btn-p{height:44px;font-size:12px;padding:0 10px}
 }
 @media (max-width:500px){
   .flow-pillars{grid-template-columns:1fr}
@@ -2732,6 +2760,14 @@ main{position:relative;z-index:1}
   #pricing .p-micro{display:block;font-size:11px;line-height:1.3;margin:4px 0 0;text-align:center;color:var(--dim)}
   #pricing .p-micro strong{color:var(--white);font-weight:700}
   #redes .network-chip{padding:4px 9px;font-size:11px}
+  /* c426–c430 em ≤480 */
+  #comecar #cta-final-lead{display:block;font-size:11px;line-height:1.3;margin:0 auto 6px;max-width:42ch;color:var(--dim)}
+  #comecar #cta-final-lead strong{color:var(--white);font-weight:700}
+  #pricing .period-btn .period-rec{display:none}
+  #pricing .period-btn.active .period-rec{display:inline;font-size:8px;padding:0 3px;margin-left:2px;border-radius:4px;background:rgba(100,180,255,0.2);color:var(--accent);font-weight:700}
+  #faq #faq-hook-q,#faq .faq-q{font-size:12px;line-height:1.25;font-weight:700}
+  #faq .faq-assure-micro{font-size:11px;font-weight:600}
+  .sticky-cta .btn-p{height:44px;font-size:11px;padding:0 8px}
 }
 @media (max-width:390px){
   .hero-logo{width:32px;height:32px}
@@ -2906,6 +2942,14 @@ main{position:relative;z-index:1}
   #pricing .p-micro{display:block;font-size:10px;line-height:1.3;margin:4px 0 0;text-align:center;color:var(--dim)}
   #pricing .p-micro strong{color:var(--white);font-weight:700}
   #redes .network-chip{padding:4px 8px;font-size:10px}
+  /* c426–c430 no iPhone */
+  #comecar #cta-final-lead{display:block;font-size:10px;line-height:1.3;margin:0 auto 6px;max-width:100%;color:var(--dim)}
+  #comecar #cta-final-lead strong{color:var(--white);font-weight:700}
+  #pricing .period-btn .period-rec{display:none}
+  #pricing .period-btn.active .period-rec{display:inline;font-size:7px;padding:0 2px;margin-left:1px;border-radius:3px;background:rgba(100,180,255,0.2);color:var(--accent);font-weight:700}
+  #faq #faq-hook-q,#faq .faq-q{font-size:12px;line-height:1.2;font-weight:700}
+  #faq .faq-assure-micro{font-size:10px;font-weight:600}
+  .sticky-cta .btn-p{height:44px;font-size:11px;padding:0 8px}
 }
 @media (prefers-reduced-motion:reduce){
   .rv{opacity:1;transform:none}
@@ -2972,7 +3016,7 @@ main{position:relative;z-index:1}
     <p class="hero-sub">Safe vs offer · Google · YouTube · Meta · TikTok · &lt;50ms · ~1 dia = 1 mês · Ativar −10%</p>
     <div class="hero-ctas">
         <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link hero-cta" data-plan="Maré">Ativar — R$399,99/mês</a>
-        <a href="#pricing-lead" class="btn btn-o hero-soft-cta">Ver perda · Ativar −10%</a>
+        <a href="#pricing-lead" class="btn btn-o hero-soft-cta">Ver perda R$ 12.500 · Ativar −10%</a>
     </div>
     <div class="hero-trust">
         <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
@@ -3296,8 +3340,8 @@ main{position:relative;z-index:1}
         <p class="t-label rv" style="text-align:center;margin-bottom:4px">FAQ</p>
         <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:4px">Dúvidas · <span class="grad">~1 dia · Ativar −10%</span></h2>
         <div class="faq-list">
-            <details class="faq-i rv rv-d1" open><summary class="faq-q">Paga em ~1 dia? · Ativar −10%</summary><div class="faq-a" id="faq-savings-a">Perda ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês · ~<strong id="faq-savings-payback">1 dia</strong> = 1 mês · 7 dias · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta faq-inline-cta--price" data-plan="Maré">Ativar — R$399,99</a></div></details>
-            <p class="faq-assure rv rv-d2"><span class="faq-assure-micro">7 dias · 100% · sem risco</span><a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta faq-inline-cta--price" data-plan="Maré">Ativar −10% — R$359,99</a></p>
+            <details class="faq-i rv rv-d1" open><summary class="faq-q" id="faq-hook-q">Paga em ~1 dia? · Ativar −10%</summary><div class="faq-a" id="faq-savings-a">Perda ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês · ~<strong id="faq-savings-payback">1 dia</strong> = 1 mês · 7 dias · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta faq-inline-cta--price" data-plan="Maré">Ativar — R$399,99</a></div></details>
+            <p class="faq-assure rv rv-d2"><span class="faq-assure-micro">Garantia 7 dias · 100% · sem risco</span><a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta faq-inline-cta--price" data-plan="Maré">Ativar −10% — R$359,99</a></p>
             <details class="faq-i faq-i--risk rv rv-d2"><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">7 dias · 100% reembolso · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar −10% sem risco</a></div></details>
             <div class="faq-more" id="faq-more">
                 <details class="faq-i"><summary class="faq-q">Quanto custa?</summary><div class="faq-a">R$ 399,99/mês · Ativar −10% trimestral · anual −15% · PIX/cartão · sem fidelidade.</div></details>
@@ -3694,9 +3738,9 @@ const STICKY_PRICE_SHORT = {
     yearly: 'R$ 339,99/mês'
 };
 const STICKY_BTN = {
-    monthly: 'Ativar — R$399,99',
-    quarterly: 'Ativar −10% · R$359',
-    yearly: 'Ativar −15% · R$339'
+    monthly: 'Ativar — R$399,99/mês',
+    quarterly: 'Ativar −10% — R$359,99/mês',
+    yearly: 'Ativar −15% — R$339,99/mês'
 };
 const FAQ_PRICE_CTA = {
     monthly: 'Ativar — R$399,99',
@@ -3780,6 +3824,25 @@ function updatePricingCtaLabel(period) {
         nudge.hidden = period !== 'monthly';
     }
     syncStickyLossCopy(period);
+    syncLossPersuasionCopy(period);
+}
+
+// Soft CTA + FAQ hook mirror quantified loss (c426–c428)
+function syncLossPersuasionCopy(period) {
+    period = period || document.querySelector('.period-btn.active')?.dataset.period || 'monthly';
+    const loss = lastCalcLossFmt || 'R$ 12.500';
+    const soft = document.querySelector('.hero-soft-cta');
+    if (soft) {
+        soft.textContent = period === 'yearly'
+            ? ('Ver perda ' + loss + ' · Ativar −15%')
+            : ('Ver perda ' + loss + ' · Ativar −10%');
+    }
+    const faqHook = document.getElementById('faq-hook-q');
+    if (faqHook) {
+        faqHook.textContent = period === 'yearly'
+            ? ('Paga ' + loss + ' em ~1 dia? · Ativar −15%')
+            : ('Paga ' + loss + ' em ~1 dia? · Ativar −10%');
+    }
 }
 
 // Sticky mirrors ROI loss (ciclo 33) so the bar restates quantified waste + price
@@ -4021,6 +4084,7 @@ if (calcSlider && calcDisplay && calcInvisible && calcFraud && calcTotal && calc
         lastCalcLossFmt = fmt(total);
         lastCalcLossValue = total;
         syncStickyLossCopy();
+        syncLossPersuasionCopy();
         // Period nudge ties savings to loss (ciclo 41)
         const activePeriod = document.querySelector('.period-btn.active')?.dataset.period || 'monthly';
         const nudge = document.getElementById('period-nudge');
