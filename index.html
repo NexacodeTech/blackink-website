@@ -1501,6 +1501,25 @@ main{position:relative;z-index:1}
   #comecar .cta-final-trust span:nth-child(2),
   #comecar .cta-final-trust span:nth-child(3){display:inline-flex}
   #comecar .cta-final-trust span:nth-child(n+4){display:none}
+  /* c407 LAST: prova multi-rede ANTES do preço (order) */
+  main{display:flex;flex-direction:column}
+  #hero{order:10}
+  #problema{order:20}
+  #redes{order:30}
+  #pricing{order:40}
+  #faq{order:50}
+  #comecar{order:60}
+  main > .sep{display:none;order:99}
+  /* c408 LAST: problema micro — só resolve punch (~22% · ~1 dia) */
+  #problema{display:block;padding:6px 0;margin:0;line-height:1;text-align:center}
+  #problema + .sep{display:none}
+  #problema .t-label,#problema .t-lg,#problema .t-body-lg,#problema .mid-cta,#problema .problem-grid{display:none}
+  #problema .problem-resolve{display:block;font-size:12px;line-height:1.3;margin:0;color:var(--dim)}
+  #problema .problem-resolve .grad{font-weight:700}
+  /* c409 LAST: period-nudge mensal legível (JS hidden nos outros) */
+  #pricing .period-nudge{display:none;font-size:11px;margin:4px 0 0;line-height:1.3;text-align:center;max-width:100%}
+  #pricing .period-nudge:not([hidden]){display:block}
+  #pricing .period-nudge button{font-size:11px}
 }
 @media (min-width:768px){
   .sticky-cta-text{display:block}
@@ -2257,6 +2276,22 @@ main{position:relative;z-index:1}
   #comecar .cta-final-trust span:nth-child(2),
   #comecar .cta-final-trust span:nth-child(3){display:inline-flex}
   #comecar .cta-final-trust span:nth-child(n+4){display:none}
+  /* c407–c409 desktop densest */
+  main{display:flex;flex-direction:column}
+  #hero{order:10}
+  #problema{order:20}
+  #redes{order:30}
+  #pricing{order:40}
+  #faq{order:50}
+  #comecar{order:60}
+  main > .sep{display:none;order:99}
+  #problema{display:block;padding:8px 0;margin:0;line-height:1;text-align:center}
+  #problema + .sep{display:none}
+  #problema .t-label,#problema .t-lg,#problema .t-body-lg,#problema .mid-cta,#problema .problem-grid{display:none}
+  #problema .problem-resolve{display:block;font-size:13px;line-height:1.35;margin:0;color:var(--dim)}
+  #problema .problem-resolve .grad{font-weight:700}
+  #pricing .period-nudge{display:none;font-size:12px;margin:4px 0 0;line-height:1.3;text-align:center}
+  #pricing .period-nudge:not([hidden]){display:block}
 }
 
 @media (max-width:640px){
@@ -2415,6 +2450,21 @@ main{position:relative;z-index:1}
   #comecar .cta-final-trust span:nth-child(2),
   #comecar .cta-final-trust span:nth-child(3){display:inline-flex}
   #comecar .cta-final-trust span:nth-child(n+4){display:none}
+  /* c407–c409: order + problema micro + nudge em ≤600 */
+  main{display:flex;flex-direction:column}
+  #hero{order:10}
+  #problema{order:20}
+  #redes{order:30}
+  #pricing{order:40}
+  #faq{order:50}
+  #comecar{order:60}
+  main > .sep{display:none;order:99}
+  #problema{display:block;padding:6px 0;margin:0;line-height:1;text-align:center}
+  #problema + .sep{display:none}
+  #problema .t-label,#problema .t-lg,#problema .t-body-lg,#problema .mid-cta,#problema .problem-grid{display:none}
+  #problema .problem-resolve{display:block;font-size:12px;line-height:1.3;margin:0;color:var(--dim)}
+  #pricing .period-nudge{display:none;font-size:11px;margin:4px 0 0;line-height:1.3;text-align:center}
+  #pricing .period-nudge:not([hidden]){display:block}
 }
 @media (max-width:500px){
   .flow-pillars{grid-template-columns:1fr}
@@ -2563,6 +2613,21 @@ main{position:relative;z-index:1}
   #comecar .cta-final-trust span:nth-child(2),
   #comecar .cta-final-trust span:nth-child(3){display:inline-flex}
   #comecar .cta-final-trust span:nth-child(n+4){display:none}
+  /* c407–c409: order + problema micro + nudge em ≤480 */
+  main{display:flex;flex-direction:column}
+  #hero{order:10}
+  #problema{order:20}
+  #redes{order:30}
+  #pricing{order:40}
+  #faq{order:50}
+  #comecar{order:60}
+  main > .sep{display:none;order:99}
+  #problema{display:block;padding:6px 0;margin:0;line-height:1;text-align:center}
+  #problema + .sep{display:none}
+  #problema .t-label,#problema .t-lg,#problema .t-body-lg,#problema .mid-cta,#problema .problem-grid{display:none}
+  #problema .problem-resolve{display:block;font-size:12px;line-height:1.3;margin:0;color:var(--dim)}
+  #pricing .period-nudge{display:none;font-size:11px;margin:4px 0 0;line-height:1.3;text-align:center}
+  #pricing .period-nudge:not([hidden]){display:block}
 }
 @media (max-width:390px){
   .hero-logo{width:32px;height:32px}
@@ -2700,6 +2765,21 @@ main{position:relative;z-index:1}
   #comecar .cta-final-trust span:nth-child(2),
   #comecar .cta-final-trust span:nth-child(3){display:inline-flex}
   #comecar .cta-final-trust span:nth-child(n+4){display:none}
+  /* c407–c409: order + problema micro + nudge no iPhone */
+  main{display:flex;flex-direction:column}
+  #hero{order:10}
+  #problema{order:20}
+  #redes{order:30}
+  #pricing{order:40}
+  #faq{order:50}
+  #comecar{order:60}
+  main > .sep{display:none;order:99}
+  #problema{display:block;padding:6px 0;margin:0;line-height:1;text-align:center}
+  #problema + .sep{display:none}
+  #problema .t-label,#problema .t-lg,#problema .t-body-lg,#problema .mid-cta,#problema .problem-grid{display:none}
+  #problema .problem-resolve{display:block;font-size:12px;line-height:1.3;margin:0;color:var(--dim)}
+  #pricing .period-nudge{display:none;font-size:11px;margin:4px 0 0;line-height:1.3;text-align:center}
+  #pricing .period-nudge:not([hidden]){display:block}
   #como-funciona .mid-cta .btn{height:18px;font-size:7px}
   #problema .mid-cta .btn{height:18px;font-size:7px}
 }
@@ -2809,7 +2889,7 @@ main{position:relative;z-index:1}
                 <div class="problem-desc">Decisão no browser é detectável. Server-side decide antes do HTML.</div>
             </div>
         </div>
-        <p class="problem-resolve rv rv-d3">~22% sujo · Ativar −10% · <span class="grad">~1 dia = 1 mês</span></p>
+        <p class="problem-resolve rv rv-d3">~22% clique sujo · revisor na offer · Ativar −10% · <span class="grad">~1 dia = 1 mês</span></p>
         <div class="mid-cta mid-cta--soft rv rv-d4">
         <a href="#pricing" class="btn btn-p">Ativar −10% · ver preço</a>
         <a href="#pricing" class="btn btn-o">Ativar −10% · ver preço</a>
@@ -3662,9 +3742,10 @@ let footerInView = false;
 
 function syncStickyVisibility() {
     if (!stickyCta) return;
-    // Ciclo 147: sticky after ~12% of hero — catches mid-funnel earlier
-    const pastHero = window.scrollY > (heroSection ? heroSection.offsetHeight * 0.12 : 80);
-    const show = !stickyDismissed && pastHero && !pricingInView && !faqInView && !ctaFinalInView && !footerInView;
+    // Ciclo 409: sticky after ~5% of hero — mid-funnel earlier
+    const pastHero = window.scrollY > (heroSection ? heroSection.offsetHeight * 0.05 : 40);
+    // Densest buy-path is short — only hide when a real CTA target is on-screen (c410)
+    const show = !stickyDismissed && pastHero && !pricingInView && !ctaFinalInView && !footerInView;
     stickyCta.classList.toggle('visible', show);
     stickyCta.setAttribute('aria-hidden', show ? 'false' : 'true');
     document.body.classList.toggle('has-sticky-cta', show);
@@ -3680,20 +3761,18 @@ if (stickyClose) {
     });
 }
 
-if (pricingSection) {
+// Observe pricing CTA (not whole section) — densest section peeks right after hero
+const pricingCtaEl = document.querySelector('#pricing .pricing-cta');
+if (pricingCtaEl || pricingSection) {
     new IntersectionObserver(entries => {
         entries.forEach(e => { pricingInView = e.isIntersecting; syncStickyVisibility(); });
-    }, { threshold: 0.12 }).observe(pricingSection);
-}
-if (faqSection) {
-    new IntersectionObserver(entries => {
-        entries.forEach(e => { faqInView = e.isIntersecting; syncStickyVisibility(); });
-    }, { threshold: 0.15 }).observe(faqSection);
+    }, { threshold: 0.55, rootMargin: '-8% 0px -30% 0px' }).observe(pricingCtaEl || pricingSection);
 }
 if (ctaFinalSection) {
+    const comecarCta = document.querySelector('#comecar .pricing-cta') || ctaFinalSection;
     new IntersectionObserver(entries => {
         entries.forEach(e => { ctaFinalInView = e.isIntersecting; syncStickyVisibility(); });
-    }, { threshold: 0.2 }).observe(ctaFinalSection);
+    }, { threshold: 0.4, rootMargin: '-8% 0px -25% 0px' }).observe(comecarCta);
 }
 if (footerSection) {
     new IntersectionObserver(entries => {
