@@ -149,12 +149,13 @@
             border:1px solid rgba(52,211,153,0.35);background:rgba(52,211,153,0.08);
             font-size:12px;line-height:1.35;color:var(--dim);text-align:center
         }
-        .cadastro-garantia-banner.is-on{display:block;animation:garantiaBannerPulse 2.2s var(--ease) 2}
+        .cadastro-garantia-banner.is-on{display:block;animation:garantiaBannerPulse 2.2s var(--ease) 1}
         .cadastro-garantia-banner strong{color:var(--green);font-weight:700}
         /* c563: submit reforça path garantia */
         body.intent-garantia #submitBtn{
-            box-shadow:0 0 0 1px rgba(52,211,153,0.35),0 4px 20px rgba(100,180,255,0.15);
-            transition:box-shadow .3s var(--ease),transform .3s var(--ease)
+            box-shadow:0 0 0 1px rgba(52,211,153,0.45),0 4px 20px rgba(52,211,153,0.18);
+            border:1px solid rgba(52,211,153,0.55);
+            transition:box-shadow .3s var(--ease),transform .3s var(--ease),border-color .3s var(--ease)
         }
         body.intent-garantia .form-submit-trust strong{color:var(--green)}
         @keyframes garantiaBannerPulse{
@@ -174,7 +175,7 @@
         .cadastro-period-btn.active{background:rgba(100,180,255,0.1);color:var(--white);border-color:rgba(100,180,255,0.35)}
         .cadastro-period-btn .period-discount{font-size:9px;font-weight:700;padding:2px 5px;border-radius:4px;background:rgba(52,211,153,0.15);color:var(--green)}
         .cadastro-period-btn .period-rec{font-size:8px;font-weight:700;padding:2px 5px;border-radius:4px;background:rgba(100,180,255,0.18);color:var(--accent);letter-spacing:.03em;text-transform:uppercase}
-        .cadastro-period-btn.active .period-rec{animation:idealBadgePulse 2s var(--ease) 2;display:inline-block}
+        .cadastro-period-btn.active .period-rec{animation:idealBadgePulse 2s var(--ease) 1;display:inline-block}
         @keyframes idealBadgePulse{0%,100%{background:rgba(100,180,255,0.18);transform:scale(1)}50%{background:rgba(100,180,255,0.4);transform:scale(1.06)}}
         @media(prefers-reduced-motion:reduce){
             .cadastro-period-btn.active .period-rec{animation:none}
@@ -655,6 +656,13 @@
     document.getElementById('planName').textContent = planData.displayName || plan;
 
     function submitLabelForPeriod(p) {
+        // c573: path intent=garantia alinha com assure da landing
+        const garantia = document.body.classList.contains('intent-garantia');
+        if (garantia) {
+            if (p === 'quarterly') return 'Ativar sem risco 7d −10% — R$359,99';
+            if (p === 'yearly') return 'Ativar sem risco 7d −15% — R$339,99';
+            return 'Ativar sem risco 7d — R$399,99';
+        }
         if (p === 'quarterly') return 'Ativar −10% — R$ 359,99/mês';
         if (p === 'yearly') return 'Ativar −15% — R$ 339,99/mês';
         return 'Ativar — R$ 399,99/mês · 7 dias';
