@@ -1605,6 +1605,18 @@ main{position:relative;z-index:1}
   #pricing .pricing-trust-chips li:nth-child(2){display:inline-flex}
   /* c440 LAST: FAQ CTA diferencia “sem risco” (menos banner blindness) */
   #faq .faq-assure a.faq-inline-cta--price{font-size:12px;letter-spacing:.01em}
+  /* c441 LAST: comecar CTA verbo distinto + largura tocável */
+  #comecar .comecar-cta{min-width:min(100%,340px);height:40px;font-size:13px}
+  /* c442 LAST: micro cobrança + PIX */
+  #pricing .p-micro{font-size:11px;line-height:1.35}
+  /* c443 LAST: sticky close 44px — mais espaço pro CTA longo */
+  .sticky-cta-close{width:44px;height:44px;min-width:44px}
+  .sticky-cta .btn-p{flex:1.4;min-width:0}
+  /* c444 LAST: problema resolve + redes gap um tick mais respirável */
+  #problema{padding:8px 0}
+  #redes{padding:8px 0}
+  /* c445 LAST: nav mobile CTA full-width punch */
+  .hdr-nav .hdr-nav-cta{height:44px;font-size:14px;font-weight:700;border-radius:12px}
 }
 @media (min-width:768px){
   .sticky-cta-text{display:block}
@@ -2418,6 +2430,11 @@ main{position:relative;z-index:1}
   .trust-rail span:nth-child(3){display:inline-flex}
   .hero-trust{font-size:12px;max-width:48ch}
   .hero-trust strong{color:var(--white)}
+  /* c441–c445 desktop densest */
+  #comecar .comecar-cta{min-width:min(100%,380px);height:40px;font-size:14px}
+  #pricing .p-micro{font-size:12px;line-height:1.35}
+  .sticky-cta-close{width:44px;height:44px;min-width:44px}
+  .sticky-cta .btn-p{flex:1.3}
 }
 
 @media (max-width:640px){
@@ -2632,6 +2649,12 @@ main{position:relative;z-index:1}
   .trust-rail span:nth-child(3){display:inline-flex}
   .hero-trust{font-size:11px;max-width:34ch}
   .hero-trust strong{color:var(--white)}
+  /* c441–c445 em ≤600 */
+  #comecar .comecar-cta{min-width:min(100%,340px);height:40px;font-size:13px}
+  #pricing .p-micro{font-size:11px;line-height:1.35}
+  .sticky-cta-close{width:44px;height:44px;min-width:44px}
+  .sticky-cta .btn-p{flex:1.4;min-width:0}
+  .hdr-nav .hdr-nav-cta{height:44px;font-size:14px;font-weight:700;border-radius:12px}
 }
 @media (max-width:500px){
   .flow-pillars{grid-template-columns:1fr}
@@ -2836,6 +2859,12 @@ main{position:relative;z-index:1}
   .trust-rail span:nth-child(3){display:inline-flex}
   .hero-trust{font-size:10px;max-width:32ch}
   .hero-trust strong{color:var(--white)}
+  /* c441–c445 em ≤480 */
+  #comecar .comecar-cta{min-width:min(100%,340px);height:40px;font-size:13px}
+  #pricing .p-micro{font-size:11px;line-height:1.35}
+  .sticky-cta-close{width:44px;height:44px;min-width:44px}
+  .sticky-cta .btn-p{flex:1.4;min-width:0}
+  .hdr-nav .hdr-nav-cta{height:44px;font-size:14px;font-weight:700;border-radius:12px}
 }
 @media (max-width:390px){
   .hero-logo{width:32px;height:32px}
@@ -3031,6 +3060,12 @@ main{position:relative;z-index:1}
   .trust-rail span:nth-child(3){display:inline-flex}
   .hero-trust{font-size:10px;max-width:30ch}
   .hero-trust strong{color:var(--white)}
+  /* c441–c445 no iPhone */
+  #comecar .comecar-cta{min-width:100%;height:40px;font-size:12px}
+  #pricing .p-micro{font-size:10px;line-height:1.3}
+  .sticky-cta-close{width:44px;height:44px;min-width:44px}
+  .sticky-cta .btn-p{flex:1.4;min-width:0;font-size:11px}
+  .hdr-nav .hdr-nav-cta{height:44px;font-size:14px;font-weight:700;border-radius:12px}
 }
 @media (prefers-reduced-motion:reduce){
   .rv{opacity:1;transform:none}
@@ -3381,7 +3416,7 @@ main{position:relative;z-index:1}
                     </div>
                     <p class="pricing-includes-line">Safe + offer · server-side &lt;50ms · 15+ sinais + logs · App + suporte · Payback <span id="pricing-bridge-payback">~1 dia</span></p>
                     <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p btn-full plan-link pricing-cta" data-plan="Maré">Ativar — R$399,99/mês</a>
-                    <p class="p-micro"><strong>7 dias</strong> · R$399,99/mês · Ativar −10% no trimestral</p>
+                    <p class="p-micro"><strong>7 dias</strong> · PIX · R$399,99/mês · Ativar −10% no trimestral</p>
                     <p class="pricing-networks">Google Ads · YouTube Ads · Facebook Ads · TikTok Ads · sem OAuth</p>
                     <ul class="pricing-trust-chips" aria-label="Garantias">
                         <li>Garantia 7 dias · 100%</li>
@@ -3457,7 +3492,7 @@ main{position:relative;z-index:1}
         <h2 class="t-lg rv rv-d1 cta-final-title" style="text-align:center">~1 dia = 1 mês · <span class="grad">Ativar −10%</span></h2>
         <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:440px;margin:6px auto 10px;font-size:clamp(13px,1.4vw,15px)" id="cta-final-lead">Perda <strong id="cta-final-loss">R$ 12.500</strong>/mês · <span id="cta-final-payback">~1 dia</span> = 1 mês · 7 dias · Ativar −10%</p>
         <div class="rv rv-d3" style="display:flex;flex-direction:column;align-items:center;gap:0">
-            <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar — R$399,99/mês</a>
+            <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta comecar-cta" data-plan="Maré">Começar agora — R$399,99/mês</a>
             <div class="cta-final-trust">
                 <span>PIX ou cartão</span>
                 <span>Garantia 7 dias · 100%</span>
@@ -3838,9 +3873,19 @@ const FAQ_PRICE_CTA = {
     yearly: 'Ativar sem risco −15% — R$339,99'
 };
 const P_MICRO_HTML = {
-    monthly: '<strong>7 dias</strong> · R$399,99/mês · Ativar −10% no trimestral',
-    quarterly: '<strong>Ativar −10%</strong> · cobrado R$1.079,97 / 3 meses · 7 dias',
-    yearly: '<strong>Ativar −15%</strong> · cobrado R$4.079,90 / ano · 7 dias'
+    monthly: '<strong>7 dias</strong> · PIX · R$399,99/mês · Ativar −10% no trimestral',
+    quarterly: '<strong>Ativar −10%</strong> · cobrado R$1.079,97 / 3 meses · PIX · 7 dias',
+    yearly: '<strong>Ativar −15%</strong> · cobrado R$4.079,90 / ano · PIX · 7 dias'
+};
+const COMECAR_CTA_LABELS = {
+    monthly: 'Começar agora — R$399,99/mês',
+    quarterly: 'Começar agora −10% — R$359,99/mês',
+    yearly: 'Começar agora −15% — R$339,99/mês'
+};
+const NAV_CTA_LABELS = {
+    monthly: 'Ativar — R$399,99',
+    quarterly: 'Ativar −10%',
+    yearly: 'Ativar −15%'
 };
 
 const PERIOD_NUDGE = {
@@ -3895,7 +3940,11 @@ function maybeAutoQuarterlyFromLoss() {
 
 function updatePricingCtaLabel(period) {
     const label = PRICING_CTA_LABELS[period] || PRICING_CTA_LABELS.monthly;
-    document.querySelectorAll('.pricing-cta').forEach(btn => { btn.textContent = label; });
+    // Pricing CTAs — exclude comecar (own verb) and sticky (own labels)
+    document.querySelectorAll('.pricing-cta:not(.comecar-cta)').forEach(btn => { btn.textContent = label; });
+    // c441: comecar closes funnel with distinct verb
+    const comecarLabel = COMECAR_CTA_LABELS[period] || COMECAR_CTA_LABELS.monthly;
+    document.querySelectorAll('.comecar-cta').forEach(btn => { btn.textContent = comecarLabel; });
     // FAQ price CTAs mirror period (open answer + assure densest)
     const faqPrice = FAQ_PRICE_CTA[period] || FAQ_PRICE_CTA.monthly;
     document.querySelectorAll('.faq-inline-cta--price').forEach(a => { a.textContent = faqPrice; });
@@ -3907,6 +3956,9 @@ function updatePricingCtaLabel(period) {
     if (heroCta) heroCta.textContent = HERO_CTA_LABELS[period] || HERO_CTA_LABELS.monthly;
     const stickyBtn = document.getElementById('sticky-cta-btn');
     if (stickyBtn) stickyBtn.textContent = STICKY_BTN[period] || STICKY_BTN.monthly;
+    // c442: nav CTAs sync period verb
+    const navLabel = NAV_CTA_LABELS[period] || NAV_CTA_LABELS.monthly;
+    document.querySelectorAll('.hdr-nav-cta, .hdr-cta .plan-link').forEach(a => { a.textContent = navLabel; });
     const nudge = document.getElementById('period-nudge');
     if (nudge) {
         nudge.innerHTML = periodNudgeHtml(period);
@@ -3954,9 +4006,9 @@ function syncStickyLossCopy(period) {
     }
     if (stickyPrice) {
         if (lastCalcLossFmt) {
-            stickyPrice.innerHTML = '<strong>' + priceShort + '</strong><br>vs ' + lastCalcLossFmt + (period === 'yearly' ? ' · Ativar −15%' : ' · Ativar −10%');
+            stickyPrice.innerHTML = '<strong>' + priceShort + '</strong><br>vs ' + lastCalcLossFmt + (period === 'yearly' ? ' · −15%' : ' · −10%') + ' · 7 dias';
         } else {
-            stickyPrice.innerHTML = '<strong>' + priceShort + '</strong><br>' + (period === 'yearly' ? 'Ativar −15% · 7 dias' : 'Ativar −10% · 7 dias');
+            stickyPrice.innerHTML = '<strong>' + priceShort + '</strong><br>' + (period === 'yearly' ? 'Ativar −15% · Garantia 7 dias' : 'Ativar −10% · Garantia 7 dias');
         }
     }
 }
