@@ -185,10 +185,18 @@
         },
         {
           "@type": "Question",
+          "name": "Quanto custa e como funciona o pagamento?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Produto único a R$ 399,99/mês. Trimestral com cerca de 10% de desconto e anual com cerca de 15%. PIX ou cartão. Sem contrato de fidelidade — cancele quando quiser."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "E se eu não gostar?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Garantia incondicional de 7 dias. Reembolso de 100% — sem perguntas, sem burocracia."
+            "text": "Garantia de 7 dias. Teste a plataforma; se não fizer sentido para suas campanhas, reembolso de 100% — sem letras miúdas."
           }
         },
         {
@@ -236,7 +244,7 @@
 
 :root{
   --bg:#020a14;--bg2:#06111f;--surface:rgba(10,22,40,0.72);--border:rgba(100,180,255,0.08);--border-h:rgba(100,180,255,0.16);
-  --white:#f0f4f8;--dim:rgba(240,244,248,0.72);--muted:rgba(240,244,248,0.45);
+  --white:#f0f4f8;--dim:rgba(240,244,248,0.78);--muted:rgba(240,244,248,0.55);
   --accent:#64b4ff;--accent2:#3b82f6;--green:#34d399;--gold:#fbbf24;
   --ease:cubic-bezier(0.16,1,0.3,1);
   --ff-display:'General Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
@@ -876,6 +884,7 @@ main{position:relative;z-index:1}
                 <div class="flow-pillar-text"><strong>99,9% uptime</strong>Infraestrutura de plataforma</div>
             </div>
         </div>
+        <p class="rv rv-d5" style="text-align:center;margin-top:28px;font-size:15px;color:var(--dim);max-width:42ch;margin-left:auto;margin-right:auto;line-height:1.55">Resultado: revisores veem safe page. Compradores veem offer page. Seu budget deixa de financiar clique inválido</p>
     </div>
 </section>
 
@@ -1022,6 +1031,9 @@ main{position:relative;z-index:1}
             <div class="network-chip"><strong>Facebook Ads</strong><span>Feed &amp; Stories</span></div>
             <div class="network-chip"><strong>TikTok Ads</strong><span>In-feed &amp; Spark</span></div>
             <div class="network-chip network-chip--more"><strong>E outras</strong><span>Mesmo fluxo server-side</span></div>
+        </div>
+        <div class="mid-cta rv rv-d4" style="margin-top:32px">
+            <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
         </div>
     </div>
 </section>
@@ -1306,7 +1318,7 @@ main{position:relative;z-index:1}
 
 <div class="sticky-cta" id="sticky-cta" aria-hidden="true">
     <div class="sticky-cta-inner">
-        <p class="sticky-cta-text" id="sticky-cta-text">Plataforma cloaker — <strong>R$ 399,99/mês</strong></p>
+        <p class="sticky-cta-text" id="sticky-cta-text">Safe page para revisores · Offer page para compradores — <strong>R$ 399,99/mês</strong></p>
         <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link" data-plan="Maré" id="sticky-cta-btn">Ativar Cloaker</a>
         <button type="button" class="sticky-cta-close" id="sticky-cta-close" aria-label="Fechar">&times;</button>
     </div>
@@ -1602,7 +1614,7 @@ function updatePricingCtaLabel(period) {
     if (heroCta) heroCta.textContent = HERO_CTA_LABELS[period] || HERO_CTA_LABELS.monthly;
     const stickyText = document.getElementById('sticky-cta-text');
     if (stickyText) {
-        stickyText.innerHTML = 'Plataforma cloaker — <strong>' + (STICKY_PRICE[period] || STICKY_PRICE.monthly) + '</strong>';
+        stickyText.innerHTML = 'Safe page para revisores · Offer page para compradores — <strong>' + (STICKY_PRICE[period] || STICKY_PRICE.monthly) + '</strong>';
     }
     const stickyBtn = document.getElementById('sticky-cta-btn');
     if (stickyBtn) stickyBtn.textContent = STICKY_BTN[period] || STICKY_BTN.monthly;

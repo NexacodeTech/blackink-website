@@ -136,7 +136,8 @@
         .selected-plan{background:rgba(100,180,255,0.04);border:1px solid var(--border-h);border-radius:14px;padding:18px;margin-bottom:28px}
         .selected-plan-label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:13px}
         .selected-plan-row{display:flex;align-items:center;gap:16px}
-        .selected-plan-icon{flex-shrink:0;font-size:32px}
+        .selected-plan-icon{flex-shrink:0;width:40px;height:40px;border-radius:12px;border:1px solid var(--border-h);background:rgba(100,180,255,0.08);display:flex;align-items:center;justify-content:center}
+        .selected-plan-icon svg{width:20px;height:20px;stroke:var(--accent);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
         .selected-plan-info{flex:1}
         .selected-plan-name{font-family:var(--ff-display);font-weight:700;font-size:18px;color:var(--accent);margin-bottom:4px}
         .selected-plan-price{font-size:14px;color:var(--dim);line-height:1.5}
@@ -329,7 +330,7 @@
                     <div class="selected-plan" id="selectedPlan">
                         <div class="selected-plan-label">Resumo da assinatura</div>
                         <div class="selected-plan-row">
-                            <div class="selected-plan-icon" id="planIcon">🛡️</div>
+                            <div class="selected-plan-icon" id="planIcon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
                             <div class="selected-plan-info">
                                 <div class="selected-plan-name" id="planName">BlackInk Cloaker</div>
                                 <div class="selected-plan-price" id="planPrice">R$ 399,99/mês</div>
@@ -466,7 +467,7 @@
     // Single product — API plan name: Maré (R$ 399,99/mês)
     const DEFAULT_PLAN = 'Maré';
     const PLANS = {
-        'Maré': { icon: '🛡️', displayName: 'BlackInk Cloaker', price: 'R$ 399,99/mês', priceValue: 399.99 }
+        'Maré': { displayName: 'BlackInk Cloaker', price: 'R$ 399,99/mês', priceValue: 399.99 }
     };
 
     // Get URL params
@@ -480,7 +481,6 @@
 
     // Update plan info display
     const planData = PLANS[plan];
-    document.getElementById('planIcon').textContent = planData.icon;
     document.getElementById('planName').textContent = planData.displayName || plan;
 
     // Calculate price based on billing period
