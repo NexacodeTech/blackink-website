@@ -351,7 +351,8 @@ strong{font-weight:600}
 .obj-card:hover{border-color:rgba(100,180,255,0.22)}
 .obj-q{font-size:12px;font-weight:600;color:var(--white);margin-bottom:4px}
 .obj-a{font-size:11px;color:var(--dim);line-height:1.45}
-.mid-cta{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px;margin-top:36px}
+.mid-cta{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px;margin-top:28px}
+.mid-cta--soft{margin-top:14px}
 /* Education — definição em rail (ciclo 30) */
 .edu-strip{padding:clamp(28px,4vh,48px) 0;text-align:center}
 .edu-strip .t-lg{margin:8px auto 10px;max-width:520px}
@@ -522,15 +523,15 @@ strong{font-weight:600}
 .calc-cta-text{font-size:12px;color:var(--dim);margin-bottom:10px;line-height:1.45}
 .calc-cta-text strong{color:var(--white)}
 .calc-cta-actions{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center}
-/* Pricing — single buy card (ciclo 53) */
-.pricing-narrative{max-width:720px;margin:0 auto}
-.pricing-lead{font-size:14px;color:var(--dim);line-height:1.5;max-width:520px;margin:0 auto 14px}
+/* Pricing — single buy card denser (ciclo 63) */
+.pricing-narrative{max-width:680px;margin:0 auto}
+.pricing-lead{font-size:13px;color:var(--dim);line-height:1.45;max-width:500px;margin:0 auto 12px}
 .pricing-lead strong{color:var(--white)}
 .pricing-reveal-block{margin-top:0}
-.pricing-reveal-inner{padding:clamp(18px,2.8vw,28px);border-radius:18px;border:1px solid rgba(100,180,255,0.2);background:linear-gradient(180deg,rgba(100,180,255,0.08),rgba(6,17,31,0.85));text-align:center;box-shadow:0 24px 64px rgba(0,0,0,0.3)}
-.pricing-reveal-title{font-family:var(--ff-display);font-size:clamp(22px,3vw,30px);font-weight:700;margin:6px 0 10px}
-.period-toggle-label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
-.period-nudge{font-size:12px;color:var(--dim);margin:-2px auto 12px;max-width:48ch;line-height:1.45}
+.pricing-reveal-inner{padding:clamp(16px,2.4vw,24px);border-radius:16px;border:1px solid rgba(100,180,255,0.2);background:linear-gradient(180deg,rgba(100,180,255,0.08),rgba(6,17,31,0.85));text-align:center;box-shadow:0 24px 64px rgba(0,0,0,0.3)}
+.pricing-reveal-title{font-family:var(--ff-display);font-size:clamp(20px,2.8vw,28px);font-weight:700;margin:4px 0 8px}
+.period-toggle-label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.period-nudge{font-size:11px;color:var(--dim);margin:-2px auto 10px;max-width:48ch;line-height:1.4}
 .period-nudge strong{color:var(--white);font-weight:600}
 .period-nudge button{background:none;border:none;padding:0;font:inherit;color:var(--accent);font-weight:600;cursor:pointer;text-decoration:underline;text-underline-offset:3px;transition:color .3s var(--ease)}
 .period-nudge button:hover{color:var(--white)}
@@ -825,9 +826,9 @@ main{position:relative;z-index:1}
             </div>
         </div>
         <p class="problem-resolve rv rv-d3">A plataforma BlackInk <span class="grad">resolve os três</span></p>
-        <div class="mid-cta rv rv-d4">
-            <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
-            <a href="#roi-calc" class="btn btn-o">Calcular quanto some</a>
+        <div class="mid-cta mid-cta--soft rv rv-d4">
+            <a href="#roi-calc" class="btn btn-p">Calcular quanto some do budget</a>
+            <a href="#cloaker" class="btn btn-o">Ver cloaker ao vivo</a>
         </div>
     </div>
 </section>
@@ -882,8 +883,8 @@ main{position:relative;z-index:1}
             </div>
         </div>
 
-        <div class="mid-cta rv rv-d3" style="margin-top:8px">
-            <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
+        <div class="mid-cta mid-cta--soft rv rv-d3" style="margin-top:8px">
+            <a href="#cloaker" class="btn btn-p">Ver cloaker ao vivo</a>
             <a href="#roi-calc" class="btn btn-o">Calcular perdas do budget</a>
         </div>
     </div>
@@ -911,8 +912,8 @@ main{position:relative;z-index:1}
                 </div>
                 <p class="showcase-proof" id="showcase-proof">Simulação ao vivo: acompanhe bloqueios e taxa legítima em tempo real</p>
                 <div class="showcase-cta">
-                    <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
-                    <a href="#roi-calc" class="btn btn-o">Calcular perdas do budget</a>
+                    <a href="#roi-calc" class="btn btn-p">Calcular perdas do budget</a>
+                    <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-o plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
                 </div>
             </div>
             <div class="showcase-visual">
@@ -1101,7 +1102,6 @@ main{position:relative;z-index:1}
         <p class="t-body-lg rv rv-d2" style="margin:0 auto 14px;font-size:clamp(14px,1.5vw,16px)">Client-side é detectável. Redirect é lento e opaco. BlackInk decide na URL da plataforma — logs, suporte BR, R$399,99/mês</p>
         <div class="arch-cta rv rv-d3" style="margin-top:8px">
             <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
-            <a href="#faq" class="btn btn-o">Ver FAQ</a>
         </div>
     </div>
 </section>
@@ -1114,11 +1114,11 @@ main{position:relative;z-index:1}
         <p class="t-label rv" style="text-align:center;margin-bottom:6px">FAQ</p>
         <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:14px">Perguntas <span class="grad">frequentes</span></h2>
         <div class="faq-list">
-            <details class="faq-i rv"><summary class="faq-q">Quanto custa e como funciona o pagamento?</summary><div class="faq-a">Produto único a R$ 399,99/mês. Trimestral ~10% off (R$ 359,99/mês equiv.) e anual ~15% (R$ 339,99/mês equiv.). PIX ou cartão · sem fidelidade.</div></details>
             <details class="faq-i rv rv-d1" open><summary class="faq-q">O BlackInk se paga? Quanto posso economizar?</summary><div class="faq-a" id="faq-savings-a">Com o budget da <a href="#roi-calc">calculadora</a>, a perda estimada é ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês. Cloaker a R$ 399,99 — estimativa, não garantia.</div></details>
-            <details class="faq-i rv rv-d1"><summary class="faq-q">Preciso conectar minha conta de anúncios (OAuth)?</summary><div class="faq-a">Não. Cadastre páginas, configure regras e use a URL BlackInk como destino — Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras · sem OAuth.</div></details>
+            <details class="faq-i rv"><summary class="faq-q">Quanto custa?</summary><div class="faq-a">Produto único a R$ 399,99/mês. Trimestral ~10% off (R$ 359,99/mês equiv.) e anual ~15% (R$ 339,99/mês equiv.). PIX ou cartão · sem fidelidade.</div></details>
             <details class="faq-i rv rv-d2"><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">Garantia de 7 dias · reembolso 100% se não fizer sentido para suas campanhas.</div></details>
             <div class="faq-more" id="faq-more">
+                <details class="faq-i"><summary class="faq-q">Preciso conectar minha conta de anúncios (OAuth)?</summary><div class="faq-a">Não. Cadastre páginas, configure regras e use a URL BlackInk como destino — Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras · sem OAuth.</div></details>
                 <details class="faq-i"><summary class="faq-q">Funciona em quais redes?</summary><div class="faq-a">Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras. Destino do anúncio = URL BlackInk.</div></details>
                 <details class="faq-i"><summary class="faq-q">Como configuro o BlackInk?</summary><div class="faq-a">Cadastre safe/offer (ou BlackInk Clone), configure regras e aponte o anúncio para a URL BlackInk. Setup típico ~15 min — sem OAuth.</div></details>
                 <details class="faq-i"><summary class="faq-q">O que é um cloaker?</summary><div class="faq-a">Camada server-side entre o clique e a página final: bots/VPNs/revisores veem safe page; tráfego qualificado vê offer page.</div></details>
