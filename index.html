@@ -1196,6 +1196,14 @@ main{position:relative;z-index:1}
   #faq .t-lg{margin:0 0 1px}
   /* c340: pricing CTA densest — 20px alinhado ao ROI */
   #pricing .btn-full{height:20px;font-size:8px}
+  /* c344: price-wrap — mata strut line-height 25.6 (igual ROI slider) */
+  #pricing .p-price-wrap{line-height:1;min-height:0;margin:0;align-items:center}
+  #pricing .p-price,#pricing .p-price-line{line-height:1}
+  #pricing .p-val{font-size:clamp(11px,3.2vw,14px);line-height:1}
+  #pricing .p-curr,#pricing .p-per{font-size:6px;line-height:1}
+  #pricing .period-switcher{line-height:1;padding:0;margin:0;min-height:0}
+  #pricing .pricing-reveal-title{line-height:1.1;margin:0}
+  #pricing .pricing-lead{line-height:1.1;margin:0}
   /* c342: ROI slider-wrap — mata strut line-height + thumb 18px (~19px waste) */
   #roi-calc .calc-slider-wrap{line-height:1;display:flex;flex-direction:column;gap:1px}
   #roi-calc .calc-slider-header{line-height:1;margin:0;gap:2px}
@@ -1671,10 +1679,13 @@ main{position:relative;z-index:1}
   /* Ciclo 320 desktop densest pricing */
   #pricing .p-val{font-size:clamp(11px,1.2vw,14px);line-height:1}
   #pricing .pricing-reveal-title{font-size:clamp(9px,1.05vw,12px);line-height:1.1}
+  /* c344 desktop densest — price-wrap strut */
+  #pricing .p-price-wrap{line-height:1;min-height:0;margin:0}
+  #pricing .p-price,#pricing .p-price-line{line-height:1}
   /* Ciclo 321: chips fio + preço denso desktop densest */
   #pricing .p-curr,#pricing .p-per{font-size:6px;line-height:1}
-  #pricing .pricing-trust-chips{display:flex;gap:4px;margin:1px 0 0;padding:0;list-style:none;justify-content:center;flex-wrap:nowrap}
-  #pricing .pricing-trust-chips li{font-size:5px;padding:0 3px;margin:0;border:none;background:transparent;color:var(--dim);line-height:1.1}
+  /* c345: chips somem — p-micro já carrega Ativar −10% · 7 dias */
+  #pricing .pricing-trust-chips{display:none}
   /* Ciclo 323 desktop densest — setup H2 only */
   #como-funciona .t-lg{font-size:clamp(10px,1.15vw,13px)}
   /* Ciclo 326 desktop densest ROI */
@@ -1763,6 +1774,10 @@ main{position:relative;z-index:1}
   #pricing .period-discount{font-size:5px;padding:0 2px;line-height:1}
   #pricing .p-val{font-size:clamp(12px,3.6vw,16px)}
   #pricing .btn-full{height:20px;font-size:8px}
+  /* c344: preservar price-wrap densest em ≤600 */
+  #pricing .p-price-wrap{line-height:1;min-height:0;margin:0}
+  #pricing .p-price,#pricing .p-price-line{line-height:1}
+  #pricing .p-val{font-size:clamp(11px,3.2vw,14px);line-height:1}
   /* c329: nudge mensal visível no densest (JS hidden nos outros períodos) */
   #pricing .period-nudge{display:none;font-size:5px;margin:0;line-height:1.1;text-align:center}
   #pricing .period-nudge:not([hidden]){display:block}
@@ -1795,6 +1810,9 @@ main{position:relative;z-index:1}
   #pricing .period-discount{font-size:5px;padding:0 2px;line-height:1}
   #pricing .p-val{font-size:clamp(14px,4vw,18px)}
   #pricing .btn-full{height:20px;font-size:8px}
+  /* c344: preservar price-wrap densest em ≤480 */
+  #pricing .p-price-wrap{line-height:1;min-height:0;margin:0}
+  #pricing .p-val{font-size:clamp(11px,3.2vw,14px);line-height:1}
   #pricing .pricing-trust-chips{display:none}
   #pricing .period-nudge{display:none;font-size:5px;margin:0;line-height:1.1;text-align:center}
   #pricing .period-nudge:not([hidden]){display:block}
@@ -1821,6 +1839,9 @@ main{position:relative;z-index:1}
   #pricing .period-discount{font-size:5px;padding:0 2px;line-height:1}
   #pricing .p-val{font-size:clamp(14px,4vw,18px)}
   #pricing .btn-full{height:20px;font-size:8px}
+  /* c344: preservar price-wrap densest em ≤480 */
+  #pricing .p-price-wrap{line-height:1;min-height:0;margin:0}
+  #pricing .p-val{font-size:clamp(11px,3.2vw,14px);line-height:1}
   #pricing .pricing-trust-chips{display:none}
   #pricing .period-nudge{display:none;font-size:5px;margin:0;line-height:1.1;text-align:center}
   #pricing .period-nudge:not([hidden]){display:block}
