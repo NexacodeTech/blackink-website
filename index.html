@@ -653,6 +653,7 @@ main{position:relative;z-index:1}
   #o-que-e + .sep{display:none}
   #por-que.redes-why{display:none}
   #faq .faq-outro-period{display:none}
+  #comecar .cta-final-period{display:none}
   #faq .faq-outro{padding:8px 6px}
   #faq .faq-outro-support{font-size:11px;margin-top:8px}
   .hero-badge{margin-bottom:6px}
@@ -1554,7 +1555,7 @@ main{position:relative;z-index:1}
                 <details class="faq-i"><summary class="faq-q">O BlackInk é um tracker?</summary><div class="faq-a">Não. É cloaker server-side (safe vs offer). Não vende tracker nem pixel de atribuição.</div></details>
                 <details class="faq-i"><summary class="faq-q">Como falo com o suporte?</summary><div class="faq-a">E-mail <a href="mailto:suporte@theblack.ink">suporte@theblack.ink</a> e ticket/chat na plataforma. Assistência gratuita no setup inicial.</div></details>
             </div>
-            <button type="button" class="faq-more-toggle" id="faq-more-toggle" aria-expanded="false" aria-controls="faq-more">Mais dúvidas · setup · redes · suporte</button>
+            <button type="button" class="faq-more-toggle" id="faq-more-toggle" aria-expanded="false" aria-controls="faq-more">Mais dúvidas</button>
         </div>
         <div class="faq-outro rv">
             <div class="faq-outro-cta">
@@ -2143,7 +2144,7 @@ if (faqMore && faqMoreToggle) {
     faqMoreToggle.addEventListener('click', () => {
         const open = faqMore.classList.toggle('open');
         faqMoreToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-        faqMoreToggle.textContent = open ? 'Mostrar menos' : 'Mais dúvidas · setup · redes · suporte';
+        faqMoreToggle.textContent = open ? 'Mostrar menos' : 'Mais dúvidas';
     });
 }
 
