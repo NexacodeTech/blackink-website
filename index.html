@@ -1150,12 +1150,17 @@ main{position:relative;z-index:1}
   /* Ciclo 328: FAQ densest — H2 com −10% sem wrap; assure CTA */
   #faq .t-lg{font-size:clamp(8px,2.4vw,11px);margin:0 0 2px;line-height:1.15}
   #faq .faq-assure a{font-weight:700}
+  /* Ciclo 329: period-nudge densest quando mensal; ROI bar sumida */
+  #pricing .period-nudge{display:none;font-size:5px;margin:0;line-height:1.1;text-align:center;max-width:100%}
+  #pricing .period-nudge:not([hidden]){display:block}
+  #roi-calc .calc-summary-bar{display:none}
+  #roi-calc .calc-summary-val{font-size:9px}
   /* Ciclo 326: ROI densest — slider chrome mais baixo */
   #roi-calc .calc-slider-header{margin:0;gap:2px}
   #roi-calc .calc-slider-value{font-size:6px;line-height:1}
   #roi-calc .calc-summary{margin:1px 0}
   #roi-calc .calc-summary-card{padding:1px 3px}
-  #roi-calc .calc-summary-bar{height:2px;margin-top:1px}
+  /* bar already display:none above — don't re-inflate */
 }
 @media (min-width:768px){
   .sticky-cta-text{display:block}
@@ -1630,7 +1635,11 @@ main{position:relative;z-index:1}
   /* Ciclo 326 desktop densest ROI */
   #roi-calc .calc-slider-value{font-size:6px}
   #roi-calc .calc-summary-card{padding:1px 2px}
-  #roi-calc .calc-summary-bar{height:2px}
+  #roi-calc .calc-summary-bar{display:none}
+  #roi-calc .calc-summary-val{font-size:8px}
+  /* Ciclo 329: nudge densest desktop */
+  #pricing .period-nudge{display:none;font-size:6px;margin:0;line-height:1.1;text-align:center}
+  #pricing .period-nudge:not([hidden]){display:block}
   #comecar.cta-final{padding:0}
   #comecar .cta-final-title{font-size:clamp(10px,1.2vw,13px)}
   #comecar .pricing-cta{height:20px;font-size:8px}
@@ -1671,7 +1680,7 @@ main{position:relative;z-index:1}
   .prot-sim-bottom{grid-template-columns:1fr;gap:8px}
 }
 @media (max-width:600px){
-  /* Ciclo 259/268: não inflar ROI/pricing — densify 767 vence */
+  /* Ciclo 259/268/329: não inflar ROI/pricing — manter densest 767 */
   #roi-calc .calc-losses{display:none}
   #roi-calc .calc-caveat{display:none}
   #roi-calc .calc-divider{display:none}
@@ -1681,15 +1690,17 @@ main{position:relative;z-index:1}
   #roi-calc .t-body-lg{display:none}
   #roi-calc .calc-cta-text{font-size:7px;margin-bottom:1px}
   #roi-calc .calc-summary{margin-top:1px;grid-template-columns:1fr 1fr}
-  #roi-calc .calc-slider-value{font-size:13px}
-  #roi-calc .calc-summary-val{font-size:12px}
-  #roi-calc .calc-cta .btn{height:36px;font-size:11px}
+  #roi-calc .calc-slider-value{font-size:7px;line-height:1}
+  #roi-calc .calc-summary-val{font-size:8px;line-height:1.05}
+  #roi-calc .calc-cta .btn{height:22px;font-size:8px}
   .period-switcher{flex-direction:row;width:100%;max-width:100%;justify-content:center}
   .pricing-reveal-inner .period-toggle{width:100%;justify-content:center}
-  #pricing .period-btn{font-size:6px;padding:1px;min-height:22px}
-  #pricing .p-val{font-size:clamp(15px,4.2vw,19px)}
+  #pricing .period-btn{font-size:6px;padding:1px;min-height:20px}
+  #pricing .p-val{font-size:clamp(12px,3.6vw,16px)}
   #pricing .btn-full{height:22px;font-size:8px}
-  #pricing .period-nudge{display:none}
+  /* c329: nudge mensal visível no densest (JS hidden nos outros períodos) */
+  #pricing .period-nudge{display:none;font-size:5px;margin:0;line-height:1.1;text-align:center}
+  #pricing .period-nudge:not([hidden]){display:block}
   #pricing .pricing-trust-chips{display:none}
   #roi-calc .calc-cta .btn{height:22px;font-size:8px}
   #roi-calc .calc-summary-tag{display:none}
@@ -1718,11 +1729,15 @@ main{position:relative;z-index:1}
   #pricing .p-val{font-size:clamp(14px,4vw,18px)}
   #pricing .btn-full{height:22px;font-size:8px}
   #pricing .pricing-trust-chips{display:none}
+  #pricing .period-nudge{display:none;font-size:5px;margin:0;line-height:1.1;text-align:center}
+  #pricing .period-nudge:not([hidden]){display:block}
   #faq .faq-outro{display:none}
   #roi-calc .calc-slider-label{display:none}
   #roi-calc .calc-summary{grid-template-columns:1fr}
   #roi-calc .calc-summary-card:nth-child(2){display:none}
   #roi-calc .calc-cta .btn{height:20px;font-size:8px}
+  #roi-calc .calc-slider-value{font-size:7px}
+  #roi-calc .calc-summary-val{font-size:8px}
 }
 @media (max-width:390px){
   .hero-logo{width:32px;height:32px}
@@ -1734,11 +1749,15 @@ main{position:relative;z-index:1}
   #pricing .p-val{font-size:clamp(14px,4vw,18px)}
   #pricing .btn-full{height:22px;font-size:8px}
   #pricing .pricing-trust-chips{display:none}
+  #pricing .period-nudge{display:none;font-size:5px;margin:0;line-height:1.1;text-align:center}
+  #pricing .period-nudge:not([hidden]){display:block}
   #roi-calc .calc-cta .btn{height:20px;font-size:8px}
   #roi-calc .calc-summary-tag{display:none}
   #roi-calc .calc-slider-label{display:none}
   #roi-calc .calc-summary{grid-template-columns:1fr}
   #roi-calc .calc-summary-card:nth-child(2){display:none}
+  #roi-calc .calc-slider-value{font-size:7px}
+  #roi-calc .calc-summary-val{font-size:8px}
   #faq .faq-outro{display:none}
   #cloaker .showcase-cta .btn{height:18px;font-size:7px}
   #como-funciona .mid-cta .btn{height:18px;font-size:7px}
@@ -1888,7 +1907,7 @@ main{position:relative;z-index:1}
     <div class="container">
         <p class="t-label rv" style="text-align:center">Como funciona</p>
         <h2 class="t-lg rv rv-d1" style="text-align:center;margin:6px auto 6px;max-width:520px">Cadastre · regras · <span class="grad">URL · ~15 min</span></h2>
-        <p class="t-body-lg rv rv-d2" style="text-align:center;margin:0 auto 4px;max-width:440px;font-size:clamp(13px,1.4vw,15px)">Destino do anúncio = URL BlackInk · sem OAuth · trim. −10%</p>
+        <p class="t-body-lg rv rv-d2" style="text-align:center;margin:0 auto 4px;max-width:440px;font-size:clamp(13px,1.4vw,15px)">Destino do anúncio = URL BlackInk · ~15 min · trim. −10%</p>
 
         <div class="setup-steps">
             <div class="setup-step rv">
@@ -2532,8 +2551,8 @@ const FAQ_PRICE_CTA = {
 };
 const P_MICRO_HTML = {
     monthly: '<strong>7 dias</strong> · 100% · trim. −10% · ~15 min',
-    quarterly: '<strong>−10% ativo</strong> · 7 dias · R$1.079,97 / 3 meses',
-    yearly: '<strong>−15% ativo</strong> · 7 dias · R$4.079,90 / ano'
+    quarterly: '<strong>−10% ativo</strong> · 7 dias · ~15 min',
+    yearly: '<strong>−15% ativo</strong> · 7 dias · ~15 min'
 };
 
 const PERIOD_NUDGE = {
