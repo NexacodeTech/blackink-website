@@ -1155,6 +1155,11 @@ main{position:relative;z-index:1}
   #pricing .period-nudge:not([hidden]){display:block}
   #roi-calc .calc-summary-bar{display:none}
   #roi-calc .calc-summary-val{font-size:9px}
+  /* Ciclo 330: FAQ/ROI reclaim — CTA ROI mais legível */
+  #roi-calc .calc-cta .btn{height:24px;font-size:9px}
+  #faq .faq-assure{font-size:7px;line-height:1.2;margin:2px 0 0}
+  #faq .faq-q{padding:2px 4px;font-size:6.5px}
+  #faq .faq-a{padding:1px 4px 2px;font-size:6px;line-height:1.2}
   /* Ciclo 326: ROI densest — slider chrome mais baixo */
   #roi-calc .calc-slider-header{margin:0;gap:2px}
   #roi-calc .calc-slider-value{font-size:6px;line-height:1}
@@ -2073,7 +2078,7 @@ main{position:relative;z-index:1}
                     </div>
                 </div>
                 <div class="calc-cta">
-                    <p class="calc-cta-text" id="calc-cta-msg">Perda est. · ~1 dia = 1 mês · trim. −10%</p>
+                    <p class="calc-cta-text" id="calc-cta-msg">Perda est. · ~1 dia = 1 mês · Ativar −10%</p>
                     <div class="calc-cta-actions">
                         <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar — R$399,99/mês</a>
                         <a href="#pricing" class="calc-cta-period">Trimestral −10% · Anual −15%</a>
@@ -2848,7 +2853,7 @@ if (calcSlider && calcDisplay && calcInvisible && calcFraud && calcTotal && calc
         if (calcRoiBar) calcRoiBar.style.width = Math.max(Math.min((roi / 15) * 100, 100), 2) + '%';
         const paybackDays = Math.max(1, Math.ceil(planCost / (total / 30)));
         if (calcMsg && val > 0) {
-            calcMsg.innerHTML = 'Perda ~<strong>' + fmt(total) + '</strong>/mês · ~<strong>' + paybackDays + 'd</strong> = 1 mês · trim. −10%';
+            calcMsg.innerHTML = 'Perda ~<strong>' + fmt(total) + '</strong>/mês · ~<strong>' + paybackDays + 'd</strong> = 1 mês · Ativar −10%';
         }
         // Bridge calc → pricing (ciclo 32): keep loss + payback visible in the buy section
         if (pricingLeadLoss) pricingLeadLoss.textContent = fmt(total);
