@@ -794,6 +794,8 @@ main{position:relative;z-index:1}
   .calc-cta-actions .btn{width:100%;max-width:320px}
   .arch-cta .btn{width:100%;max-width:320px}
   .showcase-cta .btn{width:100%;max-width:320px}
+  /* Ciclo 92: seps quase invisíveis — menos “ar” entre atos do funil */
+  .sep{height:1px;opacity:.45;width:min(480px,70%)}
 }
 @media (min-width:768px){
   .sticky-cta-text{display:block}
@@ -804,9 +806,9 @@ main{position:relative;z-index:1}
   .calc-cta{margin-top:10px}
   .showcase-cta{flex-direction:row;align-items:center;gap:14px}
   /* Ciclo 81: densificar buy-path no desktop */
-  #roi-calc.section--compact{padding:clamp(24px,3.5vh,44px) 0}
-  #pricing.section--compact{padding:clamp(24px,3.5vh,44px) 0}
-  #faq.section--compact{padding:clamp(24px,3.5vh,44px) 0}
+  #roi-calc.section--compact{padding:clamp(20px,3vh,40px) 0}
+  #pricing.section--compact{padding:clamp(20px,3vh,40px) 0}
+  #faq.section--compact{padding:clamp(20px,3vh,40px) 0}
   #pricing .pricing-reveal-inner{padding:16px 18px}
   #faq .faq-outro{margin-top:12px;padding:12px}
   #problema.problem-strip{padding:clamp(20px,2.8vh,32px) 0}
@@ -1723,14 +1725,14 @@ function syncStickyLossCopy(period) {
     if (stickyText) {
         if (lastCalcLossFmt) {
             // Short price only — charge details live in #pricing (ciclo 78)
-            stickyText.innerHTML = 'Até <strong>' + lastCalcLossFmt + '</strong>/mês inválidos — cloaker <strong>' + priceShort + '</strong>';
+            stickyText.innerHTML = 'Até <strong>' + lastCalcLossFmt + '</strong>/mês inválidos — <strong>' + priceShort + '</strong> · 7 dias';
         } else {
-            stickyText.innerHTML = 'Safe page · Offer page — <strong>' + priceShort + '</strong>';
+            stickyText.innerHTML = 'Safe · Offer — <strong>' + priceShort + '</strong> · garantia 7 dias';
         }
     }
     if (stickyPrice) {
         if (lastCalcLossFmt) {
-            stickyPrice.innerHTML = '<strong>' + priceShort + '</strong><br>vs ' + lastCalcLossFmt + ' perda est.';
+            stickyPrice.innerHTML = '<strong>' + priceShort + '</strong><br>vs ' + lastCalcLossFmt + ' · 7 dias';
         } else {
             stickyPrice.innerHTML = '<strong>' + priceShort + '</strong><br>Garantia 7 dias';
         }
@@ -1804,7 +1806,7 @@ let footerInView = false;
 
 function syncStickyVisibility() {
     if (!stickyCta) return;
-    const pastHero = window.scrollY > (heroSection ? heroSection.offsetHeight * 0.35 : 180);
+    const pastHero = window.scrollY > (heroSection ? heroSection.offsetHeight * 0.22 : 120);
     const show = !stickyDismissed && pastHero && !pricingInView && !faqInView && !ctaFinalInView && !footerInView;
     stickyCta.classList.toggle('visible', show);
     stickyCta.setAttribute('aria-hidden', show ? 'false' : 'true');
