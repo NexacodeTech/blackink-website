@@ -1681,6 +1681,12 @@ main{position:relative;z-index:1}
   /* c474 LAST: sticky early + peek — price line punch */
   .sticky-cta-price{font-size:11px;line-height:1.25}
   .sticky-cta-price strong{font-size:12px;color:var(--white)}
+  /* c475 LAST: soft buy-first mais distinto do primary */
+  .hero-ctas .btn-o.hero-soft-cta{border-color:rgba(100,180,255,0.5);box-shadow:0 0 0 1px rgba(100,180,255,0.12)}
+  /* c476 LAST: sticky visível — borda accent sutil */
+  .sticky-cta.visible{border-top-color:rgba(100,180,255,0.28);box-shadow:0 -8px 32px rgba(0,0,0,0.35)}
+  /* c477 LAST: hero-ctas gap denser — mais ar pro cue/peek */
+  .hero-ctas{gap:8px;margin-bottom:10px}
 }
 @media (min-width:768px){
   .sticky-cta-text{display:block}
@@ -2514,6 +2520,10 @@ main{position:relative;z-index:1}
   /* c463–c464 desktop densest */
   #problema .problem-resolve-link{color:var(--dim);text-decoration:none}
   #redes a.network-chip{cursor:pointer}
+  /* c475–c477 desktop densest */
+  .hero-ctas .btn-o.hero-soft-cta{border-color:rgba(100,180,255,0.5)}
+  .sticky-cta.visible{border-top-color:rgba(100,180,255,0.28)}
+  .hero-ctas{gap:10px}
 }
 
 @media (max-width:640px){
