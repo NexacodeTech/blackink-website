@@ -451,7 +451,7 @@
 
                         <div class="btn-group">
                             <button type="submit" class="btn btn-p" id="submitBtn">
-                                Continuar para pagamento
+                                Continuar para pagamento — R$ 399,99/mês
                             </button>
                             <p class="form-submit-trust">PIX ou cartão · Garantia de 7 dias · Sem fidelidade</p>
                         </div>
@@ -500,6 +500,12 @@
     const planData = PLANS[plan];
     document.getElementById('planName').textContent = planData.displayName || plan;
 
+    function submitLabelForPeriod(p) {
+        if (p === 'quarterly') return 'Continuar para pagamento — R$ 359,99/mês';
+        if (p === 'yearly') return 'Continuar para pagamento — R$ 339,99/mês';
+        return 'Continuar para pagamento — R$ 399,99/mês';
+    }
+
     function applyPeriodPricing(nextPeriod) {
         period = nextPeriod;
         let priceDisplay = planData.price;
@@ -517,6 +523,10 @@
         }
         document.getElementById('planPrice').textContent = priceDisplay;
         document.getElementById('planBilling').textContent = billingDisplay;
+        const submitBtnEl = document.getElementById('submitBtn');
+        if (submitBtnEl && !submitBtnEl.disabled) {
+            submitBtnEl.textContent = submitLabelForPeriod(period);
+        }
         document.querySelectorAll('.cadastro-period-btn').forEach(btn => {
             btn.classList.toggle('active', btn.dataset.period === period);
         });
@@ -767,7 +777,7 @@
             console.error('Registration error:', error);
             showToast('error', 'Erro no cadastro', error.message || 'Tente novamente mais tarde.');
             submitBtn.disabled = false;
-            submitBtn.innerHTML = 'Continuar para pagamento';
+            submitBtn.textContent = submitLabelForPeriod(period);
         }
     });
 
