@@ -721,19 +721,19 @@ main{position:relative;z-index:1}
   #redes .t-lg,
   #redes .t-body-lg{display:none}
   #redes .networks-grid{margin-top:0;gap:3px}
-  #faq.section--compact{padding:clamp(4px,1vh,12px) 0}
+  #faq.section--compact{padding:clamp(2px,0.8vh,10px) 0}
   #faq .t-label{margin-bottom:0;display:none}
-  #faq .t-lg{margin-bottom:1px;font-size:clamp(14px,4vw,17px)}
+  #faq .t-lg{margin-bottom:1px;font-size:clamp(13px,3.8vw,16px)}
   #faq .faq-list{gap:2px}
-  #faq .faq-q{padding:4px 7px;font-size:10px}
-  #faq .faq-a{padding:0 7px 3px;font-size:9px;line-height:1.2}
-  #faq .faq-more-toggle{margin-top:1px;padding:2px 6px;min-height:26px;font-size:9px}
+  #faq .faq-q{padding:3px 6px;font-size:10px}
+  #faq .faq-a{padding:0 6px 2px;font-size:9px;line-height:1.15}
+  #faq .faq-more-toggle{margin-top:1px;padding:2px 6px;min-height:24px;font-size:8px}
   #faq .faq-outro{margin-top:2px;padding:3px}
   #faq .faq-outro-support{display:none}
   #faq .faq-outro p{font-size:11px;margin-bottom:0}
-  #faq .faq-outro .btn{height:42px;font-size:12px}
+  #faq .faq-outro .btn{height:40px;font-size:12px}
   #faq .faq-inline-cta{margin-top:0;padding:0}
-  #faq .faq-i--risk .faq-q{padding:4px 7px}
+  #faq .faq-i--risk .faq-q{padding:3px 6px}
   #comecar.cta-final{padding:clamp(10px,1.6vh,20px) 0}
   #comecar .t-lg,#comecar .cta-final-title{font-size:clamp(16px,4.5vw,22px)}
   #comecar .t-body-lg{margin:2px auto 4px;font-size:10px}
@@ -839,23 +839,26 @@ main{position:relative;z-index:1}
   #roi-calc .calc-cta .btn{height:42px;font-size:12px}
   /* Ciclo 83: após ROI o preço está na sequência — link de período some no mobile */
   #roi-calc .calc-cta-period{display:none}
-  .footer{padding:10px 0 8px}
-  .f-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 12px;margin-bottom:6px}
+  .footer{padding:8px 0 6px}
+  .f-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;margin-bottom:4px}
   .footer .f-brand{grid-column:1 / -1}
-  .footer .f-brand p{font-size:10px;line-height:1.25;max-width:38ch;margin-top:2px}
+  .footer .f-brand p{font-size:10px;line-height:1.2;max-width:36ch;margin-top:2px}
+  .footer .f-brand .hdr-logo{font-size:18px}
   .f-col-t{margin-bottom:2px;font-size:9px}
-  .f-links{gap:3px}
+  .f-links{gap:2px}
   .f-links a{font-size:11px}
   /* Ciclo 208: Produto — só 3 links no mobile */
   .footer .f-links a[href="#redes"],
   .footer .f-links a[href="#faq"],
   .footer .f-links a[href*="login"]{display:none}
-  .f-bottom{gap:2px;margin-top:4px;padding-top:6px;font-size:8px}
-  .f-legal{font-size:8px;line-height:1.2;gap:0}
+  .f-bottom{gap:2px;margin-top:2px;padding-top:4px;font-size:8px}
+  .f-legal{font-size:8px;line-height:1.15;gap:0}
   .f-legal-addr{display:none}
   .f-legal-addr-short{display:inline}
   /* Ciclo 221: email já está em Legal — some no bloco CNPJ mobile */
   .f-legal a[href^="mailto"]{display:none}
+  /* Ciclo 260: copyright some no mobile — CNPJ basta */
+  .f-bottom > span{display:none}
   .sticky-cta-inner{gap:10px}
   .sticky-cta-price{display:block}
   .sticky-cta .btn-p{flex:1.2;min-width:0;padding:0 14px;font-size:13px}
@@ -1093,7 +1096,7 @@ main{position:relative;z-index:1}
   .f-legal-addr{display:none}
   .f-legal-addr-short{display:inline}
   .f-bottom{margin-top:6px;gap:4px;font-size:9px;padding-top:8px}
-  /* Ciclo 251/258: densest desktop overrides last */
+  /* Ciclo 251/258/261: densest desktop overrides last */
   #pricing.section--compact{padding:clamp(2px,0.6vh,8px) 0}
   #pricing .pricing-reveal-inner{padding:4px 5px}
   #pricing .pricing-reveal-title{margin:0;font-size:clamp(13px,1.5vw,16px)}
@@ -1118,8 +1121,13 @@ main{position:relative;z-index:1}
   .footer{padding:clamp(6px,1vh,12px) 0 4px}
   .f-grid{gap:4px;margin-bottom:4px}
   .f-bottom{margin-top:4px;padding-top:4px;font-size:8px}
+  /* Ciclo 261: desktop — menos links + copyright curto */
+  .footer .f-links a[href="#redes"],
+  .footer .f-links a[href*="login"]{display:none}
+  .f-bottom > span{font-size:8px}
   #redes.redes-strip{padding:clamp(4px,0.8vh,10px) 0}
   #comecar.cta-final{padding:clamp(6px,1.2vh,14px) 0}
+  #comecar .cta-final-period{display:none}
 }
 @media (max-width:640px){
   .networks-grid{grid-template-columns:1fr 1fr}
@@ -1128,15 +1136,17 @@ main{position:relative;z-index:1}
   .prot-sim-bottom{grid-template-columns:1fr;gap:8px}
 }
 @media (max-width:600px){
-  .calc-slider-value{font-size:22px}
-  .calc-summary-val{font-size:22px}
+  /* Ciclo 259: não inflar ROI/pricing — densify 767 vence */
   #roi-calc .calc-losses{display:none}
-  #roi-calc .calc-caveat{font-size:9px;margin-top:4px}
-  #roi-calc .calc-cta-text{font-size:11px;margin-bottom:8px}
-  #roi-calc .calc-summary{margin-top:0}
-  .period-btn{font-size:13px;padding:10px 14px;flex:1 1 auto;justify-content:center;min-width:0}
+  #roi-calc .calc-caveat{display:none}
+  #roi-calc .calc-cta-text{font-size:8px;margin-bottom:2px}
+  #roi-calc .calc-summary{margin-top:2px}
+  #roi-calc .calc-slider-value{font-size:15px}
+  #roi-calc .calc-summary-val{font-size:13px}
   .period-switcher{flex-direction:row;width:100%;max-width:100%;justify-content:center}
   .pricing-reveal-inner .period-toggle{width:100%;justify-content:center}
+  /* period-btn densos — não voltar padding 10px */
+  #pricing .period-btn{font-size:9px;padding:4px 3px}
 }
 @media (max-width:500px){
   .flow-pillars{grid-template-columns:1fr}
@@ -1151,14 +1161,19 @@ main{position:relative;z-index:1}
   .container{width:min(1120px,100% - 28px)}
   .hero-ctas{max-width:100%}
   .networks-grid{grid-template-columns:1fr}
+  /* Ciclo 259: pricing permanece denso em 480 */
+  #pricing .period-btn{padding:4px 2px;font-size:9px}
+  #pricing .p-val{font-size:clamp(22px,6vw,28px)}
 }
 @media (max-width:390px){
   .hero-logo{width:32px;height:32px}
   .hero-title{font-size:22px}
   .hero-badge-text{font-size:10px}
   .btn{height:48px;font-size:14px;padding:0 20px}
-  .period-btn{font-size:12px;padding:10px 13px}
-  .p-val{font-size:42px}
+  /* Ciclo 259: não inflar preço/switcher no iPhone */
+  #pricing .period-btn{font-size:9px;padding:4px 2px}
+  #pricing .p-val{font-size:clamp(22px,7vw,28px)}
+  #pricing .btn-full{height:44px;font-size:13px}
 }
 @media (prefers-reduced-motion:reduce){
   .rv{opacity:1;transform:none}
@@ -1222,7 +1237,7 @@ main{position:relative;z-index:1}
         <span class="ln"><span class="ln-i"><span class="ln-mute">Bots veem</span> <span class="ln-strong">Safe Page</span></span></span>
         <span class="ln"><span class="ln-i"><span class="ln-mute">Compradores veem</span> <span class="ln-strong">Offer Page</span></span></span>
     </h1>
-    <p class="hero-sub">Safe vs offer · multi-rede · &lt;50ms · sem OAuth · R$399,99/mês</p>
+    <p class="hero-sub">Safe vs offer · multi-rede · &lt;50ms · sem OAuth · R$399,99</p>
     <div class="hero-ctas">
         <a href="#roi-calc" class="btn btn-p">Calcular perda do budget</a>
         <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-o plan-link hero-cta" data-plan="Maré">Começar agora — R$399,99/mês</a>
@@ -1266,7 +1281,7 @@ main{position:relative;z-index:1}
                 <div class="problem-desc">Decisão no browser é detectável. Server-side decide antes do HTML.</div>
             </div>
         </div>
-        <p class="problem-resolve rv rv-d3">Corta os três · <span class="grad">sem OAuth · R$399,99</span></p>
+        <p class="problem-resolve rv rv-d3">Corta conta · clique sujo · JS · <span class="grad">R$399,99 · sem OAuth</span></p>
         <div class="mid-cta mid-cta--soft rv rv-d4">
             <a href="#roi-calc" class="btn btn-p">Calcular perda do budget</a>
             <a href="#cloaker" class="btn btn-o">Ver prova ao vivo</a>
@@ -1553,13 +1568,13 @@ main{position:relative;z-index:1}
                 <details class="faq-i"><summary class="faq-q">Quanto custa?</summary><div class="faq-a">R$ 399,99/mês · trimestral −10% · anual −15% · PIX/cartão · sem fidelidade.</div></details>
                 <details class="faq-i"><summary class="faq-q">Preciso conectar minha conta de anúncios (OAuth)?</summary><div class="faq-a">Não. Cadastre páginas, configure regras e use a URL BlackInk como destino — Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras · sem OAuth.</div></details>
                 <details class="faq-i"><summary class="faq-q">Funciona em quais redes?</summary><div class="faq-a">Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras. Destino do anúncio = URL BlackInk.</div></details>
-                <details class="faq-i"><summary class="faq-q">Como configuro o BlackInk?</summary><div class="faq-a">Cadastre safe/offer (ou BlackInk Clone), configure regras e aponte o anúncio para a URL BlackInk. Setup típico ~15 min — sem OAuth.</div></details>
+                <details class="faq-i"><summary class="faq-q">Como configuro o BlackInk?</summary><div class="faq-a">Safe/offer (ou Clone) → regras → destino do anúncio = URL BlackInk. ~15 min · sem OAuth.</div></details>
                 <details class="faq-i"><summary class="faq-q">O que é um cloaker?</summary><div class="faq-a">Camada server-side entre o clique e a página final: bots/VPNs/revisores veem safe page; tráfego qualificado vê offer page.</div></details>
                 <details class="faq-i"><summary class="faq-q">O que é safe page e offer page?</summary><div class="faq-a">Safe page para tráfego inválido (compliant). Offer page só para quem passa no filtro. Roteamento server-side &lt;50ms.</div></details>
-                <details class="faq-i"><summary class="faq-q">Já uso outro cloaker. É difícil migrar?</summary><div class="faq-a">Cadastre páginas (ou Clone), ajuste regras e troque a URL de destino. Maioria em &lt;30 min.</div></details>
-                <details class="faq-i"><summary class="faq-q">Qual a diferença do BlackInk para outros cloakers?</summary><div class="faq-a">SaaS server-side com URL própria, decision logs, sem PHP no seu host, suporte BR e preço único R$ 399,99/mês.</div></details>
-                <details class="faq-i"><summary class="faq-q">O BlackInk é um tracker?</summary><div class="faq-a">Não. É cloaker server-side (safe vs offer). Não vende tracker nem pixel de atribuição.</div></details>
-                <details class="faq-i"><summary class="faq-q">Como falo com o suporte?</summary><div class="faq-a">E-mail <a href="mailto:suporte@theblack.ink">suporte@theblack.ink</a> e ticket/chat na plataforma. Assistência gratuita no setup inicial.</div></details>
+                <details class="faq-i"><summary class="faq-q">Já uso outro cloaker. É difícil migrar?</summary><div class="faq-a">Cadastre páginas (ou Clone), ajuste regras, troque a URL. Maioria em &lt;30 min.</div></details>
+                <details class="faq-i"><summary class="faq-q">Qual a diferença do BlackInk para outros cloakers?</summary><div class="faq-a">SaaS server-side · URL própria · decision logs · sem PHP no host · suporte BR · R$399,99/mês.</div></details>
+                <details class="faq-i"><summary class="faq-q">O BlackInk é um tracker?</summary><div class="faq-a">Não. Cloaker server-side (safe vs offer) — sem tracker nem pixel de atribuição.</div></details>
+                <details class="faq-i"><summary class="faq-q">Como falo com o suporte?</summary><div class="faq-a"><a href="mailto:suporte@theblack.ink">suporte@theblack.ink</a> · ticket/chat na plataforma · setup inicial gratuito.</div></details>
             </div>
             <button type="button" class="faq-more-toggle" id="faq-more-toggle" aria-expanded="false" aria-controls="faq-more">Mais dúvidas</button>
         </div>
@@ -1600,7 +1615,7 @@ main{position:relative;z-index:1}
         <div class="f-grid">
             <div class="f-brand">
                 <a href="#hero" class="hdr-logo" style="font-size:22px">Black<span>Ink</span></a>
-                <p>Cloaker server-side · multi-rede · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link pricing-cta" data-plan="Maré" style="color:var(--accent);font-weight:600">Ativar agora — R$399,99/mês</a></p>
+                <p>Cloaker server-side · multi-rede · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link pricing-cta" data-plan="Maré" style="color:var(--accent);font-weight:600">Ativar — R$399,99/mês</a></p>
             </div>
             <div>
                 <div class="f-col-t">Produto</div>
@@ -1637,7 +1652,7 @@ main{position:relative;z-index:1}
 
 <div class="sticky-cta" id="sticky-cta" aria-hidden="true">
     <div class="sticky-cta-inner">
-        <p class="sticky-cta-text" id="sticky-cta-text">Safe · Offer — <strong>R$ 399,99/mês</strong> · 7 dias</p>
+        <p class="sticky-cta-text" id="sticky-cta-text">Safe · Offer · <strong>R$399,99/mês</strong> · 7 dias</p>
         <p class="sticky-cta-price" id="sticky-cta-price"><strong>R$ 399,99/mês</strong><br>Garantia 7 dias</p>
         <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link" data-plan="Maré" id="sticky-cta-btn">Ativar agora — R$399,99</a>
         <button type="button" class="sticky-cta-close" id="sticky-cta-close" aria-label="Fechar">&times;</button>
