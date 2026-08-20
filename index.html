@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BlackInk — Cloaker Server-Side para Tráfego Pago</title>
-    <meta name="description" content="Cloaker server-side: bots e revisores veem safe page; compradores veem offer page. Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras — filtragem &lt;50ms. R$ 399,99/mês · garantia 7 dias.">
+    <meta name="description" content="Cloaker server-side multi-rede: safe page para bots/revisores, offer page para quem compra. Google Ads, YouTube Ads, Facebook Ads, TikTok Ads — &lt;50ms. R$399,99/mês · ~1 dia de clique sujo = 1 mês · garantia 7 dias.">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta property="og:title" content="BlackInk — Cloaker Server-Side para Tráfego Pago">
     <meta property="og:description" content="Safe page para revisores. Offer page para quem compra. Cloaker server-side para Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras — R$ 399,99/mês.">
@@ -1077,10 +1077,13 @@ main{position:relative;z-index:1}
   #comecar .t-body-lg{display:none}
   #comecar .cta-final-trust{display:none}
   #comecar .cta-final-title{font-size:clamp(9px,2.8vw,12px)}
-  #comecar .pricing-cta{height:18px;font-size:7px}
+  #comecar .pricing-cta{height:22px;font-size:8px}
+  #cloaker .showcase-cta .btn{height:20px;font-size:8px}
   #problema .mid-cta,#como-funciona .mid-cta{display:none}
   #redes .network-chip span{display:none}
+  #redes .network-chip--more{display:none}
   #pricing .pricing-trust-chips{display:none}
+  #pricing .period-nudge{display:none}
 }
 @media (min-width:768px){
   .sticky-cta-text{display:block}
@@ -1523,13 +1526,18 @@ main{position:relative;z-index:1}
   #faq .t-lg{font-size:clamp(8px,0.9vw,10px)}
   #faq .faq-q{padding:0 2px;font-size:5px}
   #faq .faq-a{padding:0 2px 0;font-size:5px}
-  #problema .t-lg{font-size:clamp(12px,1.4vw,16px);margin:0 auto}
-  #problema .problem-card{padding:2px 3px}
-  #problema .problem-stat{font-size:10px}
-  #problema .problem-title{font-size:8px}
-  #como-funciona .t-lg{font-size:clamp(11px,1.3vw,14px);margin:0 auto}
-  #como-funciona .setup-step{padding:1px 2px}
-  #como-funciona .setup-step h3{font-size:8px}
+  #problema.problem-strip{padding:0}
+  #problema .t-lg{font-size:clamp(11px,1.3vw,14px);margin:0 auto}
+  #problema .problem-card{padding:1px 2px}
+  #problema .problem-stat{font-size:9px}
+  #problema .problem-title{font-size:7px}
+  #problema .problem-resolve{font-size:7px;margin:0}
+  #problema .problem-grid{gap:2px}
+  #como-funciona.section--compact{padding:0}
+  #como-funciona .t-lg{font-size:clamp(10px,1.2vw,13px);margin:0 auto}
+  #como-funciona .setup-step{padding:1px}
+  #como-funciona .setup-step h3{font-size:7px}
+  #redes .network-chip--more{display:none}
   #roi-calc .calc-summary{grid-template-columns:1fr;max-width:220px;margin-left:auto;margin-right:auto}
   #roi-calc .calc-summary-card:nth-child(2){display:none}
   .sep{height:0;opacity:0;margin:0;border:0}
@@ -1655,7 +1663,7 @@ main{position:relative;z-index:1}
         </nav>
         <div class="hdr-cta">
             <a href="https://app.theblack.ink/auth/login" class="btn btn-g btn-sm">Entrar</a>
-            <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p btn-sm plan-link" data-plan="Maré">Ativar</a>
+            <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p btn-sm plan-link" data-plan="Maré">Ativar — R$399,99</a>
         </div>
         <button class="mob-tog" aria-label="Menu" type="button"><span></span><span></span><span></span></button>
     </div>
