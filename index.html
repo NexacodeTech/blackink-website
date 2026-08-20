@@ -810,25 +810,42 @@ main{position:relative;z-index:1}
   .calc-cta-actions{flex-direction:row;gap:14px}
   .calc-cta{margin-top:10px}
   .showcase-cta{flex-direction:row;align-items:center;gap:14px}
-  /* Ciclo 81: densificar buy-path no desktop */
-  #roi-calc.section--compact{padding:clamp(20px,3vh,40px) 0}
-  #pricing.section--compact{padding:clamp(20px,3vh,40px) 0}
-  #faq.section--compact{padding:clamp(20px,3vh,40px) 0}
-  #pricing .pricing-reveal-inner{padding:16px 18px}
-  #faq .faq-outro{margin-top:12px;padding:12px}
-  #problema.problem-strip{padding:clamp(20px,2.8vh,32px) 0}
-  #roi-calc .t-body-lg{margin:0 auto 8px;font-size:13px}
-  #roi-calc .calc-card{padding:16px 18px}
+  /* Ciclo 97: buy-path desktop mais curto até o fechamento */
+  #roi-calc.section--compact{padding:clamp(18px,2.8vh,36px) 0}
+  #pricing.section--compact{padding:clamp(18px,2.8vh,36px) 0}
+  #faq.section--compact{padding:clamp(18px,2.8vh,36px) 0}
+  #cloaker.section--compact{padding:clamp(24px,3.5vh,44px) 0}
+  #pricing .pricing-reveal-inner{padding:14px 16px}
+  #faq .faq-outro{margin-top:10px;padding:10px}
+  #faq .faq-list{gap:6px}
+  #faq .faq-a{padding:0 14px 10px;font-size:12px}
+  #faq .t-lg{margin-bottom:10px}
+  #problema.problem-strip{padding:clamp(18px,2.5vh,28px) 0}
+  #o-que-e.edu-strip{padding:clamp(18px,2.5vh,32px) 0}
+  #o-que-e .t-body-lg{margin:0 auto 8px}
+  #como-funciona.section--compact{padding:clamp(22px,3.2vh,40px) 0}
+  #como-funciona .setup-steps{margin:10px 0 6px;gap:8px}
+  #redes.redes-strip{padding:clamp(16px,2.4vh,28px) 0}
+  #redes .t-body-lg{display:none}
+  #redes .networks-grid{margin-top:10px}
+  #por-que.why-strip{padding:clamp(12px,2vh,20px) 0}
+  #roi-calc .t-body-lg{margin:0 auto 6px;font-size:13px}
+  #roi-calc .calc-card{padding:14px 16px}
   #roi-calc .calc-summary-lbl{display:none}
+  #roi-calc .calc-summary-bar{display:none}
+  #roi-calc .calc-caveat{display:none}
   #roi-calc .calc-losses{gap:6px}
   #roi-calc .calc-loss{padding:8px 6px}
   #roi-calc .calc-loss-val{font-size:15px}
   #roi-calc .calc-slider-ticks{font-size:9px;margin-top:2px}
   #roi-calc .calc-divider{margin:8px 0}
   #roi-calc .calc-cta-text{font-size:12px;margin-bottom:8px}
+  #roi-calc .calc-cta{margin-top:8px}
   #cloaker .showcase-text .t-body-lg{font-size:14px}
-  #faq .faq-q{padding:11px 14px}
-  #comecar.cta-final{padding:clamp(28px,4.5vh,56px) 0}
+  #faq .faq-q{padding:10px 14px}
+  #comecar.cta-final{padding:clamp(24px,4vh,48px) 0}
+  #comecar .t-body-lg{margin:6px auto 10px}
+  #pricing .period-toggle-label{margin-bottom:4px}
 }
 @media (max-width:640px){
   .networks-grid{grid-template-columns:1fr 1fr}
@@ -1063,7 +1080,7 @@ main{position:relative;z-index:1}
                 <p class="showcase-proof" id="showcase-proof">Simulação ao vivo: acompanhe bloqueios e taxa legítima em tempo real</p>
                 <div class="showcase-cta">
                     <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
-                    <a href="#roi-calc" class="showcase-cta-soft">Calcular perdas do budget</a>
+                    <a href="#roi-calc" class="showcase-cta-soft">Ver quanto some do budget</a>
                 </div>
             </div>
             <div class="showcase-visual">
@@ -1236,7 +1253,7 @@ main{position:relative;z-index:1}
     <div class="container">
         <p class="t-label rv">Redes</p>
         <h2 class="t-lg rv rv-d1">Uma URL · <span class="grad">Qualquer rede</span></h2>
-        <p class="t-body-lg rv rv-d2">Destino do anúncio = URL BlackInk. Sem OAuth</p>
+        <p class="t-body-lg rv rv-d2">Destino do anúncio = URL BlackInk · sem OAuth em nenhuma</p>
         <div class="networks-grid rv rv-d3">
             <div class="network-chip"><strong>Google Ads</strong><span>Search &amp; Display</span></div>
             <div class="network-chip"><strong>YouTube Ads</strong><span>In-stream &amp; Shorts</span></div>
@@ -1252,7 +1269,7 @@ main{position:relative;z-index:1}
 <!-- 8. Por que BlackInk — one-line strip (ciclo 65) -->
 <section class="why-strip" id="por-que" aria-label="Por que BlackInk">
     <div class="container">
-        <p class="why-strip-text rv"><strong>SaaS server-side</strong> · não script · decision logs · suporte BR · <span class="grad">R$399,99/mês</span></p>
+        <p class="why-strip-text rv"><strong>SaaS server-side</strong> · não script PHP · decision logs · suporte BR · <span class="grad">R$399,99/mês</span></p>
     </div>
 </section>
 
@@ -1265,7 +1282,7 @@ main{position:relative;z-index:1}
         <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:14px">Dúvidas <span class="grad">antes de ativar</span></h2>
         <div class="faq-list">
             <details class="faq-i rv rv-d1" open><summary class="faq-q">O BlackInk se paga? Quanto posso economizar?</summary><div class="faq-a" id="faq-savings-a">Com o budget da <a href="#roi-calc">calculadora</a>, a perda estimada é ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês — cloaker a R$399,99 se paga em ~<strong id="faq-savings-payback">1 dia</strong> (estimativa). <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar cloaker</a></div></details>
-            <details class="faq-i rv rv-d2"><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">Garantia de 7 dias · reembolso 100% se não fizer sentido para suas campanhas.</div></details>
+            <details class="faq-i faq-i--risk rv rv-d2" open><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">Garantia de 7 dias · reembolso 100% se não fizer sentido para suas campanhas — sem pergunta capciosa.</div></details>
             <div class="faq-more" id="faq-more">
                 <details class="faq-i"><summary class="faq-q">Quanto custa?</summary><div class="faq-a">Produto único a R$ 399,99/mês. Trimestral ~10% off (R$ 359,99/mês equiv.) e anual ~15% (R$ 339,99/mês equiv.). PIX ou cartão · sem fidelidade.</div></details>
                 <details class="faq-i"><summary class="faq-q">Preciso conectar minha conta de anúncios (OAuth)?</summary><div class="faq-a">Não. Cadastre páginas, configure regras e use a URL BlackInk como destino — Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras · sem OAuth.</div></details>
@@ -1294,15 +1311,15 @@ main{position:relative;z-index:1}
 <section class="section cta-final" id="comecar">
     <div class="cta-orb" aria-hidden="true"></div>
     <div class="container" style="position:relative;z-index:1">
-        <p class="t-label rv" style="text-align:center;margin-bottom:8px">Pronto</p>
+        <p class="t-label rv" style="text-align:center;margin-bottom:6px">Pronto</p>
         <h2 class="t-lg rv rv-d1" style="text-align:center">Ative o cloaker<br><span class="grad">Pare de financiar o clique inválido</span></h2>
-        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:440px;margin:8px auto 14px;font-size:clamp(13px,1.4vw,15px)" id="cta-final-lead">Pare de financiar até <strong id="cta-final-loss">R$ 12.500</strong>/mês em cliques inválidos · payback <span id="cta-final-payback">~1 dia</span></p>
+        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:440px;margin:8px auto 14px;font-size:clamp(13px,1.4vw,15px)" id="cta-final-lead">Até <strong id="cta-final-loss">R$ 12.500</strong>/mês em cliques inválidos · payback <span id="cta-final-payback">~1 dia</span> · garantia 7 dias</p>
         <div class="rv rv-d3" style="display:flex;flex-direction:column;align-items:center;gap:10px">
             <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
             <div class="cta-final-trust">
                 <span>PIX ou cartão</span>
                 <span>Garantia 7 dias</span>
-                <span>Sem contrato</span>
+                <span>Sem OAuth</span>
                 <span>Empresa BR · CNPJ</span>
             </div>
             <a href="#pricing" style="font-size:12px;color:var(--accent);font-weight:500">Ajustar periodicidade</a>
@@ -1859,6 +1876,11 @@ syncStickyVisibility();
 // FAQ progressive disclosure
 const faqMore = document.getElementById('faq-more');
 const faqMoreToggle = document.getElementById('faq-more-toggle');
+const faqRisk = document.querySelector('.faq-i--risk');
+// Ciclo 98: garantia aberta no desktop; fechada no mobile (chips/pricing já cobrem risco)
+if (faqRisk && window.matchMedia('(max-width:767px)').matches) {
+    faqRisk.removeAttribute('open');
+}
 if (faqMore && faqMoreToggle) {
     faqMoreToggle.addEventListener('click', () => {
         const open = faqMore.classList.toggle('open');
