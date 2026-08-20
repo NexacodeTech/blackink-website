@@ -676,11 +676,13 @@ main{position:relative;z-index:1}
   #problema .problem-desc{display:none}
   #problema .problem-resolve{margin-top:8px;font-size:12px}
   #problema .mid-cta{margin-top:8px}
-  #o-que-e.edu-strip{padding:clamp(16px,2.4vh,28px) 0}
-  #o-que-e .t-body-lg{margin:0 auto 8px;font-size:12px}
-  #o-que-e .edu-pill{padding:10px}
-  #o-que-e .edu-pill h3{font-size:13px;margin-bottom:2px}
-  #o-que-e .edu-pill p{font-size:11px;line-height:1.35}
+  #o-que-e.edu-strip{padding:clamp(14px,2vh,24px) 0}
+  #o-que-e .t-lg{margin:4px auto 4px;font-size:clamp(18px,5vw,24px)}
+  #o-que-e .t-body-lg{display:none}
+  #o-que-e .edu-pill{padding:8px}
+  #o-que-e .edu-pill h3{font-size:12px;margin-bottom:2px}
+  #o-que-e .edu-pill p{font-size:10px;line-height:1.3}
+  #o-que-e .edu-tag{margin-bottom:4px;padding:2px 6px;font-size:9px}
   .obj-grid{grid-template-columns:1fr;max-width:420px}
   /* Ciclo 82: safe/offer lado a lado no mobile */
   .edu-rail{grid-template-columns:1fr 1fr;gap:6px;max-width:100%}
@@ -702,28 +704,29 @@ main{position:relative;z-index:1}
   #pricing .p-price-wrap{min-height:48px;margin-bottom:8px}
   #pricing .p-monthly-eq{font-size:10px;margin-top:2px;max-width:32ch;line-height:1.3}
   #pricing .p-micro{margin-top:6px;line-height:1.35}
-  #faq.section--compact{padding:clamp(18px,2.6vh,32px) 0}
-  #faq .t-lg{margin-bottom:8px;font-size:clamp(20px,5.5vw,26px)}
-  #faq .faq-q{padding:9px 11px;font-size:12px}
-  #faq .faq-a{padding:0 11px 8px;font-size:11px;line-height:1.4}
-  #faq .faq-outro{margin-top:10px;padding:8px}
+  #faq.section--compact{padding:clamp(16px,2.2vh,28px) 0}
+  #faq .t-label{margin-bottom:2px}
+  #faq .t-lg{margin-bottom:6px;font-size:clamp(18px,5vw,24px)}
+  #faq .faq-list{gap:5px}
+  #faq .faq-q{padding:8px 10px;font-size:12px}
+  #faq .faq-a{padding:0 10px 8px;font-size:11px;line-height:1.35}
+  #faq .faq-more-toggle{margin-top:6px;padding:6px 12px;min-height:40px;font-size:12px}
+  #faq .faq-outro{margin-top:8px;padding:8px}
   #faq .faq-outro-support{font-size:11px;margin-top:8px}
   #faq .faq-outro p{font-size:11px;margin-bottom:0}
-  #faq .faq-outro-period{font-size:11px}
-  #faq .faq-more-toggle{margin-top:6px;padding:7px 12px;min-height:40px;font-size:12px}
-  #faq .faq-list{gap:6px}
-  #comecar.cta-final{padding:clamp(24px,3.5vh,40px) 0}
-  #comecar .t-lg{font-size:clamp(22px,6vw,28px)}
-  #comecar .t-body-lg{margin:6px auto 10px;font-size:12px}
+  #comecar.cta-final{padding:clamp(20px,3vh,32px) 0}
+  #comecar .t-lg,#comecar .cta-final-title{font-size:clamp(20px,5.5vw,26px)}
+  #comecar .t-body-lg{margin:4px auto 8px;font-size:12px}
   #comecar .cta-final-trust span:nth-child(4){display:none}
+  #comecar .cta-final-period{font-size:11px}
   .flow-pillars{grid-template-columns:1fr 1fr}
   .showcase{grid-template-columns:1fr;gap:18px}
-  #cloaker.section--compact{padding:clamp(20px,3vh,36px) 0}
+  #cloaker.section--compact{padding:clamp(16px,2.4vh,28px) 0}
   #cloaker .showcase{display:flex;flex-direction:column;gap:10px}
   #cloaker .showcase-text{display:contents}
   #cloaker .showcase-text .t-label{order:1}
-  #cloaker .showcase-text .t-lg{order:2;margin:2px 0 4px}
-  #cloaker .showcase-text .t-body-lg{order:3;font-size:12px;margin:0}
+  #cloaker .showcase-text .t-lg{order:2;margin:2px 0 2px;font-size:clamp(20px,5.5vw,26px)}
+  #cloaker .showcase-text .t-body-lg{order:3;font-size:11px;margin:0}
   #cloaker .showcase-features{display:none}
   #cloaker .showcase-proof{display:none}
   #cloaker .showcase-visual{order:4}
@@ -741,11 +744,11 @@ main{position:relative;z-index:1}
   #cloaker .prot-sim-stat-val{font-size:15px}
   #cloaker .prot-sim-feed{margin:0 8px 8px}
   #cloaker .prot-sim-feed-header{padding:5px 10px}
-  /* Ciclo 86: feed ainda mais curto */
-  .prot-sim{min-height:190px}
+  /* Ciclo 121: feed curto no mobile */
+  .prot-sim{min-height:180px}
   #cloaker .prot-sim-stat:last-child{display:none}
   #cloaker .prot-sim-stats{grid-template-columns:1fr 1fr 1fr}
-  .prot-sim-feed{min-height:56px;max-height:80px}
+  .prot-sim-feed{min-height:48px;max-height:72px}
   .networks-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:12px}
   #redes.redes-strip{padding:clamp(12px,2vh,22px) 0}
   #redes .t-lg{margin:2px auto 2px;font-size:clamp(18px,5vw,24px)}
