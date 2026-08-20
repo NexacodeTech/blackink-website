@@ -154,3 +154,8 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Contexto**: fill linear 1k–500k deixava R$10k/R$50k visualmente grudados em R$1k (ticks não-lineares).
 **Regra**: `--fill` mapeia por segmentos das ticks (1k→50k→100k→250k→500k); default do slider = R$50.000.
 **Status**: ativo
+
+## 2026-08-20 — Compressão educação/setup (scroll)
+**Contexto**: `#o-que-e` + pilares em `#como-funciona` repetiam safe/offer e features do showcase.
+**Regra**: educação enxuta (copy curta, sem soft-CTA); setup compacto com steps+fluxo+CTA hard; pilares removidos (prova/showcase carrega os detalhes).
+**Status**: ativo
