@@ -767,6 +767,12 @@
         syncCadastroSticky();
     }
 
+    // c531: mobile form-first — foca nome sem scrollar (teclado pronto)
+    if (nameInput && window.matchMedia('(max-width:767px)').matches) {
+        try { nameInput.focus({ preventScroll: true }); }
+        catch (_) { try { nameInput.focus(); } catch (__) {} }
+    }
+
     // Password visibility toggles
     document.getElementById('togglePassword').addEventListener('click', () => {
         const type = passwordInput.type === 'password' ? 'text' : 'password';
