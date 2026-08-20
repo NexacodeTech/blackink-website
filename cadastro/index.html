@@ -281,6 +281,13 @@
             .cadastro-period-label{margin:8px 0 4px;font-size:10px}
             .cadastro-loss-bridge{display:none} /* c522: perda já na landing + sticky; sobe confirma senha */
             .selected-plan-trust{display:none} /* c522: sticky já carrega garantia */
+            /* c553 LAST: one-liner garantia no resumo (primary path; some se banner intent) */
+            .selected-plan-trust{
+                display:block;margin-top:6px;padding-top:6px;font-size:10px;line-height:1.3;
+                text-align:center;border-top:1px solid var(--border);color:var(--dim)
+            }
+            .selected-plan-trust strong{color:var(--green)}
+            .register-card:has(#cadastroGarantiaBanner.is-on) .selected-plan-trust{display:none}
             .register-card-header{margin-bottom:10px;display:none} /* c520: sticky+labels bastam — senha no fold */
             .form-label{font-size:12px;margin-bottom:4px}
             .form-group{margin-bottom:8px}
@@ -447,7 +454,7 @@
                             <button type="button" class="cadastro-period-btn" data-period="quarterly">Trimestral <span class="period-discount">−10%</span> <span class="period-rec" title="Recomendado">Ideal</span></button>
                             <button type="button" class="cadastro-period-btn" data-period="yearly">Anual <span class="period-discount">−15%</span></button>
                         </div>
-                        <div class="selected-plan-trust"><strong>Garantia 7 dias</strong> · 100% · Ativar com garantia −10% · cancele quando quiser</div>
+                        <div class="selected-plan-trust"><strong>Garantia 7 dias</strong> · 100% · PIX · cancele quando quiser</div>
                         <div class="cadastro-loss-bridge" id="cadastroLossBridge" hidden>
                             <strong id="cadastroLossValue">R$ 0</strong>
                             <span id="cadastroLossHint">perda · ~1 dia = 1 mês · Garantia 7 dias · Ativar com garantia −10%</span>
@@ -681,7 +688,7 @@
         const lossFmt = simulatedLoss
             ? ('R$ ' + Math.round(simulatedLoss).toLocaleString('pt-BR'))
             : null;
-        if (trustEl) trustEl.innerHTML = '<strong>Garantia 7 dias</strong> · 100% · ' + garantiaVerb + ' · cancele quando quiser';
+        if (trustEl) trustEl.innerHTML = '<strong>Garantia 7 dias</strong> · 100% · PIX · cancele quando quiser';
         // c467: loss hint com valor real quando veio da landing
         if (lossHint) {
             // c517: span curto — valor já está no strong
