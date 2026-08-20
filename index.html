@@ -649,65 +649,94 @@ main{position:relative;z-index:1}
   /* Drop rail chips that duplicate hero-trust (ciclo 69) */
   .trust-rail span:nth-child(3),
   .trust-rail span:nth-child(4){display:none}
-  .problem-grid{grid-template-columns:1fr;max-width:420px}
-  #problema.problem-strip{padding:clamp(20px,3vh,32px) 0}
+  /* Ciclo 82: 3 chips lado a lado (desc já oculto) — corta ~140px vs stack */
+  .problem-grid{grid-template-columns:repeat(3,1fr);gap:6px;max-width:100%}
+  #problema.problem-strip{padding:clamp(18px,2.8vh,28px) 0}
   #problema .t-lg{margin:4px auto 6px}
-  #problema .t-body-lg{margin:0 auto 10px;font-size:13px}
-  #problema .problem-card{padding:10px 12px}
+  #problema .t-body-lg{margin:0 auto 8px;font-size:13px}
+  #problema .problem-card{padding:8px 6px;text-align:center;border-radius:10px}
+  #problema .problem-stat{font-size:15px;margin-bottom:2px}
+  #problema .problem-title{font-size:11px;line-height:1.25;margin-bottom:0}
   #problema .problem-desc{display:none}
-  #problema .problem-resolve{margin-top:10px;font-size:13px}
+  #problema .problem-resolve{margin-top:8px;font-size:12px}
   #problema .mid-cta{margin-top:8px}
-  #o-que-e.edu-strip{padding:clamp(18px,2.8vh,32px) 0}
-  #o-que-e .edu-pill{padding:12px}
-  #o-que-e .edu-pill p{font-size:12px}
+  #o-que-e.edu-strip{padding:clamp(16px,2.4vh,28px) 0}
+  #o-que-e .t-body-lg{margin:0 auto 8px;font-size:12px}
+  #o-que-e .edu-pill{padding:10px}
+  #o-que-e .edu-pill h3{font-size:13px;margin-bottom:2px}
+  #o-que-e .edu-pill p{font-size:11px;line-height:1.35}
   .obj-grid{grid-template-columns:1fr;max-width:420px}
-  .edu-rail{grid-template-columns:1fr;max-width:420px}
-  .setup-steps{grid-template-columns:1fr;gap:6px}
-  #como-funciona.section--compact{padding:clamp(22px,3.2vh,40px) 0}
-  #como-funciona .t-body-lg{font-size:13px}
-  #como-funciona .setup-step{padding:10px 12px}
-  #como-funciona .setup-step h3{font-size:13px;margin-bottom:2px}
-  #como-funciona .setup-step p{font-size:11px}
-  #como-funciona .setup-num{margin-bottom:2px;font-size:10px}
-  #como-funciona .mid-cta{margin-top:6px}
+  /* Ciclo 82: safe/offer lado a lado no mobile */
+  .edu-rail{grid-template-columns:1fr 1fr;gap:6px;max-width:100%}
+  .setup-steps{grid-template-columns:1fr;gap:4px}
+  #como-funciona.section--compact{padding:clamp(18px,2.6vh,32px) 0}
+  #como-funciona .t-lg{margin:4px auto 4px}
+  #como-funciona .t-body-lg{font-size:12px;margin:0 auto 4px}
+  #como-funciona .setup-step{padding:8px 10px}
+  #como-funciona .setup-step h3{font-size:12px;margin-bottom:1px}
+  #como-funciona .setup-step p{font-size:10px;line-height:1.35}
+  #como-funciona .setup-num{margin-bottom:1px;font-size:9px}
+  #como-funciona .mid-cta{margin-top:4px}
   #como-funciona .mid-cta .btn-o{display:none}
   #problema .mid-cta .btn-o{display:none}
-  #problema .mid-cta{margin-top:10px}
-  #pricing.section--compact{padding:clamp(28px,4vh,48px) 0}
+  #pricing.section--compact{padding:clamp(22px,3.2vh,40px) 0}
   #pricing .period-toggle-label{display:none}
+  #pricing .pricing-reveal-inner{padding:14px 12px}
+  #pricing .p-price-wrap{min-height:48px;margin-bottom:8px}
+  #pricing .p-monthly-eq{font-size:10px;margin-top:2px;max-width:32ch;line-height:1.3}
+  #pricing .p-micro{margin-top:6px;line-height:1.35}
+  #faq.section--compact{padding:clamp(22px,3.2vh,40px) 0}
+  #faq .t-lg{margin-bottom:10px}
+  #faq .faq-q{padding:10px 12px;font-size:13px}
+  #faq .faq-a{padding:0 12px 10px;font-size:12px}
+  #faq .faq-outro{margin-top:12px;padding:10px}
+  #faq .faq-outro p{font-size:11px;margin-bottom:8px}
+  #faq .faq-outro-period{font-size:11px}
+  #faq .faq-more-toggle{margin-top:8px;padding:8px 14px;min-height:40px;font-size:12px}
   .flow-pillars{grid-template-columns:1fr 1fr}
   .showcase{grid-template-columns:1fr;gap:18px}
-  #cloaker.section--compact{padding:clamp(24px,3.5vh,44px) 0}
-  #cloaker .showcase{display:flex;flex-direction:column;gap:12px}
+  #cloaker.section--compact{padding:clamp(20px,3vh,36px) 0}
+  #cloaker .showcase{display:flex;flex-direction:column;gap:10px}
   #cloaker .showcase-text{display:contents}
   #cloaker .showcase-text .t-label{order:1}
-  #cloaker .showcase-text .t-lg{order:2;margin:4px 0 6px}
-  #cloaker .showcase-text .t-body-lg{order:3;font-size:13px;margin:0 0 0}
+  #cloaker .showcase-text .t-lg{order:2;margin:2px 0 4px}
+  #cloaker .showcase-text .t-body-lg{order:3;font-size:12px;margin:0}
   #cloaker .showcase-features{display:none}
   #cloaker .showcase-proof{display:none}
   #cloaker .showcase-visual{order:4}
-  #cloaker .showcase-cta{order:5;margin-top:4px;align-items:stretch;width:100%}
+  #cloaker .showcase-cta{order:5;margin-top:2px;align-items:stretch;width:100%;gap:4px}
   #cloaker .showcase-cta .btn{width:100%;max-width:320px}
-  #cloaker .showcase-cta-soft{text-align:center;width:100%;max-width:320px}
+  /* Ciclo 80: soft CTA após prova — soft link some no mobile */
+  #cloaker .showcase-cta-soft{display:none}
+  #cloaker .prot-sim-header{padding:8px 12px}
+  #cloaker .prot-sim-status-sub{display:none}
+  #cloaker .prot-sim-stats{padding:8px 12px;gap:4px}
+  #cloaker .prot-sim-stat{padding:6px 2px 5px}
+  #cloaker .prot-sim-stat-val{font-size:15px}
+  #cloaker .prot-sim-feed{margin:0 8px 8px}
   .networks-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:12px}
-  #redes.redes-strip{padding:clamp(20px,3vh,32px) 0}
+  #redes.redes-strip{padding:clamp(16px,2.4vh,28px) 0}
+  #redes .t-lg{margin:4px auto 4px}
+  #redes .t-body-lg{font-size:12px}
   #redes .network-chip{padding:8px 12px;flex:0 1 auto}
   #redes .network-chip span{display:none}
   #redes .network-chip strong{margin:0;font-size:12px}
-  #faq.section--compact{padding:clamp(28px,4vh,48px) 0}
-  #faq .faq-outro{margin-top:14px;padding:12px}
-  #faq .faq-outro p{font-size:12px;margin-bottom:10px}
-  #pricing .pricing-lead{font-size:13px;margin-bottom:10px;line-height:1.4}
+  #pricing .pricing-lead{font-size:12px;margin-bottom:8px;line-height:1.35}
   #pricing .pricing-includes-line{display:none}
-  #pricing .p-micro{font-size:11px;margin-top:8px}
-  #pricing .pricing-reveal-title{margin:2px 0 6px}
+  #pricing .p-micro{font-size:11px}
+  #pricing .pricing-reveal-title{margin:2px 0 4px;font-size:clamp(18px,5vw,24px)}
+  #pricing .period-toggle{margin-bottom:8px}
   .arch-grid{grid-template-columns:1fr}
   .calc-losses{grid-template-columns:1fr}
   .calc-summary{grid-template-columns:1fr}
+  #roi-calc.section--compact{padding:clamp(20px,3vh,36px) 0}
   #roi-calc .calc-summary{grid-template-columns:1fr 1fr;gap:6px}
   #roi-calc .calc-summary-card{padding:10px 8px}
   #roi-calc .calc-summary-val{font-size:18px}
   #roi-calc .calc-caveat{display:none}
+  #roi-calc .calc-cta-text{font-size:11px;margin-bottom:6px}
+  #roi-calc .calc-cta{margin-top:8px}
+  #roi-calc .calc-divider{display:none}
   .f-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 20px;margin-bottom:18px}
   .footer .f-brand{grid-column:1 / -1}
   .footer .f-brand p{font-size:12px;line-height:1.4;max-width:42ch;margin-top:8px}
@@ -728,10 +757,11 @@ main{position:relative;z-index:1}
   .calc-cta-actions .btn{width:100%;max-width:320px}
   .arch-cta .btn{width:100%;max-width:320px}
   .showcase-cta .btn{width:100%;max-width:320px}
-  .prot-sim{min-height:260px}
+  .prot-sim{min-height:220px}
   #cloaker .prot-sim-stat:last-child{display:none}
   #cloaker .prot-sim-stats{grid-template-columns:1fr 1fr 1fr}
-  .prot-sim-feed{min-height:100px;max-height:140px}
+  /* Ciclo 80: feed mais curto — prova sem ocupar viewport inteira */
+  .prot-sim-feed{min-height:72px;max-height:96px}
 }
 @media (min-width:768px){
   .sticky-cta-text{display:block}
@@ -741,6 +771,13 @@ main{position:relative;z-index:1}
   .calc-cta-actions{flex-direction:row;gap:14px}
   .calc-cta{margin-top:10px}
   .showcase-cta{flex-direction:row;align-items:center;gap:14px}
+  /* Ciclo 81: densificar buy-path no desktop */
+  #roi-calc.section--compact{padding:clamp(28px,4vh,52px) 0}
+  #pricing.section--compact{padding:clamp(28px,4vh,52px) 0}
+  #faq.section--compact{padding:clamp(28px,4vh,52px) 0}
+  #pricing .pricing-reveal-inner{padding:18px 20px}
+  #faq .faq-outro{margin-top:14px;padding:12px}
+  #problema.problem-strip{padding:clamp(22px,3vh,36px) 0}
 }
 @media (max-width:640px){
   .networks-grid{grid-template-columns:1fr 1fr}
@@ -764,8 +801,11 @@ main{position:relative;z-index:1}
   .network-chip{padding:8px 10px}
 }
 @media (max-width:480px){
-  .period-switcher{flex-direction:column;width:100%;max-width:280px;margin:0 auto}
-  .period-btn{justify-content:center;width:100%;flex:none}
+  /* Ciclo 81: row compacta (antes column ~146px) — CTA de preço sobe no viewport */
+  .period-switcher{flex-direction:row;width:100%;max-width:100%;margin:0;flex-wrap:nowrap}
+  .period-btn{justify-content:center;width:auto;flex:1 1 0;flex-direction:column;gap:2px;padding:8px 4px;font-size:11px;min-width:0}
+  .period-discount{font-size:9px;padding:1px 4px}
+  .period-rec{display:none}
   .container{width:min(1120px,100% - 28px)}
   .hero-ctas{max-width:100%}
   .networks-grid{grid-template-columns:1fr}
@@ -866,21 +906,21 @@ main{position:relative;z-index:1}
     <div class="container">
         <p class="t-label rv">O problema</p>
         <h2 class="t-lg rv rv-d1">Você paga o clique<br><span class="grad">O bot não compra</span></h2>
-        <p class="t-body-lg rv rv-d2">Offer page no destino = revisores e tráfego inválido chegam nela</p>
+                <p class="t-body-lg rv rv-d2">Offer no destino = revisor e bot chegam nela · budget some</p>
         <div class="problem-grid">
             <div class="problem-card rv">
                 <div class="problem-stat" style="color:#ef4444">Conta</div>
-                <div class="problem-title">Revisor vê a offer</div>
+                <div class="problem-title">Revisor na offer</div>
                 <div class="problem-desc">Sem camada intermediária, a revisão chega na money page.</div>
             </div>
             <div class="problem-card rv rv-d1">
                 <div class="problem-stat" style="color:var(--gold)">~22%</div>
-                <div class="problem-title">Budget em clique sujo</div>
+                <div class="problem-title">Clique sujo</div>
                 <div class="problem-desc">Estimativa setorial de tráfego inválido — ordem de grandeza.</div>
             </div>
             <div class="problem-card rv rv-d2">
-                <div class="problem-stat" style="color:var(--accent)">Script</div>
-                <div class="problem-title">Client-side é frágil</div>
+                <div class="problem-stat" style="color:var(--accent)">JS</div>
+                <div class="problem-title">Client-side falha</div>
                 <div class="problem-desc">Decisão no browser é detectável. Server-side decide antes do HTML.</div>
             </div>
         </div>
@@ -899,7 +939,7 @@ main{position:relative;z-index:1}
     <div class="container">
         <p class="t-label rv">Educação</p>
         <h2 class="t-lg rv rv-d1">Safe page · <span class="grad">Offer page</span></h2>
-        <p class="t-body-lg rv rv-d2">Camada server-side entre o clique e a página final</p>
+        <p class="t-body-lg rv rv-d2">Server-side decide antes do HTML — safe vs offer</p>
         <div class="edu-rail">
             <div class="edu-pill edu-pill--safe rv">
                 <span class="edu-tag">Inválido</span>
@@ -1088,7 +1128,7 @@ main{position:relative;z-index:1}
                     </div>
                 </div>
                 <div class="calc-cta">
-                    <p class="calc-cta-text" id="calc-cta-msg">Mova o slider — veja quanto do budget some antes da venda.</p>
+                    <p class="calc-cta-text" id="calc-cta-msg">Esse prejuízo mensal some do ROI — cloaker a R$399,99 corta a fatia inválida.</p>
                     <div class="calc-cta-actions">
                         <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
                         <a href="#pricing" class="calc-cta-period">Ver mensal · trimestral · anual</a>
@@ -1185,7 +1225,7 @@ main{position:relative;z-index:1}
             <button type="button" class="faq-more-toggle" id="faq-more-toggle" aria-expanded="false" aria-controls="faq-more">Ver mais perguntas</button>
         </div>
         <div class="faq-outro rv">
-            <p>Ainda com dúvida? <a href="mailto:suporte@theblack.ink">suporte@theblack.ink</a> · garantia 7 dias</p>
+            <p>Dúvida? <a href="mailto:suporte@theblack.ink">suporte@theblack.ink</a> · garantia 7 dias · sem contrato</p>
             <div class="faq-outro-cta">
                 <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
                 <a href="#pricing" class="faq-outro-period">Ajustar periodicidade</a>

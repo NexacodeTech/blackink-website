@@ -193,3 +193,8 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Contexto**: `#roi-calc` (~1kpx) e `#faq` atrasavam o fechamento após o preço.
 **Regra**: calc em 2 métricas (sem “horas”); FAQ `section--compact` com padding menor; CTA final mais curto — mantém loss live.
 **Status**: ativo
+
+## 2026-08-20 — Period switcher row ≤480 (CRO)
+**Contexto**: column em ≤480px inflava `#pricing` (~146px só no toggle) e atrasava o CTA.
+**Regra**: em `@media (max-width:480px)` o switcher fica **row** compacta (`flex-direction:column` só *dentro* de cada `.period-btn` para badge −%); `.period-rec` oculto.
+**Status**: ativo (supersede “column só em 480px”)
