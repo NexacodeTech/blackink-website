@@ -220,8 +220,37 @@
 
         /* ── Responsive ── */
         @media(max-width:767px){
-            .main-section{padding:100px 20px 60px}
+            .main-section{padding:88px 16px 110px;align-items:flex-start}
+            .register-layout{display:flex;flex-direction:column;gap:28px}
+            /* c515: form/resumo primeiro no mobile — buy-path antes do pitch */
+            .register-card{order:-1;padding:20px 16px;border-radius:18px}
             .register-features{display:none}
+            .register-info-logo{width:48px;height:48px;margin:0 auto 12px}
+            .register-info-title{margin-bottom:8px;font-size:clamp(22px,6vw,28px)}
+            .register-info-subtitle{margin-bottom:0;font-size:13px;line-height:1.45;max-width:36ch}
+            .steps{margin-bottom:16px;gap:8px}
+            .step-label{font-size:11px}
+            .step-line{width:24px}
+            .selected-plan{padding:14px;margin-bottom:16px}
+            .cadastro-period-label{margin:12px 0 6px}
+            .register-card-header{margin-bottom:16px}
+            .form-group{margin-bottom:14px}
+            .form-input{padding:12px 14px}
+            .btn-group{margin-top:18px;gap:10px}
+            .btn-p{height:48px;font-size:15px;border-radius:12px}
+            .cadastro-guarantee{padding:12px 14px}
+            /* c516: sticky Ativar enquanto submit fora do fold */
+            .cadastro-sticky{
+                position:fixed;left:0;right:0;bottom:0;z-index:900;
+                padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));
+                background:rgba(2,10,20,0.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+                border-top:1px solid var(--border);
+                transform:translateY(110%);transition:transform .4s var(--ease);
+                pointer-events:none;
+            }
+            .cadastro-sticky.visible{transform:translateY(0);pointer-events:auto}
+            .cadastro-sticky .btn-p{height:48px;font-size:14px;margin:0;box-shadow:0 4px 20px rgba(100,180,255,0.2)}
+            .cadastro-sticky-trust{font-size:11px;color:var(--dim);text-align:center;margin:6px 0 0;line-height:1.3}
         }
 
         /* ── Toast Notification ── */
@@ -484,6 +513,12 @@
     </div>
 </main>
 
+<!-- c516: sticky Ativar (mobile) — some quando #submitBtn entra no fold -->
+<div class="cadastro-sticky" id="cadastroSticky" aria-hidden="true">
+    <button type="button" class="btn btn-p" id="stickySubmitBtn">Ativar — R$ 399,99/mês · 7 dias</button>
+    <p class="cadastro-sticky-trust"><strong>Garantia 7 dias</strong> · 100% · Ativar com garantia</p>
+</div>
+
 <!-- ═══════ FOOTER ═══════ -->
 <footer class="footer">
     <div class="container">
@@ -585,11 +620,16 @@
                 : ('perda · ~1 dia = 1 mês · Garantia 7 dias · ' + garantiaVerb);
         }
         if (submitTrust) submitTrust.innerHTML = '<strong>Garantia 7 dias</strong> · 100% · ' + garantiaVerb + ' · setup ~15 min';
-        // c482: sidebar subtitle sync período
+        const stickyBtn = document.getElementById('stickySubmitBtn');
+        if (stickyBtn && !stickyBtn.disabled) stickyBtn.textContent = submitLabelForPeriod(period);
+        const stickyTrust = document.querySelector('.cadastro-sticky-trust');
+        if (stickyTrust) stickyTrust.innerHTML = '<strong>Garantia 7 dias</strong> · 100% · ' + garantiaVerb;
+        // c482/c515: sidebar subtitle sync período + preço do período
+        const periodPrice = period === 'yearly' ? 'R$339,99' : (period === 'quarterly' ? 'R$359,99' : 'R$399,99');
         const infoSubtitle = document.getElementById('infoSubtitle');
         if (infoSubtitle) {
             infoSubtitle.textContent = simulatedLoss
-                ? ('Perda ~R$ ' + simulatedLoss.toLocaleString('pt-BR') + '/mês · ~1 dia = 1 mês · R$399,99 · Garantia 7 dias · ' + ativarVerb + '.')
+                ? ('Perda ~R$ ' + simulatedLoss.toLocaleString('pt-BR') + '/mês · ~1 dia = 1 mês · ' + periodPrice + ' · Garantia 7 dias · ' + ativarVerb + '.')
                 : ('Safe + offer · regras · URL BlackInk — Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras · ' + ativarVerb + '.');
         }
         try {
@@ -620,10 +660,12 @@
 
     // Sidebar copy — plataforma + setup correto (personalizado se veio da calculadora)
     const ativarSidebar = period === 'yearly' ? 'Ativar −15%' : (period === 'quarterly' ? 'Ativar −10%' : 'Ativar');
+    const sidebarPrice = period === 'yearly' ? 'R$339,99' : (period === 'quarterly' ? 'R$359,99' : 'R$399,99');
     const sidebar = {
         title: 'Ative · <span class="grad">~1 dia = 1 mês</span>',
+        // c515: preço do período + Garantia (não ancorar R$399 no trimestral)
         subtitle: simulatedLoss
-            ? ('Perda ~R$ ' + simulatedLoss.toLocaleString('pt-BR') + '/mês · ~1 dia = 1 mês · R$399,99 · 7 dias · ' + ativarSidebar + '.')
+            ? ('Perda ~R$ ' + simulatedLoss.toLocaleString('pt-BR') + '/mês · ~1 dia = 1 mês · ' + sidebarPrice + ' · Garantia 7 dias · ' + ativarSidebar + '.')
             : 'Safe + offer · regras · URL BlackInk — Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras · ' + ativarSidebar + '.',
         features: [
             { strong: '1. Cadastre safe/offer', span: 'Painel ou BlackInk Clone' },
@@ -645,6 +687,8 @@
             </div>
         </div>
     `).join('');
+    // Re-sync period copy after sidebar init (sidebar was overwriting applyPeriodPricing)
+    applyPeriodPricing(period);
 
     // Form elements
     const form = document.getElementById('registerForm');
@@ -654,6 +698,41 @@
     const passwordInput = document.getElementById('password');
     const confirmPasswordInput = document.getElementById('confirmPassword');
     const submitBtn = document.getElementById('submitBtn');
+    const stickyBar = document.getElementById('cadastroSticky');
+    const stickySubmitBtn = document.getElementById('stickySubmitBtn');
+
+    // c516: sticky Ativar when submit leaves fold (mobile densest)
+    function syncCadastroSticky() {
+        if (!stickyBar || !submitBtn) return;
+        if (window.matchMedia('(min-width:768px)').matches) {
+            stickyBar.classList.remove('visible');
+            stickyBar.setAttribute('aria-hidden', 'true');
+            return;
+        }
+        const r = submitBtn.getBoundingClientRect();
+        const vh = window.innerHeight || 0;
+        const visible = Math.max(0, Math.min(r.bottom, vh) - Math.max(r.top, 0));
+        const onScreen = visible >= Math.min(r.height * 0.5, 24);
+        const show = !onScreen && !submitBtn.disabled;
+        stickyBar.classList.toggle('visible', show);
+        stickyBar.setAttribute('aria-hidden', show ? 'false' : 'true');
+    }
+    if (stickySubmitBtn) {
+        stickySubmitBtn.addEventListener('click', () => {
+            if (submitBtn && !submitBtn.disabled) {
+                submitBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                // Prefer native submit so HTML5 validation runs
+                if (typeof form.requestSubmit === 'function') form.requestSubmit();
+                else form.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
+            }
+        });
+    }
+    if (submitBtn) {
+        new IntersectionObserver(() => syncCadastroSticky(), { threshold: [0, 0.25, 0.5, 1] }).observe(submitBtn);
+        window.addEventListener('scroll', syncCadastroSticky, { passive: true });
+        window.addEventListener('resize', syncCadastroSticky, { passive: true });
+        syncCadastroSticky();
+    }
 
     // Password visibility toggles
     document.getElementById('togglePassword').addEventListener('click', () => {
@@ -793,6 +872,11 @@
         // Submit to API
         submitBtn.disabled = true;
         submitBtn.innerHTML = '<span class="loading"></span> Processando...';
+        if (stickySubmitBtn) {
+            stickySubmitBtn.disabled = true;
+            stickySubmitBtn.innerHTML = '<span class="loading"></span> Processando...';
+        }
+        syncCadastroSticky();
 
         const registrationData = {
             name: name,
@@ -856,6 +940,11 @@
             showToast('error', 'Erro no cadastro', error.message || 'Tente novamente mais tarde.');
             submitBtn.disabled = false;
             submitBtn.textContent = submitLabelForPeriod(period);
+            if (stickySubmitBtn) {
+                stickySubmitBtn.disabled = false;
+                stickySubmitBtn.textContent = submitLabelForPeriod(period);
+            }
+            syncCadastroSticky();
         }
     });
 
