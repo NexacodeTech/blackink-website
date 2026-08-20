@@ -127,7 +127,7 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 
 ## 2026-08-20 — FAQ progressivo + nudge de periodicidade
 **Contexto**: 12 FAQs após o preço geravam fadiga; mensal sem lembrete de economia.
-**Regra**: FAQ mostra 5 prioritárias (preço/OAuth/redes/garantia/setup); resto atrás de “Ver mais perguntas”; nudge sob o period switcher muda com o período ativo.
+**Regra**: FAQ mostra 5 prioritárias (preço/payback live/OAuth/redes/garantia); resto atrás de “Ver mais”; `#faq-savings-loss` sync com ROI; nudge sob o period switcher muda com o período ativo.
 **Status**: ativo
 
 ## 2026-08-20 — Redes/arquitetura compactas

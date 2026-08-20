@@ -1259,17 +1259,17 @@ main{position:relative;z-index:1}
         <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:40px">Perguntas <span class="grad">frequentes</span></h2>
         <div class="faq-list">
             <details class="faq-i rv" open><summary class="faq-q">Quanto custa e como funciona o pagamento?</summary><div class="faq-a">Produto único a R$ 399,99/mês. Trimestral com ~10% de desconto (R$ 359,99/mês equivalente) e anual com ~15% (R$ 339,99/mês equivalente). PIX ou cartão. Sem contrato de fidelidade — cancele quando quiser.</div></details>
+            <details class="faq-i rv rv-d1"><summary class="faq-q">O BlackInk se paga? Quanto posso economizar?</summary><div class="faq-a" id="faq-savings-a">Com o budget simulado na <a href="#roi-calc">calculadora</a>, a perda estimada é cerca de <strong id="faq-savings-loss">R$ 12.500</strong>/mês (~25% inválidos+revisores). Cloaker a R$ 399,99 — estimativa, não garantia. Ajuste o slider para o seu caso.</div></details>
             <details class="faq-i rv rv-d1"><summary class="faq-q">Preciso conectar minha conta de anúncios (OAuth)?</summary><div class="faq-a">Não. Funciona com Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras redes. Cadastre suas páginas, configure regras e use a URL da BlackInk como destino — sem OAuth nem integração com nenhuma rede.</div></details>
             <details class="faq-i rv rv-d1"><summary class="faq-q">Funciona em quais redes?</summary><div class="faq-a">Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras plataformas de tráfego pago. O fluxo é o mesmo: destino do anúncio aponta para a URL BlackInk.</div></details>
             <details class="faq-i rv rv-d2"><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">Garantia de 7 dias. Teste a plataforma; se não fizer sentido para suas campanhas, reembolso de 100% — sem letras miúdas.</div></details>
-            <details class="faq-i rv rv-d2"><summary class="faq-q">Como configuro o BlackInk?</summary><div class="faq-a">Cadastre safe page e offer page (ou use BlackInk Clone), configure regras de filtragem e aponte o destino do anúncio para a URL da BlackInk. Setup típico em cerca de 15 minutos — sem OAuth.</div></details>
             <div class="faq-more" id="faq-more">
+                <details class="faq-i"><summary class="faq-q">Como configuro o BlackInk?</summary><div class="faq-a">Cadastre safe page e offer page (ou use BlackInk Clone), configure regras de filtragem e aponte o destino do anúncio para a URL da BlackInk. Setup típico em cerca de 15 minutos — sem OAuth.</div></details>
                 <details class="faq-i"><summary class="faq-q">O que é um cloaker?</summary><div class="faq-a">Camada server-side entre o clique do anúncio e a página final. Cada visitante é analisado; bots, VPNs e revisores recebem safe page, e tráfego qualificado recebe offer page — sem script na sua hospedagem.</div></details>
                 <details class="faq-i"><summary class="faq-q">O que é safe page e offer page?</summary><div class="faq-a">Safe page é servida a bots, revisores e tráfego inválido — conteúdo compliant. Offer page (money page) é servida apenas a visitantes qualificados. Ambas ficam cadastradas na plataforma; o roteamento ocorre server-side em menos de 50ms.</div></details>
                 <details class="faq-i"><summary class="faq-q">Já uso outro cloaker. É difícil migrar?</summary><div class="faq-a">Não. Cadastre suas páginas (ou use BlackInk Clone para clonar a estrutura), ajuste as regras e troque a URL de destino do anúncio. A maioria finaliza em menos de 30 minutos.</div></details>
                 <details class="faq-i"><summary class="faq-q">Qual a diferença do BlackInk para outros cloakers?</summary><div class="faq-a">Comparado a scripts client-side e redirects simples, BlackInk é SaaS server-side com URL própria, decision logs, sem PHP no seu host, suporte BR e preço único (R$ 399,99/mês).</div></details>
                 <details class="faq-i"><summary class="faq-q">O BlackInk é um tracker?</summary><div class="faq-a">Não. BlackInk é cloaker server-side: controla quem vê safe page ou offer page. Não vende tracker, pixel de conversão ou atribuição como produto.</div></details>
-                <details class="faq-i"><summary class="faq-q">O BlackInk se paga? Quanto posso economizar?</summary><div class="faq-a">Estimativa de mercado aponta cerca de 22% do budget em tráfego inválido (varia por campanha). Use a <a href="#roi-calc">calculadora de perdas</a> para simular com seu investimento mensal.</div></details>
                 <details class="faq-i"><summary class="faq-q">Como falo com o suporte?</summary><div class="faq-a">Por e-mail em <a href="mailto:suporte@theblack.ink">suporte@theblack.ink</a> e por ticket/chat dentro da plataforma. Assistência gratuita na configuração inicial.</div></details>
             </div>
             <button type="button" class="faq-more-toggle" id="faq-more-toggle" aria-expanded="false" aria-controls="faq-more">Ver mais perguntas</button>
@@ -1839,6 +1839,7 @@ const calcRoiBar = document.getElementById('calc-roi-bar');
 const pricingLeadLoss = document.getElementById('pricing-lead-loss');
 const pricingBridgePayback = document.getElementById('pricing-bridge-payback');
 const ctaFinalLoss = document.getElementById('cta-final-loss');
+const faqSavingsLoss = document.getElementById('faq-savings-loss');
 
 if (calcSlider && calcDisplay && calcInvisible && calcFraud && calcHours && calcTotal && calcRoi) {
     const fmt = v => 'R$ ' + Math.round(v).toLocaleString('pt-BR');
@@ -1904,6 +1905,8 @@ if (calcSlider && calcDisplay && calcInvisible && calcFraud && calcHours && calc
         syncStickyLossCopy();
         // Final CTA mirrors loss (ciclo 35)
         if (ctaFinalLoss) ctaFinalLoss.textContent = fmt(total);
+        // FAQ savings mirrors loss (ciclo 37)
+        if (faqSavingsLoss) faqSavingsLoss.textContent = fmt(total);
         // Persist budget for cadastro bridge (ciclo 36)
         try { sessionStorage.setItem('blackink_calc_budget', String(val)); } catch (_) {}
         updatePlanLinks();
