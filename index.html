@@ -203,7 +203,7 @@
           "name": "E se eu quiser cancelar? Tem multa ou aviso prévio?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Não há contrato nem fidelidade. Nos primeiros 7 dias é reembolso integral, sem justificativa. Depois disso você cancela quando quiser, sem multa e sem aviso prévio — o acesso segue até o fim do período já pago e a assinatura não renova. Antes de encerrar, desconecte da BlackInk os domínios que ainda estiverem roteando tráfego — eles são seus e continuam seus."
+            "text": "Não há contrato nem fidelidade. Você tem 7 dias de garantia sobre o valor cobrado. Depois disso cancela quando quiser, sem multa e sem aviso prévio — o acesso segue até o fim do período já pago e a assinatura não renova. Antes de encerrar, desconecte da BlackInk os domínios que ainda estiverem roteando tráfego — eles são seus e continuam seus."
           }
         },
         {
@@ -1204,7 +1204,7 @@ picture{display:contents} /* o wrapper nao deve criar caixa: img herda o layout 
 
     <div class="hero-trust">
         <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-        <span class="hero-trust-text">7 dias, reembolso integral · O domínio anunciado é o seu</span>
+        <span class="hero-trust-text">7 dias de garantia · O domínio anunciado é o seu</span>
     </div>
 
 </section>
@@ -1382,13 +1382,13 @@ picture{display:contents} /* o wrapper nao deve criar caixa: img herda o layout 
 
                     <div class="p-price-wrap">
                         <div class="p-price active" data-period="monthly"><span class="p-curr">R$</span><span class="p-val">399</span><span class="p-per">,99/mês</span></div>
-                        <div class="p-price" data-period="quarterly"><span class="p-curr">R$</span><span class="p-val">359</span><span class="p-per">,99/mês</span><span class="p-monthly-eq">equivalente mensal · cobrado R$1.079,97 a cada 3 meses — os 7 dias de garantia valem sobre esse valor</span></div>
-                        <div class="p-price" data-period="yearly"><span class="p-curr">R$</span><span class="p-val">339</span><span class="p-per">,99/mês</span><span class="p-monthly-eq">equivalente mensal · cobrado R$4.079,90 a cada 12 meses — e os 7 dias de garantia valem sobre esse valor inteiro</span></div>
+                        <div class="p-price" data-period="quarterly"><span class="p-curr">R$</span><span class="p-val">359</span><span class="p-per">,99/mês</span><span class="p-monthly-eq">equivalente mensal · cobrado R$1.079,97 a cada 3 meses</span></div>
+                        <div class="p-price" data-period="yearly"><span class="p-curr">R$</span><span class="p-val">339</span><span class="p-per">,99/mês</span><span class="p-monthly-eq">equivalente mensal · cobrado R$4.079,90 a cada 12 meses</span></div>
                     </div>
 
                     <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p btn-full plan-link pricing-cta" data-plan="Maré" data-cta-base="Ativar Cloaker" data-cta-sufixo="/mês">Ativar Cloaker — R$399,99/mês</a>
-                    <div class="guarantee-badge">Reembolso integral</div>
-                    <p class="guarantee-text">Assine, configure e rode tráfego real por <strong>7 dias</strong>. Se em qualquer momento você decidir que não é pra você, pede o reembolso e recebe <strong>100% do valor cobrado de volta</strong> — seja o mês, o trimestre ou os R$4.079,90 do ano pago adiantado. Sem justificar, sem formulário de cancelamento, sem ligação de retenção. No pior caso aqui você perde 7 dias e recebe o dinheiro de volta; <strong>no pior caso de hoje, você perde a conta.</strong></p>
+                    <div class="guarantee-badge">7 dias de garantia</div>
+                    <p class="guarantee-text">Assine, configure e rode tráfego real por <strong>7 dias</strong>. Se decidir que não é pra você, é só pedir — a garantia vale sobre o valor cobrado, seja o mês, o trimestre ou o ano. No pior caso aqui você perde 7 dias; no pior caso de hoje, você perde a conta.</p>
                     <p class="p-micro"><strong style="color:var(--dim)">Menos de R$ 14 por dia.</strong> Um preço só porque nosso custo é por requisição analisada, não por assento — e é mais caro que cloaker de script porque a decisão roda em servidor, não num trecho de JavaScript hospedado na sua própria página.<br>Sem contrato e sem multa: cancelou, o acesso segue até o fim do período já pago e a assinatura não renova · Requisições analisadas sem franquia: escalar budget não muda a fatura · Setup em 15 min, com suporte gratuito na configuração</p>
                 </div>
             </div>
@@ -1469,7 +1469,7 @@ picture{display:contents} /* o wrapper nao deve criar caixa: img herda o layout 
             <details class="faq-i rv rv-d3"><summary class="faq-q">E se o revisor descobrir o cloaker?</summary><div class="faq-a">Não existe cloaker para ele descobrir. Ele abre a sua URL de destino e recebe a safe page direto — HTTP 200, sem redirect, sem JavaScript de detecção. Não sobra nada no navegador dele indicando que houve uma escolha. Em troca, a safe page precisa se sustentar sozinha: a BlackInk decide quem vê o quê, ela não faz conteúdo ruim passar em revisão.</div></details>
             <details class="faq-i rv rv-d3"><summary class="faq-q">E se ele bloquear um comprador de verdade?</summary><div class="faq-a">Acontece — todo filtro erra para algum lado, e este erra para o lado de fechar. Por isso cada sinal é um toggle seu: bot, VPN, datacenter, device e país você liga e desliga, e sinal desligado nunca manda ninguém para a safe page. Quando um desvio te parecer errado, ele está no decision log com IP, ISP, geo, device e o motivo — você vê qual regra pegou e desliga aquela regra. É por isso que os 7 dias são com tráfego real: calibrar isso só acontece na sua campanha, não na nossa.</div></details>
             <details class="faq-i rv rv-d4"><summary class="faq-q">Cloaking contraria a política declarada das redes. E aí?</summary><div class="faq-a">Contraria — e ninguém honesto vai dizer o contrário. A decisão acontecer no servidor significa que não sobra rastro no navegador do revisor; não significa, e ninguém pode prometer, que a sua conta nunca vai cair. Quem garante &ldquo;conta nunca mais banida&rdquo; está vendendo outra coisa. O que muda aqui é quem recebe a sua página. O que continua seu é o risco da operação, da oferta e da safe page.</div></details>
-            <details class="faq-i rv rv-d4"><summary class="faq-q">E se eu quiser cancelar? Tem multa ou aviso prévio?</summary><div class="faq-a">Não há contrato nem fidelidade. Nos primeiros 7 dias é reembolso integral, sem justificativa. Depois disso você cancela quando quiser, sem multa e sem aviso prévio — o acesso segue até o fim do período já pago e a assinatura não renova. Antes de encerrar, desconecte da BlackInk os domínios que ainda estiverem roteando tráfego — eles são seus e continuam seus.<!-- [PENDENTE: cliente confirma o passo técnico de desconexão no cancelamento] Não escrever CNAME, DNS ou proxy reverso em texto visível até a confirmação. --></div></details>
+            <details class="faq-i rv rv-d4"><summary class="faq-q">E se eu quiser cancelar? Tem multa ou aviso prévio?</summary><div class="faq-a">Não há contrato nem fidelidade. Você tem 7 dias de garantia sobre o valor cobrado. Depois disso cancela quando quiser, sem multa e sem aviso prévio — o acesso segue até o fim do período já pago e a assinatura não renova. Antes de encerrar, desconecte da BlackInk os domínios que ainda estiverem roteando tráfego — eles são seus e continuam seus.<!-- [PENDENTE: cliente confirma o passo técnico de desconexão no cancelamento] Não escrever CNAME, DNS ou proxy reverso em texto visível até a confirmação. --></div></details>
             <details class="faq-i rv rv-d5"><summary class="faq-q">Preciso de conhecimento técnico?</summary><div class="faq-a">Não. O dashboard é visual: cadastre suas páginas, ative filtros e configure geo e device com toggles. O BlackInk Clone facilita ainda mais se você já tem uma página pronta. Se travar, a assistência na configuração inicial é gratuita e, depois dela, o suporte é por ticket na plataforma.</div></details>
             <details class="faq-i rv rv-d5"><summary class="faq-q">Quanto tempo leva para configurar?</summary><div class="faq-a">A configuração do cloaker leva aproximadamente 15 minutos. Cadastre safe page e offer page na plataforma, configure regras de filtragem por geo, device e ISP, conecte o seu domínio à BlackInk — e o roteamento funciona imediatamente. A equipe oferece suporte na configuração inicial gratuitamente.</div></details>
             <details class="faq-i rv rv-d5"><summary class="faq-q">Como configuro minhas páginas?</summary><div class="faq-a">Cadastre o HTML ou código da safe page e da offer page diretamente no painel da BlackInk. Alternativamente, use o <strong>BlackInk Clone</strong>: ferramenta da plataforma que copia a estrutura de uma página que já existe e a deixa pronta como safe page ou offer page, sem você remontar o HTML na mão. Depois, configure as regras de filtragem e mantenha o seu domínio como destino do anúncio — a plataforma decide qual página servir a cada visitante.</div></details>
@@ -1486,7 +1486,7 @@ picture{display:contents} /* o wrapper nao deve criar caixa: img herda o layout 
         <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center" class="rv rv-d3">
             <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link" data-plan="Maré" data-cta-base="Ativar Cloaker" data-cta-sufixo="/mês">Ativar Cloaker — R$399,99/mês</a>
         </div>
-        <p class="rv rv-d4" style="text-align:center;margin-top:24px;font-size:13px;color:var(--muted)">7 dias, reembolso integral · O domínio anunciado é o seu · Sem contrato</p>
+        <p class="rv rv-d4" style="text-align:center;margin-top:24px;font-size:13px;color:var(--muted)">7 dias de garantia · O domínio anunciado é o seu · Sem contrato</p>
     </div>
 </section>
 
@@ -1518,7 +1518,7 @@ picture{display:contents} /* o wrapper nao deve criar caixa: img herda o layout 
 <!-- Sticky CTA -->
 <div class="sticky-cta" id="sticky-cta" aria-hidden="true">
     <div class="sticky-cta-inner">
-        <p class="sticky-cta-text"><span class="sticky-cta-long">Cloaker server-side — <strong>safe page e offer page</strong> · </span>7 dias, reembolso integral</p>
+        <p class="sticky-cta-text"><span class="sticky-cta-long">Cloaker server-side — <strong>safe page e offer page</strong> · </span>7 dias de garantia</p>
         <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link" data-plan="Maré" data-cta-base="Ativar Cloaker" data-cta-sufixo="/mês">Ativar Cloaker — R$399,99/mês</a>
         <button class="sticky-cta-close" id="sticky-cta-close" aria-label="Fechar">&times;</button>
     </div>
