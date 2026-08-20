@@ -333,8 +333,11 @@
                 pointer-events:none;
             }
             .cadastro-sticky.visible{transform:translateY(0);pointer-events:auto}
-            .cadastro-sticky .btn-p{height:44px;font-size:14px;margin:0;box-shadow:0 4px 20px rgba(100,180,255,0.2)}
+            .cadastro-sticky .btn-p{height:44px;font-size:14px;margin:0;font-weight:800;box-shadow:0 4px 20px rgba(100,180,255,0.2)}
+            body.intent-garantia .cadastro-sticky .btn-p{box-shadow:0 0 0 2px rgba(52,211,153,0.55),0 8px 24px rgba(52,211,153,0.28);border:1px solid rgba(52,211,153,0.7)}
             .cadastro-sticky-trust{font-size:10px;color:var(--dim);text-align:center;margin:4px 0 0;line-height:1.25}
+            body.intent-garantia .cadastro-sticky-trust{color:rgba(110,231,183,0.9)}
+            body.intent-garantia .cadastro-sticky-trust strong{color:#6ee7b7}
         }
 
         /* ── Toast Notification ── */
