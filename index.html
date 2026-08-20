@@ -527,6 +527,9 @@ a.network-chip:hover,a.network-chip:focus-visible{border-color:rgba(100,180,255,
 .why-strip-text .grad{font-weight:600}
 /* Ciclo 107: why merged into #redes */
 .redes-why{margin:14px auto 0;max-width:52ch;text-align:center}
+/* c526: buy CTA sob redes (só densest liga) */
+.redes-buy{display:none;margin:10px auto 0;text-align:center}
+.redes-buy-cta{display:inline-flex;min-width:min(100%,320px);height:40px;font-size:14px;border-radius:10px;text-decoration:none}
 /* ROI denser (ciclo 54/66) */
 #roi-calc.section--compact{padding:clamp(24px,3.5vh,48px) 0}
 .calc-wrap{max-width:640px;margin:0 auto}
@@ -1756,6 +1759,9 @@ main{position:relative;z-index:1}
   body.has-sticky-cta{padding-bottom:0}
   /* c521 LAST: chip Garantia pulsa 2× — atenção no fold */
   #pricing .pricing-trust-chips li:first-child{animation:chipTrustPulse 2.2s var(--ease) 2}
+  /* c526 LAST: CTA Ativar sob chips de rede */
+  #redes .redes-buy{display:block;margin:8px auto 0}
+  #redes .redes-buy-cta{height:40px;min-height:40px;font-size:13px;padding:0 14px}
 }
 
 @media (min-width:768px){
@@ -2611,6 +2617,9 @@ main{position:relative;z-index:1}
   body.has-sticky-cta{padding-bottom:0}
   /* c521 LAST: chip Garantia pulsa 2× */
   #pricing .pricing-trust-chips li:first-child{animation:chipTrustPulse 2.2s var(--ease) 2}
+  /* c526 LAST: CTA Ativar sob chips de rede */
+  #redes .redes-buy{display:block;margin:8px auto 0}
+  #redes .redes-buy-cta{height:40px;min-height:40px;font-size:13px;padding:0 14px}
 }
 
 @media (max-width:640px){
@@ -2867,6 +2876,9 @@ main{position:relative;z-index:1}
   body.has-sticky-cta{padding-bottom:0}
   /* c521 LAST: chip Garantia pulsa 2× — atenção no fold */
   #pricing .pricing-trust-chips li:first-child{animation:chipTrustPulse 2.2s var(--ease) 2}
+  /* c526 LAST: CTA Ativar sob chips de rede */
+  #redes .redes-buy{display:block;margin:8px auto 0}
+  #redes .redes-buy-cta{height:40px;min-height:40px;font-size:13px;padding:0 14px}
 }
 
 @media (max-width:500px){
@@ -3118,6 +3130,9 @@ main{position:relative;z-index:1}
   body.has-sticky-cta{padding-bottom:0}
   /* c521 LAST: chip Garantia pulsa 2× — atenção no fold */
   #pricing .pricing-trust-chips li:first-child{animation:chipTrustPulse 2.2s var(--ease) 2}
+  /* c526 LAST: CTA Ativar sob chips de rede */
+  #redes .redes-buy{display:block;margin:8px auto 0}
+  #redes .redes-buy-cta{height:40px;min-height:40px;font-size:13px;padding:0 14px}
 }
 
 @media (max-width:390px){
@@ -3360,6 +3375,9 @@ main{position:relative;z-index:1}
   body.has-sticky-cta{padding-bottom:0}
   /* c521 LAST: chip Garantia pulsa 2× — atenção no fold */
   #pricing .pricing-trust-chips li:first-child{animation:chipTrustPulse 2.2s var(--ease) 2}
+  /* c526 LAST: CTA Ativar sob chips de rede */
+  #redes .redes-buy{display:block;margin:8px auto 0}
+  #redes .redes-buy-cta{height:40px;min-height:40px;font-size:13px;padding:0 14px}
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -3719,7 +3737,7 @@ main{position:relative;z-index:1}
                     <p class="p-micro"><strong>Garantia 7 dias</strong> · PIX · R$399,99/mês · Ativar −10% no trimestral</p>
                     <p class="pricing-networks">Google Ads · YouTube Ads · Facebook Ads · TikTok Ads · sem OAuth</p>
                     <ul class="pricing-trust-chips" aria-label="Garantias">
-                        <li class="pricing-chip-garantia"><a href="/cadastro/?plan=Maré&period=monthly" class="plan-link pricing-chip-link" data-plan="Maré">Garantia 7 dias · 100%</a></li>
+                        <li class="pricing-chip-garantia"><a href="/cadastro/?plan=Maré&period=monthly" class="plan-link pricing-chip-link" data-plan="Maré" aria-label="Ativar com garantia 7 dias">Garantia 7 dias · 100%</a></li>
                         <li>PIX ou cartão</li>
                         <li>Sem OAuth</li>
                         <li class="pricing-chip-latency">Server-side &lt;50ms</li>
@@ -3745,6 +3763,7 @@ main{position:relative;z-index:1}
             <a href="#pricing-lead" class="network-chip"><strong>TikTok Ads</strong><span>In-feed &amp; Spark</span></a>
             <a href="#pricing-lead" class="network-chip network-chip--more"><strong>E outras</strong><span>Mesmo fluxo</span></a>
         </div>
+        <p class="redes-buy rv rv-d4"><a href="/cadastro/?plan=Maré&period=monthly" class="plan-link btn btn-p redes-buy-cta" data-plan="Maré" id="redes-buy-cta">Ativar — R$399,99/mês</a></p>
         <p class="why-strip-text redes-why rv rv-d4" id="por-que"><strong>SaaS server-side</strong> · decision logs · suporte BR · Ativar −10% · garantia 7 dias · <span class="grad">R$359,99/mês</span></p>
     </div>
 </section>
@@ -4286,6 +4305,8 @@ function updatePricingCtaLabel(period) {
     const label = PRICING_CTA_LABELS[period] || PRICING_CTA_LABELS.monthly;
     // Pricing CTAs — exclude comecar (own verb) and sticky (own labels)
     document.querySelectorAll('.pricing-cta:not(.comecar-cta)').forEach(btn => { btn.textContent = label; });
+    const redesBuy = document.getElementById('redes-buy-cta');
+    if (redesBuy) redesBuy.textContent = label;
     // c441: comecar closes funnel with distinct verb
     const comecarLabel = COMECAR_CTA_LABELS[period] || COMECAR_CTA_LABELS.monthly;
     document.querySelectorAll('.comecar-cta').forEach(btn => { btn.textContent = comecarLabel; });
