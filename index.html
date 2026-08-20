@@ -1194,6 +1194,8 @@ main{position:relative;z-index:1}
   #faq .faq-q{padding:1px 3px;font-size:6px}
   #faq .faq-assure{margin:1px 0 0;font-size:6.5px;line-height:1.15}
   #faq .t-lg{margin:0 0 1px}
+  /* c340: pricing CTA densest — 20px alinhado ao ROI */
+  #pricing .btn-full{height:20px;font-size:8px}
 }
 @media (min-width:768px){
   .sticky-cta-text{display:block}
@@ -1740,7 +1742,7 @@ main{position:relative;z-index:1}
   #pricing .period-btn{font-size:6px;padding:1px;min-height:16px;flex-direction:row;align-items:center;gap:2px;line-height:1.05}
   #pricing .period-discount{font-size:5px;padding:0 2px;line-height:1}
   #pricing .p-val{font-size:clamp(12px,3.6vw,16px)}
-  #pricing .btn-full{height:22px;font-size:8px}
+  #pricing .btn-full{height:20px;font-size:8px}
   /* c329: nudge mensal visível no densest (JS hidden nos outros períodos) */
   #pricing .period-nudge{display:none;font-size:5px;margin:0;line-height:1.1;text-align:center}
   #pricing .period-nudge:not([hidden]){display:block}
@@ -1772,7 +1774,7 @@ main{position:relative;z-index:1}
   #pricing .period-btn{padding:1px 0;font-size:6px;min-height:16px;flex-direction:row;align-items:center;gap:2px;line-height:1.05}
   #pricing .period-discount{font-size:5px;padding:0 2px;line-height:1}
   #pricing .p-val{font-size:clamp(14px,4vw,18px)}
-  #pricing .btn-full{height:22px;font-size:8px}
+  #pricing .btn-full{height:20px;font-size:8px}
   #pricing .pricing-trust-chips{display:none}
   #pricing .period-nudge{display:none;font-size:5px;margin:0;line-height:1.1;text-align:center}
   #pricing .period-nudge:not([hidden]){display:block}
@@ -1789,11 +1791,11 @@ main{position:relative;z-index:1}
   .hero-title{font-size:22px}
   .hero-badge-text{font-size:10px}
   .btn{height:48px;font-size:14px;padding:0 20px}
-  /* Ciclo 299/336: não inflar — row + min-height densest no iPhone */
+  /* Ciclo 299/336/340: não inflar — row + CTA 20px densest no iPhone */
   #pricing .period-btn{font-size:6px;padding:1px 0;min-height:16px;flex-direction:row;align-items:center;gap:2px;line-height:1.05}
   #pricing .period-discount{font-size:5px;padding:0 2px;line-height:1}
   #pricing .p-val{font-size:clamp(14px,4vw,18px)}
-  #pricing .btn-full{height:22px;font-size:8px}
+  #pricing .btn-full{height:20px;font-size:8px}
   #pricing .pricing-trust-chips{display:none}
   #pricing .period-nudge{display:none;font-size:5px;margin:0;line-height:1.1;text-align:center}
   #pricing .period-nudge:not([hidden]){display:block}
@@ -2140,7 +2142,7 @@ main{position:relative;z-index:1}
                 <div class="pricing-reveal-inner">
                     <div class="t-label">Seu investimento</div>
                     <h2 class="pricing-reveal-title">R$399,99 · <span class="grad">~1 dia · Ativar −10%</span></h2>
-                    <p class="pricing-lead" id="pricing-lead">perda <strong id="pricing-lead-loss">R$ 12.500</strong>/mês · <strong id="pricing-lead-payback">~1 dia</strong> · 7 dias · sem OAuth</p>
+                    <p class="pricing-lead" id="pricing-lead">perda <strong id="pricing-lead-loss">R$ 12.500</strong>/mês · <strong id="pricing-lead-payback">~1 dia</strong> · 7 dias · Ativar −10%</p>
                     <div class="period-toggle-label">Como prefere pagar?</div>
                     <div class="period-toggle">
                         <div class="period-switcher">
@@ -2159,7 +2161,7 @@ main{position:relative;z-index:1}
                     <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p btn-full plan-link pricing-cta" data-plan="Maré">Ativar — R$399,99/mês</a>
                     <ul class="pricing-trust-chips" aria-label="Garantias">
                         <li>Garantia 7 dias</li>
-                        <li>Trim. −10%</li>
+                        <li>Ativar −10%</li>
                         <li>Sem OAuth</li>
                         <li class="pricing-chip-latency">Server-side &lt;50ms</li>
                     </ul>
@@ -2198,8 +2200,8 @@ main{position:relative;z-index:1}
         <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:4px">Dúvidas · <span class="grad">~1 dia · Ativar −10%</span></h2>
         <div class="faq-list">
             <details class="faq-i rv rv-d1" open><summary class="faq-q">Paga em ~1 dia?</summary><div class="faq-a" id="faq-savings-a">Perda ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês · ~<strong id="faq-savings-payback">1 dia</strong> = 1 mês · 7 dias · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta faq-inline-cta--price" data-plan="Maré">Ativar — R$399,99</a></div></details>
-            <p class="faq-assure rv rv-d2">7 dias · 100% · Ativar −10% · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar sem risco</a></p>
-            <details class="faq-i faq-i--risk rv rv-d2"><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">7 dias · 100% reembolso · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar sem risco</a></div></details>
+            <p class="faq-assure rv rv-d2">7 dias · 100% · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar −10% sem risco</a></p>
+            <details class="faq-i faq-i--risk rv rv-d2"><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">7 dias · 100% reembolso · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar −10% sem risco</a></div></details>
             <div class="faq-more" id="faq-more">
                 <details class="faq-i"><summary class="faq-q">Quanto custa?</summary><div class="faq-a">R$ 399,99/mês · trimestral −10% · anual −15% · PIX/cartão · sem fidelidade.</div></details>
                 <details class="faq-i"><summary class="faq-q">Preciso conectar minha conta de anúncios (OAuth)?</summary><div class="faq-a">Não. Cadastre páginas, configure regras e use a URL BlackInk como destino — Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras · sem OAuth.</div></details>
@@ -2603,8 +2605,8 @@ const P_MICRO_HTML = {
 
 const PERIOD_NUDGE = {
     monthly: '<button type="button" data-pick-period="quarterly">Ativar −10%</button> · ~R$120 a menos',
-    quarterly: '−10% · cobrado R$1.079,97 / 3 meses',
-    yearly: '−15% · cobrado R$4.079,90 / ano'
+    quarterly: 'Ativar −10% · cobrado R$1.079,97 / 3 meses',
+    yearly: 'Ativar −15% · cobrado R$4.079,90 / ano'
 };
 
 let lastCalcLossFmt = null;
@@ -2618,10 +2620,10 @@ function periodNudgeHtml(period) {
         return '<button type="button" data-pick-period="quarterly">Ativar −10%</button> · −~R$120 · vs perda <strong>' + lastCalcLossFmt + '</strong>';
     }
     if (period === 'quarterly' && lastCalcLossFmt) {
-        return '−10% · vs perda <strong>' + lastCalcLossFmt + '</strong>/mês';
+        return 'Ativar −10% · vs perda <strong>' + lastCalcLossFmt + '</strong>/mês';
     }
     if (period === 'yearly' && lastCalcLossFmt) {
-        return '−15% · vs perda <strong>' + lastCalcLossFmt + '</strong>/mês';
+        return 'Ativar −15% · vs perda <strong>' + lastCalcLossFmt + '</strong>/mês';
     }
     return PERIOD_NUDGE[period] || PERIOD_NUDGE.monthly;
 }
@@ -2654,7 +2656,7 @@ function maybeAutoQuarterlyFromLoss() {
 function updatePricingCtaLabel(period) {
     const label = PRICING_CTA_LABELS[period] || PRICING_CTA_LABELS.monthly;
     document.querySelectorAll('.pricing-cta').forEach(btn => { btn.textContent = label; });
-    // FAQ open CTA mirrors period price (ciclo 320) — assure stays "Ativar sem risco"
+    // FAQ open CTA mirrors period price (ciclo 320) — assure = Ativar −10% sem risco
     const faqPrice = FAQ_PRICE_CTA[period] || FAQ_PRICE_CTA.monthly;
     document.querySelectorAll('.faq-inline-cta--price').forEach(a => { a.textContent = faqPrice; });
     // Ciclo 326: p-micro confirma desconto ativo no período
