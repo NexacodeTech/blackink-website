@@ -1010,8 +1010,13 @@ main{position:relative;z-index:1}
   #faq .t-lg{font-size:clamp(8px,2.4vw,10px);margin:0}
   #faq .faq-q{padding:1px 2px;font-size:6px}
   #faq .faq-a{padding:0 2px 0;font-size:6px;line-height:1.05}
-  #faq .faq-more-toggle{min-height:10px;font-size:5px;padding:0 2px}
-  #faq.section--compact{padding:0}
+  #faq .faq-more-toggle{min-height:8px;font-size:5px;padding:0 1px;opacity:.7}
+  #faq .faq-i[open] .faq-a{padding:0 2px 0}
+  #faq .faq-q{padding:1px 2px;font-size:6px}
+  .sep{height:0;opacity:0;margin:0;border:0}
+  #redes.redes-strip{padding:0;margin:0}
+  #pricing .pricing-reveal-inner{padding:0}
+  #pricing.section--compact{padding:0}
   #cloaker.section--compact{padding:0}
   #cloaker .showcase-text .t-lg{font-size:clamp(9px,2.6vw,11px);margin:0}
   #cloaker .showcase-text .t-body-lg{display:none}
@@ -1473,8 +1478,11 @@ main{position:relative;z-index:1}
   #cloaker .prot-sim-stats{display:none}
   #comecar .t-body-lg{display:none}
   #comecar .pricing-cta{height:18px;font-size:7px}
-  #faq .faq-more-toggle{min-height:12px;font-size:5px}
+  #faq .faq-more-toggle{min-height:10px;font-size:5px}
   #faq .faq-outro{display:none}
+  .sep{height:0;opacity:0;margin:0;border:0}
+  #pricing .pricing-reveal-inner{padding:0}
+  #pricing.section--compact{padding:0}
   #roi-calc .calc-slider-label{display:none}
   #roi-calc .calc-summary-tag{display:none}
   #roi-calc .t-lg{font-size:clamp(8px,1vw,11px)}
@@ -2008,7 +2016,7 @@ main{position:relative;z-index:1}
     <div class="cta-orb" aria-hidden="true"></div>
     <div class="container" style="position:relative;z-index:1">
         <p class="t-label rv" style="text-align:center;margin-bottom:4px">Pronto</p>
-        <h2 class="t-lg rv rv-d1 cta-final-title" style="text-align:center">Clique sujo paga o cloaker · <span class="grad">ative</span></h2>
+        <h2 class="t-lg rv rv-d1 cta-final-title" style="text-align:center">~1 dia de sujo = 1 mês · <span class="grad">ative</span></h2>
         <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:440px;margin:6px auto 10px;font-size:clamp(13px,1.4vw,15px)" id="cta-final-lead">Perda <strong id="cta-final-loss">R$ 12.500</strong>/mês · <span id="cta-final-payback">~1 dia</span> de clique sujo = 1 mês · 7 dias</p>
         <div class="rv rv-d3" style="display:flex;flex-direction:column;align-items:center;gap:8px">
             <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar — R$399,99/mês</a>
@@ -2067,7 +2075,7 @@ main{position:relative;z-index:1}
 
 <div class="sticky-cta" id="sticky-cta" aria-hidden="true">
     <div class="sticky-cta-inner">
-        <p class="sticky-cta-text" id="sticky-cta-text"><strong>R$12.500</strong> → <strong>R$399,99/mês</strong> · 7 dias</p>
+        <p class="sticky-cta-text" id="sticky-cta-text"><strong>R$12.500</strong> → <strong>R$399,99/mês</strong> · Ativar · 7 dias</p>
         <p class="sticky-cta-price" id="sticky-cta-price"><strong>R$ 399,99/mês</strong><br>vs R$12.500 · 7 dias</p>
         <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link" data-plan="Maré" id="sticky-cta-btn">Ativar — R$399,99</a>
         <button type="button" class="sticky-cta-close" id="sticky-cta-close" aria-label="Fechar">&times;</button>
@@ -2447,9 +2455,9 @@ function syncStickyLossCopy(period) {
     if (stickyText) {
         if (lastCalcLossFmt) {
             // Short price only — charge details live in #pricing (ciclo 78)
-            stickyText.innerHTML = '<strong>' + lastCalcLossFmt + '</strong> → <strong>' + priceShort + '</strong> · 7 dias';
+            stickyText.innerHTML = '<strong>' + lastCalcLossFmt + '</strong> → <strong>' + priceShort + '</strong> · Ativar · 7 dias';
         } else {
-            stickyText.innerHTML = '<strong>R$12.500</strong> → <strong>' + priceShort + '</strong> · 7 dias';
+            stickyText.innerHTML = '<strong>R$12.500</strong> → <strong>' + priceShort + '</strong> · Ativar · 7 dias';
         }
     }
     if (stickyPrice) {
