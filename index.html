@@ -721,14 +721,14 @@ main{position:relative;z-index:1}
   #redes .t-lg,
   #redes .t-body-lg{display:none}
   #redes .networks-grid{margin-top:0;gap:3px}
-  #faq.section--compact{padding:clamp(2px,0.8vh,10px) 0}
+  #faq.section--compact{padding:clamp(2px,0.6vh,8px) 0}
   #faq .t-label{margin-bottom:0;display:none}
-  #faq .t-lg{margin-bottom:1px;font-size:clamp(13px,3.8vw,16px)}
-  #faq .faq-list{gap:2px}
+  #faq .t-lg{margin-bottom:0;font-size:clamp(13px,3.8vw,16px)}
+  #faq .faq-list{gap:1px}
   #faq .faq-q{padding:3px 6px;font-size:10px}
   #faq .faq-a{padding:0 6px 2px;font-size:9px;line-height:1.15}
-  #faq .faq-more-toggle{margin-top:1px;padding:2px 6px;min-height:24px;font-size:8px}
-  #faq .faq-outro{margin-top:2px;padding:3px}
+  #faq .faq-more-toggle{margin-top:1px;padding:2px 6px;min-height:22px;font-size:8px}
+  #faq .faq-outro{margin-top:2px;padding:2px}
   #faq .faq-outro-support{display:none}
   #faq .faq-outro p{font-size:11px;margin-bottom:0}
   #faq .faq-outro .btn{height:40px;font-size:12px}
@@ -770,21 +770,22 @@ main{position:relative;z-index:1}
   #cloaker .prot-sim-feed-header{padding:4px 8px;flex-shrink:0}
   #cloaker .prot-sim-feed-title{letter-spacing:.04em;font-size:10px}
   #cloaker .prot-sim-feed-live{letter-spacing:.04em;font-size:10px}
-  /* Ciclo 141/163/211/231/241: prova = stats + CTA; feed some no mobile */
+  /* Ciclo 141/163/211/231/241/264: prova = stats + CTA; feed some no mobile */
   .prot-sim{min-height:0}
   #cloaker .prot-sim-stat:last-child{display:none}
   #cloaker .prot-sim-stats{grid-template-columns:1fr 1fr 1fr}
   #cloaker .prot-sim-feed{display:none}
   #cloaker .prot-sim-feed-body{min-height:0}
   #cloaker .showcase-cta{margin-top:0}
-  #cloaker .showcase-cta .btn{height:44px;font-size:13px}
-  #cloaker.section--compact{padding:clamp(6px,1.2vh,14px) 0}
-  #cloaker .showcase-text .t-lg{font-size:clamp(15px,4.2vw,20px);margin:0 0 1px}
-  #cloaker .showcase-text .t-body-lg{font-size:9px}
-  #cloaker .prot-sim-header{padding:4px 8px}
-  #cloaker .prot-sim-stats{padding:4px 8px 6px;gap:2px}
-  #cloaker .prot-sim-stat{padding:4px 2px 3px}
-  #cloaker .prot-sim-stat-val{font-size:13px}
+  #cloaker .showcase-cta .btn{height:40px;font-size:12px}
+  #cloaker.section--compact{padding:clamp(4px,1vh,12px) 0}
+  #cloaker .showcase-text .t-lg{font-size:clamp(14px,4vw,18px);margin:0}
+  #cloaker .showcase-text .t-body-lg{font-size:8px}
+  #cloaker .prot-sim-header{padding:3px 6px}
+  #cloaker .prot-sim-stats{padding:3px 6px 4px;gap:2px}
+  #cloaker .prot-sim-stat{padding:3px 2px 2px}
+  #cloaker .prot-sim-stat-val{font-size:12px}
+  #cloaker .showcase{gap:4px}
   .networks-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:12px}
   #redes.redes-strip{padding:clamp(4px,0.8vh,10px) 0}
   #redes .t-lg{margin:0 auto 0;font-size:clamp(16px,4.5vw,20px)}
@@ -1377,7 +1378,7 @@ main{position:relative;z-index:1}
                 <p class="showcase-proof" id="showcase-proof">Simulação ao vivo ao lado — bloqueios e taxa legítima em tempo real</p>
                 <div class="showcase-cta">
                     <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar agora — R$399,99/mês</a>
-                    <a href="#roi-calc" class="showcase-cta-soft">Ver perdas do budget</a>
+                    <a href="#roi-calc" class="showcase-cta-soft">Calcular perda</a>
                 </div>
             </div>
             <div class="showcase-visual">
@@ -1568,7 +1569,7 @@ main{position:relative;z-index:1}
 <section class="section section--compact" id="faq" aria-label="Perguntas Frequentes">
     <div class="container">
         <p class="t-label rv" style="text-align:center;margin-bottom:4px">FAQ</p>
-        <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:8px">Dúvidas · <span class="grad">ative sem risco</span></h2>
+        <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:4px">Dúvidas · <span class="grad">ative sem risco</span></h2>
         <div class="faq-list">
             <details class="faq-i rv rv-d1" open><summary class="faq-q">O cloaker se paga?</summary><div class="faq-a" id="faq-savings-a">Perda ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês vs R$399,99 · payback ~<strong id="faq-savings-payback">1 dia</strong> · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar agora</a></div></details>
             <details class="faq-i faq-i--risk rv rv-d2"><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">7 dias · 100% reembolso · sem fidelidade. <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar sem risco</a></div></details>
