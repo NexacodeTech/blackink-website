@@ -4259,7 +4259,7 @@ main{position:relative;z-index:1}
         <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:4px" id="faq-heading">Dúvidas · <span class="grad" id="faq-heading-grad">~1 dia · Ativar −10%</span></h2>
         <div class="faq-list">
             <details class="faq-i rv rv-d1" open><summary class="faq-q" id="faq-hook-q">Paga em ~1 dia? · Ativar −10%</summary><div class="faq-a" id="faq-savings-a">Perda ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês · ~<strong id="faq-savings-payback">1 dia</strong> = 1 mês · garantia 7 dias · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta faq-inline-cta--price" data-plan="Maré">Ativar — R$399,99/mês</a></div></details>
-            <p class="faq-assure rv rv-d2"><span class="faq-assure-micro">Garantia 7d · 100% · vs R$ 12.500 · sem risco</span><a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta faq-inline-cta--price" data-plan="Maré" data-intent="garantia">Ativar sem risco 7d −10% — R$359,99</a></p>
+            <p class="faq-assure rv rv-d2"><span class="faq-assure-micro">Garantia 7d · 100% · sem risco</span><a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta faq-inline-cta--price" data-plan="Maré" data-intent="garantia">Ativar sem risco 7d −10% — R$359,99</a></p>
             <details class="faq-i faq-i--risk rv rv-d2"><summary class="faq-q">E se eu não gostar? · 7d 100%</summary><div class="faq-a">7 dias · 100% reembolso · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré" data-intent="garantia">Ativar 7d sem risco −10% — R$359,99</a></div></details>
             <div class="faq-more" id="faq-more">
                 <details class="faq-i"><summary class="faq-q">Quanto custa? · Ativar −10%</summary><div class="faq-a">R$ 399,99/mês · Ativar −10% trimestral · anual −15% · PIX/cartão · sem fidelidade.</div></details>
@@ -4869,7 +4869,8 @@ function syncLossPersuasionCopy(period) {
     // c466: FAQ assure micro leva perda + garantia
     const faqAssureMicro = document.querySelector('#faq .faq-assure-micro');
     if (faqAssureMicro) {
-        faqAssureMicro.textContent = 'Garantia 7d · 100% · vs ' + loss + ' · sem risco';
+        // c591: micro curto — perda já no pricing lead; CTA carrega −10%
+        faqAssureMicro.textContent = 'Garantia 7d · 100% · sem risco';
     }
     // c471: peek resolve sync período
     const resolveLink = document.querySelector('.problem-resolve-link');
@@ -5054,6 +5055,14 @@ if (faqMore && faqMoreToggle) {
             const first = faqMore.querySelector('.faq-i');
             if (first) try { first.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); } catch (_) {}
         }
+    });
+}
+// c592: ao abrir risk, CTA garantia entra no viewport
+if (faqRisk) {
+    faqRisk.addEventListener('toggle', () => {
+        if (!faqRisk.open) return;
+        const cta = faqRisk.querySelector('.faq-inline-cta');
+        if (cta) try { cta.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); } catch (_) {}
     });
 }
 
