@@ -767,11 +767,11 @@ main{position:relative;z-index:1}
   #cloaker .prot-sim-feed-header{padding:4px 8px;flex-shrink:0}
   #cloaker .prot-sim-feed-title{letter-spacing:.04em;font-size:10px}
   #cloaker .prot-sim-feed-live{letter-spacing:.04em;font-size:10px}
-  /* Ciclo 141/163/211/231: feed curto sem clipar o header do log */
-  .prot-sim{min-height:120px}
+  /* Ciclo 141/163/211/231/241: prova = stats + CTA; feed some no mobile */
+  .prot-sim{min-height:0}
   #cloaker .prot-sim-stat:last-child{display:none}
   #cloaker .prot-sim-stats{grid-template-columns:1fr 1fr 1fr}
-  .prot-sim-feed{min-height:36px;max-height:48px}
+  #cloaker .prot-sim-feed{display:none}
   #cloaker .prot-sim-feed-body{min-height:0}
   #cloaker .showcase-cta{margin-top:0}
   #cloaker .showcase-cta .btn{height:44px;font-size:13px}
@@ -779,10 +779,9 @@ main{position:relative;z-index:1}
   #cloaker .showcase-text .t-lg{font-size:clamp(15px,4.2vw,20px);margin:0 0 1px}
   #cloaker .showcase-text .t-body-lg{font-size:9px}
   #cloaker .prot-sim-header{padding:4px 8px}
-  #cloaker .prot-sim-stats{padding:4px 8px;gap:2px}
+  #cloaker .prot-sim-stats{padding:4px 8px 6px;gap:2px}
   #cloaker .prot-sim-stat{padding:4px 2px 3px}
   #cloaker .prot-sim-stat-val{font-size:13px}
-  #cloaker .prot-sim-feed{margin:0 4px 4px}
   .networks-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:12px}
   #redes.redes-strip{padding:clamp(4px,0.8vh,10px) 0}
   #redes .t-lg{margin:0 auto 0;font-size:clamp(16px,4.5vw,20px)}
@@ -1059,18 +1058,20 @@ main{position:relative;z-index:1}
   #cloaker .showcase-feat-icon{display:none}
   #cloaker .showcase-feat-text{font-size:11px;line-height:1.25;color:var(--dim)}
   #cloaker .showcase-feat-text strong{color:var(--white);font-weight:600}
-  #cloaker .prot-sim{min-height:180px}
-  #cloaker .prot-sim-feed{min-height:48px;max-height:64px}
-  #cloaker .prot-sim-feed-body{min-height:48px}
+  #cloaker .prot-sim{min-height:160px}
+  #cloaker .prot-sim-feed{min-height:40px;max-height:56px}
+  #cloaker .prot-sim-feed-body{min-height:40px}
   #cloaker .showcase-cta{margin-top:4px}
   #cloaker .showcase-cta-soft{display:none}
   #cloaker .prot-sim-threat-bar{display:none}
   #cloaker .prot-sim-threat-lvl{display:none}
   #cloaker .prot-sim-status-sub{display:none}
   #cloaker .mock-topbar{display:none}
-  #cloaker.section--compact{padding:clamp(8px,1.4vh,18px) 0}
-  #cloaker .showcase-text .t-lg{font-size:clamp(18px,2.2vw,24px);margin:0 0 2px}
+  #cloaker.section--compact{padding:clamp(6px,1.2vh,14px) 0}
+  #cloaker .showcase-text .t-lg{font-size:clamp(16px,2vw,22px);margin:0 0 2px}
   #cloaker .showcase-feat-text{font-size:10px}
+  #cloaker .showcase-features{margin-top:4px;gap:4px}
+  #cloaker .showcase-feat{padding:4px 8px}
   #comecar.cta-final{padding:clamp(8px,1.4vh,16px) 0}
   #comecar .t-body-lg{margin:2px auto 2px;font-size:10px}
   #comecar .cta-final-trust span:nth-child(4){display:none}
@@ -1198,7 +1199,7 @@ main{position:relative;z-index:1}
     </div>
     <div class="hero-trust">
         <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-        <span>Garantia 7 dias · PIX/cartão · Setup ~15 min · Sem OAuth</span>
+        <span>7 dias · PIX/cartão · ~15 min · sem OAuth</span>
     </div>
     </div>
     <div class="trust-rail" aria-label="Sinais de confiança">
@@ -1309,7 +1310,7 @@ main{position:relative;z-index:1}
             <div class="showcase-text">
                 <div class="t-label">Prova</div>
                 <h2 class="t-lg">Prova <span class="grad">ao vivo</span></h2>
-                <p class="t-body-lg">15+ sinais · PASS/BLOCK · &lt;50ms · multi-rede</p>
+                <p class="t-body-lg">PASS/BLOCK · &lt;50ms · multi-rede · R$399,99</p>
                 <div class="showcase-features">
                     <div class="showcase-feat">
                         <div class="showcase-feat-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
