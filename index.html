@@ -1196,6 +1196,16 @@ main{position:relative;z-index:1}
   #faq .t-lg{margin:0 0 1px}
   /* c340: pricing CTA densest — 20px alinhado ao ROI */
   #pricing .btn-full{height:20px;font-size:8px}
+  /* c342: ROI slider-wrap — mata strut line-height + thumb 18px (~19px waste) */
+  #roi-calc .calc-slider-wrap{line-height:1;display:flex;flex-direction:column;gap:1px}
+  #roi-calc .calc-slider-header{line-height:1;margin:0;gap:2px}
+  #roi-calc .calc-slider-value{font-size:6px;line-height:1}
+  #roi-calc .calc-slider{height:4px;margin:0;line-height:1}
+  #roi-calc .calc-slider::-webkit-slider-thumb{width:10px;height:10px;border-width:2px;box-shadow:none}
+  #roi-calc .calc-slider::-moz-range-thumb{width:10px;height:10px;border-width:2px}
+  #roi-calc .calc-summary{margin:0}
+  #roi-calc .calc-summary-val{font-size:8px;line-height:1}
+  #roi-calc .calc-cta{margin-top:1px}
 }
 @media (min-width:768px){
   .sticky-cta-text{display:block}
@@ -1672,6 +1682,11 @@ main{position:relative;z-index:1}
   #roi-calc .calc-summary-card{padding:1px 2px}
   #roi-calc .calc-summary-bar{display:none}
   #roi-calc .calc-summary-val{font-size:8px}
+  /* c342 desktop densest — mesmo reclaim de thumb/strut */
+  #roi-calc .calc-slider-wrap{line-height:1;display:flex;flex-direction:column;gap:1px}
+  #roi-calc .calc-slider{height:4px;margin:0}
+  #roi-calc .calc-slider::-webkit-slider-thumb{width:10px;height:10px;border-width:2px;box-shadow:none}
+  #roi-calc .calc-slider::-moz-range-thumb{width:10px;height:10px;border-width:2px}
   /* Ciclo 329: nudge densest desktop */
   #pricing .period-nudge{display:none;font-size:6px;margin:0;line-height:1.1;text-align:center}
   #pricing .period-nudge:not([hidden]){display:block}
@@ -1736,6 +1751,11 @@ main{position:relative;z-index:1}
   #roi-calc .calc-slider-value{font-size:7px;line-height:1}
   #roi-calc .calc-summary-val{font-size:8px;line-height:1.05}
   #roi-calc .calc-cta .btn{height:22px;font-size:8px}
+  /* c342: não reinflar thumb/strut do slider */
+  #roi-calc .calc-slider-wrap{line-height:1;display:flex;flex-direction:column;gap:1px}
+  #roi-calc .calc-slider{height:4px;margin:0;line-height:1}
+  #roi-calc .calc-slider::-webkit-slider-thumb{width:10px;height:10px;border-width:2px;box-shadow:none}
+  #roi-calc .calc-slider::-moz-range-thumb{width:10px;height:10px;border-width:2px}
   .period-switcher{flex-direction:row;width:100%;max-width:100%;justify-content:center}
   .pricing-reveal-inner .period-toggle{width:100%;justify-content:center}
   /* c336: row no densest — column em ≤480 reinflava ~21px */
@@ -1785,6 +1805,11 @@ main{position:relative;z-index:1}
   #roi-calc .calc-cta .btn{height:20px;font-size:8px}
   #roi-calc .calc-slider-value{font-size:7px}
   #roi-calc .calc-summary-val{font-size:8px}
+  /* c342: preservar thumb densest em ≤480 */
+  #roi-calc .calc-slider-wrap{line-height:1;display:flex;flex-direction:column;gap:1px}
+  #roi-calc .calc-slider{height:4px;margin:0}
+  #roi-calc .calc-slider::-webkit-slider-thumb{width:10px;height:10px;border-width:2px;box-shadow:none}
+  #roi-calc .calc-slider::-moz-range-thumb{width:10px;height:10px;border-width:2px}
 }
 @media (max-width:390px){
   .hero-logo{width:32px;height:32px}
@@ -1806,6 +1831,11 @@ main{position:relative;z-index:1}
   #roi-calc .calc-summary-card:nth-child(2){display:none}
   #roi-calc .calc-slider-value{font-size:7px}
   #roi-calc .calc-summary-val{font-size:8px}
+  /* c342: preservar thumb densest no iPhone */
+  #roi-calc .calc-slider-wrap{line-height:1;display:flex;flex-direction:column;gap:1px}
+  #roi-calc .calc-slider{height:4px;margin:0}
+  #roi-calc .calc-slider::-webkit-slider-thumb{width:10px;height:10px;border-width:2px;box-shadow:none}
+  #roi-calc .calc-slider::-moz-range-thumb{width:10px;height:10px;border-width:2px}
   #faq .faq-outro{display:none}
   #cloaker .showcase-cta .btn{height:18px;font-size:7px}
   #como-funciona .mid-cta .btn{height:18px;font-size:7px}
@@ -2203,7 +2233,7 @@ main{position:relative;z-index:1}
             <p class="faq-assure rv rv-d2">7 dias · 100% · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar −10% sem risco</a></p>
             <details class="faq-i faq-i--risk rv rv-d2"><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">7 dias · 100% reembolso · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar −10% sem risco</a></div></details>
             <div class="faq-more" id="faq-more">
-                <details class="faq-i"><summary class="faq-q">Quanto custa?</summary><div class="faq-a">R$ 399,99/mês · trimestral −10% · anual −15% · PIX/cartão · sem fidelidade.</div></details>
+                <details class="faq-i"><summary class="faq-q">Quanto custa?</summary><div class="faq-a">R$ 399,99/mês · Ativar −10% trimestral · anual −15% · PIX/cartão · sem fidelidade.</div></details>
                 <details class="faq-i"><summary class="faq-q">Preciso conectar minha conta de anúncios (OAuth)?</summary><div class="faq-a">Não. Cadastre páginas, configure regras e use a URL BlackInk como destino — Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras · sem OAuth.</div></details>
                 <details class="faq-i"><summary class="faq-q">Funciona em quais redes?</summary><div class="faq-a">Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras. Destino do anúncio = URL BlackInk.</div></details>
                 <details class="faq-i"><summary class="faq-q">Como configuro o BlackInk?</summary><div class="faq-a">Safe/offer (ou Clone) → regras → destino do anúncio = URL BlackInk. ~15 min · sem OAuth.</div></details>
