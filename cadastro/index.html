@@ -649,6 +649,9 @@
         garantiaBanner.hidden = false;
         garantiaBanner.classList.add('is-on');
         document.body.classList.add('intent-garantia');
+        // c610: subtitle reforça path sem risco
+        const sub = document.querySelector('.register-card-subtitle');
+        if (sub) sub.innerHTML = '~2 min · <strong style="color:var(--green)">sem risco 7 dias</strong> · depois PIX ou cartão';
     }
 
     // Update plan info display
