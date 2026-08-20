@@ -4425,6 +4425,11 @@ const FAQ_PRICE_CTA = {
     quarterly: 'Ativar sem risco 7d −10% — R$359,99',
     yearly: 'Ativar sem risco 7d −15% — R$339,99'
 };
+const FAQ_RISK_CTA = {
+    monthly: 'Ativar 7d sem risco',
+    quarterly: 'Ativar 7d sem risco −10%',
+    yearly: 'Ativar 7d sem risco −15%'
+};
 const SOFT_CTA_LABELS = {
     // c523/c547: 7d no soft (≠ FAQ sem risco; ≠ primary Ativar)
     monthly: 'Com garantia 7d · R$399,99',
@@ -4569,6 +4574,9 @@ function updatePricingCtaLabel(period) {
     const faqSavingsCta = document.querySelector('#faq-savings-a .faq-inline-cta--price');
     if (faqSavingsCta) faqSavingsCta.textContent = label;
     document.querySelectorAll('#faq .faq-assure .faq-inline-cta--price').forEach(a => { a.textContent = faqPrice; });
+    // c552: risk FAQ CTA sync período
+    const faqRisk = FAQ_RISK_CTA[period] || FAQ_RISK_CTA.monthly;
+    document.querySelectorAll('#faq .faq-i--risk .faq-inline-cta').forEach(a => { a.textContent = faqRisk; });
     // Ciclo 326/c534: p-micro confirma desconto + re-sync plan-links após innerHTML
     const micro = document.querySelector('#pricing .p-micro');
     if (micro) micro.innerHTML = P_MICRO_HTML[period] || P_MICRO_HTML.monthly;
