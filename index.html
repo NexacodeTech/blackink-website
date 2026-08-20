@@ -566,6 +566,9 @@ strong{font-weight:600}
 .p-monthly-eq .p-save{display:inline;margin:0;font-size:inherit}
 .pricing-includes-line{font-size:12px;color:var(--dim);line-height:1.45;margin:0 auto 14px;max-width:42ch}
 .pricing-includes-line span{color:var(--white);font-weight:600}
+.pricing-trust-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin:10px 0 0;padding:0;list-style:none}
+.pricing-trust-chips li{font-size:11px;font-weight:600;color:var(--dim);padding:5px 10px;border-radius:999px;border:1px solid var(--border);background:rgba(2,10,20,0.35);letter-spacing:.02em}
+.pricing-trust-chips li:last-child{color:var(--green);border-color:rgba(52,211,153,0.25);background:rgba(52,211,153,0.06)}
 /* FAQ — compact (ciclo 45) */
 .faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
 .faq-more{display:none;flex-direction:column;gap:8px;margin-top:8px}
@@ -747,7 +750,9 @@ main{position:relative;z-index:1}
   #pricing .p-monthly-eq{font-size:10px;margin-top:2px;max-width:28ch;line-height:1.25}
   /* Ciclo 88: eq. cobrança em 1 linha curta no mobile */
   #pricing .p-monthly-eq{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
-  #pricing .p-micro{margin-top:6px;line-height:1.35;font-size:11px}
+  #pricing .p-micro{display:none}
+  #pricing .pricing-trust-chips{margin:8px 0 0;gap:4px}
+  #pricing .pricing-trust-chips li{font-size:10px;padding:4px 8px}
   #pricing .pricing-lead{font-size:12px;margin-bottom:8px;line-height:1.35}
   #pricing .pricing-includes-line{display:none}
   #pricing .pricing-reveal-title{margin:2px 0 4px;font-size:clamp(18px,5vw,24px)}
@@ -926,7 +931,7 @@ main{position:relative;z-index:1}
         <span class="ln"><span class="ln-i"><span class="ln-mute">Bots veem</span> <span class="ln-strong">Safe Page</span></span></span>
         <span class="ln"><span class="ln-i"><span class="ln-mute">Compradores veem</span> <span class="ln-strong">Offer Page</span></span></span>
     </h1>
-    <p class="hero-sub">Cloaker server-side para Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras — filtragem em &lt;50ms, sem OAuth</p>
+    <p class="hero-sub">Cloaker server-side para Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras — &lt;50ms · sem OAuth · R$399,99/mês</p>
     <div class="hero-ctas">
         <a href="#roi-calc" class="btn btn-p">Calcular perdas do budget</a>
         <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-o plan-link hero-cta" data-plan="Maré">Começar agora — R$399,99/mês</a>
@@ -970,7 +975,7 @@ main{position:relative;z-index:1}
                 <div class="problem-desc">Decisão no browser é detectável. Server-side decide antes do HTML.</div>
             </div>
         </div>
-        <p class="problem-resolve rv rv-d3">A plataforma BlackInk <span class="grad">resolve os três</span></p>
+        <p class="problem-resolve rv rv-d3">A plataforma BlackInk <span class="grad">resolve os três</span> — sem OAuth</p>
         <div class="mid-cta mid-cta--soft rv rv-d4">
             <a href="#roi-calc" class="btn btn-p">Calcular quanto some do budget</a>
             <a href="#cloaker" class="btn btn-o">Ver cloaker ao vivo</a>
@@ -1212,6 +1217,11 @@ main{position:relative;z-index:1}
                     </div>
                     <p class="pricing-includes-line">Safe + offer · server-side &lt;50ms · 15+ sinais + logs · App + suporte · Payback <span id="pricing-bridge-payback">~1 dia</span></p>
                     <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p btn-full plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
+                    <ul class="pricing-trust-chips" aria-label="Garantias">
+                        <li>Sem OAuth</li>
+                        <li>Server-side &lt;50ms</li>
+                        <li>Garantia 7 dias</li>
+                    </ul>
                     <p class="p-micro"><strong>Garantia 7 dias</strong> · reembolso 100% · PIX/cartão · sem contrato · setup ~15 min</p>
                 </div>
             </div>
