@@ -827,8 +827,11 @@ main{position:relative;z-index:1}
   /* Ciclo 101: FAQ outro em row no desktop — CTA + atalho lado a lado */
   #faq .faq-outro-cta{flex-direction:row;gap:14px;align-items:center}
   #problema.problem-strip{padding:clamp(18px,2.5vh,28px) 0}
-  #o-que-e.edu-strip{padding:clamp(18px,2.5vh,32px) 0}
-  #o-que-e .t-body-lg{margin:0 auto 8px}
+  #o-que-e.edu-strip{padding:clamp(16px,2.2vh,28px) 0}
+  #o-que-e .edu-pill{padding:12px 14px}
+  #o-que-e .edu-pill p{font-size:12px}
+  #problema .problem-desc{font-size:11px;line-height:1.35}
+  #problema .problem-card{padding:10px 12px}
   #como-funciona.section--compact{padding:clamp(22px,3.2vh,40px) 0}
   #como-funciona .setup-steps{margin:10px 0 6px;gap:8px}
   #redes.redes-strip{padding:clamp(16px,2.4vh,28px) 0}
@@ -857,6 +860,15 @@ main{position:relative;z-index:1}
   #pricing .period-toggle-label{margin-bottom:4px}
   #roi-calc .calc-cta{margin-top:8px}
   #cloaker .showcase-text .t-body-lg{font-size:14px}
+  /* Ciclo 104: prova ao vivo fala por si — proof box some; feed mais curto */
+  #cloaker .showcase-proof{display:none}
+  #cloaker .showcase-features{gap:6px;margin-top:8px}
+  #cloaker .showcase-feat{gap:8px}
+  #cloaker .showcase-feat-text{font-size:11px;line-height:1.35}
+  #cloaker .prot-sim{min-height:280px}
+  #cloaker .prot-sim-feed{min-height:100px;max-height:120px}
+  #cloaker .prot-sim-feed-body{min-height:100px}
+  #cloaker .showcase-cta{margin-top:10px}
   #comecar.cta-final{padding:clamp(24px,4vh,48px) 0}
   #comecar .t-body-lg{margin:6px auto 10px}
 }
@@ -1025,12 +1037,12 @@ main{position:relative;z-index:1}
             <div class="edu-pill edu-pill--safe rv">
                 <span class="edu-tag">Inválido</span>
                 <h3>Safe Page</h3>
-                <p>Bots, VPNs e revisores — conta estável</p>
+                <p>Bots, VPNs, revisores — conta estável</p>
             </div>
             <div class="edu-pill edu-pill--offer rv rv-d1">
                 <span class="edu-tag">Qualificado</span>
                 <h3>Offer Page</h3>
-                <p>Só quem passa no filtro — quem compra</p>
+                <p>Só quem passa — quem compra</p>
             </div>
         </div>
     </div>
@@ -1090,7 +1102,7 @@ main{position:relative;z-index:1}
                         <div class="showcase-feat-text"><strong>Decision logs</strong> — motivo de cada PASS, BLOCK ou GEO</div>
                     </div>
                 </div>
-                <p class="showcase-proof" id="showcase-proof">Simulação ao vivo: acompanhe bloqueios e taxa legítima em tempo real</p>
+                <p class="showcase-proof" id="showcase-proof">Simulação ao vivo ao lado — bloqueios e taxa legítima em tempo real</p>
                 <div class="showcase-cta">
                     <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
                     <a href="#roi-calc" class="showcase-cta-soft">Ver quanto some do budget</a>
