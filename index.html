@@ -1408,6 +1408,19 @@ main{position:relative;z-index:1}
   /* c385 LAST: period-discount some — −10%/−15% já no label do botão */
   #pricing .period-discount{display:none}
   #pricing .period-btn{min-height:7px;font-size:3.5px;gap:0}
+  /* c386 LAST: ROI section some — CTA duplicava pricing; soft já vai a #pricing */
+  #roi-calc{display:none}
+  #roi-calc + .sep{display:none}
+  /* c387 LAST: como some — setup já no hero (~15 min / sem OAuth) */
+  #como-funciona{display:none}
+  #como-funciona + .sep{display:none}
+  /* c388 LAST: cloaker/pricing/comecar CTA 8px */
+  #cloaker .showcase-cta .btn,#pricing .btn-full,#comecar .pricing-cta{height:8px;font-size:5px;margin:0}
+  #pricing .period-btn{min-height:6px;font-size:3px;padding:0;line-height:1;flex-direction:row}
+  #pricing.section--compact,#cloaker.section--compact,#faq.section--compact,#comecar.cta-final{padding:0}
+  /* c389 LAST: FAQ assure micro-close */
+  #faq{padding:0;margin:0}
+  #faq .faq-assure{font-size:5px;margin:0;padding:0}
 }
 
 @media (min-width:768px){
@@ -2094,6 +2107,15 @@ main{position:relative;z-index:1}
   /* c385 desktop densest — period-discount some */
   #pricing .period-discount{display:none}
   #pricing .period-btn{min-height:7px;font-size:3.5px;gap:0}
+  /* c386–c389 desktop densest */
+  #roi-calc{display:none}
+  #roi-calc + .sep{display:none}
+  #como-funciona{display:none}
+  #como-funciona + .sep{display:none}
+  #cloaker .showcase-cta .btn,#pricing .btn-full,#comecar .pricing-cta{height:8px;font-size:5px;margin:0}
+  #pricing .period-btn{min-height:6px;font-size:3px;padding:0;line-height:1}
+  #pricing.section--compact,#cloaker.section--compact,#faq.section--compact,#comecar.cta-final{padding:0}
+  #faq .faq-assure{font-size:5px;margin:0;padding:0}
 }
 
 @media (max-width:640px){
@@ -2200,7 +2222,11 @@ main{position:relative;z-index:1}
   #redes{display:none}
   #problema{display:none}
   #pricing .period-discount{display:none}
-  #pricing .period-btn{min-height:7px;font-size:3.5px;padding:0;flex-direction:row;align-items:center;gap:0;line-height:1}
+  #pricing .period-btn{min-height:6px;font-size:3px;padding:0;flex-direction:row;align-items:center;gap:0;line-height:1}
+  /* c386–c388: preservar densest em ≤600 */
+  #roi-calc{display:none}
+  #como-funciona{display:none}
+  #cloaker .showcase-cta .btn,#pricing .btn-full,#comecar .pricing-cta{height:8px;font-size:5px;margin:0}
 }
 @media (max-width:500px){
   .flow-pillars{grid-template-columns:1fr}
@@ -2297,7 +2323,11 @@ main{position:relative;z-index:1}
   #redes{display:none}
   #problema{display:none}
   #pricing .period-discount{display:none}
-  #pricing .period-btn{min-height:7px;font-size:3.5px;padding:0;flex-direction:row;align-items:center;gap:0;line-height:1}
+  #pricing .period-btn{min-height:6px;font-size:3px;padding:0;flex-direction:row;align-items:center;gap:0;line-height:1}
+  /* c386–c388: preservar densest em ≤480 */
+  #roi-calc{display:none}
+  #como-funciona{display:none}
+  #cloaker .showcase-cta .btn,#pricing .btn-full,#comecar .pricing-cta{height:8px;font-size:5px;margin:0}
 }
 @media (max-width:390px){
   .hero-logo{width:32px;height:32px}
@@ -2383,7 +2413,11 @@ main{position:relative;z-index:1}
   #redes{display:none}
   #problema{display:none}
   #pricing .period-discount{display:none}
-  #pricing .period-btn{min-height:7px;font-size:3.5px;padding:0;flex-direction:row;align-items:center;gap:0;line-height:1}
+  #pricing .period-btn{min-height:6px;font-size:3px;padding:0;flex-direction:row;align-items:center;gap:0;line-height:1}
+  /* c386–c388: preservar densest no iPhone */
+  #roi-calc{display:none}
+  #como-funciona{display:none}
+  #cloaker .showcase-cta .btn,#pricing .btn-full,#comecar .pricing-cta{height:8px;font-size:5px;margin:0}
   #como-funciona .mid-cta .btn{height:18px;font-size:7px}
   #problema .mid-cta .btn{height:18px;font-size:7px}
 }
