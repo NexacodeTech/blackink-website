@@ -617,6 +617,9 @@ a.pricing-lead-cta:hover{border-bottom-color:var(--primary);color:var(--white)}
 a.p-micro-garantia{color:inherit;text-decoration:none;border-bottom:1px solid rgba(52,211,153,0.4);transition:border-color .3s var(--ease),color .3s var(--ease)}
 a.p-micro-garantia:hover{border-bottom-color:var(--green);color:var(--white)}
 a.p-micro-garantia strong{color:var(--green)}
+a.p-micro-ativar{color:inherit;text-decoration:none;border-bottom:1px solid rgba(100,180,255,0.4);transition:border-color .3s var(--ease),color .3s var(--ease)}
+a.p-micro-ativar:hover{border-bottom-color:var(--primary);color:var(--white)}
+a.p-micro-ativar strong{color:var(--accent)}
 /* FAQ — compact (ciclo 45) */
 .faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
 .faq-more{display:none;flex-direction:column;gap:8px;margin-top:8px}
@@ -1610,6 +1613,7 @@ main{position:relative;z-index:1}
   #pricing a.pricing-lead-cta{border-bottom-color:rgba(100,180,255,0.55);font-weight:700}
   #pricing a.p-micro-garantia{border-bottom-color:rgba(52,211,153,0.55)}
   #pricing a.p-micro-garantia,#pricing a.p-micro-garantia strong{color:var(--green);font-weight:700}
+  #pricing a.p-micro-ativar,#pricing a.p-micro-ativar strong{color:var(--accent);font-weight:700;border-bottom-color:rgba(100,180,255,0.55)}
   /* c422 LAST: soft path — lead + CTA no mesmo glance */
   #pricing .pricing-lead{margin:0 0 4px}
   /* c423 LAST: FAQ Q + assure stack mais apertado pós-CTA full */
@@ -2621,6 +2625,7 @@ main{position:relative;z-index:1}
   #pricing a.pricing-lead-cta{border-bottom-color:rgba(100,180,255,0.55);font-weight:700}
   #pricing a.p-micro-garantia{border-bottom-color:rgba(52,211,153,0.55)}
   #pricing a.p-micro-garantia,#pricing a.p-micro-garantia strong{color:var(--green);font-weight:700}
+  #pricing a.p-micro-ativar,#pricing a.p-micro-ativar strong{color:var(--accent);font-weight:700;border-bottom-color:rgba(100,180,255,0.55)}
   #redes .network-chip{padding:5px 11px;font-size:12px}
   #faq .faq-q{margin:0 0 2px;padding:2px 0}
   /* c426–c430 desktop densest */
@@ -4427,10 +4432,10 @@ const SOFT_CTA_LABELS = {
     yearly: 'Com garantia 7d −15% · R$339,99'
 };
 const P_MICRO_HTML = {
-    // c508/c534: micro com link garantia → cadastro (period re-sync via updatePlanLinks)
+    // c508/c534/c549: micro Ativar + garantia (period re-sync via updatePlanLinks)
     monthly: '<a href="/cadastro/?plan=Maré&period=monthly" class="plan-link p-micro-garantia" data-plan="Maré" data-intent="garantia" aria-label="Ativar com garantia 7 dias"><strong>Garantia 7 dias</strong></a> · PIX · R$399,99/mês · Ativar −10% no trimestral',
-    quarterly: '<strong>Ativar −10%</strong> · cobrado R$1.079,97 / 3 meses · PIX · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link p-micro-garantia" data-plan="Maré" data-intent="garantia" aria-label="Ativar com garantia 7 dias">garantia 7 dias</a>',
-    yearly: '<strong>Ativar −15%</strong> · cobrado R$4.079,90 / ano · PIX · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link p-micro-garantia" data-plan="Maré" data-intent="garantia" aria-label="Ativar com garantia 7 dias">garantia 7 dias</a>'
+    quarterly: '<a href="/cadastro/?plan=Maré&period=monthly" class="plan-link p-micro-ativar" data-plan="Maré"><strong>Ativar −10%</strong></a> · cobrado R$1.079,97 / 3 meses · PIX · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link p-micro-garantia" data-plan="Maré" data-intent="garantia" aria-label="Ativar com garantia 7 dias">garantia 7 dias</a>',
+    yearly: '<a href="/cadastro/?plan=Maré&period=monthly" class="plan-link p-micro-ativar" data-plan="Maré"><strong>Ativar −15%</strong></a> · cobrado R$4.079,90 / ano · PIX · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link p-micro-garantia" data-plan="Maré" data-intent="garantia" aria-label="Ativar com garantia 7 dias">garantia 7 dias</a>'
 };
 const COMECAR_CTA_LABELS = {
     monthly: 'Começar agora — R$399,99/mês',
