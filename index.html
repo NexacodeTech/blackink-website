@@ -3129,7 +3129,7 @@ function maybeAutoQuarterlyFromLoss() {
 function updatePricingCtaLabel(period) {
     const label = PRICING_CTA_LABELS[period] || PRICING_CTA_LABELS.monthly;
     document.querySelectorAll('.pricing-cta').forEach(btn => { btn.textContent = label; });
-    // FAQ open CTA mirrors period price (ciclo 320) — assure = Ativar −10% sem risco
+    // FAQ price CTAs mirror period (open answer + assure densest)
     const faqPrice = FAQ_PRICE_CTA[period] || FAQ_PRICE_CTA.monthly;
     document.querySelectorAll('.faq-inline-cta--price').forEach(a => { a.textContent = faqPrice; });
     // Ciclo 326: p-micro confirma desconto ativo no período
