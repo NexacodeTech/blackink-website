@@ -1901,10 +1901,19 @@ if (calcSlider && calcDisplay && calcInvisible && calcFraud && calcHours && calc
         if (ctaFinalLoss) ctaFinalLoss.textContent = fmt(total);
         // FAQ savings mirrors loss (ciclo 37)
         if (faqSavingsLoss) faqSavingsLoss.textContent = fmt(total);
-        // Persist budget for cadastro bridge (ciclo 36)
-        try { sessionStorage.setItem('blackink_calc_budget', String(val)); } catch (_) {}
+        // Persist budget for cadastro bridge (ciclo 36) + return visits (ciclo 39)
+        try {
+            sessionStorage.setItem('blackink_calc_budget', String(val));
+            localStorage.setItem('blackink_calc_budget', String(val));
+        } catch (_) {}
         updatePlanLinks();
     };
+    // Restore last simulated budget (ciclo 39)
+    try {
+        const saved = sessionStorage.getItem('blackink_calc_budget') || localStorage.getItem('blackink_calc_budget');
+        const n = parseInt(saved, 10);
+        if (n >= 1000 && n <= 500000) calcSlider.value = String(n);
+    } catch (_) {}
     calcSlider.addEventListener('input', updateCalc);
     updateCalc();
 }

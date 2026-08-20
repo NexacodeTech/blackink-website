@@ -568,7 +568,9 @@
         if (!bridge || !valueEl) return;
         let budgetRaw = urlParams.get('budget');
         if (!budgetRaw) {
-            try { budgetRaw = sessionStorage.getItem('blackink_calc_budget'); } catch (_) {}
+            try {
+                budgetRaw = sessionStorage.getItem('blackink_calc_budget') || localStorage.getItem('blackink_calc_budget');
+            } catch (_) {}
         }
         const budget = parseInt(budgetRaw, 10);
         if (!budget || budget < 1000 || budget > 500000) return;

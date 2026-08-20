@@ -184,3 +184,7 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Contexto**: no checkout a perda simulada sumia — o visitante perdia a âncora numérica.
 **Regra**: landing grava `sessionStorage blackink_calc_budget` e passa `?budget=` nos plan-links; cadastro mostra bridge de perda est. (25% do budget).
 **Status**: ativo
+
+## 2026-08-20 — Budget ROI persiste entre visitas
+**Regra**: `blackink_calc_budget` em sessionStorage + localStorage; landing restaura o slider; cadastro lê URL/`session`/`local`.
+**Status**: ativo
