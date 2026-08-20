@@ -824,15 +824,19 @@ main{position:relative;z-index:1}
   #roi-calc .calc-cta .btn{height:44px;font-size:13px}
   /* Ciclo 83: após ROI o preço está na sequência — link de período some no mobile */
   #roi-calc .calc-cta-period{display:none}
-  .footer{padding:22px 0 14px}
-  .f-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 20px;margin-bottom:14px}
+  .footer{padding:14px 0 10px}
+  .f-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;margin-bottom:8px}
   .footer .f-brand{grid-column:1 / -1}
-  .footer .f-brand p{font-size:12px;line-height:1.35;max-width:42ch;margin-top:6px}
-  .f-col-t{margin-bottom:6px;font-size:10px}
-  .f-links{gap:5px}
+  .footer .f-brand p{font-size:11px;line-height:1.3;max-width:40ch;margin-top:4px}
+  .f-col-t{margin-bottom:4px;font-size:10px}
+  .f-links{gap:4px}
   .f-links a{font-size:12px}
-  .f-bottom{gap:6px;margin-top:10px;padding-top:12px;font-size:10px}
-  .f-legal{font-size:10px;line-height:1.3;gap:2px}
+  /* Ciclo 208: Produto — só 3 links no mobile */
+  .footer .f-links a[href="#redes"],
+  .footer .f-links a[href="#faq"],
+  .footer .f-links a[href*="login"]{display:none}
+  .f-bottom{gap:4px;margin-top:6px;padding-top:8px;font-size:9px}
+  .f-legal{font-size:9px;line-height:1.25;gap:1px}
   .f-legal-addr{display:none}
   .f-legal-addr-short{display:inline}
   .sticky-cta-inner{gap:10px}
@@ -928,11 +932,11 @@ main{position:relative;z-index:1}
   #redes .t-lg,
   #redes .t-body-lg{display:none}
   #redes .networks-grid{margin-top:0;gap:6px}
-  #pricing.section--compact{padding:clamp(10px,1.6vh,20px) 0}
-  #pricing .period-toggle{margin-bottom:4px}
-  #pricing .period-btn{padding:6px 8px;font-size:12px}
+  #pricing.section--compact{padding:clamp(8px,1.4vh,18px) 0}
+  #pricing .period-toggle{margin-bottom:2px}
+  #pricing .period-btn{padding:5px 8px;font-size:12px}
   #roi-calc .t-body-lg{margin:0 auto 4px;font-size:12px}
-  #roi-calc .calc-card{padding:10px 12px}
+  #roi-calc .calc-card{padding:8px 10px}
   #roi-calc .calc-summary-lbl{display:none}
   #roi-calc .calc-summary-bar{display:none}
   #roi-calc .calc-caveat{display:none}
@@ -941,32 +945,43 @@ main{position:relative;z-index:1}
   #roi-calc .calc-loss-val{font-size:15px}
   #roi-calc .calc-slider-ticks{font-size:9px;margin-top:2px}
   #roi-calc .calc-divider{margin:8px 0}
-  #roi-calc .calc-cta-text{font-size:11px;margin-bottom:4px}
-  #roi-calc .calc-slider-header{margin-bottom:4px}
-  #roi-calc .calc-summary{gap:5px;margin-top:4px}
-  #roi-calc .calc-summary-card{padding:7px}
-  #roi-calc .calc-summary-val{font-size:17px}
-  #roi-calc .calc-summary-tag{font-size:9px}
+  #roi-calc .calc-cta-text{font-size:11px;margin-bottom:2px}
+  #roi-calc .calc-slider-header{margin-bottom:2px}
+  #roi-calc .calc-summary{gap:4px;margin-top:2px}
+  #roi-calc .calc-summary-card{padding:6px}
+  #roi-calc .calc-summary-val{font-size:16px}
+  #roi-calc .calc-summary-tag{font-size:8px}
   #pricing .t-label{display:none}
-  #pricing .pricing-reveal-title{margin:0 0 4px;font-size:clamp(20px,2.4vw,24px)}
-  #pricing .pricing-lead{margin-bottom:6px;font-size:12px}
+  #pricing .pricing-reveal-title{margin:0 0 2px;font-size:clamp(18px,2.2vw,22px)}
+  #pricing .pricing-lead{margin-bottom:4px;font-size:12px}
   #pricing .p-micro{margin-top:8px;font-size:11px}
   #pricing .pricing-trust-chips{margin-top:8px}
   #pricing .period-toggle-label{margin-bottom:4px;display:none}
   /* Ciclo 111: chips cobrem includes+micro no desktop */
   #pricing .pricing-includes-line{display:none}
   #pricing .p-micro{display:none}
-  #pricing .pricing-trust-chips{margin-top:8px;margin-bottom:0}
-  #pricing .p-price-wrap{min-height:40px;margin-bottom:4px}
-  #pricing .period-nudge{margin:-4px auto 6px;font-size:11px}
-  #roi-calc .calc-cta{margin-top:6px}
-  #roi-calc .calc-cta-period{font-size:12px}
+  #pricing .pricing-trust-chips{margin-top:6px;margin-bottom:0}
+  #pricing .p-price-wrap{min-height:36px;margin-bottom:2px}
+  #pricing .period-nudge{margin:-4px auto 4px;font-size:11px}
+  #pricing .p-val{font-size:clamp(32px,4vw,40px)}
+  #pricing .btn-full{height:48px;font-size:15px}
+  #roi-calc .calc-cta{margin-top:4px}
+  /* Ciclo 202: pricing é o próximo ato — link de período some no desktop */
+  #roi-calc .calc-cta-period{display:none}
   /* Ciclo 133/198: ROI subtitle some — H2 + summary bastam */
   #roi-calc .t-body-lg{display:none}
   #roi-calc .t-label{display:none}
   #roi-calc.section--compact{padding:clamp(8px,1.4vh,18px) 0}
   #roi-calc .t-lg{margin:2px auto 4px;font-size:clamp(20px,2.6vw,26px)}
   #roi-calc .calc-cta .btn{height:44px;font-size:14px}
+  /* Ciclo 207: FAQ desktop mais curto — 2 perguntas + CTA */
+  #faq.section--compact{padding:clamp(6px,1vh,14px) 0}
+  #faq .t-lg{margin-bottom:2px;font-size:clamp(16px,2vw,20px)}
+  #faq .faq-q{padding:4px 10px;font-size:12px}
+  #faq .faq-a{padding:0 10px 4px;font-size:11px;line-height:1.2}
+  #faq .faq-outro{margin-top:2px;padding:4px 8px}
+  #faq .faq-outro .btn{height:44px;font-size:14px}
+  #faq .faq-more-toggle{margin-top:2px;min-height:28px;padding:3px 8px;font-size:10px}
   /* Ciclo 134: edu desktop em rail mais baixa */
   #o-que-e.edu-strip{padding:clamp(10px,1.6vh,18px) 0}
   #o-que-e .t-lg{margin:2px auto 4px;font-size:clamp(20px,2.4vw,26px)}
@@ -998,7 +1013,17 @@ main{position:relative;z-index:1}
   #comecar .t-body-lg{margin:2px auto 4px;font-size:12px}
   #comecar .cta-final-trust span:nth-child(4){display:none}
   #comecar .cta-final-title{font-size:clamp(20px,2.6vw,26px)}
-  .footer{padding:clamp(16px,2.4vh,24px) 0 10px}
+  /* Ciclo 208: footer denso — legal curto, menos links no desktop */
+  .footer{padding:clamp(12px,1.8vh,20px) 0 8px}
+  .f-grid{gap:10px;margin-bottom:8px}
+  .f-brand p{font-size:11px;margin-top:4px;line-height:1.3;max-width:36ch}
+  .f-col-t{margin-bottom:4px;font-size:10px}
+  .f-links{gap:4px}
+  .f-links a{font-size:12px}
+  .f-legal{font-size:10px;gap:1px;line-height:1.25}
+  .f-legal-addr{display:none}
+  .f-legal-addr-short{display:inline}
+  .f-bottom{margin-top:8px;gap:6px;font-size:10px}
 }
 @media (max-width:640px){
   .networks-grid{grid-template-columns:1fr 1fr}
@@ -1126,8 +1151,8 @@ main{position:relative;z-index:1}
 <section class="problem-strip" id="problema" aria-label="O problema">
     <div class="container">
         <p class="t-label rv">O problema</p>
-        <h2 class="t-lg rv rv-d1">Você paga o clique · <span class="grad">o bot não compra</span></h2>
-                <p class="t-body-lg rv rv-d2">Offer no destino = revisor e bot chegam nela · budget some</p>
+        <h2 class="t-lg rv rv-d1">Paga o clique · <span class="grad">bot não compra</span></h2>
+                 <p class="t-body-lg rv rv-d2">Offer no destino = revisor/bot vê · budget some no clique inválido</p>
         <div class="problem-grid">
             <div class="problem-card rv">
                 <div class="problem-stat" style="color:#ef4444">Conta</div>
@@ -1308,7 +1333,7 @@ main{position:relative;z-index:1}
 <section class="section section--compact" id="roi-calc">
     <div class="container">
         <p class="t-label rv" style="text-align:center">Calculadora</p>
-        <h2 class="t-lg rv rv-d1" style="text-align:center;margin:4px auto 4px;max-width:min(560px,92vw)">Budget que <span class="grad">some em clique inválido</span></h2>
+        <h2 class="t-lg rv rv-d1" style="text-align:center;margin:4px auto 4px;max-width:min(560px,92vw)">Budget que <span class="grad">some no clique inválido</span></h2>
         <p class="t-body-lg rv rv-d2" style="text-align:center;margin:0 auto 8px;max-width:400px;font-size:clamp(13px,1.4vw,15px)">Slider = perda est. vs cloaker R$399,99</p>
         <div class="calc-wrap rv rv-d3">
             <div class="calc-card">
@@ -1370,7 +1395,7 @@ main{position:relative;z-index:1}
                 <div class="pricing-reveal-inner">
                     <div class="t-label">Seu investimento</div>
                     <h2 class="pricing-reveal-title">Um cloaker · <span class="grad">um preço</span></h2>
-                    <p class="pricing-lead" id="pricing-lead"><strong id="pricing-lead-loss">R$ 12.500</strong>/mês a menos · payback <strong id="pricing-lead-payback">~1 dia</strong> · safe/offer · multi-rede</p>
+                    <p class="pricing-lead" id="pricing-lead">Pare de perder <strong id="pricing-lead-loss">R$ 12.500</strong>/mês · payback <strong id="pricing-lead-payback">~1 dia</strong> · R$399,99</p>
                     <div class="period-toggle-label">Como prefere pagar?</div>
                     <div class="period-toggle">
                         <div class="period-switcher">
@@ -1424,10 +1449,10 @@ main{position:relative;z-index:1}
 <section class="section section--compact" id="faq" aria-label="Perguntas Frequentes">
     <div class="container">
         <p class="t-label rv" style="text-align:center;margin-bottom:4px">FAQ</p>
-        <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:8px">Dúvidas · <span class="grad">ative com segurança</span></h2>
+        <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:8px">Dúvidas · <span class="grad">ative sem risco</span></h2>
         <div class="faq-list">
-            <details class="faq-i rv rv-d1" open><summary class="faq-q">O cloaker se paga?</summary><div class="faq-a" id="faq-savings-a">~<strong id="faq-savings-loss">R$ 12.500</strong>/mês · payback ~<strong id="faq-savings-payback">1 dia</strong> · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar agora</a></div></details>
-            <details class="faq-i faq-i--risk rv rv-d2"><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">Garantia 7 dias · reembolso 100%. <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar sem risco</a></div></details>
+            <details class="faq-i rv rv-d1" open><summary class="faq-q">O cloaker se paga?</summary><div class="faq-a" id="faq-savings-a">Perda ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês vs R$399,99 · payback ~<strong id="faq-savings-payback">1 dia</strong> · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar agora</a></div></details>
+            <details class="faq-i faq-i--risk rv rv-d2"><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">7 dias · reembolso 100% · sem fidelidade. <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar sem risco</a></div></details>
             <div class="faq-more" id="faq-more">
                 <details class="faq-i"><summary class="faq-q">Quanto custa?</summary><div class="faq-a">Produto único a R$ 399,99/mês. Trimestral ~10% off (R$ 359,99/mês equiv.) e anual ~15% (R$ 339,99/mês equiv.). PIX ou cartão · sem fidelidade.</div></details>
                 <details class="faq-i"><summary class="faq-q">Preciso conectar minha conta de anúncios (OAuth)?</summary><div class="faq-a">Não. Cadastre páginas, configure regras e use a URL BlackInk como destino — Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras · sem OAuth.</div></details>
@@ -1458,7 +1483,7 @@ main{position:relative;z-index:1}
     <div class="container" style="position:relative;z-index:1">
         <p class="t-label rv" style="text-align:center;margin-bottom:4px">Pronto</p>
         <h2 class="t-lg rv rv-d1 cta-final-title" style="text-align:center">Pare o clique inválido · <span class="grad">ative agora</span></h2>
-        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:440px;margin:6px auto 10px;font-size:clamp(13px,1.4vw,15px)" id="cta-final-lead">Até <strong id="cta-final-loss">R$ 12.500</strong>/mês · payback <span id="cta-final-payback">~1 dia</span> · garantia 7 dias</p>
+        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:440px;margin:6px auto 10px;font-size:clamp(13px,1.4vw,15px)" id="cta-final-lead">Pare de perder <strong id="cta-final-loss">R$ 12.500</strong>/mês · payback <span id="cta-final-payback">~1 dia</span> · 7 dias</p>
         <div class="rv rv-d3" style="display:flex;flex-direction:column;align-items:center;gap:8px">
             <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar agora — R$399,99/mês</a>
             <div class="cta-final-trust">
@@ -1897,14 +1922,14 @@ function syncStickyLossCopy(period) {
     if (stickyText) {
         if (lastCalcLossFmt) {
             // Short price only — charge details live in #pricing (ciclo 78)
-            stickyText.innerHTML = '<strong>' + lastCalcLossFmt + '</strong>/mês → cloaker <strong>' + priceShort + '</strong> · 7 dias';
+            stickyText.innerHTML = 'Perda <strong>' + lastCalcLossFmt + '</strong> → <strong>' + priceShort + '</strong> · 7 dias';
         } else {
-            stickyText.innerHTML = 'Safe · Offer — <strong>' + priceShort + '</strong> · 7 dias';
+            stickyText.innerHTML = 'Safe · Offer · <strong>' + priceShort + '</strong> · 7 dias';
         }
     }
     if (stickyPrice) {
         if (lastCalcLossFmt) {
-            stickyPrice.innerHTML = '<strong>' + priceShort + '</strong><br>vs ' + lastCalcLossFmt + ' · 7 dias';
+            stickyPrice.innerHTML = '<strong>' + priceShort + '</strong><br>vs perda ' + lastCalcLossFmt;
         } else {
             stickyPrice.innerHTML = '<strong>' + priceShort + '</strong><br>Garantia 7 dias';
         }
