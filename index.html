@@ -493,34 +493,35 @@ strong{font-weight:600}
 .arch-card h3{font-family:var(--ff-display);font-size:16px;font-weight:700}
 .arch-card p{font-size:12px;color:var(--dim);line-height:1.45;margin:0}
 .arch-cta{margin-top:22px}
-/* ROI calc compact (ciclo 44) */
-.calc-wrap{max-width:680px;margin:0 auto}
-.calc-card{padding:clamp(18px,2.5vw,28px);border-radius:18px;border:1px solid var(--border);background:linear-gradient(180deg,rgba(10,22,40,0.75),rgba(6,14,28,0.9))}
-.calc-slider-header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px;flex-wrap:wrap}
+/* ROI denser (ciclo 54) */
+#roi-calc.section--compact{padding:clamp(28px,4vh,52px) 0}
+.calc-wrap{max-width:640px;margin:0 auto}
+.calc-card{padding:clamp(14px,2vw,22px);border-radius:16px;border:1px solid var(--border);background:linear-gradient(180deg,rgba(10,22,40,0.75),rgba(6,14,28,0.9))}
+.calc-slider-header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:8px;flex-wrap:wrap}
 .calc-slider-label{font-size:12px;color:var(--muted);font-weight:500}
-.calc-slider-value{font-family:var(--ff-display);font-size:24px;font-weight:700}
+.calc-slider-value{font-family:var(--ff-display);font-size:22px;font-weight:700}
 .calc-slider{width:100%;-webkit-appearance:none;appearance:none;height:6px;border-radius:100px;background:linear-gradient(90deg,var(--accent) var(--fill,2%),rgba(255,255,255,0.08) var(--fill,2%));outline:none;cursor:pointer}
-.calc-slider::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--white);border:3px solid var(--accent);box-shadow:0 2px 12px rgba(100,180,255,0.4);cursor:pointer}
-.calc-slider::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--white);border:3px solid var(--accent);cursor:pointer}
-.calc-slider-ticks{display:flex;justify-content:space-between;margin-top:6px;font-size:10px;color:var(--muted)}
-.calc-caveat{font-size:11px;color:var(--muted);margin-top:8px;line-height:1.45}
-.calc-divider{height:1px;background:var(--border);margin:14px 0}
-.calc-losses{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.calc-loss{text-align:center;padding:12px 8px;border-radius:12px;border:1px solid var(--border);background:rgba(2,10,20,0.4)}
-.calc-loss-val{font-family:var(--ff-display);font-size:18px;font-weight:700;margin:4px 0 2px}
-.calc-loss-lbl{font-size:11px;color:var(--muted);line-height:1.35}
-.calc-summary{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
-.calc-summary-card{padding:14px;border-radius:12px;border:1px solid var(--border);background:rgba(2,10,20,0.35)}
+.calc-slider::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--white);border:3px solid var(--accent);box-shadow:0 2px 12px rgba(100,180,255,0.4);cursor:pointer}
+.calc-slider::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--white);border:3px solid var(--accent);cursor:pointer}
+.calc-slider-ticks{display:flex;justify-content:space-between;margin-top:4px;font-size:10px;color:var(--muted)}
+.calc-caveat{font-size:10px;color:var(--muted);margin-top:6px;line-height:1.4}
+.calc-divider{height:1px;background:var(--border);margin:10px 0}
+.calc-losses{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.calc-loss{text-align:center;padding:10px 6px;border-radius:10px;border:1px solid var(--border);background:rgba(2,10,20,0.4)}
+.calc-loss-val{font-family:var(--ff-display);font-size:17px;font-weight:700;margin:2px 0 1px}
+.calc-loss-lbl{font-size:10px;color:var(--muted);line-height:1.3}
+.calc-summary{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.calc-summary-card{padding:12px;border-radius:10px;border:1px solid var(--border);background:rgba(2,10,20,0.35)}
 .calc-summary-card--roi{border-color:rgba(52,211,153,0.15)}
-.calc-summary-tag{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
-.calc-summary-val{font-family:var(--ff-display);font-size:24px;font-weight:700}
-.calc-summary-lbl{font-size:11px;color:var(--muted);margin:2px 0 8px}
+.calc-summary-tag{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.calc-summary-val{font-family:var(--ff-display);font-size:22px;font-weight:700}
+.calc-summary-lbl{font-size:10px;color:var(--muted);margin:2px 0 6px}
 .calc-summary-bar{height:3px;border-radius:2px;background:linear-gradient(90deg,#ef4444,#f87171);width:2%;transition:width .5s var(--ease)}
 .calc-summary-card--roi .calc-summary-bar{background:linear-gradient(90deg,#34d399,#10b981)}
-.calc-cta{margin-top:16px;text-align:center}
-.calc-cta-text{font-size:13px;color:var(--dim);margin-bottom:12px;line-height:1.5}
+.calc-cta{margin-top:12px;text-align:center}
+.calc-cta-text{font-size:12px;color:var(--dim);margin-bottom:10px;line-height:1.45}
 .calc-cta-text strong{color:var(--white)}
-.calc-cta-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:center}
+.calc-cta-actions{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center}
 /* Pricing — single buy card (ciclo 53) */
 .pricing-narrative{max-width:720px;margin:0 auto}
 .pricing-lead{font-size:14px;color:var(--dim);line-height:1.5;max-width:520px;margin:0 auto 14px}
@@ -880,7 +881,7 @@ main{position:relative;z-index:1}
                         <div class="showcase-feat-text"><strong>Decision logs</strong> — motivo de cada PASS, BLOCK ou GEO</div>
                     </div>
                 </div>
-                <p class="showcase-proof" id="showcase-proof">Simulação ao lado: acompanhe bloqueios e taxa legítima em tempo real</p>
+                <p class="showcase-proof" id="showcase-proof">Simulação ao vivo: acompanhe bloqueios e taxa legítima em tempo real</p>
                 <div class="showcase-cta">
                     <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
                     <a href="#roi-calc" class="btn btn-o">Calcular perdas do budget</a>
@@ -958,8 +959,8 @@ main{position:relative;z-index:1}
 <section class="section section--compact" id="roi-calc">
     <div class="container">
         <p class="t-label rv" style="text-align:center">Calculadora</p>
-        <h2 class="t-lg rv rv-d1" style="text-align:center;margin:8px auto 10px;max-width:560px">Quanto do budget <span class="grad">some em cliques inválidos</span></h2>
-        <p class="t-body-lg rv rv-d2" style="text-align:center;margin:0 auto 16px;max-width:440px;font-size:clamp(14px,1.5vw,16px)">Ajuste o investimento mensal — estimativa de mercado</p>
+        <h2 class="t-lg rv rv-d1" style="text-align:center;margin:6px auto 8px;max-width:520px">Quanto do budget <span class="grad">some em cliques inválidos</span></h2>
+        <p class="t-body-lg rv rv-d2" style="text-align:center;margin:0 auto 12px;max-width:400px;font-size:clamp(13px,1.4vw,15px)">Ajuste o investimento — estimativa de mercado</p>
         <div class="calc-wrap rv rv-d3">
             <div class="calc-card">
                 <div class="calc-slider-wrap">
@@ -1485,6 +1486,8 @@ const PERIOD_NUDGE = {
 
 let lastCalcLossFmt = null;
 let lastCalcLossValue = 0;
+let billingPeriodLocked = false;
+let autoQuarterlyApplied = false;
 
 function periodNudgeHtml(period) {
     period = period || 'monthly';
@@ -1499,6 +1502,31 @@ function periodNudgeHtml(period) {
         return 'Máxima economia: ~15% a menos vs mensal · vs ~<strong>' + lastCalcLossFmt + '</strong>/mês de cliques inválidos estimados';
     }
     return PERIOD_NUDGE[period] || PERIOD_NUDGE.monthly;
+}
+
+function applyBillingPeriod(period, opts) {
+    opts = opts || {};
+    if (opts.lock) billingPeriodLocked = true;
+    period = period || 'monthly';
+    periodBtns.forEach(b => b.classList.toggle('active', b.dataset.period === period));
+    allPrices.forEach(price => {
+        price.classList.toggle('active', price.dataset.period === period);
+    });
+    updatePlanLinks(period);
+    updatePricingCtaLabel(period);
+    try {
+        const u = new URL(window.location.href);
+        u.searchParams.set('period', period);
+        history.replaceState({}, '', u.pathname + u.search + u.hash);
+    } catch (_) {}
+}
+
+// When loss ≥ ~3× cloaker, default to trimestral unless URL/user locked a period (ciclo 54)
+function maybeAutoQuarterlyFromLoss() {
+    if (billingPeriodLocked || autoQuarterlyApplied) return;
+    if (lastCalcLossValue < 399.99 * 3) return;
+    autoQuarterlyApplied = true;
+    applyBillingPeriod('quarterly', { lock: false });
 }
 
 function updatePricingCtaLabel(period) {
@@ -1537,8 +1565,7 @@ function syncStickyLossCopy(period) {
 }
 
 function selectBillingPeriod(period) {
-    const btn = document.querySelector('.period-btn[data-period="' + period + '"]');
-    if (btn) btn.click();
+    applyBillingPeriod(period, { lock: true });
 }
 
 document.getElementById('period-nudge')?.addEventListener('click', (e) => {
@@ -1566,35 +1593,21 @@ function updatePlanLinks(period) {
 
 periodBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-        const period = btn.dataset.period;
-        periodBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        allPrices.forEach(price => {
-            price.classList.toggle('active', price.dataset.period === period);
-        });
-        updatePlanLinks(period);
-        updatePricingCtaLabel(period);
-        try {
-            const u = new URL(window.location.href);
-            u.searchParams.set('period', period);
-            history.replaceState({}, '', u.pathname + u.search + u.hash);
-        } catch (_) {}
+        applyBillingPeriod(btn.dataset.period, { lock: true });
     });
 });
 const initialPeriod = (() => {
     try {
         const p = new URLSearchParams(window.location.search).get('period');
-        if (p && ['monthly', 'quarterly', 'yearly'].includes(p)) return p;
+        if (p && ['monthly', 'quarterly', 'yearly'].includes(p)) {
+            billingPeriodLocked = true;
+            return p;
+        }
     } catch (_) {}
-    return 'monthly';
+    return null;
 })();
-if (initialPeriod !== 'monthly') {
-    const btn = document.querySelector('.period-btn[data-period="' + initialPeriod + '"]');
-    if (btn) btn.click();
-    else {
-        updatePlanLinks(initialPeriod);
-        updatePricingCtaLabel(initialPeriod);
-    }
+if (initialPeriod) {
+    applyBillingPeriod(initialPeriod, { lock: true });
 } else {
     updatePlanLinks('monthly');
     updatePricingCtaLabel('monthly');
@@ -1737,7 +1750,7 @@ if (calcSlider && calcDisplay && calcInvisible && calcFraud && calcTotal && calc
         if (calcRoiBar) calcRoiBar.style.width = Math.max(Math.min((roi / 15) * 100, 100), 2) + '%';
         const paybackDays = Math.max(1, Math.ceil(planCost / (total / 30)));
         if (calcMsg && val > 0) {
-            calcMsg.innerHTML = 'Com R$ ' + val.toLocaleString('pt-BR') + '/mês de tráfego: até <strong>' + fmt(total) + '</strong> em cliques inválidos. Cloaker a R$ 399,99 pode se pagar em ~<strong>' + paybackDays + ' dia' + (paybackDays > 1 ? 's' : '') + '</strong> — estimativa, não garantia.';
+            calcMsg.innerHTML = 'Até <strong>' + fmt(total) + '</strong> em cliques inválidos · cloaker se paga em ~<strong>' + paybackDays + ' dia' + (paybackDays > 1 ? 's' : '') + '</strong> (estimativa)';
         }
         // Bridge calc → pricing (ciclo 32): keep loss + payback visible in the buy section
         if (pricingLeadLoss) pricingLeadLoss.textContent = fmt(total);
@@ -1762,6 +1775,7 @@ if (calcSlider && calcDisplay && calcInvisible && calcFraud && calcTotal && calc
             localStorage.setItem('blackink_calc_budget', String(val));
         } catch (_) {}
         updatePlanLinks();
+        maybeAutoQuarterlyFromLoss();
     };
     // Restore last simulated budget (ciclo 39)
     try {
