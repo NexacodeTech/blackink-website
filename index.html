@@ -1779,29 +1779,38 @@ main{position:relative;z-index:1}
   /* c501 LAST: trust-rail some — preço peeks; chips sob CTA bastam */
   .trust-rail{display:none}
   /* c505 LAST: peek 160px — chips trust full no fold (mobile) */
-  /* c556/c558/c559 LAST: peek 260 — FAQ assure no fold com folga */
-  #hero{min-height:calc(100vh - 260px);min-height:calc(100dvh - 260px)}
-  /* c558 LAST: densest FAQ = só assure (hook/more sobem no scroll) */
-  #faq .faq-i,#faq .faq-more-toggle{display:none}
-  #faq .faq-assure{margin:2px 0 0}
+  /* c556/c569 LAST: peek 270 — assure no fold + risk Q peek */
+  #hero{min-height:calc(100vh - 270px);min-height:calc(100dvh - 270px)}
+  /* c568 LAST: assure first + risk/toggle discoverable (hook some — pricing já cobre) */
+  #faq .faq-list{display:flex;flex-direction:column;gap:4px}
+  #faq .faq-assure{order:-1;margin:4px 0 0;gap:4px}
+  #faq .faq-list > .faq-i:not(.faq-i--risk){display:none}
+  #faq .faq-i--risk{display:block;order:0;margin:0;border:1px solid var(--border);border-radius:8px;background:rgba(6,17,31,0.5)}
+  #faq .faq-i--risk .faq-q{padding:8px 10px;font-size:12px;min-height:32px;line-height:1.25;font-weight:600}
+  #faq .faq-more-toggle{display:block;order:1;margin:6px auto 0;min-height:32px;padding:4px 12px;font-size:11px;opacity:.9;border:1px solid var(--border)}
+  #faq .faq-more{order:2}
+  #faq .faq-more.open{display:flex;flex-direction:column;gap:4px}
+  #faq .faq-more .faq-i{display:block;margin:0;border:1px solid var(--border);border-radius:8px;background:rgba(6,17,31,0.5)}
+  #faq .faq-more .faq-i .faq-q{padding:8px 10px;font-size:12px;min-height:32px;line-height:1.25;font-weight:600}
   /* c503 LAST: micro cobrança compacto sob CTA */
   #pricing .p-micro{font-size:10px;margin:2px 0 4px;line-height:1.25}
-  /* c510 LAST: padding inferior — fold fecha nos chips (sem redes truncada) */
-  #pricing.section--compact{padding:2px 0 18px}
+  /* c510/c571 LAST: padding inferior — slack pro risk+toggle peek */
+  #pricing.section--compact{padding:2px 0 2px}
   /* c511 LAST: sticky morto no densest (CTA preço sempre no path) */
   .sticky-cta{display:none;pointer-events:none}
   body.has-sticky-cta{padding-bottom:0}
-  /* c521 LAST: chip Garantia pulsa 2× — atenção no fold */
-  #pricing .pricing-trust-chips li:first-child{animation:chipTrustPulse 2.2s var(--ease) 2}
+  /* c521/c567 LAST: chip Garantia pulsa 1× — atenção no fold */
+  #pricing .pricing-trust-chips li:first-child{animation:chipTrustPulse 2.2s var(--ease) 1}
   /* c554 LAST: redes-buy some — CTA preço já no fold (evita CTA duplicado) */
   #redes .redes-buy{display:none}
   #redes .redes-buy-cta{height:40px;min-height:40px;font-size:13px;padding:0 14px}
   /* c565 LAST: why one-liner após FAQ — prova SaaS no mid-funnel */
   #redes .redes-why{display:block;margin:6px auto 0;font-size:11px;line-height:1.35;color:var(--dim);max-width:42ch}
   #redes .redes-why strong,#redes .redes-why .grad{color:var(--white);font-weight:700}
-  /* c527 LAST: reabre faq-a no densest + CTA 40px no hook aberto */
-  #faq .faq-a{display:block;padding:6px 0 0;font-size:12px;line-height:1.35;color:var(--dim)}
-  #faq-savings-a{display:flex;flex-direction:column;align-items:stretch;gap:8px}
+  /* c527/c568: faq-a só quando [open] — evita override UA em details fechado */
+  #faq .faq-i:not([open]) .faq-a{display:none}
+  #faq .faq-i[open] .faq-a{display:block;padding:6px 10px 8px;font-size:12px;line-height:1.35;color:var(--dim)}
+  #faq .faq-i[open] #faq-savings-a{display:flex;flex-direction:column;align-items:stretch;gap:8px}
   #faq-savings-a .faq-inline-cta--price{
     display:inline-flex;align-items:center;justify-content:center;
     width:min(100%,340px);min-height:40px;height:40px;padding:0 14px;margin:0 auto;
@@ -1814,8 +1823,8 @@ main{position:relative;z-index:1}
   #faq.section--compact{padding:4px 0}
   #faq .faq-list{gap:4px}
   #faq .faq-assure{margin:4px 0 0;gap:4px}
-  #faq-savings-a{gap:6px}
-  #faq .faq-a{padding:4px 0 0;font-size:11px}
+  #faq .faq-i[open] #faq-savings-a{gap:6px}
+  #faq .faq-i[open] .faq-a{padding:4px 10px 8px;font-size:11px}
   /* c530 LAST: assure = outline (sem risco) ≠ savings sólido Ativar */
   /* c560 LAST: assure = fill verde suave — close pós-preço > soft outline */
   #faq .faq-assure a.faq-inline-cta--price{
@@ -1846,6 +1855,13 @@ main{position:relative;z-index:1}
   }
   /* c567 LAST: hero-trust Garantia tap ≥32px no densest */
   a.hero-trust-garantia{display:inline-flex;align-items:center;min-height:32px;padding:2px 0}
+  /* c569 LAST: FAQ densest sem reveal delay — risk/toggle legíveis no scroll */
+  #faq .faq-list .rv{opacity:1;transform:none;transition:none}
+  /* c572 LAST: risk Q accent — objeção garantia no fold */
+  #faq .faq-i--risk{border-color:rgba(52,211,153,0.35);background:rgba(52,211,153,0.06)}
+  #faq .faq-i--risk .faq-q{color:var(--white)}
+  /* c570 LAST: toggle copy + tap — objeções OAuth/redes/preço */
+  #faq .faq-more-toggle{min-height:32px;padding:6px 12px;font-size:11px;font-weight:600;color:var(--white);border-color:rgba(100,180,255,0.28);opacity:1}
   /* c537 LAST: chip Garantia tap ≥28px (slack fold ~18px) */
   #pricing .pricing-trust-chips li{padding:5px 8px;min-height:28px;align-items:center}
 }
@@ -2696,29 +2712,30 @@ main{position:relative;z-index:1}
   /* c478–c479 desktop densest */
   #faq .faq-assure{gap:8px;margin:10px 0 0}
   /* c487–c495 desktop densest */
-  #pricing.section--compact{padding:2px 0 6px}
+  #pricing.section--compact{padding:2px 0 2px}
   #problema{display:none}
   .hero-ctas .btn-o.hero-soft-cta{white-space:nowrap;height:44px;min-height:44px;padding:0 16px;line-height:44px}
   .hero-scroll-cue{display:none}
   .trust-rail{display:none}
   /* c505/c507: peek 180 — chips trust full no fold desktop */
   #hero{min-height:calc(100vh - 180px);min-height:calc(100dvh - 180px)}
-  /* c510 LAST: padding inferior — fold fecha nos chips */
+  /* c510/c571 LAST: padding inferior — slack pro risk+toggle peek */
   #pricing.section--compact{padding:2px 0 20px}
   /* c511 LAST: sticky morto no densest desktop (path curto) */
   .sticky-cta{display:none;pointer-events:none}
   body.has-sticky-cta{padding-bottom:0}
-  /* c521 LAST: chip Garantia pulsa 2× */
-  #pricing .pricing-trust-chips li:first-child{animation:chipTrustPulse 2.2s var(--ease) 2}
+  /* c521/c567 LAST: chip Garantia pulsa 1× */
+  #pricing .pricing-trust-chips li:first-child{animation:chipTrustPulse 2.2s var(--ease) 1}
   /* c554 LAST: redes-buy some — CTA preço já no fold (evita CTA duplicado) */
   #redes .redes-buy{display:none}
   #redes .redes-buy-cta{height:40px;min-height:40px;font-size:13px;padding:0 14px}
   /* c565 LAST: why one-liner após FAQ — prova SaaS no mid-funnel */
   #redes .redes-why{display:block;margin:6px auto 0;font-size:11px;line-height:1.35;color:var(--dim);max-width:42ch}
   #redes .redes-why strong,#redes .redes-why .grad{color:var(--white);font-weight:700}
-  /* c527 LAST: reabre faq-a no densest + CTA 40px no hook aberto */
-  #faq .faq-a{display:block;padding:6px 0 0;font-size:12px;line-height:1.35;color:var(--dim)}
-  #faq-savings-a{display:flex;flex-direction:column;align-items:stretch;gap:8px}
+  /* c527/c568: faq-a só quando [open] — evita override UA em details fechado */
+  #faq .faq-i:not([open]) .faq-a{display:none}
+  #faq .faq-i[open] .faq-a{display:block;padding:6px 10px 8px;font-size:12px;line-height:1.35;color:var(--dim)}
+  #faq .faq-i[open] #faq-savings-a{display:flex;flex-direction:column;align-items:stretch;gap:8px}
   #faq-savings-a .faq-inline-cta--price{
     display:inline-flex;align-items:center;justify-content:center;
     width:min(100%,340px);min-height:40px;height:40px;padding:0 14px;margin:0 auto;
@@ -2731,8 +2748,8 @@ main{position:relative;z-index:1}
   #faq.section--compact{padding:4px 0}
   #faq .faq-list{gap:4px}
   #faq .faq-assure{margin:4px 0 0;gap:4px}
-  #faq-savings-a{gap:6px}
-  #faq .faq-a{padding:4px 0 0;font-size:11px}
+  #faq .faq-i[open] #faq-savings-a{gap:6px}
+  #faq .faq-i[open] .faq-a{padding:4px 10px 8px;font-size:11px}
   /* c530 LAST: assure = outline (sem risco) ≠ savings sólido Ativar */
   /* c560 LAST: assure = fill verde suave — close pós-preço > soft outline */
   #faq .faq-assure a.faq-inline-cta--price{
@@ -2763,6 +2780,13 @@ main{position:relative;z-index:1}
   }
   /* c567 LAST: hero-trust Garantia tap ≥32px no densest */
   a.hero-trust-garantia{display:inline-flex;align-items:center;min-height:32px;padding:2px 0}
+  /* c569 LAST: FAQ densest sem reveal delay — risk/toggle legíveis no scroll */
+  #faq .faq-list .rv{opacity:1;transform:none;transition:none}
+  /* c572 LAST: risk Q accent — objeção garantia no fold */
+  #faq .faq-i--risk{border-color:rgba(52,211,153,0.35);background:rgba(52,211,153,0.06)}
+  #faq .faq-i--risk .faq-q{color:var(--white)}
+  /* c570 LAST: toggle copy + tap — objeções OAuth/redes/preço */
+  #faq .faq-more-toggle{min-height:32px;padding:6px 12px;font-size:11px;font-weight:600;color:var(--white);border-color:rgba(100,180,255,0.28);opacity:1}
   /* c537 LAST: chip Garantia tap ≥28px (slack fold ~18px) */
   #pricing .pricing-trust-chips li{padding:5px 8px;min-height:28px;align-items:center}
   /* c538 LAST desktop: chip 26px — margem de fold (slack era 1px) */
@@ -3017,26 +3041,36 @@ main{position:relative;z-index:1}
   .hero-scroll-cue{display:none}
   .trust-rail{display:none}
   /* c505: peek 160 — chips trust full no fold (mobile) */
-  /* c556/c558/c559: peek 260 — FAQ assure no fold */
-  #hero{min-height:calc(100vh - 260px);min-height:calc(100dvh - 260px)}
-  #faq .faq-i,#faq .faq-more-toggle{display:none}
-  #faq .faq-assure{margin:2px 0 0}
-  /* c510 LAST: padding inferior — fold fecha nos chips */
-  #pricing.section--compact{padding:2px 0 18px}
+  /* c556/c569: peek 270 — assure no fold + risk Q peek */
+  #hero{min-height:calc(100vh - 270px);min-height:calc(100dvh - 270px)}
+  /* c568 LAST: assure first + risk/toggle discoverable (hook some — pricing já cobre) */
+  #faq .faq-list{display:flex;flex-direction:column;gap:4px}
+  #faq .faq-assure{order:-1;margin:4px 0 0;gap:4px}
+  #faq .faq-list > .faq-i:not(.faq-i--risk){display:none}
+  #faq .faq-i--risk{display:block;order:0;margin:0;border:1px solid var(--border);border-radius:8px;background:rgba(6,17,31,0.5)}
+  #faq .faq-i--risk .faq-q{padding:8px 10px;font-size:12px;min-height:32px;line-height:1.25;font-weight:600}
+  #faq .faq-more-toggle{display:block;order:1;margin:6px auto 0;min-height:32px;padding:4px 12px;font-size:11px;opacity:.9;border:1px solid var(--border)}
+  #faq .faq-more{order:2}
+  #faq .faq-more.open{display:flex;flex-direction:column;gap:4px}
+  #faq .faq-more .faq-i{display:block;margin:0;border:1px solid var(--border);border-radius:8px;background:rgba(6,17,31,0.5)}
+  #faq .faq-more .faq-i .faq-q{padding:8px 10px;font-size:12px;min-height:32px;line-height:1.25;font-weight:600}
+  /* c510/c571 LAST: padding inferior — slack pro risk+toggle peek */
+  #pricing.section--compact{padding:2px 0 2px}
   /* c511 LAST: sticky morto no densest (CTA preço sempre no path) */
   .sticky-cta{display:none;pointer-events:none}
   body.has-sticky-cta{padding-bottom:0}
-  /* c521 LAST: chip Garantia pulsa 2× — atenção no fold */
-  #pricing .pricing-trust-chips li:first-child{animation:chipTrustPulse 2.2s var(--ease) 2}
+  /* c521/c567 LAST: chip Garantia pulsa 1× — atenção no fold */
+  #pricing .pricing-trust-chips li:first-child{animation:chipTrustPulse 2.2s var(--ease) 1}
   /* c554 LAST: redes-buy some — CTA preço já no fold (evita CTA duplicado) */
   #redes .redes-buy{display:none}
   #redes .redes-buy-cta{height:40px;min-height:40px;font-size:13px;padding:0 14px}
   /* c565 LAST: why one-liner após FAQ — prova SaaS no mid-funnel */
   #redes .redes-why{display:block;margin:6px auto 0;font-size:11px;line-height:1.35;color:var(--dim);max-width:42ch}
   #redes .redes-why strong,#redes .redes-why .grad{color:var(--white);font-weight:700}
-  /* c527 LAST: reabre faq-a no densest + CTA 40px no hook aberto */
-  #faq .faq-a{display:block;padding:6px 0 0;font-size:12px;line-height:1.35;color:var(--dim)}
-  #faq-savings-a{display:flex;flex-direction:column;align-items:stretch;gap:8px}
+  /* c527/c568: faq-a só quando [open] — evita override UA em details fechado */
+  #faq .faq-i:not([open]) .faq-a{display:none}
+  #faq .faq-i[open] .faq-a{display:block;padding:6px 10px 8px;font-size:12px;line-height:1.35;color:var(--dim)}
+  #faq .faq-i[open] #faq-savings-a{display:flex;flex-direction:column;align-items:stretch;gap:8px}
   #faq-savings-a .faq-inline-cta--price{
     display:inline-flex;align-items:center;justify-content:center;
     width:min(100%,340px);min-height:40px;height:40px;padding:0 14px;margin:0 auto;
@@ -3049,8 +3083,8 @@ main{position:relative;z-index:1}
   #faq.section--compact{padding:4px 0}
   #faq .faq-list{gap:4px}
   #faq .faq-assure{margin:4px 0 0;gap:4px}
-  #faq-savings-a{gap:6px}
-  #faq .faq-a{padding:4px 0 0;font-size:11px}
+  #faq .faq-i[open] #faq-savings-a{gap:6px}
+  #faq .faq-i[open] .faq-a{padding:4px 10px 8px;font-size:11px}
   /* c530 LAST: assure = outline (sem risco) ≠ savings sólido Ativar */
   /* c560 LAST: assure = fill verde suave — close pós-preço > soft outline */
   #faq .faq-assure a.faq-inline-cta--price{
@@ -3081,6 +3115,13 @@ main{position:relative;z-index:1}
   }
   /* c567 LAST: hero-trust Garantia tap ≥32px no densest */
   a.hero-trust-garantia{display:inline-flex;align-items:center;min-height:32px;padding:2px 0}
+  /* c569 LAST: FAQ densest sem reveal delay — risk/toggle legíveis no scroll */
+  #faq .faq-list .rv{opacity:1;transform:none;transition:none}
+  /* c572 LAST: risk Q accent — objeção garantia no fold */
+  #faq .faq-i--risk{border-color:rgba(52,211,153,0.35);background:rgba(52,211,153,0.06)}
+  #faq .faq-i--risk .faq-q{color:var(--white)}
+  /* c570 LAST: toggle copy + tap — objeções OAuth/redes/preço */
+  #faq .faq-more-toggle{min-height:32px;padding:6px 12px;font-size:11px;font-weight:600;color:var(--white);border-color:rgba(100,180,255,0.28);opacity:1}
   /* c537 LAST: chip Garantia tap ≥28px (slack fold ~18px) */
   #pricing .pricing-trust-chips li{padding:5px 8px;min-height:28px;align-items:center}
 }
@@ -3328,26 +3369,36 @@ main{position:relative;z-index:1}
   .hero-scroll-cue{display:none}
   .trust-rail{display:none}
   /* c505: peek 160 — chips trust full no fold (mobile) */
-  /* c556/c558/c559: peek 260 — FAQ assure no fold */
-  #hero{min-height:calc(100vh - 260px);min-height:calc(100dvh - 260px)}
-  #faq .faq-i,#faq .faq-more-toggle{display:none}
-  #faq .faq-assure{margin:2px 0 0}
-  /* c510 LAST: padding inferior — fold fecha nos chips */
-  #pricing.section--compact{padding:2px 0 18px}
+  /* c556/c569: peek 270 — assure no fold + risk Q peek */
+  #hero{min-height:calc(100vh - 270px);min-height:calc(100dvh - 270px)}
+  /* c568 LAST: assure first + risk/toggle discoverable (hook some — pricing já cobre) */
+  #faq .faq-list{display:flex;flex-direction:column;gap:4px}
+  #faq .faq-assure{order:-1;margin:4px 0 0;gap:4px}
+  #faq .faq-list > .faq-i:not(.faq-i--risk){display:none}
+  #faq .faq-i--risk{display:block;order:0;margin:0;border:1px solid var(--border);border-radius:8px;background:rgba(6,17,31,0.5)}
+  #faq .faq-i--risk .faq-q{padding:8px 10px;font-size:12px;min-height:32px;line-height:1.25;font-weight:600}
+  #faq .faq-more-toggle{display:block;order:1;margin:6px auto 0;min-height:32px;padding:4px 12px;font-size:11px;opacity:.9;border:1px solid var(--border)}
+  #faq .faq-more{order:2}
+  #faq .faq-more.open{display:flex;flex-direction:column;gap:4px}
+  #faq .faq-more .faq-i{display:block;margin:0;border:1px solid var(--border);border-radius:8px;background:rgba(6,17,31,0.5)}
+  #faq .faq-more .faq-i .faq-q{padding:8px 10px;font-size:12px;min-height:32px;line-height:1.25;font-weight:600}
+  /* c510/c571 LAST: padding inferior — slack pro risk+toggle peek */
+  #pricing.section--compact{padding:2px 0 2px}
   /* c511 LAST: sticky morto no densest (CTA preço sempre no path) */
   .sticky-cta{display:none;pointer-events:none}
   body.has-sticky-cta{padding-bottom:0}
-  /* c521 LAST: chip Garantia pulsa 2× — atenção no fold */
-  #pricing .pricing-trust-chips li:first-child{animation:chipTrustPulse 2.2s var(--ease) 2}
+  /* c521/c567 LAST: chip Garantia pulsa 1× — atenção no fold */
+  #pricing .pricing-trust-chips li:first-child{animation:chipTrustPulse 2.2s var(--ease) 1}
   /* c554 LAST: redes-buy some — CTA preço já no fold (evita CTA duplicado) */
   #redes .redes-buy{display:none}
   #redes .redes-buy-cta{height:40px;min-height:40px;font-size:13px;padding:0 14px}
   /* c565 LAST: why one-liner após FAQ — prova SaaS no mid-funnel */
   #redes .redes-why{display:block;margin:6px auto 0;font-size:11px;line-height:1.35;color:var(--dim);max-width:42ch}
   #redes .redes-why strong,#redes .redes-why .grad{color:var(--white);font-weight:700}
-  /* c527 LAST: reabre faq-a no densest + CTA 40px no hook aberto */
-  #faq .faq-a{display:block;padding:6px 0 0;font-size:12px;line-height:1.35;color:var(--dim)}
-  #faq-savings-a{display:flex;flex-direction:column;align-items:stretch;gap:8px}
+  /* c527/c568: faq-a só quando [open] — evita override UA em details fechado */
+  #faq .faq-i:not([open]) .faq-a{display:none}
+  #faq .faq-i[open] .faq-a{display:block;padding:6px 10px 8px;font-size:12px;line-height:1.35;color:var(--dim)}
+  #faq .faq-i[open] #faq-savings-a{display:flex;flex-direction:column;align-items:stretch;gap:8px}
   #faq-savings-a .faq-inline-cta--price{
     display:inline-flex;align-items:center;justify-content:center;
     width:min(100%,340px);min-height:40px;height:40px;padding:0 14px;margin:0 auto;
@@ -3360,8 +3411,8 @@ main{position:relative;z-index:1}
   #faq.section--compact{padding:4px 0}
   #faq .faq-list{gap:4px}
   #faq .faq-assure{margin:4px 0 0;gap:4px}
-  #faq-savings-a{gap:6px}
-  #faq .faq-a{padding:4px 0 0;font-size:11px}
+  #faq .faq-i[open] #faq-savings-a{gap:6px}
+  #faq .faq-i[open] .faq-a{padding:4px 10px 8px;font-size:11px}
   /* c530 LAST: assure = outline (sem risco) ≠ savings sólido Ativar */
   /* c560 LAST: assure = fill verde suave — close pós-preço > soft outline */
   #faq .faq-assure a.faq-inline-cta--price{
@@ -3392,6 +3443,13 @@ main{position:relative;z-index:1}
   }
   /* c567 LAST: hero-trust Garantia tap ≥32px no densest */
   a.hero-trust-garantia{display:inline-flex;align-items:center;min-height:32px;padding:2px 0}
+  /* c569 LAST: FAQ densest sem reveal delay — risk/toggle legíveis no scroll */
+  #faq .faq-list .rv{opacity:1;transform:none;transition:none}
+  /* c572 LAST: risk Q accent — objeção garantia no fold */
+  #faq .faq-i--risk{border-color:rgba(52,211,153,0.35);background:rgba(52,211,153,0.06)}
+  #faq .faq-i--risk .faq-q{color:var(--white)}
+  /* c570 LAST: toggle copy + tap — objeções OAuth/redes/preço */
+  #faq .faq-more-toggle{min-height:32px;padding:6px 12px;font-size:11px;font-weight:600;color:var(--white);border-color:rgba(100,180,255,0.28);opacity:1}
   /* c537 LAST: chip Garantia tap ≥28px (slack fold ~18px) */
   #pricing .pricing-trust-chips li{padding:5px 8px;min-height:28px;align-items:center}
 }
@@ -3630,26 +3688,36 @@ main{position:relative;z-index:1}
   .hero-scroll-cue{display:none}
   .trust-rail{display:none}
   /* c505: peek 160 — chips trust full no fold (mobile) */
-  /* c556/c558/c559: peek 260 — FAQ assure no fold */
-  #hero{min-height:calc(100vh - 260px);min-height:calc(100dvh - 260px)}
-  #faq .faq-i,#faq .faq-more-toggle{display:none}
-  #faq .faq-assure{margin:2px 0 0}
-  /* c510 LAST: padding inferior — fold fecha nos chips */
-  #pricing.section--compact{padding:2px 0 18px}
+  /* c556/c569: peek 270 — assure no fold + risk Q peek */
+  #hero{min-height:calc(100vh - 270px);min-height:calc(100dvh - 270px)}
+  /* c568 LAST: assure first + risk/toggle discoverable (hook some — pricing já cobre) */
+  #faq .faq-list{display:flex;flex-direction:column;gap:4px}
+  #faq .faq-assure{order:-1;margin:4px 0 0;gap:4px}
+  #faq .faq-list > .faq-i:not(.faq-i--risk){display:none}
+  #faq .faq-i--risk{display:block;order:0;margin:0;border:1px solid var(--border);border-radius:8px;background:rgba(6,17,31,0.5)}
+  #faq .faq-i--risk .faq-q{padding:8px 10px;font-size:12px;min-height:32px;line-height:1.25;font-weight:600}
+  #faq .faq-more-toggle{display:block;order:1;margin:6px auto 0;min-height:32px;padding:4px 12px;font-size:11px;opacity:.9;border:1px solid var(--border)}
+  #faq .faq-more{order:2}
+  #faq .faq-more.open{display:flex;flex-direction:column;gap:4px}
+  #faq .faq-more .faq-i{display:block;margin:0;border:1px solid var(--border);border-radius:8px;background:rgba(6,17,31,0.5)}
+  #faq .faq-more .faq-i .faq-q{padding:8px 10px;font-size:12px;min-height:32px;line-height:1.25;font-weight:600}
+  /* c510/c571 LAST: padding inferior — slack pro risk+toggle peek */
+  #pricing.section--compact{padding:2px 0 2px}
   /* c511 LAST: sticky morto no densest (CTA preço sempre no path) */
   .sticky-cta{display:none;pointer-events:none}
   body.has-sticky-cta{padding-bottom:0}
-  /* c521 LAST: chip Garantia pulsa 2× — atenção no fold */
-  #pricing .pricing-trust-chips li:first-child{animation:chipTrustPulse 2.2s var(--ease) 2}
+  /* c521/c567 LAST: chip Garantia pulsa 1× — atenção no fold */
+  #pricing .pricing-trust-chips li:first-child{animation:chipTrustPulse 2.2s var(--ease) 1}
   /* c554 LAST: redes-buy some — CTA preço já no fold (evita CTA duplicado) */
   #redes .redes-buy{display:none}
   #redes .redes-buy-cta{height:40px;min-height:40px;font-size:13px;padding:0 14px}
   /* c565 LAST: why one-liner após FAQ — prova SaaS no mid-funnel */
   #redes .redes-why{display:block;margin:6px auto 0;font-size:11px;line-height:1.35;color:var(--dim);max-width:42ch}
   #redes .redes-why strong,#redes .redes-why .grad{color:var(--white);font-weight:700}
-  /* c527 LAST: reabre faq-a no densest + CTA 40px no hook aberto */
-  #faq .faq-a{display:block;padding:6px 0 0;font-size:12px;line-height:1.35;color:var(--dim)}
-  #faq-savings-a{display:flex;flex-direction:column;align-items:stretch;gap:8px}
+  /* c527/c568: faq-a só quando [open] — evita override UA em details fechado */
+  #faq .faq-i:not([open]) .faq-a{display:none}
+  #faq .faq-i[open] .faq-a{display:block;padding:6px 10px 8px;font-size:12px;line-height:1.35;color:var(--dim)}
+  #faq .faq-i[open] #faq-savings-a{display:flex;flex-direction:column;align-items:stretch;gap:8px}
   #faq-savings-a .faq-inline-cta--price{
     display:inline-flex;align-items:center;justify-content:center;
     width:min(100%,340px);min-height:40px;height:40px;padding:0 14px;margin:0 auto;
@@ -3662,8 +3730,8 @@ main{position:relative;z-index:1}
   #faq.section--compact{padding:4px 0}
   #faq .faq-list{gap:4px}
   #faq .faq-assure{margin:4px 0 0;gap:4px}
-  #faq-savings-a{gap:6px}
-  #faq .faq-a{padding:4px 0 0;font-size:11px}
+  #faq .faq-i[open] #faq-savings-a{gap:6px}
+  #faq .faq-i[open] .faq-a{padding:4px 10px 8px;font-size:11px}
   /* c530 LAST: assure = outline (sem risco) ≠ savings sólido Ativar */
   /* c560 LAST: assure = fill verde suave — close pós-preço > soft outline */
   #faq .faq-assure a.faq-inline-cta--price{
@@ -3694,6 +3762,13 @@ main{position:relative;z-index:1}
   }
   /* c567 LAST: hero-trust Garantia tap ≥32px no densest */
   a.hero-trust-garantia{display:inline-flex;align-items:center;min-height:32px;padding:2px 0}
+  /* c569 LAST: FAQ densest sem reveal delay — risk/toggle legíveis no scroll */
+  #faq .faq-list .rv{opacity:1;transform:none;transition:none}
+  /* c572 LAST: risk Q accent — objeção garantia no fold */
+  #faq .faq-i--risk{border-color:rgba(52,211,153,0.35);background:rgba(52,211,153,0.06)}
+  #faq .faq-i--risk .faq-q{color:var(--white)}
+  /* c570 LAST: toggle copy + tap — objeções OAuth/redes/preço */
+  #faq .faq-more-toggle{min-height:32px;padding:6px 12px;font-size:11px;font-weight:600;color:var(--white);border-color:rgba(100,180,255,0.28);opacity:1}
   /* c537 LAST: chip Garantia tap ≥28px (slack fold ~18px) */
   #pricing .pricing-trust-chips li{padding:5px 8px;min-height:28px;align-items:center}
 }
@@ -4109,7 +4184,7 @@ main{position:relative;z-index:1}
                 <details class="faq-i"><summary class="faq-q">O BlackInk é um tracker?</summary><div class="faq-a">Não. Cloaker server-side (safe vs offer) — sem tracker nem pixel de atribuição.</div></details>
                 <details class="faq-i"><summary class="faq-q">Como falo com o suporte?</summary><div class="faq-a"><a href="mailto:suporte@theblack.ink">suporte@theblack.ink</a> · ticket/chat na plataforma · setup inicial gratuito.</div></details>
             </div>
-            <button type="button" class="faq-more-toggle" id="faq-more-toggle" aria-expanded="false" aria-controls="faq-more">OAuth · redes · preço</button>
+            <button type="button" class="faq-more-toggle" id="faq-more-toggle" aria-expanded="false" aria-controls="faq-more">Dúvidas · OAuth · redes · preço</button>
         </div>
         <div class="faq-outro rv">
             <div class="faq-outro-cta">
@@ -4883,7 +4958,7 @@ if (faqMore && faqMoreToggle) {
     faqMoreToggle.addEventListener('click', () => {
         const open = faqMore.classList.toggle('open');
         faqMoreToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-        faqMoreToggle.textContent = open ? 'Mostrar menos' : 'OAuth · redes · preço';
+        faqMoreToggle.textContent = open ? 'Mostrar menos' : 'Dúvidas · OAuth · redes · preço';
     });
 }
 
@@ -5008,7 +5083,7 @@ if (calcSlider && calcDisplay && calcInvisible && calcFraud && calcTotal && calc
     updateCalc();
 }
 
-// c556: densest — FAQ hook fechado; assure sobe logo após preço (order 30)
+// c556/c568: densest — hook fechado; assure first (CSS order); risk+toggle discoverable
 (function densestFaqAssureFirst() {
     try {
         if (!window.matchMedia('(max-width:767px)').matches) return;
