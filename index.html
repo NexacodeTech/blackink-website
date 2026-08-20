@@ -474,11 +474,11 @@ strong{font-weight:600}
 .prot-sim-metric-val{font-family:var(--ff-display);font-size:14px;font-weight:700;line-height:1.2;white-space:nowrap}
 .prot-sim-metric-lbl{font-size:8px;color:var(--muted);letter-spacing:.04em;white-space:nowrap}
 /* Redes — compact pós-preço (ciclo 34) */
-.redes-strip{padding:clamp(28px,4vh,48px) 0;text-align:center}
-.redes-strip .t-lg{margin:8px auto 8px;max-width:560px}
-.redes-strip .t-body-lg{margin:0 auto;max-width:480px;font-size:clamp(14px,1.5vw,16px)}
-.networks-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:18px}
-.network-chip{padding:14px 12px;border-radius:12px;border:1px solid var(--border);background:rgba(6,17,31,0.55);text-align:center;transition:border-color .3s var(--ease),transform .3s var(--ease),background .3s var(--ease)}
+.redes-strip{padding:clamp(22px,3.5vh,40px) 0;text-align:center}
+.redes-strip .t-lg{margin:6px auto 6px;max-width:560px}
+.redes-strip .t-body-lg{margin:0 auto;max-width:480px;font-size:clamp(13px,1.4vw,15px)}
+.networks-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:14px}
+.network-chip{padding:12px 10px;border-radius:12px;border:1px solid var(--border);background:rgba(6,17,31,0.55);text-align:center;transition:border-color .3s var(--ease),transform .3s var(--ease),background .3s var(--ease)}
 .network-chip:hover{border-color:rgba(100,180,255,0.28);transform:translateY(-2px);background:rgba(100,180,255,0.06)}
 .network-chip strong{display:block;font-size:13px;font-weight:600;margin-bottom:2px;color:var(--white)}
 .network-chip span{font-size:11px;color:var(--dim)}
@@ -643,7 +643,16 @@ main{position:relative;z-index:1}
   #cloaker .showcase-proof{display:none}
   #cloaker .showcase-cta{margin-top:10px}
   #cloaker .showcase-cta .btn-o{display:none}
-  .networks-grid{grid-template-columns:1fr 1fr}
+  .networks-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:12px}
+  #redes.redes-strip{padding:clamp(20px,3vh,32px) 0}
+  #redes .network-chip{padding:8px 12px;flex:0 1 auto}
+  #redes .network-chip span{display:none}
+  #redes .network-chip strong{margin:0;font-size:12px}
+  #faq.section--compact{padding:clamp(28px,4vh,48px) 0}
+  #faq .faq-outro{margin-top:14px;padding:12px}
+  #faq .faq-outro p{font-size:12px;margin-bottom:10px}
+  #pricing .pricing-lead{font-size:13px;margin-bottom:10px;line-height:1.4}
+  #pricing .pricing-includes-line{margin-bottom:10px;font-size:11px}
   .arch-grid{grid-template-columns:1fr}
   .calc-losses{grid-template-columns:1fr}
   .calc-summary{grid-template-columns:1fr}
@@ -688,7 +697,7 @@ main{position:relative;z-index:1}
 }
 @media (max-width:500px){
   .flow-pillars{grid-template-columns:1fr}
-  .network-chip{padding:16px 12px}
+  .network-chip{padding:8px 10px}
 }
 @media (max-width:480px){
   .period-switcher{flex-direction:column;width:100%;max-width:280px;margin:0 auto}
