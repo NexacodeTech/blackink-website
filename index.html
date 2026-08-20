@@ -704,21 +704,24 @@ main{position:relative;z-index:1}
   #pricing .p-price-wrap{min-height:44px;margin-bottom:6px}
   #pricing .p-monthly-eq{font-size:10px;margin-top:2px;max-width:32ch;line-height:1.3}
   #pricing .p-micro{margin-top:6px;line-height:1.35}
-  #faq.section--compact{padding:clamp(14px,2vh,24px) 0}
-  #faq .t-label{margin-bottom:0}
+  #faq.section--compact{padding:clamp(12px,1.8vh,22px) 0}
+  #faq .t-label{margin-bottom:0;display:none}
   #faq .t-lg{margin-bottom:4px;font-size:clamp(18px,5vw,22px)}
   #faq .faq-list{gap:4px}
   #faq .faq-q{padding:7px 9px;font-size:12px}
   #faq .faq-a{padding:0 9px 6px;font-size:11px;line-height:1.3}
   #faq .faq-more-toggle{margin-top:4px;padding:5px 10px;min-height:36px;font-size:11px}
+  #faq .faq-outro-support{display:none}
   #faq .faq-outro{margin-top:6px;padding:6px}
-  #faq .faq-outro-support{font-size:10px;margin-top:6px}
   #faq .faq-outro p{font-size:11px;margin-bottom:0}
-  #comecar.cta-final{padding:clamp(20px,3vh,32px) 0}
-  #comecar .t-lg,#comecar .cta-final-title{font-size:clamp(20px,5.5vw,26px)}
-  #comecar .t-body-lg{margin:4px auto 8px;font-size:12px}
+  #comecar.cta-final{padding:clamp(16px,2.4vh,28px) 0}
+  #comecar .t-lg,#comecar .cta-final-title{font-size:clamp(18px,5vw,24px)}
+  #comecar .t-body-lg{margin:2px auto 6px;font-size:11px}
+  #comecar .cta-final-trust{gap:6px 10px}
+  #comecar .cta-final-trust span{font-size:10px}
   #comecar .cta-final-trust span:nth-child(4){display:none}
-  #comecar .cta-final-period{font-size:11px}
+  #comecar .cta-final-period{font-size:10px}
+  #comecar .t-label{display:none}
   .flow-pillars{grid-template-columns:1fr 1fr}
   .showcase{grid-template-columns:1fr;gap:18px}
   #cloaker.section--compact{padding:clamp(16px,2.4vh,28px) 0}
@@ -766,12 +769,13 @@ main{position:relative;z-index:1}
   /* Ciclo 88: eq. cobrança em 1 linha curta no mobile */
   #pricing .p-monthly-eq{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
   #pricing .p-micro{display:none}
-  #pricing .pricing-trust-chips{margin:8px 0 0;gap:4px}
+  #pricing .pricing-trust-chips{margin:6px 0 0;gap:4px}
   #pricing .pricing-trust-chips li{font-size:10px;padding:4px 8px}
-  #pricing .pricing-lead{font-size:12px;margin-bottom:8px;line-height:1.35}
+  #pricing .pricing-lead{font-size:11px;margin-bottom:6px;line-height:1.3}
   #pricing .pricing-includes-line{display:none}
-  #pricing .pricing-reveal-title{margin:2px 0 4px;font-size:clamp(18px,5vw,24px)}
-  #pricing .period-toggle{margin-bottom:8px}
+  #pricing .pricing-reveal-title{margin:2px 0 2px;font-size:clamp(18px,5vw,22px)}
+  #pricing .period-toggle{margin-bottom:6px}
+  #pricing .period-nudge{font-size:10px;margin:-2px auto 6px;line-height:1.3}
   .arch-grid{grid-template-columns:1fr}
   .calc-losses{grid-template-columns:1fr}
   .calc-summary{grid-template-columns:1fr}
@@ -831,16 +835,16 @@ main{position:relative;z-index:1}
   #roi-calc .calc-slider-ticks{display:none}
   #roi-calc .calc-caveat{display:none}
   /* Ciclo 97/126: buy-path desktop mais curto até o fechamento */
-  #faq.section--compact{padding:clamp(12px,1.8vh,24px) 0}
-  #faq .t-label{margin-bottom:0}
+  #faq.section--compact{padding:clamp(10px,1.6vh,20px) 0}
+  #faq .t-label{margin-bottom:0;display:none}
   #faq .t-lg{margin-bottom:4px;font-size:clamp(20px,2.4vw,26px)}
-  #faq .faq-list{gap:4px;max-width:600px}
-  #faq .faq-q{padding:7px 11px;font-size:12px}
-  #faq .faq-a{padding:0 11px 7px;font-size:11px;line-height:1.3}
-  #faq .faq-more-toggle{margin-top:4px;padding:6px 12px;min-height:36px;font-size:12px}
-  #faq .faq-outro{margin-top:6px;padding:8px 10px;max-width:600px}
-  #faq .faq-outro-cta{flex-direction:row;gap:12px;align-items:center}
-  #faq .faq-outro-support{font-size:11px;margin-top:6px}
+  #faq .faq-list{gap:4px;max-width:580px}
+  #faq .faq-q{padding:6px 10px;font-size:12px}
+  #faq .faq-a{padding:0 10px 6px;font-size:11px;line-height:1.28}
+  #faq .faq-more-toggle{margin-top:4px;padding:5px 10px;min-height:34px;font-size:11px}
+  #faq .faq-outro{margin-top:6px;padding:6px 8px;max-width:580px}
+  #faq .faq-outro-cta{flex-direction:row;gap:10px;align-items:center}
+  #faq .faq-outro-support{font-size:10px;margin-top:4px}
   #faq .faq-outro p{font-size:11px;margin-bottom:0}
   #faq .faq-inline-cta{margin-top:2px;padding:2px 0}
   #pricing.section--compact{padding:clamp(14px,2vh,28px) 0}
