@@ -843,11 +843,21 @@ main{position:relative;z-index:1}
   #roi-calc .calc-divider{display:none}
   #roi-calc .calc-cta-period{display:none}
   #roi-calc .calc-losses{display:none}
+  #roi-calc .calc-summary-card{padding:1px}
+  #roi-calc .calc-summary-val{font-size:10px}
   #roi-calc .calc-cta-text{font-size:6px;margin-bottom:0}
   #roi-calc .calc-cta{margin-top:0}
-  #roi-calc .calc-cta .btn{height:34px;font-size:11px}
+  #roi-calc .calc-cta .btn{height:32px;font-size:10px}
   #roi-calc .calc-slider-header{margin-bottom:0}
   #roi-calc .calc-slider{margin:0}
+  #roi-calc .t-lg{margin:0 auto 0;font-size:clamp(11px,3.4vw,15px)}
+  #pricing .btn-full{height:32px;font-size:10px}
+  #pricing .p-val{font-size:clamp(16px,4.5vw,20px)}
+  #pricing.section--compact{padding:clamp(1px,0.4vh,4px) 0}
+  #pricing .pricing-reveal-title{margin:0;font-size:clamp(11px,3.2vw,14px)}
+  #pricing .pricing-lead{font-size:7px;margin-bottom:0;line-height:1.1}
+  #cloaker .prot-sim-stat:nth-child(3){display:none}
+  #cloaker .prot-sim-stats{grid-template-columns:1fr 1fr}
   #faq .faq-outro .btn{height:30px;font-size:10px}
   #faq .faq-q{padding:2px 4px;font-size:8px}
   #faq .faq-a{padding:0 4px 1px;font-size:8px;line-height:1.08}
@@ -1276,9 +1286,9 @@ main{position:relative;z-index:1}
   .pricing-reveal-inner .period-toggle{width:100%;justify-content:center}
   #pricing .period-btn{font-size:7px;padding:2px 1px;min-height:28px}
   #pricing .p-val{font-size:clamp(17px,4.8vw,22px)}
-  #pricing .btn-full{height:34px;font-size:11px}
+  #pricing .btn-full{height:32px;font-size:10px}
   #pricing .period-nudge{display:none}
-  #roi-calc .calc-cta .btn{height:34px;font-size:11px}
+  #roi-calc .calc-cta .btn{height:32px;font-size:10px}
 }
 @media (max-width:500px){
   .flow-pillars{grid-template-columns:1fr}
@@ -1293,21 +1303,21 @@ main{position:relative;z-index:1}
   .container{width:min(1120px,100% - 28px)}
   .hero-ctas{max-width:100%}
   .networks-grid{grid-template-columns:1fr}
-  /* Ciclo 259/268/276/280: pricing permanece denso em 480 */
+  /* Ciclo 259/268/276/280/284: pricing permanece denso em 480 */
   #pricing .period-btn{padding:2px 1px;font-size:7px;min-height:28px}
-  #pricing .p-val{font-size:clamp(17px,4.8vw,22px)}
-  #pricing .btn-full{height:34px;font-size:11px}
+  #pricing .p-val{font-size:clamp(16px,4.5vw,20px)}
+  #pricing .btn-full{height:32px;font-size:10px}
 }
 @media (max-width:390px){
   .hero-logo{width:32px;height:32px}
   .hero-title{font-size:22px}
   .hero-badge-text{font-size:10px}
   .btn{height:48px;font-size:14px;padding:0 20px}
-  /* Ciclo 259/268/276/280: não inflar preço/switcher/CTAs densos no iPhone */
+  /* Ciclo 259/268/276/280/284: não inflar preço/switcher/CTAs densos no iPhone */
   #pricing .period-btn{font-size:7px;padding:2px 1px;min-height:28px}
-  #pricing .p-val{font-size:clamp(17px,4.8vw,22px)}
-  #pricing .btn-full{height:34px;font-size:11px}
-  #roi-calc .calc-cta .btn{height:34px;font-size:11px}
+  #pricing .p-val{font-size:clamp(16px,4.5vw,20px)}
+  #pricing .btn-full{height:32px;font-size:10px}
+  #roi-calc .calc-cta .btn{height:32px;font-size:10px}
   #faq .faq-outro .btn{height:30px;font-size:10px}
   #cloaker .showcase-cta .btn{height:32px;font-size:10px}
   #como-funciona .mid-cta .btn{height:32px;font-size:10px}
@@ -1365,9 +1375,9 @@ main{position:relative;z-index:1}
     <div class="hero-badge">
         <div class="hero-badge-inner">
             <span class="hero-badge-dot" aria-hidden="true"></span>
-            <span class="hero-badge-text">
+                <span class="hero-badge-text">
                 <svg class="hero-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                Plataforma Cloaker · Multi-rede · R$399,99
+                Cloaker multi-rede · R$399,99 · 7 dias
             </span>
         </div>
     </div>
@@ -1375,7 +1385,7 @@ main{position:relative;z-index:1}
         <span class="ln"><span class="ln-i"><span class="ln-mute">Bots veem</span> <span class="ln-strong">Safe Page</span></span></span>
         <span class="ln"><span class="ln-i"><span class="ln-mute">Compradores veem</span> <span class="ln-strong">Offer Page</span></span></span>
     </h1>
-    <p class="hero-sub">Safe vs offer · Google · Meta · TikTok · &lt;50ms · sem OAuth · R$399,99</p>
+    <p class="hero-sub">Safe vs offer · multi-rede · &lt;50ms · sem OAuth · R$399,99 · 7 dias</p>
     <div class="hero-ctas">
         <a href="#roi-calc" class="btn btn-p">Calcular perda do budget</a>
         <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-o plan-link hero-cta" data-plan="Maré">Começar — R$399,99/mês</a>
