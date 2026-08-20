@@ -1230,22 +1230,24 @@ main{position:relative;z-index:1}
   #pricing .btn-full{height:26px;font-size:10px}
   #pricing .p-val{font-size:clamp(16px,2vw,22px)}
   #pricing .pricing-reveal-title{font-size:clamp(11px,1.3vw,14px)}
-  #roi-calc.section--compact{padding:clamp(1px,0.3vh,3px) 0}
-  #roi-calc .calc-cta .btn{height:24px;font-size:10px}
-  #roi-calc .t-lg{font-size:clamp(12px,1.4vw,15px)}
+  #roi-calc.section--compact{padding:clamp(1px,0.2vh,2px) 0}
+  #roi-calc .calc-card{padding:1px 2px}
   #roi-calc .calc-summary-val{font-size:10px}
-  #faq.section--compact{padding:clamp(1px,0.3vh,3px) 0}
-  #faq .faq-outro .btn{height:24px;font-size:10px}
-  #faq .t-lg{font-size:clamp(11px,1.2vw,13px)}
-  #como-funciona .setup-step p{display:none}
-  #problema .problem-title{font-size:11px}
-  #problema .problem-stat{font-size:12px}
-  .footer{padding:clamp(1px,0.3vh,3px) 0 1px}
-  .f-brand p{font-size:10px;margin-top:1px;line-height:1.2;max-width:30ch}
+  #roi-calc .calc-cta .btn{height:22px;font-size:9px}
+  #roi-calc .t-lg{font-size:clamp(11px,1.3vw,14px);margin:0}
+  #roi-calc .calc-slider-value{font-size:12px}
+  #pricing.section--compact{padding:clamp(1px,0.2vh,2px) 0}
+  #pricing .btn-full{height:24px;font-size:9px}
+  #pricing .p-val{font-size:clamp(15px,1.8vw,20px)}
+  #faq .faq-outro .btn{height:22px;font-size:9px}
+  .footer .f-links a[href="#como-funciona"]{display:none}
+  .footer{padding:1px 0 1px}
+  .f-bottom{margin-top:1px;padding-top:2px;font-size:7px}
   #faq .faq-i--risk{display:none}
   #problema .problem-resolve{font-size:10px;margin-top:1px}
   #problema .problem-card{padding:4px 5px}
   #como-funciona .setup-num{display:none}
+  #como-funciona .setup-step p{display:none}
   #como-funciona .t-lg{font-size:clamp(14px,1.6vw,18px);margin:1px auto}
   #redes.redes-strip{padding:0}
   #comecar .cta-final-trust span:nth-child(n+3){display:none}
@@ -1253,8 +1255,7 @@ main{position:relative;z-index:1}
   #comecar .cta-final-title{font-size:clamp(13px,1.6vw,16px)}
   #comecar .t-body-lg{margin:0 auto 1px;font-size:8px}
   #comecar .pricing-cta{height:26px;font-size:10px;padding:0 12px}
-  #comecar .cta-final-trust{gap:2px 4px;margin-top:2px}
-  #comecar .cta-final-trust span{font-size:8px}
+  #comecar .cta-final-trust{display:none}
   .footer{padding:clamp(1px,0.2vh,2px) 0 1px}
   .f-grid{gap:2px;margin-bottom:1px}
   .f-bottom{margin-top:1px;padding-top:2px;font-size:7px}
@@ -1267,7 +1268,6 @@ main{position:relative;z-index:1}
   #como-funciona .setup-steps{gap:3px;margin:1px 0}
   #roi-calc .calc-summary-card{padding:1px}
   #pricing .pricing-trust-chips{margin-top:0}
-  #comecar .cta-final-trust{display:none}
 }
 @media (max-width:640px){
   .networks-grid{grid-template-columns:1fr 1fr}
@@ -2187,14 +2187,14 @@ function syncStickyLossCopy(period) {
     if (stickyText) {
         if (lastCalcLossFmt) {
             // Short price only — charge details live in #pricing (ciclo 78)
-            stickyText.innerHTML = 'Perda <strong>' + lastCalcLossFmt + '</strong> → <strong>' + priceShort + '</strong> · 7 dias · ative';
+            stickyText.innerHTML = '<strong>' + lastCalcLossFmt + '</strong> → <strong>' + priceShort + '</strong> · 7 dias';
         } else {
-            stickyText.innerHTML = 'Safe · Offer · <strong>' + priceShort + '</strong> · 7 dias · ative';
+            stickyText.innerHTML = 'Safe · Offer · <strong>' + priceShort + '</strong> · 7 dias';
         }
     }
     if (stickyPrice) {
         if (lastCalcLossFmt) {
-            stickyPrice.innerHTML = '<strong>' + priceShort + '</strong><br>vs ' + lastCalcLossFmt + ' · 7 dias';
+            stickyPrice.innerHTML = '<strong>' + priceShort + '</strong><br>vs ' + lastCalcLossFmt;
         } else {
             stickyPrice.innerHTML = '<strong>' + priceShort + '</strong><br>Garantia 7 dias';
         }
