@@ -1214,6 +1214,14 @@ main{position:relative;z-index:1}
   #roi-calc .calc-summary{margin:0}
   #roi-calc .calc-summary-val{font-size:8px;line-height:1}
   #roi-calc .calc-cta{margin-top:1px}
+  /* c346: FAQ densest — toggle sem border; q/a line-height 1 */
+  #faq .faq-q{padding:0 2px;font-size:5.5px;line-height:1;gap:2px;min-height:0}
+  #faq .faq-q::after{font-size:6px;line-height:1}
+  #faq .faq-a{padding:0 2px;font-size:5px;line-height:1.05}
+  #faq .faq-assure{margin:0;font-size:5.5px;line-height:1.05}
+  #faq .faq-more-toggle{min-height:0;height:auto;font-size:4.5px;padding:0;border:none;margin:0 auto;line-height:1;opacity:.5}
+  #faq .t-lg{font-size:clamp(7px,2.2vw,10px);line-height:1.1;margin:0}
+  #faq .faq-inline-cta--price{font-size:5.5px}
 }
 @media (min-width:768px){
   .sticky-cta-text{display:block}
@@ -1716,10 +1724,14 @@ main{position:relative;z-index:1}
   #faq .faq-q{padding:0 2px;font-size:5px}
   #faq .faq-a{padding:0 2px 0;font-size:5px}
   /* c338 desktop densest FAQ — mirror mobile reclaim */
-  #faq .faq-more-toggle{min-height:8px;font-size:4px;margin:1px auto 0;padding:0 2px;opacity:.55}
+  #faq .faq-more-toggle{min-height:0;height:auto;font-size:4px;margin:0 auto;padding:0;border:none;opacity:.5;line-height:1}
   #faq .faq-list{gap:0;margin:0}
-  #faq .faq-assure{margin:0;font-size:5.5px;line-height:1.1}
+  #faq .faq-assure{margin:0;font-size:5.5px;line-height:1.05}
   #faq .t-lg{margin:0 0 1px}
+  /* c346 desktop FAQ densest */
+  #faq .faq-q{padding:0 2px;font-size:5px;line-height:1;gap:2px}
+  #faq .faq-q::after{font-size:5px;line-height:1}
+  #faq .faq-a{padding:0 2px;font-size:5px;line-height:1.05}
   #problema.problem-strip{padding:0}
   #problema .t-lg{font-size:clamp(11px,1.3vw,14px);margin:0 auto}
   #problema .problem-card{padding:1px 2px}
