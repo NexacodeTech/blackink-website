@@ -1691,6 +1691,8 @@ main{position:relative;z-index:1}
   #hero{min-height:calc(100vh - 52px);min-height:calc(100dvh - 52px)}
   /* c479 LAST: FAQ assure stack gap — micro + CTA sem colar */
   #faq .faq-assure{gap:8px;margin:8px 0 0}
+  /* c481 LAST: nav Começar −10% mais óbvio no menu */
+  .hdr-nav .hdr-nav-comecar{letter-spacing:.01em}
 }
 @media (min-width:768px){
   .sticky-cta-text{display:block}
@@ -4071,6 +4073,11 @@ const HERO_BADGE_LABEL = {
     quarterly: 'Cloaker multi-rede · ~1 dia · Ativar −10%',
     yearly: 'Cloaker multi-rede · ~1 dia · Ativar −15%'
 };
+const NAV_COMECAR_LABELS = {
+    monthly: 'Começar',
+    quarterly: 'Começar −10%',
+    yearly: 'Começar −15%'
+};
 const NAV_CTA_LABELS = {
     monthly: 'Ativar — R$399,99',
     quarterly: 'Ativar −10%',
@@ -4163,6 +4170,9 @@ function updatePricingCtaLabel(period) {
     // c442: nav CTAs sync period verb
     const navLabel = NAV_CTA_LABELS[period] || NAV_CTA_LABELS.monthly;
     document.querySelectorAll('.hdr-nav-cta, .hdr-cta .plan-link').forEach(a => { a.textContent = navLabel; });
+    // c480: nav Começar sync período
+    const navComecarLabel = NAV_COMECAR_LABELS[period] || NAV_COMECAR_LABELS.monthly;
+    document.querySelectorAll('.hdr-nav-comecar').forEach(a => { a.textContent = navComecarLabel; });
     const nudge = document.getElementById('period-nudge');
     if (nudge) {
         nudge.innerHTML = periodNudgeHtml(period);
