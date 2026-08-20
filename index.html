@@ -555,6 +555,7 @@ strong{font-weight:600}
 .p-price-wrap{margin-bottom:10px;min-height:56px;display:flex;align-items:center;justify-content:center}
 .p-price[data-period]{display:none;flex-direction:column;align-items:center}
 .p-price[data-period].active{display:flex}
+.p-price-line{display:flex;align-items:baseline;justify-content:center;flex-wrap:wrap}
 .p-curr{font-size:16px;font-weight:600;color:var(--dim);margin-right:4px}
 .p-val{font-family:var(--ff-display);font-size:clamp(36px,5.5vw,48px);font-weight:700;letter-spacing:-0.03em;line-height:1}
 .p-per{font-size:15px;color:var(--dim);font-weight:500}
@@ -668,15 +669,16 @@ main{position:relative;z-index:1}
   .obj-grid{grid-template-columns:1fr;max-width:420px}
   /* Ciclo 82: safe/offer lado a lado no mobile */
   .edu-rail{grid-template-columns:1fr 1fr;gap:6px;max-width:100%}
-  .setup-steps{grid-template-columns:1fr;gap:4px}
-  #como-funciona.section--compact{padding:clamp(18px,2.6vh,32px) 0}
-  #como-funciona .t-lg{margin:4px auto 4px}
-  #como-funciona .t-body-lg{font-size:12px;margin:0 auto 4px}
-  #como-funciona .setup-step{padding:8px 10px}
-  #como-funciona .setup-step h3{font-size:12px;margin-bottom:1px}
-  #como-funciona .setup-step p{font-size:10px;line-height:1.35}
-  #como-funciona .setup-num{margin-bottom:1px;font-size:9px}
-  #como-funciona .mid-cta{margin-top:4px}
+  /* Ciclo 87: 3 passos em row — menos scroll até a prova */
+  .setup-steps{grid-template-columns:repeat(3,1fr);gap:4px;margin:8px 0 4px}
+  #como-funciona.section--compact{padding:clamp(16px,2.4vh,28px) 0}
+  #como-funciona .t-lg{margin:4px auto 4px;font-size:clamp(18px,5vw,24px)}
+  #como-funciona .t-body-lg{display:none}
+  #como-funciona .setup-step{padding:8px 6px;text-align:center;border-radius:10px}
+  #como-funciona .setup-step h3{font-size:11px;margin-bottom:2px;line-height:1.25}
+  #como-funciona .setup-step p{display:none}
+  #como-funciona .setup-num{margin-bottom:2px;font-size:9px}
+  #como-funciona .mid-cta{margin-top:6px}
   #como-funciona .mid-cta .btn-o{display:none}
   #problema .mid-cta .btn-o{display:none}
   #pricing.section--compact{padding:clamp(22px,3.2vh,40px) 0}
@@ -715,6 +717,7 @@ main{position:relative;z-index:1}
   #cloaker .showcase-cta-soft{display:none}
   #cloaker .prot-sim-threat-bar{display:none}
   #cloaker .prot-sim-threat-lvl{display:none}
+  #cloaker .mock-topbar{display:none}
   #cloaker .prot-sim-header{padding:8px 12px}
   #cloaker .prot-sim-status-sub{display:none}
   #cloaker .prot-sim-stats{padding:8px 12px;gap:4px}
@@ -722,16 +725,25 @@ main{position:relative;z-index:1}
   #cloaker .prot-sim-stat-val{font-size:15px}
   #cloaker .prot-sim-feed{margin:0 8px 8px}
   #cloaker .prot-sim-feed-header{padding:5px 10px}
+  /* Ciclo 86: feed ainda mais curto */
+  .prot-sim{min-height:190px}
+  #cloaker .prot-sim-stat:last-child{display:none}
+  #cloaker .prot-sim-stats{grid-template-columns:1fr 1fr 1fr}
+  .prot-sim-feed{min-height:56px;max-height:80px}
   .networks-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:12px}
-  #redes.redes-strip{padding:clamp(16px,2.4vh,28px) 0}
-  #redes .t-lg{margin:4px auto 4px}
-  #redes .t-body-lg{font-size:12px}
-  #redes .network-chip{padding:8px 12px;flex:0 1 auto}
+  #redes.redes-strip{padding:clamp(12px,2vh,22px) 0}
+  #redes .t-lg{margin:2px auto 2px;font-size:clamp(18px,5vw,24px)}
+  #redes .t-body-lg{display:none}
+  #redes .network-chip{padding:6px 10px;flex:0 1 auto}
   #redes .network-chip span{display:none}
-  #redes .network-chip strong{margin:0;font-size:12px}
+  #redes .network-chip strong{margin:0;font-size:11px}
+  #redes .networks-grid{margin-top:8px;gap:4px}
+  #pricing .p-monthly-eq{font-size:10px;margin-top:2px;max-width:28ch;line-height:1.25}
+  /* Ciclo 88: eq. cobrança em 1 linha curta no mobile */
+  #pricing .p-monthly-eq{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+  #pricing .p-micro{margin-top:6px;line-height:1.35;font-size:11px}
   #pricing .pricing-lead{font-size:12px;margin-bottom:8px;line-height:1.35}
   #pricing .pricing-includes-line{display:none}
-  #pricing .p-micro{font-size:11px}
   #pricing .pricing-reveal-title{margin:2px 0 4px;font-size:clamp(18px,5vw,24px)}
   #pricing .period-toggle{margin-bottom:8px}
   .arch-grid{grid-template-columns:1fr}
@@ -776,11 +788,6 @@ main{position:relative;z-index:1}
   .calc-cta-actions .btn{width:100%;max-width:320px}
   .arch-cta .btn{width:100%;max-width:320px}
   .showcase-cta .btn{width:100%;max-width:320px}
-  .prot-sim{min-height:220px}
-  #cloaker .prot-sim-stat:last-child{display:none}
-  #cloaker .prot-sim-stats{grid-template-columns:1fr 1fr 1fr}
-  /* Ciclo 80: feed mais curto — prova sem ocupar viewport inteira */
-  .prot-sim-feed{min-height:72px;max-height:96px}
 }
 @media (min-width:768px){
   .sticky-cta-text{display:block}
@@ -991,17 +998,17 @@ main{position:relative;z-index:1}
         <div class="setup-steps">
             <div class="setup-step rv">
                 <div class="setup-num">PASSO 01</div>
-                <h3>Cadastre as páginas</h3>
+                <h3>Cadastre páginas</h3>
                 <p>Safe e offer no painel — ou BlackInk Clone</p>
             </div>
             <div class="setup-step rv rv-d1">
                 <div class="setup-num">PASSO 02</div>
-                <h3>Configure as regras</h3>
+                <h3>Configure regras</h3>
                 <p>Geo, device, bots, VPNs, revisores — sem OAuth</p>
             </div>
             <div class="setup-step rv rv-d2">
                 <div class="setup-num">PASSO 03</div>
-                <h3>Aponte para a URL BlackInk</h3>
+                <h3>Aponte a URL</h3>
                 <p>Destino do anúncio = URL da plataforma · &lt;50ms</p>
             </div>
         </div>
@@ -1184,13 +1191,13 @@ main{position:relative;z-index:1}
                     </div>
                     <p class="period-nudge" id="period-nudge"><button type="button" data-pick-period="quarterly">Escolher trimestral</button> economiza ~R$120 vs mensal — mesmo cloaker, menor custo por mês</p>
                     <div class="p-price-wrap">
-                        <div class="p-price active" data-period="monthly"><span class="p-curr">R$</span><span class="p-val">399</span><span class="p-per">,99/mês</span></div>
-                        <div class="p-price" data-period="quarterly"><span class="p-curr">R$</span><span class="p-val">359</span><span class="p-per">,99/mês</span><span class="p-monthly-eq">equiv. mensal · cobrado R$1.079,97 / 3 meses · <span class="p-save">−~R$120 vs mensal</span></span></div>
-                        <div class="p-price" data-period="yearly"><span class="p-curr">R$</span><span class="p-val">339</span><span class="p-per">,99/mês</span><span class="p-monthly-eq">equiv. mensal · cobrado R$4.079,90 / ano · <span class="p-save">−~R$720 vs mensal</span></span></div>
+                        <div class="p-price active" data-period="monthly"><span class="p-price-line"><span class="p-curr">R$</span><span class="p-val">399</span><span class="p-per">,99/mês</span></span></div>
+                        <div class="p-price" data-period="quarterly"><span class="p-price-line"><span class="p-curr">R$</span><span class="p-val">359</span><span class="p-per">,99/mês</span></span><span class="p-monthly-eq">cobrado R$1.079,97 / 3 meses · <span class="p-save">−~R$120</span></span></div>
+                        <div class="p-price" data-period="yearly"><span class="p-price-line"><span class="p-curr">R$</span><span class="p-val">339</span><span class="p-per">,99/mês</span></span><span class="p-monthly-eq">cobrado R$4.079,90 / ano · <span class="p-save">−~R$720</span></span></div>
                     </div>
                     <p class="pricing-includes-line">Safe + offer · server-side &lt;50ms · 15+ sinais + logs · App + suporte · Payback <span id="pricing-bridge-payback">~1 dia</span></p>
                     <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p btn-full plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
-                    <p class="p-micro">PIX ou cartão · Sem contrato · Setup ~15 min · <strong>Garantia 7 dias</strong> · reembolso 100%</p>
+                    <p class="p-micro"><strong>Garantia 7 dias</strong> · reembolso 100% · PIX/cartão · sem contrato · setup ~15 min</p>
                 </div>
             </div>
         </div>
