@@ -327,20 +327,20 @@ strong{font-weight:600}
 .hero-trust-icon{width:14px;height:14px;stroke:var(--green);flex-shrink:0}
 @keyframes heroIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 @keyframes simPulse{0%,100%{opacity:1}50%{opacity:.45}}
-/* Problem punch — compact (ciclo 29: path-to-ROI) */
-.problem-strip{padding:clamp(32px,5vh,56px) 0;text-align:center}
-.problem-strip .t-lg{margin:10px auto 12px;max-width:600px}
-.problem-strip .t-body-lg{margin:0 auto 24px;max-width:520px}
-.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:920px;margin:0 auto}
-.problem-card{padding:18px 16px;border-radius:14px;border:1px solid var(--border);background:linear-gradient(180deg,rgba(10,22,40,0.75),rgba(6,14,28,0.92));text-align:left;position:relative;overflow:hidden;transition:border-color .35s var(--ease),transform .35s var(--ease)}
+/* Problem punch — compact */
+.problem-strip{padding:clamp(28px,4vh,48px) 0;text-align:center}
+.problem-strip .t-lg{margin:8px auto 10px;max-width:560px}
+.problem-strip .t-body-lg{margin:0 auto 16px;max-width:480px}
+.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:900px;margin:0 auto}
+.problem-card{padding:14px 14px;border-radius:12px;border:1px solid var(--border);background:linear-gradient(180deg,rgba(10,22,40,0.75),rgba(6,14,28,0.92));text-align:left;position:relative;overflow:hidden;transition:border-color .35s var(--ease),transform .35s var(--ease)}
 .problem-card:hover{border-color:rgba(100,180,255,0.28);transform:translateY(-2px)}
 .problem-card::before{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(100,180,255,0.18),transparent)}
-.problem-stat{font-family:var(--ff-display);font-size:clamp(22px,2.6vw,30px);font-weight:700;letter-spacing:-0.03em;margin-bottom:5px;line-height:1.1}
-.problem-title{font-size:14px;font-weight:600;margin-bottom:5px;color:var(--white)}
-.problem-desc{font-size:13px;color:var(--dim);line-height:1.5}
-.problem-resolve{margin-top:18px;font-size:clamp(15px,1.6vw,17px);color:var(--dim)}
+.problem-stat{font-family:var(--ff-display);font-size:clamp(20px,2.4vw,26px);font-weight:700;letter-spacing:-0.03em;margin-bottom:4px;line-height:1.1}
+.problem-title{font-size:13px;font-weight:600;margin-bottom:4px;color:var(--white)}
+.problem-desc{font-size:12px;color:var(--dim);line-height:1.45}
+.problem-resolve{margin-top:14px;font-size:clamp(14px,1.5vw,16px);color:var(--dim)}
 .problem-resolve .grad{font-weight:600}
-.problem-strip .mid-cta{margin-top:18px}
+.problem-strip .mid-cta{margin-top:12px}
 .arch-cta{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px;margin-top:36px}
 .trust-rail{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 16px;padding:14px 16px;width:100%;border-top:1px solid var(--border);background:rgba(6,17,31,0.65);margin-top:auto}
 .trust-rail span{font-size:11px;font-weight:500;color:rgba(240,244,248,0.62);letter-spacing:.02em;display:inline-flex;align-items:center;gap:6px}
@@ -366,7 +366,7 @@ strong{font-weight:600}
 .edu-pill h3{font-family:var(--ff-display);font-size:16px;font-weight:700;margin-bottom:4px}
 .edu-pill p{font-size:13px;color:var(--dim);line-height:1.45;margin:0}
 /* Como funciona — compact path-to-proof (ciclo 38) */
-.setup-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 20px}
+.setup-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0 8px}
 .setup-step{padding:16px 14px;border-radius:14px;border:1px solid var(--border);background:rgba(6,17,31,0.6)}
 .setup-num{font-family:var(--ff-display);font-size:11px;font-weight:700;color:var(--accent);letter-spacing:.08em;margin-bottom:6px}
 .setup-step h3{font-size:15px;font-weight:600;margin-bottom:4px}
@@ -852,8 +852,8 @@ main{position:relative;z-index:1}
 <section class="section section--compact" id="como-funciona">
     <div class="container">
         <p class="t-label rv" style="text-align:center">Como funciona</p>
-        <h2 class="t-lg rv rv-d1" style="text-align:center;margin:12px auto 16px;max-width:640px">Três passos · <span class="grad">Sem OAuth</span></h2>
-        <p class="t-body-lg rv rv-d2" style="text-align:center;margin:0 auto 8px;max-width:520px">Cadastre páginas, configure regras e aponte o anúncio para a URL BlackInk</p>
+        <h2 class="t-lg rv rv-d1" style="text-align:center;margin:8px auto 8px;max-width:560px">Três passos · <span class="grad">Sem OAuth</span></h2>
+        <p class="t-body-lg rv rv-d2" style="text-align:center;margin:0 auto 4px;max-width:480px;font-size:clamp(14px,1.5vw,16px)">Cadastre páginas, configure regras e aponte o anúncio para a URL BlackInk</p>
 
         <div class="setup-steps">
             <div class="setup-step rv">
@@ -873,46 +873,7 @@ main{position:relative;z-index:1}
             </div>
         </div>
 
-        <div class="flow-diagram rv rv-d3" aria-label="Fluxo: Visitante, BlackInk, Análise, Safe ou Offer">
-            <div class="flow-track">
-                <div class="flow-node">
-                    <div class="flow-node-ico"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-                    <div class="flow-node-label">Visitante</div>
-                    <div class="flow-node-sub">Clique no anúncio</div>
-                </div>
-                <div class="flow-connector" aria-hidden="true"></div>
-                <div class="flow-node flow-node--core">
-                    <div class="flow-node-ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-                    <div class="flow-node-label">BlackInk</div>
-                    <div class="flow-node-sub">Camada intermediária</div>
-                </div>
-                <div class="flow-connector" aria-hidden="true"></div>
-                <div class="flow-node">
-                    <div class="flow-node-ico"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-                    <div class="flow-node-label">Análise</div>
-                    <div class="flow-node-sub">15+ sinais</div>
-                </div>
-                <div class="flow-connector" aria-hidden="true"></div>
-                <div class="flow-branch-wrap">
-                    <div class="flow-branch-label">Destino</div>
-                    <div class="flow-branch">
-                        <div class="flow-dest flow-dest--safe">
-                            <div class="flow-dest-tag">Inválido</div>
-                            <div class="flow-dest-name">Safe Page</div>
-                            <div class="flow-dest-desc">Bots, VPNs, revisores</div>
-                        </div>
-                        <div class="flow-dest flow-dest--offer">
-                            <div class="flow-dest-tag">Qualificado</div>
-                            <div class="flow-dest-name">Offer Page</div>
-                            <div class="flow-dest-desc">Compradores reais</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <p class="rv rv-d4" style="text-align:center;margin-top:16px;font-size:14px;color:var(--dim);max-width:40ch;margin-left:auto;margin-right:auto;line-height:1.5">Revisores veem safe page. Compradores veem offer page</p>
-        <div class="mid-cta rv rv-d4" style="margin-top:16px">
+        <div class="mid-cta rv rv-d3" style="margin-top:8px">
             <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
             <a href="#roi-calc" class="btn btn-o">Calcular perdas do budget</a>
         </div>
