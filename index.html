@@ -1091,6 +1091,27 @@ main{position:relative;z-index:1}
   .f-legal-addr{display:none}
   .f-legal-addr-short{display:inline}
   .f-bottom{margin-top:6px;gap:4px;font-size:9px;padding-top:8px}
+  /* Ciclo 251: densest desktop overrides last */
+  #pricing.section--compact{padding:clamp(4px,0.8vh,10px) 0}
+  #pricing .pricing-reveal-inner{padding:5px 6px}
+  #pricing .pricing-reveal-title{margin:0;font-size:clamp(14px,1.6vw,17px)}
+  #pricing .pricing-lead{margin-bottom:1px;font-size:10px}
+  #pricing .p-val{font-size:clamp(24px,3vw,32px)}
+  #pricing .btn-full{height:42px;font-size:13px}
+  #pricing .period-btn{padding:3px 4px;font-size:10px}
+  #pricing .pricing-trust-chips{margin-top:2px}
+  #pricing .p-price-wrap{min-height:26px;margin-bottom:0}
+  #roi-calc.section--compact{padding:clamp(4px,1vh,12px) 0}
+  #roi-calc .calc-card{padding:5px 6px}
+  #roi-calc .calc-summary-val{font-size:14px}
+  #roi-calc .calc-cta .btn{height:40px;font-size:13px}
+  #faq.section--compact{padding:clamp(4px,0.6vh,10px) 0}
+  #faq .faq-q{padding:3px 7px;font-size:11px}
+  #faq .faq-a{padding:0 7px 2px;font-size:10px}
+  #faq .faq-outro .btn{height:40px;font-size:13px}
+  .footer{padding:clamp(8px,1.2vh,14px) 0 4px}
+  .f-grid{gap:6px;margin-bottom:4px}
+  .f-bottom{margin-top:4px;padding-top:6px}
 }
 @media (max-width:640px){
   .networks-grid{grid-template-columns:1fr 1fr}
@@ -1912,9 +1933,9 @@ const STICKY_BTN = {
 };
 
 const PERIOD_NUDGE = {
-    monthly: '<button type="button" data-pick-period="quarterly">Trimestral −10%</button> · economiza ~R$120 · mesmo cloaker',
-    quarterly: '−10% vs mensal · cobrado R$1.079,97 / 3 meses',
-    yearly: '−15% vs mensal · cobrado R$4.079,90 / ano'
+    monthly: '<button type="button" data-pick-period="quarterly">Trimestral −10%</button> · ~R$120 a menos',
+    quarterly: '−10% · cobrado R$1.079,97 / 3 meses',
+    yearly: '−15% · cobrado R$4.079,90 / ano'
 };
 
 let lastCalcLossFmt = null;
