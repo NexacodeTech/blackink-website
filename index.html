@@ -345,12 +345,12 @@ strong{font-weight:600}
 .trust-rail{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 16px;padding:14px 16px;width:100%;border-top:1px solid var(--border);background:rgba(6,17,31,0.65);margin-top:auto}
 .trust-rail span{font-size:11px;font-weight:500;color:rgba(240,244,248,0.62);letter-spacing:.02em;display:inline-flex;align-items:center;gap:6px}
 .trust-rail span::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--accent);opacity:.7}
-.obj-strip{margin:16px 0 8px}
-.obj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:960px;margin:0 auto}
-.obj-card{padding:18px 16px;border-radius:14px;border:1px solid var(--border);background:rgba(6,17,31,0.55);text-align:left;transition:border-color .35s var(--ease)}
+.obj-strip{margin:10px 0 6px}
+.obj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:960px;margin:0 auto}
+.obj-card{padding:12px 12px;border-radius:12px;border:1px solid var(--border);background:rgba(6,17,31,0.55);text-align:left;transition:border-color .35s var(--ease)}
 .obj-card:hover{border-color:rgba(100,180,255,0.22)}
-.obj-q{font-size:13px;font-weight:600;color:var(--white);margin-bottom:6px}
-.obj-a{font-size:12px;color:var(--dim);line-height:1.55}
+.obj-q{font-size:12px;font-weight:600;color:var(--white);margin-bottom:4px}
+.obj-a{font-size:11px;color:var(--dim);line-height:1.45}
 .mid-cta{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px;margin-top:36px}
 /* Education — definição em rail (ciclo 30) */
 .edu-strip{padding:clamp(28px,4vh,48px) 0;text-align:center}
@@ -523,7 +523,7 @@ strong{font-weight:600}
 .calc-cta-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:center}
 /* Pricing — compact buy block (ciclo 43) */
 .pricing-narrative{max-width:800px;margin:0 auto}
-.pricing-act{margin-bottom:clamp(20px,3vw,32px);text-align:center}
+.pricing-act{margin-bottom:clamp(12px,2vw,20px);text-align:center}
 .pricing-act .t-lg{margin:8px auto 10px}
 .pricing-lead{font-size:15px;color:var(--dim);line-height:1.55;max-width:560px;margin:0 auto}
 .pricing-lead strong{color:var(--white)}
@@ -1039,24 +1039,7 @@ main{position:relative;z-index:1}
             <div class="pricing-act pricing-act--value rv">
                 <div class="t-label">O que você recebe</div>
                 <h2 class="t-lg">Cloaker server-side <span class="grad">de plataforma</span></h2>
-                <p class="pricing-lead" id="pricing-lead" style="margin-bottom:8px">Corta os <strong id="pricing-lead-loss">R$ 12.500</strong> estimados na calculadora — safe/offer em Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras</p>
-                <div class="pricing-value-grid">
-                    <div class="pricing-value-item">
-                        <div class="pricing-value-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-                        <h3>Safe page</h3>
-                        <p>Inválidos e revisores — conta estável</p>
-                    </div>
-                    <div class="pricing-value-item">
-                        <div class="pricing-value-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-                        <h3>Offer page</h3>
-                        <p>Só quem passa no filtro compra</p>
-                    </div>
-                    <div class="pricing-value-item">
-                        <div class="pricing-value-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-                        <h3>&lt;50ms</h3>
-                        <p>15+ sinais, logs e app mobile</p>
-                    </div>
-                </div>
+                <p class="pricing-lead" id="pricing-lead" style="margin-bottom:8px">Corta os <strong id="pricing-lead-loss">R$ 12.500</strong> estimados na calculadora — safe page, offer page, &lt;50ms, app e logs no preço único (Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras)</p>
                 <p class="pricing-bridge">Um produto · R$ 399,99/mês · Payback <span id="pricing-bridge-payback">~1 dia</span> · Sem módulos extras</p>
             </div>
             <div class="obj-strip rv rv-d2">
