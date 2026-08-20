@@ -271,6 +271,9 @@
             /* c522: strength some até digitar — confirma senha sobe no fold */
             .password-strength{display:none}
             .password-strength.is-on{display:flex}
+            /* c535: hints somem no densest — placeholder + sticky bastam; sobe submit */
+            .form-group:has(#phone) .form-hint,
+            .form-group:has(#password) .form-hint{display:none}
             /* c523: guarantee box some — sticky já carrega Garantia 7 dias */
             .cadastro-guarantee{display:none}
             /* c516: sticky Ativar enquanto submit fora do fold */
