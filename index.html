@@ -482,13 +482,13 @@ strong{font-weight:600}
 .network-chip span{font-size:12px;color:var(--dim)}
 .network-chip--more{border-style:dashed}
 /* Comparison archetypes */
-.arch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
-.arch-card{padding:28px 22px;border-radius:18px;border:1px solid var(--border);background:rgba(6,17,31,0.55);display:flex;flex-direction:column;gap:12px}
+.arch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+.arch-card{padding:22px 18px;border-radius:16px;border:1px solid var(--border);background:rgba(6,17,31,0.55);display:flex;flex-direction:column;gap:10px}
 .arch-card--win{border-color:rgba(100,180,255,0.28);background:linear-gradient(180deg,rgba(100,180,255,0.08),rgba(6,17,31,0.7));box-shadow:0 0 0 1px rgba(100,180,255,0.06)}
 .arch-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .arch-card--win .arch-label{color:var(--accent)}
-.arch-card h3{font-family:var(--ff-display);font-size:20px;font-weight:700}
-.arch-card p{font-size:14px;color:var(--dim);line-height:1.65;flex:1}
+.arch-card h3{font-family:var(--ff-display);font-size:18px;font-weight:700}
+.arch-card p{font-size:13px;color:var(--dim);line-height:1.55;flex:1}
 .arch-list{display:flex;flex-direction:column;gap:8px;margin-top:4px}
 .arch-list li{font-size:13px;color:var(--dim);display:flex;gap:8px;align-items:flex-start;line-height:1.45}
 .arch-list li::before{content:'·';color:var(--muted);font-weight:700}
@@ -1044,12 +1044,11 @@ main{position:relative;z-index:1}
 <div class="sep"></div>
 
 <!-- 5. Multi-rede -->
-<section class="section" id="redes">
+<section class="section section--compact" id="redes">
     <div class="container">
         <p class="t-label rv" style="text-align:center">Redes</p>
-        <h2 class="t-lg rv rv-d1" style="text-align:center;margin:12px auto 16px;max-width:640px">Uma URL · <span class="grad">Qualquer rede</span></h2>
-        <p class="t-body-lg rv rv-d2" style="text-align:center;margin:0 auto 8px;max-width:540px">O fluxo é idêntico em todas: destino do anúncio aponta para a BlackInk. Sem OAuth, sem plugin por plataforma.</p>
-        <p class="rv rv-d2" style="text-align:center;margin:0 auto 28px;max-width:480px;font-size:14px;color:rgba(240,244,248,0.62);line-height:1.55">Feito para afiliados e media buyers que operam tráfego pago no Brasil</p>
+        <h2 class="t-lg rv rv-d1" style="text-align:center;margin:12px auto 12px;max-width:640px">Uma URL · <span class="grad">Qualquer rede</span></h2>
+        <p class="t-body-lg rv rv-d2" style="text-align:center;margin:0 auto 24px;max-width:520px">Destino do anúncio = URL BlackInk. Sem OAuth — Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras</p>
         <div class="networks-grid rv rv-d3">
             <div class="network-chip"><strong>Google Ads</strong><span>Search &amp; Display</span></div>
             <div class="network-chip"><strong>YouTube Ads</strong><span>In-stream &amp; Shorts</span></div>
@@ -1057,7 +1056,7 @@ main{position:relative;z-index:1}
             <div class="network-chip"><strong>TikTok Ads</strong><span>In-feed &amp; Spark</span></div>
             <div class="network-chip network-chip--more"><strong>E outras</strong><span>Mesmo fluxo server-side</span></div>
         </div>
-        <div class="mid-cta rv rv-d4" style="margin-top:32px">
+        <div class="mid-cta rv rv-d4" style="margin-top:28px">
             <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
             <a href="#pricing" class="btn btn-o">Como prefere pagar</a>
         </div>
@@ -1067,16 +1066,16 @@ main{position:relative;z-index:1}
 <div class="sep"></div>
 
 <!-- 6. Por que BlackInk — archetypes -->
-<section class="section" id="por-que">
+<section class="section section--compact" id="por-que">
     <div class="container">
         <p class="t-label rv" style="text-align:center">Por que BlackInk</p>
-        <h2 class="t-lg rv rv-d1" style="text-align:center;margin:12px auto 16px;max-width:640px">Escolha por <span class="grad">arquitetura</span></h2>
-        <p class="t-body-lg rv rv-d2" style="text-align:center;margin:0 auto;max-width:560px">Não é “tradicionais não têm logs”. É diferença de modelo: script no client, redirect improvisado ou plataforma SaaS.</p>
+        <h2 class="t-lg rv rv-d1" style="text-align:center;margin:12px auto 12px;max-width:640px">Escolha por <span class="grad">arquitetura</span></h2>
+        <p class="t-body-lg rv rv-d2" style="text-align:center;margin:0 auto;max-width:520px">Script no client, redirect improvisado ou plataforma SaaS — a diferença é o modelo</p>
         <div class="arch-grid">
             <div class="arch-card rv">
                 <div class="arch-label">Arquétipo</div>
                 <h3>Client-side</h3>
-                <p>JS na página decide depois do load. Exposto a inspeção, depende do host do anunciante e quebra com bloqueadores.</p>
+                <p>JS decide depois do load. Exposto a inspeção, depende do seu host e quebra com bloqueadores.</p>
                 <ul class="arch-list">
                     <li>Roda no navegador do visitante</li>
                     <li>Exige PHP/HTML no seu servidor</li>
@@ -1086,7 +1085,7 @@ main{position:relative;z-index:1}
             <div class="arch-card rv rv-d1">
                 <div class="arch-label">Arquétipo</div>
                 <h3>Redirect</h3>
-                <p>Hop intermediário genérico. Latência alta, pouca telemetria, regras limitadas — e você ainda gerencia infraestrutura.</p>
+                <p>Hop genérico: latência alta, pouca telemetria, regras limitadas — e você gerencia a infra.</p>
                 <ul class="arch-list">
                     <li>Redirect lento / multi-hop</li>
                     <li>Filtragem básica por IP</li>
@@ -1096,7 +1095,7 @@ main{position:relative;z-index:1}
             <div class="arch-card arch-card--win rv rv-d2">
                 <div class="arch-label">BlackInk</div>
                 <h3>SaaS platform</h3>
-                <p>URL BlackInk como destino. Decisão 100% server-side, logs completos, sem PHP no seu host, suporte BR, preço único.</p>
+                <p>URL BlackInk como destino. Decisão 100% server-side, logs, suporte BR, preço único.</p>
                 <ul class="arch-list">
                     <li>URL própria da plataforma</li>
                     <li>Decision logs com motivo</li>
@@ -1107,7 +1106,7 @@ main{position:relative;z-index:1}
         </div>
         <div class="arch-cta rv rv-d3">
             <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
-            <a href="#pricing" class="btn btn-o">Ver periodicidade</a>
+            <a href="#roi-calc" class="btn btn-o">Calcular perdas do budget</a>
         </div>
     </div>
 </section>

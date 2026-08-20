@@ -174,3 +174,8 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Contexto**: 12 FAQs após o preço geravam fadiga; mensal sem lembrete de economia.
 **Regra**: FAQ mostra 5 prioritárias (preço/OAuth/redes/garantia/setup); resto atrás de “Ver mais perguntas”; nudge sob o period switcher muda com o período ativo.
 **Status**: ativo
+
+## 2026-08-20 — Redes/arquitetura compactas
+**Contexto**: `#redes` + `#por-que` alongavam o caminho até ROI/pricing.
+**Regra**: ambas `section--compact`; copy mais curta; CTA secundário de arquitetura aponta para `#roi-calc` (calcular perdas).
+**Status**: ativo
