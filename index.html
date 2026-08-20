@@ -1991,10 +1991,9 @@ syncStickyVisibility();
 const faqMore = document.getElementById('faq-more');
 const faqMoreToggle = document.getElementById('faq-more-toggle');
 const faqRisk = document.querySelector('.faq-i--risk');
-// Ciclo 98: garantia aberta no desktop; fechada no mobile (chips/pricing já cobrem risco)
-if (faqRisk && window.matchMedia('(max-width:767px)').matches) {
-    faqRisk.removeAttribute('open');
-}
+// Ciclo 176: risk FAQ starts closed — garantia already on chips/sticky/hero;
+// keep savings FAQ open (loss + Ativar) as the default buy-close objection
+if (faqRisk) faqRisk.removeAttribute('open');
 if (faqMore && faqMoreToggle) {
     faqMoreToggle.addEventListener('click', () => {
         const open = faqMore.classList.toggle('open');
