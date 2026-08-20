@@ -1114,6 +1114,10 @@ main{position:relative;z-index:1}
   /* Ciclo 315: micro sob CTA — garantia + trim sem chips */
   #pricing .p-micro{display:block;margin:0;font-size:5px;line-height:1;text-align:center}
   #pricing .btn-full{height:24px;font-size:9px}
+  /* Ciclo 318: ROI densest — valor do slider mais compacto; FAQ assure um tick mais legível */
+  #roi-calc .calc-slider-value{font-size:7px;line-height:1}
+  #roi-calc .calc-summary-val{font-size:7px;line-height:1}
+  #faq .faq-assure{font-size:6px;line-height:1.1}
 }
 @media (min-width:768px){
   .sticky-cta-text{display:block}
@@ -1572,6 +1576,10 @@ main{position:relative;z-index:1}
   /* Ciclo 316: price wrap + redes H2 chrome */
   #pricing .p-price-wrap{min-height:12px}
   #pricing .p-val{font-size:clamp(11px,1.3vw,15px)}
+  /* Ciclo 318 desktop densest — ROI + assure (period link fica hidden no densest) */
+  #roi-calc .calc-slider-value{font-size:7px}
+  #roi-calc .calc-summary-val{font-size:7px}
+  #faq .faq-assure{font-size:6px}
   #comecar.cta-final{padding:0}
   #comecar .cta-final-title{font-size:clamp(10px,1.2vw,13px)}
   #comecar .pricing-cta{height:20px;font-size:8px}
@@ -2092,7 +2100,7 @@ main{position:relative;z-index:1}
         <div class="faq-outro rv">
             <div class="faq-outro-cta">
                 <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar — R$399,99/mês</a>
-                <a href="#pricing" class="faq-outro-period">Trimestral −10% · Anual −15%</a>
+                <a href="#pricing" class="faq-outro-period">Trimestral −10% · ~R$120 a menos</a>
             </div>
             <p class="faq-outro-support">Dúvida? <a href="mailto:suporte@theblack.ink">suporte@theblack.ink</a> · garantia 7 dias</p>
         </div>
