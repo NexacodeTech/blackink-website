@@ -394,7 +394,9 @@ strong{font-weight:600}
 .showcase{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(28px,4vw,56px);align-items:center}
 .showcase-text .t-lg{margin:8px 0 10px}
 .showcase-features{display:flex;flex-direction:column;gap:8px;margin-top:12px}
-.showcase-cta{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.showcase-cta{margin-top:14px;display:flex;flex-direction:column;flex-wrap:wrap;gap:8px;align-items:flex-start}
+.showcase-cta-soft{font-size:12px;color:var(--accent);font-weight:500;text-decoration:none;transition:color .3s var(--ease)}
+.showcase-cta-soft:hover{color:var(--white)}
 .showcase-feat{display:flex;gap:10px;align-items:flex-start}
 .showcase-feat-icon{width:28px;height:28px;border-radius:8px;border:1px solid var(--border);background:rgba(100,180,255,0.06);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .showcase-feat-icon svg{width:14px;height:14px;stroke:var(--accent);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
@@ -578,11 +580,11 @@ strong{font-weight:600}
 .faq-outro-period{font-size:12px;color:var(--accent);font-weight:500;text-decoration:none;transition:color .3s var(--ease)}
 .faq-outro-period:hover{color:var(--white)}
 .faq-i{border:1px solid var(--border);border-radius:12px;background:rgba(6,17,31,0.5);overflow:hidden}
-.faq-q{padding:14px 16px;font-size:14px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq-q{padding:12px 14px;font-size:14px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
 .faq-q::-webkit-details-marker{display:none}
 .faq-q::after{content:'+';color:var(--accent);font-size:18px;font-weight:400;transition:transform .3s var(--ease)}
 .faq-i[open] .faq-q::after{transform:rotate(45deg)}
-.faq-a{padding:0 16px 14px;font-size:13px;color:var(--dim);line-height:1.6}
+.faq-a{padding:0 14px 12px;font-size:13px;color:var(--dim);line-height:1.5}
 .faq-a a{color:var(--accent);text-decoration:underline}
 /* CTA final */
 .cta-final{text-align:center;position:relative;overflow:hidden;padding:clamp(36px,6vh,72px) 0}
@@ -684,9 +686,9 @@ main{position:relative;z-index:1}
   #cloaker .showcase-features{display:none}
   #cloaker .showcase-proof{display:none}
   #cloaker .showcase-visual{order:4}
-  #cloaker .showcase-cta{order:5;margin-top:4px}
-  #cloaker .showcase-cta .btn-o{display:none}
-  #cloaker .t-body-lg{font-size:13px;margin-bottom:0}
+  #cloaker .showcase-cta{order:5;margin-top:4px;align-items:stretch;width:100%}
+  #cloaker .showcase-cta .btn{width:100%;max-width:320px}
+  #cloaker .showcase-cta-soft{text-align:center;width:100%;max-width:320px}
   .networks-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:12px}
   #redes.redes-strip{padding:clamp(20px,3vh,32px) 0}
   #redes .network-chip{padding:8px 12px;flex:0 1 auto}
@@ -727,7 +729,8 @@ main{position:relative;z-index:1}
   .arch-cta .btn{width:100%;max-width:320px}
   .showcase-cta .btn{width:100%;max-width:320px}
   .prot-sim{min-height:260px}
-  .prot-sim-stats{grid-template-columns:1fr 1fr}
+  #cloaker .prot-sim-stat:last-child{display:none}
+  #cloaker .prot-sim-stats{grid-template-columns:1fr 1fr 1fr}
   .prot-sim-feed{min-height:100px;max-height:140px}
 }
 @media (min-width:768px){
@@ -737,6 +740,7 @@ main{position:relative;z-index:1}
   #roi-calc .t-lg{font-size:clamp(26px,3.2vw,34px);line-height:1.2}
   .calc-cta-actions{flex-direction:row;gap:14px}
   .calc-cta{margin-top:10px}
+  .showcase-cta{flex-direction:row;align-items:center;gap:14px}
 }
 @media (max-width:640px){
   .networks-grid{grid-template-columns:1fr 1fr}
@@ -838,8 +842,8 @@ main{position:relative;z-index:1}
     </h1>
     <p class="hero-sub">Cloaker server-side para Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras — filtragem em &lt;50ms, sem OAuth</p>
     <div class="hero-ctas">
-        <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link hero-cta" data-plan="Maré">Começar agora — R$399,99/mês</a>
-        <a href="#roi-calc" class="btn btn-o">Calcular perdas do budget</a>
+        <a href="#roi-calc" class="btn btn-p">Calcular perdas do budget</a>
+        <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-o plan-link hero-cta" data-plan="Maré">Começar agora — R$399,99/mês</a>
     </div>
     <div class="hero-trust">
         <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
@@ -967,8 +971,8 @@ main{position:relative;z-index:1}
                 </div>
                 <p class="showcase-proof" id="showcase-proof">Simulação ao vivo: acompanhe bloqueios e taxa legítima em tempo real</p>
                 <div class="showcase-cta">
-                    <a href="#roi-calc" class="btn btn-p">Calcular perdas do budget</a>
-                    <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-o plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
+                    <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
+                    <a href="#roi-calc" class="showcase-cta-soft">Calcular perdas do budget</a>
                 </div>
             </div>
             <div class="showcase-visual">
@@ -1196,7 +1200,7 @@ main{position:relative;z-index:1}
     <div class="container" style="position:relative;z-index:1">
         <p class="t-label rv" style="text-align:center;margin-bottom:8px">Pronto</p>
         <h2 class="t-lg rv rv-d1" style="text-align:center">Ative o cloaker<br><span class="grad">Controle quem vê o quê</span></h2>
-        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:440px;margin:8px auto 14px;font-size:clamp(13px,1.4vw,15px)" id="cta-final-lead">Pare de financiar até <strong id="cta-final-loss">R$ 12.500</strong>/mês em cliques inválidos — setup ~15 min</p>
+        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:440px;margin:8px auto 14px;font-size:clamp(13px,1.4vw,15px)" id="cta-final-lead">Pare de financiar até <strong id="cta-final-loss">R$ 12.500</strong>/mês em cliques inválidos · payback <span id="cta-final-payback">~1 dia</span></p>
         <div class="rv rv-d3" style="display:flex;flex-direction:column;align-items:center;gap:10px">
             <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
             <div class="cta-final-trust">
@@ -1634,9 +1638,10 @@ function syncStickyLossCopy(period) {
     const stickyPrice = document.getElementById('sticky-cta-price');
     if (stickyText) {
         if (lastCalcLossFmt) {
-            stickyText.innerHTML = 'Até <strong>' + lastCalcLossFmt + '</strong>/mês em cliques inválidos — cloaker <strong>' + price + '</strong>';
+            // Short price only — charge details live in #pricing (ciclo 78)
+            stickyText.innerHTML = 'Até <strong>' + lastCalcLossFmt + '</strong>/mês inválidos — cloaker <strong>' + priceShort + '</strong>';
         } else {
-            stickyText.innerHTML = 'Safe page para revisores · Offer page para compradores — <strong>' + price + '</strong>';
+            stickyText.innerHTML = 'Safe page · Offer page — <strong>' + priceShort + '</strong>';
         }
     }
     if (stickyPrice) {
@@ -1780,6 +1785,7 @@ const calcRoiBar = document.getElementById('calc-roi-bar');
 const pricingLeadLoss = document.getElementById('pricing-lead-loss');
 const pricingBridgePayback = document.getElementById('pricing-bridge-payback');
 const ctaFinalLoss = document.getElementById('cta-final-loss');
+const ctaFinalPayback = document.getElementById('cta-final-payback');
 const faqSavingsLoss = document.getElementById('faq-savings-loss');
 
 if (calcSlider && calcDisplay && calcInvisible && calcFraud && calcTotal && calcRoi) {
@@ -1840,6 +1846,9 @@ if (calcSlider && calcDisplay && calcInvisible && calcFraud && calcTotal && calc
         if (pricingLeadLoss) pricingLeadLoss.textContent = fmt(total);
         if (pricingBridgePayback) {
             pricingBridgePayback.textContent = '~' + paybackDays + ' dia' + (paybackDays > 1 ? 's' : '');
+        }
+        if (ctaFinalPayback) {
+            ctaFinalPayback.textContent = '~' + paybackDays + ' dia' + (paybackDays > 1 ? 's' : '');
         }
         // Sticky mirrors loss (ciclo 33)
         lastCalcLossFmt = fmt(total);
