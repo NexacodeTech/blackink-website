@@ -1120,7 +1120,7 @@ main{position:relative;z-index:1}
             <div class="pricing-act pricing-act--value rv">
                 <div class="t-label">O que você recebe</div>
                 <h2 class="t-lg">Cloaker server-side <span class="grad">de plataforma</span></h2>
-                <p class="pricing-lead" style="margin-bottom:8px">Corta o desperdício da calculadora acima — safe page para inválidos, offer page para compradores, em Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras</p>
+                <p class="pricing-lead" id="pricing-lead" style="margin-bottom:8px">Corta os <strong id="pricing-lead-loss">R$ 12.500</strong> estimados na calculadora — safe page para inválidos, offer page para compradores, em Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras</p>
                 <div class="pricing-value-grid">
                     <div class="pricing-value-item">
                         <div class="pricing-value-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
@@ -1138,7 +1138,7 @@ main{position:relative;z-index:1}
                         <p>15+ sinais, decision logs e app mobile — tudo no preço único.</p>
                     </div>
                 </div>
-                <p class="pricing-bridge">Um produto · R$ 399,99/mês · Sem módulos extras, sem upgrade escondido</p>
+                <p class="pricing-bridge">Um produto · R$ 399,99/mês · Payback estimado <span id="pricing-bridge-payback">~1 dia</span> no budget simulado · Sem módulos extras</p>
             </div>
             <div class="obj-strip rv rv-d2">
                 <div class="obj-grid">
@@ -1839,6 +1839,8 @@ const calcRoi = document.getElementById('calc-roi');
 const calcMsg = document.getElementById('calc-cta-msg');
 const calcTotalBar = document.getElementById('calc-total-bar');
 const calcRoiBar = document.getElementById('calc-roi-bar');
+const pricingLeadLoss = document.getElementById('pricing-lead-loss');
+const pricingBridgePayback = document.getElementById('pricing-bridge-payback');
 
 if (calcSlider && calcDisplay && calcInvisible && calcFraud && calcHours && calcTotal && calcRoi) {
     const fmt = v => 'R$ ' + Math.round(v).toLocaleString('pt-BR');
@@ -1890,9 +1892,14 @@ if (calcSlider && calcDisplay && calcInvisible && calcFraud && calcHours && calc
         const maxTotal = 500000 * 0.25;
         if (calcTotalBar) calcTotalBar.style.width = Math.max((total / maxTotal) * 100, 2) + '%';
         if (calcRoiBar) calcRoiBar.style.width = Math.max(Math.min((roi / 15) * 100, 100), 2) + '%';
+        const paybackDays = Math.max(1, Math.ceil(planCost / (total / 30)));
         if (calcMsg && val > 0) {
-            const paybackDays = Math.max(1, Math.ceil(planCost / (total / 30)));
             calcMsg.innerHTML = 'Com R$ ' + val.toLocaleString('pt-BR') + '/mês de tráfego: até <strong>' + fmt(total) + '</strong> em cliques inválidos. Cloaker a R$ 399,99 pode se pagar em ~<strong>' + paybackDays + ' dia' + (paybackDays > 1 ? 's' : '') + '</strong> — estimativa, não garantia.';
+        }
+        // Bridge calc → pricing (ciclo 32): keep loss + payback visible in the buy section
+        if (pricingLeadLoss) pricingLeadLoss.textContent = fmt(total);
+        if (pricingBridgePayback) {
+            pricingBridgePayback.textContent = '~' + paybackDays + ' dia' + (paybackDays > 1 ? 's' : '');
         }
     };
     calcSlider.addEventListener('input', updateCalc);
