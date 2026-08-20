@@ -1684,18 +1684,35 @@ function updatePricingCtaLabel(period) {
     document.querySelectorAll('.pricing-cta').forEach(btn => { btn.textContent = label; });
     const heroCta = document.querySelector('.hero-cta');
     if (heroCta) heroCta.textContent = HERO_CTA_LABELS[period] || HERO_CTA_LABELS.monthly;
-    const stickyText = document.getElementById('sticky-cta-text');
-    if (stickyText) {
-        stickyText.innerHTML = 'Safe page para revisores · Offer page para compradores — <strong>' + (STICKY_PRICE[period] || STICKY_PRICE.monthly) + '</strong>';
-    }
-    const stickyPrice = document.getElementById('sticky-cta-price');
-    if (stickyPrice) {
-        stickyPrice.innerHTML = '<strong>' + (STICKY_PRICE_SHORT[period] || STICKY_PRICE_SHORT.monthly) + '</strong><br>Garantia 7 dias';
-    }
     const stickyBtn = document.getElementById('sticky-cta-btn');
     if (stickyBtn) stickyBtn.textContent = STICKY_BTN[period] || STICKY_BTN.monthly;
     const nudge = document.getElementById('period-nudge');
     if (nudge) nudge.innerHTML = PERIOD_NUDGE[period] || PERIOD_NUDGE.monthly;
+    syncStickyLossCopy(period);
+}
+
+// Sticky mirrors ROI loss (ciclo 33) so the bar restates quantified waste + price
+let lastCalcLossFmt = null;
+function syncStickyLossCopy(period) {
+    period = period || document.querySelector('.period-btn.active')?.dataset.period || 'monthly';
+    const price = STICKY_PRICE[period] || STICKY_PRICE.monthly;
+    const priceShort = STICKY_PRICE_SHORT[period] || STICKY_PRICE_SHORT.monthly;
+    const stickyText = document.getElementById('sticky-cta-text');
+    const stickyPrice = document.getElementById('sticky-cta-price');
+    if (stickyText) {
+        if (lastCalcLossFmt) {
+            stickyText.innerHTML = 'Até <strong>' + lastCalcLossFmt + '</strong>/mês em cliques inválidos — cloaker <strong>' + price + '</strong>';
+        } else {
+            stickyText.innerHTML = 'Safe page para revisores · Offer page para compradores — <strong>' + price + '</strong>';
+        }
+    }
+    if (stickyPrice) {
+        if (lastCalcLossFmt) {
+            stickyPrice.innerHTML = '<strong>' + priceShort + '</strong><br>vs ' + lastCalcLossFmt + ' perda est.';
+        } else {
+            stickyPrice.innerHTML = '<strong>' + priceShort + '</strong><br>Garantia 7 dias';
+        }
+    }
 }
 
 function selectBillingPeriod(period) {
@@ -1901,6 +1918,9 @@ if (calcSlider && calcDisplay && calcInvisible && calcFraud && calcHours && calc
         if (pricingBridgePayback) {
             pricingBridgePayback.textContent = '~' + paybackDays + ' dia' + (paybackDays > 1 ? 's' : '');
         }
+        // Sticky mirrors loss (ciclo 33)
+        lastCalcLossFmt = fmt(total);
+        syncStickyLossCopy();
     };
     calcSlider.addEventListener('input', updateCalc);
     updateCalc();

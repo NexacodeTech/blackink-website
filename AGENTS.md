@@ -182,3 +182,8 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Contexto**: redes/arquétipos atrasavam a quantificação da perda e o preço.
 **Regra**: após `#cloaker`, ordem é `#roi-calc` → `#pricing`; `#redes`/`#por-que` ficam como reforço pós-decisão; nav prioriza Investimento antes de Redes.
 **Status**: ativo
+
+## 2026-08-20 — Bridge ROI → pricing → sticky
+**Contexto**: visitante via a perda na calculadora e esquecia o número no preço/sticky.
+**Regra**: `#pricing-lead-loss` e payback sync com o slider; sticky desktop/mobile espelha a perda estimada + preço do período.
+**Status**: ativo
