@@ -1551,6 +1551,17 @@ main{position:relative;z-index:1}
   /* c420 LAST: pricing CTA full after lead — sem gap morto */
   #pricing .pricing-reveal-inner{gap:4px}
   #pricing .btn-full{margin-top:2px}
+  /* c421 LAST: micro cobrança visível — price-wrap some no densest */
+  #pricing .p-micro{display:block;font-size:11px;line-height:1.3;margin:4px 0 0;text-align:center;color:var(--dim)}
+  #pricing .p-micro strong{color:var(--white);font-weight:700}
+  /* c422 LAST: soft path — lead + CTA no mesmo glance */
+  #pricing .pricing-lead{margin:0 0 4px}
+  /* c423 LAST: FAQ Q + assure stack mais apertado pós-CTA full */
+  #faq .faq-q{margin:0 0 2px;padding:2px 0}
+  #faq .faq-assure{margin:4px 0 0}
+  /* c424 LAST: redes chips um tick mais legíveis (prova multi-rede) */
+  #redes .network-chip{padding:4px 9px;font-size:11px}
+  #redes .network-chip strong{font-size:11px}
 }
 @media (min-width:768px){
   .sticky-cta-text{display:block}
@@ -2338,6 +2349,11 @@ main{position:relative;z-index:1}
   #faq .faq-assure a.faq-inline-cta--price{width:min(100%,360px);min-height:40px}
   #pricing .period-btn.active{background:rgba(100,180,255,0.14);border:1px solid rgba(100,180,255,0.28);border-radius:8px}
   #pricing .pricing-reveal-inner{gap:6px}
+  /* c421–c424 desktop densest */
+  #pricing .p-micro{display:block;font-size:12px;line-height:1.35;margin:6px 0 0;text-align:center;color:var(--dim)}
+  #pricing .p-micro strong{color:var(--white);font-weight:700}
+  #redes .network-chip{padding:5px 11px;font-size:12px}
+  #faq .faq-q{margin:0 0 2px;padding:2px 0}
 }
 
 @media (max-width:640px){
@@ -2527,6 +2543,10 @@ main{position:relative;z-index:1}
   #faq .faq-assure-micro{font-size:11px}
   #faq .faq-assure a.faq-inline-cta--price{width:min(100%,340px);min-height:40px}
   #pricing .period-btn.active{background:rgba(100,180,255,0.14);border:1px solid rgba(100,180,255,0.28);border-radius:8px}
+  /* c421–c424 em ≤600 */
+  #pricing .p-micro{display:block;font-size:11px;line-height:1.3;margin:4px 0 0;text-align:center;color:var(--dim)}
+  #pricing .p-micro strong{color:var(--white);font-weight:700}
+  #redes .network-chip{padding:4px 9px;font-size:11px}
 }
 @media (max-width:500px){
   .flow-pillars{grid-template-columns:1fr}
@@ -2706,6 +2726,10 @@ main{position:relative;z-index:1}
   #faq .faq-assure-micro{font-size:11px}
   #faq .faq-assure a.faq-inline-cta--price{width:min(100%,340px);min-height:40px}
   #pricing .period-btn.active{background:rgba(100,180,255,0.14);border:1px solid rgba(100,180,255,0.28);border-radius:8px}
+  /* c421–c424 em ≤480 */
+  #pricing .p-micro{display:block;font-size:11px;line-height:1.3;margin:4px 0 0;text-align:center;color:var(--dim)}
+  #pricing .p-micro strong{color:var(--white);font-weight:700}
+  #redes .network-chip{padding:4px 9px;font-size:11px}
 }
 @media (max-width:390px){
   .hero-logo{width:32px;height:32px}
@@ -2876,6 +2900,10 @@ main{position:relative;z-index:1}
   #faq .faq-assure-micro{font-size:10px}
   #faq .faq-assure a.faq-inline-cta--price{width:min(100%,100%);min-height:40px}
   #pricing .period-btn.active{background:rgba(100,180,255,0.14);border:1px solid rgba(100,180,255,0.28);border-radius:8px}
+  /* c421–c424 no iPhone */
+  #pricing .p-micro{display:block;font-size:10px;line-height:1.3;margin:4px 0 0;text-align:center;color:var(--dim)}
+  #pricing .p-micro strong{color:var(--white);font-weight:700}
+  #redes .network-chip{padding:4px 8px;font-size:10px}
 }
 @media (prefers-reduced-motion:reduce){
   .rv{opacity:1;transform:none}
@@ -3398,13 +3426,22 @@ if (mobTog && hdrNav) {
     });
 }
 
-// Smooth anchors
+// Smooth anchors — soft path to lead; after settle, nudge pricing CTA into view
 document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
         const href = a.getAttribute('href');
         if (!href || href === '#') return;
         const t = document.querySelector(href);
-        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        if (!t) return;
+        e.preventDefault();
+        t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (href === '#pricing-lead') {
+            try { history.replaceState({}, '', '#pricing-lead'); } catch (_) {}
+            window.setTimeout(() => {
+                const cta = document.querySelector('#pricing .pricing-cta');
+                if (cta) cta.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 420);
+        }
     });
 });
 
@@ -3665,9 +3702,9 @@ const FAQ_PRICE_CTA = {
     yearly: 'Ativar −15% — R$339,99'
 };
 const P_MICRO_HTML = {
-    monthly: '<strong>7 dias</strong> · 100% · Ativar −10% · ~15 min',
-    quarterly: '<strong>Ativar −10%</strong> · 7 dias · ~15 min',
-    yearly: '<strong>Ativar −15%</strong> · 7 dias · ~15 min'
+    monthly: '<strong>7 dias</strong> · R$399,99/mês · Ativar −10% no trimestral',
+    quarterly: '<strong>Ativar −10%</strong> · cobrado R$1.079,97 / 3 meses · 7 dias',
+    yearly: '<strong>Ativar −15%</strong> · cobrado R$4.079,90 / ano · 7 dias'
 };
 
 const PERIOD_NUDGE = {
