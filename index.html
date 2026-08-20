@@ -667,9 +667,9 @@ main{position:relative;z-index:1}
   .trust-rail span:nth-child(4){display:none}
   /* Ciclo 82: 3 chips lado a lado (desc já oculto) — corta ~140px vs stack */
   .problem-grid{grid-template-columns:repeat(3,1fr);gap:6px;max-width:100%}
-  #problema.problem-strip{padding:clamp(18px,2.8vh,28px) 0}
-  #problema .t-lg{margin:4px auto 6px}
-  #problema .t-body-lg{margin:0 auto 8px;font-size:13px}
+  #problema.problem-strip{padding:clamp(16px,2.4vh,26px) 0}
+  #problema .t-lg{margin:4px auto 4px}
+  #problema .t-body-lg{display:none}
   #problema .problem-card{padding:8px 6px;text-align:center;border-radius:10px}
   #problema .problem-stat{font-size:15px;margin-bottom:2px}
   #problema .problem-title{font-size:11px;line-height:1.25;margin-bottom:0}
@@ -704,15 +704,15 @@ main{position:relative;z-index:1}
   #pricing .p-price-wrap{min-height:44px;margin-bottom:6px}
   #pricing .p-monthly-eq{font-size:10px;margin-top:2px;max-width:32ch;line-height:1.3}
   #pricing .p-micro{margin-top:6px;line-height:1.35}
-  #faq.section--compact{padding:clamp(16px,2.2vh,28px) 0}
-  #faq .t-label{margin-bottom:2px}
-  #faq .t-lg{margin-bottom:6px;font-size:clamp(18px,5vw,24px)}
-  #faq .faq-list{gap:5px}
-  #faq .faq-q{padding:8px 10px;font-size:12px}
-  #faq .faq-a{padding:0 10px 8px;font-size:11px;line-height:1.35}
-  #faq .faq-more-toggle{margin-top:6px;padding:6px 12px;min-height:40px;font-size:12px}
-  #faq .faq-outro{margin-top:8px;padding:8px}
-  #faq .faq-outro-support{font-size:11px;margin-top:8px}
+  #faq.section--compact{padding:clamp(14px,2vh,24px) 0}
+  #faq .t-label{margin-bottom:0}
+  #faq .t-lg{margin-bottom:4px;font-size:clamp(18px,5vw,22px)}
+  #faq .faq-list{gap:4px}
+  #faq .faq-q{padding:7px 9px;font-size:12px}
+  #faq .faq-a{padding:0 9px 6px;font-size:11px;line-height:1.3}
+  #faq .faq-more-toggle{margin-top:4px;padding:5px 10px;min-height:36px;font-size:11px}
+  #faq .faq-outro{margin-top:6px;padding:6px}
+  #faq .faq-outro-support{font-size:10px;margin-top:6px}
   #faq .faq-outro p{font-size:11px;margin-bottom:0}
   #comecar.cta-final{padding:clamp(20px,3vh,32px) 0}
   #comecar .t-lg,#comecar .cta-final-title{font-size:clamp(20px,5.5vw,26px)}
@@ -745,10 +745,10 @@ main{position:relative;z-index:1}
   #cloaker .prot-sim-feed{margin:0 8px 8px}
   #cloaker .prot-sim-feed-header{padding:5px 10px}
   /* Ciclo 121: feed curto no mobile */
-  .prot-sim{min-height:180px}
+  .prot-sim{min-height:160px}
   #cloaker .prot-sim-stat:last-child{display:none}
   #cloaker .prot-sim-stats{grid-template-columns:1fr 1fr 1fr}
-  .prot-sim-feed{min-height:48px;max-height:72px}
+  .prot-sim-feed{min-height:40px;max-height:64px}
   .networks-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:12px}
   #redes.redes-strip{padding:clamp(12px,2vh,22px) 0}
   #redes .t-lg{margin:2px auto 2px;font-size:clamp(18px,5vw,24px)}
@@ -851,14 +851,16 @@ main{position:relative;z-index:1}
   #o-que-e .edu-pill p{font-size:11px;line-height:1.3}
   #problema .problem-desc{font-size:11px;line-height:1.3}
   #problema .problem-card{padding:8px 10px}
-  #como-funciona.section--compact{padding:clamp(14px,2.2vh,28px) 0}
+  #como-funciona.section--compact{padding:clamp(12px,1.8vh,24px) 0}
   #como-funciona .setup-steps{margin:6px 0 2px;gap:6px}
   #como-funciona .setup-step{padding:10px 8px}
   #como-funciona .setup-step h3{font-size:13px;margin-bottom:2px}
   #como-funciona .setup-step p{font-size:11px;line-height:1.3}
   #como-funciona .mid-cta{margin-top:6px}
   #como-funciona .mid-cta .btn-o{display:none}
-  #comecar.cta-final{padding:clamp(18px,3vh,36px) 0}
+  #como-funciona .t-body-lg{display:none}
+  #como-funciona .t-lg{margin:2px auto 4px;font-size:clamp(20px,2.4vw,26px)}
+  #comecar.cta-final{padding:clamp(16px,2.6vh,32px) 0}
   #comecar .cta-final-title{font-size:clamp(22px,3vw,28px)}
   .footer{padding:clamp(24px,3.5vh,36px) 0 16px}
   .f-grid{gap:18px;margin-bottom:16px}
@@ -1110,7 +1112,7 @@ main{position:relative;z-index:1}
 <section class="section section--compact" id="como-funciona">
     <div class="container">
         <p class="t-label rv" style="text-align:center">Como funciona</p>
-        <h2 class="t-lg rv rv-d1" style="text-align:center;margin:6px auto 6px;max-width:520px">Três passos · <span class="grad">Sem OAuth</span></h2>
+        <h2 class="t-lg rv rv-d1" style="text-align:center;margin:6px auto 6px;max-width:520px">3 passos · <span class="grad">sem OAuth</span></h2>
         <p class="t-body-lg rv rv-d2" style="text-align:center;margin:0 auto 4px;max-width:440px;font-size:clamp(13px,1.4vw,15px)">Páginas → regras → destino do anúncio = URL BlackInk</p>
 
         <div class="setup-steps">
@@ -1298,7 +1300,7 @@ main{position:relative;z-index:1}
                 <div class="pricing-reveal-inner">
                     <div class="t-label">Seu investimento</div>
                     <h2 class="pricing-reveal-title">Um cloaker · <span class="grad">um preço</span></h2>
-                    <p class="pricing-lead" id="pricing-lead">Corta <strong id="pricing-lead-loss">R$ 12.500</strong>/mês · payback <strong id="pricing-lead-payback">~1 dia</strong> · safe/offer · &lt;50ms · multi-rede</p>
+                    <p class="pricing-lead" id="pricing-lead"><strong id="pricing-lead-loss">R$ 12.500</strong>/mês a menos · payback <strong id="pricing-lead-payback">~1 dia</strong> · safe/offer · multi-rede</p>
                     <div class="period-toggle-label">Como prefere pagar?</div>
                     <div class="period-toggle">
                         <div class="period-switcher">
