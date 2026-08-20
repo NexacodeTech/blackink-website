@@ -600,6 +600,7 @@ body.has-sticky-cta{padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
 .f-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;padding-top:24px;border-top:1px solid var(--border);font-size:12px;color:var(--muted)}
 .f-legal{display:flex;flex-direction:column;gap:4px;line-height:1.5}
 .f-legal a{color:var(--accent)}
+.f-legal-addr-short{display:none}
 /* Sticky CTA */
 .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:900;transform:translateY(110%);transition:transform .45s var(--ease);padding:12px 16px;padding-bottom:calc(12px + env(safe-area-inset-bottom,0px));background:rgba(2,10,20,0.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid var(--border)}
 .sticky-cta.visible{transform:translateY(0)}
@@ -671,10 +672,17 @@ main{position:relative;z-index:1}
   .arch-grid{grid-template-columns:1fr}
   .calc-losses{grid-template-columns:1fr}
   .calc-summary{grid-template-columns:1fr}
-  .f-grid{grid-template-columns:1fr;gap:18px}
-  .footer .f-brand p{font-size:12px;line-height:1.45;max-width:42ch}
-  .f-bottom{gap:10px;margin-top:18px}
-  .f-legal{font-size:11px;line-height:1.4}
+  .f-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 20px;margin-bottom:18px}
+  .footer .f-brand{grid-column:1 / -1}
+  .footer .f-brand p{font-size:12px;line-height:1.4;max-width:42ch;margin-top:8px}
+  .f-col-t{margin-bottom:8px;font-size:11px}
+  .f-links{gap:6px}
+  .f-links a{font-size:13px}
+  .f-bottom{gap:8px;margin-top:12px;padding-top:14px;font-size:11px}
+  .f-legal{font-size:11px;line-height:1.35;gap:2px}
+  .f-legal-addr{display:none}
+  .f-legal-addr-short{display:inline}
+  .footer{padding:28px 0 18px}
   .sticky-cta-inner{gap:10px}
   .sticky-cta-price{display:block}
   .sticky-cta .btn-p{flex:1.2;min-width:0;padding:0 14px;font-size:13px}
@@ -1172,7 +1180,7 @@ main{position:relative;z-index:1}
         <div class="f-grid">
             <div class="f-brand">
                 <a href="#hero" class="hdr-logo" style="font-size:22px">Black<span>Ink</span></a>
-                <p>Cloaker server-side para Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras — proteção de campanhas.</p>
+                <p>Cloaker server-side · Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras</p>
             </div>
             <div>
                 <div class="f-col-t">Produto</div>
@@ -1198,7 +1206,8 @@ main{position:relative;z-index:1}
             <div class="f-legal">
                 <strong>BLACKINK TECNOLOGIA LTDA</strong>
                 <span>CNPJ 66.362.785/0001-50</span>
-                <span>Av. Deputado Jamel Cecilio, 2496, Sala 143A — Jd. Goiás, Goiânia/GO — CEP 74810-100</span>
+                <span class="f-legal-addr">Av. Deputado Jamel Cecilio, 2496, Sala 143A — Jd. Goiás, Goiânia/GO — CEP 74810-100</span>
+                <span class="f-legal-addr-short">Goiânia/GO · CNPJ acima</span>
                 <span><a href="mailto:suporte@theblack.ink">suporte@theblack.ink</a></span>
             </div>
             <span>&copy; 2026 BlackInk. Todos os direitos reservados.</span>
