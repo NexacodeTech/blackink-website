@@ -294,7 +294,7 @@ strong{font-weight:600}
 .hdr-nav{display:flex;align-items:center;gap:22px;margin-left:auto}
 .hdr-nav a{font-size:13px;font-weight:500;color:var(--dim);transition:color .3s var(--ease)}
 .hdr-nav a:hover{color:var(--white)}
-.hdr-nav-login,.hdr-nav-cta{display:none}
+.hdr-nav-login,.hdr-nav-cta,.hdr-nav-comecar{display:none}
 .hdr-cta{display:flex;align-items:center;gap:8px}
 .mob-tog{display:none;flex-direction:column;gap:5px;width:40px;height:40px;align-items:center;justify-content:center;margin-left:8px}
 .mob-tog span{display:block;width:18px;height:2px;background:var(--white);border-radius:2px;transition:transform .3s var(--ease),opacity .3s var(--ease)}
@@ -1617,6 +1617,22 @@ main{position:relative;z-index:1}
   #redes{padding:8px 0}
   /* c445 LAST: nav mobile CTA full-width punch */
   .hdr-nav .hdr-nav-cta{height:44px;font-size:14px;font-weight:700;border-radius:12px}
+  /* c446 LAST: esconde nav → seções ocultas no densest (dead-end) */
+  .hdr-nav a[href="#como-funciona"],
+  .hdr-nav a[href="#cloaker"]{display:none}
+  /* c447 LAST: Investimento primeiro no menu densest */
+  .hdr-nav a[href="#pricing-lead"]{order:-2;font-weight:700;color:var(--white)}
+  .hdr-nav a[href="#redes"]{order:-1}
+  .hdr-nav.mob-open{display:flex;flex-direction:column}
+  /* c448 LAST: Entrar secundário — CTA Ativar domina */
+  .hdr-nav .hdr-nav-login{opacity:.7;font-size:13px;order:10}
+  .hdr-nav .hdr-nav-cta{order:20;margin-top:12px}
+  /* c449 LAST: FAQ nav label punch */
+  .hdr-nav a[href="#faq"]{order:0}
+  /* c451 LAST: Começar no menu densest (fecha funil) */
+  .hdr-nav .hdr-nav-comecar{display:block;order:1;font-weight:600;color:var(--accent)}
+  /* c450 LAST: sticky some com menu aberto (não compete) */
+  body:has(.hdr-nav.mob-open) .sticky-cta{transform:translateY(110%);pointer-events:none}
 }
 @media (min-width:768px){
   .sticky-cta-text{display:block}
@@ -2435,6 +2451,11 @@ main{position:relative;z-index:1}
   #pricing .p-micro{font-size:12px;line-height:1.35}
   .sticky-cta-close{width:44px;height:44px;min-width:44px}
   .sticky-cta .btn-p{flex:1.3}
+  /* c446–c450 desktop densest — nav só buy-path */
+  .hdr-nav a[href="#como-funciona"],
+  .hdr-nav a[href="#cloaker"]{display:none}
+  .hdr-nav a[href="#pricing-lead"]{font-weight:700;color:var(--white)}
+  .hdr-nav .hdr-nav-comecar{display:inline;font-weight:600;color:var(--accent)}
 }
 
 @media (max-width:640px){
@@ -2655,6 +2676,15 @@ main{position:relative;z-index:1}
   .sticky-cta-close{width:44px;height:44px;min-width:44px}
   .sticky-cta .btn-p{flex:1.4;min-width:0}
   .hdr-nav .hdr-nav-cta{height:44px;font-size:14px;font-weight:700;border-radius:12px}
+  /* c446–c450 em ≤600 */
+  .hdr-nav a[href="#como-funciona"],
+  .hdr-nav a[href="#cloaker"]{display:none}
+  .hdr-nav a[href="#pricing-lead"]{order:-2;font-weight:700;color:var(--white)}
+  .hdr-nav a[href="#redes"]{order:-1}
+  .hdr-nav .hdr-nav-login{opacity:.7;order:10}
+  .hdr-nav .hdr-nav-cta{order:20;margin-top:12px}
+  body:has(.hdr-nav.mob-open) .sticky-cta{transform:translateY(110%);pointer-events:none}
+  .hdr-nav .hdr-nav-comecar{display:block;order:1;font-weight:600;color:var(--accent)}
 }
 @media (max-width:500px){
   .flow-pillars{grid-template-columns:1fr}
@@ -2865,6 +2895,15 @@ main{position:relative;z-index:1}
   .sticky-cta-close{width:44px;height:44px;min-width:44px}
   .sticky-cta .btn-p{flex:1.4;min-width:0}
   .hdr-nav .hdr-nav-cta{height:44px;font-size:14px;font-weight:700;border-radius:12px}
+  /* c446–c450 em ≤480 */
+  .hdr-nav a[href="#como-funciona"],
+  .hdr-nav a[href="#cloaker"]{display:none}
+  .hdr-nav a[href="#pricing-lead"]{order:-2;font-weight:700;color:var(--white)}
+  .hdr-nav a[href="#redes"]{order:-1}
+  .hdr-nav .hdr-nav-login{opacity:.7;order:10}
+  .hdr-nav .hdr-nav-cta{order:20;margin-top:12px}
+  body:has(.hdr-nav.mob-open) .sticky-cta{transform:translateY(110%);pointer-events:none}
+  .hdr-nav .hdr-nav-comecar{display:block;order:1;font-weight:600;color:var(--accent)}
 }
 @media (max-width:390px){
   .hero-logo{width:32px;height:32px}
@@ -3066,6 +3105,15 @@ main{position:relative;z-index:1}
   .sticky-cta-close{width:44px;height:44px;min-width:44px}
   .sticky-cta .btn-p{flex:1.4;min-width:0;font-size:11px}
   .hdr-nav .hdr-nav-cta{height:44px;font-size:14px;font-weight:700;border-radius:12px}
+  /* c446–c450 no iPhone */
+  .hdr-nav a[href="#como-funciona"],
+  .hdr-nav a[href="#cloaker"]{display:none}
+  .hdr-nav a[href="#pricing-lead"]{order:-2;font-weight:700;color:var(--white)}
+  .hdr-nav a[href="#redes"]{order:-1}
+  .hdr-nav .hdr-nav-login{opacity:.7;order:10}
+  .hdr-nav .hdr-nav-cta{order:20;margin-top:12px}
+  body:has(.hdr-nav.mob-open) .sticky-cta{transform:translateY(110%);pointer-events:none}
+  .hdr-nav .hdr-nav-comecar{display:block;order:1;font-weight:600;color:var(--accent)}
 }
 @media (prefers-reduced-motion:reduce){
   .rv{opacity:1;transform:none}
@@ -3100,6 +3148,7 @@ main{position:relative;z-index:1}
             <a href="#pricing-lead">Investimento</a>
             <a href="#redes">Redes</a>
             <a href="#faq">FAQ</a>
+            <a href="#comecar" class="hdr-nav-comecar">Começar</a>
             <a href="https://app.theblack.ink/auth/login" class="hdr-nav-login">Entrar</a>
             <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link hdr-nav-cta" data-plan="Maré">Ativar −10%</a>
         </nav>
