@@ -719,18 +719,19 @@ main{position:relative;z-index:1}
   #redes .t-lg,
   #redes .t-body-lg{display:none}
   #redes .networks-grid{margin-top:0;gap:3px}
-  #faq.section--compact{padding:clamp(6px,1.2vh,14px) 0}
+  #faq.section--compact{padding:clamp(4px,1vh,12px) 0}
   #faq .t-label{margin-bottom:0;display:none}
-  #faq .t-lg{margin-bottom:2px;font-size:clamp(15px,4.2vw,18px)}
+  #faq .t-lg{margin-bottom:1px;font-size:clamp(14px,4vw,17px)}
   #faq .faq-list{gap:2px}
-  #faq .faq-q{padding:5px 8px;font-size:11px}
-  #faq .faq-a{padding:0 8px 4px;font-size:10px;line-height:1.2}
-  #faq .faq-more-toggle{margin-top:2px;padding:3px 8px;min-height:28px;font-size:9px}
-  #faq .faq-outro{margin-top:2px;padding:4px}
+  #faq .faq-q{padding:4px 7px;font-size:10px}
+  #faq .faq-a{padding:0 7px 3px;font-size:9px;line-height:1.2}
+  #faq .faq-more-toggle{margin-top:1px;padding:2px 6px;min-height:26px;font-size:9px}
+  #faq .faq-outro{margin-top:2px;padding:3px}
   #faq .faq-outro-support{display:none}
   #faq .faq-outro p{font-size:11px;margin-bottom:0}
-  #faq .faq-outro .btn{height:44px;font-size:13px}
+  #faq .faq-outro .btn{height:42px;font-size:12px}
   #faq .faq-inline-cta{margin-top:0;padding:0}
+  #faq .faq-i--risk .faq-q{padding:4px 7px}
   #comecar.cta-final{padding:clamp(10px,1.6vh,20px) 0}
   #comecar .t-lg,#comecar .cta-final-title{font-size:clamp(16px,4.5vw,22px)}
   #comecar .t-body-lg{margin:2px auto 4px;font-size:10px}
@@ -815,25 +816,25 @@ main{position:relative;z-index:1}
   .arch-grid{grid-template-columns:1fr}
   .calc-losses{grid-template-columns:1fr}
   .calc-summary{grid-template-columns:1fr}
-  #roi-calc.section--compact{padding:clamp(8px,1.2vh,16px) 0}
-  #roi-calc .t-lg{margin:2px auto 2px;font-size:clamp(16px,4.5vw,20px)}
+  #roi-calc.section--compact{padding:clamp(6px,1vh,14px) 0}
+  #roi-calc .t-lg{margin:2px auto 1px;font-size:clamp(15px,4.2vw,19px)}
   #roi-calc .t-label{display:none}
   #roi-calc .t-body-lg{display:none}
-  #roi-calc .calc-card{padding:6px}
-  #roi-calc .calc-slider-label{font-size:10px}
-  #roi-calc .calc-slider-value{font-size:16px}
+  #roi-calc .calc-card{padding:5px}
+  #roi-calc .calc-slider-label{font-size:9px}
+  #roi-calc .calc-slider-value{font-size:15px}
   #roi-calc .calc-slider-ticks{display:none}
-  #roi-calc .calc-summary{grid-template-columns:1fr 1fr;gap:3px;margin-top:2px}
-  #roi-calc .calc-summary-card{padding:4px 3px}
-  #roi-calc .calc-summary-val{font-size:14px}
+  #roi-calc .calc-summary{grid-template-columns:1fr 1fr;gap:2px;margin-top:2px}
+  #roi-calc .calc-summary-card{padding:3px 2px}
+  #roi-calc .calc-summary-val{font-size:13px}
   #roi-calc .calc-summary-lbl{display:none}
   #roi-calc .calc-summary-bar{display:none}
-  #roi-calc .calc-summary-tag{margin-bottom:1px;font-size:8px}
+  #roi-calc .calc-summary-tag{margin-bottom:0;font-size:7px}
   #roi-calc .calc-caveat{display:none}
-  #roi-calc .calc-cta-text{font-size:9px;margin-bottom:2px}
-  #roi-calc .calc-cta{margin-top:2px}
+  #roi-calc .calc-cta-text{font-size:8px;margin-bottom:2px}
+  #roi-calc .calc-cta{margin-top:1px}
   #roi-calc .calc-divider{display:none}
-  #roi-calc .calc-cta .btn{height:44px;font-size:13px}
+  #roi-calc .calc-cta .btn{height:42px;font-size:12px}
   /* Ciclo 83: após ROI o preço está na sequência — link de período some no mobile */
   #roi-calc .calc-cta-period{display:none}
   .footer{padding:10px 0 8px}
@@ -1470,7 +1471,7 @@ main{position:relative;z-index:1}
                             <button type="button" class="period-btn" data-period="yearly">Anual <span class="period-discount">−15%</span></button>
                         </div>
                     </div>
-                    <p class="period-nudge" id="period-nudge"><button type="button" data-pick-period="quarterly">Trimestral −10%</button> · economiza ~R$120 · mesmo cloaker</p>
+                    <p class="period-nudge" id="period-nudge"><button type="button" data-pick-period="quarterly">Trimestral −10%</button> · ~R$120 a menos</p>
                     <div class="p-price-wrap">
                         <div class="p-price active" data-period="monthly"><span class="p-price-line"><span class="p-curr">R$</span><span class="p-val">399</span><span class="p-per">,99/mês</span></span></div>
                         <div class="p-price" data-period="quarterly"><span class="p-price-line"><span class="p-curr">R$</span><span class="p-val">359</span><span class="p-per">,99/mês</span></span><span class="p-monthly-eq">cobrado R$1.079,97 / 3 meses · <span class="p-save">−~R$120</span></span></div>
@@ -1924,14 +1925,13 @@ let autoQuarterlyApplied = false;
 function periodNudgeHtml(period) {
     period = period || 'monthly';
     if (period === 'monthly' && lastCalcLossValue > 0) {
-        const vsPlan = Math.max(1, Math.round(lastCalcLossValue / 399.99));
-        return '<button type="button" data-pick-period="quarterly">Trimestral −10%</button> · −~R$120 · perda ~<strong>' + lastCalcLossFmt + '</strong>/mês (~' + vsPlan + '×)';
+        return '<button type="button" data-pick-period="quarterly">Trimestral −10%</button> · −~R$120 · vs perda <strong>' + lastCalcLossFmt + '</strong>';
     }
     if (period === 'quarterly' && lastCalcLossFmt) {
-        return '−10% vs mensal · vs ~<strong>' + lastCalcLossFmt + '</strong>/mês sem cloaker';
+        return '−10% · vs perda <strong>' + lastCalcLossFmt + '</strong>/mês';
     }
     if (period === 'yearly' && lastCalcLossFmt) {
-        return '−15% vs mensal · vs ~<strong>' + lastCalcLossFmt + '</strong>/mês sem cloaker';
+        return '−15% · vs perda <strong>' + lastCalcLossFmt + '</strong>/mês';
     }
     return PERIOD_NUDGE[period] || PERIOD_NUDGE.monthly;
 }
