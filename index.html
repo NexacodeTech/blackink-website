@@ -298,13 +298,14 @@ strong{font-weight:600}
 .mob-tog.active span:nth-child(2){opacity:0}
 .mob-tog.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 /* Hero — fit 100vh */
-.hero{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:calc(var(--hdr-h) + 12px) 20px 24px;position:relative;overflow:hidden}
+.hero{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:calc(var(--hdr-h) + 12px) 20px 0;position:relative;overflow:hidden}
 .hero-mesh{position:absolute;inset:0;pointer-events:none;z-index:0}
 .hero-mesh .m1,.hero-mesh .m2,.hero-mesh .m3{position:absolute;border-radius:50%;filter:blur(80px);opacity:.35}
 .hero-mesh .m1{width:480px;height:480px;background:radial-gradient(circle,rgba(100,180,255,0.35),transparent 70%);top:-10%;left:50%;transform:translateX(-50%)}
 .hero-mesh .m2{width:360px;height:360px;background:radial-gradient(circle,rgba(52,211,153,0.18),transparent 70%);bottom:10%;left:10%}
 .hero-mesh .m3{width:300px;height:300px;background:radial-gradient(circle,rgba(59,130,246,0.2),transparent 70%);bottom:5%;right:8%}
 .hero > *:not(.hero-mesh){position:relative;z-index:1}
+.hero-core{display:flex;flex-direction:column;align-items:center;width:100%;flex:1;justify-content:center;padding-bottom:20px}
 .hero-logo{width:48px;height:48px;margin:0 auto 14px;opacity:.95;animation:heroIn .8s var(--ease) both}
 .hero-badge{margin-bottom:14px;animation:heroIn .8s var(--ease) .05s both}
 .hero-badge-inner{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:100px;border:1px solid var(--border);background:rgba(100,180,255,0.05)}
@@ -323,7 +324,7 @@ strong{font-weight:600}
 @keyframes heroIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 @keyframes simPulse{0%,100%{opacity:1}50%{opacity:.45}}
 /* Problem punch — compact */
-.problem-strip{padding:clamp(48px,8vh,88px) 0;text-align:center}
+.problem-strip{padding:clamp(40px,6vh,72px) 0;text-align:center}
 .problem-strip .t-lg{margin:12px auto 16px;max-width:640px}
 .problem-strip .t-body-lg{margin:0 auto 36px}
 .problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:960px;margin:0 auto}
@@ -338,7 +339,7 @@ strong{font-weight:600}
 .mid-cta-strip p{font-size:clamp(15px,1.6vw,18px);color:var(--dim);max-width:38ch;margin:0 auto 20px;line-height:1.55}
 .mid-cta-strip .btn{min-width:min(100%,320px)}
 .mid-cta{display:flex;justify-content:center;margin-top:36px}
-.trust-rail{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 16px;padding:14px 16px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:rgba(6,17,31,0.55)}
+.trust-rail{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 16px;padding:14px 16px;width:100%;border-top:1px solid var(--border);background:rgba(6,17,31,0.65);margin-top:auto}
 .trust-rail span{font-size:11px;font-weight:500;color:rgba(240,244,248,0.62);letter-spacing:.02em;display:inline-flex;align-items:center;gap:6px}
 .trust-rail span::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--accent);opacity:.7}
 .obj-strip{margin:40px 0 8px}
@@ -606,7 +607,8 @@ main{position:relative;z-index:1}
   .hdr-nav .hdr-nav-cta{display:inline-flex;margin-top:8px;justify-content:center;border-bottom:none;width:100%;color:#021018}
   .hdr-cta{display:none}
   .mob-tog{display:flex}
-  .hero{padding:calc(var(--hdr-h) + 6px) 16px 16px;justify-content:flex-start;min-height:auto;min-height:100dvh}
+  .hero{padding:calc(var(--hdr-h) + 6px) 16px 0;justify-content:flex-start;min-height:auto;min-height:100dvh}
+  .hero-core{justify-content:flex-start;padding-top:4px;padding-bottom:16px;flex:1}
   .hero-logo{width:36px;height:36px;margin-bottom:10px}
   .hero-badge{margin-bottom:10px}
   .hero-title{font-size:clamp(24px,7vw,30px);margin-bottom:10px;line-height:1.2}
@@ -713,6 +715,7 @@ main{position:relative;z-index:1}
 
 <section class="hero" id="hero">
     <div class="hero-mesh" aria-hidden="true"><div class="m1"></div><div class="m2"></div><div class="m3"></div></div>
+    <div class="hero-core">
     <img src="images/logo-icon-clean.png" alt="BlackInk" class="hero-logo" width="56" height="56">
     <div class="hero-badge">
         <div class="hero-badge-inner">
@@ -736,15 +739,15 @@ main{position:relative;z-index:1}
         <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
         <span>PIX e cartão · Setup em 15 min · Garantia de 7 dias</span>
     </div>
+    </div>
+    <div class="trust-rail" aria-label="Sinais de confiança">
+        <span>Empresa BR · CNPJ ativo</span>
+        <span>Cloaker 100% server-side</span>
+        <span>Setup ~15 minutos</span>
+        <span>Garantia 7 dias</span>
+        <span>Suporte em português</span>
+    </div>
 </section>
-
-<div class="trust-rail" aria-label="Sinais de confiança">
-    <span>Empresa BR · CNPJ ativo</span>
-    <span>Cloaker 100% server-side</span>
-    <span>Setup ~15 minutos</span>
-    <span>Garantia 7 dias</span>
-    <span>Suporte em português</span>
-</div>
 
 <div class="sep"></div>
 
@@ -1202,8 +1205,8 @@ main{position:relative;z-index:1}
                     <div class="period-toggle">
                         <div class="period-switcher">
                             <button type="button" class="period-btn active" data-period="monthly">Mensal</button>
-                            <button type="button" class="period-btn" data-period="quarterly">Trimestral <span class="period-discount">-10%</span></button>
-                            <button type="button" class="period-btn" data-period="yearly">Anual <span class="period-discount">-15%</span></button>
+                            <button type="button" class="period-btn" data-period="quarterly">Trimestral <span class="period-discount">−10%</span></button>
+                            <button type="button" class="period-btn" data-period="yearly">Anual <span class="period-discount">−15%</span></button>
                         </div>
                     </div>
                     <div class="p-price-wrap">
