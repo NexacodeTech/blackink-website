@@ -2087,7 +2087,7 @@ main{position:relative;z-index:1}
                 <details class="faq-i"><summary class="faq-q">O BlackInk é um tracker?</summary><div class="faq-a">Não. Cloaker server-side (safe vs offer) — sem tracker nem pixel de atribuição.</div></details>
                 <details class="faq-i"><summary class="faq-q">Como falo com o suporte?</summary><div class="faq-a"><a href="mailto:suporte@theblack.ink">suporte@theblack.ink</a> · ticket/chat na plataforma · setup inicial gratuito.</div></details>
             </div>
-            <button type="button" class="faq-more-toggle" id="faq-more-toggle" aria-expanded="false" aria-controls="faq-more">Mais dúvidas</button>
+            <button type="button" class="faq-more-toggle" id="faq-more-toggle" aria-expanded="false" aria-controls="faq-more">OAuth · redes · preço</button>
         </div>
         <div class="faq-outro rv">
             <div class="faq-outro-cta">
@@ -2676,7 +2676,7 @@ if (faqMore && faqMoreToggle) {
     faqMoreToggle.addEventListener('click', () => {
         const open = faqMore.classList.toggle('open');
         faqMoreToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-        faqMoreToggle.textContent = open ? 'Mostrar menos' : 'Mais dúvidas';
+        faqMoreToggle.textContent = open ? 'Mostrar menos' : 'OAuth · redes · preço';
     });
 }
 
