@@ -575,15 +575,15 @@ strong{font-weight:600}
 .faq-a{padding:0 16px 14px;font-size:13px;color:var(--dim);line-height:1.6}
 .faq-a a{color:var(--accent);text-decoration:underline}
 /* CTA final */
-.cta-final{text-align:center;position:relative;overflow:hidden;padding:clamp(48px,8vh,88px) 0}
-.cta-final-trust{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 18px;margin-top:4px;max-width:520px}
-.cta-final-trust span{font-size:12px;color:rgba(240,244,248,0.62);display:inline-flex;align-items:center;gap:6px}
+.cta-final{text-align:center;position:relative;overflow:hidden;padding:clamp(36px,6vh,72px) 0}
+.cta-final-trust{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 14px;margin-top:4px;max-width:520px}
+.cta-final-trust span{font-size:11px;color:rgba(240,244,248,0.62);display:inline-flex;align-items:center;gap:6px}
 .cta-final-trust span::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--green);opacity:.85;flex-shrink:0}
 body.has-sticky-cta{padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
 .cta-orb{position:absolute;width:480px;height:480px;left:50%;top:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(100,180,255,0.18),transparent 70%);pointer-events:none;filter:blur(40px)}
 /* Footer */
-.footer{padding:56px 0 28px;border-top:1px solid var(--border)}
-.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;margin-bottom:40px}
+.footer{padding:clamp(36px,5vh,52px) 0 24px;border-top:1px solid var(--border)}
+.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px;margin-bottom:28px}
 .f-brand p{font-size:14px;color:var(--dim);margin-top:14px;line-height:1.6;max-width:320px}
 .f-col-t{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
 .f-links{display:flex;flex-direction:column;gap:10px}
@@ -647,7 +647,10 @@ main{position:relative;z-index:1}
   .arch-grid{grid-template-columns:1fr}
   .calc-losses{grid-template-columns:1fr}
   .calc-summary{grid-template-columns:1fr}
-  .f-grid{grid-template-columns:1fr;gap:28px}
+  .f-grid{grid-template-columns:1fr;gap:18px}
+  .footer .f-brand p{font-size:12px;line-height:1.45;max-width:42ch}
+  .f-bottom{gap:10px;margin-top:18px}
+  .f-legal{font-size:11px;line-height:1.4}
   .sticky-cta-inner{gap:10px}
   .sticky-cta-price{display:block}
   .sticky-cta .btn-p{flex:1.2;min-width:0;padding:0 14px;font-size:13px}
@@ -1128,10 +1131,10 @@ main{position:relative;z-index:1}
 <section class="section cta-final" id="comecar">
     <div class="cta-orb" aria-hidden="true"></div>
     <div class="container" style="position:relative;z-index:1">
-        <p class="t-label rv" style="text-align:center;margin-bottom:10px">Pronto</p>
+        <p class="t-label rv" style="text-align:center;margin-bottom:8px">Pronto</p>
         <h2 class="t-lg rv rv-d1" style="text-align:center">Ative o cloaker<br><span class="grad">Controle quem vê o quê</span></h2>
-        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:480px;margin:12px auto 20px;font-size:clamp(14px,1.5vw,16px)" id="cta-final-lead">Pare de financiar até <strong id="cta-final-loss">R$ 12.500</strong>/mês em cliques inválidos — setup em 15 minutos</p>
-        <div class="rv rv-d3" style="display:flex;flex-direction:column;align-items:center;gap:14px">
+        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:440px;margin:8px auto 14px;font-size:clamp(13px,1.4vw,15px)" id="cta-final-lead">Pare de financiar até <strong id="cta-final-loss">R$ 12.500</strong>/mês em cliques inválidos — setup ~15 min</p>
+        <div class="rv rv-d3" style="display:flex;flex-direction:column;align-items:center;gap:10px">
             <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
             <div class="cta-final-trust">
                 <span>PIX ou cartão</span>
@@ -1139,7 +1142,7 @@ main{position:relative;z-index:1}
                 <span>Sem contrato</span>
                 <span>Empresa BR · CNPJ</span>
             </div>
-            <a href="/?period=quarterly#pricing" style="font-size:13px;color:var(--accent);font-weight:500">Ver trimestral (−10%) e anual (−15%)</a>
+            <a href="/?period=quarterly#pricing" style="font-size:12px;color:var(--accent);font-weight:500">Ver trimestral (−10%) e anual (−15%)</a>
         </div>
     </div>
 </section>
@@ -1151,7 +1154,7 @@ main{position:relative;z-index:1}
         <div class="f-grid">
             <div class="f-brand">
                 <a href="#hero" class="hdr-logo" style="font-size:22px">Black<span>Ink</span></a>
-                <p>Plataforma cloaker server-side para Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras — proteção de campanhas e controle de acesso.</p>
+                <p>Cloaker server-side para Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras — proteção de campanhas.</p>
             </div>
             <div>
                 <div class="f-col-t">Produto</div>
