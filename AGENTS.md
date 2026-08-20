@@ -177,3 +177,8 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Contexto**: economia do trimestral era texto passivo; FAQ outro só tinha link textual.
 **Regra**: nudge mensal inclui botão “Escolher trimestral”; FAQ outro tem CTA hard + atalho trimestral.
 **Status**: ativo
+
+## 2026-08-20 — Funil prova → ROI → preço
+**Contexto**: redes/arquétipos atrasavam a quantificação da perda e o preço.
+**Regra**: após `#cloaker`, ordem é `#roi-calc` → `#pricing`; `#redes`/`#por-que` ficam como reforço pós-decisão; nav prioriza Investimento antes de Redes.
+**Status**: ativo
