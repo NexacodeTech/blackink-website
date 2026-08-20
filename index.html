@@ -1329,6 +1329,21 @@ main{position:relative;z-index:1}
   /* c363 LAST: FAQ H2 some — open Q + assure bastam no densest */
   #faq .t-lg{display:none}
   #faq .faq-list{margin:0;gap:0}
+  /* c364 LAST: cloaker H2 some — CTA Ativar −10% basta no densest */
+  #cloaker .showcase-text .t-lg,#cloaker .t-lg{display:none}
+  #cloaker .showcase-cta .btn{height:12px;font-size:6px;margin:0}
+  /* c365 LAST: CTA/switcher 12/9 — buy-path mais curto */
+  #pricing .btn-full{height:12px;font-size:6px;margin:0}
+  #pricing .period-btn{min-height:9px;font-size:4px;padding:0;line-height:1;flex-direction:row}
+  #roi-calc .calc-cta .btn{height:12px;font-size:6px;margin:0}
+  #comecar .pricing-cta{height:12px;font-size:6px;margin:0}
+  #roi-calc .calc-slider-header{margin:0;gap:0;min-height:0}
+  #roi-calc .calc-slider-value{font-size:4px;line-height:1}
+  /* c366 LAST: FAQ toggle some — open Q + assure; answer price CTA fica */
+  #faq .faq-more-toggle{display:none}
+  #faq .faq-a{font-size:4px;line-height:1;padding:0 1px}
+  #faq .faq-q{font-size:4.5px;padding:0 1px;line-height:1}
+  #faq .faq-assure{font-size:4px;line-height:1;margin:0}
 }
 @media (min-width:768px){
   .sticky-cta-text{display:block}
@@ -1937,6 +1952,20 @@ main{position:relative;z-index:1}
   /* c363 desktop densest — FAQ H2 some */
   #faq .t-lg{display:none}
   #faq .faq-list{margin:0;gap:0}
+  /* c364 desktop densest — cloaker H2 some */
+  #cloaker .showcase-text .t-lg,#cloaker .t-lg{display:none}
+  #cloaker .showcase-cta .btn{height:12px;font-size:6px;margin:0}
+  /* c365 desktop densest — CTA/switcher 12/9 */
+  #pricing .btn-full{height:12px;font-size:6px;margin:0}
+  #pricing .period-btn{min-height:9px;font-size:4px;padding:0;line-height:1}
+  #roi-calc .calc-cta .btn{height:12px;font-size:6px;margin:0}
+  #comecar .pricing-cta{height:12px;font-size:6px;margin:0}
+  #roi-calc .calc-slider-value{font-size:4px;line-height:1}
+  /* c366 desktop densest — FAQ toggle some */
+  #faq .faq-more-toggle{display:none}
+  #faq .faq-a{font-size:4px;line-height:1;padding:0 1px}
+  #faq .faq-q{font-size:4.5px;padding:0 1px;line-height:1}
+  #faq .faq-assure{font-size:4px;line-height:1;margin:0}
 }
 @media (max-width:640px){
   .networks-grid{grid-template-columns:1fr 1fr}
@@ -2005,12 +2034,21 @@ main{position:relative;z-index:1}
   #pricing .period-nudge{display:none;font-size:5px;margin:0;line-height:1.1;text-align:center}
   #pricing .period-nudge:not([hidden]){display:block}
   #pricing .pricing-trust-chips{display:none}
-  #roi-calc .calc-cta .btn{height:22px;font-size:8px}
+  /* c365: NÃO reinflar CTA — manter densest 12px (antes 22px sobrescrevia) */
+  #roi-calc .calc-cta .btn{height:12px;font-size:6px;margin:0}
   #roi-calc .calc-summary-tag{display:none}
   #roi-calc .calc-slider-label{display:none}
   #roi-calc .calc-summary{grid-template-columns:1fr}
   #roi-calc .calc-summary-card:nth-child(2){display:none}
   #faq .faq-outro{display:none}
+  /* c364–c366: preservar densest em ≤600 */
+  #cloaker .showcase-text .t-lg,#cloaker .t-lg{display:none}
+  #cloaker .showcase-cta .btn{height:12px;font-size:6px;margin:0}
+  #pricing .btn-full{height:12px;font-size:6px;margin:0}
+  #pricing .period-btn{min-height:9px;font-size:4px;padding:0;flex-direction:row;align-items:center;gap:2px;line-height:1}
+  #comecar .pricing-cta{height:12px;font-size:6px;margin:0}
+  #faq .faq-more-toggle{display:none}
+  #faq .t-lg{display:none}
 }
 @media (max-width:500px){
   .flow-pillars{grid-template-columns:1fr}
@@ -2065,8 +2103,7 @@ main{position:relative;z-index:1}
   #roi-calc .calc-slider-label{display:none}
   #roi-calc .calc-summary{grid-template-columns:1fr}
   #roi-calc .calc-summary-card:nth-child(2){display:none}
-  #roi-calc .calc-cta .btn{height:20px;font-size:8px}
-  #roi-calc .calc-slider-value{font-size:7px}
+  #roi-calc .calc-slider-value{font-size:4px;line-height:1}
   #roi-calc .calc-summary-val{font-size:8px}
   /* c342: preservar thumb densest em ≤480 */
   #roi-calc .calc-slider-wrap{line-height:1;display:flex;flex-direction:column;gap:1px}
@@ -2075,10 +2112,17 @@ main{position:relative;z-index:1}
   #roi-calc .calc-slider::-moz-range-thumb{width:10px;height:10px;border-width:2px}
   /* c350: preservar ROI flex densest em ≤480 */
   #roi-calc .calc-card{line-height:1;display:flex;flex-direction:column;gap:1px;padding:0}
-  #roi-calc .calc-cta .btn{height:14px;font-size:6.5px;margin:0}
-  /* c357/c359: preservar cloaker densest */
+  /* c365: densest 12px vence reinflação */
+  #roi-calc .calc-cta .btn{height:12px;font-size:6px;margin:0}
+  /* c357/c359/c364: preservar cloaker densest */
   #cloaker .showcase-visual{display:none}
-  #cloaker .showcase-cta .btn{height:14px;font-size:6.5px;margin:0}
+  #cloaker .showcase-text .t-lg,#cloaker .t-lg{display:none}
+  #cloaker .showcase-cta .btn{height:12px;font-size:6px;margin:0}
+  #pricing .btn-full{height:12px;font-size:6px;margin:0}
+  #pricing .period-btn{min-height:9px;font-size:4px;padding:0;flex-direction:row;align-items:center;gap:2px;line-height:1}
+  #comecar .pricing-cta{height:12px;font-size:6px;margin:0}
+  #faq .faq-more-toggle{display:none}
+  #faq .t-lg{display:none}
 }
 @media (max-width:390px){
   .hero-logo{width:32px;height:32px}
@@ -2121,7 +2165,7 @@ main{position:relative;z-index:1}
   #roi-calc .calc-slider-label{display:none}
   #roi-calc .calc-summary{grid-template-columns:1fr}
   #roi-calc .calc-summary-card:nth-child(2){display:none}
-  #roi-calc .calc-slider-value{font-size:7px}
+  #roi-calc .calc-slider-value{font-size:4px;line-height:1}
   #roi-calc .calc-summary-val{font-size:8px}
   /* c342: preservar thumb densest no iPhone */
   #roi-calc .calc-slider-wrap{line-height:1;display:flex;flex-direction:column;gap:1px}
@@ -2131,11 +2175,17 @@ main{position:relative;z-index:1}
   /* c350: preservar ROI flex densest no iPhone */
   #roi-calc .calc-card{line-height:1;display:flex;flex-direction:column;gap:1px;padding:0}
   #faq .faq-outro{display:none}
-  /* c357: preservar cloaker densest no iPhone */
+  /* c357/c364–c366: preservar densest no iPhone */
   #cloaker .showcase-visual{display:none}
   #cloaker .showcase{display:flex;flex-direction:column;gap:1px;line-height:1}
-  #cloaker .showcase-cta .btn{height:14px;font-size:6.5px;margin:0}
-  #comecar .pricing-cta{height:14px;font-size:6.5px;margin:0}
+  #cloaker .showcase-text .t-lg,#cloaker .t-lg{display:none}
+  #cloaker .showcase-cta .btn{height:12px;font-size:6px;margin:0}
+  #pricing .btn-full{height:12px;font-size:6px;margin:0}
+  #pricing .period-btn{min-height:9px;font-size:4px;padding:0;flex-direction:row;align-items:center;gap:2px;line-height:1}
+  #roi-calc .calc-cta .btn{height:12px;font-size:6px;margin:0}
+  #comecar .pricing-cta{height:12px;font-size:6px;margin:0}
+  #faq .faq-more-toggle{display:none}
+  #faq .t-lg{display:none}
   #como-funciona .mid-cta .btn{height:18px;font-size:7px}
   #problema .mid-cta .btn{height:18px;font-size:7px}
 }
@@ -2248,7 +2298,7 @@ main{position:relative;z-index:1}
         <p class="problem-resolve rv rv-d3">~22% sujo · Ativar −10% · <span class="grad">~1 dia = 1 mês</span></p>
         <div class="mid-cta mid-cta--soft rv rv-d4">
         <a href="#roi-calc" class="btn btn-p">Ver perda · Ativar −10%</a>
-        <a href="#pricing" class="btn btn-o">Ver R$399,99</a>
+        <a href="#pricing" class="btn btn-o">Ver perda · Ativar −10%</a>
         </div>
     </div>
 </section>
