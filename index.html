@@ -1708,11 +1708,14 @@ function updatePlanLinks(period) {
     period = period || document.querySelector('.period-btn.active')?.dataset.period || 'monthly';
     const urlRef = new URLSearchParams(window.location.search).get('ref') || localStorage.getItem('blackink_referral_code');
     const urlFref = new URLSearchParams(window.location.search).get('fref') || localStorage.getItem('blackink_friend_referral_code');
+    let budget = null;
+    try { budget = sessionStorage.getItem('blackink_calc_budget'); } catch (_) {}
     document.querySelectorAll('.plan-link[data-plan]').forEach(link => {
         const plan = link.dataset.plan;
         let url = '/cadastro/?plan=' + encodeURIComponent(plan) + '&period=' + encodeURIComponent(period);
         if (urlRef) url += '&ref=' + encodeURIComponent(urlRef);
         if (urlFref) url += '&fref=' + encodeURIComponent(urlFref);
+        if (budget && /^\d+$/.test(budget)) url += '&budget=' + encodeURIComponent(budget);
         link.href = url;
     });
 }
@@ -1901,6 +1904,9 @@ if (calcSlider && calcDisplay && calcInvisible && calcFraud && calcHours && calc
         syncStickyLossCopy();
         // Final CTA mirrors loss (ciclo 35)
         if (ctaFinalLoss) ctaFinalLoss.textContent = fmt(total);
+        // Persist budget for cadastro bridge (ciclo 36)
+        try { sessionStorage.setItem('blackink_calc_budget', String(val)); } catch (_) {}
+        updatePlanLinks();
     };
     calcSlider.addEventListener('input', updateCalc);
     updateCalc();
