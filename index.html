@@ -1247,6 +1247,11 @@ main{position:relative;z-index:1}
   #cloaker .showcase-cta .btn{height:16px;font-size:7px;margin:0}
   #cloaker .prot-sim{min-height:0;line-height:1}
   #cloaker .t-lg{line-height:1.1;margin:0}
+  /* c357: cloaker densest — esconde visual (CTA+H2 bastam); CTA 14px */
+  #cloaker .showcase-visual{display:none}
+  #cloaker .showcase-cta .btn{height:14px;font-size:6.5px;margin:0}
+  #cloaker .showcase-text .t-lg,#cloaker .t-lg{font-size:clamp(8px,2.2vw,10px);line-height:1.1;margin:0}
+  #cloaker .showcase-cta{margin:0;gap:0}
   /* c352: problema densest — H2/cards/resolve chrome */
   #problema{line-height:1}
   #problema.problem-strip{padding:0}
@@ -1800,6 +1805,12 @@ main{position:relative;z-index:1}
   #cloaker .showcase{line-height:1;gap:1px}
   #cloaker .showcase-cta .btn{height:16px;font-size:7px;margin:0}
   #cloaker .prot-sim{min-height:0}
+  /* c357 desktop densest — column + visual off + label off */
+  #cloaker .showcase{display:flex;flex-direction:column;gap:1px;line-height:1}
+  #cloaker .showcase-visual{display:none}
+  #cloaker .t-label{display:none}
+  #cloaker .showcase-text .t-lg,#cloaker .t-lg{font-size:clamp(8px,1vw,11px);line-height:1.1;margin:0}
+  #cloaker .showcase-cta .btn{height:14px;font-size:6.5px;margin:0}
   #redes .network-chip span{display:none}
   #redes .network-chip{padding:1px 3px;font-size:6px}
   #faq .t-lg{font-size:clamp(8px,0.9vw,10px)}
@@ -1978,8 +1989,14 @@ main{position:relative;z-index:1}
   #roi-calc .calc-slider::-webkit-slider-thumb{width:10px;height:10px;border-width:2px;box-shadow:none}
   #roi-calc .calc-slider::-moz-range-thumb{width:10px;height:10px;border-width:2px}
   /* c350: preservar ROI flex densest em ≤480 */
-  #roi-calc .calc-card{line-height:1;display:flex;flex-direction:column;gap:1px;padding:0}
-  #roi-calc .calc-cta .btn{height:18px;font-size:7.5px;margin:0}
+  #roi-calc .calc-card{line-height:1;display:flex;flex-direction:column;gap:1px;padding:0  /* c357: preservar cloaker densest */
+  #cloaker .showcase-visual{display:none}
+  #cloaker .showcase-cta .btn{height:14px;font-size:6.5px;margin:0}
+}
+  #roi-calc .calc-cta .btn{height:18px;font-size:7.5px;margin:0  /* c357: preservar cloaker densest */
+  #cloaker .showcase-visual{display:none}
+  #cloaker .showcase-cta .btn{height:14px;font-size:6.5px;margin:0}
+}
 }
 @media (max-width:390px){
   .hero-logo{width:32px;height:32px}
@@ -2023,7 +2040,10 @@ main{position:relative;z-index:1}
   #roi-calc .calc-card{line-height:1;display:flex;flex-direction:column;gap:1px;padding:0}
   #roi-calc .calc-cta .btn{height:18px;font-size:7.5px;margin:0}
   #faq .faq-outro{display:none}
-  #cloaker .showcase-cta .btn{height:18px;font-size:7px}
+  /* c357: preservar cloaker densest no iPhone */
+  #cloaker .showcase-visual{display:none}
+  #cloaker .showcase{display:flex;flex-direction:column;gap:1px;line-height:1}
+  #cloaker .showcase-cta .btn{height:14px;font-size:6.5px;margin:0}
   #como-funciona .mid-cta .btn{height:18px;font-size:7px}
   #problema .mid-cta .btn{height:18px;font-size:7px}
 }
