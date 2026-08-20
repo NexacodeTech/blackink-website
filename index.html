@@ -301,15 +301,15 @@ strong{font-weight:600}
 .mob-tog.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .mob-tog.active span:nth-child(2){opacity:0}
 .mob-tog.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-/* Hero — fit 100vh */
-.hero{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:calc(var(--hdr-h) + 12px) 20px 0;position:relative;overflow:hidden}
+/* Hero — altura pelo conteúdo (c726: 100vh gerava vazio preto) */
+.hero{min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;padding:calc(var(--hdr-h) + 12px) 20px 24px;position:relative;overflow:hidden}
 .hero-mesh{position:absolute;inset:0;pointer-events:none;z-index:0}
 .hero-mesh .m1,.hero-mesh .m2,.hero-mesh .m3{position:absolute;border-radius:50%;filter:blur(80px);opacity:.35}
 .hero-mesh .m1{width:480px;height:480px;background:radial-gradient(circle,rgba(100,180,255,0.35),transparent 70%);top:-10%;left:50%;transform:translateX(-50%)}
 .hero-mesh .m2{width:360px;height:360px;background:radial-gradient(circle,rgba(52,211,153,0.18),transparent 70%);bottom:10%;left:10%}
 .hero-mesh .m3{width:300px;height:300px;background:radial-gradient(circle,rgba(59,130,246,0.2),transparent 70%);bottom:5%;right:8%}
 .hero > *:not(.hero-mesh){position:relative;z-index:1}
-.hero-core{display:flex;flex-direction:column;align-items:center;width:100%;flex:1;justify-content:center;padding-bottom:20px}
+.hero-core{display:flex;flex-direction:column;align-items:center;width:100%;flex:0 1 auto;justify-content:flex-start;padding-bottom:20px}
 .hero-logo{width:48px;height:48px;margin:0 auto 14px;opacity:.95;animation:heroIn .8s var(--ease) both}
 .hero-badge{margin-bottom:14px;animation:heroIn .8s var(--ease) .05s both}
 .hero-badge-inner{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:100px;border:1px solid var(--border);background:rgba(100,180,255,0.05)}
@@ -705,8 +705,8 @@ main{position:relative;z-index:1}
   .hdr-nav .hdr-nav-cta{display:inline-flex;margin-top:8px;justify-content:center;border-bottom:none;width:100%;color:#021018}
   .hdr-cta{display:none}
   .mob-tog{display:flex}
-  .hero{padding:calc(var(--hdr-h) + 2px) 16px 0;justify-content:flex-start;min-height:auto;min-height:100dvh}
-  .hero-core{justify-content:flex-start;padding-top:0;padding-bottom:8px;flex:1}
+  .hero{padding:calc(var(--hdr-h) + 2px) 16px 16px;justify-content:flex-start;min-height:0}
+  .hero-core{justify-content:flex-start;padding-top:0;padding-bottom:8px;flex:0 1 auto}
   /* Ciclo 159/162: edu fold into setup H2 — less mid-funnel fatigue */
   #o-que-e.edu-strip,
   #o-que-e + .sep{display:none}
@@ -1691,7 +1691,8 @@ main{position:relative;z-index:1}
   /* c450 LAST: sticky some com menu aberto (não compete) */
   body:has(.hdr-nav.mob-open) .sticky-cta{transform:translateY(110%);pointer-events:none}
   /* c452 LAST: hero peek — superseded by c492 72px abaixo */
-  #hero{min-height:calc(100vh - 160px);min-height:calc(100dvh - 160px)}
+  /* c726 FIX: sem min-height vh */
+  #hero,.hero{min-height:0!important; /* vence .hero{min-height:100vh} base */}
   /* c453 LAST: scroll cue sob trust-rail → #pricing-lead */
   .hero-scroll-cue{display:flex;padding:4px 10px 8px;font-size:11px;gap:3px}
   .hero-scroll-cue-chevron{width:9px;height:9px}
@@ -1728,7 +1729,8 @@ main{position:relative;z-index:1}
   .hero-ctas{gap:8px;margin-bottom:10px}
   /* c492 LAST: peek 72px — period switcher + lead sob fold */
   /* c496 LAST: peek 96px — CTA Ativar quase inteiro no fold */
-  #hero{min-height:calc(100vh - 160px);min-height:calc(100dvh - 160px)}
+  /* c726 FIX: sem min-height vh */
+  #hero,.hero{min-height:0!important; /* vence .hero{min-height:100vh} base */}
   /* override c452 48px peek — preço-first precisa de mais fold */
   /* c479 LAST: FAQ assure stack gap — micro + CTA sem colar */
   #faq .faq-assure{gap:8px;margin:8px 0 0}
@@ -1763,7 +1765,8 @@ main{position:relative;z-index:1}
   /* c495 LAST: soft one-line densest (ver preço curto) */
   .hero-ctas .btn-o.hero-soft-cta{white-space:nowrap;height:40px;min-height:40px;padding:0 12px;line-height:40px}
   /* c496 LAST: peek 96px — CTA Ativar quase inteiro no fold */
-  #hero{min-height:calc(100vh - 160px);min-height:calc(100dvh - 160px)}
+  /* c726 FIX: sem min-height vh */
+  #hero,.hero{min-height:0!important; /* vence .hero{min-height:100vh} base */}
   /* c497 LAST: comprimir hero chrome pra peek real (conteúdo > min-height) */
   .hero{padding-top:calc(var(--hdr-h) + 6px)}
   .hero-logo{width:28px;height:28px;margin-bottom:4px}
@@ -1780,7 +1783,9 @@ main{position:relative;z-index:1}
   .trust-rail{display:none}
   /* c505 LAST: peek 160px — chips trust full no fold (mobile) */
   /* c556/c575 LAST: peek 300 — assure/risk/toggle full no fold */
-  #hero{min-height:calc(100vh - 300px);min-height:calc(100dvh - 300px)}
+  /* c726 FIX: sem min-height vh — evitava vazio preto no densest */
+  #hero,.hero{min-height:0!important; /* vence .hero{min-height:100vh} base — sem !important o vazio volta */}
+  #hero{justify-content:flex-start;padding-bottom:8px}
   /* c568 LAST: assure first + risk/toggle discoverable (hook some — pricing já cobre) */
   #faq .faq-list{display:flex;flex-direction:column;gap:4px}
   #faq .faq-assure{order:-1;margin:4px 0 0;gap:4px}
@@ -2825,7 +2830,8 @@ main{position:relative;z-index:1}
   .hdr-nav a[href="#pricing-lead"]{font-weight:700;color:var(--white)}
   .hdr-nav .hdr-nav-comecar{display:inline;font-weight:600;color:var(--accent)}
   /* c452–c455 desktop densest */
-  #hero{min-height:calc(100vh - 160px);min-height:calc(100dvh - 160px)}
+  /* c726 FIX: sem min-height vh */
+  #hero,.hero{min-height:0!important; /* vence .hero{min-height:100vh} base */}
   .hero-scroll-cue{display:flex;padding:6px 16px 12px;font-size:12px;gap:4px;color:rgba(100,180,255,0.85);font-weight:700}
   .hero-scroll-cue-chevron{width:10px;height:10px}
   .hero-sub{max-width:48ch}
@@ -2847,7 +2853,8 @@ main{position:relative;z-index:1}
   .hero-scroll-cue{display:none}
   .trust-rail{display:none}
   /* c505/c507: peek 180 — chips trust full no fold desktop */
-  #hero{min-height:calc(100vh - 180px);min-height:calc(100dvh - 180px)}
+  /* c726 FIX: sem min-height vh */
+  #hero,.hero{min-height:0!important; /* vence .hero{min-height:100vh} base */}
   /* c510/c571 LAST: padding inferior — slack pro risk+toggle peek */
   #pricing.section--compact{padding:2px 0 20px}
   /* c511 LAST: sticky morto no densest desktop (path curto) */
@@ -3044,7 +3051,9 @@ main{position:relative;z-index:1}
   /* c538 LAST desktop: chip 26px — margem de fold (slack era 1px) */
   #pricing .pricing-trust-chips li{padding:4px 8px;min-height:26px}
   /* c580/c640/c719 LAST desktop: peek 360 — why payback FULL no fold */
-  #hero{min-height:calc(100vh - 360px);min-height:calc(100dvh - 360px)}
+  /* c726 FIX: sem min-height vh — evitava vazio preto no desktop */
+  #hero,.hero{min-height:0!important; /* vence .hero{min-height:100vh} base */}
+  #hero{justify-content:flex-start;padding-bottom:12px}
   #pricing.section--compact{padding:2px 0 2px}
   #faq .faq-list{display:flex;flex-direction:column;gap:4px}
   #faq .faq-assure{order:-1;margin:4px 0 0;gap:4px}
@@ -3334,7 +3343,8 @@ main{position:relative;z-index:1}
   body:has(.hdr-nav.mob-open) .sticky-cta{transform:translateY(110%);pointer-events:none}
   .hdr-nav .hdr-nav-comecar{display:block;order:1;font-weight:600;color:var(--accent)}
   /* c452–c455 em ≤600 */
-  #hero{min-height:calc(100vh - 160px);min-height:calc(100dvh - 160px)}
+  /* c726 FIX: sem min-height vh */
+  #hero,.hero{min-height:0!important; /* vence .hero{min-height:100vh} base */}
   .hero-scroll-cue{display:flex;padding:2px 10px 6px;font-size:11px;color:rgba(100,180,255,0.85);font-weight:700}
   .hero-sub{font-size:12px;line-height:1.4;max-width:38ch;margin-bottom:12px}
   #comecar .cta-final-title{display:block;font-size:clamp(14px,3.6vw,18px);line-height:1.2;margin:0 0 6px}
@@ -3353,7 +3363,9 @@ main{position:relative;z-index:1}
   .trust-rail{display:none}
   /* c505: peek 160 — chips trust full no fold (mobile) */
   /* c556/c575: peek 300 — assure/risk/toggle full no fold */
-  #hero{min-height:calc(100vh - 300px);min-height:calc(100dvh - 300px)}
+  /* c726 FIX: sem min-height vh — evitava vazio preto no densest */
+  #hero,.hero{min-height:0!important; /* vence .hero{min-height:100vh} base — sem !important o vazio volta */}
+  #hero{justify-content:flex-start;padding-bottom:8px}
   /* c568 LAST: assure first + risk/toggle discoverable (hook some — pricing já cobre) */
   #faq .faq-list{display:flex;flex-direction:column;gap:4px}
   #faq .faq-assure{order:-1;margin:4px 0 0;gap:4px}
@@ -3787,7 +3799,8 @@ main{position:relative;z-index:1}
   body:has(.hdr-nav.mob-open) .sticky-cta{transform:translateY(110%);pointer-events:none}
   .hdr-nav .hdr-nav-comecar{display:block;order:1;font-weight:600;color:var(--accent)}
   /* c452–c455 em ≤480 — period row preservado */
-  #hero{min-height:calc(100vh - 160px);min-height:calc(100dvh - 160px)}
+  /* c726 FIX: sem min-height vh */
+  #hero,.hero{min-height:0!important; /* vence .hero{min-height:100vh} base */}
   .hero-scroll-cue{display:flex;padding:2px 8px 5px;font-size:10px;color:rgba(100,180,255,0.85);font-weight:700}
   .hero-scroll-cue-chevron{width:8px;height:8px}
   .hero-sub{font-size:11px;line-height:1.35;max-width:36ch;margin-bottom:10px}
@@ -3810,7 +3823,9 @@ main{position:relative;z-index:1}
   .trust-rail{display:none}
   /* c505: peek 160 — chips trust full no fold (mobile) */
   /* c556/c575: peek 300 — assure/risk/toggle full no fold */
-  #hero{min-height:calc(100vh - 300px);min-height:calc(100dvh - 300px)}
+  /* c726 FIX: sem min-height vh — evitava vazio preto no densest */
+  #hero,.hero{min-height:0!important; /* vence .hero{min-height:100vh} base — sem !important o vazio volta */}
+  #hero{justify-content:flex-start;padding-bottom:8px}
   /* c568 LAST: assure first + risk/toggle discoverable (hook some — pricing já cobre) */
   #faq .faq-list{display:flex;flex-direction:column;gap:4px}
   #faq .faq-assure{order:-1;margin:4px 0 0;gap:4px}
@@ -4235,7 +4250,8 @@ main{position:relative;z-index:1}
   body:has(.hdr-nav.mob-open) .sticky-cta{transform:translateY(110%);pointer-events:none}
   .hdr-nav .hdr-nav-comecar{display:block;order:1;font-weight:600;color:var(--accent)}
   /* c452–c455 no iPhone */
-  #hero{min-height:calc(100vh - 160px);min-height:calc(100dvh - 160px)}
+  /* c726 FIX: sem min-height vh */
+  #hero,.hero{min-height:0!important; /* vence .hero{min-height:100vh} base */}
   .hero-scroll-cue{display:flex;padding:2px 6px 4px;font-size:10px;color:rgba(100,180,255,0.85);font-weight:700}
   .hero-scroll-cue-chevron{width:8px;height:8px}
   .hero-sub{font-size:11px;line-height:1.3;max-width:34ch;margin-bottom:8px}
@@ -4258,7 +4274,9 @@ main{position:relative;z-index:1}
   .trust-rail{display:none}
   /* c505: peek 160 — chips trust full no fold (mobile) */
   /* c556/c575: peek 300 — assure/risk/toggle full no fold */
-  #hero{min-height:calc(100vh - 300px);min-height:calc(100dvh - 300px)}
+  /* c726 FIX: sem min-height vh — evitava vazio preto no densest */
+  #hero,.hero{min-height:0!important; /* vence .hero{min-height:100vh} base — sem !important o vazio volta */}
+  #hero{justify-content:flex-start;padding-bottom:8px}
   /* c568 LAST: assure first + risk/toggle discoverable (hook some — pricing já cobre) */
   #faq .faq-list{display:flex;flex-direction:column;gap:4px}
   #faq .faq-assure{order:-1;margin:4px 0 0;gap:4px}
