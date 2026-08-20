@@ -592,9 +592,11 @@ strong{font-weight:600}
 .sticky-cta-inner{width:min(1120px,100%);margin:0 auto;display:flex;align-items:center;gap:16px}
 .sticky-cta-text{font-size:14px;color:var(--dim);display:none;flex:1}
 .sticky-cta-text strong{color:var(--white)}
-.sticky-cta .btn-p{height:44px;font-size:14px;border-radius:12px;padding:0 22px}
-.sticky-cta-close{width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--muted);border-radius:8px;transition:color .3s var(--ease)}
-.sticky-cta-close:hover{color:var(--white)}
+.sticky-cta .btn-p{height:44px;font-size:14px;border-radius:12px;padding:0 22px;flex-shrink:0}
+.sticky-cta-close{width:44px;height:44px;min-width:44px;display:flex;align-items:center;justify-content:center;font-size:24px;line-height:1;color:var(--muted);border-radius:10px;transition:color .3s var(--ease),background .3s var(--ease);flex-shrink:0;cursor:pointer}
+.sticky-cta-close:hover{color:var(--white);background:rgba(255,255,255,0.06)}
+.period-switcher{position:relative;z-index:2}
+.period-btn{position:relative;z-index:1;min-height:44px}
 /* Particles light */
 .particles-zone{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
 .bp{position:absolute;bottom:-20px;border-radius:50%;background:rgba(100,180,255,0.35);animation:bpRise var(--dur,100s) linear infinite,bpDrift var(--drift,28s) ease-in-out infinite alternate,bpGlow var(--glow,12s) ease-in-out infinite}
@@ -1337,7 +1339,9 @@ main{position:relative;z-index:1}
 
 // Header scrolled
 const hdr = document.getElementById('hdr');
-window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', scrollY > 40), { passive: true });
+window.addEventListener('scroll', () => {
+    if (hdr) hdr.classList.toggle('scrolled', scrollY > 40);
+}, { passive: true });
 
 // Scroll reveal
 const obs = new IntersectionObserver(entries => {
@@ -1656,6 +1660,49 @@ periodBtns.forEach(btn => {
 updatePlanLinks('monthly');
 updatePricingCtaLabel('monthly');
 
+// Sticky CTA — before ROI so calc errors never block dismiss/period-adjacent UX
+const stickyCta = document.getElementById('sticky-cta');
+const stickyClose = document.getElementById('sticky-cta-close');
+const heroSection = document.getElementById('hero');
+const pricingSection = document.getElementById('pricing');
+const footerSection = document.querySelector('.footer');
+const STICKY_DISMISS_KEY = 'blackink_sticky_cta_dismissed';
+let stickyDismissed = false;
+try { stickyDismissed = localStorage.getItem(STICKY_DISMISS_KEY) === '1'; } catch (_) {}
+let pricingInView = false;
+let footerInView = false;
+
+function syncStickyVisibility() {
+    if (!stickyCta) return;
+    const pastHero = window.scrollY > (heroSection ? heroSection.offsetHeight * 0.7 : 400);
+    const show = !stickyDismissed && pastHero && !pricingInView && !footerInView;
+    stickyCta.classList.toggle('visible', show);
+    stickyCta.setAttribute('aria-hidden', show ? 'false' : 'true');
+}
+
+if (stickyClose) {
+    stickyClose.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        stickyDismissed = true;
+        try { localStorage.setItem(STICKY_DISMISS_KEY, '1'); } catch (_) {}
+        syncStickyVisibility();
+    });
+}
+
+if (pricingSection) {
+    new IntersectionObserver(entries => {
+        entries.forEach(e => { pricingInView = e.isIntersecting; syncStickyVisibility(); });
+    }, { threshold: 0.12 }).observe(pricingSection);
+}
+if (footerSection) {
+    new IntersectionObserver(entries => {
+        entries.forEach(e => { footerInView = e.isIntersecting; syncStickyVisibility(); });
+    }, { threshold: 0.05 }).observe(footerSection);
+}
+window.addEventListener('scroll', syncStickyVisibility, { passive: true });
+syncStickyVisibility();
+
 // ROI calculator
 const calcSlider = document.getElementById('calc-budget');
 const calcDisplay = document.getElementById('calc-display');
@@ -1668,9 +1715,10 @@ const calcMsg = document.getElementById('calc-cta-msg');
 const calcTotalBar = document.getElementById('calc-total-bar');
 const calcRoiBar = document.getElementById('calc-roi-bar');
 
-if (calcSlider) {
+if (calcSlider && calcDisplay && calcInvisible && calcFraud && calcHours && calcTotal && calcRoi) {
     const fmt = v => 'R$ ' + Math.round(v).toLocaleString('pt-BR');
     const animNum = (el, target, prefix, suffix) => {
+        if (!el) return;
         const start = parseFloat(el.dataset.current || '0');
         el.dataset.current = String(target);
         const dur = 420;
@@ -1702,54 +1750,13 @@ if (calcSlider) {
         const maxTotal = 500000 * 0.25;
         if (calcTotalBar) calcTotalBar.style.width = Math.max((total / maxTotal) * 100, 2) + '%';
         if (calcRoiBar) calcRoiBar.style.width = Math.max(Math.min((roi / 15) * 100, 100), 2) + '%';
-        if (val > 0) {
+        if (calcMsg && val > 0) {
             calcMsg.innerHTML = 'Estimativa: até <strong>' + fmt(total) + '/mês</strong> em tráfego inválido. ROI potencial de <strong>' + roi.toFixed(1) + 'x</strong> vs R$ 399,99 — ordem de grandeza, não garantia.';
         }
     };
     calcSlider.addEventListener('input', updateCalc);
     updateCalc();
 }
-
-// Sticky CTA — hide when #pricing or footer in view; persist dismiss
-const stickyCta = document.getElementById('sticky-cta');
-const stickyClose = document.getElementById('sticky-cta-close');
-const heroSection = document.getElementById('hero');
-const pricingSection = document.getElementById('pricing');
-const footerSection = document.querySelector('.footer');
-const STICKY_DISMISS_KEY = 'blackink_sticky_cta_dismissed';
-let stickyDismissed = false;
-try { stickyDismissed = localStorage.getItem(STICKY_DISMISS_KEY) === '1'; } catch (_) {}
-let pricingInView = false;
-let footerInView = false;
-
-function syncStickyVisibility() {
-    if (!stickyCta) return;
-    const pastHero = window.scrollY > (heroSection ? heroSection.offsetHeight * 0.7 : 400);
-    const show = !stickyDismissed && pastHero && !pricingInView && !footerInView;
-    stickyCta.classList.toggle('visible', show);
-    stickyCta.setAttribute('aria-hidden', show ? 'false' : 'true');
-}
-
-if (stickyClose) {
-    stickyClose.addEventListener('click', () => {
-        stickyDismissed = true;
-        try { localStorage.setItem(STICKY_DISMISS_KEY, '1'); } catch (_) {}
-        syncStickyVisibility();
-    });
-}
-
-if (pricingSection) {
-    new IntersectionObserver(entries => {
-        entries.forEach(e => { pricingInView = e.isIntersecting; syncStickyVisibility(); });
-    }, { threshold: 0.12 }).observe(pricingSection);
-}
-if (footerSection) {
-    new IntersectionObserver(entries => {
-        entries.forEach(e => { footerInView = e.isIntersecting; syncStickyVisibility(); });
-    }, { threshold: 0.05 }).observe(footerSection);
-}
-window.addEventListener('scroll', syncStickyVisibility, { passive: true });
-syncStickyVisibility();
 
 })();
 </script>
