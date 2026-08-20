@@ -542,16 +542,17 @@ strong{font-weight:600}
 .period-btn.active{background:rgba(100,180,255,0.1);color:var(--white);box-shadow:0 2px 12px rgba(100,180,255,0.1)}
 .period-discount{font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px;background:rgba(52,211,153,0.15);color:var(--green);letter-spacing:.02em}
 .period-rec{font-size:9px;font-weight:700;padding:2px 6px;border-radius:4px;background:rgba(100,180,255,0.18);color:var(--accent);letter-spacing:.04em;text-transform:uppercase}
-.p-price-wrap{margin-bottom:12px;min-height:64px;display:flex;align-items:center;justify-content:center}
+.p-price-wrap{margin-bottom:10px;min-height:56px;display:flex;align-items:center;justify-content:center}
 .p-price[data-period]{display:none;flex-direction:column;align-items:center}
 .p-price[data-period].active{display:flex}
-.p-curr{font-size:18px;font-weight:600;color:var(--dim);margin-right:4px}
-.p-val{font-family:var(--ff-display);font-size:clamp(40px,6.5vw,52px);font-weight:700;letter-spacing:-0.03em;line-height:1}
-.p-per{font-size:16px;color:var(--dim);font-weight:500}
-.p-monthly-eq{display:block;font-size:12px;color:var(--muted);margin-top:6px}
+.p-curr{font-size:16px;font-weight:600;color:var(--dim);margin-right:4px}
+.p-val{font-family:var(--ff-display);font-size:clamp(36px,5.5vw,48px);font-weight:700;letter-spacing:-0.03em;line-height:1}
+.p-per{font-size:15px;color:var(--dim);font-weight:500}
+.p-monthly-eq{display:block;font-size:11px;color:var(--muted);margin-top:4px;line-height:1.35;max-width:36ch}
 .p-micro{font-size:12px;color:rgba(240,244,248,0.62);margin-top:10px;line-height:1.5}
 .p-micro strong{color:var(--green);font-weight:600}
-.p-save{display:block;font-size:12px;color:var(--green);margin-top:4px;font-weight:500}
+.p-save{display:block;font-size:11px;color:var(--green);margin-top:2px;font-weight:500}
+.p-monthly-eq .p-save{display:inline;margin:0;font-size:inherit}
 .pricing-includes-line{font-size:12px;color:var(--dim);line-height:1.45;margin:0 auto 14px;max-width:42ch}
 .pricing-includes-line span{color:var(--white);font-weight:600}
 /* FAQ — compact (ciclo 45) */
@@ -1033,8 +1034,8 @@ main{position:relative;z-index:1}
                     <p class="period-nudge" id="period-nudge"><button type="button" data-pick-period="quarterly">Escolher trimestral</button> economiza ~R$120 vs mensal — mesmo cloaker, menor custo por mês</p>
                     <div class="p-price-wrap">
                         <div class="p-price active" data-period="monthly"><span class="p-curr">R$</span><span class="p-val">399</span><span class="p-per">,99/mês</span></div>
-                        <div class="p-price" data-period="quarterly"><span class="p-curr">R$</span><span class="p-val">359</span><span class="p-per">,99/mês</span><span class="p-monthly-eq">equivalente mensal · cobrado R$1.079,97 a cada 3 meses</span><span class="p-save">Economia de ~R$120 vs mensal no trimestre</span></div>
-                        <div class="p-price" data-period="yearly"><span class="p-curr">R$</span><span class="p-val">339</span><span class="p-per">,99/mês</span><span class="p-monthly-eq">equivalente mensal · cobrado R$4.079,90 a cada 12 meses</span><span class="p-save">Economia de ~R$720 vs mensal no ano</span></div>
+                        <div class="p-price" data-period="quarterly"><span class="p-curr">R$</span><span class="p-val">359</span><span class="p-per">,99/mês</span><span class="p-monthly-eq">equiv. mensal · cobrado R$1.079,97 / 3 meses · <span class="p-save">−~R$120 vs mensal</span></span></div>
+                        <div class="p-price" data-period="yearly"><span class="p-curr">R$</span><span class="p-val">339</span><span class="p-per">,99/mês</span><span class="p-monthly-eq">equiv. mensal · cobrado R$4.079,90 / ano · <span class="p-save">−~R$720 vs mensal</span></span></div>
                     </div>
                     <p class="pricing-includes-line">Safe + offer · server-side &lt;50ms · 15+ sinais + logs · App + suporte · Payback <span id="pricing-bridge-payback">~1 dia</span></p>
                     <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p btn-full plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
@@ -1083,22 +1084,22 @@ main{position:relative;z-index:1}
 <!-- 9. FAQ -->
 <section class="section section--compact" id="faq" aria-label="Perguntas Frequentes">
     <div class="container">
-        <p class="t-label rv" style="text-align:center;margin-bottom:8px">FAQ</p>
-        <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:20px">Perguntas <span class="grad">frequentes</span></h2>
+        <p class="t-label rv" style="text-align:center;margin-bottom:6px">FAQ</p>
+        <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:14px">Perguntas <span class="grad">frequentes</span></h2>
         <div class="faq-list">
-            <details class="faq-i rv"><summary class="faq-q">Quanto custa e como funciona o pagamento?</summary><div class="faq-a">Produto único a R$ 399,99/mês. Trimestral com ~10% de desconto (R$ 359,99/mês equivalente) e anual com ~15% (R$ 339,99/mês equivalente). PIX ou cartão. Sem contrato de fidelidade — cancele quando quiser.</div></details>
-            <details class="faq-i rv rv-d1" open><summary class="faq-q">O BlackInk se paga? Quanto posso economizar?</summary><div class="faq-a" id="faq-savings-a">Com o budget simulado na <a href="#roi-calc">calculadora</a>, a perda estimada é cerca de <strong id="faq-savings-loss">R$ 12.500</strong>/mês (~25% inválidos+revisores). Cloaker a R$ 399,99 — estimativa, não garantia. Ajuste o slider para o seu caso.</div></details>
-            <details class="faq-i rv rv-d1"><summary class="faq-q">Preciso conectar minha conta de anúncios (OAuth)?</summary><div class="faq-a">Não. Funciona com Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras redes. Cadastre suas páginas, configure regras e use a URL da BlackInk como destino — sem OAuth nem integração com nenhuma rede.</div></details>
-            <details class="faq-i rv rv-d1"><summary class="faq-q">Funciona em quais redes?</summary><div class="faq-a">Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras plataformas de tráfego pago. O fluxo é o mesmo: destino do anúncio aponta para a URL BlackInk.</div></details>
-            <details class="faq-i rv rv-d2"><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">Garantia de 7 dias. Teste a plataforma; se não fizer sentido para suas campanhas, reembolso de 100% — sem letras miúdas.</div></details>
+            <details class="faq-i rv"><summary class="faq-q">Quanto custa e como funciona o pagamento?</summary><div class="faq-a">Produto único a R$ 399,99/mês. Trimestral ~10% off (R$ 359,99/mês equiv.) e anual ~15% (R$ 339,99/mês equiv.). PIX ou cartão · sem fidelidade.</div></details>
+            <details class="faq-i rv rv-d1" open><summary class="faq-q">O BlackInk se paga? Quanto posso economizar?</summary><div class="faq-a" id="faq-savings-a">Com o budget da <a href="#roi-calc">calculadora</a>, a perda estimada é ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês. Cloaker a R$ 399,99 — estimativa, não garantia.</div></details>
+            <details class="faq-i rv rv-d1"><summary class="faq-q">Preciso conectar minha conta de anúncios (OAuth)?</summary><div class="faq-a">Não. Cadastre páginas, configure regras e use a URL BlackInk como destino — Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras · sem OAuth.</div></details>
+            <details class="faq-i rv rv-d2"><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">Garantia de 7 dias · reembolso 100% se não fizer sentido para suas campanhas.</div></details>
             <div class="faq-more" id="faq-more">
-                <details class="faq-i"><summary class="faq-q">Como configuro o BlackInk?</summary><div class="faq-a">Cadastre safe page e offer page (ou use BlackInk Clone), configure regras de filtragem e aponte o destino do anúncio para a URL da BlackInk. Setup típico em cerca de 15 minutos — sem OAuth.</div></details>
-                <details class="faq-i"><summary class="faq-q">O que é um cloaker?</summary><div class="faq-a">Camada server-side entre o clique do anúncio e a página final. Cada visitante é analisado; bots, VPNs e revisores recebem safe page, e tráfego qualificado recebe offer page — sem script na sua hospedagem.</div></details>
-                <details class="faq-i"><summary class="faq-q">O que é safe page e offer page?</summary><div class="faq-a">Safe page é servida a bots, revisores e tráfego inválido — conteúdo compliant. Offer page (money page) é servida apenas a visitantes qualificados. Ambas ficam cadastradas na plataforma; o roteamento ocorre server-side em menos de 50ms.</div></details>
-                <details class="faq-i"><summary class="faq-q">Já uso outro cloaker. É difícil migrar?</summary><div class="faq-a">Não. Cadastre suas páginas (ou use BlackInk Clone para clonar a estrutura), ajuste as regras e troque a URL de destino do anúncio. A maioria finaliza em menos de 30 minutos.</div></details>
-                <details class="faq-i"><summary class="faq-q">Qual a diferença do BlackInk para outros cloakers?</summary><div class="faq-a">Comparado a scripts client-side e redirects simples, BlackInk é SaaS server-side com URL própria, decision logs, sem PHP no seu host, suporte BR e preço único (R$ 399,99/mês).</div></details>
-                <details class="faq-i"><summary class="faq-q">O BlackInk é um tracker?</summary><div class="faq-a">Não. BlackInk é cloaker server-side: controla quem vê safe page ou offer page. Não vende tracker, pixel de conversão ou atribuição como produto.</div></details>
-                <details class="faq-i"><summary class="faq-q">Como falo com o suporte?</summary><div class="faq-a">Por e-mail em <a href="mailto:suporte@theblack.ink">suporte@theblack.ink</a> e por ticket/chat dentro da plataforma. Assistência gratuita na configuração inicial.</div></details>
+                <details class="faq-i"><summary class="faq-q">Funciona em quais redes?</summary><div class="faq-a">Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras. Destino do anúncio = URL BlackInk.</div></details>
+                <details class="faq-i"><summary class="faq-q">Como configuro o BlackInk?</summary><div class="faq-a">Cadastre safe/offer (ou BlackInk Clone), configure regras e aponte o anúncio para a URL BlackInk. Setup típico ~15 min — sem OAuth.</div></details>
+                <details class="faq-i"><summary class="faq-q">O que é um cloaker?</summary><div class="faq-a">Camada server-side entre o clique e a página final: bots/VPNs/revisores veem safe page; tráfego qualificado vê offer page.</div></details>
+                <details class="faq-i"><summary class="faq-q">O que é safe page e offer page?</summary><div class="faq-a">Safe page para tráfego inválido (compliant). Offer page só para quem passa no filtro. Roteamento server-side &lt;50ms.</div></details>
+                <details class="faq-i"><summary class="faq-q">Já uso outro cloaker. É difícil migrar?</summary><div class="faq-a">Cadastre páginas (ou Clone), ajuste regras e troque a URL de destino. Maioria em &lt;30 min.</div></details>
+                <details class="faq-i"><summary class="faq-q">Qual a diferença do BlackInk para outros cloakers?</summary><div class="faq-a">SaaS server-side com URL própria, decision logs, sem PHP no seu host, suporte BR e preço único R$ 399,99/mês.</div></details>
+                <details class="faq-i"><summary class="faq-q">O BlackInk é um tracker?</summary><div class="faq-a">Não. É cloaker server-side (safe vs offer). Não vende tracker nem pixel de atribuição.</div></details>
+                <details class="faq-i"><summary class="faq-q">Como falo com o suporte?</summary><div class="faq-a">E-mail <a href="mailto:suporte@theblack.ink">suporte@theblack.ink</a> e ticket/chat na plataforma. Assistência gratuita no setup inicial.</div></details>
             </div>
             <button type="button" class="faq-more-toggle" id="faq-more-toggle" aria-expanded="false" aria-controls="faq-more">Ver mais perguntas</button>
         </div>
@@ -1532,8 +1533,9 @@ function maybeAutoQuarterlyFromLoss() {
 function updatePricingCtaLabel(period) {
     const label = PRICING_CTA_LABELS[period] || PRICING_CTA_LABELS.monthly;
     document.querySelectorAll('.pricing-cta').forEach(btn => { btn.textContent = label; });
+    // Hero keeps list price R$399,99 for anchoring (ciclo 55) — discount lives in #pricing/sticky
     const heroCta = document.querySelector('.hero-cta');
-    if (heroCta) heroCta.textContent = HERO_CTA_LABELS[period] || HERO_CTA_LABELS.monthly;
+    if (heroCta) heroCta.textContent = HERO_CTA_LABELS.monthly;
     const stickyBtn = document.getElementById('sticky-cta-btn');
     if (stickyBtn) stickyBtn.textContent = STICKY_BTN[period] || STICKY_BTN.monthly;
     const nudge = document.getElementById('period-nudge');
