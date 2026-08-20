@@ -353,11 +353,11 @@ strong{font-weight:600}
 .obj-a{font-size:11px;color:var(--dim);line-height:1.45}
 .mid-cta{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px;margin-top:28px}
 .mid-cta--soft{margin-top:14px}
-/* Education — definição em rail (ciclo 30) */
-.edu-strip{padding:clamp(28px,4vh,48px) 0;text-align:center}
-.edu-strip .t-lg{margin:8px auto 10px;max-width:520px}
-.edu-strip .t-body-lg{margin:0 auto 18px;max-width:440px;font-size:clamp(14px,1.5vw,16px)}
-.edu-rail{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:720px;margin:0 auto}
+/* Education — denser rail (ciclo 64) */
+.edu-strip{padding:clamp(22px,3.2vh,40px) 0;text-align:center}
+.edu-strip .t-lg{margin:6px auto 8px;max-width:480px}
+.edu-strip .t-body-lg{margin:0 auto 12px;max-width:400px;font-size:clamp(13px,1.4vw,15px)}
+.edu-rail{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:680px;margin:0 auto}
 .edu-pill{padding:14px 16px;border-radius:12px;border:1px solid var(--border);background:rgba(6,17,31,0.65);text-align:left}
 .edu-pill--safe{border-color:rgba(100,180,255,0.16)}
 .edu-pill--offer{border-color:rgba(52,211,153,0.2)}
@@ -640,6 +640,9 @@ main{position:relative;z-index:1}
   #como-funciona .t-body-lg{font-size:13px}
   #como-funciona .setup-step{padding:12px}
   #como-funciona .mid-cta .btn-o{display:none}
+  #problema .mid-cta .btn-o{display:none}
+  #problema .mid-cta{margin-top:10px}
+  #pricing.section--compact{padding:clamp(28px,4vh,48px) 0}
   .flow-pillars{grid-template-columns:1fr 1fr}
   .showcase{grid-template-columns:1fr;gap:18px}
   #cloaker.section--compact{padding:clamp(28px,4vh,48px) 0}
@@ -1507,9 +1510,9 @@ const STICKY_BTN = {
 };
 
 const PERIOD_NUDGE = {
-    monthly: '<button type="button" data-pick-period="quarterly">Escolher trimestral</button> economiza ~R$120 vs mensal — mesmo cloaker, menor custo por mês',
-    quarterly: 'Boa escolha: ~10% a menos vs mensal · cobrado R$1.079,97 a cada 3 meses',
-    yearly: 'Máxima economia: ~15% a menos vs mensal · cobrado R$4.079,90 no ano'
+    monthly: '<button type="button" data-pick-period="quarterly">Escolher trimestral</button> −~R$120 vs mensal — mesmo cloaker',
+    quarterly: '−10% vs mensal · cobrado R$1.079,97 / 3 meses',
+    yearly: '−15% vs mensal · cobrado R$4.079,90 / ano'
 };
 
 let lastCalcLossFmt = null;
@@ -1521,13 +1524,13 @@ function periodNudgeHtml(period) {
     period = period || 'monthly';
     if (period === 'monthly' && lastCalcLossValue > 0) {
         const vsPlan = Math.max(1, Math.round(lastCalcLossValue / 399.99));
-        return '<button type="button" data-pick-period="quarterly">Escolher trimestral</button> economiza ~R$120 vs mensal — sua perda estimada é <strong>' + lastCalcLossFmt + '</strong>/mês (~' + vsPlan + '× o cloaker)';
+        return '<button type="button" data-pick-period="quarterly">Escolher trimestral</button> −~R$120 vs mensal · perda ~<strong>' + lastCalcLossFmt + '</strong>/mês (~' + vsPlan + '× o cloaker)';
     }
     if (period === 'quarterly' && lastCalcLossFmt) {
-        return 'Boa escolha: ~10% a menos vs mensal · sua perda estimada continua ~<strong>' + lastCalcLossFmt + '</strong>/mês sem cloaker';
+        return '−10% vs mensal · vs ~<strong>' + lastCalcLossFmt + '</strong>/mês sem cloaker';
     }
     if (period === 'yearly' && lastCalcLossFmt) {
-        return 'Máxima economia: ~15% a menos vs mensal · vs ~<strong>' + lastCalcLossFmt + '</strong>/mês de cliques inválidos estimados';
+        return '−15% vs mensal · vs ~<strong>' + lastCalcLossFmt + '</strong>/mês sem cloaker';
     }
     return PERIOD_NUDGE[period] || PERIOD_NUDGE.monthly;
 }
