@@ -1804,8 +1804,8 @@ main{position:relative;z-index:1}
   /* c554 LAST: redes-buy some — CTA preço já no fold (evita CTA duplicado) */
   #redes .redes-buy{display:none}
   #redes .redes-buy-cta{height:40px;min-height:40px;font-size:13px;padding:0 14px}
-  /* c565 LAST: why one-liner após FAQ — prova SaaS no mid-funnel */
-  #redes .redes-why{display:block;margin:6px auto 0;font-size:11px;line-height:1.35;color:var(--dim);max-width:42ch}
+  /* c565/c587 LAST: why one-liner após FAQ — prova SaaS no mid-funnel */
+  #redes .redes-why{display:block;margin:8px auto 0;font-size:12px;line-height:1.35;color:var(--dim);max-width:44ch;font-weight:500}
   #redes .redes-why strong,#redes .redes-why .grad{color:var(--white);font-weight:700}
   /* c527/c568: faq-a só quando [open] — evita override UA em details fechado */
   #faq .faq-i:not([open]) .faq-a{display:none}
@@ -1872,6 +1872,8 @@ main{position:relative;z-index:1}
   #faq .faq-more-toggle{min-height:32px;padding:6px 12px;font-size:11px;font-weight:600;color:var(--white);border-color:rgba(100,180,255,0.28);opacity:1}
   /* c537 LAST: chip Garantia tap ≥28px (slack fold ~18px) */
   #pricing .pricing-trust-chips li{padding:5px 8px;min-height:28px;align-items:center}
+  /* c586 LAST: primeiro chip redes pulsa 1× — prova multi-rede pós-FAQ */
+  #redes .network-chip:first-child{animation:chipTrustPulse 2.2s var(--ease) 1 1.4s both}
 }
 
 @media (min-width:768px){
@@ -2737,8 +2739,8 @@ main{position:relative;z-index:1}
   /* c554 LAST: redes-buy some — CTA preço já no fold (evita CTA duplicado) */
   #redes .redes-buy{display:none}
   #redes .redes-buy-cta{height:40px;min-height:40px;font-size:13px;padding:0 14px}
-  /* c565 LAST: why one-liner após FAQ — prova SaaS no mid-funnel */
-  #redes .redes-why{display:block;margin:6px auto 0;font-size:11px;line-height:1.35;color:var(--dim);max-width:42ch}
+  /* c565/c587 LAST: why one-liner após FAQ — prova SaaS no mid-funnel */
+  #redes .redes-why{display:block;margin:8px auto 0;font-size:12px;line-height:1.35;color:var(--dim);max-width:44ch;font-weight:500}
   #redes .redes-why strong,#redes .redes-why .grad{color:var(--white);font-weight:700}
   /* c527/c568: faq-a só quando [open] — evita override UA em details fechado */
   #faq .faq-i:not([open]) .faq-a{display:none}
@@ -2805,6 +2807,8 @@ main{position:relative;z-index:1}
   #faq .faq-more-toggle{min-height:32px;padding:6px 12px;font-size:11px;font-weight:600;color:var(--white);border-color:rgba(100,180,255,0.28);opacity:1}
   /* c537 LAST: chip Garantia tap ≥28px (slack fold ~18px) */
   #pricing .pricing-trust-chips li{padding:5px 8px;min-height:28px;align-items:center}
+  /* c586 LAST: primeiro chip redes pulsa 1× — prova multi-rede pós-FAQ */
+  #redes .network-chip:first-child{animation:chipTrustPulse 2.2s var(--ease) 1 1.4s both}
   /* c538 LAST desktop: chip 26px — margem de fold (slack era 1px) */
   #pricing .pricing-trust-chips li{padding:4px 8px;min-height:26px}
   /* c580 LAST desktop: FAQ discoverable (risk+toggle) + peek pro assure no fold */
@@ -3102,8 +3106,8 @@ main{position:relative;z-index:1}
   /* c554 LAST: redes-buy some — CTA preço já no fold (evita CTA duplicado) */
   #redes .redes-buy{display:none}
   #redes .redes-buy-cta{height:40px;min-height:40px;font-size:13px;padding:0 14px}
-  /* c565 LAST: why one-liner após FAQ — prova SaaS no mid-funnel */
-  #redes .redes-why{display:block;margin:6px auto 0;font-size:11px;line-height:1.35;color:var(--dim);max-width:42ch}
+  /* c565/c587 LAST: why one-liner após FAQ — prova SaaS no mid-funnel */
+  #redes .redes-why{display:block;margin:8px auto 0;font-size:12px;line-height:1.35;color:var(--dim);max-width:44ch;font-weight:500}
   #redes .redes-why strong,#redes .redes-why .grad{color:var(--white);font-weight:700}
   /* c527/c568: faq-a só quando [open] — evita override UA em details fechado */
   #faq .faq-i:not([open]) .faq-a{display:none}
@@ -3170,6 +3174,8 @@ main{position:relative;z-index:1}
   #faq .faq-more-toggle{min-height:32px;padding:6px 12px;font-size:11px;font-weight:600;color:var(--white);border-color:rgba(100,180,255,0.28);opacity:1}
   /* c537 LAST: chip Garantia tap ≥28px (slack fold ~18px) */
   #pricing .pricing-trust-chips li{padding:5px 8px;min-height:28px;align-items:center}
+  /* c586 LAST: primeiro chip redes pulsa 1× — prova multi-rede pós-FAQ */
+  #redes .network-chip:first-child{animation:chipTrustPulse 2.2s var(--ease) 1 1.4s both}
 }
 
 @media (max-width:500px){
@@ -3438,8 +3444,8 @@ main{position:relative;z-index:1}
   /* c554 LAST: redes-buy some — CTA preço já no fold (evita CTA duplicado) */
   #redes .redes-buy{display:none}
   #redes .redes-buy-cta{height:40px;min-height:40px;font-size:13px;padding:0 14px}
-  /* c565 LAST: why one-liner após FAQ — prova SaaS no mid-funnel */
-  #redes .redes-why{display:block;margin:6px auto 0;font-size:11px;line-height:1.35;color:var(--dim);max-width:42ch}
+  /* c565/c587 LAST: why one-liner após FAQ — prova SaaS no mid-funnel */
+  #redes .redes-why{display:block;margin:8px auto 0;font-size:12px;line-height:1.35;color:var(--dim);max-width:44ch;font-weight:500}
   #redes .redes-why strong,#redes .redes-why .grad{color:var(--white);font-weight:700}
   /* c527/c568: faq-a só quando [open] — evita override UA em details fechado */
   #faq .faq-i:not([open]) .faq-a{display:none}
@@ -3506,6 +3512,8 @@ main{position:relative;z-index:1}
   #faq .faq-more-toggle{min-height:32px;padding:6px 12px;font-size:11px;font-weight:600;color:var(--white);border-color:rgba(100,180,255,0.28);opacity:1}
   /* c537 LAST: chip Garantia tap ≥28px (slack fold ~18px) */
   #pricing .pricing-trust-chips li{padding:5px 8px;min-height:28px;align-items:center}
+  /* c586 LAST: primeiro chip redes pulsa 1× — prova multi-rede pós-FAQ */
+  #redes .network-chip:first-child{animation:chipTrustPulse 2.2s var(--ease) 1 1.4s both}
 }
 
 @media (max-width:390px){
@@ -3765,8 +3773,8 @@ main{position:relative;z-index:1}
   /* c554 LAST: redes-buy some — CTA preço já no fold (evita CTA duplicado) */
   #redes .redes-buy{display:none}
   #redes .redes-buy-cta{height:40px;min-height:40px;font-size:13px;padding:0 14px}
-  /* c565 LAST: why one-liner após FAQ — prova SaaS no mid-funnel */
-  #redes .redes-why{display:block;margin:6px auto 0;font-size:11px;line-height:1.35;color:var(--dim);max-width:42ch}
+  /* c565/c587 LAST: why one-liner após FAQ — prova SaaS no mid-funnel */
+  #redes .redes-why{display:block;margin:8px auto 0;font-size:12px;line-height:1.35;color:var(--dim);max-width:44ch;font-weight:500}
   #redes .redes-why strong,#redes .redes-why .grad{color:var(--white);font-weight:700}
   /* c527/c568: faq-a só quando [open] — evita override UA em details fechado */
   #faq .faq-i:not([open]) .faq-a{display:none}
@@ -3833,11 +3841,13 @@ main{position:relative;z-index:1}
   #faq .faq-more-toggle{min-height:32px;padding:6px 12px;font-size:11px;font-weight:600;color:var(--white);border-color:rgba(100,180,255,0.28);opacity:1}
   /* c537 LAST: chip Garantia tap ≥28px (slack fold ~18px) */
   #pricing .pricing-trust-chips li{padding:5px 8px;min-height:28px;align-items:center}
+  /* c586 LAST: primeiro chip redes pulsa 1× — prova multi-rede pós-FAQ */
+  #redes .network-chip:first-child{animation:chipTrustPulse 2.2s var(--ease) 1 1.4s both}
 }
 
 @media (prefers-reduced-motion:reduce){
   .rv{opacity:1;transform:none}
-  .bp,.hero-logo,.hero-badge,.hero-title,.hero-sub,.hero-ctas,.hero-trust,.prot-sim-pulse,.prot-sim-feed-live::before,.hero-badge-dot,.hero-scroll-cue,.hero-scroll-cue-chevron,#pricing .pricing-trust-chips li:first-child,.hero-ctas .btn-o.hero-soft-cta,#pricing .period-btn.active .period-rec,#faq .faq-assure a.faq-inline-cta--price{animation:none}
+  .bp,.hero-logo,.hero-badge,.hero-title,.hero-sub,.hero-ctas,.hero-trust,.prot-sim-pulse,.prot-sim-feed-live::before,.hero-badge-dot,.hero-scroll-cue,.hero-scroll-cue-chevron,#pricing .pricing-trust-chips li:first-child,.hero-ctas .btn-o.hero-soft-cta,#pricing .period-btn.active .period-rec,#faq .faq-assure a.faq-inline-cta--price,#redes .network-chip:first-child{animation:none}
   .pricing-reveal-inner.pricing-focus{animation:none}
 }
 
