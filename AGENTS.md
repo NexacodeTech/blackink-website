@@ -144,3 +144,8 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Contexto**: ciclos de conversão na landing cloaker multiplataforma.
 **Regra**: CTA hard nos beats de dor/decisão; FAQ lidera com preço/OAuth/redes/garantia (`open` no preço); prova ao vivo em PT; sem mid-CTA redundante após showcase; login unificado `app.theblack.ink`.
 **Status**: ativo
+
+## 2026-08-20 — Sticky mobile com preço + ROI payback
+**Contexto**: no mobile o sticky escondia o preço (`sticky-cta-text` só ≥768px); ROI não amarrava perda ao payback do plano.
+**Regra**: sticky mobile mostra preço curto + CTA com valor; trimestral marcado “Recomendado”; ROI message inclui dias de payback estimado; ponte `#pricing` após calculadora; FAQ outro com e-mail.
+**Status**: ativo
