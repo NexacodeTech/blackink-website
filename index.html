@@ -1421,8 +1421,17 @@ main{position:relative;z-index:1}
   /* c389 LAST: FAQ assure micro-close */
   #faq{padding:0;margin:0}
   #faq .faq-assure{font-size:5px;margin:0;padding:0}
+  /* c390 LAST: cloaker some — pricing CTA único no densest buy-path */
+  #cloaker{display:none}
+  #cloaker + .sep{display:none}
+  /* c391 LAST: footer densest — só razão social */
+  .footer{padding:2px 0;line-height:1}
+  .footer .f-brand,.footer .f-grid,.footer .f-links{display:none}
+  .f-bottom{margin:0;padding:0;gap:0;line-height:1;font-size:4px}
+  /* c392 LAST: pricing switcher chrome 0 */
+  #pricing .period-toggle,#pricing .period-switcher{margin:0;padding:0;border:none;background:transparent;gap:1px;line-height:1}
+  #pricing .pricing-reveal-inner,#pricing .pricing-reveal-block,#pricing .pricing-narrative{margin:0;padding:0;gap:0;line-height:1}
 }
-
 @media (min-width:768px){
   .sticky-cta-text{display:block}
   .sticky-cta-price{display:none}
@@ -2116,6 +2125,14 @@ main{position:relative;z-index:1}
   #pricing .period-btn{min-height:6px;font-size:3px;padding:0;line-height:1}
   #pricing.section--compact,#cloaker.section--compact,#faq.section--compact,#comecar.cta-final{padding:0}
   #faq .faq-assure{font-size:5px;margin:0;padding:0}
+  /* c390–c392 desktop densest */
+  #cloaker{display:none}
+  #cloaker + .sep{display:none}
+  .footer{padding:2px 0;line-height:1}
+  .footer .f-brand,.footer .f-grid,.footer .f-links{display:none}
+  .f-bottom{margin:0;padding:0;gap:0;line-height:1;font-size:4px}
+  #pricing .period-toggle,#pricing .period-switcher{margin:0;padding:0;border:none;background:transparent;gap:1px;line-height:1}
+  #pricing .pricing-reveal-inner,#pricing .pricing-reveal-block,#pricing .pricing-narrative{margin:0;padding:0;gap:0;line-height:1}
 }
 
 @media (max-width:640px){
@@ -2227,6 +2244,8 @@ main{position:relative;z-index:1}
   #roi-calc{display:none}
   #como-funciona{display:none}
   #cloaker .showcase-cta .btn,#pricing .btn-full,#comecar .pricing-cta{height:8px;font-size:5px;margin:0}
+  /* c390: preservar cloaker hidden densest em ≤600 */
+  #cloaker{display:none}
 }
 @media (max-width:500px){
   .flow-pillars{grid-template-columns:1fr}
@@ -2328,6 +2347,8 @@ main{position:relative;z-index:1}
   #roi-calc{display:none}
   #como-funciona{display:none}
   #cloaker .showcase-cta .btn,#pricing .btn-full,#comecar .pricing-cta{height:8px;font-size:5px;margin:0}
+  /* c390: preservar cloaker hidden densest em ≤480 */
+  #cloaker{display:none}
 }
 @media (max-width:390px){
   .hero-logo{width:32px;height:32px}
@@ -2418,6 +2439,8 @@ main{position:relative;z-index:1}
   #roi-calc{display:none}
   #como-funciona{display:none}
   #cloaker .showcase-cta .btn,#pricing .btn-full,#comecar .pricing-cta{height:8px;font-size:5px;margin:0}
+  /* c390: preservar cloaker hidden densest no iPhone */
+  #cloaker{display:none}
   #como-funciona .mid-cta .btn{height:18px;font-size:7px}
   #problema .mid-cta .btn{height:18px;font-size:7px}
 }
@@ -3184,8 +3207,8 @@ const PRICING_CTA_LABELS = {
 };
 const HERO_CTA_LABELS = {
     monthly: 'Ativar — R$399,99/mês',
-    quarterly: 'Ativar — R$399,99/mês',
-    yearly: 'Ativar — R$399,99/mês'
+    quarterly: 'Ativar −10% — R$359,99/mês',
+    yearly: 'Ativar −15% — R$339,99/mês'
 };
 const STICKY_PRICE = {
     monthly: 'R$ 399,99/mês',
@@ -3272,9 +3295,9 @@ function updatePricingCtaLabel(period) {
     // Ciclo 326: p-micro confirma desconto ativo no período
     const micro = document.querySelector('#pricing .p-micro');
     if (micro) micro.innerHTML = P_MICRO_HTML[period] || P_MICRO_HTML.monthly;
-    // Hero keeps list price R$399,99 for anchoring (ciclo 55) — discount lives in #pricing/sticky
+    // Hero mirrors period after auto-trimestral (c390) — monthly still anchors R$399,99
     const heroCta = document.querySelector('.hero-cta');
-    if (heroCta) heroCta.textContent = HERO_CTA_LABELS.monthly;
+    if (heroCta) heroCta.textContent = HERO_CTA_LABELS[period] || HERO_CTA_LABELS.monthly;
     const stickyBtn = document.getElementById('sticky-cta-btn');
     if (stickyBtn) stickyBtn.textContent = STICKY_BTN[period] || STICKY_BTN.monthly;
     const nudge = document.getElementById('period-nudge');
