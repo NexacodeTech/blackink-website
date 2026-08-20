@@ -1210,6 +1210,11 @@ main{position:relative;z-index:1}
   #pricing .period-btn{min-height:14px;padding:0;font-size:5.5px}
   #pricing .btn-full{height:18px;font-size:7.5px}
   #pricing .p-micro{font-size:5px;line-height:1;margin:0}
+  /* c349: mata gap 6px preço→CTA + strut do reveal-inner */
+  #pricing .pricing-reveal-inner{line-height:1;padding:0;margin:0;display:flex;flex-direction:column;gap:0;align-items:stretch}
+  #pricing .btn-full{margin:0;margin-top:0}
+  #pricing .p-price-wrap{margin:0;padding:0}
+  #pricing .p-micro{margin:0;padding:0}
   /* c342: ROI slider-wrap — mata strut line-height + thumb 18px (~19px waste) */
   #roi-calc .calc-slider-wrap{line-height:1;display:flex;flex-direction:column;gap:1px}
   #roi-calc .calc-slider-header{line-height:1;margin:0;gap:2px}
@@ -1700,7 +1705,8 @@ main{position:relative;z-index:1}
   #pricing .period-toggle{line-height:1;margin:0}
   #pricing .period-switcher{border:none;background:transparent;line-height:1;padding:0}
   #pricing .period-btn{min-height:14px;font-size:5.5px;padding:0}
-  #pricing .btn-full{height:16px;font-size:7px}
+  #pricing .btn-full{height:16px;font-size:7px;margin:0}
+  #pricing .pricing-reveal-inner{line-height:1;display:flex;flex-direction:column;gap:0;padding:0}
   /* Ciclo 321: chips fio + preço denso desktop densest */
   #pricing .p-curr,#pricing .p-per{font-size:6px;line-height:1}
   /* c345: chips somem — p-micro já carrega Ativar −10% · 7 dias */
@@ -1805,7 +1811,9 @@ main{position:relative;z-index:1}
   #pricing .period-toggle{line-height:1;margin:0}
   #pricing .period-switcher{border:none;background:transparent;line-height:1}
   #pricing .period-btn{min-height:14px;flex-direction:row;align-items:center;gap:2px}
-  #pricing .btn-full{height:18px;font-size:7.5px}
+  #pricing .btn-full{height:18px;font-size:7.5px;margin:0}
+  /* c349: flex column no reveal — sem strut anônimo */
+  #pricing .pricing-reveal-inner{line-height:1;display:flex;flex-direction:column;gap:0;padding:0}
   /* c329: nudge mensal visível no densest (JS hidden nos outros períodos) */
   #pricing .period-nudge{display:none;font-size:5px;margin:0;line-height:1.1;text-align:center}
   #pricing .period-nudge:not([hidden]){display:block}
@@ -1845,7 +1853,8 @@ main{position:relative;z-index:1}
   #pricing .period-toggle{line-height:1;margin:0}
   #pricing .period-switcher{border:none;background:transparent}
   #pricing .period-btn{min-height:14px;flex-direction:row;align-items:center;gap:2px}
-  #pricing .btn-full{height:18px;font-size:7.5px}
+  #pricing .btn-full{height:18px;font-size:7.5px;margin:0}
+  #pricing .pricing-reveal-inner{line-height:1;display:flex;flex-direction:column;gap:0;padding:0}
   #pricing .pricing-trust-chips{display:none}
   #pricing .period-nudge{display:none;font-size:5px;margin:0;line-height:1.1;text-align:center}
   #pricing .period-nudge:not([hidden]){display:block}
@@ -1879,7 +1888,8 @@ main{position:relative;z-index:1}
   #pricing .period-toggle{line-height:1;margin:0}
   #pricing .period-switcher{border:none;background:transparent}
   #pricing .period-btn{min-height:14px;flex-direction:row;align-items:center;gap:2px}
-  #pricing .btn-full{height:18px;font-size:7.5px}
+  #pricing .btn-full{height:18px;font-size:7.5px;margin:0}
+  #pricing .pricing-reveal-inner{line-height:1;display:flex;flex-direction:column;gap:0;padding:0}
   #pricing .pricing-trust-chips{display:none}
   #pricing .period-nudge{display:none;font-size:5px;margin:0;line-height:1.1;text-align:center}
   #pricing .period-nudge:not([hidden]){display:block}
