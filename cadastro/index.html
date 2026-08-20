@@ -151,6 +151,7 @@
         box-shadow:0 0 0 1px rgba(52,211,153,0.2),0 6px 18px rgba(52,211,153,0.12);font-weight:600}
         .cadastro-garantia-banner.is-on{display:block;animation:garantiaBannerPulse 2.2s var(--ease) 1}
         .cadastro-garantia-banner strong{color:var(--green);font-weight:700}
+        #cadastroLossHint strong{color:var(--white);font-weight:700}
         /* c563: submit reforça path garantia */
         body.intent-garantia #submitBtn{
             box-shadow:0 0 0 2px rgba(52,211,153,0.55),0 8px 24px rgba(52,211,153,0.28);
@@ -714,10 +715,10 @@
         if (trustEl) trustEl.innerHTML = '<strong>Garantia 7 dias</strong> · 100% · PIX · cancele quando quiser';
         // c467: loss hint com valor real quando veio da landing
         if (lossHint) {
-            // c599: valor da perda no hint — ancora ROI do funnel
-            lossHint.textContent = lossFmt
-                ? ('vs perda ' + lossFmt + '/mês · ~1 dia = 1 mês · ' + garantiaVerb)
-                : ('~1 dia = 1 mês · Garantia 7 dias · ' + garantiaVerb);
+            // c599/c636: perda + payback em strong — ancora ROI do funnel
+            lossHint.innerHTML = lossFmt
+                ? ('vs perda <strong>' + lossFmt + '</strong>/mês · <strong>~1 dia = 1 mês</strong> · ' + garantiaVerb)
+                : ('<strong>~1 dia = 1 mês</strong> · Garantia 7 dias · ' + garantiaVerb);
         }
         if (submitTrust) {
             submitTrust.innerHTML = document.body.classList.contains('intent-garantia')
@@ -730,7 +731,8 @@
         if (stickyTrust) stickyTrust.innerHTML = '<strong>Garantia 7 dias</strong> · 100% · ' + garantiaVerb.replace('Ativar com garantia','Com garantia');
         // c563: sticky também herda ring no path garantia
         if (document.body.classList.contains('intent-garantia') && stickyBtn) {
-            stickyBtn.style.boxShadow = '0 0 0 1px rgba(52,211,153,0.35),0 4px 20px rgba(100,180,255,0.2)';
+            // c635: ring paridade com #submitBtn garantia
+            stickyBtn.style.boxShadow = '0 0 0 2px rgba(52,211,153,0.55),0 8px 24px rgba(52,211,153,0.28)';
         }
         // c482/c515: sidebar subtitle sync período + preço do período
         const periodPrice = period === 'yearly' ? 'R$339,99' : (period === 'quarterly' ? 'R$359,99' : 'R$399,99');
