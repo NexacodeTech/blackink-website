@@ -112,7 +112,7 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 
 ## 2026-08-20 — Compressão educação/setup (scroll)
 **Contexto**: `#o-que-e` + pilares em `#como-funciona` repetiam safe/offer e features do showcase.
-**Regra**: educação enxuta (copy curta, sem soft-CTA); setup compacto com steps+fluxo+CTA hard; pilares removidos (prova/showcase carrega os detalhes).
+**Regra**: educação enxuta (rail Safe/Offer); setup/fluxo compactos + soft CTA → `#roi-calc`; pilares removidos (prova/showcase carrega detalhes).
 **Status**: ativo
 
 ## 2026-08-20 — Cadastro: troca de periodicidade inline
