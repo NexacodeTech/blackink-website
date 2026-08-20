@@ -1129,6 +1129,12 @@ main{position:relative;z-index:1}
   #pricing .p-curr,#pricing .p-per{font-size:7px;line-height:1}
   #pricing .p-val{font-size:clamp(12px,3.6vw,16px)}
   #pricing .pricing-lead{margin:0 0 1px;line-height:1.15;font-size:5px}
+  /* Ciclo 322: ROI densest + FAQ assure — reaproveita altura do preço */
+  #roi-calc .calc-summary-val{font-size:8px;line-height:1.05}
+  #roi-calc .calc-cta .btn{height:26px;font-size:9px}
+  #faq .faq-assure{font-size:6.5px;line-height:1.15;margin:2px 0 0}
+  #faq .faq-q{padding:1px 3px;font-size:6px}
+  #faq .faq-a{padding:1px 3px 2px;font-size:5.5px;line-height:1.15}
 }
 @media (min-width:768px){
   .sticky-cta-text{display:block}
@@ -2100,7 +2106,7 @@ main{position:relative;z-index:1}
         <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:4px">Dúvidas · <span class="grad">~1 dia · 7 dias</span></h2>
         <div class="faq-list">
             <details class="faq-i rv rv-d1" open><summary class="faq-q">Se paga em ~1 dia?</summary><div class="faq-a" id="faq-savings-a">Perda ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês · ~<strong id="faq-savings-payback">1 dia</strong> = 1 mês · 7 dias · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta faq-inline-cta--price" data-plan="Maré">Ativar — R$399,99</a></div></details>
-            <p class="faq-assure rv rv-d2">7 dias · 100% reembolso · sem fidelidade · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar sem risco</a></p>
+            <p class="faq-assure rv rv-d2">7 dias · 100% reembolso · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar sem risco</a></p>
             <details class="faq-i faq-i--risk rv rv-d2"><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">7 dias · 100% reembolso · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar sem risco</a></div></details>
             <div class="faq-more" id="faq-more">
                 <details class="faq-i"><summary class="faq-q">Quanto custa?</summary><div class="faq-a">R$ 399,99/mês · trimestral −10% · anual −15% · PIX/cartão · sem fidelidade.</div></details>
@@ -2413,7 +2419,7 @@ if (protSim) {
         const proof = document.getElementById('showcase-proof');
         if (proof && total >= 3) {
             const blockPct = Math.round((blocked / total) * 100);
-            proof.innerHTML = 'Agora na simulação: <strong>' + blocked + ' bloqueados</strong> · ' + blockPct + '% filtrados · score ' + score;
+            proof.innerHTML = '<strong>' + blocked + ' bloqueados</strong> · ' + blockPct + '% · ~1 dia = 1 mês · score ' + score;
         }
     }
 
