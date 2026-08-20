@@ -139,3 +139,8 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Contexto**: H1 em 4 linhas empurrava CTAs para baixo da dobra (desktop 900px e mobile 844px).
 **Regra**: hero H1 em no máximo 2 linhas (“Bots veem Safe Page / Compradores veem Offer Page”); CTA primário + trust (PIX/setup/garantia) devem caber no primeiro viewport. Validar com screenshot forçando `animation:none` (headless captura mid-fade).
 **Status**: ativo
+
+## 2026-08-20 — Ciclos CRO: CTA nos beats + FAQ preço aberto
+**Contexto**: ciclos de conversão na landing cloaker multiplataforma.
+**Regra**: CTA hard nos beats de dor/decisão; FAQ lidera com preço/OAuth/redes/garantia (`open` no preço); prova ao vivo em PT; sem mid-CTA redundante após showcase; login unificado `app.theblack.ink`.
+**Status**: ativo

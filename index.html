@@ -477,7 +477,11 @@ strong{font-weight:600}
 .prot-sim-metric-lbl{font-size:8px;color:var(--muted);letter-spacing:.04em;white-space:nowrap}
 /* Redes */
 .networks-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:40px}
-.network-chip{padding:22px 16px;border-radius:16px;border:1px solid var(--border);background:rgba(6,17,31,0.55);text-align:center;transition:border-color .3s var(--ease),transform .3s var(--ease)}
+.network-chip{padding:22px 16px;border-radius:16px;border:1px solid var(--border);background:rgba(6,17,31,0.55);text-align:center;transition:border-color .3s var(--ease),transform .3s var(--ease),background .3s var(--ease)}
+.network-chip:hover{border-color:rgba(100,180,255,0.28);transform:translateY(-2px);background:rgba(100,180,255,0.06)}
+.network-chip strong{display:block;font-size:15px;font-weight:600;margin-bottom:4px;color:var(--white)}
+.network-chip span{font-size:12px;color:var(--dim)}
+.network-chip--more{border-style:dashed}
 .network-chip:hover{border-color:var(--border-h);transform:translateY(-2px)}
 .network-chip strong{display:block;font-size:15px;font-weight:600;margin-bottom:4px}
 .network-chip span{font-size:12px;color:var(--muted)}
@@ -1182,17 +1186,17 @@ main{position:relative;z-index:1}
                     <div class="pricing-value-item">
                         <div class="pricing-value-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
                         <h3>Safe page para inválidos</h3>
-                        <p>Bots, VPNs e revisores veem conteúdo compliant.</p>
+                        <p>Bots, VPNs e revisores veem conteúdo compliant — sua conta de anúncios fica estável.</p>
                     </div>
                     <div class="pricing-value-item">
                         <div class="pricing-value-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
                         <h3>Offer page para compradores</h3>
-                        <p>Tráfego qualificado passa e vê a money page.</p>
+                        <p>Só tráfego qualificado chega na money page. Budget para quem compra.</p>
                     </div>
                     <div class="pricing-value-item">
                         <div class="pricing-value-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
                         <h3>Decisão em &lt;50ms</h3>
-                        <p>15+ sinais, decision logs, app mobile incluso.</p>
+                        <p>15+ sinais, decision logs e app mobile — tudo no preço único.</p>
                     </div>
                 </div>
                 <p class="pricing-bridge">Um produto · R$ 399,99/mês · Sem módulos extras, sem upgrade escondido</p>
@@ -1291,6 +1295,7 @@ main{position:relative;z-index:1}
         <div class="rv rv-d3" style="display:flex;flex-direction:column;align-items:center;gap:14px">
             <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
             <span style="font-size:13px;color:rgba(240,244,248,0.62)">PIX ou cartão · Garantia de 7 dias · Sem contrato</span>
+            <a href="#faq" style="font-size:13px;color:var(--accent);font-weight:500">Ver preço e garantia no FAQ</a>
         </div>
     </div>
 </section>
