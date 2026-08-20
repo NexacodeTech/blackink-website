@@ -1375,7 +1375,41 @@ main{position:relative;z-index:1}
   #redes{padding:0;margin:0;line-height:1}
   #redes .networks-grid{gap:0;margin:0;line-height:1}
   #redes .network-chip{padding:0 1px;font-size:4px;line-height:1;min-height:0}
+  /* c376 LAST: ROI slider some — CTA Ativar −10%; perda em sticky/assure */
+  #roi-calc .calc-slider-wrap{display:none}
+  #roi-calc .calc-cta .btn{height:12px;font-size:6px;margin:0}
+  #roi-calc.section--compact{padding:0}
+  /* c377 LAST: FAQ Q some — assure price CTA basta no densest */
+  #faq .faq-i{display:none}
+  #faq .faq-assure{font-size:5px;line-height:1.1;margin:0;font-weight:600}
+  /* c378 LAST: problema cards some — resolve punch basta */
+  #problema .problem-grid{display:none}
+  #problema .problem-resolve{font-size:5px;line-height:1.1;margin:0;text-align:center}
+  /* c379 LAST: como steps chrome — nums off, h3 only */
+  #como-funciona .setup-num{display:none}
+  #como-funciona .setup-step h3{font-size:4px;line-height:1}
+  #como-funciona .setup-steps{gap:0}
+  /* c380 LAST: CTA 10px buy-path */
+  #pricing .btn-full,#roi-calc .calc-cta .btn,#cloaker .showcase-cta .btn,#comecar .pricing-cta{height:10px;font-size:5.5px;margin:0}
+  #pricing .period-btn{min-height:8px;font-size:3.5px;padding:0;line-height:1;flex-direction:row}
+  /* c381 LAST: redes some — hero trust já lista Google/Meta/TikTok */
+  #redes{display:none}
+  #redes + .sep{display:none}
+  /* c382 LAST: problema some — resolve já no hero/sticky; buy-path sobe */
+  #problema{display:none}
+  #problema + .sep{display:none}
+  /* c383 LAST: como steps some — H2 off; 3 chips → 1 linha setup no mid? keep steps */
+  #como-funciona .setup-steps{margin:0;gap:0}
+  #como-funciona .setup-step{padding:0;border:none;background:transparent;min-height:0}
+  #como-funciona .setup-step h3{font-size:3.5px;line-height:1}
+  /* c384 persuasion densest: assure mais escaneável */
+  #faq .faq-assure{font-size:5.5px;line-height:1.15;margin:0;letter-spacing:.01em}
+  #faq .faq-assure a{font-weight:700}
+  /* c385 LAST: period-discount some — −10%/−15% já no label do botão */
+  #pricing .period-discount{display:none}
+  #pricing .period-btn{min-height:7px;font-size:3.5px;gap:0}
 }
+
 @media (min-width:768px){
   .sticky-cta-text{display:block}
   .sticky-cta-price{display:none}
@@ -2028,7 +2062,40 @@ main{position:relative;z-index:1}
   #redes{padding:0;margin:0;line-height:1}
   #redes .networks-grid{gap:0;margin:0}
   #redes .network-chip{padding:0 1px;font-size:4.5px;line-height:1}
+  /* c376 desktop densest — ROI slider some */
+  #roi-calc .calc-slider-wrap{display:none}
+  #roi-calc.section--compact{padding:0}
+  /* c377 desktop densest — FAQ Q some */
+  #faq .faq-i{display:none}
+  #faq .faq-assure{font-size:5px;line-height:1.1;margin:0;font-weight:600}
+  /* c378 desktop densest — problema cards some */
+  #problema .problem-grid{display:none}
+  #problema .problem-resolve{font-size:5px;line-height:1.1;margin:0;text-align:center}
+  /* c379 desktop densest — como nums off */
+  #como-funciona .setup-num{display:none}
+  #como-funciona .setup-step h3{font-size:4.5px;line-height:1}
+  #como-funciona .setup-steps{gap:0}
+  /* c380 desktop densest — CTA 10px */
+  #pricing .btn-full,#roi-calc .calc-cta .btn,#cloaker .showcase-cta .btn,#comecar .pricing-cta{height:10px;font-size:5.5px;margin:0}
+  #pricing .period-btn{min-height:8px;font-size:3.5px;padding:0;line-height:1}
+  /* c381 desktop densest — redes some */
+  #redes{display:none}
+  #redes + .sep{display:none}
+  /* c382 desktop densest — problema some */
+  #problema{display:none}
+  #problema + .sep{display:none}
+  /* c383 desktop densest — como step chrome */
+  #como-funciona .setup-steps{margin:0;gap:0}
+  #como-funciona .setup-step{padding:0;border:none;background:transparent}
+  #como-funciona .setup-step h3{font-size:4px;line-height:1}
+  /* c384 desktop densest — assure punch */
+  #faq .faq-assure{font-size:5.5px;line-height:1.15;margin:0}
+  #faq .faq-assure a{font-weight:700}
+  /* c385 desktop densest — period-discount some */
+  #pricing .period-discount{display:none}
+  #pricing .period-btn{min-height:7px;font-size:3.5px;gap:0}
 }
+
 @media (max-width:640px){
   .networks-grid{grid-template-columns:1fr 1fr}
   .flow-track{flex-direction:column}
@@ -2121,7 +2188,19 @@ main{position:relative;z-index:1}
   #faq .faq-a{display:none}
   /* c374–c375: preservar densest em ≤600 */
   #comecar .cta-final-title{display:none}
-  #comecar .pricing-cta{height:12px;font-size:6px;margin:0}
+  #comecar .pricing-cta{height:10px;font-size:5.5px;margin:0}
+  /* c376–c380: preservar densest em ≤600 */
+  #roi-calc .calc-slider-wrap{display:none}
+  #faq .faq-i{display:none}
+  #problema .problem-grid{display:none}
+  #como-funciona .setup-num{display:none}
+  #pricing .btn-full,#roi-calc .calc-cta .btn,#cloaker .showcase-cta .btn{height:10px;font-size:5.5px;margin:0}
+  #pricing .period-btn{min-height:8px;font-size:3.5px;padding:0;flex-direction:row;align-items:center;gap:2px;line-height:1}
+  /* c381–c385: preservar densest em ≤600 */
+  #redes{display:none}
+  #problema{display:none}
+  #pricing .period-discount{display:none}
+  #pricing .period-btn{min-height:7px;font-size:3.5px;padding:0;flex-direction:row;align-items:center;gap:0;line-height:1}
 }
 @media (max-width:500px){
   .flow-pillars{grid-template-columns:1fr}
@@ -2206,7 +2285,19 @@ main{position:relative;z-index:1}
   #faq .faq-a{display:none}
   /* c374–c375: preservar densest em ≤480 */
   #comecar .cta-final-title{display:none}
-  #comecar .pricing-cta{height:12px;font-size:6px;margin:0}
+  #comecar .pricing-cta{height:10px;font-size:5.5px;margin:0}
+  /* c376–c380: preservar densest em ≤480 */
+  #roi-calc .calc-slider-wrap{display:none}
+  #faq .faq-i{display:none}
+  #problema .problem-grid{display:none}
+  #como-funciona .setup-num{display:none}
+  #pricing .btn-full,#roi-calc .calc-cta .btn,#cloaker .showcase-cta .btn{height:10px;font-size:5.5px;margin:0}
+  #pricing .period-btn{min-height:8px;font-size:3.5px;padding:0;flex-direction:row;align-items:center;gap:2px;line-height:1}
+  /* c381–c385: preservar densest em ≤480 */
+  #redes{display:none}
+  #problema{display:none}
+  #pricing .period-discount{display:none}
+  #pricing .period-btn{min-height:7px;font-size:3.5px;padding:0;flex-direction:row;align-items:center;gap:0;line-height:1}
 }
 @media (max-width:390px){
   .hero-logo{width:32px;height:32px}
@@ -2280,7 +2371,19 @@ main{position:relative;z-index:1}
   #faq .faq-a{display:none}
   /* c374–c375: preservar densest no iPhone */
   #comecar .cta-final-title{display:none}
-  #comecar .pricing-cta{height:12px;font-size:6px;margin:0}
+  #comecar .pricing-cta{height:10px;font-size:5.5px;margin:0}
+  /* c376–c380: preservar densest no iPhone */
+  #roi-calc .calc-slider-wrap{display:none}
+  #faq .faq-i{display:none}
+  #problema .problem-grid{display:none}
+  #como-funciona .setup-num{display:none}
+  #pricing .btn-full,#roi-calc .calc-cta .btn,#cloaker .showcase-cta .btn{height:10px;font-size:5.5px;margin:0}
+  #pricing .period-btn{min-height:8px;font-size:3.5px;padding:0;flex-direction:row;align-items:center;gap:2px;line-height:1}
+  /* c381–c385: preservar densest no iPhone */
+  #redes{display:none}
+  #problema{display:none}
+  #pricing .period-discount{display:none}
+  #pricing .period-btn{min-height:7px;font-size:3.5px;padding:0;flex-direction:row;align-items:center;gap:0;line-height:1}
   #como-funciona .mid-cta .btn{height:18px;font-size:7px}
   #problema .mid-cta .btn{height:18px;font-size:7px}
 }
@@ -2349,7 +2452,7 @@ main{position:relative;z-index:1}
     <p class="hero-sub">Safe vs offer · multi-rede · &lt;50ms · ~1 dia = 1 mês · Ativar −10% · 7 dias</p>
     <div class="hero-ctas">
         <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link hero-cta" data-plan="Maré">Ativar — R$399,99/mês</a>
-        <a href="#roi-calc" class="btn btn-o">Ver perda · Ativar −10%</a>
+        <a href="#pricing" class="btn btn-o">Ver perda · Ativar −10%</a>
     </div>
     <div class="hero-trust">
         <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
@@ -2392,7 +2495,7 @@ main{position:relative;z-index:1}
         </div>
         <p class="problem-resolve rv rv-d3">~22% sujo · Ativar −10% · <span class="grad">~1 dia = 1 mês</span></p>
         <div class="mid-cta mid-cta--soft rv rv-d4">
-        <a href="#roi-calc" class="btn btn-p">Ver perda · Ativar −10%</a>
+        <a href="#pricing" class="btn btn-p">Ver perda · Ativar −10%</a>
         <a href="#pricing" class="btn btn-o">Ver perda · Ativar −10%</a>
         </div>
     </div>
@@ -2450,7 +2553,7 @@ main{position:relative;z-index:1}
 
         <div class="mid-cta mid-cta--soft rv rv-d3" style="margin-top:8px">
             <a href="#cloaker" class="btn btn-p">Ver PASS/BLOCK ao vivo</a>
-            <a href="#roi-calc" class="btn btn-o">Ver perda · Ativar −10%</a>
+            <a href="#pricing" class="btn btn-o">Ver perda · Ativar −10%</a>
         </div>
     </div>
 </section>
@@ -2478,7 +2581,7 @@ main{position:relative;z-index:1}
                 <p class="showcase-proof" id="showcase-proof">Simulação ao vivo ao lado — bloqueios e taxa legítima em tempo real</p>
                 <div class="showcase-cta">
                     <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar — R$399,99/mês</a>
-                    <a href="#roi-calc" class="showcase-cta-soft">Ver perda · Ativar −10%</a>
+                    <a href="#pricing" class="showcase-cta-soft">Ver perda · Ativar −10%</a>
                 </div>
             </div>
             <div class="showcase-visual">
