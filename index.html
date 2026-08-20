@@ -4154,6 +4154,12 @@ function syncLossPersuasionCopy(period) {
     if (faqAssureMicro) {
         faqAssureMicro.textContent = 'Garantia 7 dias · 100% · vs ' + loss + ' · sem risco';
     }
+    // c471: peek resolve sync período
+    const resolveLink = document.querySelector('.problem-resolve-link');
+    if (resolveLink) {
+        const verb = period === 'yearly' ? 'Ativar −15%' : 'Ativar −10%';
+        resolveLink.innerHTML = '~22% clique sujo · revisor na offer · ' + verb + ' · <span class="grad">~1 dia = 1 mês</span>';
+    }
     // c456: scroll cue leva perda (path sem “Ativar” no fold)
     const cue = document.querySelector('.hero-scroll-cue');
     const cueLabel = document.querySelector('.hero-scroll-cue-label');
@@ -4254,8 +4260,8 @@ let footerInView = false;
 
 function syncStickyVisibility() {
     if (!stickyCta) return;
-    // c459: sticky after ~2% hero / 16px — peek já mostra buy-path
-    const pastHero = window.scrollY > (heroSection ? Math.max(heroSection.offsetHeight * 0.02, 16) : 16);
+    // c459: sticky after ~2% hero / 12px — peek já mostra buy-path
+    const pastHero = window.scrollY > (heroSection ? Math.max(heroSection.offsetHeight * 0.015, 12) : 12);
     // Densest buy-path is short — only hide when a real CTA target is on-screen (c410)
     const show = !stickyDismissed && pastHero && !pricingInView && !ctaFinalInView && !footerInView;
     stickyCta.classList.toggle('visible', show);
