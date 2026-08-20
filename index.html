@@ -1144,6 +1144,12 @@ main{position:relative;z-index:1}
   /* Ciclo 325: comecar densest — título punch sem inflar */
   #comecar .cta-final-title{font-size:clamp(10px,2.8vw,13px);margin:0}
   #comecar .pricing-cta{height:26px;font-size:9px}
+  /* Ciclo 326: ROI densest — slider chrome mais baixo */
+  #roi-calc .calc-slider-header{margin:0;gap:2px}
+  #roi-calc .calc-slider-value{font-size:6px;line-height:1}
+  #roi-calc .calc-summary{margin:1px 0}
+  #roi-calc .calc-summary-card{padding:1px 3px}
+  #roi-calc .calc-summary-bar{height:2px;margin-top:1px}
 }
 @media (min-width:768px){
   .sticky-cta-text{display:block}
@@ -1615,6 +1621,10 @@ main{position:relative;z-index:1}
   #pricing .pricing-trust-chips li{font-size:5px;padding:0 3px;margin:0;border:none;background:transparent;color:var(--dim);line-height:1.1}
   /* Ciclo 323 desktop densest — setup H2 only */
   #como-funciona .t-lg{font-size:clamp(10px,1.15vw,13px)}
+  /* Ciclo 326 desktop densest ROI */
+  #roi-calc .calc-slider-value{font-size:6px}
+  #roi-calc .calc-summary-card{padding:1px 2px}
+  #roi-calc .calc-summary-bar{height:2px}
   #comecar.cta-final{padding:0}
   #comecar .cta-final-title{font-size:clamp(10px,1.2vw,13px)}
   #comecar .pricing-cta{height:20px;font-size:8px}
@@ -2104,7 +2114,7 @@ main{position:relative;z-index:1}
             <div class="network-chip"><strong>TikTok Ads</strong><span>In-feed &amp; Spark</span></div>
             <div class="network-chip network-chip--more"><strong>E outras</strong><span>Mesmo fluxo</span></div>
         </div>
-        <p class="why-strip-text redes-why rv rv-d4" id="por-que"><strong>SaaS server-side</strong> · não script PHP · decision logs · suporte BR · <span class="grad">R$399,99/mês</span></p>
+        <p class="why-strip-text redes-why rv rv-d4" id="por-que"><strong>SaaS server-side</strong> · decision logs · suporte BR · trim. −10% · <span class="grad">R$399,99/mês</span></p>
     </div>
 </section>
 
@@ -2514,6 +2524,11 @@ const FAQ_PRICE_CTA = {
     quarterly: 'Ativar — R$359,99',
     yearly: 'Ativar — R$339,99'
 };
+const P_MICRO_HTML = {
+    monthly: '<strong>7 dias</strong> · 100% · trim. −10% · ~15 min',
+    quarterly: '<strong>−10% ativo</strong> · 7 dias · R$1.079,97 / 3 meses',
+    yearly: '<strong>−15% ativo</strong> · 7 dias · R$4.079,90 / ano'
+};
 
 const PERIOD_NUDGE = {
     monthly: '<button type="button" data-pick-period="quarterly">Trimestral −10%</button> · ~R$120 a menos',
@@ -2571,6 +2586,9 @@ function updatePricingCtaLabel(period) {
     // FAQ open CTA mirrors period price (ciclo 320) — assure stays "Ativar sem risco"
     const faqPrice = FAQ_PRICE_CTA[period] || FAQ_PRICE_CTA.monthly;
     document.querySelectorAll('.faq-inline-cta--price').forEach(a => { a.textContent = faqPrice; });
+    // Ciclo 326: p-micro confirma desconto ativo no período
+    const micro = document.querySelector('#pricing .p-micro');
+    if (micro) micro.innerHTML = P_MICRO_HTML[period] || P_MICRO_HTML.monthly;
     // Hero keeps list price R$399,99 for anchoring (ciclo 55) — discount lives in #pricing/sticky
     const heroCta = document.querySelector('.hero-cta');
     if (heroCta) heroCta.textContent = HERO_CTA_LABELS.monthly;
