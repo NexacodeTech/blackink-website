@@ -1228,7 +1228,7 @@ main{position:relative;z-index:1}
   /* c350: ROI card flex — mata strut 25.6; CTA 18px alinhado pricing */
   #roi-calc .calc-card{line-height:1;display:flex;flex-direction:column;gap:1px;padding:0}
   #roi-calc .calc-cta{margin:0}
-  #roi-calc .calc-cta .btn{height:18px;font-size:7.5px;margin:0}
+  #roi-calc .calc-cta .btn{height:14px;font-size:6.5px;margin:0}
   #roi-calc .calc-summary{margin:0}
   /* c346: FAQ densest — toggle sem border; q/a line-height 1 */
   #faq .faq-q{padding:0 2px;font-size:5.5px;line-height:1;gap:2px;min-height:0}
@@ -1297,6 +1297,31 @@ main{position:relative;z-index:1}
   #redes .network-chip{padding:0 2px;font-size:4.5px;line-height:1;border-radius:3px}
   #redes .network-chip span{display:none}
   #redes .why-strip-text,#redes .redes-why{display:none}
+  /* c359 LAST: pricing/ROI/FAQ densest reclaim */
+  #pricing .p-micro{display:none}
+  #pricing .pricing-reveal-title{font-size:clamp(7px,2.1vw,10px);line-height:1.05;margin:0}
+  #pricing .btn-full{height:14px;font-size:6.5px;margin:0}
+  #pricing .period-btn{min-height:11px;font-size:4.5px;padding:0;line-height:1}
+  #roi-calc .calc-cta .btn{height:14px;font-size:6.5px;margin:0}
+  #faq .faq-a{padding:0 2px;font-size:4.5px;line-height:1.02}
+  #faq .faq-q{padding:0 2px;font-size:5px;line-height:1}
+  #faq .faq-more-toggle{font-size:4px;opacity:.45;margin:0 auto}
+  #faq .faq-assure{font-size:4.5px;margin:0}
+  #comecar .pricing-cta{height:14px;font-size:6.5px;margin:0}
+  /* c360 LAST: ROI summary compacto; slider header chrome */
+  #roi-calc .calc-slider-header{margin:0;gap:0;line-height:1}
+  #roi-calc .calc-slider-value{font-size:5px;line-height:1}
+  #roi-calc .calc-slider-wrap{gap:0}
+  #roi-calc .calc-summary-val{font-size:6px;line-height:1}
+  #roi-calc .calc-summary-card{padding:0 1px}
+  #roi-calc .calc-summary{margin:0;max-width:140px}
+  /* c360: problema densest — cards mais baixos */
+  #problema .problem-stat{font-size:6px}
+  #problema .problem-title{font-size:4.5px}
+  #problema .t-lg{font-size:clamp(7px,2vw,10px);line-height:1.05}
+  #problema .problem-resolve{font-size:5px;line-height:1.05}
+  /* c361 LAST: ROI summary some — perda já em lead/FAQ/sticky; slider+CTA bastam */
+  #roi-calc .calc-summary{display:none}
 }
 @media (min-width:768px){
   .sticky-cta-text{display:block}
@@ -1880,6 +1905,25 @@ main{position:relative;z-index:1}
   .f-legal span:not(.f-legal-addr-short):not(:first-child){display:none}
   .f-legal-addr-short{display:inline}
   .f-bottom > span{display:none}
+  /* c359 desktop densest LAST */
+  #pricing .p-micro{display:none}
+  #pricing .pricing-reveal-title{font-size:clamp(7px,0.95vw,10px);line-height:1.05;margin:0}
+  #pricing .btn-full{height:14px;font-size:6.5px;margin:0}
+  #pricing .period-btn{min-height:11px;font-size:4.5px;padding:0}
+  #roi-calc .calc-cta .btn{height:14px;font-size:6.5px;margin:0}
+  #faq .faq-a{font-size:4.5px;line-height:1.02;padding:0 2px}
+  #faq .faq-q{font-size:5px;padding:0 2px;line-height:1}
+  #comecar .pricing-cta{height:14px;font-size:6.5px;margin:0}
+  /* c360 desktop densest LAST */
+  #roi-calc .calc-slider-value{font-size:5px;line-height:1}
+  #roi-calc .calc-summary-val{font-size:6px;line-height:1}
+  #roi-calc .calc-summary-card{padding:0 1px}
+  #problema .problem-stat{font-size:6px}
+  #problema .problem-title{font-size:4.5px}
+  #problema .t-lg{font-size:clamp(8px,1vw,11px);line-height:1.05}
+  #problema .problem-resolve{font-size:5px}
+  /* c361 desktop densest — ROI summary some */
+  #roi-calc .calc-summary{display:none}
 }
 @media (max-width:640px){
   .networks-grid{grid-template-columns:1fr 1fr}
@@ -1934,6 +1978,14 @@ main{position:relative;z-index:1}
   #pricing .pricing-lead{display:block;font-size:5px;line-height:1.05;margin:0}
   /* c358: preservar price-wrap hidden densest em ≤600 */
   #pricing .p-price-wrap{display:none}
+  /* c359: preservar densest em ≤600 */
+  #pricing .p-micro{display:none}
+  #pricing .btn-full{height:14px;font-size:6.5px;margin:0}
+  #pricing .period-btn{min-height:11px;font-size:4.5px;padding:0;flex-direction:row;align-items:center;gap:2px}
+  #roi-calc .calc-cta .btn{height:14px;font-size:6.5px;margin:0}
+  #comecar .pricing-cta{height:14px;font-size:6.5px;margin:0}
+  /* c361: preservar ROI summary hidden densest */
+  #roi-calc .calc-summary{display:none}
   /* c329: nudge mensal visível no densest (JS hidden nos outros períodos) */
   #pricing .period-nudge{display:none;font-size:5px;margin:0;line-height:1.1;text-align:center}
   #pricing .period-nudge:not([hidden]){display:block}
@@ -1982,6 +2034,14 @@ main{position:relative;z-index:1}
   /* c358: preservar price-wrap hidden densest */
   #pricing .p-price-wrap{display:none}
   #pricing .pricing-trust-chips{display:none}
+  /* c359: preservar densest em ≤480 */
+  #pricing .p-micro{display:none}
+  #pricing .btn-full{height:14px;font-size:6.5px;margin:0}
+  #pricing .period-btn{min-height:11px;font-size:4.5px;padding:0;flex-direction:row;align-items:center;gap:2px}
+  #roi-calc .calc-cta .btn{height:14px;font-size:6.5px;margin:0}
+  #comecar .pricing-cta{height:14px;font-size:6.5px;margin:0}
+  /* c361: preservar ROI summary hidden densest */
+  #roi-calc .calc-summary{display:none}
   #pricing .period-nudge{display:none;font-size:5px;margin:0;line-height:1.1;text-align:center}
   #pricing .period-nudge:not([hidden]){display:block}
   #faq .faq-outro{display:none}
@@ -1997,14 +2057,11 @@ main{position:relative;z-index:1}
   #roi-calc .calc-slider::-webkit-slider-thumb{width:10px;height:10px;border-width:2px;box-shadow:none}
   #roi-calc .calc-slider::-moz-range-thumb{width:10px;height:10px;border-width:2px}
   /* c350: preservar ROI flex densest em ≤480 */
-  #roi-calc .calc-card{line-height:1;display:flex;flex-direction:column;gap:1px;padding:0  /* c357: preservar cloaker densest */
+  #roi-calc .calc-card{line-height:1;display:flex;flex-direction:column;gap:1px;padding:0}
+  #roi-calc .calc-cta .btn{height:14px;font-size:6.5px;margin:0}
+  /* c357/c359: preservar cloaker densest */
   #cloaker .showcase-visual{display:none}
   #cloaker .showcase-cta .btn{height:14px;font-size:6.5px;margin:0}
-}
-  #roi-calc .calc-cta .btn{height:18px;font-size:7.5px;margin:0  /* c357: preservar cloaker densest */
-  #cloaker .showcase-visual{display:none}
-  #cloaker .showcase-cta .btn{height:14px;font-size:6.5px;margin:0}
-}
 }
 @media (max-width:390px){
   .hero-logo{width:32px;height:32px}
@@ -2032,9 +2089,15 @@ main{position:relative;z-index:1}
   /* c358: preservar price-wrap hidden densest */
   #pricing .p-price-wrap{display:none}
   #pricing .pricing-trust-chips{display:none}
+  /* c359: preservar densest no iPhone */
+  #pricing .p-micro{display:none}
+  #pricing .btn-full{height:14px;font-size:6.5px;margin:0}
+  #pricing .period-btn{min-height:11px;font-size:4.5px;padding:0;flex-direction:row;align-items:center;gap:2px}
   #pricing .period-nudge{display:none;font-size:5px;margin:0;line-height:1.1;text-align:center}
   #pricing .period-nudge:not([hidden]){display:block}
-  #roi-calc .calc-cta .btn{height:20px;font-size:8px}
+  #roi-calc .calc-cta .btn{height:14px;font-size:6.5px;margin:0}
+  /* c361: preservar ROI summary hidden densest no iPhone */
+  #roi-calc .calc-summary{display:none}
   #roi-calc .calc-summary-tag{display:none}
   #roi-calc .calc-slider-label{display:none}
   #roi-calc .calc-summary{grid-template-columns:1fr}
@@ -2048,12 +2111,12 @@ main{position:relative;z-index:1}
   #roi-calc .calc-slider::-moz-range-thumb{width:10px;height:10px;border-width:2px}
   /* c350: preservar ROI flex densest no iPhone */
   #roi-calc .calc-card{line-height:1;display:flex;flex-direction:column;gap:1px;padding:0}
-  #roi-calc .calc-cta .btn{height:18px;font-size:7.5px;margin:0}
   #faq .faq-outro{display:none}
   /* c357: preservar cloaker densest no iPhone */
   #cloaker .showcase-visual{display:none}
   #cloaker .showcase{display:flex;flex-direction:column;gap:1px;line-height:1}
   #cloaker .showcase-cta .btn{height:14px;font-size:6.5px;margin:0}
+  #comecar .pricing-cta{height:14px;font-size:6.5px;margin:0}
   #como-funciona .mid-cta .btn{height:18px;font-size:7px}
   #problema .mid-cta .btn{height:18px;font-size:7px}
 }
@@ -2941,9 +3004,9 @@ function syncStickyLossCopy(period) {
     }
     if (stickyPrice) {
         if (lastCalcLossFmt) {
-            stickyPrice.innerHTML = '<strong>' + priceShort + '</strong><br>vs ' + lastCalcLossFmt + (period === 'monthly' ? ' · Ativar −10%' : ' · 7 dias');
+            stickyPrice.innerHTML = '<strong>' + priceShort + '</strong><br>vs ' + lastCalcLossFmt + (period === 'yearly' ? ' · Ativar −15%' : ' · Ativar −10%');
         } else {
-            stickyPrice.innerHTML = '<strong>' + priceShort + '</strong><br>' + (period === 'monthly' ? 'Ativar −10% · 7 dias' : 'vs R$12.500 · 7 dias');
+            stickyPrice.innerHTML = '<strong>' + priceShort + '</strong><br>' + (period === 'yearly' ? 'Ativar −15% · 7 dias' : 'Ativar −10% · 7 dias');
         }
     }
 }
