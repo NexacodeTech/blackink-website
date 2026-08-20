@@ -1431,6 +1431,34 @@ main{position:relative;z-index:1}
   /* c392 LAST: pricing switcher chrome 0 */
   #pricing .period-toggle,#pricing .period-switcher{margin:0;padding:0;border:none;background:transparent;gap:1px;line-height:1}
   #pricing .pricing-reveal-inner,#pricing .pricing-reveal-block,#pricing .pricing-narrative{margin:0;padding:0;gap:0;line-height:1}
+  /* c393 LAST: CTA tap 40px — 8px matava conversão no densest */
+  #pricing .btn-full,#comecar .pricing-cta{height:40px;font-size:13px;margin:0;border-radius:10px}
+  /* c394 LAST: period switcher tocável 32px row */
+  #pricing .period-btn{min-height:32px;font-size:10px;padding:4px 2px;line-height:1.15;flex-direction:row;align-items:center;gap:2px}
+  #pricing .period-discount{display:inline;font-size:8px;padding:0 3px;line-height:1}
+  #pricing .period-toggle,#pricing .period-switcher{gap:2px;line-height:1.15}
+  /* c395 LAST: lead perda legível — prova acima do CTA */
+  #pricing .pricing-lead{display:block;font-size:11px;line-height:1.25;margin:0 0 6px;max-width:42ch}
+  #pricing .pricing-lead strong{color:var(--white);font-weight:700}
+  /* c396 LAST: FAQ assure punch legível */
+  #faq .faq-assure{display:block;font-size:12px;line-height:1.3;margin:6px 0 0;padding:0}
+  #faq .faq-assure a{font-weight:700;font-size:12px}
+  /* c397 LAST: comecar título curto de volta — fecha funil */
+  #comecar .cta-final-title{display:block;font-size:clamp(14px,3.6vw,18px);line-height:1.2;margin:0 0 6px}
+  #comecar.cta-final{padding:8px 0}
+  #pricing.section--compact{padding:8px 0}
+  #faq.section--compact,#faq{padding:4px 0;margin:0}
+  /* c398 LAST: lead 1 linha + padding menor — prova sem strut */
+  #pricing .pricing-lead{font-size:10px;line-height:1.2;margin:0 0 4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+  #pricing.section--compact{padding:4px 0}
+  #comecar.cta-final{padding:6px 0}
+  #comecar .cta-final-title{margin:0 0 4px;font-size:clamp(13px,3.4vw,16px)}
+  #faq .faq-assure{margin:4px 0 0;font-size:11px;line-height:1.25}
+  #faq .faq-assure a,#faq .faq-inline-cta{padding:0;margin:0;font-size:11px}
+  #faq.section--compact,#faq{padding:2px 0}
+  /* c399 LAST: period discount compacto row */
+  #pricing .period-btn{gap:1px;padding:2px 1px}
+  #pricing .period-discount{font-size:7px;padding:0 2px}
 }
 @media (min-width:768px){
   .sticky-cta-text{display:block}
@@ -2133,6 +2161,28 @@ main{position:relative;z-index:1}
   .f-bottom{margin:0;padding:0;gap:0;line-height:1;font-size:4px}
   #pricing .period-toggle,#pricing .period-switcher{margin:0;padding:0;border:none;background:transparent;gap:1px;line-height:1}
   #pricing .pricing-reveal-inner,#pricing .pricing-reveal-block,#pricing .pricing-narrative{margin:0;padding:0;gap:0;line-height:1}
+  /* c393–c397 desktop densest — tap + prova + close */
+  #pricing .btn-full,#comecar .pricing-cta{height:40px;font-size:13px;margin:0;border-radius:10px}
+  #pricing .period-btn{min-height:32px;font-size:10px;padding:4px 4px;line-height:1.15}
+  #pricing .period-discount{display:inline;font-size:8px;padding:0 3px}
+  #pricing .period-toggle,#pricing .period-switcher{gap:2px}
+  #pricing .pricing-lead{display:block;font-size:12px;line-height:1.3;margin:0 0 6px;max-width:48ch}
+  #faq .faq-assure{display:block;font-size:12px;line-height:1.3;margin:6px 0 0}
+  #faq .faq-assure a{font-weight:700;font-size:12px}
+  #comecar .cta-final-title{display:block;font-size:clamp(15px,1.6vw,18px);line-height:1.2;margin:0 0 6px}
+  #comecar.cta-final{padding:10px 0}
+  #pricing.section--compact{padding:10px 0}
+  #faq.section--compact,#faq{padding:6px 0;margin:0}
+  /* c398–c399 desktop densest chrome */
+  #pricing .pricing-lead{font-size:11px;line-height:1.25;margin:0 0 4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+  #pricing.section--compact{padding:6px 0}
+  #comecar.cta-final{padding:8px 0}
+  #comecar .cta-final-title{margin:0 0 4px;font-size:clamp(14px,1.5vw,17px)}
+  #faq .faq-assure{margin:4px 0 0;font-size:11px}
+  #faq .faq-assure a,#faq .faq-inline-cta{padding:0;margin:0;font-size:11px}
+  #faq.section--compact,#faq{padding:4px 0}
+  #pricing .period-btn{gap:1px;padding:2px 2px}
+  #pricing .period-discount{font-size:7px;padding:0 2px}
 }
 
 @media (max-width:640px){
@@ -2246,6 +2296,20 @@ main{position:relative;z-index:1}
   #cloaker .showcase-cta .btn,#pricing .btn-full,#comecar .pricing-cta{height:8px;font-size:5px;margin:0}
   /* c390: preservar cloaker hidden densest em ≤600 */
   #cloaker{display:none}
+  /* c393–c397: CTA tap + lead + assure em ≤600 */
+  #pricing .btn-full,#comecar .pricing-cta{height:40px;font-size:13px;margin:0;border-radius:10px}
+  #pricing .period-btn{min-height:32px;font-size:10px;padding:4px 2px;flex-direction:row;align-items:center;gap:2px;line-height:1.15}
+  #pricing .period-discount{display:inline;font-size:8px;padding:0 3px;line-height:1}
+  #pricing .pricing-lead{display:block;font-size:11px;line-height:1.25;margin:0 0 6px}
+  #faq .faq-assure{display:block;font-size:12px;line-height:1.3;margin:6px 0 0}
+  #comecar .cta-final-title{display:block;font-size:clamp(14px,3.6vw,18px);line-height:1.2;margin:0 0 6px}
+  /* c398: lead 1 linha + chrome em ≤600 */
+  #pricing .pricing-lead{display:block;font-size:10px;line-height:1.2;margin:0 0 4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  #pricing.section--compact{padding:4px 0}
+  #comecar.cta-final{padding:6px 0}
+  #comecar .cta-final-title{margin:0 0 4px;font-size:clamp(13px,3.4vw,16px)}
+  #faq .faq-assure{margin:4px 0 0;font-size:11px;line-height:1.25}
+  #faq .faq-assure a,#faq .faq-inline-cta{padding:0;margin:0;font-size:11px}
 }
 @media (max-width:500px){
   .flow-pillars{grid-template-columns:1fr}
@@ -2349,6 +2413,20 @@ main{position:relative;z-index:1}
   #cloaker .showcase-cta .btn,#pricing .btn-full,#comecar .pricing-cta{height:8px;font-size:5px;margin:0}
   /* c390: preservar cloaker hidden densest em ≤480 */
   #cloaker{display:none}
+  /* c393–c397: CTA tap + lead + assure em ≤480 */
+  #pricing .btn-full,#comecar .pricing-cta{height:40px;font-size:13px;margin:0;border-radius:10px}
+  #pricing .period-btn{min-height:32px;font-size:10px;padding:4px 2px;flex-direction:row;align-items:center;gap:2px;line-height:1.15}
+  #pricing .period-discount{display:inline;font-size:8px;padding:0 3px;line-height:1}
+  #pricing .pricing-lead{display:block;font-size:11px;line-height:1.25;margin:0 0 6px}
+  #faq .faq-assure{display:block;font-size:12px;line-height:1.3;margin:6px 0 0}
+  #comecar .cta-final-title{display:block;font-size:clamp(14px,3.6vw,18px);line-height:1.2;margin:0 0 6px}
+  /* c398: lead 1 linha + chrome em ≤480 */
+  #pricing .pricing-lead{display:block;font-size:10px;line-height:1.2;margin:0 0 4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  #pricing.section--compact{padding:4px 0}
+  #comecar.cta-final{padding:6px 0}
+  #comecar .cta-final-title{margin:0 0 4px;font-size:clamp(13px,3.4vw,16px)}
+  #faq .faq-assure{margin:4px 0 0;font-size:11px;line-height:1.25}
+  #faq .faq-assure a,#faq .faq-inline-cta{padding:0;margin:0;font-size:11px}
 }
 @media (max-width:390px){
   .hero-logo{width:32px;height:32px}
@@ -2441,6 +2519,20 @@ main{position:relative;z-index:1}
   #cloaker .showcase-cta .btn,#pricing .btn-full,#comecar .pricing-cta{height:8px;font-size:5px;margin:0}
   /* c390: preservar cloaker hidden densest no iPhone */
   #cloaker{display:none}
+  /* c393–c397: CTA tap + lead + assure no iPhone — vence .btn{height:48px} via #section */
+  #pricing .btn-full,#comecar .pricing-cta{height:40px;font-size:13px;margin:0;border-radius:10px}
+  #pricing .period-btn{min-height:32px;font-size:10px;padding:4px 2px;flex-direction:row;align-items:center;gap:2px;line-height:1.15}
+  #pricing .period-discount{display:inline;font-size:8px;padding:0 3px;line-height:1}
+  #pricing .pricing-lead{display:block;font-size:11px;line-height:1.25;margin:0 0 6px}
+  #faq .faq-assure{display:block;font-size:12px;line-height:1.3;margin:6px 0 0}
+  #comecar .cta-final-title{display:block;font-size:clamp(14px,3.6vw,18px);line-height:1.2;margin:0 0 6px}
+  /* c398: lead 1 linha + chrome no iPhone */
+  #pricing .pricing-lead{display:block;font-size:10px;line-height:1.2;margin:0 0 4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  #pricing.section--compact{padding:4px 0}
+  #comecar.cta-final{padding:6px 0}
+  #comecar .cta-final-title{margin:0 0 4px;font-size:clamp(13px,3.4vw,16px)}
+  #faq .faq-assure{margin:4px 0 0;font-size:11px;line-height:1.25}
+  #faq .faq-assure a,#faq .faq-inline-cta{padding:0;margin:0;font-size:11px}
   #como-funciona .mid-cta .btn{height:18px;font-size:7px}
   #problema .mid-cta .btn{height:18px;font-size:7px}
 }
@@ -2509,7 +2601,7 @@ main{position:relative;z-index:1}
     <p class="hero-sub">Safe vs offer · multi-rede · &lt;50ms · ~1 dia = 1 mês · Ativar −10% · 7 dias</p>
     <div class="hero-ctas">
         <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link hero-cta" data-plan="Maré">Ativar — R$399,99/mês</a>
-        <a href="#pricing" class="btn btn-o">Ver perda · Ativar −10%</a>
+        <a href="#pricing" class="btn btn-o">Ativar −10% · ver preço</a>
     </div>
     <div class="hero-trust">
         <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
@@ -2552,8 +2644,8 @@ main{position:relative;z-index:1}
         </div>
         <p class="problem-resolve rv rv-d3">~22% sujo · Ativar −10% · <span class="grad">~1 dia = 1 mês</span></p>
         <div class="mid-cta mid-cta--soft rv rv-d4">
-        <a href="#pricing" class="btn btn-p">Ver perda · Ativar −10%</a>
-        <a href="#pricing" class="btn btn-o">Ver perda · Ativar −10%</a>
+        <a href="#pricing" class="btn btn-p">Ativar −10% · ver preço</a>
+        <a href="#pricing" class="btn btn-o">Ativar −10% · ver preço</a>
         </div>
     </div>
 </section>
@@ -2610,7 +2702,7 @@ main{position:relative;z-index:1}
 
         <div class="mid-cta mid-cta--soft rv rv-d3" style="margin-top:8px">
             <a href="#cloaker" class="btn btn-p">Ver PASS/BLOCK ao vivo</a>
-            <a href="#pricing" class="btn btn-o">Ver perda · Ativar −10%</a>
+            <a href="#pricing" class="btn btn-o">Ativar −10% · ver preço</a>
         </div>
     </div>
 </section>
@@ -2638,7 +2730,7 @@ main{position:relative;z-index:1}
                 <p class="showcase-proof" id="showcase-proof">Simulação ao vivo ao lado — bloqueios e taxa legítima em tempo real</p>
                 <div class="showcase-cta">
                     <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar — R$399,99/mês</a>
-                    <a href="#pricing" class="showcase-cta-soft">Ver perda · Ativar −10%</a>
+                    <a href="#pricing" class="showcase-cta-soft">Ativar −10% · ver preço</a>
                 </div>
             </div>
             <div class="showcase-visual">
@@ -2775,7 +2867,7 @@ main{position:relative;z-index:1}
                 <div class="pricing-reveal-inner">
                     <div class="t-label">Seu investimento</div>
                     <h2 class="pricing-reveal-title">R$399,99 · <span class="grad">~1 dia · Ativar −10%</span></h2>
-                    <p class="pricing-lead" id="pricing-lead">perda <strong id="pricing-lead-loss">R$ 12.500</strong>/mês · <strong id="pricing-lead-payback">~1 dia</strong> · 7 dias · Ativar −10%</p>
+                    <p class="pricing-lead" id="pricing-lead">perda <strong id="pricing-lead-loss">R$ 12.500</strong>/mês · <strong id="pricing-lead-payback">~1 dia</strong> · Ativar −10%</p>
                     <div class="period-toggle-label">Como prefere pagar?</div>
                     <div class="period-toggle">
                         <div class="period-switcher">
@@ -2833,7 +2925,7 @@ main{position:relative;z-index:1}
         <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:4px">Dúvidas · <span class="grad">~1 dia · Ativar −10%</span></h2>
         <div class="faq-list">
             <details class="faq-i rv rv-d1" open><summary class="faq-q">Paga em ~1 dia? · Ativar −10%</summary><div class="faq-a" id="faq-savings-a">Perda ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês · ~<strong id="faq-savings-payback">1 dia</strong> = 1 mês · 7 dias · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta faq-inline-cta--price" data-plan="Maré">Ativar — R$399,99</a></div></details>
-            <p class="faq-assure rv rv-d2">7 dias · 100% · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta faq-inline-cta--price" data-plan="Maré">Ativar −10% — R$359,99</a></p>
+            <p class="faq-assure rv rv-d2">7 dias · 100% · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta faq-inline-cta--price" data-plan="Maré">Ativar −10% — R$359,99</a> · sem risco</p>
             <details class="faq-i faq-i--risk rv rv-d2"><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">7 dias · 100% reembolso · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar −10% sem risco</a></div></details>
             <div class="faq-more" id="faq-more">
                 <details class="faq-i"><summary class="faq-q">Quanto custa?</summary><div class="faq-a">R$ 399,99/mês · Ativar −10% trimestral · anual −15% · PIX/cartão · sem fidelidade.</div></details>
