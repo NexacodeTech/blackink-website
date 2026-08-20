@@ -510,6 +510,24 @@
     let period = urlParams.get('period') || 'monthly';
     if (!['monthly', 'quarterly', 'yearly'].includes(period)) period = 'monthly';
 
+    // Bridge from landing ROI calculator (ciclo 36/40) — resolve early for auto-trimestral
+    const simulatedBudget = (function resolveBudget() {
+        let budgetRaw = urlParams.get('budget');
+        if (!budgetRaw) {
+            try {
+                budgetRaw = sessionStorage.getItem('blackink_calc_budget') || localStorage.getItem('blackink_calc_budget');
+            } catch (_) {}
+        }
+        const budget = parseInt(budgetRaw, 10);
+        if (!budget || budget < 1000 || budget > 500000) return null;
+        return budget;
+    })();
+    const simulatedLoss = simulatedBudget ? Math.round(simulatedBudget * 0.25) : null;
+    // Ciclo 193: mirror landing auto-trimestral when loss ≥ 3× cloaker (user can still pick mensal)
+    if (period === 'monthly' && simulatedLoss && simulatedLoss >= 399.99 * 3) {
+        period = 'quarterly';
+    }
+
     if (!PLANS[plan]) {
         plan = DEFAULT_PLAN;
     }
@@ -560,20 +578,6 @@
     document.querySelectorAll('.cadastro-period-btn').forEach(btn => {
         btn.addEventListener('click', () => applyPeriodPricing(btn.dataset.period));
     });
-
-    // Bridge from landing ROI calculator (ciclo 36/40)
-    const simulatedBudget = (function resolveBudget() {
-        let budgetRaw = urlParams.get('budget');
-        if (!budgetRaw) {
-            try {
-                budgetRaw = sessionStorage.getItem('blackink_calc_budget') || localStorage.getItem('blackink_calc_budget');
-            } catch (_) {}
-        }
-        const budget = parseInt(budgetRaw, 10);
-        if (!budget || budget < 1000 || budget > 500000) return null;
-        return budget;
-    })();
-    const simulatedLoss = simulatedBudget ? Math.round(simulatedBudget * 0.25) : null;
 
     (function syncLossBridge() {
         const bridge = document.getElementById('cadastroLossBridge');
