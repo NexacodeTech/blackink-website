@@ -736,6 +736,7 @@ main{position:relative;z-index:1}
   #cloaker .showcase-cta-soft{display:none}
   #cloaker .prot-sim-threat-bar{display:none}
   #cloaker .prot-sim-threat-lvl{display:none}
+  #cloaker .prot-sim-shield{display:none}
   #cloaker .mock-topbar{display:none}
   #cloaker .prot-sim-header{padding:8px 12px}
   #cloaker .prot-sim-status-sub{display:none}
@@ -743,20 +744,24 @@ main{position:relative;z-index:1}
   #cloaker .prot-sim-stat{padding:6px 2px 5px}
   #cloaker .prot-sim-stat-val{font-size:15px}
   #cloaker .prot-sim-feed{margin:0 8px 8px}
-  #cloaker .prot-sim-feed-header{padding:5px 10px}
-  /* Ciclo 121: feed curto no mobile */
-  .prot-sim{min-height:160px}
+  #cloaker .prot-sim-feed-header{padding:5px 10px;flex-shrink:0}
+  /* Ciclo 141: feed curto sem clipar o header do log */
+  .prot-sim{min-height:168px}
   #cloaker .prot-sim-stat:last-child{display:none}
   #cloaker .prot-sim-stats{grid-template-columns:1fr 1fr 1fr}
-  .prot-sim-feed{min-height:40px;max-height:64px}
+  .prot-sim-feed{min-height:56px;max-height:80px}
+  #cloaker .prot-sim-feed-body{min-height:0}
   .networks-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:12px}
-  #redes.redes-strip{padding:clamp(12px,2vh,22px) 0}
-  #redes .t-lg{margin:2px auto 2px;font-size:clamp(18px,5vw,24px)}
+  #redes.redes-strip{padding:clamp(10px,1.6vh,18px) 0}
+  #redes .t-lg{margin:2px auto 2px;font-size:clamp(18px,5vw,22px)}
   #redes .t-body-lg{display:none}
-  #redes .network-chip{padding:6px 10px;flex:0 1 auto}
+  #redes .t-label{margin-bottom:0}
+  #redes .network-chip{padding:5px 8px;flex:0 1 auto}
   #redes .network-chip span{display:none}
-  #redes .network-chip strong{margin:0;font-size:11px}
-  #redes .networks-grid{margin-top:8px;gap:4px}
+  #redes .network-chip strong{margin:0;font-size:10px}
+  #redes .networks-grid{margin-top:6px;gap:4px}
+  #o-que-e .t-label{display:none}
+  #como-funciona .t-label{font-size:10px;margin-bottom:0}
   #pricing .p-monthly-eq{font-size:10px;margin-top:2px;max-width:28ch;line-height:1.25}
   /* Ciclo 88: eq. cobrança em 1 linha curta no mobile */
   #pricing .p-monthly-eq{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
