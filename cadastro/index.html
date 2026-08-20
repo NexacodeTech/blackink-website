@@ -149,8 +149,15 @@
             border:1px solid rgba(52,211,153,0.35);background:rgba(52,211,153,0.08);
             font-size:12px;line-height:1.35;color:var(--dim);text-align:center
         }
-        .cadastro-garantia-banner.is-on{display:block}
+        .cadastro-garantia-banner.is-on{display:block;animation:garantiaBannerPulse 2.2s var(--ease) 2}
         .cadastro-garantia-banner strong{color:var(--green);font-weight:700}
+        @keyframes garantiaBannerPulse{
+            0%,100%{border-color:rgba(52,211,153,0.35);background:rgba(52,211,153,0.08)}
+            50%{border-color:rgba(52,211,153,0.6);background:rgba(52,211,153,0.14)}
+        }
+        @media(prefers-reduced-motion:reduce){
+            .cadastro-garantia-banner.is-on{animation:none}
+        }
         .cadastro-loss-bridge{margin-top:12px;padding:12px 14px;border-radius:10px;border:1px solid rgba(239,68,68,0.2);background:rgba(239,68,68,0.06);text-align:left}
         .cadastro-loss-bridge strong{display:block;font-size:15px;color:#fca5a5;margin-bottom:4px}
         .cadastro-loss-bridge span{font-size:12px;color:var(--dim);line-height:1.45}
