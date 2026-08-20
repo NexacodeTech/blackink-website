@@ -543,9 +543,9 @@ strong{font-weight:600}
 .period-nudge button{background:none;border:none;padding:0;font:inherit;color:var(--accent);font-weight:600;cursor:pointer;text-decoration:underline;text-underline-offset:3px;transition:color .3s var(--ease)}
 .period-nudge button:hover{color:var(--white)}
 .period-nudge button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
-.period-toggle{display:flex;justify-content:center;margin-bottom:clamp(10px,1.5vw,14px)}
-.period-switcher{display:inline-flex;flex-wrap:wrap;justify-content:center;max-width:100%;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:4px;gap:4px}
-.period-btn{background:transparent;border:none;padding:10px 16px;font-family:var(--ff-body);font-size:13px;font-weight:500;color:var(--dim);border-radius:10px;cursor:pointer;transition:color .3s var(--ease),background .3s var(--ease);display:inline-flex;align-items:center;gap:6px}
+.period-toggle{display:flex;justify-content:center;margin-bottom:clamp(8px,1.2vw,12px)}
+.period-switcher{display:inline-flex;flex-wrap:wrap;justify-content:center;max-width:100%;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:3px;gap:3px}
+.period-btn{background:transparent;border:none;padding:9px 14px;font-family:var(--ff-body);font-size:13px;font-weight:500;color:var(--dim);border-radius:10px;cursor:pointer;transition:color .3s var(--ease),background .3s var(--ease);display:inline-flex;align-items:center;gap:5px}
 .period-btn:hover{color:var(--white)}
 .period-btn.active{background:rgba(100,180,255,0.1);color:var(--white);box-shadow:0 2px 12px rgba(100,180,255,0.1)}
 .period-discount{font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px;background:rgba(52,211,153,0.15);color:var(--green);letter-spacing:.02em}
@@ -570,11 +570,13 @@ strong{font-weight:600}
 .faq-more-toggle{display:block;margin:12px auto 0;background:transparent;border:1px solid var(--border);color:var(--dim);font-family:var(--ff-body);font-size:13px;font-weight:500;padding:10px 18px;border-radius:12px;cursor:pointer;min-height:44px;transition:color .3s var(--ease),border-color .3s var(--ease),background .3s var(--ease)}
 .faq-more-toggle:hover{color:var(--white);border-color:rgba(100,180,255,0.28);background:rgba(100,180,255,0.06)}
 .faq-more-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.faq-outro{max-width:720px;margin:20px auto 0;text-align:center;padding:16px 14px;border-radius:12px;border:1px solid var(--border);background:rgba(6,17,31,0.45)}
-.faq-outro p{font-size:13px;color:var(--dim);line-height:1.5;margin:0 0 12px}
+.faq-outro{max-width:720px;margin:16px auto 0;text-align:center;padding:14px 12px;border-radius:12px;border:1px solid var(--border);background:rgba(6,17,31,0.45)}
+.faq-outro p{font-size:12px;color:var(--dim);line-height:1.45;margin:0 0 10px}
 .faq-outro a{color:var(--accent);font-weight:500;transition:color .3s var(--ease)}
 .faq-outro a:hover{color:var(--white)}
-.faq-outro-cta{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:center}
+.faq-outro-cta{display:flex;flex-direction:column;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center}
+.faq-outro-period{font-size:12px;color:var(--accent);font-weight:500;text-decoration:none;transition:color .3s var(--ease)}
+.faq-outro-period:hover{color:var(--white)}
 .faq-i{border:1px solid var(--border);border-radius:12px;background:rgba(6,17,31,0.5);overflow:hidden}
 .faq-q{padding:14px 16px;font-size:14px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
 .faq-q::-webkit-details-marker{display:none}
@@ -653,12 +655,18 @@ main{position:relative;z-index:1}
   #pricing.section--compact{padding:clamp(28px,4vh,48px) 0}
   .flow-pillars{grid-template-columns:1fr 1fr}
   .showcase{grid-template-columns:1fr;gap:18px}
-  #cloaker.section--compact{padding:clamp(28px,4vh,48px) 0}
-  #cloaker .t-body-lg{font-size:14px;margin-bottom:0}
-  #cloaker .showcase-features{margin-top:8px;gap:6px}
+  #cloaker.section--compact{padding:clamp(24px,3.5vh,44px) 0}
+  #cloaker .showcase{display:flex;flex-direction:column;gap:12px}
+  #cloaker .showcase-text{display:contents}
+  #cloaker .showcase-text .t-label{order:1}
+  #cloaker .showcase-text .t-lg{order:2;margin:4px 0 6px}
+  #cloaker .showcase-text .t-body-lg{order:3;font-size:13px;margin:0 0 0}
+  #cloaker .showcase-features{display:none}
   #cloaker .showcase-proof{display:none}
-  #cloaker .showcase-cta{margin-top:10px}
+  #cloaker .showcase-visual{order:4}
+  #cloaker .showcase-cta{order:5;margin-top:4px}
   #cloaker .showcase-cta .btn-o{display:none}
+  #cloaker .t-body-lg{font-size:13px;margin-bottom:0}
   .networks-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:12px}
   #redes.redes-strip{padding:clamp(20px,3vh,32px) 0}
   #redes .network-chip{padding:8px 12px;flex:0 1 auto}
@@ -1068,7 +1076,7 @@ main{position:relative;z-index:1}
                 <div class="pricing-reveal-inner">
                     <div class="t-label">Seu investimento</div>
                     <h2 class="pricing-reveal-title">BlackInk Cloaker</h2>
-                    <p class="pricing-lead" id="pricing-lead">Corta os <strong id="pricing-lead-loss">R$ 12.500</strong> estimados — safe/offer, &lt;50ms, app e logs · Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras</p>
+                    <p class="pricing-lead" id="pricing-lead">Corta os <strong id="pricing-lead-loss">R$ 12.500</strong> estimados — safe/offer · &lt;50ms · app + logs · tráfego pago multi-rede</p>
                     <div class="period-toggle-label">Como prefere pagar?</div>
                     <div class="period-toggle">
                         <div class="period-switcher">
@@ -1144,10 +1152,10 @@ main{position:relative;z-index:1}
             <button type="button" class="faq-more-toggle" id="faq-more-toggle" aria-expanded="false" aria-controls="faq-more">Ver mais perguntas</button>
         </div>
         <div class="faq-outro rv">
-            <p>Ainda com dúvida? <a href="mailto:suporte@theblack.ink">suporte@theblack.ink</a> — ou ative agora com garantia de 7 dias</p>
+            <p>Ainda com dúvida? <a href="mailto:suporte@theblack.ink">suporte@theblack.ink</a> · garantia 7 dias</p>
             <div class="faq-outro-cta">
                 <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
-                <a href="/?period=quarterly#pricing" class="btn btn-o">Ver trimestral (−10%)</a>
+                <a href="#pricing" class="faq-outro-period">Ajustar periodicidade</a>
             </div>
         </div>
     </div>
@@ -1168,7 +1176,7 @@ main{position:relative;z-index:1}
                 <span>Sem contrato</span>
                 <span>Empresa BR · CNPJ</span>
             </div>
-            <a href="/?period=quarterly#pricing" style="font-size:12px;color:var(--accent);font-weight:500">Ver trimestral (−10%) e anual (−15%)</a>
+            <a href="#pricing" style="font-size:12px;color:var(--accent);font-weight:500">Ajustar periodicidade</a>
         </div>
     </div>
 </section>
