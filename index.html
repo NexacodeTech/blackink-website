@@ -633,15 +633,20 @@ main{position:relative;z-index:1}
   .hdr-nav .hdr-nav-cta{display:inline-flex;margin-top:8px;justify-content:center;border-bottom:none;width:100%;color:#021018}
   .hdr-cta{display:none}
   .mob-tog{display:flex}
-  .hero{padding:calc(var(--hdr-h) + 6px) 16px 0;justify-content:flex-start;min-height:auto;min-height:100dvh}
-  .hero-core{justify-content:flex-start;padding-top:4px;padding-bottom:16px;flex:1}
-  .hero-logo{width:36px;height:36px;margin-bottom:10px}
-  .hero-badge{margin-bottom:10px}
-  .hero-title{font-size:clamp(24px,7vw,30px);margin-bottom:10px;line-height:1.2}
-  .hero-sub{font-size:13px;margin-bottom:14px;max-width:34ch;line-height:1.5}
-  .hero-ctas{flex-direction:column;width:100%;max-width:320px;margin-bottom:12px;gap:10px}
+  .hero{padding:calc(var(--hdr-h) + 4px) 16px 0;justify-content:flex-start;min-height:auto;min-height:100dvh}
+  .hero-core{justify-content:flex-start;padding-top:2px;padding-bottom:12px;flex:1}
+  .hero-logo{width:34px;height:34px;margin-bottom:8px}
+  .hero-badge{margin-bottom:8px}
+  .hero-title{font-size:clamp(24px,7vw,30px);margin-bottom:8px;line-height:1.2}
+  .hero-sub{font-size:13px;margin-bottom:12px;max-width:34ch;line-height:1.45}
+  .hero-ctas{flex-direction:column;width:100%;max-width:320px;margin-bottom:10px;gap:8px}
   .hero-ctas .btn{width:100%}
   .hero-trust{font-size:11px;max-width:300px}
+  .trust-rail{padding:10px 12px;gap:6px 12px}
+  .trust-rail span{font-size:10px}
+  /* Drop rail chips that duplicate hero-trust (ciclo 69) */
+  .trust-rail span:nth-child(3),
+  .trust-rail span:nth-child(4){display:none}
   .problem-grid{grid-template-columns:1fr;max-width:420px}
   .obj-grid{grid-template-columns:1fr;max-width:420px}
   .edu-rail{grid-template-columns:1fr;max-width:420px}
@@ -653,6 +658,7 @@ main{position:relative;z-index:1}
   #problema .mid-cta .btn-o{display:none}
   #problema .mid-cta{margin-top:10px}
   #pricing.section--compact{padding:clamp(28px,4vh,48px) 0}
+  #pricing .period-toggle-label{display:none}
   .flow-pillars{grid-template-columns:1fr 1fr}
   .showcase{grid-template-columns:1fr;gap:18px}
   #cloaker.section--compact{padding:clamp(24px,3.5vh,44px) 0}
@@ -1682,7 +1688,7 @@ let footerInView = false;
 
 function syncStickyVisibility() {
     if (!stickyCta) return;
-    const pastHero = window.scrollY > (heroSection ? heroSection.offsetHeight * 0.7 : 400);
+    const pastHero = window.scrollY > (heroSection ? heroSection.offsetHeight * 0.35 : 180);
     const show = !stickyDismissed && pastHero && !pricingInView && !faqInView && !ctaFinalInView && !footerInView;
     stickyCta.classList.toggle('visible', show);
     stickyCta.setAttribute('aria-hidden', show ? 'false' : 'true');
