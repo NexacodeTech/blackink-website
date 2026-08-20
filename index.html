@@ -327,20 +327,20 @@ strong{font-weight:600}
 .hero-trust-icon{width:14px;height:14px;stroke:var(--green);flex-shrink:0}
 @keyframes heroIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 @keyframes simPulse{0%,100%{opacity:1}50%{opacity:.45}}
-/* Problem punch — compact */
-.problem-strip{padding:clamp(28px,4vh,48px) 0;text-align:center}
-.problem-strip .t-lg{margin:8px auto 10px;max-width:560px}
-.problem-strip .t-body-lg{margin:0 auto 16px;max-width:480px}
-.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:900px;margin:0 auto}
-.problem-card{padding:14px 14px;border-radius:12px;border:1px solid var(--border);background:linear-gradient(180deg,rgba(10,22,40,0.75),rgba(6,14,28,0.92));text-align:left;position:relative;overflow:hidden;transition:border-color .35s var(--ease),transform .35s var(--ease)}
+/* Problem punch — denser (ciclo 57) */
+.problem-strip{padding:clamp(24px,3.5vh,40px) 0;text-align:center}
+.problem-strip .t-lg{margin:6px auto 8px;max-width:520px}
+.problem-strip .t-body-lg{margin:0 auto 12px;max-width:440px;font-size:clamp(13px,1.4vw,15px)}
+.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:900px;margin:0 auto}
+.problem-card{padding:12px;border-radius:12px;border:1px solid var(--border);background:linear-gradient(180deg,rgba(10,22,40,0.75),rgba(6,14,28,0.92));text-align:left;position:relative;overflow:hidden;transition:border-color .35s var(--ease),transform .35s var(--ease)}
 .problem-card:hover{border-color:rgba(100,180,255,0.28);transform:translateY(-2px)}
 .problem-card::before{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(100,180,255,0.18),transparent)}
-.problem-stat{font-family:var(--ff-display);font-size:clamp(20px,2.4vw,26px);font-weight:700;letter-spacing:-0.03em;margin-bottom:4px;line-height:1.1}
-.problem-title{font-size:13px;font-weight:600;margin-bottom:4px;color:var(--white)}
-.problem-desc{font-size:12px;color:var(--dim);line-height:1.45}
-.problem-resolve{margin-top:14px;font-size:clamp(14px,1.5vw,16px);color:var(--dim)}
+.problem-stat{font-family:var(--ff-display);font-size:clamp(18px,2.2vw,24px);font-weight:700;letter-spacing:-0.03em;margin-bottom:2px;line-height:1.1}
+.problem-title{font-size:13px;font-weight:600;margin-bottom:3px;color:var(--white)}
+.problem-desc{font-size:11px;color:var(--dim);line-height:1.4}
+.problem-resolve{margin-top:12px;font-size:clamp(13px,1.4vw,15px);color:var(--dim)}
 .problem-resolve .grad{font-weight:600}
-.problem-strip .mid-cta{margin-top:12px}
+.problem-strip .mid-cta{margin-top:10px;gap:8px}
 .arch-cta{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px;margin-top:36px}
 .trust-rail{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 16px;padding:14px 16px;width:100%;border-top:1px solid var(--border);background:rgba(6,17,31,0.65);margin-top:auto}
 .trust-rail span{font-size:11px;font-weight:500;color:rgba(240,244,248,0.62);letter-spacing:.02em;display:inline-flex;align-items:center;gap:6px}
@@ -786,22 +786,22 @@ main{position:relative;z-index:1}
     <div class="container">
         <p class="t-label rv">O problema</p>
         <h2 class="t-lg rv rv-d1">Você paga o clique<br><span class="grad">O bot não compra</span></h2>
-        <p class="t-body-lg rv rv-d2">Offer page no destino do anúncio = revisores e tráfego inválido chegam nela — budget some antes da venda</p>
+        <p class="t-body-lg rv rv-d2">Offer page no destino = revisores e tráfego inválido chegam nela</p>
         <div class="problem-grid">
             <div class="problem-card rv">
                 <div class="problem-stat" style="color:#ef4444">Conta</div>
                 <div class="problem-title">Revisor vê a offer</div>
-                <div class="problem-desc">Sem camada intermediária, a revisão chega na money page. Conta limitada não é azar — é destino errado.</div>
+                <div class="problem-desc">Sem camada intermediária, a revisão chega na money page.</div>
             </div>
             <div class="problem-card rv rv-d1">
                 <div class="problem-stat" style="color:var(--gold)">~22%</div>
                 <div class="problem-title">Budget em clique sujo</div>
-                <div class="problem-desc">Estimativa setorial de tráfego inválido — ordem de grandeza. Você otimiza campanha em cima de ruído.</div>
+                <div class="problem-desc">Estimativa setorial de tráfego inválido — ordem de grandeza.</div>
             </div>
             <div class="problem-card rv rv-d2">
                 <div class="problem-stat" style="color:var(--accent)">Script</div>
                 <div class="problem-title">Client-side é frágil</div>
-                <div class="problem-desc">Decisão no browser é detectável. Plataforma server-side decide antes de servir HTML.</div>
+                <div class="problem-desc">Decisão no browser é detectável. Server-side decide antes do HTML.</div>
             </div>
         </div>
         <p class="problem-resolve rv rv-d3">A plataforma BlackInk <span class="grad">resolve os três</span></p>
@@ -1462,8 +1462,8 @@ const periodBtns = document.querySelectorAll('.period-btn');
 const allPrices = document.querySelectorAll('.p-price[data-period]');
 const PRICING_CTA_LABELS = {
     monthly: 'Ativar Cloaker — R$399,99/mês',
-    quarterly: 'Ativar Cloaker — R$359,99/mês · cobrado R$1.079,97',
-    yearly: 'Ativar Cloaker — R$339,99/mês · cobrado R$4.079,90'
+    quarterly: 'Ativar Cloaker — R$359,99/mês',
+    yearly: 'Ativar Cloaker — R$339,99/mês'
 };
 const HERO_CTA_LABELS = {
     monthly: 'Começar agora — R$399,99/mês',
