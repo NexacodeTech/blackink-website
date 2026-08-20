@@ -159,3 +159,8 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Contexto**: `#o-que-e` + pilares em `#como-funciona` repetiam safe/offer e features do showcase.
 **Regra**: educação enxuta (copy curta, sem soft-CTA); setup compacto com steps+fluxo+CTA hard; pilares removidos (prova/showcase carrega os detalhes).
 **Status**: ativo
+
+## 2026-08-20 — Cadastro: troca de periodicidade inline
+**Contexto**: quem chega no cadastro pelo CTA mensal não conseguia mudar para trimestral/anual sem voltar.
+**Regra**: switcher Mensal/Trimestral/Anual no resumo da assinatura; atualiza preço, billing e `?period=` via `history.replaceState`; trimestral marcado Rec.
+**Status**: ativo

@@ -143,6 +143,14 @@
         .selected-plan-price{font-size:14px;color:var(--dim);line-height:1.5}
         .selected-plan-billing{font-size:12px;color:var(--muted);margin-top:2px}
         .selected-plan-trust{font-size:12px;color:rgba(240,244,248,0.62);margin-top:14px;padding-top:12px;border-top:1px solid var(--border);line-height:1.5}
+        .cadastro-period-label{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:16px 0 8px}
+        .cadastro-period{display:flex;gap:6px;flex-wrap:wrap}
+        .cadastro-period-btn{flex:1;min-width:0;min-height:44px;padding:10px 8px;border-radius:10px;border:1px solid var(--border);background:transparent;color:var(--dim);font-family:var(--ff-body);font-size:12px;font-weight:500;cursor:pointer;transition:color .3s var(--ease),background .3s var(--ease),border-color .3s var(--ease);display:inline-flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap}
+        .cadastro-period-btn:hover{color:var(--white);border-color:var(--border-h)}
+        .cadastro-period-btn.active{background:rgba(100,180,255,0.1);color:var(--white);border-color:rgba(100,180,255,0.35)}
+        .cadastro-period-btn .period-discount{font-size:9px;font-weight:700;padding:2px 5px;border-radius:4px;background:rgba(52,211,153,0.15);color:var(--green)}
+        .cadastro-period-btn .period-rec{font-size:8px;font-weight:700;padding:2px 5px;border-radius:4px;background:rgba(100,180,255,0.18);color:var(--accent);letter-spacing:.03em;text-transform:uppercase}
+        .cadastro-period-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
         /* ── Form ── */
         .form-group{margin-bottom:20px}
@@ -338,6 +346,12 @@
                                 <div class="selected-plan-billing" id="planBilling">Cobrança mensal</div>
                             </div>
                         </div>
+                        <div class="cadastro-period-label" id="periodLabel">Como prefere pagar?</div>
+                        <div class="cadastro-period" role="group" aria-labelledby="periodLabel">
+                            <button type="button" class="cadastro-period-btn" data-period="monthly">Mensal</button>
+                            <button type="button" class="cadastro-period-btn" data-period="quarterly">Trimestral <span class="period-discount">−10%</span> <span class="period-rec">Rec.</span></button>
+                            <button type="button" class="cadastro-period-btn" data-period="yearly">Anual <span class="period-discount">−15%</span></button>
+                        </div>
                         <div class="selected-plan-trust">PIX ou cartão · Garantia de 7 dias · Cancele quando quiser</div>
                     </div>
 
@@ -475,7 +489,8 @@
     // Get URL params
     const urlParams = new URLSearchParams(window.location.search);
     let plan = urlParams.get('plan') || DEFAULT_PLAN;
-    const period = urlParams.get('period') || 'monthly';
+    let period = urlParams.get('period') || 'monthly';
+    if (!['monthly', 'quarterly', 'yearly'].includes(period)) period = 'monthly';
 
     if (!PLANS[plan]) {
         plan = DEFAULT_PLAN;
@@ -485,22 +500,38 @@
     const planData = PLANS[plan];
     document.getElementById('planName').textContent = planData.displayName || plan;
 
-    // Calculate price based on billing period
-    let priceDisplay = planData.price;
-    let billingDisplay = 'Cobrança mensal';
-    if (period === 'quarterly') {
-        const monthlyEq = (planData.priceValue * 0.9).toFixed(2).replace('.', ',');
-        const quarterlyTotal = (planData.priceValue * 3 * 0.9).toFixed(2).replace('.', ',');
-        priceDisplay = `R$ ${monthlyEq}/mês`;
-        billingDisplay = `Cobrado R$ ${quarterlyTotal} a cada 3 meses · economia ~10%`;
-    } else if (period === 'yearly') {
-        const monthlyEq = (planData.priceValue * 0.85).toFixed(2).replace('.', ',');
-        const yearlyTotal = (planData.priceValue * 12 * 0.85).toFixed(2).replace('.', ',');
-        priceDisplay = `R$ ${monthlyEq}/mês`;
-        billingDisplay = `Cobrado R$ ${yearlyTotal} a cada 12 meses · economia ~15%`;
+    function applyPeriodPricing(nextPeriod) {
+        period = nextPeriod;
+        let priceDisplay = planData.price;
+        let billingDisplay = 'Cobrança mensal';
+        if (period === 'quarterly') {
+            const monthlyEq = (planData.priceValue * 0.9).toFixed(2).replace('.', ',');
+            const quarterlyTotal = (planData.priceValue * 3 * 0.9).toFixed(2).replace('.', ',');
+            priceDisplay = `R$ ${monthlyEq}/mês`;
+            billingDisplay = `Cobrado R$ ${quarterlyTotal} a cada 3 meses · economia ~10%`;
+        } else if (period === 'yearly') {
+            const monthlyEq = (planData.priceValue * 0.85).toFixed(2).replace('.', ',');
+            const yearlyTotal = (planData.priceValue * 12 * 0.85).toFixed(2).replace('.', ',');
+            priceDisplay = `R$ ${monthlyEq}/mês`;
+            billingDisplay = `Cobrado R$ ${yearlyTotal} a cada 12 meses · economia ~15%`;
+        }
+        document.getElementById('planPrice').textContent = priceDisplay;
+        document.getElementById('planBilling').textContent = billingDisplay;
+        document.querySelectorAll('.cadastro-period-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.period === period);
+        });
+        try {
+            const u = new URL(window.location.href);
+            u.searchParams.set('plan', plan);
+            u.searchParams.set('period', period);
+            history.replaceState({}, '', u.pathname + u.search + u.hash);
+        } catch (_) {}
     }
-    document.getElementById('planPrice').textContent = priceDisplay;
-    document.getElementById('planBilling').textContent = billingDisplay;
+
+    applyPeriodPricing(period);
+    document.querySelectorAll('.cadastro-period-btn').forEach(btn => {
+        btn.addEventListener('click', () => applyPeriodPricing(btn.dataset.period));
+    });
 
     // Sidebar copy — plataforma + setup correto
     const sidebar = {
