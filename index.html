@@ -2807,6 +2807,20 @@ main{position:relative;z-index:1}
   #pricing .pricing-trust-chips li{padding:5px 8px;min-height:28px;align-items:center}
   /* c538 LAST desktop: chip 26px — margem de fold (slack era 1px) */
   #pricing .pricing-trust-chips li{padding:4px 8px;min-height:26px}
+  /* c580 LAST desktop: FAQ discoverable (risk+toggle) + peek pro assure no fold */
+  #hero{min-height:calc(100vh - 300px);min-height:calc(100dvh - 300px)}
+  #pricing.section--compact{padding:2px 0 4px}
+  #faq .faq-list{display:flex;flex-direction:column;gap:4px}
+  #faq .faq-assure{order:-1;margin:4px 0 0;gap:4px}
+  #faq .faq-list > .faq-i:not(.faq-i--risk){display:none}
+  #faq .faq-i--risk{display:block;order:0;margin:0;border:1px solid rgba(52,211,153,0.35);border-radius:8px;background:rgba(52,211,153,0.06)}
+  #faq .faq-i--risk .faq-q{display:block;padding:8px 12px;font-size:13px;min-height:36px;line-height:1.25;font-weight:600;color:var(--white)}
+  #faq .faq-i--risk .faq-q::after{display:inline-block}
+  #faq .faq-more-toggle{display:block;order:1;margin:8px auto 0;min-height:36px;padding:6px 14px;font-size:12px;font-weight:600;color:var(--white);border:1px solid rgba(100,180,255,0.28);opacity:1}
+  #faq .faq-more{order:2}
+  #faq .faq-more.open{display:flex;flex-direction:column;gap:4px}
+  #faq .faq-more .faq-i{display:block;margin:0;border:1px solid var(--border);border-radius:8px;background:rgba(6,17,31,0.5)}
+  #faq .faq-more .faq-i .faq-q{display:block;padding:8px 12px;font-size:13px;min-height:36px;font-weight:600}
 }
 
 @media (max-width:640px){
@@ -4211,7 +4225,7 @@ main{position:relative;z-index:1}
         <div class="faq-list">
             <details class="faq-i rv rv-d1" open><summary class="faq-q" id="faq-hook-q">Paga em ~1 dia? · Ativar −10%</summary><div class="faq-a" id="faq-savings-a">Perda ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês · ~<strong id="faq-savings-payback">1 dia</strong> = 1 mês · garantia 7 dias · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta faq-inline-cta--price" data-plan="Maré">Ativar — R$399,99/mês</a></div></details>
             <p class="faq-assure rv rv-d2"><span class="faq-assure-micro">Garantia 7d · 100% · vs R$ 12.500 · sem risco</span><a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta faq-inline-cta--price" data-plan="Maré" data-intent="garantia">Ativar sem risco 7d −10% — R$359,99</a></p>
-            <details class="faq-i faq-i--risk rv rv-d2"><summary class="faq-q">E se eu não gostar? · 7d 100%</summary><div class="faq-a">7 dias · 100% reembolso · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré" data-intent="garantia">Ativar 7d sem risco −10% — R$359,99</a></div></details>
+            <details class="faq-i faq-i--risk rv rv-d2"><summary class="faq-q">E se eu não gostar? · 7d 100%</summary><div class="faq-a">7 dias · 100% reembolso · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré" data-intent="garantia">Ativar 7d sem risco −10%</a></div></details>
             <div class="faq-more" id="faq-more">
                 <details class="faq-i"><summary class="faq-q">Quanto custa?</summary><div class="faq-a">R$ 399,99/mês · Ativar −10% trimestral · anual −15% · PIX/cartão · sem fidelidade.</div></details>
                 <details class="faq-i"><summary class="faq-q">OAuth? Não — sem conectar conta</summary><div class="faq-a">Não. Cadastre páginas, configure regras e use a URL BlackInk como destino — Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras · sem OAuth.</div></details>
@@ -4625,9 +4639,10 @@ const FAQ_PRICE_CTA = {
     yearly: 'Ativar sem risco 7d −15% — R$339,99'
 };
 const FAQ_RISK_CTA = {
-    monthly: 'Ativar 7d sem risco',
-    quarterly: 'Ativar 7d sem risco −10%',
-    yearly: 'Ativar 7d sem risco −15%'
+    // c579: price no risk CTA — mesma âncora do assure
+    monthly: 'Ativar 7d sem risco — R$399,99',
+    quarterly: 'Ativar 7d sem risco −10% — R$359,99',
+    yearly: 'Ativar 7d sem risco −15% — R$339,99'
 };
 const SOFT_CTA_LABELS = {
     // c523/c547/c561: Garantia first (≠ FAQ “sem risco”; ≠ primary Ativar)
@@ -5123,10 +5138,9 @@ if (calcSlider && calcDisplay && calcInvisible && calcFraud && calcTotal && calc
     updateCalc();
 }
 
-// c556/c568: densest — hook fechado; assure first (CSS order); risk+toggle discoverable
+// c556/c568/c580: densest — hook fechado (mobile+desktop); assure first; risk+toggle
 (function densestFaqAssureFirst() {
     try {
-        if (!window.matchMedia('(max-width:767px)').matches) return;
         document.querySelectorAll('#faq details.faq-i[open]').forEach(d => d.removeAttribute('open'));
     } catch (_) {}
 })();
