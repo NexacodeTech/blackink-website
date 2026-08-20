@@ -807,36 +807,40 @@ main{position:relative;z-index:1}
   #pricing .pricing-reveal-title{margin:0;font-size:clamp(14px,4vw,17px)}
   #pricing .period-toggle{margin-bottom:1px}
   #pricing .period-nudge{font-size:8px;margin:-2px auto 1px;line-height:1.15}
-  #pricing .p-val{font-size:clamp(22px,6vw,28px)}
+  #pricing .p-val{font-size:clamp(20px,5.5vw,26px)}
   #pricing .p-curr{font-size:10px}
   #pricing .p-per{font-size:10px}
-  #pricing .btn-full{height:42px;font-size:12px}
-  #pricing.section--compact{padding:clamp(6px,1.2vh,14px) 0}
-  #pricing .pricing-reveal-inner{padding:5px 5px}
-  #pricing .p-price-wrap{min-height:24px;margin-bottom:0}
-  #pricing .period-btn{padding:4px 3px;font-size:9px}
+  #pricing .btn-full{height:40px;font-size:12px}
+  #pricing.section--compact{padding:clamp(4px,1vh,12px) 0}
+  #pricing .pricing-reveal-inner{padding:4px 4px}
+  #pricing .p-price-wrap{min-height:22px;margin-bottom:0}
+  #pricing .period-btn{padding:3px 2px;font-size:8px}
+  #pricing .pricing-trust-chips li{font-size:7px;padding:2px 4px}
+  #pricing .pricing-lead{font-size:8px;margin-bottom:1px}
+  #pricing .p-monthly-eq{font-size:8px;margin-top:0}
   .arch-grid{grid-template-columns:1fr}
   .calc-losses{grid-template-columns:1fr}
   .calc-summary{grid-template-columns:1fr}
-  #roi-calc.section--compact{padding:clamp(6px,1vh,14px) 0}
-  #roi-calc .t-lg{margin:2px auto 1px;font-size:clamp(15px,4.2vw,19px)}
+  #roi-calc.section--compact{padding:clamp(4px,0.8vh,12px) 0}
+  #roi-calc .t-lg{margin:1px auto 1px;font-size:clamp(14px,4vw,18px)}
   #roi-calc .t-label{display:none}
   #roi-calc .t-body-lg{display:none}
-  #roi-calc .calc-card{padding:5px}
-  #roi-calc .calc-slider-label{font-size:9px}
-  #roi-calc .calc-slider-value{font-size:15px}
+  #roi-calc .calc-card{padding:4px}
+  #roi-calc .calc-slider-label{font-size:8px}
+  #roi-calc .calc-slider-value{font-size:14px}
   #roi-calc .calc-slider-ticks{display:none}
   #roi-calc .calc-summary{grid-template-columns:1fr 1fr;gap:2px;margin-top:2px}
   #roi-calc .calc-summary-card{padding:3px 2px}
-  #roi-calc .calc-summary-val{font-size:13px}
+  #roi-calc .calc-summary-val{font-size:12px}
   #roi-calc .calc-summary-lbl{display:none}
   #roi-calc .calc-summary-bar{display:none}
   #roi-calc .calc-summary-tag{margin-bottom:0;font-size:7px}
   #roi-calc .calc-caveat{display:none}
-  #roi-calc .calc-cta-text{font-size:8px;margin-bottom:2px}
+  #roi-calc .calc-cta-text{font-size:8px;margin-bottom:1px}
   #roi-calc .calc-cta{margin-top:1px}
   #roi-calc .calc-divider{display:none}
-  #roi-calc .calc-cta .btn{height:42px;font-size:12px}
+  #roi-calc .calc-cta .btn{height:40px;font-size:12px}
+  #roi-calc .calc-slider-header{margin-bottom:1px}
   /* Ciclo 83: após ROI o preço está na sequência — link de período some no mobile */
   #roi-calc .calc-cta-period{display:none}
   .footer{padding:8px 0 6px}
@@ -1208,7 +1212,7 @@ main{position:relative;z-index:1}
             <a href="#redes">Redes</a>
             <a href="#faq">FAQ</a>
             <a href="https://app.theblack.ink/auth/login" class="hdr-nav-login">Entrar</a>
-            <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link hdr-nav-cta" data-plan="Maré">Ativar agora — R$399,99</a>
+            <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link hdr-nav-cta" data-plan="Maré">Ativar — R$399,99</a>
         </nav>
         <div class="hdr-cta">
             <a href="https://app.theblack.ink/auth/login" class="btn btn-g btn-sm">Entrar</a>
@@ -1240,7 +1244,7 @@ main{position:relative;z-index:1}
     <p class="hero-sub">Safe vs offer · multi-rede · &lt;50ms · sem OAuth · R$399,99</p>
     <div class="hero-ctas">
         <a href="#roi-calc" class="btn btn-p">Calcular perda do budget</a>
-        <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-o plan-link hero-cta" data-plan="Maré">Começar agora — R$399,99/mês</a>
+        <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-o plan-link hero-cta" data-plan="Maré">Começar — R$399,99/mês</a>
     </div>
     <div class="hero-trust">
         <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
@@ -1505,7 +1509,7 @@ main{position:relative;z-index:1}
             <div class="pricing-reveal-block rv">
                 <div class="pricing-reveal-inner">
                     <div class="t-label">Seu investimento</div>
-                    <h2 class="pricing-reveal-title">Um cloaker · <span class="grad">um preço</span></h2>
+                    <h2 class="pricing-reveal-title">Um cloaker · <span class="grad">R$399,99</span></h2>
                     <p class="pricing-lead" id="pricing-lead">Pare de perder <strong id="pricing-lead-loss">R$ 12.500</strong>/mês · payback <strong id="pricing-lead-payback">~1 dia</strong> · R$399,99</p>
                     <div class="period-toggle-label">Como prefere pagar?</div>
                     <div class="period-toggle">
@@ -1935,9 +1939,9 @@ const PRICING_CTA_LABELS = {
     yearly: 'Ativar agora — R$339,99/mês'
 };
 const HERO_CTA_LABELS = {
-    monthly: 'Começar agora — R$399,99/mês',
-    quarterly: 'Começar agora — R$359,99/mês',
-    yearly: 'Começar agora — R$339,99/mês'
+    monthly: 'Começar — R$399,99/mês',
+    quarterly: 'Começar — R$359,99/mês',
+    yearly: 'Começar — R$339,99/mês'
 };
 const STICKY_PRICE = {
     monthly: 'R$ 399,99/mês',
