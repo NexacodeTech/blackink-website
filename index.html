@@ -501,6 +501,8 @@ strong{font-weight:600}
 .why-strip-text{margin:0 auto;max-width:52ch;font-size:clamp(13px,1.4vw,15px);color:var(--dim);line-height:1.45}
 .why-strip-text strong{color:var(--white);font-weight:600}
 .why-strip-text .grad{font-weight:600}
+/* Ciclo 107: why merged into #redes */
+.redes-why{margin:14px auto 0;max-width:52ch;text-align:center}
 /* ROI denser (ciclo 54/66) */
 #roi-calc.section--compact{padding:clamp(24px,3.5vh,48px) 0}
 .calc-wrap{max-width:640px;margin:0 auto}
@@ -643,8 +645,8 @@ main{position:relative;z-index:1}
   .mob-tog{display:flex}
   .hero{padding:calc(var(--hdr-h) + 4px) 16px 0;justify-content:flex-start;min-height:auto;min-height:100dvh}
   .hero-core{justify-content:flex-start;padding-top:2px;padding-bottom:12px;flex:1}
-  /* Ciclo 89: why-strip duplica pricing micro no mobile */
-  #por-que{display:none}
+  /* Ciclo 89/107: why-line some no mobile (chips/pricing cobrem) */
+  #por-que.redes-why{display:none}
   #faq .faq-outro-period{display:none}
   #faq .faq-outro{padding:8px 6px}
   .hero-badge{margin-bottom:6px}
@@ -806,10 +808,15 @@ main{position:relative;z-index:1}
   .sticky-cta-text{display:block}
   .sticky-cta-price{display:none}
   body.has-sticky-cta{padding-bottom:calc(68px + env(safe-area-inset-bottom,0px))}
-  #roi-calc .t-lg{font-size:clamp(26px,3.2vw,34px);line-height:1.2}
+  #roi-calc .t-lg{font-size:clamp(24px,3vw,32px);line-height:1.2;max-width:min(520px,92vw);margin-left:auto;margin-right:auto}
   .calc-cta-actions{flex-direction:row;gap:14px}
   .calc-cta{margin-top:10px}
   .showcase-cta{flex-direction:row;align-items:center;gap:14px}
+  /* Ciclo 106: summary já traz prejuízo+ROI — losses somem no desktop */
+  #roi-calc .calc-losses{display:none}
+  #roi-calc .calc-divider{display:none}
+  #roi-calc .calc-slider-ticks{display:none}
+  #roi-calc .calc-caveat{display:none}
   /* Ciclo 97: buy-path desktop mais curto até o fechamento */
   #roi-calc.section--compact{padding:clamp(18px,2.8vh,36px) 0}
   #pricing.section--compact{padding:clamp(18px,2.8vh,36px) 0}
@@ -837,7 +844,7 @@ main{position:relative;z-index:1}
   #redes.redes-strip{padding:clamp(16px,2.4vh,28px) 0}
   #redes .t-body-lg{display:none}
   #redes .networks-grid{margin-top:10px}
-  #por-que.why-strip{padding:clamp(12px,2vh,20px) 0}
+  #por-que.redes-why{margin-top:12px;font-size:13px}
   #roi-calc .t-body-lg{margin:0 auto 6px;font-size:13px}
   #roi-calc .calc-card{padding:14px 16px}
   #roi-calc .calc-summary-lbl{display:none}
@@ -1180,8 +1187,8 @@ main{position:relative;z-index:1}
 <section class="section section--compact" id="roi-calc">
     <div class="container">
         <p class="t-label rv" style="text-align:center">Calculadora</p>
-        <h2 class="t-lg rv rv-d1" style="text-align:center;margin:6px auto 6px;max-width:min(640px,92vw)">Quanto do budget <span class="grad">some em cliques inválidos</span></h2>
-        <p class="t-body-lg rv rv-d2" style="text-align:center;margin:0 auto 10px;max-width:400px;font-size:clamp(13px,1.4vw,15px)">Mova o slider — perda estimada vs cloaker R$399,99</p>
+        <h2 class="t-lg rv rv-d1" style="text-align:center;margin:4px auto 4px;max-width:min(560px,92vw)">Budget que <span class="grad">some em cliques inválidos</span></h2>
+        <p class="t-body-lg rv rv-d2" style="text-align:center;margin:0 auto 8px;max-width:400px;font-size:clamp(13px,1.4vw,15px)">Slider = perda est. vs cloaker R$399,99</p>
         <div class="calc-wrap rv rv-d3">
             <div class="calc-card">
                 <div class="calc-slider-wrap">
@@ -1273,7 +1280,7 @@ main{position:relative;z-index:1}
 
 <div class="sep"></div>
 
-<!-- 7. Multi-rede (reforço pós-preço) -->
+<!-- 7. Multi-rede + porquê (reforço pós-preço, ciclo 107) -->
 <section class="redes-strip" id="redes">
     <div class="container">
         <p class="t-label rv">Redes</p>
@@ -1286,15 +1293,7 @@ main{position:relative;z-index:1}
             <div class="network-chip"><strong>TikTok Ads</strong><span>In-feed &amp; Spark</span></div>
             <div class="network-chip network-chip--more"><strong>E outras</strong><span>Mesmo fluxo</span></div>
         </div>
-    </div>
-</section>
-
-<div class="sep"></div>
-
-<!-- 8. Por que BlackInk — one-line strip (ciclo 65) -->
-<section class="why-strip" id="por-que" aria-label="Por que BlackInk">
-    <div class="container">
-        <p class="why-strip-text rv"><strong>SaaS server-side</strong> · não script PHP · decision logs · suporte BR · <span class="grad">R$399,99/mês</span></p>
+        <p class="why-strip-text redes-why rv rv-d4" id="por-que"><strong>SaaS server-side</strong> · não script PHP · decision logs · suporte BR · <span class="grad">R$399,99/mês</span></p>
     </div>
 </section>
 
@@ -1306,8 +1305,8 @@ main{position:relative;z-index:1}
         <p class="t-label rv" style="text-align:center;margin-bottom:6px">FAQ</p>
         <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:14px">Dúvidas <span class="grad">antes de ativar</span></h2>
         <div class="faq-list">
-            <details class="faq-i rv rv-d1" open><summary class="faq-q">O BlackInk se paga? Quanto posso economizar?</summary><div class="faq-a" id="faq-savings-a">Com o budget da <a href="#roi-calc">calculadora</a>, a perda estimada é ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês — cloaker a R$399,99 se paga em ~<strong id="faq-savings-payback">1 dia</strong> (estimativa). <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar cloaker</a></div></details>
-            <details class="faq-i faq-i--risk rv rv-d2" open><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">Garantia de 7 dias · reembolso 100% se não fizer sentido para suas campanhas — sem pergunta capciosa.</div></details>
+            <details class="faq-i rv rv-d1" open><summary class="faq-q">O BlackInk se paga? Quanto posso economizar?</summary><div class="faq-a" id="faq-savings-a">Pela <a href="#roi-calc">calculadora</a>: ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês inválidos · cloaker R$399,99 se paga em ~<strong id="faq-savings-payback">1 dia</strong>. <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar cloaker</a></div></details>
+            <details class="faq-i faq-i--risk rv rv-d2" open><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">Garantia 7 dias · reembolso 100% — sem pergunta capciosa.</div></details>
             <div class="faq-more" id="faq-more">
                 <details class="faq-i"><summary class="faq-q">Quanto custa?</summary><div class="faq-a">Produto único a R$ 399,99/mês. Trimestral ~10% off (R$ 359,99/mês equiv.) e anual ~15% (R$ 339,99/mês equiv.). PIX ou cartão · sem fidelidade.</div></details>
                 <details class="faq-i"><summary class="faq-q">Preciso conectar minha conta de anúncios (OAuth)?</summary><div class="faq-a">Não. Cadastre páginas, configure regras e use a URL BlackInk como destino — Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras · sem OAuth.</div></details>
@@ -1326,7 +1325,7 @@ main{position:relative;z-index:1}
             <p>Dúvida? <a href="mailto:suporte@theblack.ink">suporte@theblack.ink</a> · garantia 7 dias · sem contrato</p>
             <div class="faq-outro-cta">
                 <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
-                <a href="#pricing" class="faq-outro-period">Ajustar periodicidade</a>
+                <a href="#pricing" class="faq-outro-period">Ver trimestral (−10%) · anual (−15%)</a>
             </div>
         </div>
     </div>
