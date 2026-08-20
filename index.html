@@ -524,8 +524,6 @@ strong{font-weight:600}
 /* Pricing */
 .pricing-narrative{max-width:800px;margin:0 auto}
 .pricing-act{margin-bottom:clamp(40px,6vw,64px);text-align:center}
-.pricing-act--problem{margin-bottom:clamp(28px,4vw,40px)}
-.pricing-act--problem .pricing-lead{font-size:16px;max-width:560px}
 .pricing-act .t-lg{margin:12px auto 16px}
 .pricing-lead{font-size:17px;color:var(--dim);line-height:1.7;max-width:640px;margin:0 auto}
 .pricing-lead strong{color:var(--white)}
@@ -1307,7 +1305,7 @@ main{position:relative;z-index:1}
                 <span>Sem contrato</span>
                 <span>Empresa BR · CNPJ</span>
             </div>
-            <a href="#pricing" style="font-size:13px;color:var(--accent);font-weight:500">Ver trimestral (−10%) e anual (−15%)</a>
+            <a href="/?period=quarterly#pricing" style="font-size:13px;color:var(--accent);font-weight:500">Ver trimestral (−10%) e anual (−15%)</a>
         </div>
     </div>
 </section>
@@ -1700,10 +1698,31 @@ periodBtns.forEach(btn => {
         });
         updatePlanLinks(period);
         updatePricingCtaLabel(period);
+        try {
+            const u = new URL(window.location.href);
+            u.searchParams.set('period', period);
+            history.replaceState({}, '', u.pathname + u.search + u.hash);
+        } catch (_) {}
     });
 });
-updatePlanLinks('monthly');
-updatePricingCtaLabel('monthly');
+const initialPeriod = (() => {
+    try {
+        const p = new URLSearchParams(window.location.search).get('period');
+        if (p && ['monthly', 'quarterly', 'yearly'].includes(p)) return p;
+    } catch (_) {}
+    return 'monthly';
+})();
+if (initialPeriod !== 'monthly') {
+    const btn = document.querySelector('.period-btn[data-period="' + initialPeriod + '"]');
+    if (btn) btn.click();
+    else {
+        updatePlanLinks(initialPeriod);
+        updatePricingCtaLabel(initialPeriod);
+    }
+} else {
+    updatePlanLinks('monthly');
+    updatePricingCtaLabel('monthly');
+}
 
 // Sticky CTA — before ROI so calc errors never block dismiss/period-adjacent UX
 const stickyCta = document.getElementById('sticky-cta');

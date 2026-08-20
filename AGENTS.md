@@ -184,3 +184,8 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Contexto**: ato “custo real” repetia o ROI; includes depois do CTA atrasavam o clique; sticky competia com FAQ outro.
 **Regra**: pricing começa no valor; includes compactos **antes** do CTA; sticky esconde também em `#faq`; submit do cadastro mostra preço do período.
 **Status**: ativo
+
+## 2026-08-20 — Landing respeita `?period=`
+**Contexto**: share/CTA para trimestral precisava pré-selecionar billing na landing.
+**Regra**: `?period=monthly|quarterly|yearly` ativa o switcher + CTAs; clique no período atualiza a URL via `replaceState`.
+**Status**: ativo
