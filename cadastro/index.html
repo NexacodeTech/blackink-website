@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criar Conta — BlackInk</title>
+    <link rel="canonical" href="https://blackink.cloud/cadastro/">
     <meta name="description" content="Crie sua conta na plataforma BlackInk — cloaker server-side para Google Ads, Meta, TikTok e outras plataformas. R$ 399,99/mês.">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/abyss-tokens.css">
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+    <link href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500,600,700&display=swap" rel="stylesheet">
     <style>
         /* ══════════════════════════════════════════════════════════
            BLACKINK — Register Page
            ══════════════════════════════════════════════════════════ */
         :root {
-            --ff-display: 'Space Grotesk', sans-serif;
-            --ff-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --ff-display: 'General Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --ff-body: 'General Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             --bg: #020a14;
             --bg2: #06111f;
             --surface: rgba(8,22,48,0.45);
@@ -28,6 +28,7 @@
             --accent: #64b4ff;
             --accent2: #38bdf8;
             --green: #34d399;
+            --gold: #fbbf24;   /* usado por .password-strength-bar.medium — sem isto a barra fica transparente */
             --error: #f87171;
             --ease: cubic-bezier(0.16,1,0.3,1);
         }
@@ -136,7 +137,8 @@
         .selected-plan{background:rgba(100,180,255,0.04);border:1px solid var(--border-h);border-radius:14px;padding:18px;margin-bottom:28px}
         .selected-plan-label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:13px}
         .selected-plan-row{display:flex;align-items:center;gap:16px}
-        .selected-plan-icon{flex-shrink:0;font-size:32px}
+        .selected-plan-icon{flex-shrink:0;width:32px;height:32px}
+        .selected-plan-icon img{width:100%;height:100%;object-fit:contain}
         .selected-plan-info{flex:1}
         .selected-plan-name{font-family:var(--ff-display);font-weight:700;font-size:18px;color:var(--accent);margin-bottom:4px}
         .selected-plan-price{font-size:14px;color:var(--dim);line-height:1.5}
@@ -202,6 +204,21 @@
 
         /* ── Responsive ── */
         @media(max-width:767px){
+            /* itens de grid com conteúdo largo não encolhem sem min-width:0 —
+               era isso que cortava o checkout horizontalmente no telefone */
+            .register-info,.register-card{min-width:0}
+            .step-line{width:auto;flex:1 1 0;min-width:8px}
+            .step-label{font-size:12px}
+            /* o stepper era cortado pelo overflow:hidden do card em todo telefone.
+               Bolinha fixa, rótulo encolhe, linha absorve o resto. */
+            /* o rótulo empilha embaixo da bolinha em vez de encolher — encolher
+               truncava para "Prod… / Da… / Pagame…" abaixo de 410px */
+            .steps{gap:6px}
+            .step{flex-direction:column;gap:4px;min-width:0}
+            .step-num{width:24px;height:24px;flex:0 0 24px;font-size:12px}
+            .step-label{font-size:11px;white-space:nowrap}
+            .step-line{align-self:flex-start;margin-top:11px}
+
             .main-section{padding:100px 20px 60px}
             .register-features{display:none}
         }
@@ -264,13 +281,13 @@
                 <!-- Left Side - Info -->
                 <div class="register-info">
                     <div class="register-info-logo">
-                        <img src="../logo-full-clean.png" alt="BlackInk">
+                        <img src="../images/logo-icon-160.png" width="160" height="160" alt="BlackInk">
                     </div>
                     <h1 class="t-xl register-info-title" id="infoTitle">
-                        Ative seu <span class="grad">cloaker</span>
+                        Configure em <span class="grad">15 minutos</span>
                     </h1>
                     <p class="t-body register-info-subtitle" id="infoSubtitle">
-                        Crie sua conta e filtre bots, VPNs e revisores antes de gastar em tráfego pago.
+                        Cadastre safe page e offer page na plataforma (ou use BlackInk Clone), configure as regras e conecte o seu domínio. O domínio que vai no anúncio continua sendo o seu.
                     </p>
 
                     <div class="register-features" id="infoFeatures">
@@ -279,8 +296,8 @@
                                 <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                             </div>
                             <div class="register-feature-text">
-                                <strong>Safe Page / Offer Page</strong>
-                                <span>Roteamento server-side em menos de 50ms</span>
+                                <strong>Cadastro de páginas</strong>
+                                <span>HTML/código no painel ou BlackInk Clone para replicar estrutura</span>
                             </div>
                         </div>
                         <div class="register-feature">
@@ -288,17 +305,17 @@
                                 <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
                             </div>
                             <div class="register-feature-text">
-                                <strong>Filtragem Multi-Sinal</strong>
-                                <span>Bots, VPNs, proxies e revisores bloqueados em tempo real</span>
+                                <strong>Seus dois domínios</strong>
+                                <span>Um hospeda as páginas, o outro vai no anúncio — os dois são seus. O da BlackInk não aparece para ninguém</span>
                             </div>
                         </div>
                         <div class="register-feature">
                             <div class="register-feature-icon">
-                                <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+                                <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
                             </div>
                             <div class="register-feature-text">
-                                <strong>App Mobile</strong>
-                                <span>Push de alertas quando bots ou revisores são detectados</span>
+                                <strong>Regras de filtragem</strong>
+                                <span>Geo, device, bots, VPNs e revisores — sem conectar conta de anúncios (Google, Meta, TikTok…)</span>
                             </div>
                         </div>
                     </div>
@@ -328,11 +345,12 @@
                     <div class="selected-plan" id="selectedPlan">
                         <div class="selected-plan-label">Resumo da assinatura</div>
                         <div class="selected-plan-row">
-                            <div class="selected-plan-icon" id="planIcon">🛡️</div>
+                            <div class="selected-plan-icon"><img src="../images/logo-icon-160.png" width="160" height="160" alt=""></div>
                             <div class="selected-plan-info">
                                 <div class="selected-plan-name" id="planName">BlackInk Cloaker</div>
                                 <div class="selected-plan-price" id="planPrice">R$ 399,99/mês</div>
                                 <div class="selected-plan-billing" id="planBilling">Cobrança mensal</div>
+                                <div class="selected-plan-billing" id="planGuarantee" style="color:var(--green);margin-top:6px">7 dias de garantia sobre o valor cobrado — reembolso integral, sem justificar.</div>
                             </div>
                         </div>
                     </div>
@@ -439,7 +457,7 @@
                     </form>
 
                     <div class="form-footer">
-                        <p>Já tem uma conta? <a href="https://app.theblack.ink/auth/login">Fazer login</a></p>
+                        <p>Já tem uma conta? <a href="https://app.blackink.cloud/auth/login">Fazer login</a></p>
                     </div>
                 </div>
             </div>
@@ -452,6 +470,7 @@
     <div class="container">
         <div class="f-bottom">
             <span>&copy; 2026 BlackInk. Todos os direitos reservados.</span>
+            <span style="opacity:.75">Ao continuar, você concorda com os <a href="/termos-de-uso/" style="color:var(--accent);text-decoration:underline">Termos de Uso</a> e a <a href="/politica-de-privacidade/" style="color:var(--accent);text-decoration:underline">Política de Privacidade</a>.</span>
         </div>
     </div>
 </footer>
@@ -464,7 +483,7 @@
     // Single product — API plan name: Maré (R$ 399,99/mês)
     const DEFAULT_PLAN = 'Maré';
     const PLANS = {
-        'Maré': { icon: '🛡️', displayName: 'BlackInk Cloaker', price: 'R$ 399,99/mês', priceValue: 399.99 }
+        'Maré': { displayName: 'BlackInk Cloaker', price: 'R$ 399,99/mês', priceValue: 399.99 }
     };
 
     // Get URL params
@@ -478,7 +497,6 @@
 
     // Update plan info display
     const planData = PLANS[plan];
-    document.getElementById('planIcon').textContent = planData.icon;
     document.getElementById('planName').textContent = planData.displayName || plan;
 
     // Calculate price based on billing period
@@ -498,30 +516,7 @@
     document.getElementById('planPrice').textContent = priceDisplay;
     document.getElementById('planBilling').textContent = billingDisplay;
 
-    // Sidebar copy — plataforma + setup correto
-    const sidebar = {
-        title: 'Proteja suas <span class="grad">campanhas</span>',
-        subtitle: 'Cadastre safe page e offer page na plataforma (ou use BlackInk Clone), configure regras e aponte o tráfego para a URL da BlackInk.',
-        features: [
-            { strong: 'Cadastro de páginas', span: 'HTML/código no painel ou BlackInk Clone para replicar estrutura' },
-            { strong: 'URL BlackInk', span: 'Destino do anúncio — a plataforma decide qual página servir' },
-            { strong: 'Regras de filtragem', span: 'Geo, device, bots, VPNs e revisores — sem conectar conta de anúncios (Google, Meta, TikTok…)' }
-        ]
-    };
 
-    document.getElementById('infoTitle').innerHTML = sidebar.title;
-    document.getElementById('infoSubtitle').textContent = sidebar.subtitle;
-    document.getElementById('infoFeatures').innerHTML = sidebar.features.map(f => `
-        <div class="register-feature">
-            <div class="register-feature-icon">
-                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <div class="register-feature-text">
-                <strong>${f.strong}</strong>
-                <span>${f.span}</span>
-            </div>
-        </div>
-    `).join('');
 
     // Form elements
     const form = document.getElementById('registerForm');
@@ -597,7 +592,9 @@
     }
 
     function validateEmail(email) {
-        return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email);
+        // {2,} e nao {2,4}: TLDs como .agency, .marketing, .digital e .online
+        // tem 5+ letras e eram rejeitados antes de chegar na API.
+        return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,}$/.test(email);
     }
 
     function validatePhone(phone) {
@@ -702,7 +699,10 @@
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 },
-                body: JSON.stringify(registrationData)
+                body: JSON.stringify(registrationData),
+                // Sem timeout, uma conexao pendurada deixa o botao em "Processando..."
+                // para sempre e a pessoa perde os 5 campos ao recarregar.
+                signal: AbortSignal.timeout(20000)
             });
 
             const data = await response.json();
@@ -717,15 +717,17 @@
             localStorage.removeItem('blackink_friend_referral_token');
             localStorage.removeItem('blackink_friend_referral_code');
 
-            // Redirect to checkout
+            // Etapa 3: a API devolve a URL do checkout da Stripe
             if (data.checkout_url) {
                 window.location.href = data.checkout_url;
             } else {
-                showToast('success', 'Cadastro realizado!', 'Redirecionando para o pagamento...');
-                // Fallback - redirect to app login
+                // Sem checkout_url a conta foi criada mas o pagamento não pôde ser
+                // iniciado. Não prometer "redirecionando para o pagamento" — mandar
+                // para o login, que é para onde a pessoa realmente vai.
+                showToast('success', 'Conta criada!', 'Não conseguimos abrir o pagamento agora. Entre na sua conta para concluir a assinatura.');
                 setTimeout(() => {
-                    window.location.href = 'https://app.theblack.ink/auth/login';
-                }, 2000);
+                    window.location.href = 'https://app.blackink.cloud/auth/login';
+                }, 3000);
             }
 
         } catch (error) {
