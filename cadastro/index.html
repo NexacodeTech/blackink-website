@@ -706,6 +706,10 @@
         if (stickyBtn && !stickyBtn.disabled) stickyBtn.textContent = submitLabelForPeriod(period);
         const stickyTrust = document.querySelector('.cadastro-sticky-trust');
         if (stickyTrust) stickyTrust.innerHTML = '<strong>Garantia 7 dias</strong> · 100% · ' + garantiaVerb.replace('Ativar com garantia','Com garantia');
+        // c563: sticky também herda ring no path garantia
+        if (document.body.classList.contains('intent-garantia') && stickyBtn) {
+            stickyBtn.style.boxShadow = '0 0 0 1px rgba(52,211,153,0.35),0 4px 20px rgba(100,180,255,0.2)';
+        }
         // c482/c515: sidebar subtitle sync período + preço do período
         const periodPrice = period === 'yearly' ? 'R$339,99' : (period === 'quarterly' ? 'R$359,99' : 'R$399,99');
         const infoSubtitle = document.getElementById('infoSubtitle');
