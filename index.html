@@ -1459,6 +1459,16 @@ main{position:relative;z-index:1}
   /* c399 LAST: period discount compacto row */
   #pricing .period-btn{gap:1px;padding:2px 1px}
   #pricing .period-discount{font-size:7px;padding:0 2px}
+  /* c400 LAST: FAQ Q de volta — gancho ~1 dia + assure price CTA */
+  #faq .faq-i{display:block;margin:0;padding:0;border:none;background:transparent;line-height:1}
+  #faq .faq-i--risk,#faq .faq-more,#faq .faq-more-toggle{display:none}
+  #faq .faq-q{display:block;font-size:12px;padding:4px 0;line-height:1.2;font-weight:600;color:var(--white)}
+  #faq .faq-q::after{display:none}
+  #faq .faq-a{display:none}
+  #faq .faq-list{gap:0;margin:0}
+  /* c401 LAST: sticky densest — CTA 44px tocável */
+  .sticky-cta .btn-p{height:44px;font-size:13px;padding:0 16px}
+  .sticky-cta-price{font-size:11px;line-height:1.25}
 }
 @media (min-width:768px){
   .sticky-cta-text{display:block}
@@ -2183,6 +2193,13 @@ main{position:relative;z-index:1}
   #faq.section--compact,#faq{padding:4px 0}
   #pricing .period-btn{gap:1px;padding:2px 2px}
   #pricing .period-discount{font-size:7px;padding:0 2px}
+  /* c400–c401 desktop densest */
+  #faq .faq-i{display:block;margin:0;padding:0;border:none;background:transparent}
+  #faq .faq-i--risk,#faq .faq-more,#faq .faq-more-toggle{display:none}
+  #faq .faq-q{display:block;font-size:13px;padding:4px 0;line-height:1.2;font-weight:600;color:var(--white)}
+  #faq .faq-q::after{display:none}
+  #faq .faq-a{display:none}
+  .sticky-cta .btn-p{height:44px;font-size:14px}
 }
 
 @media (max-width:640px){
@@ -2310,6 +2327,13 @@ main{position:relative;z-index:1}
   #comecar .cta-final-title{margin:0 0 4px;font-size:clamp(13px,3.4vw,16px)}
   #faq .faq-assure{margin:4px 0 0;font-size:11px;line-height:1.25}
   #faq .faq-assure a,#faq .faq-inline-cta{padding:0;margin:0;font-size:11px}
+  /* c400: FAQ Q densest em ≤600 */
+  #faq .faq-i{display:block;margin:0;padding:0;border:none;background:transparent}
+  #faq .faq-i--risk,#faq .faq-more,#faq .faq-more-toggle{display:none}
+  #faq .faq-q{display:block;font-size:12px;padding:4px 0;line-height:1.2;font-weight:600}
+  #faq .faq-q::after{display:none}
+  #faq .faq-a{display:none}
+  .sticky-cta .btn-p{height:44px;font-size:13px}
 }
 @media (max-width:500px){
   .flow-pillars{grid-template-columns:1fr}
@@ -2427,6 +2451,13 @@ main{position:relative;z-index:1}
   #comecar .cta-final-title{margin:0 0 4px;font-size:clamp(13px,3.4vw,16px)}
   #faq .faq-assure{margin:4px 0 0;font-size:11px;line-height:1.25}
   #faq .faq-assure a,#faq .faq-inline-cta{padding:0;margin:0;font-size:11px}
+  /* c400: FAQ Q densest em ≤480 */
+  #faq .faq-i{display:block;margin:0;padding:0;border:none;background:transparent}
+  #faq .faq-i--risk,#faq .faq-more,#faq .faq-more-toggle{display:none}
+  #faq .faq-q{display:block;font-size:12px;padding:4px 0;line-height:1.2;font-weight:600}
+  #faq .faq-q::after{display:none}
+  #faq .faq-a{display:none}
+  .sticky-cta .btn-p{height:44px;font-size:13px}
 }
 @media (max-width:390px){
   .hero-logo{width:32px;height:32px}
@@ -2533,6 +2564,13 @@ main{position:relative;z-index:1}
   #comecar .cta-final-title{margin:0 0 4px;font-size:clamp(13px,3.4vw,16px)}
   #faq .faq-assure{margin:4px 0 0;font-size:11px;line-height:1.25}
   #faq .faq-assure a,#faq .faq-inline-cta{padding:0;margin:0;font-size:11px}
+  /* c400: FAQ Q densest no iPhone */
+  #faq .faq-i{display:block;margin:0;padding:0;border:none;background:transparent}
+  #faq .faq-i--risk,#faq .faq-more,#faq .faq-more-toggle{display:none}
+  #faq .faq-q{display:block;font-size:12px;padding:4px 0;line-height:1.2;font-weight:600}
+  #faq .faq-q::after{display:none}
+  #faq .faq-a{display:none}
+  .sticky-cta .btn-p{height:44px;font-size:13px}
   #como-funciona .mid-cta .btn{height:18px;font-size:7px}
   #problema .mid-cta .btn{height:18px;font-size:7px}
 }
