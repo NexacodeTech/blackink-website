@@ -1561,8 +1561,8 @@ main{position:relative;z-index:1}
   main{display:flex;flex-direction:column}
   #hero{order:10}
   #pricing{order:20}
-  #redes{order:30}
-  #faq{order:40}
+  #redes{order:40}
+  #faq{order:30}
   #comecar{order:50}
   #problema{order:60}
   main > .sep{display:none;order:99}
@@ -1778,7 +1778,8 @@ main{position:relative;z-index:1}
   /* c501 LAST: trust-rail some — preço peeks; chips sob CTA bastam */
   .trust-rail{display:none}
   /* c505 LAST: peek 160px — chips trust full no fold (mobile) */
-  #hero{min-height:calc(100vh - 160px);min-height:calc(100dvh - 160px)}
+  /* c556 LAST: peek 180 — FAQ assure sobe após preço (faq order 30) */
+  #hero{min-height:calc(100vh - 180px);min-height:calc(100dvh - 180px)}
   /* c503 LAST: micro cobrança compacto sob CTA */
   #pricing .p-micro{font-size:10px;margin:2px 0 4px;line-height:1.25}
   /* c510 LAST: padding inferior — fold fecha nos chips (sem redes truncada) */
@@ -2597,8 +2598,8 @@ main{position:relative;z-index:1}
   main{display:flex;flex-direction:column}
   #hero{order:10}
   #pricing{order:20}
-  #redes{order:30}
-  #faq{order:40}
+  #redes{order:40}
+  #faq{order:30}
   #comecar{order:50}
   #problema{order:60}
   main > .sep{display:none;order:99}
@@ -2909,8 +2910,8 @@ main{position:relative;z-index:1}
   main{display:flex;flex-direction:column}
   #hero{order:10}
   #pricing{order:20}
-  #redes{order:30}
-  #faq{order:40}
+  #redes{order:40}
+  #faq{order:30}
   #comecar{order:50}
   #problema{order:60}
   main > .sep{display:none;order:99}
@@ -2996,7 +2997,8 @@ main{position:relative;z-index:1}
   .hero-scroll-cue{display:none}
   .trust-rail{display:none}
   /* c505: peek 160 — chips trust full no fold (mobile) */
-  #hero{min-height:calc(100vh - 160px);min-height:calc(100dvh - 160px)}
+  /* c556: peek 180 — FAQ após preço */
+  #hero{min-height:calc(100vh - 180px);min-height:calc(100dvh - 180px)}
   /* c510 LAST: padding inferior — fold fecha nos chips */
   #pricing.section--compact{padding:2px 0 18px}
   /* c511 LAST: sticky morto no densest (CTA preço sempre no path) */
@@ -3205,8 +3207,8 @@ main{position:relative;z-index:1}
   main{display:flex;flex-direction:column}
   #hero{order:10}
   #pricing{order:20}
-  #redes{order:30}
-  #faq{order:40}
+  #redes{order:40}
+  #faq{order:30}
   #comecar{order:50}
   #problema{order:60}
   main > .sep{display:none;order:99}
@@ -3296,7 +3298,8 @@ main{position:relative;z-index:1}
   .hero-scroll-cue{display:none}
   .trust-rail{display:none}
   /* c505: peek 160 — chips trust full no fold (mobile) */
-  #hero{min-height:calc(100vh - 160px);min-height:calc(100dvh - 160px)}
+  /* c556: peek 180 — FAQ após preço */
+  #hero{min-height:calc(100vh - 180px);min-height:calc(100dvh - 180px)}
   /* c510 LAST: padding inferior — fold fecha nos chips */
   #pricing.section--compact{padding:2px 0 18px}
   /* c511 LAST: sticky morto no densest (CTA preço sempre no path) */
@@ -3494,8 +3497,8 @@ main{position:relative;z-index:1}
   main{display:flex;flex-direction:column}
   #hero{order:10}
   #pricing{order:20}
-  #redes{order:30}
-  #faq{order:40}
+  #redes{order:40}
+  #faq{order:30}
   #comecar{order:50}
   #problema{order:60}
   main > .sep{display:none;order:99}
@@ -3587,7 +3590,8 @@ main{position:relative;z-index:1}
   .hero-scroll-cue{display:none}
   .trust-rail{display:none}
   /* c505: peek 160 — chips trust full no fold (mobile) */
-  #hero{min-height:calc(100vh - 160px);min-height:calc(100dvh - 160px)}
+  /* c556: peek 180 — FAQ após preço */
+  #hero{min-height:calc(100vh - 180px);min-height:calc(100dvh - 180px)}
   /* c510 LAST: padding inferior — fold fecha nos chips */
   #pricing.section--compact{padding:2px 0 18px}
   /* c511 LAST: sticky morto no densest (CTA preço sempre no path) */
@@ -4073,7 +4077,7 @@ main{position:relative;z-index:1}
     <div class="container" style="position:relative;z-index:1">
         <p class="t-label rv" style="text-align:center;margin-bottom:4px">Pronto</p>
         <h2 class="t-lg rv rv-d1 cta-final-title" style="text-align:center" id="cta-final-title">~1 dia = 1 mês · <span class="grad">Começar agora</span></h2>
-        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:440px;margin:6px auto 10px;font-size:clamp(13px,1.4vw,15px)" id="cta-final-lead">Perda <strong id="cta-final-loss">R$ 12.500</strong>/mês · <span id="cta-final-payback">~1 dia</span> = 1 mês · <span id="cta-final-lead-tail">garantia 7 dias · Começar agora</span></p>
+        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:440px;margin:6px auto 10px;font-size:clamp(13px,1.4vw,15px)" id="cta-final-lead">vs perda <strong id="cta-final-loss">R$ 12.500</strong>/mês · <span id="cta-final-payback">~1 dia</span> = 1 mês · <span id="cta-final-lead-tail">garantia 7 dias · Começar agora</span></p>
         <div class="rv rv-d3" style="display:flex;flex-direction:column;align-items:center;gap:0">
             <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta comecar-cta" data-plan="Maré">Começar agora — R$399,99/mês</a>
             <div class="cta-final-trust">
@@ -4953,6 +4957,14 @@ if (calcSlider && calcDisplay && calcInvisible && calcFraud && calcTotal && calc
     calcSlider.addEventListener('input', updateCalc);
     updateCalc();
 }
+
+// c556: densest — FAQ hook fechado; assure sobe logo após preço (order 30)
+(function densestFaqAssureFirst() {
+    try {
+        if (!window.matchMedia('(max-width:767px)').matches) return;
+        document.querySelectorAll('#faq details.faq-i[open]').forEach(d => d.removeAttribute('open'));
+    } catch (_) {}
+})();
 
 })();
 </script>
