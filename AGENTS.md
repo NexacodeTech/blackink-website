@@ -149,3 +149,8 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Contexto**: no mobile o sticky escondia o preço (`sticky-cta-text` só ≥768px); ROI não amarrava perda ao payback do plano.
 **Regra**: sticky mobile mostra preço curto + CTA com valor; trimestral marcado “Recomendado”; ROI message inclui dias de payback estimado; ponte `#pricing` após calculadora; FAQ outro com e-mail.
 **Status**: ativo
+
+## 2026-08-20 — ROI slider fill alinhado às ticks
+**Contexto**: fill linear 1k–500k deixava R$10k/R$50k visualmente grudados em R$1k (ticks não-lineares).
+**Regra**: `--fill` mapeia por segmentos das ticks (1k→50k→100k→250k→500k); default do slider = R$50.000.
+**Status**: ativo

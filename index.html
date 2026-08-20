@@ -549,6 +549,7 @@ strong{font-weight:600}
 .period-btn.active{background:rgba(100,180,255,0.1);color:var(--white);box-shadow:0 2px 12px rgba(100,180,255,0.1)}
 .period-discount{font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px;background:rgba(52,211,153,0.15);color:var(--green);letter-spacing:.02em}
 .period-rec{font-size:9px;font-weight:700;padding:2px 6px;border-radius:4px;background:rgba(100,180,255,0.18);color:var(--accent);letter-spacing:.04em;text-transform:uppercase}
+.period-btn[data-period="quarterly"]:not(.active){box-shadow:inset 0 0 0 1px rgba(100,180,255,0.22)}
 .p-price-wrap{margin-bottom:24px;min-height:88px;display:flex;align-items:center;justify-content:center}
 .p-price[data-period]{display:none;flex-direction:column;align-items:center}
 .p-price[data-period].active{display:flex}
@@ -1134,10 +1135,10 @@ main{position:relative;z-index:1}
                 <div class="calc-slider-wrap">
                     <div class="calc-slider-header">
                         <span class="calc-slider-label">Investimento mensal em tráfego pago</span>
-                        <div class="calc-slider-value" id="calc-display">R$ <span>10.000</span></div>
+                        <div class="calc-slider-value" id="calc-display">R$ <span>50.000</span></div>
                     </div>
-                    <input type="range" class="calc-slider" id="calc-budget" min="1000" max="500000" step="1000" value="10000" aria-label="Investimento mensal em tráfego pago em reais" style="--fill:1.8%">
-                    <div class="calc-slider-ticks">
+                    <input type="range" class="calc-slider" id="calc-budget" min="1000" max="500000" step="1000" value="50000" aria-label="Investimento mensal em tráfego pago em reais" style="--fill:25%">
+                    <div class="calc-slider-ticks" aria-hidden="true">
                         <span>R$ 1k</span><span>R$ 50k</span><span>R$ 100k</span><span>R$ 250k</span><span>R$ 500k</span>
                     </div>
                     <p class="calc-caveat">Estimativa setorial ~22% de tráfego inválido + ~3% revisores/crawlers. Não é garantia de resultado — use como ordem de grandeza.</p>
@@ -1774,10 +1775,25 @@ if (calcSlider && calcDisplay && calcInvisible && calcFraud && calcHours && calc
             if (p < 1) requestAnimationFrame(tick);
         })(t0);
     };
+    // Fill tracks labeled ticks (1k→50k→100k→250k→500k) so the thumb doesn't look stuck at R$1k
+    const CALC_TICKS = [1000, 50000, 100000, 250000, 500000];
+    const valueToTickFill = (v) => {
+        const n = CALC_TICKS.length - 1;
+        if (v <= CALC_TICKS[0]) return 0;
+        if (v >= CALC_TICKS[n]) return 100;
+        for (let i = 0; i < n; i++) {
+            const a = CALC_TICKS[i];
+            const b = CALC_TICKS[i + 1];
+            if (v <= b) {
+                const t = (v - a) / (b - a);
+                return ((i + t) / n) * 100;
+            }
+        }
+        return 100;
+    };
     const updateCalc = () => {
         const val = parseInt(calcSlider.value, 10) || 0;
-        const pct = ((val - 1000) / (500000 - 1000)) * 100;
-        calcSlider.style.setProperty('--fill', pct + '%');
+        calcSlider.style.setProperty('--fill', valueToTickFill(val).toFixed(2) + '%');
         calcDisplay.innerHTML = 'R$ <span>' + val.toLocaleString('pt-BR') + '</span>';
         const fraud = val * 0.22;
         const reviewers = val * 0.03;
