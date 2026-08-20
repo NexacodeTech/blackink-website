@@ -683,6 +683,8 @@ main{position:relative;z-index:1}
   #faq .faq-outro p{font-size:12px;margin-bottom:10px}
   #pricing .pricing-lead{font-size:13px;margin-bottom:10px;line-height:1.4}
   #pricing .pricing-includes-line{margin-bottom:10px;font-size:11px}
+  #pricing .p-micro{font-size:11px;margin-top:8px}
+  #pricing .pricing-reveal-title{margin:2px 0 6px}
   .arch-grid{grid-template-columns:1fr}
   .calc-losses{grid-template-columns:1fr}
   .calc-summary{grid-template-columns:1fr}
@@ -1598,7 +1600,11 @@ function updatePricingCtaLabel(period) {
     const stickyBtn = document.getElementById('sticky-cta-btn');
     if (stickyBtn) stickyBtn.textContent = STICKY_BTN[period] || STICKY_BTN.monthly;
     const nudge = document.getElementById('period-nudge');
-    if (nudge) nudge.innerHTML = periodNudgeHtml(period);
+    if (nudge) {
+        nudge.innerHTML = periodNudgeHtml(period);
+        // Hide confirmation nudge after trimestral/anual — switcher + price already tell the story (ciclo 71)
+        nudge.hidden = period !== 'monthly';
+    }
     syncStickyLossCopy(period);
 }
 
@@ -1825,7 +1831,10 @@ if (calcSlider && calcDisplay && calcInvisible && calcFraud && calcTotal && calc
         // Period nudge ties savings to loss (ciclo 41)
         const activePeriod = document.querySelector('.period-btn.active')?.dataset.period || 'monthly';
         const nudge = document.getElementById('period-nudge');
-        if (nudge) nudge.innerHTML = periodNudgeHtml(activePeriod);
+        if (nudge) {
+            nudge.innerHTML = periodNudgeHtml(activePeriod);
+            nudge.hidden = activePeriod !== 'monthly';
+        }
         // Final CTA mirrors loss (ciclo 35)
         if (ctaFinalLoss) ctaFinalLoss.textContent = fmt(total);
         // FAQ savings mirrors loss (ciclo 37)
