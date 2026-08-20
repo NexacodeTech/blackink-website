@@ -833,7 +833,12 @@ main{position:relative;z-index:1}
   #faq .faq-outro p{font-size:12px;margin-bottom:8px}
   /* Ciclo 101: FAQ outro em row no desktop — CTA + atalho lado a lado */
   #faq .faq-outro-cta{flex-direction:row;gap:14px;align-items:center}
-  #problema.problem-strip{padding:clamp(18px,2.5vh,28px) 0}
+  #problema.problem-strip{padding:clamp(16px,2.2vh,26px) 0}
+  #problema .t-body-lg{margin:0 auto 8px;font-size:13px}
+  #problema .problem-grid{gap:6px}
+  #problema .mid-cta{margin-top:8px}
+  #faq.section--compact{padding:clamp(16px,2.4vh,32px) 0}
+  #faq .faq-outro{margin-top:8px;padding:8px 10px}
   #o-que-e.edu-strip{padding:clamp(16px,2.2vh,28px) 0}
   #o-que-e .edu-pill{padding:12px 14px}
   #o-que-e .edu-pill p{font-size:12px}
@@ -864,7 +869,12 @@ main{position:relative;z-index:1}
   #pricing .pricing-lead{margin-bottom:10px;font-size:13px}
   #pricing .p-micro{margin-top:8px;font-size:11px}
   #pricing .pricing-trust-chips{margin-top:8px}
-  #pricing .period-toggle-label{margin-bottom:4px}
+  #pricing .period-toggle-label{margin-bottom:4px;display:none}
+  /* Ciclo 111: chips cobrem includes+micro no desktop */
+  #pricing .pricing-includes-line{display:none}
+  #pricing .p-micro{display:none}
+  #pricing .pricing-trust-chips{margin-top:10px;margin-bottom:2px}
+  #pricing .p-price-wrap{min-height:48px;margin-bottom:8px}
   #roi-calc .calc-cta{margin-top:8px}
   #cloaker .showcase-text .t-body-lg{font-size:14px}
   /* Ciclo 104: prova ao vivo fala por si — proof box some; feed mais curto */
@@ -1337,7 +1347,7 @@ main{position:relative;z-index:1}
     <div class="container" style="position:relative;z-index:1">
         <p class="t-label rv" style="text-align:center;margin-bottom:6px">Pronto</p>
         <h2 class="t-lg rv rv-d1" style="text-align:center">Ative o cloaker<br><span class="grad">Pare de financiar o clique inválido</span></h2>
-        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:440px;margin:8px auto 14px;font-size:clamp(13px,1.4vw,15px)" id="cta-final-lead">Até <strong id="cta-final-loss">R$ 12.500</strong>/mês em cliques inválidos · payback <span id="cta-final-payback">~1 dia</span> · garantia 7 dias</p>
+        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:440px;margin:8px auto 12px;font-size:clamp(13px,1.4vw,15px)" id="cta-final-lead">Até <strong id="cta-final-loss">R$ 12.500</strong>/mês inválidos · payback <span id="cta-final-payback">~1 dia</span> · garantia 7 dias</p>
         <div class="rv rv-d3" style="display:flex;flex-direction:column;align-items:center;gap:10px">
             <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
             <div class="cta-final-trust">
