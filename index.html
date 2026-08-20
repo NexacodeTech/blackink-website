@@ -766,14 +766,17 @@ main{position:relative;z-index:1}
   #cloaker .prot-sim-feed-header{padding:4px 8px;flex-shrink:0}
   #cloaker .prot-sim-feed-title{letter-spacing:.04em;font-size:10px}
   #cloaker .prot-sim-feed-live{letter-spacing:.04em;font-size:10px}
-  /* Ciclo 141/163: feed curto sem clipar o header do log */
-  .prot-sim{min-height:148px}
+  /* Ciclo 141/163/211: feed curto sem clipar o header do log */
+  .prot-sim{min-height:132px}
   #cloaker .prot-sim-stat:last-child{display:none}
   #cloaker .prot-sim-stats{grid-template-columns:1fr 1fr 1fr}
-  .prot-sim-feed{min-height:48px;max-height:68px}
+  .prot-sim-feed{min-height:40px;max-height:56px}
   #cloaker .prot-sim-feed-body{min-height:0}
   #cloaker .showcase-cta{margin-top:0}
   #cloaker .showcase-cta .btn{height:44px;font-size:13px}
+  #cloaker.section--compact{padding:clamp(8px,1.4vh,18px) 0}
+  #cloaker .showcase-text .t-lg{font-size:clamp(16px,4.5vw,22px);margin:0 0 1px}
+  #cloaker .showcase-text .t-body-lg{font-size:9px}
   .networks-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:12px}
   #redes.redes-strip{padding:clamp(8px,1.4vh,14px) 0}
   #redes .t-lg{margin:0 auto 0;font-size:clamp(16px,4.5vw,20px)}
@@ -1000,15 +1003,18 @@ main{position:relative;z-index:1}
   #cloaker .showcase-feat-icon{display:none}
   #cloaker .showcase-feat-text{font-size:11px;line-height:1.25;color:var(--dim)}
   #cloaker .showcase-feat-text strong{color:var(--white);font-weight:600}
-  #cloaker .prot-sim{min-height:200px}
-  #cloaker .prot-sim-feed{min-height:56px;max-height:72px}
-  #cloaker .prot-sim-feed-body{min-height:56px}
-  #cloaker .showcase-cta{margin-top:6px}
-  #cloaker .showcase-cta-soft{font-size:12px}
+  #cloaker .prot-sim{min-height:180px}
+  #cloaker .prot-sim-feed{min-height:48px;max-height:64px}
+  #cloaker .prot-sim-feed-body{min-height:48px}
+  #cloaker .showcase-cta{margin-top:4px}
+  #cloaker .showcase-cta-soft{display:none}
   #cloaker .prot-sim-threat-bar{display:none}
   #cloaker .prot-sim-threat-lvl{display:none}
   #cloaker .prot-sim-status-sub{display:none}
   #cloaker .mock-topbar{display:none}
+  #cloaker.section--compact{padding:clamp(8px,1.4vh,18px) 0}
+  #cloaker .showcase-text .t-lg{font-size:clamp(18px,2.2vw,24px);margin:0 0 2px}
+  #cloaker .showcase-feat-text{font-size:10px}
   #comecar.cta-final{padding:clamp(12px,2vh,24px) 0}
   #comecar .t-body-lg{margin:2px auto 4px;font-size:12px}
   #comecar .cta-final-trust span:nth-child(4){display:none}
@@ -1126,7 +1132,7 @@ main{position:relative;z-index:1}
         <span class="ln"><span class="ln-i"><span class="ln-mute">Bots veem</span> <span class="ln-strong">Safe Page</span></span></span>
         <span class="ln"><span class="ln-i"><span class="ln-mute">Compradores veem</span> <span class="ln-strong">Offer Page</span></span></span>
     </h1>
-    <p class="hero-sub">Cloaker server-side · multi-rede · &lt;50ms · sem OAuth · R$399,99/mês</p>
+    <p class="hero-sub">Safe vs offer · multi-rede · &lt;50ms · sem OAuth · R$399,99/mês</p>
     <div class="hero-ctas">
         <a href="#roi-calc" class="btn btn-p">Ver perdas do budget</a>
         <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-o plan-link hero-cta" data-plan="Maré">Começar agora — R$399,99/mês</a>
@@ -1208,23 +1214,23 @@ main{position:relative;z-index:1}
     <div class="container">
         <p class="t-label rv" style="text-align:center">Como funciona</p>
         <h2 class="t-lg rv rv-d1" style="text-align:center;margin:6px auto 6px;max-width:520px">3 passos · safe/offer · <span class="grad">sem OAuth</span></h2>
-        <p class="t-body-lg rv rv-d2" style="text-align:center;margin:0 auto 4px;max-width:440px;font-size:clamp(13px,1.4vw,15px)">Páginas → regras → destino do anúncio = URL BlackInk</p>
+        <p class="t-body-lg rv rv-d2" style="text-align:center;margin:0 auto 4px;max-width:440px;font-size:clamp(13px,1.4vw,15px)">Cadastre · regras · destino do anúncio = URL BlackInk</p>
 
         <div class="setup-steps">
             <div class="setup-step rv">
                 <div class="setup-num">PASSO 01</div>
-                <h3>Cadastre páginas</h3>
-                <p>Safe e offer no painel — ou BlackInk Clone</p>
+                <h3>Cadastre safe/offer</h3>
+                <p>Painel ou BlackInk Clone</p>
             </div>
             <div class="setup-step rv rv-d1">
                 <div class="setup-num">PASSO 02</div>
-                <h3>Configure regras</h3>
-                <p>Geo, device, bots, VPNs, revisores — sem OAuth</p>
+                <h3>Regras multi-sinal</h3>
+                <p>Geo, device, bots, VPNs, revisores</p>
             </div>
             <div class="setup-step rv rv-d2">
                 <div class="setup-num">PASSO 03</div>
                 <h3>Aponte a URL</h3>
-                <p>Destino do anúncio = URL da plataforma · &lt;50ms</p>
+                <p>Destino do anúncio = URL BlackInk</p>
             </div>
         </div>
 
@@ -1243,8 +1249,8 @@ main{position:relative;z-index:1}
         <div class="showcase rv">
             <div class="showcase-text">
                 <div class="t-label">Prova</div>
-                <h2 class="t-lg">Cloaker <span class="grad">Ao Vivo</span></h2>
-                <p class="t-body-lg">15+ sinais · PASS/BLOCK/GEO · &lt;50ms</p>
+                <h2 class="t-lg">Prova <span class="grad">ao vivo</span></h2>
+                <p class="t-body-lg">15+ sinais · PASS/BLOCK · &lt;50ms · multi-rede</p>
                 <div class="showcase-features">
                     <div class="showcase-feat">
                         <div class="showcase-feat-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
@@ -1454,7 +1460,7 @@ main{position:relative;z-index:1}
             <details class="faq-i rv rv-d1" open><summary class="faq-q">O cloaker se paga?</summary><div class="faq-a" id="faq-savings-a">Perda ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês vs R$399,99 · payback ~<strong id="faq-savings-payback">1 dia</strong> · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar agora</a></div></details>
             <details class="faq-i faq-i--risk rv rv-d2"><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">7 dias · reembolso 100% · sem fidelidade. <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar sem risco</a></div></details>
             <div class="faq-more" id="faq-more">
-                <details class="faq-i"><summary class="faq-q">Quanto custa?</summary><div class="faq-a">Produto único a R$ 399,99/mês. Trimestral ~10% off (R$ 359,99/mês equiv.) e anual ~15% (R$ 339,99/mês equiv.). PIX ou cartão · sem fidelidade.</div></details>
+                <details class="faq-i"><summary class="faq-q">Quanto custa?</summary><div class="faq-a">R$ 399,99/mês · trimestral −10% · anual −15% · PIX/cartão · sem fidelidade.</div></details>
                 <details class="faq-i"><summary class="faq-q">Preciso conectar minha conta de anúncios (OAuth)?</summary><div class="faq-a">Não. Cadastre páginas, configure regras e use a URL BlackInk como destino — Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras · sem OAuth.</div></details>
                 <details class="faq-i"><summary class="faq-q">Funciona em quais redes?</summary><div class="faq-a">Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras. Destino do anúncio = URL BlackInk.</div></details>
                 <details class="faq-i"><summary class="faq-q">Como configuro o BlackInk?</summary><div class="faq-a">Cadastre safe/offer (ou BlackInk Clone), configure regras e aponte o anúncio para a URL BlackInk. Setup típico ~15 min — sem OAuth.</div></details>
