@@ -187,3 +187,8 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Contexto**: visitante via a perda na calculadora e esquecia o número no preço/sticky.
 **Regra**: `#pricing-lead-loss` e payback sync com o slider; sticky desktop/mobile espelha a perda estimada + preço do período.
 **Status**: ativo
+
+## 2026-08-20 — Reforço pós-preço enxuto
+**Contexto**: `#redes`/`#por-que` após o preço competiam com FAQ e repetiam CTAs de compra.
+**Regra**: redes = chips sem mid-CTA; arquétipos = 3 cards curtos + CTA hard + soft FAQ; sem sep duplicado.
+**Status**: ativo
