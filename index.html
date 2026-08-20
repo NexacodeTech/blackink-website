@@ -326,6 +326,10 @@ strong{font-weight:600}
 .hero-trust{display:flex;align-items:center;justify-content:center;gap:8px;font-size:12px;color:rgba(240,244,248,0.62);animation:heroIn .9s var(--ease) .25s both}
 .hero-trust-icon{width:14px;height:14px;stroke:var(--green);flex-shrink:0}
 .hero-trust strong{color:var(--white);font-weight:600}
+/* c529: Garantia no hero-trust → cadastro */
+a.hero-trust-garantia{color:inherit;text-decoration:none;border-bottom:1px solid rgba(52,211,153,0.35);transition:border-color .3s var(--ease),color .3s var(--ease)}
+a.hero-trust-garantia:hover{border-bottom-color:var(--green);color:var(--white)}
+a.hero-trust-garantia strong{color:var(--green)}
 .btn-o.hero-soft-cta{border-color:rgba(100,180,255,0.35);color:var(--white)}
 .btn-o.hero-soft-cta:hover{border-color:rgba(100,180,255,0.55);background:rgba(100,180,255,0.1)}
 .pricing-reveal-inner.pricing-focus{border-color:rgba(100,180,255,0.45);box-shadow:0 0 0 1px rgba(100,180,255,0.2),0 24px 64px rgba(0,0,0,0.3);transition:border-color .45s var(--ease),box-shadow .45s var(--ease);animation:pricingFocusPulse .9s var(--ease) both}
@@ -3522,7 +3526,7 @@ main{position:relative;z-index:1}
     </div>
     <div class="hero-trust">
         <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-        <span>~1 dia = 1 mês · <strong>Garantia 7 dias · 100%</strong> · Google/Meta/TikTok · sem OAuth</span>
+        <span>~1 dia = 1 mês · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link hero-trust-garantia" data-plan="Maré"><strong>Garantia 7 dias · 100%</strong></a> · Google/Meta/TikTok · sem OAuth</span>
     </div>
     </div>
     <div class="trust-rail" aria-label="Sinais de confiança">
