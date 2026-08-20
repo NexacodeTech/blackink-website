@@ -172,7 +172,7 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 
 ## 2026-08-20 — Reforço pós-preço enxuto
 **Contexto**: `#redes`/`#por-que` após o preço competiam com FAQ e repetiam CTAs de compra.
-**Regra**: redes = chips sem mid-CTA; arquétipos = 3 cards curtos + CTA hard + soft FAQ; sem sep duplicado.
+**Regra**: redes = chips sem mid-CTA; `#por-que` = strip SaaS vs script (sem 3 cards) + CTA hard + soft FAQ.
 **Status**: ativo
 
 ## 2026-08-20 — CTA final espelha perda

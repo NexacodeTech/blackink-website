@@ -484,7 +484,7 @@ strong{font-weight:600}
 .network-chip span{font-size:11px;color:var(--dim)}
 .network-chip--more{border-style:dashed}
 /* Comparison archetypes — compact pós-preço */
-.arch-strip{padding:clamp(28px,4vh,48px) 0}
+.arch-strip{padding:clamp(24px,3.5vh,40px) 0}
 .arch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}
 .arch-card{padding:16px 14px;border-radius:14px;border:1px solid var(--border);background:rgba(6,17,31,0.55);display:flex;flex-direction:column;gap:6px}
 .arch-card--win{border-color:rgba(100,180,255,0.28);background:linear-gradient(180deg,rgba(100,180,255,0.08),rgba(6,17,31,0.7));box-shadow:0 0 0 1px rgba(100,180,255,0.06)}
@@ -1121,30 +1121,13 @@ main{position:relative;z-index:1}
 
 <div class="sep"></div>
 
-<!-- 8. Por que BlackInk — archetypes -->
+<!-- 8. Por que BlackInk — reforço pós-preço -->
 <section class="arch-strip" id="por-que">
-    <div class="container">
-        <p class="t-label rv" style="text-align:center">Por que BlackInk</p>
-        <h2 class="t-lg rv rv-d1" style="text-align:center;margin:8px auto 8px;max-width:560px">Escolha por <span class="grad">arquitetura</span></h2>
-        <p class="t-body-lg rv rv-d2" style="text-align:center;margin:0 auto;max-width:480px;font-size:clamp(14px,1.5vw,16px)">Client-side, redirect ou SaaS — o modelo define o risco</p>
-        <div class="arch-grid">
-            <div class="arch-card rv">
-                <div class="arch-label">Arquétipo</div>
-                <h3>Client-side</h3>
-                <p>JS no browser do visitante — detectável, depende do seu host.</p>
-            </div>
-            <div class="arch-card rv rv-d1">
-                <div class="arch-label">Arquétipo</div>
-                <h3>Redirect</h3>
-                <p>Hop genérico, pouca telemetria — você gerencia a infra.</p>
-            </div>
-            <div class="arch-card arch-card--win rv rv-d2">
-                <div class="arch-label">BlackInk</div>
-                <h3>SaaS platform</h3>
-                <p>URL própria, decisão server-side, logs e suporte BR — R$399,99/mês.</p>
-            </div>
-        </div>
-        <div class="arch-cta rv rv-d3">
+    <div class="container" style="text-align:center;max-width:640px">
+        <p class="t-label rv">Por que BlackInk</p>
+        <h2 class="t-lg rv rv-d1" style="margin:8px auto 10px">SaaS server-side · <span class="grad">não script</span></h2>
+        <p class="t-body-lg rv rv-d2" style="margin:0 auto 14px;font-size:clamp(14px,1.5vw,16px)">Client-side é detectável. Redirect é lento e opaco. BlackInk decide na URL da plataforma — logs, suporte BR, R$399,99/mês</p>
+        <div class="arch-cta rv rv-d3" style="margin-top:8px">
             <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
             <a href="#faq" class="btn btn-o">Ver FAQ</a>
         </div>
