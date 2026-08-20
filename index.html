@@ -1160,6 +1160,10 @@ main{position:relative;z-index:1}
   #faq .faq-assure{font-size:7px;line-height:1.2;margin:2px 0 0}
   #faq .faq-q{padding:2px 4px;font-size:6.5px}
   #faq .faq-a{padding:1px 4px 2px;font-size:6px;line-height:1.2}
+  /* Ciclo 331: period densest + FAQ CTA −10% */
+  #pricing .period-btn{min-height:18px;font-size:6px;padding:1px 0}
+  #pricing .period-discount{font-size:5px;padding:0 2px}
+  #faq .faq-inline-cta--price{font-size:6.5px;font-weight:700}
   /* Ciclo 326: ROI densest — slider chrome mais baixo */
   #roi-calc .calc-slider-header{margin:0;gap:2px}
   #roi-calc .calc-slider-value{font-size:6px;line-height:1}
@@ -1645,6 +1649,9 @@ main{position:relative;z-index:1}
   /* Ciclo 329: nudge densest desktop */
   #pricing .period-nudge{display:none;font-size:6px;margin:0;line-height:1.1;text-align:center}
   #pricing .period-nudge:not([hidden]){display:block}
+  /* Ciclo 331 desktop densest */
+  #pricing .period-btn{min-height:16px;font-size:6px}
+  #faq .faq-inline-cta--price{font-size:6px;font-weight:700}
   #comecar.cta-final{padding:0}
   #comecar .cta-final-title{font-size:clamp(10px,1.2vw,13px)}
   #comecar .pricing-cta{height:20px;font-size:8px}
@@ -1716,7 +1723,8 @@ main{position:relative;z-index:1}
 }
 @media (max-width:500px){
   .flow-pillars{grid-template-columns:1fr}
-  .network-chip{padding:8px 10px}
+  /* Ciclo 331: não reinflar chips — densest 767 vence */
+  #redes .network-chip{padding:1px 2px;font-size:5px;border-radius:4px}
 }
 @media (max-width:480px){
   /* Ciclo 81/173: row compacta — CTA de preço sobe no viewport */
@@ -2188,7 +2196,7 @@ main{position:relative;z-index:1}
     <div class="cta-orb" aria-hidden="true"></div>
     <div class="container" style="position:relative;z-index:1">
         <p class="t-label rv" style="text-align:center;margin-bottom:4px">Pronto</p>
-        <h2 class="t-lg rv rv-d1 cta-final-title" style="text-align:center">~1 dia = 1 mês · <span class="grad">Ativar</span> · trim. −10%</h2>
+        <h2 class="t-lg rv rv-d1 cta-final-title" style="text-align:center">~1 dia = 1 mês · <span class="grad">Ativar −10%</span></h2>
         <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:440px;margin:6px auto 10px;font-size:clamp(13px,1.4vw,15px)" id="cta-final-lead">Perda <strong id="cta-final-loss">R$ 12.500</strong>/mês · <span id="cta-final-payback">~1 dia</span> = 1 mês · 7 dias · trim. −10%</p>
         <div class="rv rv-d3" style="display:flex;flex-direction:column;align-items:center;gap:8px">
             <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar — R$399,99/mês</a>
@@ -2551,8 +2559,8 @@ const STICKY_BTN = {
 };
 const FAQ_PRICE_CTA = {
     monthly: 'Ativar — R$399,99',
-    quarterly: 'Ativar — R$359,99',
-    yearly: 'Ativar — R$339,99'
+    quarterly: 'Ativar −10% — R$359,99',
+    yearly: 'Ativar −15% — R$339,99'
 };
 const P_MICRO_HTML = {
     monthly: '<strong>7 dias</strong> · 100% · trim. −10% · ~15 min',
