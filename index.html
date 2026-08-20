@@ -263,6 +263,7 @@ strong{font-weight:600}
 .skip-link:focus{left:0}
 .container{width:min(1120px,100% - 40px);margin:0 auto}
 .section{padding:var(--section-py) 0;position:relative}
+.section--compact{padding:clamp(40px,6vh,72px) 0}
 .sep{height:1px;background:linear-gradient(90deg,transparent,rgba(100,180,255,0.12),transparent);margin:0 auto;width:min(720px,80%)}
 .t-label{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
 .t-lg{font-family:var(--ff-display);font-size:clamp(28px,4.2vw,44px);font-weight:700;letter-spacing:-0.03em;line-height:1.15;color:var(--white)}
@@ -339,9 +340,6 @@ strong{font-weight:600}
 .problem-desc{font-size:14px;color:var(--dim);line-height:1.65}
 .problem-resolve{margin-top:28px;font-size:clamp(16px,1.8vw,18px);color:var(--dim)}
 .problem-resolve .grad{font-weight:600}
-.mid-cta-strip{padding:clamp(40px,6vh,72px) 0;text-align:center;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:linear-gradient(180deg,rgba(100,180,255,.04),transparent)}
-.mid-cta-strip p{font-size:clamp(15px,1.6vw,18px);color:var(--dim);max-width:38ch;margin:0 auto 20px;line-height:1.55}
-.mid-cta-strip .btn{min-width:min(100%,320px)}
 .mid-cta{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px;margin-top:36px}
 .arch-cta{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px;margin-top:36px}
 .trust-rail{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 16px;padding:14px 16px;width:100%;border-top:1px solid var(--border);background:rgba(6,17,31,0.65);margin-top:auto}
@@ -798,11 +796,11 @@ main{position:relative;z-index:1}
 <div class="sep"></div>
 
 <!-- 2. O que é cloaker -->
-<section class="section" id="o-que-e">
+<section class="section section--compact" id="o-que-e">
     <div class="container">
         <p class="t-label rv" style="text-align:center">Educação</p>
-        <h2 class="t-lg rv rv-d1" style="text-align:center;margin:12px auto 16px;max-width:640px">O que é um <span class="grad">cloaker</span></h2>
-        <p class="t-body-lg rv rv-d2" style="text-align:center;margin:0 auto;max-width:560px">Camada intermediária entre o clique e a página final. Cada visitante é classificado no servidor — e só então vê o destino certo</p>
+        <h2 class="t-lg rv rv-d1" style="text-align:center;margin:12px auto 12px;max-width:640px">O que é um <span class="grad">cloaker</span></h2>
+        <p class="t-body-lg rv rv-d2" style="text-align:center;margin:0 auto;max-width:520px">Camada entre o clique e a página final. O servidor classifica o visitante — e só então serve o destino certo</p>
         <div class="edu-grid">
             <div class="edu-card edu-card--safe rv">
                 <span class="edu-tag">Tráfego inválido</span>
@@ -944,7 +942,7 @@ main{position:relative;z-index:1}
                 <div class="mockup">
                     <div class="mock-topbar">
                         <span class="mock-dot mock-dot--r"></span><span class="mock-dot mock-dot--y"></span><span class="mock-dot mock-dot--g"></span>
-                        <span class="mock-topbar-title">Cloaker — Ao Vivo</span>
+                        <span class="mock-topbar-title">Cloaker — ao vivo</span>
                     </div>
                     <div class="prot-sim" id="prot-sim">
                         <!-- Status Bar -->
@@ -952,15 +950,15 @@ main{position:relative;z-index:1}
                             <div class="prot-sim-status">
                                 <div class="prot-sim-pulse"></div>
                                 <div class="prot-sim-status-text">
-                                    <span class="prot-sim-status-title">Cloaker Ativo</span>
+                                    <span class="prot-sim-status-title">Cloaker ativo</span>
                                     <span class="prot-sim-status-sub">Monitorando em tempo real</span>
                                 </div>
                             </div>
                             <div class="prot-sim-shield">
                                 <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
                                 <div class="prot-sim-threat-lvl">
-                                    <span class="prot-sim-threat-label">Threat Level</span>
-                                    <span class="prot-sim-threat-val" id="prot-sim-threat">Baixo</span>
+                                    <span class="prot-sim-threat-label">Ameaça</span>
+                                    <span class="prot-sim-threat-val" id="prot-sim-threat">Baixa</span>
                                 </div>
                             </div>
                         </div>
@@ -986,15 +984,15 @@ main{position:relative;z-index:1}
                             </div>
                             <div class="prot-sim-stat">
                                 <div class="prot-sim-stat-val" style="color:var(--green)" id="prot-sim-score">0</div>
-                                <div class="prot-sim-stat-lbl">Shield Score</div>
+                                <div class="prot-sim-stat-lbl">Score</div>
                             </div>
                         </div>
 
                         <!-- Live Feed -->
                         <div class="prot-sim-feed">
                             <div class="prot-sim-feed-header">
-                                <span class="prot-sim-feed-title">Decision Log</span>
-                                <span class="prot-sim-feed-live">Live</span>
+                                <span class="prot-sim-feed-title">Decision log</span>
+                                <span class="prot-sim-feed-live">Ao vivo</span>
                             </div>
                             <div class="prot-sim-feed-body" id="prot-sim-feed"></div>
                         </div>
@@ -1037,13 +1035,6 @@ main{position:relative;z-index:1}
     </div>
 </section>
 
-<section class="mid-cta-strip" aria-label="Chamada para ação">
-    <div class="container">
-        <p>Safe page para revisores. Offer page para quem compra. Mesma URL BlackInk no anúncio</p>
-        <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
-    </div>
-</section>
-
 <div class="sep"></div>
 
 <!-- 5. Multi-rede -->
@@ -1051,7 +1042,8 @@ main{position:relative;z-index:1}
     <div class="container">
         <p class="t-label rv" style="text-align:center">Redes</p>
         <h2 class="t-lg rv rv-d1" style="text-align:center;margin:12px auto 16px;max-width:640px">Uma URL · <span class="grad">Qualquer rede</span></h2>
-        <p class="t-body-lg rv rv-d2" style="text-align:center;margin:0 auto;max-width:540px">O fluxo é idêntico em todas: destino do anúncio aponta para a BlackInk. Sem OAuth, sem plugin por plataforma.</p>
+        <p class="t-body-lg rv rv-d2" style="text-align:center;margin:0 auto 8px;max-width:540px">O fluxo é idêntico em todas: destino do anúncio aponta para a BlackInk. Sem OAuth, sem plugin por plataforma.</p>
+        <p class="rv rv-d2" style="text-align:center;margin:0 auto 28px;max-width:480px;font-size:14px;color:rgba(240,244,248,0.62);line-height:1.55">Feito para afiliados e media buyers que operam tráfego pago no Brasil</p>
         <div class="networks-grid rv rv-d3">
             <div class="network-chip"><strong>Google Ads</strong><span>Search &amp; Display</span></div>
             <div class="network-chip"><strong>YouTube Ads</strong><span>In-stream &amp; Shorts</span></div>
@@ -1225,7 +1217,7 @@ main{position:relative;z-index:1}
                 <div class="pricing-reveal-inner">
                     <div class="t-label">Seu investimento</div>
                     <h2 class="pricing-reveal-title">BlackInk Cloaker</h2>
-                    <p class="pricing-reveal-sub">Tudo incluído — filtragem, roteamento, dashboard e app mobile.</p>
+                    <p class="pricing-reveal-sub">Tudo incluído — filtragem, roteamento, dashboard e app mobile. Um preço.</p>
                     <div class="period-toggle-label">Como prefere pagar?</div>
                     <div class="period-toggle">
                         <div class="period-switcher">
@@ -1483,15 +1475,15 @@ if (protSim) {
         const pct = threatLevel;
         elThreatFill.style.width = Math.max(3, pct) + '%';
         if (pct < 25) {
-            elThreat.textContent = 'Baixo';
+            elThreat.textContent = 'Baixa';
             elThreat.style.color = 'var(--green)';
             elThreatFill.style.background = 'linear-gradient(90deg,var(--green),var(--green))';
         } else if (pct < 55) {
-            elThreat.textContent = 'Moderado';
+            elThreat.textContent = 'Moderada';
             elThreat.style.color = 'var(--gold)';
             elThreatFill.style.background = 'linear-gradient(90deg,var(--gold),var(--gold))';
         } else {
-            elThreat.textContent = 'Elevado';
+            elThreat.textContent = 'Elevada';
             elThreat.style.color = '#ef4444';
             elThreatFill.style.background = 'linear-gradient(90deg,#ef4444,#ef4444)';
         }
