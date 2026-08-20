@@ -3735,7 +3735,7 @@ main{position:relative;z-index:1}
 <section class="section section--compact" id="faq" aria-label="Perguntas Frequentes">
     <div class="container">
         <p class="t-label rv" style="text-align:center;margin-bottom:4px">FAQ</p>
-        <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:4px">Dúvidas · <span class="grad">~1 dia · Ativar −10%</span></h2>
+        <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:4px" id="faq-heading">Dúvidas · <span class="grad" id="faq-heading-grad">~1 dia · Ativar −10%</span></h2>
         <div class="faq-list">
             <details class="faq-i rv rv-d1" open><summary class="faq-q" id="faq-hook-q">Paga em ~1 dia? · Ativar −10%</summary><div class="faq-a" id="faq-savings-a">Perda ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês · ~<strong id="faq-savings-payback">1 dia</strong> = 1 mês · garantia 7 dias · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta faq-inline-cta--price" data-plan="Maré">Ativar — R$399,99/mês</a></div></details>
             <p class="faq-assure rv rv-d2"><span class="faq-assure-micro">Garantia 7 dias · 100% · vs R$ 12.500 · sem risco</span><a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta faq-inline-cta--price" data-plan="Maré">Ativar sem risco −10% — R$359,99</a></p>
@@ -4174,6 +4174,11 @@ const COMECAR_LEAD_TAIL = {
     quarterly: 'garantia 7 dias · Começar −10%',
     yearly: 'garantia 7 dias · Começar −15%'
 };
+const FAQ_HEADING_GRAD = {
+    monthly: '~1 dia · Ativar',
+    quarterly: '~1 dia · Ativar −10%',
+    yearly: '~1 dia · Ativar −15%'
+};
 const REDES_WHY_HTML = {
     // c514: preço do período ativo (não ancorar R$399 no trimestral)
     monthly: '<strong>SaaS server-side</strong> · decision logs · suporte BR · Ativar · garantia 7 dias · <span class="grad">R$399,99/mês</span>',
@@ -4266,6 +4271,8 @@ function updatePricingCtaLabel(period) {
     // c514: redes why sync período + garantia
     const redesWhy = document.getElementById('por-que');
     if (redesWhy) redesWhy.innerHTML = REDES_WHY_HTML[period] || REDES_WHY_HTML.monthly;
+    const faqGrad = document.getElementById('faq-heading-grad');
+    if (faqGrad) faqGrad.textContent = FAQ_HEADING_GRAD[period] || FAQ_HEADING_GRAD.monthly;
     // c461: pricing lead verbo sync período
     const pricingLeadVerb = document.getElementById('pricing-lead-verb');
     if (pricingLeadVerb) pricingLeadVerb.textContent = PRICING_LEAD_VERB[period] || PRICING_LEAD_VERB.monthly;

@@ -239,6 +239,16 @@
             .btn-group{margin-top:18px;gap:10px}
             .btn-p{height:48px;font-size:15px;border-radius:12px}
             .cadastro-guarantee{padding:12px 14px}
+            /* c517: loss/trust densos — mais formulário acima do sticky */
+            .selected-plan-trust{font-size:11px;margin-top:8px;padding-top:8px;line-height:1.35}
+            .cadastro-loss-bridge{margin-top:8px;padding:8px 10px;display:flex;flex-wrap:wrap;gap:6px 10px;align-items:baseline}
+            .cadastro-loss-bridge strong{font-size:13px;margin-bottom:0;display:inline}
+            .cadastro-loss-bridge span{font-size:11px;line-height:1.35;display:inline}
+            .steps .step-label{display:none}
+            .steps{display:none} /* c517: steps somem no mobile — card já é “Dados” */
+            .step-line{width:36px}
+            .register-card-title{font-size:17px}
+            .register-card-subtitle{font-size:12px}
             /* c516: sticky Ativar enquanto submit fora do fold */
             .cadastro-sticky{
                 position:fixed;left:0;right:0;bottom:0;z-index:900;
@@ -615,9 +625,8 @@
         if (trustEl) trustEl.innerHTML = '<strong>Garantia 7 dias</strong> · 100% · ' + garantiaVerb + ' · cancele quando quiser';
         // c467: loss hint com valor real quando veio da landing
         if (lossHint) {
-            lossHint.textContent = lossFmt
-                ? ('perda ' + lossFmt + '/mês · ~1 dia = 1 mês · Garantia 7 dias · ' + garantiaVerb)
-                : ('perda · ~1 dia = 1 mês · Garantia 7 dias · ' + garantiaVerb);
+            // c517: span curto — valor já está no strong
+            lossHint.textContent = '~1 dia = 1 mês · Garantia 7 dias · ' + garantiaVerb;
         }
         if (submitTrust) submitTrust.innerHTML = '<strong>Garantia 7 dias</strong> · 100% · ' + garantiaVerb + ' · setup ~15 min';
         const stickyBtn = document.getElementById('stickySubmitBtn');
