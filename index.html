@@ -1176,16 +1176,24 @@ main{position:relative;z-index:1}
   #faq .faq-inline-cta--price{font-size:7px}
   #faq .faq-assure{font-size:7px;margin:2px 0 1px}
   #pricing .p-micro{font-size:5.5px}
-  /* Ciclo 335: period-toggle densest — mais espaço pro CTA */
+  /* Ciclo 335/336: period-toggle densest — row + min-height (≤480 column reinflava) */
   #pricing .period-toggle{margin:0}
   #pricing .period-switcher{min-height:0}
-  #pricing .period-btn{min-height:16px;font-size:5.5px;padding:0}
+  #pricing .period-btn{min-height:16px;font-size:5.5px;padding:0;flex-direction:row;align-items:center;gap:2px;line-height:1.05}
+  #pricing .period-discount{font-size:5px;padding:0 2px;line-height:1}
   /* Ciclo 326: ROI densest — slider chrome mais baixo */
   #roi-calc .calc-slider-header{margin:0;gap:2px}
   #roi-calc .calc-slider-value{font-size:6px;line-height:1}
   #roi-calc .calc-summary{margin:1px 0}
   #roi-calc .calc-summary-card{padding:1px 3px}
   /* bar already display:none above — don't re-inflate */
+  /* c337: FAQ densest — toggle/answer reclaim; nav já unifica Ativar −10% */
+  #faq .faq-more-toggle{min-height:8px;font-size:5px;margin:1px auto 0;padding:0 2px;opacity:.55}
+  #faq .faq-list{gap:0;margin:0}
+  #faq .faq-a{padding:0 3px 1px;font-size:5.5px;line-height:1.12}
+  #faq .faq-q{padding:1px 3px;font-size:6px}
+  #faq .faq-assure{margin:1px 0 0;font-size:6.5px;line-height:1.15}
+  #faq .t-lg{margin:0 0 1px}
 }
 @media (min-width:768px){
   .sticky-cta-text{display:block}
@@ -1679,6 +1687,11 @@ main{position:relative;z-index:1}
   #faq .t-lg{font-size:clamp(8px,0.9vw,10px)}
   #faq .faq-q{padding:0 2px;font-size:5px}
   #faq .faq-a{padding:0 2px 0;font-size:5px}
+  /* c338 desktop densest FAQ — mirror mobile reclaim */
+  #faq .faq-more-toggle{min-height:8px;font-size:4px;margin:1px auto 0;padding:0 2px;opacity:.55}
+  #faq .faq-list{gap:0;margin:0}
+  #faq .faq-assure{margin:0;font-size:5.5px;line-height:1.1}
+  #faq .t-lg{margin:0 0 1px}
   #problema.problem-strip{padding:0}
   #problema .t-lg{font-size:clamp(11px,1.3vw,14px);margin:0 auto}
   #problema .problem-card{padding:1px 2px}
@@ -1723,7 +1736,9 @@ main{position:relative;z-index:1}
   #roi-calc .calc-cta .btn{height:22px;font-size:8px}
   .period-switcher{flex-direction:row;width:100%;max-width:100%;justify-content:center}
   .pricing-reveal-inner .period-toggle{width:100%;justify-content:center}
-  #pricing .period-btn{font-size:6px;padding:1px;min-height:20px}
+  /* c336: row no densest — column em ≤480 reinflava ~21px */
+  #pricing .period-btn{font-size:6px;padding:1px;min-height:16px;flex-direction:row;align-items:center;gap:2px;line-height:1.05}
+  #pricing .period-discount{font-size:5px;padding:0 2px;line-height:1}
   #pricing .p-val{font-size:clamp(12px,3.6vw,16px)}
   #pricing .btn-full{height:22px;font-size:8px}
   /* c329: nudge mensal visível no densest (JS hidden nos outros períodos) */
@@ -1753,8 +1768,9 @@ main{position:relative;z-index:1}
   .container{width:min(1120px,100% - 28px)}
   .hero-ctas{max-width:100%}
   .networks-grid{grid-template-columns:1fr}
-  /* Ciclo 299: pricing densest alinhado em 480/390 */
-  #pricing .period-btn{padding:1px 0;font-size:6px;min-height:18px}
+  /* Ciclo 299/336: pricing densest — row vence column do .period-btn */
+  #pricing .period-btn{padding:1px 0;font-size:6px;min-height:16px;flex-direction:row;align-items:center;gap:2px;line-height:1.05}
+  #pricing .period-discount{font-size:5px;padding:0 2px;line-height:1}
   #pricing .p-val{font-size:clamp(14px,4vw,18px)}
   #pricing .btn-full{height:22px;font-size:8px}
   #pricing .pricing-trust-chips{display:none}
@@ -1773,8 +1789,9 @@ main{position:relative;z-index:1}
   .hero-title{font-size:22px}
   .hero-badge-text{font-size:10px}
   .btn{height:48px;font-size:14px;padding:0 20px}
-  /* Ciclo 299: não inflar — manter densest legível no iPhone */
-  #pricing .period-btn{font-size:6px;padding:1px 0;min-height:18px}
+  /* Ciclo 299/336: não inflar — row + min-height densest no iPhone */
+  #pricing .period-btn{font-size:6px;padding:1px 0;min-height:16px;flex-direction:row;align-items:center;gap:2px;line-height:1.05}
+  #pricing .period-discount{font-size:5px;padding:0 2px;line-height:1}
   #pricing .p-val{font-size:clamp(14px,4vw,18px)}
   #pricing .btn-full{height:22px;font-size:8px}
   #pricing .pricing-trust-chips{display:none}
@@ -1825,11 +1842,11 @@ main{position:relative;z-index:1}
             <a href="#redes">Redes</a>
             <a href="#faq">FAQ</a>
             <a href="https://app.theblack.ink/auth/login" class="hdr-nav-login">Entrar</a>
-            <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link hdr-nav-cta" data-plan="Maré">Ativar · ~1 dia</a>
+            <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link hdr-nav-cta" data-plan="Maré">Ativar −10%</a>
         </nav>
         <div class="hdr-cta">
             <a href="https://app.theblack.ink/auth/login" class="btn btn-g btn-sm">Entrar</a>
-            <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p btn-sm plan-link" data-plan="Maré">Ativar · ~1 dia</a>
+            <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p btn-sm plan-link" data-plan="Maré">Ativar −10%</a>
         </div>
         <button class="mob-tog" aria-label="Menu" type="button"><span></span><span></span><span></span></button>
     </div>
@@ -1846,7 +1863,7 @@ main{position:relative;z-index:1}
             <span class="hero-badge-dot" aria-hidden="true"></span>
                 <span class="hero-badge-text">
                 <svg class="hero-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                Cloaker multi-rede · ~1 dia = 1 mês · −10%
+                Cloaker multi-rede · ~1 dia · Ativar −10%
             </span>
         </div>
     </div>
@@ -1857,7 +1874,7 @@ main{position:relative;z-index:1}
     <p class="hero-sub">Safe vs offer · multi-rede · &lt;50ms · ~1 dia = 1 mês · Ativar −10% · 7 dias</p>
     <div class="hero-ctas">
         <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link hero-cta" data-plan="Maré">Ativar — R$399,99/mês</a>
-        <a href="#roi-calc" class="btn btn-o">Ver quanto perde</a>
+        <a href="#roi-calc" class="btn btn-o">Ver perda · Ativar −10%</a>
     </div>
     <div class="hero-trust">
         <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
@@ -1900,7 +1917,7 @@ main{position:relative;z-index:1}
         </div>
         <p class="problem-resolve rv rv-d3">~22% sujo · Ativar −10% · <span class="grad">~1 dia = 1 mês</span></p>
         <div class="mid-cta mid-cta--soft rv rv-d4">
-        <a href="#roi-calc" class="btn btn-p">Ver quanto perde</a>
+        <a href="#roi-calc" class="btn btn-p">Ver perda · Ativar −10%</a>
         <a href="#pricing" class="btn btn-o">Ver R$399,99</a>
         </div>
     </div>
@@ -1958,7 +1975,7 @@ main{position:relative;z-index:1}
 
         <div class="mid-cta mid-cta--soft rv rv-d3" style="margin-top:8px">
             <a href="#cloaker" class="btn btn-p">Ver PASS/BLOCK ao vivo</a>
-            <a href="#roi-calc" class="btn btn-o">Ver quanto perde</a>
+            <a href="#roi-calc" class="btn btn-o">Ver perda · Ativar −10%</a>
         </div>
     </div>
 </section>
@@ -2178,10 +2195,10 @@ main{position:relative;z-index:1}
 <section class="section section--compact" id="faq" aria-label="Perguntas Frequentes">
     <div class="container">
         <p class="t-label rv" style="text-align:center;margin-bottom:4px">FAQ</p>
-        <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:4px">Dúvidas · <span class="grad">~1 dia · 7 dias · −10%</span></h2>
+        <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:4px">Dúvidas · <span class="grad">~1 dia · Ativar −10%</span></h2>
         <div class="faq-list">
-            <details class="faq-i rv rv-d1" open><summary class="faq-q">Se paga em ~1 dia?</summary><div class="faq-a" id="faq-savings-a">Perda ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês · ~<strong id="faq-savings-payback">1 dia</strong> = 1 mês · 7 dias · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta faq-inline-cta--price" data-plan="Maré">Ativar — R$399,99</a></div></details>
-            <p class="faq-assure rv rv-d2">7 dias · 100% reembolso · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar sem risco</a></p>
+            <details class="faq-i rv rv-d1" open><summary class="faq-q">Paga em ~1 dia?</summary><div class="faq-a" id="faq-savings-a">Perda ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês · ~<strong id="faq-savings-payback">1 dia</strong> = 1 mês · 7 dias · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta faq-inline-cta--price" data-plan="Maré">Ativar — R$399,99</a></div></details>
+            <p class="faq-assure rv rv-d2">7 dias · 100% · Ativar −10% · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar sem risco</a></p>
             <details class="faq-i faq-i--risk rv rv-d2"><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">7 dias · 100% reembolso · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar sem risco</a></div></details>
             <div class="faq-more" id="faq-more">
                 <details class="faq-i"><summary class="faq-q">Quanto custa?</summary><div class="faq-a">R$ 399,99/mês · trimestral −10% · anual −15% · PIX/cartão · sem fidelidade.</div></details>
