@@ -1322,6 +1322,10 @@ main{position:relative;z-index:1}
   #problema .problem-resolve{font-size:5px;line-height:1.05}
   /* c361 LAST: ROI summary some — perda já em lead/FAQ/sticky; slider+CTA bastam */
   #roi-calc .calc-summary{display:none}
+  /* c362 LAST: pricing title some — lead+CTA carregam R$399/Ativar −10%; FAQ H2 chrome */
+  #pricing .pricing-reveal-title{display:none}
+  #faq .t-lg{font-size:clamp(6px,1.8vw,8px);margin:0;line-height:1}
+  #faq .faq-more-toggle{font-size:3.5px;opacity:.4;margin:0 auto;min-height:0}
 }
 @media (min-width:768px){
   .sticky-cta-text{display:block}
@@ -1924,6 +1928,9 @@ main{position:relative;z-index:1}
   #problema .problem-resolve{font-size:5px}
   /* c361 desktop densest — ROI summary some */
   #roi-calc .calc-summary{display:none}
+  /* c362 desktop densest — pricing title some; FAQ H2 chrome */
+  #pricing .pricing-reveal-title{display:none}
+  #faq .t-lg{font-size:clamp(7px,0.85vw,9px);margin:0;line-height:1}
 }
 @media (max-width:640px){
   .networks-grid{grid-template-columns:1fr 1fr}
@@ -1986,6 +1993,8 @@ main{position:relative;z-index:1}
   #comecar .pricing-cta{height:14px;font-size:6.5px;margin:0}
   /* c361: preservar ROI summary hidden densest */
   #roi-calc .calc-summary{display:none}
+  /* c362: preservar pricing title hidden densest */
+  #pricing .pricing-reveal-title{display:none}
   /* c329: nudge mensal visível no densest (JS hidden nos outros períodos) */
   #pricing .period-nudge{display:none;font-size:5px;margin:0;line-height:1.1;text-align:center}
   #pricing .period-nudge:not([hidden]){display:block}
@@ -2042,6 +2051,8 @@ main{position:relative;z-index:1}
   #comecar .pricing-cta{height:14px;font-size:6.5px;margin:0}
   /* c361: preservar ROI summary hidden densest */
   #roi-calc .calc-summary{display:none}
+  /* c362: preservar pricing title hidden densest */
+  #pricing .pricing-reveal-title{display:none}
   #pricing .period-nudge{display:none;font-size:5px;margin:0;line-height:1.1;text-align:center}
   #pricing .period-nudge:not([hidden]){display:block}
   #faq .faq-outro{display:none}
@@ -2098,6 +2109,8 @@ main{position:relative;z-index:1}
   #roi-calc .calc-cta .btn{height:14px;font-size:6.5px;margin:0}
   /* c361: preservar ROI summary hidden densest no iPhone */
   #roi-calc .calc-summary{display:none}
+  /* c362: preservar pricing title hidden densest no iPhone */
+  #pricing .pricing-reveal-title{display:none}
   #roi-calc .calc-summary-tag{display:none}
   #roi-calc .calc-slider-label{display:none}
   #roi-calc .calc-summary{grid-template-columns:1fr}
