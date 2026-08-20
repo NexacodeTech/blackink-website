@@ -1908,7 +1908,7 @@ main{position:relative;z-index:1}
   #faq .faq-i--risk .faq-q::after{color:var(--green);opacity:.85}
   /* c577 LAST: risk answer CTA = família garantia (40px) */
   #faq .faq-i--risk[open] .faq-a{padding:6px 10px 10px;font-size:12px;line-height:1.35}
-  #faq .faq-i--risk[open] .faq-inline-cta,#faq .faq-i--oauth[open] .faq-inline-cta,#faq .faq-i--setup[open] .faq-inline-cta,#faq .faq-i--what[open] .faq-inline-cta{
+  #faq .faq-i--risk[open] .faq-inline-cta,#faq .faq-i--oauth[open] .faq-inline-cta,#faq .faq-i--setup[open] .faq-inline-cta,#faq .faq-i--what[open] .faq-inline-cta,#faq .faq-i--safe[open] .faq-inline-cta,#faq .faq-i--migrate[open] .faq-inline-cta,#faq .faq-i--tracker[open] .faq-inline-cta,#faq .faq-i--support[open] .faq-inline-cta{
     display:inline-flex;align-items:center;justify-content:center;
     width:min(100%,340px);min-height:40px;margin:8px auto 0;padding:0 12px;
     border-radius:10px;background:rgba(52,211,153,0.28);color:#021018;
@@ -1916,7 +1916,7 @@ main{position:relative;z-index:1}
     box-shadow:0 6px 18px rgba(52,211,153,0.2)
   }
   /* c679/c686 LAST: preço + redes FAQ CTA = primary Ativar (azul) */
-  #faq .faq-i--preco[open] .faq-inline-cta--price,#faq .faq-i--redes[open] .faq-inline-cta{
+  #faq .faq-i--preco[open] .faq-inline-cta--price,#faq .faq-i--redes[open] .faq-inline-cta,#faq .faq-i--diff[open] .faq-inline-cta--price{
     display:inline-flex;align-items:center;justify-content:center;
     width:min(100%,340px);min-height:40px;margin:8px auto 0;padding:0 12px;
     border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#021018;
@@ -1934,6 +1934,8 @@ main{position:relative;z-index:1}
   #faq .faq-more.open .faq-i--setup .faq-q{color:var(--white);font-weight:700}
   #faq .faq-more.open .faq-i--what{border-color:rgba(100,180,255,0.3);background:rgba(100,180,255,0.04)}
   #faq .faq-more.open .faq-i--what .faq-q{color:var(--white);font-weight:700}
+  #faq .faq-more.open .faq-i--migrate,#faq .faq-more.open .faq-i--diff{border-color:rgba(100,180,255,0.28);background:rgba(100,180,255,0.04)}
+  #faq .faq-more.open .faq-i--migrate .faq-q,#faq .faq-more.open .faq-i--diff .faq-q{color:var(--white);font-weight:700}
   /* c570/c612 LAST: toggle copy + accent — objeções OAuth/redes/preço */
   #faq .faq-more-toggle{
     min-height:32px;padding:6px 12px;font-size:11px;font-weight:700;letter-spacing:.01em;
@@ -1976,9 +1978,12 @@ main{position:relative;z-index:1}
   #faq .faq-i--risk .faq-q{min-height:26px;padding:4px 10px;font-size:11px}
   #redes .redes-why{margin:1px auto 0;font-size:10.5px;line-height:1.25;max-width:40ch;font-weight:600}
   #redes .redes-why strong{color:#6ee7b7}
-  /* c685 LAST: +2px why peek — chips trust 1px tighter */
-  #pricing .pricing-trust-chips{margin:1px 0 0}
+  /* c685/c706 LAST: +why peek — chips/assure tighter; CTA 40 intact */
+  #pricing .pricing-trust-chips{margin:0}
   #pricing .pricing-trust-chips li{min-height:22px;padding:2px 6px;font-size:10px}
+  #faq .faq-assure{margin:0;gap:0}
+  #faq .faq-assure-micro{font-size:10px;margin:0 0 2px}
+  #pricing .p-micro{margin:1px 0 1px;font-size:10px}
 
   /* c654 LAST: soft color lock — vence .btn-o base */
   .hero-ctas a.btn-o.hero-soft-cta{color:#6ee7b7;font-weight:800;border-color:rgba(52,211,153,0.72)}
@@ -2955,7 +2960,7 @@ main{position:relative;z-index:1}
   #faq .faq-i--risk .faq-q::after{color:var(--green);opacity:.85}
   /* c577 LAST: risk answer CTA = família garantia (40px) */
   #faq .faq-i--risk[open] .faq-a{padding:6px 10px 10px;font-size:12px;line-height:1.35}
-  #faq .faq-i--risk[open] .faq-inline-cta,#faq .faq-i--oauth[open] .faq-inline-cta,#faq .faq-i--setup[open] .faq-inline-cta,#faq .faq-i--what[open] .faq-inline-cta{
+  #faq .faq-i--risk[open] .faq-inline-cta,#faq .faq-i--oauth[open] .faq-inline-cta,#faq .faq-i--setup[open] .faq-inline-cta,#faq .faq-i--what[open] .faq-inline-cta,#faq .faq-i--safe[open] .faq-inline-cta,#faq .faq-i--migrate[open] .faq-inline-cta,#faq .faq-i--tracker[open] .faq-inline-cta,#faq .faq-i--support[open] .faq-inline-cta{
     display:inline-flex;align-items:center;justify-content:center;
     width:min(100%,340px);min-height:40px;margin:8px auto 0;padding:0 12px;
     border-radius:10px;background:rgba(52,211,153,0.28);color:#021018;
@@ -2963,7 +2968,7 @@ main{position:relative;z-index:1}
     box-shadow:0 6px 18px rgba(52,211,153,0.2)
   }
   /* c679/c686 LAST: preço + redes FAQ CTA = primary Ativar (azul) */
-  #faq .faq-i--preco[open] .faq-inline-cta--price,#faq .faq-i--redes[open] .faq-inline-cta{
+  #faq .faq-i--preco[open] .faq-inline-cta--price,#faq .faq-i--redes[open] .faq-inline-cta,#faq .faq-i--diff[open] .faq-inline-cta--price{
     display:inline-flex;align-items:center;justify-content:center;
     width:min(100%,340px);min-height:40px;margin:8px auto 0;padding:0 12px;
     border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#021018;
@@ -2981,6 +2986,8 @@ main{position:relative;z-index:1}
   #faq .faq-more.open .faq-i--setup .faq-q{color:var(--white);font-weight:700}
   #faq .faq-more.open .faq-i--what{border-color:rgba(100,180,255,0.3);background:rgba(100,180,255,0.04)}
   #faq .faq-more.open .faq-i--what .faq-q{color:var(--white);font-weight:700}
+  #faq .faq-more.open .faq-i--migrate,#faq .faq-more.open .faq-i--diff{border-color:rgba(100,180,255,0.28);background:rgba(100,180,255,0.04)}
+  #faq .faq-more.open .faq-i--migrate .faq-q,#faq .faq-more.open .faq-i--diff .faq-q{color:var(--white);font-weight:700}
   /* c570/c612 LAST: toggle copy + accent — objeções OAuth/redes/preço */
   #faq .faq-more-toggle{
     min-height:32px;padding:6px 12px;font-size:11px;font-weight:700;letter-spacing:.01em;
@@ -3023,9 +3030,12 @@ main{position:relative;z-index:1}
   #faq .faq-i--risk .faq-q{min-height:26px;padding:4px 10px;font-size:11px}
   #redes .redes-why{margin:1px auto 0;font-size:10.5px;line-height:1.25;max-width:40ch;font-weight:600}
   #redes .redes-why strong{color:#6ee7b7}
-  /* c685 LAST: +2px why peek — chips trust 1px tighter */
-  #pricing .pricing-trust-chips{margin:1px 0 0}
+  /* c685/c706 LAST: +why peek — chips/assure tighter; CTA 40 intact */
+  #pricing .pricing-trust-chips{margin:0}
   #pricing .pricing-trust-chips li{min-height:22px;padding:2px 6px;font-size:10px}
+  #faq .faq-assure{margin:0;gap:0}
+  #faq .faq-assure-micro{font-size:10px;margin:0 0 2px}
+  #pricing .p-micro{margin:1px 0 1px;font-size:10px}
 
   /* c538 LAST desktop: chip 26px — margem de fold (slack era 1px) */
   #pricing .pricing-trust-chips li{padding:4px 8px;min-height:26px}
@@ -3465,7 +3475,7 @@ main{position:relative;z-index:1}
   #faq .faq-i--risk .faq-q::after{color:var(--green);opacity:.85}
   /* c577 LAST: risk answer CTA = família garantia (40px) */
   #faq .faq-i--risk[open] .faq-a{padding:6px 10px 10px;font-size:12px;line-height:1.35}
-  #faq .faq-i--risk[open] .faq-inline-cta,#faq .faq-i--oauth[open] .faq-inline-cta,#faq .faq-i--setup[open] .faq-inline-cta,#faq .faq-i--what[open] .faq-inline-cta{
+  #faq .faq-i--risk[open] .faq-inline-cta,#faq .faq-i--oauth[open] .faq-inline-cta,#faq .faq-i--setup[open] .faq-inline-cta,#faq .faq-i--what[open] .faq-inline-cta,#faq .faq-i--safe[open] .faq-inline-cta,#faq .faq-i--migrate[open] .faq-inline-cta,#faq .faq-i--tracker[open] .faq-inline-cta,#faq .faq-i--support[open] .faq-inline-cta{
     display:inline-flex;align-items:center;justify-content:center;
     width:min(100%,340px);min-height:40px;margin:8px auto 0;padding:0 12px;
     border-radius:10px;background:rgba(52,211,153,0.28);color:#021018;
@@ -3473,7 +3483,7 @@ main{position:relative;z-index:1}
     box-shadow:0 6px 18px rgba(52,211,153,0.2)
   }
   /* c679/c686 LAST: preço + redes FAQ CTA = primary Ativar (azul) */
-  #faq .faq-i--preco[open] .faq-inline-cta--price,#faq .faq-i--redes[open] .faq-inline-cta{
+  #faq .faq-i--preco[open] .faq-inline-cta--price,#faq .faq-i--redes[open] .faq-inline-cta,#faq .faq-i--diff[open] .faq-inline-cta--price{
     display:inline-flex;align-items:center;justify-content:center;
     width:min(100%,340px);min-height:40px;margin:8px auto 0;padding:0 12px;
     border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#021018;
@@ -3491,6 +3501,8 @@ main{position:relative;z-index:1}
   #faq .faq-more.open .faq-i--setup .faq-q{color:var(--white);font-weight:700}
   #faq .faq-more.open .faq-i--what{border-color:rgba(100,180,255,0.3);background:rgba(100,180,255,0.04)}
   #faq .faq-more.open .faq-i--what .faq-q{color:var(--white);font-weight:700}
+  #faq .faq-more.open .faq-i--migrate,#faq .faq-more.open .faq-i--diff{border-color:rgba(100,180,255,0.28);background:rgba(100,180,255,0.04)}
+  #faq .faq-more.open .faq-i--migrate .faq-q,#faq .faq-more.open .faq-i--diff .faq-q{color:var(--white);font-weight:700}
   /* c570/c612 LAST: toggle copy + accent — objeções OAuth/redes/preço */
   #faq .faq-more-toggle{
     min-height:32px;padding:6px 12px;font-size:11px;font-weight:700;letter-spacing:.01em;
@@ -3533,9 +3545,12 @@ main{position:relative;z-index:1}
   #faq .faq-i--risk .faq-q{min-height:26px;padding:4px 10px;font-size:11px}
   #redes .redes-why{margin:1px auto 0;font-size:10.5px;line-height:1.25;max-width:40ch;font-weight:600}
   #redes .redes-why strong{color:#6ee7b7}
-  /* c685 LAST: +2px why peek — chips trust 1px tighter */
-  #pricing .pricing-trust-chips{margin:1px 0 0}
+  /* c685/c706 LAST: +why peek — chips/assure tighter; CTA 40 intact */
+  #pricing .pricing-trust-chips{margin:0}
   #pricing .pricing-trust-chips li{min-height:22px;padding:2px 6px;font-size:10px}
+  #faq .faq-assure{margin:0;gap:0}
+  #faq .faq-assure-micro{font-size:10px;margin:0 0 2px}
+  #pricing .p-micro{margin:1px 0 1px;font-size:10px}
 
   /* c654 LAST: soft color lock — vence .btn-o base */
   .hero-ctas a.btn-o.hero-soft-cta{color:#6ee7b7;font-weight:800;border-color:rgba(52,211,153,0.72)}
@@ -3915,7 +3930,7 @@ main{position:relative;z-index:1}
   #faq .faq-i--risk .faq-q::after{color:var(--green);opacity:.85}
   /* c577 LAST: risk answer CTA = família garantia (40px) */
   #faq .faq-i--risk[open] .faq-a{padding:6px 10px 10px;font-size:12px;line-height:1.35}
-  #faq .faq-i--risk[open] .faq-inline-cta,#faq .faq-i--oauth[open] .faq-inline-cta,#faq .faq-i--setup[open] .faq-inline-cta,#faq .faq-i--what[open] .faq-inline-cta{
+  #faq .faq-i--risk[open] .faq-inline-cta,#faq .faq-i--oauth[open] .faq-inline-cta,#faq .faq-i--setup[open] .faq-inline-cta,#faq .faq-i--what[open] .faq-inline-cta,#faq .faq-i--safe[open] .faq-inline-cta,#faq .faq-i--migrate[open] .faq-inline-cta,#faq .faq-i--tracker[open] .faq-inline-cta,#faq .faq-i--support[open] .faq-inline-cta{
     display:inline-flex;align-items:center;justify-content:center;
     width:min(100%,340px);min-height:40px;margin:8px auto 0;padding:0 12px;
     border-radius:10px;background:rgba(52,211,153,0.28);color:#021018;
@@ -3923,7 +3938,7 @@ main{position:relative;z-index:1}
     box-shadow:0 6px 18px rgba(52,211,153,0.2)
   }
   /* c679/c686 LAST: preço + redes FAQ CTA = primary Ativar (azul) */
-  #faq .faq-i--preco[open] .faq-inline-cta--price,#faq .faq-i--redes[open] .faq-inline-cta{
+  #faq .faq-i--preco[open] .faq-inline-cta--price,#faq .faq-i--redes[open] .faq-inline-cta,#faq .faq-i--diff[open] .faq-inline-cta--price{
     display:inline-flex;align-items:center;justify-content:center;
     width:min(100%,340px);min-height:40px;margin:8px auto 0;padding:0 12px;
     border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#021018;
@@ -3941,6 +3956,8 @@ main{position:relative;z-index:1}
   #faq .faq-more.open .faq-i--setup .faq-q{color:var(--white);font-weight:700}
   #faq .faq-more.open .faq-i--what{border-color:rgba(100,180,255,0.3);background:rgba(100,180,255,0.04)}
   #faq .faq-more.open .faq-i--what .faq-q{color:var(--white);font-weight:700}
+  #faq .faq-more.open .faq-i--migrate,#faq .faq-more.open .faq-i--diff{border-color:rgba(100,180,255,0.28);background:rgba(100,180,255,0.04)}
+  #faq .faq-more.open .faq-i--migrate .faq-q,#faq .faq-more.open .faq-i--diff .faq-q{color:var(--white);font-weight:700}
   /* c570/c612 LAST: toggle copy + accent — objeções OAuth/redes/preço */
   #faq .faq-more-toggle{
     min-height:32px;padding:6px 12px;font-size:11px;font-weight:700;letter-spacing:.01em;
@@ -3983,9 +4000,12 @@ main{position:relative;z-index:1}
   #faq .faq-i--risk .faq-q{min-height:26px;padding:4px 10px;font-size:11px}
   #redes .redes-why{margin:1px auto 0;font-size:10.5px;line-height:1.25;max-width:40ch;font-weight:600}
   #redes .redes-why strong{color:#6ee7b7}
-  /* c685 LAST: +2px why peek — chips trust 1px tighter */
-  #pricing .pricing-trust-chips{margin:1px 0 0}
+  /* c685/c706 LAST: +why peek — chips/assure tighter; CTA 40 intact */
+  #pricing .pricing-trust-chips{margin:0}
   #pricing .pricing-trust-chips li{min-height:22px;padding:2px 6px;font-size:10px}
+  #faq .faq-assure{margin:0;gap:0}
+  #faq .faq-assure-micro{font-size:10px;margin:0 0 2px}
+  #pricing .p-micro{margin:1px 0 1px;font-size:10px}
 
   /* c654 LAST: soft color lock — vence .btn-o base */
   .hero-ctas a.btn-o.hero-soft-cta{color:#6ee7b7;font-weight:800;border-color:rgba(52,211,153,0.72)}
@@ -4356,7 +4376,7 @@ main{position:relative;z-index:1}
   #faq .faq-i--risk .faq-q::after{color:var(--green);opacity:.85}
   /* c577 LAST: risk answer CTA = família garantia (40px) */
   #faq .faq-i--risk[open] .faq-a{padding:6px 10px 10px;font-size:12px;line-height:1.35}
-  #faq .faq-i--risk[open] .faq-inline-cta,#faq .faq-i--oauth[open] .faq-inline-cta,#faq .faq-i--setup[open] .faq-inline-cta,#faq .faq-i--what[open] .faq-inline-cta{
+  #faq .faq-i--risk[open] .faq-inline-cta,#faq .faq-i--oauth[open] .faq-inline-cta,#faq .faq-i--setup[open] .faq-inline-cta,#faq .faq-i--what[open] .faq-inline-cta,#faq .faq-i--safe[open] .faq-inline-cta,#faq .faq-i--migrate[open] .faq-inline-cta,#faq .faq-i--tracker[open] .faq-inline-cta,#faq .faq-i--support[open] .faq-inline-cta{
     display:inline-flex;align-items:center;justify-content:center;
     width:min(100%,340px);min-height:40px;margin:8px auto 0;padding:0 12px;
     border-radius:10px;background:rgba(52,211,153,0.28);color:#021018;
@@ -4364,7 +4384,7 @@ main{position:relative;z-index:1}
     box-shadow:0 6px 18px rgba(52,211,153,0.2)
   }
   /* c679/c686 LAST: preço + redes FAQ CTA = primary Ativar (azul) */
-  #faq .faq-i--preco[open] .faq-inline-cta--price,#faq .faq-i--redes[open] .faq-inline-cta{
+  #faq .faq-i--preco[open] .faq-inline-cta--price,#faq .faq-i--redes[open] .faq-inline-cta,#faq .faq-i--diff[open] .faq-inline-cta--price{
     display:inline-flex;align-items:center;justify-content:center;
     width:min(100%,340px);min-height:40px;margin:8px auto 0;padding:0 12px;
     border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#021018;
@@ -4382,6 +4402,8 @@ main{position:relative;z-index:1}
   #faq .faq-more.open .faq-i--setup .faq-q{color:var(--white);font-weight:700}
   #faq .faq-more.open .faq-i--what{border-color:rgba(100,180,255,0.3);background:rgba(100,180,255,0.04)}
   #faq .faq-more.open .faq-i--what .faq-q{color:var(--white);font-weight:700}
+  #faq .faq-more.open .faq-i--migrate,#faq .faq-more.open .faq-i--diff{border-color:rgba(100,180,255,0.28);background:rgba(100,180,255,0.04)}
+  #faq .faq-more.open .faq-i--migrate .faq-q,#faq .faq-more.open .faq-i--diff .faq-q{color:var(--white);font-weight:700}
   /* c570/c612 LAST: toggle copy + accent — objeções OAuth/redes/preço */
   #faq .faq-more-toggle{
     min-height:32px;padding:6px 12px;font-size:11px;font-weight:700;letter-spacing:.01em;
@@ -4424,9 +4446,12 @@ main{position:relative;z-index:1}
   #faq .faq-i--risk .faq-q{min-height:26px;padding:4px 10px;font-size:11px}
   #redes .redes-why{margin:1px auto 0;font-size:10.5px;line-height:1.25;max-width:40ch;font-weight:600}
   #redes .redes-why strong{color:#6ee7b7}
-  /* c685 LAST: +2px why peek — chips trust 1px tighter */
-  #pricing .pricing-trust-chips{margin:1px 0 0}
+  /* c685/c706 LAST: +why peek — chips/assure tighter; CTA 40 intact */
+  #pricing .pricing-trust-chips{margin:0}
   #pricing .pricing-trust-chips li{min-height:22px;padding:2px 6px;font-size:10px}
+  #faq .faq-assure{margin:0;gap:0}
+  #faq .faq-assure-micro{font-size:10px;margin:0 0 2px}
+  #pricing .p-micro{margin:1px 0 1px;font-size:10px}
 
   /* c654 LAST: soft color lock — vence .btn-o base */
   .hero-ctas a.btn-o.hero-soft-cta{color:#6ee7b7;font-weight:800;border-color:rgba(52,211,153,0.72)}
@@ -4503,7 +4528,7 @@ main{position:relative;z-index:1}
     <p class="hero-sub">~1 dia = 1 mês · Safe vs offer · multi-rede · sem OAuth · <strong>&lt;50ms</strong></p>
     <div class="hero-ctas">
         <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link hero-cta" data-plan="Maré">Ativar — R$399,99/mês</a>
-        <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-o hero-soft-cta plan-link" data-plan="Maré" data-intent="garantia" aria-label="Ativar com garantia 7 dias">Garantia 7d −10% · R$359,99</a>
+        <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-o hero-soft-cta plan-link" data-plan="Maré" data-intent="garantia" aria-label="Ativar sem risco 7 dias">Sem risco 7d −10% · R$359,99</a>
     </div>
     <div class="hero-trust">
         <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
@@ -4841,11 +4866,11 @@ main{position:relative;z-index:1}
                 <details class="faq-i faq-i--redes"><summary class="faq-q">Quais redes? · Google · Meta · TikTok</summary><div class="faq-a"><strong>Google Ads, YouTube, Facebook, TikTok e outras</strong> · destino = URL BlackInk · sem OAuth. <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar multi-rede −10% — R$359,99</a></div></details>
                 <details class="faq-i faq-i--setup"><summary class="faq-q">Como configuro? · ~15 min</summary><div class="faq-a"><strong>Safe/offer → regras → URL BlackInk</strong> · ~15 min · sem OAuth. <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré" data-intent="garantia">Começar setup −10% — R$359,99</a></div></details>
                 <details class="faq-i faq-i--what"><summary class="faq-q">O que é um cloaker?</summary><div class="faq-a"><strong>Safe page</strong> para bots/revisores · <strong>offer page</strong> para quem compra · server-side &lt;50ms. <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré" data-intent="garantia">Ativar cloaker −10% — R$359,99</a></div></details>
-                <details class="faq-i"><summary class="faq-q">O que é safe page e offer page?</summary><div class="faq-a">Safe page para tráfego inválido (compliant). Offer page só para quem passa no filtro. Roteamento server-side &lt;50ms.</div></details>
-                <details class="faq-i"><summary class="faq-q">Já uso outro cloaker. É difícil migrar?</summary><div class="faq-a">Cadastre páginas (ou Clone), ajuste regras, troque a URL. Maioria em &lt;30 min.</div></details>
-                <details class="faq-i"><summary class="faq-q">Qual a diferença do BlackInk para outros cloakers?</summary><div class="faq-a">SaaS server-side · URL própria · decision logs · sem PHP no host · suporte BR · R$399,99/mês.</div></details>
-                <details class="faq-i"><summary class="faq-q">O BlackInk é um tracker?</summary><div class="faq-a">Não. Cloaker server-side (safe vs offer) — sem tracker nem pixel de atribuição.</div></details>
-                <details class="faq-i"><summary class="faq-q">Como falo com o suporte?</summary><div class="faq-a"><a href="mailto:suporte@theblack.ink">suporte@theblack.ink</a> · ticket/chat na plataforma · setup inicial gratuito.</div></details>
+                <details class="faq-i faq-i--safe"><summary class="faq-q">Safe page vs offer page?</summary><div class="faq-a"><strong>Safe</strong> = bots/revisores · <strong>Offer</strong> = quem compra · roteamento &lt;50ms. <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré" data-intent="garantia">Ativar safe/offer −10% — R$359,99</a></div></details>
+                <details class="faq-i faq-i--migrate"><summary class="faq-q">Migrar de outro cloaker?</summary><div class="faq-a"><strong>&lt;30 min</strong> · cadastre páginas (ou Clone) · regras · troque a URL. <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré" data-intent="garantia">Migrar agora −10% — R$359,99</a></div></details>
+                <details class="faq-i faq-i--diff"><summary class="faq-q">Diferença vs outros cloakers?</summary><div class="faq-a"><strong>SaaS server-side</strong> · URL própria · decision logs · sem PHP · suporte BR · R$399,99/mês. <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta faq-inline-cta--price" data-plan="Maré">Ativar SaaS −10% — R$359,99/mês</a></div></details>
+                <details class="faq-i faq-i--tracker"><summary class="faq-q">É um tracker? · Não</summary><div class="faq-a"><strong>Não.</strong> Cloaker server-side (safe vs offer) — sem tracker nem pixel. <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré" data-intent="garantia">Ativar cloaker −10% — R$359,99</a></div></details>
+                <details class="faq-i faq-i--support"><summary class="faq-q">Suporte? · email + chat</summary><div class="faq-a"><a href="mailto:suporte@theblack.ink"><strong>suporte@theblack.ink</strong></a> · ticket/chat na plataforma · setup inicial gratuito. <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré" data-intent="garantia">Ativar com suporte −10% — R$359,99</a></div></details>
             </div>
             <button type="button" class="faq-more-toggle" id="faq-more-toggle" aria-expanded="false" aria-controls="faq-more">Dúvidas · OAuth · preço · redes</button>
         </div>
@@ -5254,10 +5279,10 @@ const FAQ_RISK_CTA = {
     yearly: 'Ativar 7d sem risco −15% — R$339,99'
 };
 const SOFT_CTA_LABELS = {
-    // c523/c547/c561: Garantia first (≠ FAQ “sem risco”; ≠ primary Ativar)
-    monthly: 'Garantia 7d · R$399,99',
-    quarterly: 'Garantia 7d −10% · R$359,99',
-    yearly: 'Garantia 7d −15% · R$339,99'
+    // c701: Sem risco first — alinha assure micro / risk-reversal (≠ primary Ativar)
+    monthly: 'Sem risco 7d · R$399,99',
+    quarterly: 'Sem risco 7d −10% · R$359,99',
+    yearly: 'Sem risco 7d −15% · R$339,99'
 };
 const P_MICRO_HTML = {
     // c508/c534/c562: micro garantia link; Ativar fica texto (CTA full já converte)
