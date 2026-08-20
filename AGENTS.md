@@ -194,3 +194,8 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Contexto**: `#cloaker` ainda era seção cheia com 3 feats redundantes; obj-strip verboso antes do preço.
 **Regra**: cloaker `section--compact`, 2 feats + CTA soft para pricing; proof line sync com stats do simulador; objeções em copy curta.
 **Status**: ativo
+
+## 2026-08-20 — Garantia no submit do cadastro
+**Contexto**: risk reversal ficava só no resumo; no momento do submit a dúvida volta.
+**Regra**: bloco de garantia 7 dias imediatamente acima do CTA “Continuar para pagamento”; trust line reforça PIX/sem fidelidade/setup.
+**Status**: ativo

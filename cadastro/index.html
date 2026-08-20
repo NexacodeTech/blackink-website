@@ -179,6 +179,10 @@
 
         .btn-group{display:flex;flex-direction:column;gap:12px;margin-top:28px}
         .form-submit-trust{font-size:12px;color:rgba(240,244,248,0.62);text-align:center;line-height:1.5;margin:0}
+        .cadastro-guarantee{display:flex;gap:12px;align-items:flex-start;text-align:left;padding:14px 16px;margin-bottom:4px;border-radius:12px;border:1px solid rgba(52,211,153,0.22);background:rgba(52,211,153,0.06)}
+        .cadastro-guarantee svg{width:22px;height:22px;stroke:var(--green);fill:none;stroke-width:1.8;flex-shrink:0;margin-top:1px}
+        .cadastro-guarantee strong{display:block;font-size:13px;color:var(--white);margin-bottom:4px}
+        .cadastro-guarantee p{font-size:12px;color:var(--dim);line-height:1.5;margin:0}
 
         /* Loading Spinner */
         .loading{display:inline-block;width:20px;height:20px;border:2px solid rgba(2,10,20,0.3);border-radius:50%;border-top-color:#020a14;animation:spin 1s ease-in-out infinite}
@@ -450,10 +454,17 @@
                         </div>
 
                         <div class="btn-group">
+                            <div class="cadastro-guarantee">
+                                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                                <div>
+                                    <strong>Garantia de 7 dias</strong>
+                                    <p>Se não fizer sentido para suas campanhas, reembolso de 100% — sem letras miúdas.</p>
+                                </div>
+                            </div>
                             <button type="submit" class="btn btn-p" id="submitBtn">
                                 Continuar para pagamento — R$ 399,99/mês
                             </button>
-                            <p class="form-submit-trust">PIX ou cartão · Garantia de 7 dias · Sem fidelidade</p>
+                            <p class="form-submit-trust">PIX ou cartão · Sem fidelidade · Setup em ~15 min</p>
                         </div>
                     </form>
 

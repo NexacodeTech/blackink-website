@@ -1574,7 +1574,7 @@ if (protSim) {
         elScore.textContent = score;
 
         const proof = document.getElementById('showcase-proof');
-        if (proof && total > 0) {
+        if (proof && total >= 3) {
             const blockPct = Math.round((blocked / total) * 100);
             proof.innerHTML = 'Agora na simulação: <strong>' + blocked + ' bloqueados</strong> · ' + blockPct + '% filtrados · score ' + score;
         }
