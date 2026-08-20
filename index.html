@@ -856,8 +856,11 @@ main{position:relative;z-index:1}
   #roi-calc .calc-summary-val{font-size:9px}
   #roi-calc .calc-summary-tag{font-size:5px}
   #roi-calc .calc-cta{margin-top:0}
-  #roi-calc .calc-cta .btn{height:28px;font-size:10px}
-  #pricing .btn-full{height:28px;font-size:10px}
+  #roi-calc .calc-summary-tag{display:none}
+  #roi-calc .calc-cta .btn{height:26px;font-size:9px}
+  #pricing .btn-full{height:26px;font-size:9px}
+  #problema .mid-cta{display:none}
+  #como-funciona .mid-cta{display:none}
   #pricing .p-val{font-size:clamp(15px,4.2vw,19px)}
   #pricing.section--compact{padding:clamp(1px,0.2vh,2px) 0}
   #pricing .pricing-reveal-inner{padding:1px}
@@ -1357,10 +1360,11 @@ main{position:relative;z-index:1}
   #cloaker .prot-sim-stat-val{font-size:10px}
   #cloaker .showcase-text .t-lg{font-size:clamp(11px,1.3vw,14px)}
   #cloaker .showcase-text .t-body-lg{font-size:8px}
-  #pricing .btn-full{height:20px;font-size:8px}
-  #pricing .p-val{font-size:clamp(13px,1.6vw,18px)}
-  #pricing .period-btn{padding:1px;font-size:7px;min-height:20px}
-  #roi-calc .calc-cta .btn{height:18px;font-size:8px}
+  #problema .mid-cta{display:none}
+  #como-funciona .mid-cta{display:none}
+  #roi-calc .calc-summary-tag{display:none}
+  #pricing .btn-full{height:18px;font-size:8px}
+  #roi-calc .calc-cta .btn{height:16px;font-size:8px}
   #roi-calc .t-lg{font-size:clamp(9px,1.1vw,12px)}
   #roi-calc .calc-summary-val{font-size:8px}
   .sep{opacity:.08;width:min(140px,22%)}
@@ -1395,9 +1399,10 @@ main{position:relative;z-index:1}
   .pricing-reveal-inner .period-toggle{width:100%;justify-content:center}
   #pricing .period-btn{font-size:6px;padding:1px;min-height:22px}
   #pricing .p-val{font-size:clamp(15px,4.2vw,19px)}
-  #pricing .btn-full{height:28px;font-size:10px}
+  #pricing .btn-full{height:26px;font-size:9px}
   #pricing .period-nudge{display:none}
-  #roi-calc .calc-cta .btn{height:28px;font-size:10px}
+  #roi-calc .calc-cta .btn{height:26px;font-size:9px}
+  #roi-calc .calc-summary-tag{display:none}
 }
 @media (max-width:500px){
   .flow-pillars{grid-template-columns:1fr}
@@ -1412,21 +1417,22 @@ main{position:relative;z-index:1}
   .container{width:min(1120px,100% - 28px)}
   .hero-ctas{max-width:100%}
   .networks-grid{grid-template-columns:1fr}
-  /* Ciclo 259/268/276/280/284/288: pricing permanece denso em 480 */
+  /* Ciclo 259/268/276/280/284/288/290: pricing permanece denso em 480 */
   #pricing .period-btn{padding:1px;font-size:6px;min-height:22px}
   #pricing .p-val{font-size:clamp(15px,4.2vw,19px)}
-  #pricing .btn-full{height:28px;font-size:10px}
+  #pricing .btn-full{height:26px;font-size:9px}
 }
 @media (max-width:390px){
   .hero-logo{width:32px;height:32px}
   .hero-title{font-size:22px}
   .hero-badge-text{font-size:10px}
   .btn{height:48px;font-size:14px;padding:0 20px}
-  /* Ciclo 259/268/276/280/284/288: não inflar preço/switcher/CTAs densos no iPhone */
+  /* Ciclo 259/268/276/280/284/288/290: não inflar preço/switcher/CTAs densos no iPhone */
   #pricing .period-btn{font-size:6px;padding:1px;min-height:22px}
   #pricing .p-val{font-size:clamp(15px,4.2vw,19px)}
-  #pricing .btn-full{height:28px;font-size:10px}
-  #roi-calc .calc-cta .btn{height:28px;font-size:10px}
+  #pricing .btn-full{height:26px;font-size:9px}
+  #roi-calc .calc-cta .btn{height:26px;font-size:9px}
+  #roi-calc .calc-summary-tag{display:none}
   #faq .faq-outro .btn{height:26px;font-size:9px}
   #cloaker .showcase-cta .btn{height:26px;font-size:9px}
   #como-funciona .mid-cta .btn{height:26px;font-size:9px}
@@ -1538,7 +1544,7 @@ main{position:relative;z-index:1}
                 <div class="problem-desc">Decisão no browser é detectável. Server-side decide antes do HTML.</div>
             </div>
         </div>
-        <p class="problem-resolve rv rv-d3">Revisor · ~22% sujo · JS falha · <span class="grad">cloaker R$399,99</span></p>
+        <p class="problem-resolve rv rv-d3">~22% sujo · ~1 dia = 1 mês · <span class="grad">cloaker R$399,99</span></p>
         <div class="mid-cta mid-cta--soft rv rv-d4">
         <a href="#roi-calc" class="btn btn-p">Calcular perda</a>
         <a href="#pricing" class="btn btn-o">Ver R$399,99</a>
@@ -1701,7 +1707,7 @@ main{position:relative;z-index:1}
 <section class="section section--compact" id="roi-calc">
     <div class="container">
         <p class="t-label rv" style="text-align:center">Calculadora</p>
-        <h2 class="t-lg rv rv-d1" style="text-align:center;margin:4px auto 4px;max-width:min(560px,92vw)"><span class="grad">Clique inválido</span> come o budget</h2>
+        <h2 class="t-lg rv rv-d1" style="text-align:center;margin:4px auto 4px;max-width:min(560px,92vw)"><span class="grad">Clique inválido</span> · paga o cloaker</h2>
         <p class="t-body-lg rv rv-d2" style="text-align:center;margin:0 auto 8px;max-width:400px;font-size:clamp(13px,1.4vw,15px)">Slider = perda est. vs cloaker R$399,99</p>
         <div class="calc-wrap rv rv-d3">
             <div class="calc-card">
