@@ -868,8 +868,8 @@ main{position:relative;z-index:1}
   #redes .networks-grid{margin-top:8px}
   /* Ciclo 127: why-line redundante com chips de pricing no desktop */
   #por-que.redes-why{display:none}
-  #roi-calc .t-body-lg{margin:0 auto 6px;font-size:13px}
-  #roi-calc .calc-card{padding:14px 16px}
+  #roi-calc .t-body-lg{margin:0 auto 4px;font-size:12px}
+  #roi-calc .calc-card{padding:12px 14px}
   #roi-calc .calc-summary-lbl{display:none}
   #roi-calc .calc-summary-bar{display:none}
   #roi-calc .calc-caveat{display:none}
@@ -878,22 +878,36 @@ main{position:relative;z-index:1}
   #roi-calc .calc-loss-val{font-size:15px}
   #roi-calc .calc-slider-ticks{font-size:9px;margin-top:2px}
   #roi-calc .calc-divider{margin:8px 0}
-  #roi-calc .calc-cta-text{font-size:12px;margin-bottom:8px}
-  #roi-calc .calc-slider-header{margin-bottom:6px}
+  #roi-calc .calc-cta-text{font-size:12px;margin-bottom:6px}
+  #roi-calc .calc-slider-header{margin-bottom:4px}
   #roi-calc .calc-summary{gap:6px;margin-top:6px}
-  #roi-calc .calc-summary-card{padding:10px}
-  #roi-calc .calc-summary-val{font-size:20px}
-  #pricing .pricing-reveal-title{margin:2px 0 6px;font-size:clamp(20px,2.4vw,26px)}
-  #pricing .pricing-lead{margin-bottom:10px;font-size:13px}
+  #roi-calc .calc-summary-card{padding:8px}
+  #roi-calc .calc-summary-val{font-size:18px}
+  #pricing .pricing-reveal-title{margin:2px 0 4px;font-size:clamp(20px,2.4vw,26px)}
+  #pricing .pricing-lead{margin-bottom:8px;font-size:13px}
   #pricing .p-micro{margin-top:8px;font-size:11px}
   #pricing .pricing-trust-chips{margin-top:8px}
   #pricing .period-toggle-label{margin-bottom:4px;display:none}
   /* Ciclo 111: chips cobrem includes+micro no desktop */
   #pricing .pricing-includes-line{display:none}
   #pricing .p-micro{display:none}
-  #pricing .pricing-trust-chips{margin-top:10px;margin-bottom:2px}
-  #pricing .p-price-wrap{min-height:48px;margin-bottom:8px}
-  #roi-calc .calc-cta{margin-top:8px}
+  #pricing .pricing-trust-chips{margin-top:8px;margin-bottom:0}
+  #pricing .p-price-wrap{min-height:44px;margin-bottom:6px}
+  #pricing .period-nudge{margin:-4px auto 8px;font-size:11px}
+  #roi-calc .calc-cta{margin-top:6px}
+  #roi-calc .calc-cta-period{font-size:12px}
+  /* Ciclo 133: ROI subtitle some — H2 + summary bastam */
+  #roi-calc .t-body-lg{display:none}
+  #roi-calc.section--compact{padding:clamp(12px,1.8vh,24px) 0}
+  #roi-calc .t-lg{margin:2px auto 6px;font-size:clamp(22px,2.8vw,30px)}
+  /* Ciclo 134: edu desktop em rail mais baixa */
+  #o-que-e.edu-strip{padding:clamp(10px,1.6vh,18px) 0}
+  #o-que-e .t-lg{margin:2px auto 4px;font-size:clamp(20px,2.4vw,26px)}
+  #o-que-e .t-body-lg{display:none}
+  #o-que-e .edu-rail{gap:8px;margin-top:6px}
+  #problema .mid-cta .btn-o{display:none}
+  #problema .t-lg{margin:4px auto 4px;font-size:clamp(22px,2.8vw,30px)}
+  #problema .problem-resolve{margin-top:6px;font-size:13px}
   #cloaker .showcase-text .t-body-lg{font-size:13px;margin:0}
   /* Ciclo 104/128: prova ao vivo fala por si — features em chips; feed curto */
   #cloaker .showcase-proof{display:none}
@@ -1040,7 +1054,7 @@ main{position:relative;z-index:1}
 <section class="problem-strip" id="problema" aria-label="O problema">
     <div class="container">
         <p class="t-label rv">O problema</p>
-        <h2 class="t-lg rv rv-d1">Você paga o clique<br><span class="grad">O bot não compra</span></h2>
+        <h2 class="t-lg rv rv-d1">Você paga o clique · <span class="grad">o bot não compra</span></h2>
                 <p class="t-body-lg rv rv-d2">Offer no destino = revisor e bot chegam nela · budget some</p>
         <div class="problem-grid">
             <div class="problem-card rv">
@@ -1222,7 +1236,7 @@ main{position:relative;z-index:1}
 <section class="section section--compact" id="roi-calc">
     <div class="container">
         <p class="t-label rv" style="text-align:center">Calculadora</p>
-        <h2 class="t-lg rv rv-d1" style="text-align:center;margin:4px auto 4px;max-width:min(560px,92vw)">Budget que <span class="grad">some em cliques inválidos</span></h2>
+        <h2 class="t-lg rv rv-d1" style="text-align:center;margin:4px auto 4px;max-width:min(560px,92vw)">Budget que <span class="grad">some em clique inválido</span></h2>
         <p class="t-body-lg rv rv-d2" style="text-align:center;margin:0 auto 8px;max-width:400px;font-size:clamp(13px,1.4vw,15px)">Slider = perda est. vs cloaker R$399,99</p>
         <div class="calc-wrap rv rv-d3">
             <div class="calc-card">
@@ -1263,7 +1277,7 @@ main{position:relative;z-index:1}
                     </div>
                 </div>
                 <div class="calc-cta">
-                    <p class="calc-cta-text" id="calc-cta-msg">Esse prejuízo mensal some do ROI — cloaker a R$399,99 corta a fatia inválida.</p>
+                    <p class="calc-cta-text" id="calc-cta-msg">Perda mensal estimada · cloaker a R$399,99 corta a fatia inválida</p>
                     <div class="calc-cta-actions">
                         <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar agora — R$399,99/mês</a>
                         <a href="#pricing" class="calc-cta-period">Ver mensal · trimestral · anual</a>
@@ -2019,7 +2033,7 @@ if (calcSlider && calcDisplay && calcInvisible && calcFraud && calcTotal && calc
         if (calcRoiBar) calcRoiBar.style.width = Math.max(Math.min((roi / 15) * 100, 100), 2) + '%';
         const paybackDays = Math.max(1, Math.ceil(planCost / (total / 30)));
         if (calcMsg && val > 0) {
-            calcMsg.innerHTML = 'Até <strong>' + fmt(total) + '</strong> em cliques inválidos · cloaker se paga em ~<strong>' + paybackDays + ' dia' + (paybackDays > 1 ? 's' : '') + '</strong> (estimativa)';
+            calcMsg.innerHTML = 'Perda ~<strong>' + fmt(total) + '</strong>/mês · payback ~<strong>' + paybackDays + 'd</strong> · ative a R$399,99';
         }
         // Bridge calc → pricing (ciclo 32): keep loss + payback visible in the buy section
         if (pricingLeadLoss) pricingLeadLoss.textContent = fmt(total);
