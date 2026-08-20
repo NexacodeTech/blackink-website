@@ -1745,6 +1745,9 @@ main{position:relative;z-index:1}
   #pricing .p-micro{font-size:10px;margin:2px 0 4px;line-height:1.25}
   /* c510 LAST: padding inferior — fold fecha nos chips (sem redes truncada) */
   #pricing.section--compact{padding:2px 0 18px}
+  /* c511 LAST: sticky morto no densest (CTA preço sempre no path) */
+  .sticky-cta{display:none;pointer-events:none}
+  body.has-sticky-cta{padding-bottom:0}
 }
 @media (min-width:768px){
   .sticky-cta-text{display:block}
@@ -2594,6 +2597,9 @@ main{position:relative;z-index:1}
   #hero{min-height:calc(100vh - 180px);min-height:calc(100dvh - 180px)}
   /* c510 LAST: padding inferior — fold fecha nos chips */
   #pricing.section--compact{padding:2px 0 20px}
+  /* c511 LAST: sticky morto no densest desktop (path curto) */
+  .sticky-cta{display:none;pointer-events:none}
+  body.has-sticky-cta{padding-bottom:0}
 }
 
 @media (max-width:640px){
@@ -2845,6 +2851,9 @@ main{position:relative;z-index:1}
   #hero{min-height:calc(100vh - 160px);min-height:calc(100dvh - 160px)}
   /* c510 LAST: padding inferior — fold fecha nos chips */
   #pricing.section--compact{padding:2px 0 18px}
+  /* c511 LAST: sticky morto no densest (CTA preço sempre no path) */
+  .sticky-cta{display:none;pointer-events:none}
+  body.has-sticky-cta{padding-bottom:0}
 }
 @media (max-width:500px){
   .flow-pillars{grid-template-columns:1fr}
@@ -3090,6 +3099,9 @@ main{position:relative;z-index:1}
   #hero{min-height:calc(100vh - 160px);min-height:calc(100dvh - 160px)}
   /* c510 LAST: padding inferior — fold fecha nos chips */
   #pricing.section--compact{padding:2px 0 18px}
+  /* c511 LAST: sticky morto no densest (CTA preço sempre no path) */
+  .sticky-cta{display:none;pointer-events:none}
+  body.has-sticky-cta{padding-bottom:0}
 }
 @media (max-width:390px){
   .hero-logo{width:32px;height:32px}
@@ -3326,6 +3338,9 @@ main{position:relative;z-index:1}
   #hero{min-height:calc(100vh - 160px);min-height:calc(100dvh - 160px)}
   /* c510 LAST: padding inferior — fold fecha nos chips */
   #pricing.section--compact{padding:2px 0 18px}
+  /* c511 LAST: sticky morto no densest (CTA preço sempre no path) */
+  .sticky-cta{display:none;pointer-events:none}
+  body.has-sticky-cta{padding-bottom:0}
 }
 @media (prefers-reduced-motion:reduce){
   .rv{opacity:1;transform:none}
@@ -3722,7 +3737,7 @@ main{position:relative;z-index:1}
         <p class="t-label rv" style="text-align:center;margin-bottom:4px">FAQ</p>
         <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:4px">Dúvidas · <span class="grad">~1 dia · Ativar −10%</span></h2>
         <div class="faq-list">
-            <details class="faq-i rv rv-d1" open><summary class="faq-q" id="faq-hook-q">Paga em ~1 dia? · Ativar −10%</summary><div class="faq-a" id="faq-savings-a">Perda ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês · ~<strong id="faq-savings-payback">1 dia</strong> = 1 mês · 7 dias · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta faq-inline-cta--price" data-plan="Maré">Ativar — R$399,99</a></div></details>
+            <details class="faq-i rv rv-d1" open><summary class="faq-q" id="faq-hook-q">Paga em ~1 dia? · Ativar −10%</summary><div class="faq-a" id="faq-savings-a">Perda ~<strong id="faq-savings-loss">R$ 12.500</strong>/mês · ~<strong id="faq-savings-payback">1 dia</strong> = 1 mês · garantia 7 dias · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta faq-inline-cta--price" data-plan="Maré">Ativar — R$399,99/mês</a></div></details>
             <p class="faq-assure rv rv-d2"><span class="faq-assure-micro">Garantia 7 dias · 100% · vs R$ 12.500 · sem risco</span><a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta faq-inline-cta--price" data-plan="Maré">Ativar sem risco −10% — R$359,99</a></p>
             <details class="faq-i faq-i--risk rv rv-d2"><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">7 dias · 100% reembolso · <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link faq-inline-cta" data-plan="Maré">Ativar −10% sem risco</a></div></details>
             <div class="faq-more" id="faq-more">
@@ -4251,9 +4266,11 @@ function updatePricingCtaLabel(period) {
         badgeLabel.textContent = ' ' + (HERO_BADGE_LABEL[period] || HERO_BADGE_LABEL.monthly);
         if (svg) badgeLabel.insertBefore(svg, badgeLabel.firstChild);
     }
-    // FAQ price CTAs mirror period (open answer + assure densest)
+    // c512: FAQ answer = Ativar (preço); assure = sem risco (≠ soft garantia)
     const faqPrice = FAQ_PRICE_CTA[period] || FAQ_PRICE_CTA.monthly;
-    document.querySelectorAll('.faq-inline-cta--price').forEach(a => { a.textContent = faqPrice; });
+    const faqSavingsCta = document.querySelector('#faq-savings-a .faq-inline-cta--price');
+    if (faqSavingsCta) faqSavingsCta.textContent = label;
+    document.querySelectorAll('#faq .faq-assure .faq-inline-cta--price').forEach(a => { a.textContent = faqPrice; });
     // Ciclo 326: p-micro confirma desconto ativo no período
     const micro = document.querySelector('#pricing .p-micro');
     if (micro) micro.innerHTML = P_MICRO_HTML[period] || P_MICRO_HTML.monthly;
