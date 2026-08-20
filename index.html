@@ -1687,6 +1687,10 @@ main{position:relative;z-index:1}
   .sticky-cta.visible{border-top-color:rgba(100,180,255,0.28);box-shadow:0 -8px 32px rgba(0,0,0,0.35)}
   /* c477 LAST: hero-ctas gap denser — mais ar pro cue/peek */
   .hero-ctas{gap:8px;margin-bottom:10px}
+  /* c478 LAST: peek 52px — resolve + chips sob fold */
+  #hero{min-height:calc(100vh - 52px);min-height:calc(100dvh - 52px)}
+  /* c479 LAST: FAQ assure stack gap — micro + CTA sem colar */
+  #faq .faq-assure{gap:8px;margin:8px 0 0}
 }
 @media (min-width:768px){
   .sticky-cta-text{display:block}
@@ -2511,7 +2515,7 @@ main{position:relative;z-index:1}
   .hdr-nav a[href="#pricing-lead"]{font-weight:700;color:var(--white)}
   .hdr-nav .hdr-nav-comecar{display:inline;font-weight:600;color:var(--accent)}
   /* c452–c455 desktop densest */
-  #hero{min-height:calc(100vh - 48px);min-height:calc(100dvh - 48px)}
+  #hero{min-height:calc(100vh - 56px);min-height:calc(100dvh - 56px)}
   .hero-scroll-cue{display:flex;padding:6px 16px 12px;font-size:12px;gap:4px;color:rgba(100,180,255,0.85);font-weight:700}
   .hero-scroll-cue-chevron{width:10px;height:10px}
   .hero-sub{max-width:48ch}
@@ -2524,6 +2528,8 @@ main{position:relative;z-index:1}
   .hero-ctas .btn-o.hero-soft-cta{border-color:rgba(100,180,255,0.5)}
   .sticky-cta.visible{border-top-color:rgba(100,180,255,0.28)}
   .hero-ctas{gap:10px}
+  /* c478–c479 desktop densest */
+  #faq .faq-assure{gap:8px;margin:10px 0 0}
 }
 
 @media (max-width:640px){
@@ -2754,7 +2760,7 @@ main{position:relative;z-index:1}
   body:has(.hdr-nav.mob-open) .sticky-cta{transform:translateY(110%);pointer-events:none}
   .hdr-nav .hdr-nav-comecar{display:block;order:1;font-weight:600;color:var(--accent)}
   /* c452–c455 em ≤600 */
-  #hero{min-height:calc(100vh - 48px);min-height:calc(100dvh - 48px)}
+  #hero{min-height:calc(100vh - 52px);min-height:calc(100dvh - 52px)}
   .hero-scroll-cue{display:flex;padding:2px 10px 6px;font-size:11px;color:rgba(100,180,255,0.85);font-weight:700}
   .hero-sub{font-size:12px;line-height:1.4;max-width:38ch;margin-bottom:12px}
   #comecar .cta-final-title{display:block;font-size:clamp(14px,3.6vw,18px);line-height:1.2;margin:0 0 6px}
@@ -2763,6 +2769,8 @@ main{position:relative;z-index:1}
   .hero-ctas .btn-o.hero-soft-cta{border-color:rgba(100,180,255,0.5);box-shadow:0 0 0 1px rgba(100,180,255,0.12)}
   .sticky-cta.visible{border-top-color:rgba(100,180,255,0.28)}
   .hero-ctas{gap:8px;margin-bottom:10px}
+  /* c478–c479 em ≤600 */
+  #faq .faq-assure{gap:8px;margin:8px 0 0}
 }
 @media (max-width:500px){
   .flow-pillars{grid-template-columns:1fr}
@@ -2983,7 +2991,7 @@ main{position:relative;z-index:1}
   body:has(.hdr-nav.mob-open) .sticky-cta{transform:translateY(110%);pointer-events:none}
   .hdr-nav .hdr-nav-comecar{display:block;order:1;font-weight:600;color:var(--accent)}
   /* c452–c455 em ≤480 — period row preservado */
-  #hero{min-height:calc(100vh - 48px);min-height:calc(100dvh - 48px)}
+  #hero{min-height:calc(100vh - 52px);min-height:calc(100dvh - 52px)}
   .hero-scroll-cue{display:flex;padding:2px 8px 5px;font-size:10px;color:rgba(100,180,255,0.85);font-weight:700}
   .hero-scroll-cue-chevron{width:8px;height:8px}
   .hero-sub{font-size:11px;line-height:1.35;max-width:36ch;margin-bottom:10px}
@@ -2995,6 +3003,8 @@ main{position:relative;z-index:1}
   .sticky-cta.visible{border-top-color:rgba(100,180,255,0.28)}
   .hero-ctas{gap:8px;margin-bottom:10px}
   #pricing .period-btn{flex-direction:row}
+  /* c478–c479 em ≤480 */
+  #faq .faq-assure{gap:8px;margin:8px 0 0}
 }
 @media (max-width:390px){
   .hero-logo{width:32px;height:32px}
@@ -3206,7 +3216,7 @@ main{position:relative;z-index:1}
   body:has(.hdr-nav.mob-open) .sticky-cta{transform:translateY(110%);pointer-events:none}
   .hdr-nav .hdr-nav-comecar{display:block;order:1;font-weight:600;color:var(--accent)}
   /* c452–c455 no iPhone */
-  #hero{min-height:calc(100vh - 44px);min-height:calc(100dvh - 44px)}
+  #hero{min-height:calc(100vh - 48px);min-height:calc(100dvh - 48px)}
   .hero-scroll-cue{display:flex;padding:2px 6px 4px;font-size:10px;color:rgba(100,180,255,0.85);font-weight:700}
   .hero-scroll-cue-chevron{width:8px;height:8px}
   .hero-sub{font-size:11px;line-height:1.3;max-width:34ch;margin-bottom:8px}
@@ -3218,6 +3228,8 @@ main{position:relative;z-index:1}
   .sticky-cta.visible{border-top-color:rgba(100,180,255,0.28)}
   .hero-ctas{gap:8px;margin-bottom:8px}
   #pricing .period-btn{flex-direction:row}
+  /* c478–c479 no iPhone */
+  #faq .faq-assure{gap:8px;margin:8px 0 0}
 }
 @media (prefers-reduced-motion:reduce){
   .rv{opacity:1;transform:none}
