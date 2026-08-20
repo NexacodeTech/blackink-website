@@ -637,8 +637,13 @@ a.network-chip:hover,a.network-chip:focus-visible{border-color:rgba(100,180,255,
 .cta-final-period{font-size:12px;color:var(--accent);font-weight:500;text-decoration:none;transition:color .3s var(--ease)}
 .cta-final-period:hover{color:var(--white)}
 .cta-final-trust{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 14px;margin-top:4px;max-width:520px}
-.cta-final-trust span{font-size:11px;color:rgba(240,244,248,0.62);display:inline-flex;align-items:center;gap:6px}
-.cta-final-trust span::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--green);opacity:.85;flex-shrink:0}
+.cta-final-trust span,
+.cta-final-trust a.cta-final-trust-link{font-size:11px;color:rgba(240,244,248,0.62);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:color .3s var(--ease)}
+.cta-final-trust span::before,
+.cta-final-trust a.cta-final-trust-link::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--green);opacity:.85;flex-shrink:0}
+/* c528: Garantia no Começar → cadastro */
+.cta-final-trust a.cta-final-trust-link{color:var(--green);font-weight:600}
+.cta-final-trust a.cta-final-trust-link:hover{color:var(--white)}
 body.has-sticky-cta{padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
 .cta-orb{position:absolute;width:480px;height:480px;left:50%;top:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(100,180,255,0.18),transparent 70%);pointer-events:none;filter:blur(40px)}
 /* Footer */
@@ -1517,7 +1522,8 @@ main{position:relative;z-index:1}
   #redes .network-chip strong{font-weight:600;font-size:10px}
   /* c404 LAST: comecar trust de volta — PIX · 7 dias · sem OAuth */
   #comecar .cta-final-trust{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 10px;margin-top:6px}
-  #comecar .cta-final-trust span{display:inline-flex;font-size:10px;line-height:1.2}
+  #comecar .cta-final-trust span,
+  #comecar .cta-final-trust a.cta-final-trust-link{display:inline-flex;font-size:10px;line-height:1.2}
   #comecar .cta-final-trust span:nth-child(n+4){display:none}
   #comecar .cta-final-period{display:none}
   #comecar .t-body-lg{display:none}
@@ -1530,7 +1536,7 @@ main{position:relative;z-index:1}
   #pricing .pricing-trust-chips li.pricing-chip-latency{display:none}
   #pricing .pricing-networks{display:none}
   #comecar .cta-final-trust span{display:inline-flex}
-  #comecar .cta-final-trust span:nth-child(1),
+  #comecar .cta-final-trust a.cta-final-trust-link,
   #comecar .cta-final-trust span:nth-child(2),
   #comecar .cta-final-trust span:nth-child(3){display:inline-flex}
   #comecar .cta-final-trust span:nth-child(n+4){display:none}
@@ -1614,7 +1620,8 @@ main{position:relative;z-index:1}
   /* c432 LAST: trust chip garantia 100% legível */
   #pricing .pricing-trust-chips li:first-child{color:var(--white);font-weight:700;border-color:rgba(52,211,153,0.28)}
   /* c433 LAST: comecar trust garantia 100% */
-  #comecar .cta-final-trust span:nth-child(1){color:var(--white);font-weight:600}
+  #comecar .cta-final-trust span:nth-child(1),
+  #comecar .cta-final-trust a.cta-final-trust-link{color:var(--green);font-weight:700}
   /* c434 LAST: sticky vs perda — tipografia mais clara */
   .sticky-cta-price{font-size:11px;line-height:1.25}
   .sticky-cta-price strong{font-size:12px;color:var(--white)}
@@ -1710,7 +1717,8 @@ main{position:relative;z-index:1}
   /* c484 LAST: primary hero CTA weight punch */
   .hero-ctas .btn-p.hero-cta{font-weight:700;letter-spacing:.01em}
   /* c485 LAST: comecar trust Garantia first (HTML reorder) */
-  #comecar .cta-final-trust span:nth-child(1){color:var(--white);font-weight:700;letter-spacing:.01em}
+  #comecar .cta-final-trust span:nth-child(1),
+  #comecar .cta-final-trust a.cta-final-trust-link{color:var(--white);font-weight:700;letter-spacing:.01em}
   /* c486 LAST: peek resolve accent no densest */
   #problema .problem-resolve-link .grad{font-weight:700}
   /* c487 LAST: preço peeks — lead visível sob fold */
@@ -2516,7 +2524,8 @@ main{position:relative;z-index:1}
   #redes .network-chip{padding:4px 10px;font-size:11px;line-height:1.2;border-radius:6px}
   #redes .network-chip span{display:none}
   #comecar .cta-final-trust{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 12px;margin-top:8px}
-  #comecar .cta-final-trust span{display:inline-flex;font-size:11px}
+  #comecar .cta-final-trust span,
+  #comecar .cta-final-trust a.cta-final-trust-link{display:inline-flex;font-size:11px}
   #comecar .cta-final-trust span:nth-child(n+4){display:none}
   #comecar .cta-final-period,#comecar .t-body-lg{display:none}
   #pricing .pricing-networks{display:block;text-align:center;font-size:11px;color:var(--dim);margin:6px 0 0}
@@ -2526,7 +2535,7 @@ main{position:relative;z-index:1}
   #pricing .pricing-trust-chips li.pricing-chip-latency{display:none}
   #pricing .pricing-networks{display:none}
   #comecar .cta-final-trust span{display:inline-flex}
-  #comecar .cta-final-trust span:nth-child(1),
+  #comecar .cta-final-trust a.cta-final-trust-link,
   #comecar .cta-final-trust span:nth-child(2),
   #comecar .cta-final-trust span:nth-child(3){display:inline-flex}
   #comecar .cta-final-trust span:nth-child(n+4){display:none}
@@ -2577,7 +2586,8 @@ main{position:relative;z-index:1}
   /* c431–c434 desktop densest */
   .hero-ctas .btn-o.hero-soft-cta{white-space:normal;line-height:1.2;height:auto;min-height:44px;padding:10px 16px}
   #pricing .pricing-trust-chips li:first-child{color:var(--white);font-weight:700;border-color:rgba(52,211,153,0.28)}
-  #comecar .cta-final-trust span:nth-child(1){color:var(--white);font-weight:600}
+  #comecar .cta-final-trust span:nth-child(1),
+  #comecar .cta-final-trust a.cta-final-trust-link{color:var(--green);font-weight:700}
   /* c435–c438 desktop densest */
   .hero-ctas .btn-o.hero-soft-cta{border-color:rgba(100,180,255,0.4)}
   .trust-rail{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 14px;padding:8px 16px}
@@ -2787,7 +2797,8 @@ main{position:relative;z-index:1}
   #redes .network-chip{padding:3px 8px;font-size:10px;line-height:1.2;border-radius:6px}
   #redes .network-chip span{display:none}
   #comecar .cta-final-trust{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 10px;margin-top:6px}
-  #comecar .cta-final-trust span{display:inline-flex;font-size:10px}
+  #comecar .cta-final-trust span,
+  #comecar .cta-final-trust a.cta-final-trust-link{display:inline-flex;font-size:10px}
   #comecar .cta-final-trust span:nth-child(n+4){display:none}
   #comecar .cta-final-period,#comecar .t-body-lg{display:none}
   /* c406: chips −10% visível; networks line some em ≤600 */
@@ -2796,7 +2807,7 @@ main{position:relative;z-index:1}
   #pricing .pricing-trust-chips li.pricing-chip-latency{display:none}
   #pricing .pricing-networks{display:none}
   #comecar .cta-final-trust span{display:inline-flex}
-  #comecar .cta-final-trust span:nth-child(1),
+  #comecar .cta-final-trust a.cta-final-trust-link,
   #comecar .cta-final-trust span:nth-child(2),
   #comecar .cta-final-trust span:nth-child(3){display:inline-flex}
   #comecar .cta-final-trust span:nth-child(n+4){display:none}
@@ -2846,7 +2857,8 @@ main{position:relative;z-index:1}
   /* c431–c434 em ≤600 */
   .hero-ctas .btn-o.hero-soft-cta{white-space:normal;line-height:1.2;height:auto;min-height:40px;padding:8px 12px;text-align:center}
   #pricing .pricing-trust-chips li:first-child{color:var(--white);font-weight:700;border-color:rgba(52,211,153,0.28)}
-  #comecar .cta-final-trust span:nth-child(1){color:var(--white);font-weight:600}
+  #comecar .cta-final-trust span:nth-child(1),
+  #comecar .cta-final-trust a.cta-final-trust-link{color:var(--green);font-weight:700}
   /* c435–c438 em ≤600 */
   .hero-ctas .btn-o.hero-soft-cta{border-color:rgba(100,180,255,0.4)}
   .trust-rail{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 10px;padding:6px 10px}
@@ -3048,7 +3060,8 @@ main{position:relative;z-index:1}
   #redes .network-chip{padding:3px 8px;font-size:10px;line-height:1.2;border-radius:6px}
   #redes .network-chip span{display:none}
   #comecar .cta-final-trust{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 10px;margin-top:6px}
-  #comecar .cta-final-trust span{display:inline-flex;font-size:10px}
+  #comecar .cta-final-trust span,
+  #comecar .cta-final-trust a.cta-final-trust-link{display:inline-flex;font-size:10px}
   #comecar .cta-final-trust span:nth-child(n+4){display:none}
   #comecar .cta-final-period,#comecar .t-body-lg{display:none}
   /* c406: chips −10% visível; networks line some em ≤480 */
@@ -3057,7 +3070,7 @@ main{position:relative;z-index:1}
   #pricing .pricing-trust-chips li.pricing-chip-latency{display:none}
   #pricing .pricing-networks{display:none}
   #comecar .cta-final-trust span{display:inline-flex}
-  #comecar .cta-final-trust span:nth-child(1),
+  #comecar .cta-final-trust a.cta-final-trust-link,
   #comecar .cta-final-trust span:nth-child(2),
   #comecar .cta-final-trust span:nth-child(3){display:inline-flex}
   #comecar .cta-final-trust span:nth-child(n+4){display:none}
@@ -3107,7 +3120,8 @@ main{position:relative;z-index:1}
   /* c431–c434 em ≤480 */
   .hero-ctas .btn-o.hero-soft-cta{white-space:normal;line-height:1.2;height:auto;min-height:40px;padding:8px 12px;text-align:center}
   #pricing .pricing-trust-chips li:first-child{color:var(--white);font-weight:700;border-color:rgba(52,211,153,0.28)}
-  #comecar .cta-final-trust span:nth-child(1){color:var(--white);font-weight:600}
+  #comecar .cta-final-trust span:nth-child(1),
+  #comecar .cta-final-trust a.cta-final-trust-link{color:var(--green);font-weight:700}
   /* c435–c438 em ≤480 */
   .hero-ctas .btn-o.hero-soft-cta{border-color:rgba(100,180,255,0.4)}
   .trust-rail{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 8px;padding:6px 8px}
@@ -3302,7 +3316,8 @@ main{position:relative;z-index:1}
   #redes .network-chip{padding:3px 8px;font-size:10px;line-height:1.2;border-radius:6px}
   #redes .network-chip span{display:none}
   #comecar .cta-final-trust{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 10px;margin-top:6px}
-  #comecar .cta-final-trust span{display:inline-flex;font-size:10px}
+  #comecar .cta-final-trust span,
+  #comecar .cta-final-trust a.cta-final-trust-link{display:inline-flex;font-size:10px}
   #comecar .cta-final-trust span:nth-child(n+4){display:none}
   #comecar .cta-final-period,#comecar .t-body-lg{display:none}
   /* c406: chips −10% visível; networks line some no iPhone */
@@ -3311,7 +3326,7 @@ main{position:relative;z-index:1}
   #pricing .pricing-trust-chips li.pricing-chip-latency{display:none}
   #pricing .pricing-networks{display:none}
   #comecar .cta-final-trust span{display:inline-flex}
-  #comecar .cta-final-trust span:nth-child(1),
+  #comecar .cta-final-trust a.cta-final-trust-link,
   #comecar .cta-final-trust span:nth-child(2),
   #comecar .cta-final-trust span:nth-child(3){display:inline-flex}
   #comecar .cta-final-trust span:nth-child(n+4){display:none}
@@ -3363,7 +3378,8 @@ main{position:relative;z-index:1}
   /* c431–c434 no iPhone */
   .hero-ctas .btn-o.hero-soft-cta{white-space:normal;line-height:1.2;height:auto;min-height:40px;padding:8px 10px;text-align:center}
   #pricing .pricing-trust-chips li:first-child{color:var(--white);font-weight:700;border-color:rgba(52,211,153,0.28)}
-  #comecar .cta-final-trust span:nth-child(1){color:var(--white);font-weight:600}
+  #comecar .cta-final-trust span:nth-child(1),
+  #comecar .cta-final-trust a.cta-final-trust-link{color:var(--green);font-weight:700}
   /* c435–c438 no iPhone */
   .hero-ctas .btn-o.hero-soft-cta{border-color:rgba(100,180,255,0.4)}
   .trust-rail{display:flex;flex-wrap:wrap;justify-content:center;gap:3px 6px;padding:5px 6px}
@@ -3868,7 +3884,7 @@ main{position:relative;z-index:1}
         <div class="rv rv-d3" style="display:flex;flex-direction:column;align-items:center;gap:0">
             <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta comecar-cta" data-plan="Maré">Começar agora — R$399,99/mês</a>
             <div class="cta-final-trust">
-                <span>Garantia 7 dias · 100%</span>
+                <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link cta-final-trust-link" data-plan="Maré" aria-label="Começar com garantia 7 dias">Garantia 7 dias · 100%</a>
                 <span>PIX ou cartão</span>
                 <span>Sem OAuth</span>
                 <span>Empresa BR · CNPJ</span>
