@@ -141,6 +141,7 @@
         .selected-plan-name{font-family:var(--ff-display);font-weight:700;font-size:18px;color:var(--accent);margin-bottom:4px}
         .selected-plan-price{font-size:14px;color:var(--dim);line-height:1.5}
         .selected-plan-billing{font-size:12px;color:var(--muted);margin-top:2px}
+        .selected-plan-trust{font-size:12px;color:rgba(240,244,248,0.62);margin-top:14px;padding-top:12px;border-top:1px solid var(--border);line-height:1.5}
 
         /* ── Form ── */
         .form-group{margin-bottom:20px}
@@ -335,6 +336,7 @@
                                 <div class="selected-plan-billing" id="planBilling">Cobrança mensal</div>
                             </div>
                         </div>
+                        <div class="selected-plan-trust">PIX ou cartão · Garantia de 7 dias · Cancele quando quiser</div>
                     </div>
 
                     <div class="register-card-header">
@@ -488,12 +490,12 @@
         const monthlyEq = (planData.priceValue * 0.9).toFixed(2).replace('.', ',');
         const quarterlyTotal = (planData.priceValue * 3 * 0.9).toFixed(2).replace('.', ',');
         priceDisplay = `R$ ${monthlyEq}/mês`;
-        billingDisplay = `Cobrado R$ ${quarterlyTotal} a cada 3 meses`;
+        billingDisplay = `Cobrado R$ ${quarterlyTotal} a cada 3 meses · economia ~10%`;
     } else if (period === 'yearly') {
         const monthlyEq = (planData.priceValue * 0.85).toFixed(2).replace('.', ',');
         const yearlyTotal = (planData.priceValue * 12 * 0.85).toFixed(2).replace('.', ',');
         priceDisplay = `R$ ${monthlyEq}/mês`;
-        billingDisplay = `Cobrado R$ ${yearlyTotal} a cada 12 meses`;
+        billingDisplay = `Cobrado R$ ${yearlyTotal} a cada 12 meses · economia ~15%`;
     }
     document.getElementById('planPrice').textContent = priceDisplay;
     document.getElementById('planBilling').textContent = billingDisplay;

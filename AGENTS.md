@@ -134,3 +134,8 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Mudanças**: redes = Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras; hero cabe em 100vh (logo menor no mobile); sem hscroll pin, GSAP, loader fullscreen, Sonar ou áudio; sticky CTA sync período + hide em `#pricing`/footer; comparação por arquétipo (client-side / redirect / SaaS).
 **Regra**: lista de redes completa em copy user-facing; vanilla JS only; `scroll-padding-top: 72px`.
 **Status**: ativo
+
+## 2026-08-19 — Hero 2 linhas + CTA above-the-fold
+**Contexto**: H1 em 4 linhas empurrava CTAs para baixo da dobra (desktop 900px e mobile 844px).
+**Regra**: hero H1 em no máximo 2 linhas (“Bots veem Safe Page / Compradores veem Offer Page”); CTA primário + trust (PIX/setup/garantia) devem caber no primeiro viewport. Validar com screenshot forçando `animation:none` (headless captura mid-fade).
+**Status**: ativo
