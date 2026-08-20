@@ -808,13 +808,15 @@ main{position:relative;z-index:1}
   #pricing .pricing-lead{font-size:8px;margin-bottom:1px;line-height:1.15}
   #pricing .t-label{display:none}
   #pricing .period-toggle-label{display:none}
-  #pricing .p-val{font-size:clamp(20px,5.5vw,26px)}
-  #pricing .btn-full{height:40px;font-size:12px}
-  #pricing.section--compact{padding:clamp(4px,1vh,12px) 0}
-  #pricing .pricing-reveal-inner{padding:4px 4px}
-  #pricing .p-price-wrap{min-height:22px;margin-bottom:0}
-  #pricing .period-btn{padding:3px 2px;font-size:8px}
-  #pricing .pricing-reveal-title{margin:0;font-size:clamp(14px,4vw,17px)}
+  #pricing .p-val{font-size:clamp(18px,5vw,24px)}
+  #pricing .btn-full{height:36px;font-size:11px}
+  #pricing.section--compact{padding:clamp(2px,0.6vh,8px) 0}
+  #pricing .pricing-reveal-inner{padding:3px 3px}
+  #pricing .p-price-wrap{min-height:20px;margin-bottom:0}
+  #pricing .period-btn{padding:2px 2px;font-size:7px}
+  #pricing .pricing-reveal-title{margin:0;font-size:clamp(13px,3.6vw,16px)}
+  #pricing .pricing-trust-chips{margin:1px 0 0;gap:2px}
+  #pricing .period-nudge{display:none}
   .arch-grid{grid-template-columns:1fr}
   .calc-losses{grid-template-columns:1fr}
   .calc-summary{grid-template-columns:1fr}
@@ -838,8 +840,17 @@ main{position:relative;z-index:1}
   #roi-calc .calc-losses{display:none}
   #roi-calc .calc-cta-text{font-size:7px;margin-bottom:1px}
   #roi-calc .calc-cta{margin-top:1px}
-  #roi-calc .calc-cta .btn{height:38px;font-size:11px}
+  #roi-calc .calc-cta .btn{height:36px;font-size:11px}
   #roi-calc .calc-slider-header{margin-bottom:0}
+  #faq .faq-outro .btn{height:36px;font-size:11px}
+  #faq .faq-q{padding:2px 5px;font-size:9px}
+  #faq .faq-a{padding:0 5px 2px;font-size:8px;line-height:1.12}
+  #faq .t-lg{margin-bottom:0;font-size:clamp(12px,3.4vw,15px)}
+  #cloaker .showcase-cta .btn{height:36px;font-size:11px}
+  #cloaker.section--compact{padding:clamp(2px,0.6vh,8px) 0}
+  #comecar.cta-final{padding:clamp(6px,1.2vh,14px) 0}
+  #comecar .cta-final-title{font-size:clamp(16px,4.5vw,22px)}
+  #comecar .t-body-lg{font-size:11px;margin:4px auto 6px}
   .footer{padding:6px 0 4px}
   .f-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px 8px;margin-bottom:2px}
   .footer .f-brand{grid-column:1 / -1}
@@ -1109,42 +1120,51 @@ main{position:relative;z-index:1}
   #pricing .p-price-wrap{min-height:22px;margin-bottom:0}
   #pricing .period-nudge{margin:-2px auto 1px;font-size:8px}
   #pricing .t-label{display:none}
-  #roi-calc.section--compact{padding:clamp(2px,0.5vh,6px) 0}
-  #roi-calc .calc-card{padding:3px 4px}
-  #roi-calc .calc-summary-val{font-size:12px}
-  #roi-calc .calc-cta .btn{height:34px;font-size:11px}
-  #roi-calc .t-lg{font-size:clamp(14px,1.6vw,18px);margin:0 auto 1px}
-  #roi-calc .calc-summary-card{padding:3px}
-  #roi-calc .calc-cta-text{font-size:9px;margin-bottom:1px}
-  #faq.section--compact{padding:clamp(2px,0.4vh,6px) 0}
-  #faq .faq-q{padding:2px 6px;font-size:10px}
-  #faq .faq-a{padding:0 6px 2px;font-size:9px}
-  #faq .faq-outro .btn{height:34px;font-size:11px}
-  #faq .t-lg{font-size:clamp(12px,1.4vw,14px);margin-bottom:0}
-  #faq .faq-list{gap:1px;max-width:440px}
-  #faq .faq-outro{margin-top:1px;padding:2px 4px;max-width:440px}
-  #faq .faq-more-toggle{min-height:22px;padding:1px 6px;font-size:9px}
-  .footer{padding:clamp(4px,0.8vh,10px) 0 2px}
-  .f-grid{gap:4px;margin-bottom:2px}
-  .f-bottom{margin-top:2px;padding-top:4px;font-size:8px}
+  #roi-calc.section--compact{padding:clamp(2px,0.4vh,4px) 0}
+  #roi-calc .calc-card{padding:2px 3px}
+  #roi-calc .calc-summary-val{font-size:11px}
+  #roi-calc .calc-cta .btn{height:32px;font-size:11px}
+  #roi-calc .t-lg{font-size:clamp(13px,1.5vw,17px);margin:0 auto 0}
+  #roi-calc .calc-summary-card{padding:2px}
+  #roi-calc .calc-cta-text{font-size:8px;margin-bottom:0}
+  #roi-calc .calc-slider-value{font-size:14px}
+  #roi-calc .calc-slider-header{margin-bottom:0}
+  #faq.section--compact{padding:clamp(2px,0.3vh,4px) 0}
+  #faq .faq-q{padding:2px 5px;font-size:9px}
+  #faq .faq-a{padding:0 5px 1px;font-size:8px}
+  #faq .faq-outro .btn{height:32px;font-size:11px}
+  #faq .t-lg{font-size:clamp(12px,1.3vw,14px);margin-bottom:0}
+  #faq .faq-list{gap:1px;max-width:420px}
+  #faq .faq-outro{margin-top:1px;padding:2px 4px;max-width:420px}
+  #faq .faq-more-toggle{min-height:20px;padding:1px 6px;font-size:8px}
+  .footer{padding:clamp(2px,0.6vh,8px) 0 2px}
+  .f-grid{gap:3px;margin-bottom:2px}
+  .f-bottom{margin-top:2px;padding-top:3px;font-size:8px}
   .footer .f-links a[href="#redes"],
   .footer .f-links a[href*="login"]{display:none}
   .f-bottom > span{font-size:8px}
-  #redes.redes-strip{padding:clamp(2px,0.5vh,6px) 0}
-  #comecar.cta-final{padding:clamp(2px,0.8vh,8px) 0}
+  #redes.redes-strip{padding:clamp(2px,0.4vh,4px) 0}
+  #comecar.cta-final{padding:clamp(2px,0.6vh,6px) 0}
   #comecar .cta-final-period{display:none}
   #comecar .t-body-lg{margin:0 auto 2px;font-size:9px}
-  #cloaker.section--compact{padding:clamp(2px,0.6vh,8px) 0}
-  #cloaker .prot-sim{min-height:120px}
-  #cloaker .prot-sim-feed{min-height:32px;max-height:48px}
-  #cloaker .prot-sim-feed-body{min-height:32px}
-  #cloaker .showcase-feat{padding:3px 6px}
+  #comecar .cta-final-title{font-size:clamp(15px,2vw,20px)}
+  #cloaker.section--compact{padding:clamp(2px,0.5vh,6px) 0}
+  #cloaker .prot-sim{min-height:110px}
+  #cloaker .prot-sim-feed{min-height:28px;max-height:44px}
+  #cloaker .prot-sim-feed-body{min-height:28px}
+  #cloaker .showcase-feat{padding:2px 5px}
   #cloaker .showcase-feat-text{font-size:9px}
-  #problema.problem-strip{padding:clamp(4px,0.8vh,12px) 0}
-  #como-funciona.section--compact{padding:clamp(4px,0.8vh,10px) 0}
-  #como-funciona .setup-step{padding:6px 5px}
+  #cloaker .showcase-text .t-lg{font-size:clamp(14px,1.8vw,20px);margin:0 0 1px}
+  #problema.problem-strip{padding:clamp(2px,0.6vh,10px) 0}
+  #problema .problem-card{padding:5px 6px}
+  #como-funciona.section--compact{padding:clamp(2px,0.6vh,8px) 0}
+  #como-funciona .setup-step{padding:5px 4px}
   #como-funciona .setup-step h3{font-size:11px;margin-bottom:1px}
   #como-funciona .setup-step p{font-size:9px;line-height:1.2}
+  #pricing.section--compact{padding:clamp(2px,0.4vh,4px) 0}
+  #pricing .pricing-reveal-inner{padding:2px 3px}
+  #pricing .btn-full{height:34px;font-size:11px}
+  #pricing .p-val{font-size:clamp(18px,2.4vw,26px)}
 }
 @media (max-width:640px){
   .networks-grid{grid-template-columns:1fr 1fr}
@@ -1153,17 +1173,25 @@ main{position:relative;z-index:1}
   .prot-sim-bottom{grid-template-columns:1fr;gap:8px}
 }
 @media (max-width:600px){
-  /* Ciclo 259: não inflar ROI/pricing — densify 767 vence */
+  /* Ciclo 259/268: não inflar ROI/pricing — densify 767 vence */
   #roi-calc .calc-losses{display:none}
   #roi-calc .calc-caveat{display:none}
-  #roi-calc .calc-cta-text{font-size:8px;margin-bottom:2px}
-  #roi-calc .calc-summary{margin-top:2px}
-  #roi-calc .calc-slider-value{font-size:15px}
-  #roi-calc .calc-summary-val{font-size:13px}
+  #roi-calc .calc-divider{display:none}
+  #roi-calc .calc-slider-ticks{display:none}
+  #roi-calc .calc-cta-period{display:none}
+  #roi-calc .t-label{display:none}
+  #roi-calc .t-body-lg{display:none}
+  #roi-calc .calc-cta-text{font-size:7px;margin-bottom:1px}
+  #roi-calc .calc-summary{margin-top:1px;grid-template-columns:1fr 1fr}
+  #roi-calc .calc-slider-value{font-size:13px}
+  #roi-calc .calc-summary-val{font-size:12px}
+  #roi-calc .calc-cta .btn{height:36px;font-size:11px}
   .period-switcher{flex-direction:row;width:100%;max-width:100%;justify-content:center}
   .pricing-reveal-inner .period-toggle{width:100%;justify-content:center}
-  /* period-btn densos — não voltar padding 10px */
-  #pricing .period-btn{font-size:9px;padding:4px 3px}
+  #pricing .period-btn{font-size:7px;padding:2px 2px}
+  #pricing .p-val{font-size:clamp(18px,5vw,24px)}
+  #pricing .btn-full{height:36px;font-size:11px}
+  #pricing .period-nudge{display:none}
 }
 @media (max-width:500px){
   .flow-pillars{grid-template-columns:1fr}
@@ -1178,19 +1206,25 @@ main{position:relative;z-index:1}
   .container{width:min(1120px,100% - 28px)}
   .hero-ctas{max-width:100%}
   .networks-grid{grid-template-columns:1fr}
-  /* Ciclo 259: pricing permanece denso em 480 */
-  #pricing .period-btn{padding:4px 2px;font-size:9px}
-  #pricing .p-val{font-size:clamp(22px,6vw,28px)}
+  /* Ciclo 259/268: pricing permanece denso em 480 */
+  #pricing .period-btn{padding:2px 2px;font-size:7px}
+  #pricing .p-val{font-size:clamp(18px,5vw,24px)}
+  #pricing .btn-full{height:36px;font-size:11px}
 }
 @media (max-width:390px){
   .hero-logo{width:32px;height:32px}
   .hero-title{font-size:22px}
   .hero-badge-text{font-size:10px}
   .btn{height:48px;font-size:14px;padding:0 20px}
-  /* Ciclo 259: não inflar preço/switcher no iPhone */
-  #pricing .period-btn{font-size:9px;padding:4px 2px}
-  #pricing .p-val{font-size:clamp(22px,7vw,28px)}
-  #pricing .btn-full{height:44px;font-size:13px}
+  /* Ciclo 259/268: não inflar preço/switcher/CTAs densos no iPhone */
+  #pricing .period-btn{font-size:7px;padding:2px 2px}
+  #pricing .p-val{font-size:clamp(18px,5vw,24px)}
+  #pricing .btn-full{height:36px;font-size:11px}
+  #roi-calc .calc-cta .btn{height:36px;font-size:11px}
+  #faq .faq-outro .btn{height:36px;font-size:11px}
+  #cloaker .showcase-cta .btn{height:36px;font-size:11px}
+  #como-funciona .mid-cta .btn{height:42px;font-size:12px}
+  #problema .mid-cta .btn{height:42px;font-size:12px}
 }
 @media (prefers-reduced-motion:reduce){
   .rv{opacity:1;transform:none}
@@ -1280,7 +1314,7 @@ main{position:relative;z-index:1}
     <div class="container">
         <p class="t-label rv">O problema</p>
         <h2 class="t-lg rv rv-d1">Paga o clique · <span class="grad">bot não compra</span></h2>
-                 <p class="t-body-lg rv rv-d2">Offer no destino = revisor/bot vê · budget some no clique inválido</p>
+                 <p class="t-body-lg rv rv-d2">Offer no destino = revisor vê a money page · budget some no clique inválido</p>
         <div class="problem-grid">
             <div class="problem-card rv">
                 <div class="problem-stat" style="color:#ef4444">Conta</div>
@@ -1298,7 +1332,7 @@ main{position:relative;z-index:1}
                 <div class="problem-desc">Decisão no browser é detectável. Server-side decide antes do HTML.</div>
             </div>
         </div>
-        <p class="problem-resolve rv rv-d3">Corta conta · clique sujo · JS · <span class="grad">R$399,99 · sem OAuth</span></p>
+        <p class="problem-resolve rv rv-d3">Revisor na offer · ~22% clique sujo · JS falha · <span class="grad">cloaker R$399,99</span></p>
         <div class="mid-cta mid-cta--soft rv rv-d4">
             <a href="#roi-calc" class="btn btn-p">Calcular perda do budget</a>
             <a href="#cloaker" class="btn btn-o">Ver prova ao vivo</a>
