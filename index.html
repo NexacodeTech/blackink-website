@@ -570,7 +570,7 @@ strong{font-weight:600}
 .pricing-includes-line span{color:var(--white);font-weight:600}
 .pricing-trust-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin:10px 0 0;padding:0;list-style:none}
 .pricing-trust-chips li{font-size:11px;font-weight:600;color:var(--dim);padding:5px 10px;border-radius:999px;border:1px solid var(--border);background:rgba(2,10,20,0.35);letter-spacing:.02em}
-.pricing-trust-chips li:last-child{color:var(--green);border-color:rgba(52,211,153,0.25);background:rgba(52,211,153,0.06)}
+.pricing-trust-chips li:first-child{color:var(--green);border-color:rgba(52,211,153,0.25);background:rgba(52,211,153,0.06)}
 /* FAQ — compact (ciclo 45) */
 .faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
 .faq-more{display:none;flex-direction:column;gap:8px;margin-top:8px}
@@ -1036,9 +1036,9 @@ main{position:relative;z-index:1}
         <span class="ln"><span class="ln-i"><span class="ln-mute">Bots veem</span> <span class="ln-strong">Safe Page</span></span></span>
         <span class="ln"><span class="ln-i"><span class="ln-mute">Compradores veem</span> <span class="ln-strong">Offer Page</span></span></span>
     </h1>
-    <p class="hero-sub">Cloaker server-side para Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras — &lt;50ms · sem OAuth · R$399,99/mês</p>
+    <p class="hero-sub">Cloaker server-side · multi-rede · &lt;50ms · sem OAuth · R$399,99/mês</p>
     <div class="hero-ctas">
-        <a href="#roi-calc" class="btn btn-p">Calcular perdas do budget</a>
+        <a href="#roi-calc" class="btn btn-p">Ver quanto some do budget</a>
         <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-o plan-link hero-cta" data-plan="Maré">Começar agora — R$399,99/mês</a>
     </div>
     <div class="hero-trust">
@@ -1047,10 +1047,10 @@ main{position:relative;z-index:1}
     </div>
     </div>
     <div class="trust-rail" aria-label="Sinais de confiança">
+        <span>Garantia 7 dias</span>
         <span>Empresa BR · CNPJ ativo</span>
         <span>Cloaker 100% server-side</span>
         <span>Setup ~15 minutos</span>
-        <span>Garantia 7 dias</span>
         <span>Suporte em português</span>
     </div>
 </section>
@@ -1082,7 +1082,7 @@ main{position:relative;z-index:1}
         </div>
         <p class="problem-resolve rv rv-d3">BlackInk corta os três · <span class="grad">sem OAuth · R$399,99</span></p>
         <div class="mid-cta mid-cta--soft rv rv-d4">
-            <a href="#roi-calc" class="btn btn-p">Calcular quanto some do budget</a>
+            <a href="#roi-calc" class="btn btn-p">Ver quanto some do budget</a>
             <a href="#cloaker" class="btn btn-o">Ver prova ao vivo</a>
         </div>
     </div>
@@ -1140,7 +1140,7 @@ main{position:relative;z-index:1}
 
         <div class="mid-cta mid-cta--soft rv rv-d3" style="margin-top:8px">
             <a href="#cloaker" class="btn btn-p">Ver prova ao vivo</a>
-            <a href="#roi-calc" class="btn btn-o">Calcular perdas do budget</a>
+            <a href="#roi-calc" class="btn btn-o">Ver quanto some do budget</a>
         </div>
     </div>
 </section>
@@ -1323,9 +1323,9 @@ main{position:relative;z-index:1}
                     <p class="pricing-includes-line">Safe + offer · server-side &lt;50ms · 15+ sinais + logs · App + suporte · Payback <span id="pricing-bridge-payback">~1 dia</span></p>
                     <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p btn-full plan-link pricing-cta" data-plan="Maré">Ativar agora — R$399,99/mês</a>
                     <ul class="pricing-trust-chips" aria-label="Garantias">
+                        <li>Garantia 7 dias</li>
                         <li>Sem OAuth</li>
                         <li>Server-side &lt;50ms</li>
-                        <li>Garantia 7 dias</li>
                     </ul>
                     <p class="p-micro"><strong>Garantia 7 dias</strong> · reembolso 100% · PIX/cartão · sem contrato · setup ~15 min</p>
                 </div>
@@ -1375,7 +1375,7 @@ main{position:relative;z-index:1}
                 <details class="faq-i"><summary class="faq-q">O BlackInk é um tracker?</summary><div class="faq-a">Não. É cloaker server-side (safe vs offer). Não vende tracker nem pixel de atribuição.</div></details>
                 <details class="faq-i"><summary class="faq-q">Como falo com o suporte?</summary><div class="faq-a">E-mail <a href="mailto:suporte@theblack.ink">suporte@theblack.ink</a> e ticket/chat na plataforma. Assistência gratuita no setup inicial.</div></details>
             </div>
-            <button type="button" class="faq-more-toggle" id="faq-more-toggle" aria-expanded="false" aria-controls="faq-more">Ver mais perguntas</button>
+            <button type="button" class="faq-more-toggle" id="faq-more-toggle" aria-expanded="false" aria-controls="faq-more">Mais dúvidas · setup · redes · suporte</button>
         </div>
         <div class="faq-outro rv">
             <div class="faq-outro-cta">
@@ -1965,7 +1965,7 @@ if (faqMore && faqMoreToggle) {
     faqMoreToggle.addEventListener('click', () => {
         const open = faqMore.classList.toggle('open');
         faqMoreToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-        faqMoreToggle.textContent = open ? 'Mostrar menos' : 'Ver mais perguntas';
+        faqMoreToggle.textContent = open ? 'Mostrar menos' : 'Mais dúvidas · setup · redes · suporte';
     });
 }
 
