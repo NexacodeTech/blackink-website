@@ -541,6 +541,8 @@ strong{font-weight:600}
 .pricing-reveal-title{font-family:var(--ff-display);font-size:clamp(26px,3.5vw,36px);font-weight:700;margin:10px 0 8px}
 .pricing-reveal-sub{font-size:15px;color:var(--dim);margin-bottom:28px}
 .period-toggle-label{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:13px}
+.period-nudge{font-size:13px;color:var(--dim);margin:-8px auto 20px;max-width:42ch;line-height:1.5}
+.period-nudge strong{color:var(--white);font-weight:600}
 .period-toggle{display:flex;justify-content:center;margin-bottom:clamp(24px,3vw,32px)}
 .period-switcher{display:inline-flex;flex-wrap:wrap;justify-content:center;max-width:100%;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:4px;gap:4px}
 .period-btn{background:transparent;border:none;padding:12px 20px;font-family:var(--ff-body);font-size:14px;font-weight:500;color:var(--dim);border-radius:10px;cursor:pointer;transition:color .3s var(--ease),background .3s var(--ease);display:inline-flex;align-items:center;gap:8px}
@@ -569,6 +571,11 @@ strong{font-weight:600}
 .pricing-guarantee p{font-size:13px;color:var(--dim);line-height:1.55}
 /* FAQ */
 .faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+.faq-more{display:none;flex-direction:column;gap:10px;margin-top:10px}
+.faq-more.open{display:flex}
+.faq-more-toggle{display:block;margin:16px auto 0;background:transparent;border:1px solid var(--border);color:var(--dim);font-family:var(--ff-body);font-size:14px;font-weight:500;padding:12px 20px;border-radius:12px;cursor:pointer;min-height:44px;transition:color .3s var(--ease),border-color .3s var(--ease),background .3s var(--ease)}
+.faq-more-toggle:hover{color:var(--white);border-color:rgba(100,180,255,0.28);background:rgba(100,180,255,0.06)}
+.faq-more-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .faq-outro{max-width:720px;margin:28px auto 0;text-align:center;padding:20px 16px;border-radius:14px;border:1px solid var(--border);background:rgba(6,17,31,0.45)}
 .faq-outro p{font-size:14px;color:var(--dim);line-height:1.55;margin:0}
 .faq-outro a{color:var(--accent);font-weight:500;transition:color .3s var(--ease)}
@@ -1229,6 +1236,7 @@ main{position:relative;z-index:1}
                             <button type="button" class="period-btn" data-period="yearly">Anual <span class="period-discount">−15%</span></button>
                         </div>
                     </div>
+                    <p class="period-nudge" id="period-nudge">Trimestral economiza ~R$120 vs mensal no trimestre — mesmo cloaker, menor custo por mês</p>
                     <div class="p-price-wrap">
                         <div class="p-price active" data-period="monthly"><span class="p-curr">R$</span><span class="p-val">399</span><span class="p-per">,99/mês</span></div>
                         <div class="p-price" data-period="quarterly"><span class="p-curr">R$</span><span class="p-val">359</span><span class="p-per">,99/mês</span><span class="p-monthly-eq">equivalente mensal · cobrado R$1.079,97 a cada 3 meses</span><span class="p-save">Economia de ~R$120 vs mensal no trimestre</span></div>
@@ -1273,13 +1281,16 @@ main{position:relative;z-index:1}
             <details class="faq-i rv rv-d1"><summary class="faq-q">Funciona em quais redes?</summary><div class="faq-a">Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras plataformas de tráfego pago. O fluxo é o mesmo: destino do anúncio aponta para a URL BlackInk.</div></details>
             <details class="faq-i rv rv-d2"><summary class="faq-q">E se eu não gostar?</summary><div class="faq-a">Garantia de 7 dias. Teste a plataforma; se não fizer sentido para suas campanhas, reembolso de 100% — sem letras miúdas.</div></details>
             <details class="faq-i rv rv-d2"><summary class="faq-q">Como configuro o BlackInk?</summary><div class="faq-a">Cadastre safe page e offer page (ou use BlackInk Clone), configure regras de filtragem e aponte o destino do anúncio para a URL da BlackInk. Setup típico em cerca de 15 minutos — sem OAuth.</div></details>
-            <details class="faq-i rv rv-d3"><summary class="faq-q">O que é um cloaker?</summary><div class="faq-a">Camada server-side entre o clique do anúncio e a página final. Cada visitante é analisado; bots, VPNs e revisores recebem safe page, e tráfego qualificado recebe offer page — sem script na sua hospedagem.</div></details>
-            <details class="faq-i rv rv-d3"><summary class="faq-q">O que é safe page e offer page?</summary><div class="faq-a">Safe page é servida a bots, revisores e tráfego inválido — conteúdo compliant. Offer page (money page) é servida apenas a visitantes qualificados. Ambas ficam cadastradas na plataforma; o roteamento ocorre server-side em menos de 50ms.</div></details>
-            <details class="faq-i rv rv-d4"><summary class="faq-q">Já uso outro cloaker. É difícil migrar?</summary><div class="faq-a">Não. Cadastre suas páginas (ou use BlackInk Clone para clonar a estrutura), ajuste as regras e troque a URL de destino do anúncio. A maioria finaliza em menos de 30 minutos.</div></details>
-            <details class="faq-i rv rv-d4"><summary class="faq-q">Qual a diferença do BlackInk para outros cloakers?</summary><div class="faq-a">Comparado a scripts client-side e redirects simples, BlackInk é SaaS server-side com URL própria, decision logs, sem PHP no seu host, suporte BR e preço único (R$ 399,99/mês).</div></details>
-            <details class="faq-i rv rv-d5"><summary class="faq-q">O BlackInk é um tracker?</summary><div class="faq-a">Não. BlackInk é cloaker server-side: controla quem vê safe page ou offer page. Não vende tracker, pixel de conversão ou atribuição como produto.</div></details>
-            <details class="faq-i rv rv-d5"><summary class="faq-q">O BlackInk se paga? Quanto posso economizar?</summary><div class="faq-a">Estimativa de mercado aponta cerca de 22% do budget em tráfego inválido (varia por campanha). Use a <a href="#roi-calc">calculadora de perdas</a> para simular com seu investimento mensal.</div></details>
-            <details class="faq-i rv rv-d5"><summary class="faq-q">Como falo com o suporte?</summary><div class="faq-a">Por e-mail em <a href="mailto:suporte@theblack.ink">suporte@theblack.ink</a> e por ticket/chat dentro da plataforma. Assistência gratuita na configuração inicial.</div></details>
+            <div class="faq-more" id="faq-more">
+                <details class="faq-i"><summary class="faq-q">O que é um cloaker?</summary><div class="faq-a">Camada server-side entre o clique do anúncio e a página final. Cada visitante é analisado; bots, VPNs e revisores recebem safe page, e tráfego qualificado recebe offer page — sem script na sua hospedagem.</div></details>
+                <details class="faq-i"><summary class="faq-q">O que é safe page e offer page?</summary><div class="faq-a">Safe page é servida a bots, revisores e tráfego inválido — conteúdo compliant. Offer page (money page) é servida apenas a visitantes qualificados. Ambas ficam cadastradas na plataforma; o roteamento ocorre server-side em menos de 50ms.</div></details>
+                <details class="faq-i"><summary class="faq-q">Já uso outro cloaker. É difícil migrar?</summary><div class="faq-a">Não. Cadastre suas páginas (ou use BlackInk Clone para clonar a estrutura), ajuste as regras e troque a URL de destino do anúncio. A maioria finaliza em menos de 30 minutos.</div></details>
+                <details class="faq-i"><summary class="faq-q">Qual a diferença do BlackInk para outros cloakers?</summary><div class="faq-a">Comparado a scripts client-side e redirects simples, BlackInk é SaaS server-side com URL própria, decision logs, sem PHP no seu host, suporte BR e preço único (R$ 399,99/mês).</div></details>
+                <details class="faq-i"><summary class="faq-q">O BlackInk é um tracker?</summary><div class="faq-a">Não. BlackInk é cloaker server-side: controla quem vê safe page ou offer page. Não vende tracker, pixel de conversão ou atribuição como produto.</div></details>
+                <details class="faq-i"><summary class="faq-q">O BlackInk se paga? Quanto posso economizar?</summary><div class="faq-a">Estimativa de mercado aponta cerca de 22% do budget em tráfego inválido (varia por campanha). Use a <a href="#roi-calc">calculadora de perdas</a> para simular com seu investimento mensal.</div></details>
+                <details class="faq-i"><summary class="faq-q">Como falo com o suporte?</summary><div class="faq-a">Por e-mail em <a href="mailto:suporte@theblack.ink">suporte@theblack.ink</a> e por ticket/chat dentro da plataforma. Assistência gratuita na configuração inicial.</div></details>
+            </div>
+            <button type="button" class="faq-more-toggle" id="faq-more-toggle" aria-expanded="false" aria-controls="faq-more">Ver mais perguntas</button>
         </div>
         <div class="faq-outro rv">
             <p>Ainda com dúvida antes de ativar? <a href="mailto:suporte@theblack.ink">suporte@theblack.ink</a> · ou <a href="/cadastro/?plan=Maré&period=monthly" class="plan-link" data-plan="Maré">comece agora</a> com garantia de 7 dias</p>
@@ -1647,6 +1658,12 @@ const STICKY_BTN = {
     yearly: 'Ativar — R$339,99/mês'
 };
 
+const PERIOD_NUDGE = {
+    monthly: 'Trimestral economiza ~R$120 vs mensal no trimestre — mesmo cloaker, menor custo por mês',
+    quarterly: 'Boa escolha: ~10% a menos vs mensal · cobrado R$1.079,97 a cada 3 meses',
+    yearly: 'Máxima economia: ~15% a menos vs mensal · cobrado R$4.079,90 no ano'
+};
+
 function updatePricingCtaLabel(period) {
     const label = PRICING_CTA_LABELS[period] || PRICING_CTA_LABELS.monthly;
     document.querySelectorAll('.pricing-cta').forEach(btn => { btn.textContent = label; });
@@ -1662,6 +1679,8 @@ function updatePricingCtaLabel(period) {
     }
     const stickyBtn = document.getElementById('sticky-cta-btn');
     if (stickyBtn) stickyBtn.textContent = STICKY_BTN[period] || STICKY_BTN.monthly;
+    const nudge = document.getElementById('period-nudge');
+    if (nudge) nudge.textContent = PERIOD_NUDGE[period] || PERIOD_NUDGE.monthly;
 }
 
 function updatePlanLinks(period) {
@@ -1742,6 +1761,17 @@ if (footerSection) {
 }
 window.addEventListener('scroll', syncStickyVisibility, { passive: true });
 syncStickyVisibility();
+
+// FAQ progressive disclosure
+const faqMore = document.getElementById('faq-more');
+const faqMoreToggle = document.getElementById('faq-more-toggle');
+if (faqMore && faqMoreToggle) {
+    faqMoreToggle.addEventListener('click', () => {
+        const open = faqMore.classList.toggle('open');
+        faqMoreToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        faqMoreToggle.textContent = open ? 'Mostrar menos' : 'Ver mais perguntas';
+    });
+}
 
 // ROI calculator
 const calcSlider = document.getElementById('calc-budget');

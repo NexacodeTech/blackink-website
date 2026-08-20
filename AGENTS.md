@@ -169,3 +169,8 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Contexto**: sticky competia com `#comecar`/`.cta-final` e cobria conteúdo no fim das seções.
 **Regra**: sticky esconde em pricing + cta-final + footer; `body.has-sticky-cta` adiciona padding-bottom; CTA final aponta desconto para `#pricing` (não FAQ).
 **Status**: ativo
+
+## 2026-08-20 — FAQ progressivo + nudge de periodicidade
+**Contexto**: 12 FAQs após o preço geravam fadiga; mensal sem lembrete de economia.
+**Regra**: FAQ mostra 5 prioritárias (preço/OAuth/redes/garantia/setup); resto atrás de “Ver mais perguntas”; nudge sob o period switcher muda com o período ativo.
+**Status**: ativo
