@@ -879,37 +879,53 @@ main{position:relative;z-index:1}
   #como-funciona .mid-cta .btn{height:32px;font-size:10px}
   #cloaker .showcase-features{display:none}
   #roi-calc .calc-cta-text{display:none}
-  #cloaker .showcase-cta .btn{height:32px;font-size:10px}
-  #cloaker.section--compact{padding:clamp(2px,0.4vh,5px) 0}
-  #cloaker .prot-sim-stats{padding:2px 4px 2px;gap:1px}
-  #cloaker .prot-sim-stat{padding:2px 1px 1px}
-  #cloaker .prot-sim-stat-val{font-size:10px}
-  #cloaker .showcase-text .t-lg{font-size:clamp(12px,3.6vw,16px);margin:0}
-  #cloaker .showcase-text .t-body-lg{font-size:7px}
-  #comecar.cta-final{padding:clamp(2px,0.6vh,6px) 0}
-  #comecar .cta-final-title{font-size:clamp(13px,3.8vw,17px)}
-  #comecar .t-body-lg{font-size:8px;margin:1px auto 2px}
-  #comecar .cta-final-trust{gap:2px 4px}
-  #comecar .cta-final-trust span{font-size:7px}
+  #cloaker .showcase-cta .btn{height:30px;font-size:10px}
+  #cloaker.section--compact{padding:clamp(1px,0.3vh,4px) 0}
+  #cloaker .prot-sim-header{padding:2px 4px}
+  #cloaker .prot-sim-status-label{font-size:8px}
+  #cloaker .prot-sim-stats{padding:1px 3px 2px;gap:0}
+  #cloaker .prot-sim-stat{padding:1px}
+  #cloaker .prot-sim-stat-val{font-size:9px}
+  #cloaker .prot-sim-stat-lbl{font-size:6px}
+  #cloaker .prot-sim-stat:nth-child(3){display:none}
+  #cloaker .prot-sim-stats{grid-template-columns:1fr 1fr}
+  #cloaker .showcase-text .t-lg{font-size:clamp(11px,3.4vw,15px);margin:0}
+  #cloaker .showcase-text .t-body-lg{font-size:6px}
+  #como-funciona.section--compact{padding:clamp(1px,0.4vh,6px) 0}
+  #como-funciona .setup-step{padding:3px 2px}
+  #como-funciona .setup-step h3{font-size:8px}
+  #como-funciona .setup-num{font-size:6px;margin-bottom:0}
+  #como-funciona .t-lg{font-size:clamp(12px,3.4vw,15px);margin:1px auto}
+  #como-funciona .mid-cta{margin-top:1px}
+  #como-funciona .mid-cta .btn{height:30px;font-size:10px}
+  #comecar.cta-final{padding:clamp(1px,0.5vh,4px) 0}
+  #comecar .cta-final-title{font-size:clamp(12px,3.6vw,16px)}
+  #comecar .t-body-lg{font-size:7px;margin:0 auto 2px}
+  #comecar .cta-final-trust span{font-size:6px}
   #comecar .t-label{display:none}
-  #comecar .pricing-cta{height:32px;font-size:10px;padding:0 12px}
-  .footer{padding:2px 0 1px}
-  .f-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px 4px;margin-bottom:0}
+  #comecar .pricing-cta{height:30px;font-size:10px;padding:0 10px}
+  #comecar .cta-final-trust span:nth-child(n+3){display:none}
+  .footer{padding:1px 0 1px}
+  .f-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px 4px;margin-bottom:0}
   .footer .f-brand{grid-column:1 / -1}
-  .footer .f-brand p{font-size:7px;line-height:1.1;max-width:30ch;margin-top:0}
-  .footer .f-brand .hdr-logo{font-size:14px}
-  .f-col-t{margin-bottom:0;font-size:7px}
-  .f-links{gap:1px}
-  .f-links a{font-size:8px}
+  .footer .f-brand p{font-size:6px;line-height:1.1;max-width:28ch;margin-top:0}
+  .footer .f-brand .hdr-logo{font-size:13px}
+  .f-col-t{margin-bottom:0;font-size:6px}
+  .f-links{gap:0}
+  .f-links a{font-size:7px}
   .footer .f-links a[href="#redes"],
   .footer .f-links a[href="#faq"],
-  .footer .f-links a[href*="login"]{display:none}
-  .f-bottom{gap:0;margin-top:1px;padding-top:2px;font-size:6px}
-  .f-legal{font-size:6px;line-height:1.1;gap:0}
+  .footer .f-links a[href*="login"],
+  .footer .f-links a[href="#cloaker"]{display:none}
+  .f-bottom{gap:0;margin-top:0;padding-top:2px;font-size:6px}
+  .f-legal{font-size:6px;line-height:1.05;gap:0}
   .f-legal-addr{display:none}
   .f-legal-addr-short{display:inline}
   .f-legal a[href^="mailto"]{display:none}
   .f-bottom > span{display:none}
+  .trust-rail span:nth-child(n+3){display:none}
+  .trust-rail{padding:4px 8px;gap:4px 8px}
+  .sep{height:1px;opacity:.1;width:min(160px,35%);margin:0 auto}
   .sticky-cta-inner{gap:10px}
   .sticky-cta-price{display:block}
   .sticky-cta .btn-p{flex:1.2;min-width:0;padding:0 14px;font-size:13px}
@@ -1268,6 +1284,13 @@ main{position:relative;z-index:1}
   #como-funciona .setup-steps{gap:3px;margin:1px 0}
   #roi-calc .calc-summary-card{padding:1px}
   #pricing .pricing-trust-chips{margin-top:0}
+  .footer .f-links a[href="#cloaker"],
+  .footer .f-links a[href="#pricing"]{display:none}
+  .f-legal span:not(.f-legal-addr-short):not(:first-child){display:none}
+  .f-legal-addr-short{display:inline}
+  .f-bottom > span{display:none}
+  #cloaker .prot-sim-header{padding:2px 4px}
+  #cloaker .prot-sim-stat-lbl{font-size:7px}
 }
 @media (max-width:640px){
   .networks-grid{grid-template-columns:1fr 1fr}
@@ -1394,7 +1417,7 @@ main{position:relative;z-index:1}
     </h1>
     <p class="hero-sub">Safe vs offer · multi-rede · &lt;50ms · sem OAuth · R$399,99 · 7 dias</p>
     <div class="hero-ctas">
-        <a href="#roi-calc" class="btn btn-p">Calcular perda do budget</a>
+        <a href="#roi-calc" class="btn btn-p">Calcular perda</a>
         <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-o plan-link hero-cta" data-plan="Maré">Começar — R$399,99/mês</a>
     </div>
     <div class="hero-trust">
@@ -1418,7 +1441,7 @@ main{position:relative;z-index:1}
     <div class="container">
         <p class="t-label rv">O problema</p>
         <h2 class="t-lg rv rv-d1">Paga o clique · <span class="grad">bot não compra</span></h2>
-                 <p class="t-body-lg rv rv-d2">Offer no destino = revisor vê a money page · budget some no clique inválido</p>
+                 <p class="t-body-lg rv rv-d2">Offer no destino = revisor na money page · budget some</p>
         <div class="problem-grid">
             <div class="problem-card rv">
                 <div class="problem-stat" style="color:#ef4444">Conta</div>
@@ -1438,7 +1461,7 @@ main{position:relative;z-index:1}
         </div>
         <p class="problem-resolve rv rv-d3">Revisor · ~22% sujo · JS falha · <span class="grad">cloaker R$399,99</span></p>
         <div class="mid-cta mid-cta--soft rv rv-d4">
-        <a href="#roi-calc" class="btn btn-p">Calcular perda do budget</a>
+        <a href="#roi-calc" class="btn btn-p">Calcular perda</a>
         <a href="#pricing" class="btn btn-o">Ver R$399,99</a>
         </div>
     </div>
