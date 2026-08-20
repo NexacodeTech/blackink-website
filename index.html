@@ -1112,8 +1112,6 @@ main{position:relative;z-index:1}
 
 <div class="sep"></div>
 
-<div class="sep"></div>
-
 <!-- 6. Investimento -->
 <section class="section" id="pricing" style="background:var(--bg2)">
     <div class="container">
@@ -1292,7 +1290,7 @@ main{position:relative;z-index:1}
     <div class="container" style="position:relative;z-index:1">
         <p class="t-label rv" style="text-align:center;margin-bottom:16px">Pronto</p>
         <h2 class="t-lg rv rv-d1" style="text-align:center">Ative o cloaker<br><span class="grad">Controle quem vê o quê</span></h2>
-        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:500px;margin:16px auto 28px">Safe page para revisores. Offer page para compradores. Google Ads, YouTube Ads, Facebook Ads, TikTok Ads e outras — setup em 15 minutos</p>
+        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:520px;margin:16px auto 28px" id="cta-final-lead">Pare de financiar até <strong id="cta-final-loss">R$ 12.500</strong>/mês em cliques inválidos — safe page para revisores, offer page para compradores. Setup em 15 minutos</p>
         <div class="rv rv-d3" style="display:flex;flex-direction:column;align-items:center;gap:14px">
             <a href="/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link pricing-cta" data-plan="Maré">Ativar Cloaker — R$399,99/mês</a>
             <div class="cta-final-trust">
@@ -1837,6 +1835,7 @@ const calcTotalBar = document.getElementById('calc-total-bar');
 const calcRoiBar = document.getElementById('calc-roi-bar');
 const pricingLeadLoss = document.getElementById('pricing-lead-loss');
 const pricingBridgePayback = document.getElementById('pricing-bridge-payback');
+const ctaFinalLoss = document.getElementById('cta-final-loss');
 
 if (calcSlider && calcDisplay && calcInvisible && calcFraud && calcHours && calcTotal && calcRoi) {
     const fmt = v => 'R$ ' + Math.round(v).toLocaleString('pt-BR');
@@ -1900,6 +1899,8 @@ if (calcSlider && calcDisplay && calcInvisible && calcFraud && calcHours && calc
         // Sticky mirrors loss (ciclo 33)
         lastCalcLossFmt = fmt(total);
         syncStickyLossCopy();
+        // Final CTA mirrors loss (ciclo 35)
+        if (ctaFinalLoss) ctaFinalLoss.textContent = fmt(total);
     };
     calcSlider.addEventListener('input', updateCalc);
     updateCalc();
