@@ -479,7 +479,9 @@
 <script>
 (function() {
     // API Configuration
-    const API_BASE_URL = 'https://api.blackink.cloud';
+    // USD funnel: Hostinger bridge until EC2 has /api/users/register-whop.
+    // PT cadastro keeps posting to api.blackink.cloud/api/users/register (Stripe).
+    const API_BASE_URL = 'https://app.blackink.cloud';
 
     // Single product — API plan name: Maré ($69.99/month)
     const DEFAULT_PLAN = 'Maré';
@@ -672,7 +674,7 @@
         if (frefParam || friendCode) registrationData.friend_referral_code = frefParam || friendCode;
 
         try {
-            const response = await fetch(`${API_BASE_URL}/api/users/register-whop`, {
+            const response = await fetch(`${API_BASE_URL}/api/register-whop.php`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
