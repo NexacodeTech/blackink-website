@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create account — BlackInk</title>
+    <link rel="canonical" href="https://blackink.cloud/en/cadastro/">
+    <meta name="description" content="Create your BlackInk account — server-side cloaker for Google Ads, Meta, TikTok and other paid-traffic platforms. $69.99/month on Whop.">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+    <link href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500,600,700&display=swap" rel="stylesheet">
+    <style>
+        /* ══════════════════════════════════════════════════════════
+           BLACKINK — Register Page
+           ══════════════════════════════════════════════════════════ */
+        :root {
+            --ff-display: 'General Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --ff-body: 'General Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --bg: #020a14;
+            --bg2: #06111f;
+            --surface: rgba(8,22,48,0.45);
+            --border: rgba(100,180,255,0.08);
+            --border-h: rgba(100,180,255,0.18);
+            --white: #f0f4f8;
+            --dim: rgba(240,244,248,0.55);
+            --muted: rgba(240,244,248,0.3);
+            --accent: #64b4ff;
+            --accent2: #38bdf8;
+            --green: #34d399;
+            --gold: #fbbf24;   /* usado por .password-strength-bar.medium — sem isto a barra fica transparente */
+            --error: #f87171;
+            --ease: cubic-bezier(0.16,1,0.3,1);
+        }
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+        body{font-family:var(--ff-body);color:var(--white);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.6;min-height:100vh;display:flex;flex-direction:column}
+        a{color:inherit;text-decoration:none}
+        img{max-width:100%;display:block}
+        ul{list-style:none}
+
+        /* Grain */
+        body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:0.022;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:256px}
+
+        /* ── Layout ── */
+        .container{max-width:1200px;margin:0 auto;padding:0 24px}
+        @media(min-width:768px){.container{padding:0 48px}}
+
+        /* ── Typography ── */
+        .t-xl{font-family:var(--ff-display);font-weight:700;font-size:clamp(32px,5vw,48px);line-height:1.1;letter-spacing:-0.04em}
+        .t-lg{font-family:var(--ff-display);font-weight:700;font-size:clamp(22px,3.5vw,32px);line-height:1.15;letter-spacing:-0.03em}
+        .t-md{font-family:var(--ff-display);font-weight:600;font-size:clamp(17px,2vw,22px);line-height:1.2;letter-spacing:-0.02em}
+        .t-body{font-size:clamp(15px,1.2vw,17px);line-height:1.7;color:var(--dim)}
+        .t-label{font-size:12px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent)}
+        .grad{background:linear-gradient(135deg,#f0f4f8 0%,var(--accent) 60%,var(--accent2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+        /* ── Buttons ── */
+        .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:none;border-radius:14px;font-family:var(--ff-body);font-weight:600;cursor:pointer;position:relative;overflow:hidden;transition:all .4s var(--ease)}
+        .btn-p{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#020a14;font-size:16px;height:56px;padding:0 32px;box-shadow:0 0 0 1px rgba(100,180,255,0.2),0 8px 40px rgba(100,180,255,0.15);width:100%}
+        .btn-p::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent);transition:left .6s var(--ease)}
+        .btn-p:hover:not(:disabled)::before{left:100%}
+        .btn-p:hover:not(:disabled){transform:translateY(-3px);box-shadow:0 0 0 1px rgba(100,180,255,0.3),0 20px 60px rgba(100,180,255,0.25)}
+        .btn-p:active{transform:translateY(0)}
+        .btn-p:disabled{opacity:0.5;cursor:not-allowed}
+        .btn-o{background:transparent;color:var(--white);font-size:16px;height:56px;padding:0 32px;border:1px solid var(--border-h);width:100%}
+        .btn-o:hover{border-color:rgba(100,180,255,0.35);background:rgba(100,180,255,0.04);transform:translateY(-3px)}
+
+        /* ── Header ── */
+        .hdr{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;background:rgba(2,10,20,0.88);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--border)}
+        .hdr-in{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:72px}
+        .hdr-logo{font-family:var(--ff-display);font-size:24px;font-weight:700;letter-spacing:-0.03em}
+        .hdr-logo span{color:var(--accent)}
+
+        /* ── Main Section ── */
+        .main-section{flex:1;padding:120px 24px 80px;position:relative;overflow:hidden;display:flex;align-items:center}
+
+        /* Gradient mesh background */
+        .mesh{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+        .mesh div{position:absolute;border-radius:50%;filter:blur(130px);animation:mesh-float 20s ease-in-out infinite}
+        .mesh .m1{width:700px;height:700px;background:radial-gradient(circle,rgba(100,180,255,0.1),transparent 70%);top:-25%;right:-15%;animation-delay:0s}
+        .mesh .m2{width:500px;height:500px;background:radial-gradient(circle,rgba(56,189,248,0.06),transparent 70%);bottom:-10%;left:-15%;animation-delay:-7s}
+        .mesh .m3{width:400px;height:400px;background:radial-gradient(circle,rgba(129,140,248,0.05),transparent 70%);top:40%;left:30%;animation-delay:-14s}
+        @keyframes mesh-float{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-20px) scale(1.05)}66%{transform:translate(-20px,30px) scale(0.95)}}
+
+        /* Floating particles */
+        .particle{position:absolute;width:2px;height:2px;border-radius:50%;background:rgba(140,210,255,0.5);bottom:-10px;animation:p-up 45s linear infinite,p-glow 8s ease-in-out infinite;pointer-events:none}
+        @keyframes p-up{from{transform:translateY(0);opacity:0}5%{opacity:1}95%{opacity:1}to{transform:translateY(-100vh);opacity:0}}
+        @keyframes p-glow{0%,100%{box-shadow:0 0 4px rgba(140,210,255,0.3)}50%{box-shadow:0 0 12px rgba(140,210,255,0.8)}}
+
+        .content{position:relative;z-index:1;width:100%}
+
+        /* ── Register Layout ── */
+        .register-layout{display:grid;grid-template-columns:1fr;gap:60px;max-width:1000px;margin:0 auto;align-items:center}
+        @media(min-width:900px){
+            .register-layout{grid-template-columns:1fr 1fr}
+        }
+
+        /* ── Left Side - Info ── */
+        .register-info{text-align:center}
+        @media(min-width:900px){
+            .register-info{text-align:left}
+        }
+
+        .register-info-logo{width:80px;height:80px;margin:0 auto 24px}
+        @media(min-width:900px){
+            .register-info-logo{margin:0 0 24px}
+        }
+
+        .register-info-logo img{width:100%;height:100%}
+
+        .register-info-title{margin-bottom:16px}
+        .register-info-subtitle{margin-bottom:32px;max-width:400px;margin-left:auto;margin-right:auto;text-wrap:balance}
+        @media(min-width:900px){
+            .register-info-subtitle{margin-left:0;margin-right:0}
+        }
+
+        .register-features{display:flex;flex-direction:column;gap:16px}
+        .register-feature{display:flex;align-items:flex-start;gap:14px;padding:14px 18px;background:rgba(100,180,255,0.02);border:1px solid var(--border);border-radius:14px;transition:all .3s var(--ease)}
+        .register-feature:hover{border-color:var(--border-h);background:rgba(100,180,255,0.04)}
+        .register-feature-icon{flex-shrink:0;width:36px;height:36px;border-radius:10px;background:rgba(100,180,255,0.08);border:1px solid rgba(100,180,255,0.12);display:flex;align-items:center;justify-content:center;color:var(--accent)}
+        .register-feature-icon svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+        .register-feature-text{flex:1}
+        .register-feature-text strong{display:block;color:var(--white);font-weight:600;font-size:14px;margin-bottom:2px}
+        .register-feature-text span{font-size:13px;color:var(--muted)}
+
+        /* ── Right Side - Form ── */
+        .register-card{background:var(--surface);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:24px;padding:clamp(32px,5vw,48px);position:relative;overflow:hidden;animation:card-in .8s var(--ease) both}
+        .register-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+        .register-card::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.06),transparent)}
+        @keyframes card-in{from{opacity:0;transform:translateY(40px) scale(0.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+
+        .register-card-header{text-align:center;margin-bottom:32px}
+        .register-card-title{margin-bottom:8px}
+        .register-card-subtitle{font-size:14px;color:var(--muted)}
+
+        /* ── Order summary (single product) ── */
+        .selected-plan{background:rgba(100,180,255,0.04);border:1px solid var(--border-h);border-radius:14px;padding:18px;margin-bottom:28px}
+        .selected-plan-label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:13px}
+        .selected-plan-row{display:flex;align-items:center;gap:16px}
+        .selected-plan-icon{flex-shrink:0;width:32px;height:32px}
+        .selected-plan-icon img{width:100%;height:100%;object-fit:contain}
+        .selected-plan-info{flex:1}
+        .selected-plan-name{font-family:var(--ff-display);font-weight:700;font-size:18px;color:var(--accent);margin-bottom:4px}
+        .selected-plan-price{font-size:14px;color:var(--dim);line-height:1.5}
+        .selected-plan-billing{font-size:12px;color:var(--muted);margin-top:2px}
+
+        /* ── Form ── */
+        .form-group{margin-bottom:20px}
+        .form-label{display:block;margin-bottom:8px;font-weight:600;font-size:14px;color:var(--white)}
+        .form-input{width:100%;padding:16px 18px;background:rgba(2,10,20,0.6);border:1px solid var(--border);border-radius:12px;color:var(--white);font-size:16px;font-family:var(--ff-body);transition:all .3s var(--ease)}
+        .form-input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(100,180,255,0.15)}
+        .form-input::placeholder{color:var(--muted)}
+        .form-input.error{border-color:var(--error)}
+        .form-input:disabled{opacity:0.7;cursor:not-allowed;background:rgba(2,10,20,0.4)}
+
+        .form-hint{font-size:12px;color:var(--muted);margin-top:6px}
+        .form-error{color:var(--error);font-size:12px;margin-top:6px;display:none}
+        .form-error.show{display:block}
+
+        .password-toggle{position:relative}
+        .password-toggle .form-input{padding-right:50px}
+        .password-toggle-btn{position:absolute;right:16px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--muted);cursor:pointer;padding:4px;transition:color .3s}
+        .password-toggle-btn:hover{color:var(--white)}
+        .password-toggle-btn svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+        .password-strength{display:flex;gap:4px;margin-top:8px}
+        .password-strength-bar{flex:1;height:3px;background:rgba(255,255,255,0.1);border-radius:2px;transition:background .3s}
+        .password-strength-bar.weak{background:#ef4444}
+        .password-strength-bar.medium{background:var(--gold)}
+        .password-strength-bar.strong{background:var(--green)}
+
+        .btn-group{display:flex;flex-direction:column;gap:12px;margin-top:28px}
+
+        /* Loading Spinner */
+        .loading{display:inline-block;width:20px;height:20px;border:2px solid rgba(2,10,20,0.3);border-radius:50%;border-top-color:#020a14;animation:spin 1s ease-in-out infinite}
+        @keyframes spin{to{transform:rotate(360deg)}}
+
+        .form-footer{margin-top:24px;text-align:center}
+        .form-footer p{font-size:13px;color:var(--muted)}
+        .form-footer a{color:var(--accent);font-weight:600;transition:color .3s}
+        .form-footer a:hover{color:var(--accent2)}
+
+        /* ── Steps Indicator ── */
+        .steps{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:32px}
+        .step{display:flex;align-items:center;gap:8px;opacity:0.4;transition:opacity .3s}
+        .step.active{opacity:1}
+        .step.completed{opacity:0.7}
+        .step-num{width:28px;height:28px;border-radius:50%;background:rgba(100,180,255,0.1);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--white);transition:all .3s}
+        .step.active .step-num{background:linear-gradient(135deg,var(--accent),var(--accent2));border-color:var(--accent);color:#020a14}
+        .step.completed .step-num{background:var(--green);border-color:var(--green);color:#020a14}
+        .step-label{font-size:13px;color:var(--dim);font-weight:500}
+        .step-line{width:40px;height:1px;background:var(--border)}
+
+        /* ── Footer ── */
+        .footer{padding:28px 0;border-top:1px solid var(--border)}
+        .f-bottom{text-align:center}
+        .f-bottom span{font-size:12px;color:var(--muted)}
+
+        /* ── Cursor ── */
+        .cursor{position:fixed;width:8px;height:8px;border-radius:50%;background:var(--accent);pointer-events:none;z-index:9997;opacity:0;mix-blend-mode:screen;transition:opacity .3s,width .4s var(--ease),height .4s var(--ease);transform:translate(-50%,-50%)}
+        .cursor.on{opacity:.5}
+        .cursor.big{width:48px;height:48px;opacity:.12}
+        @media(pointer:coarse){.cursor{display:none}}
+
+        /* ── Responsive ── */
+        @media(max-width:767px){
+            /* itens de grid com conteúdo largo não encolhem sem min-width:0 —
+               era isso que cortava o checkout horizontalmente no telefone */
+            .register-info,.register-card{min-width:0}
+            .step-line{width:auto;flex:1 1 0;min-width:8px}
+            .step-label{font-size:12px}
+            /* o stepper era cortado pelo overflow:hidden do card em todo telefone.
+               Bolinha fixa, rótulo encolhe, linha absorve o resto. */
+            /* o rótulo empilha embaixo da bolinha em vez de encolher — encolher
+               truncava para "Prod… / Da… / Pagame…" abaixo de 410px */
+            .steps{gap:6px}
+            .step{flex-direction:column;gap:4px;min-width:0}
+            .step-num{width:24px;height:24px;flex:0 0 24px;font-size:12px}
+            .step-label{font-size:11px;white-space:nowrap}
+            .step-line{align-self:flex-start;margin-top:11px}
+
+            .main-section{padding:100px 20px 60px}
+            .register-features{display:none}
+        }
+
+        /* ── Toast Notification ── */
+        .toast{position:fixed;top:100px;right:24px;z-index:9998;max-width:360px;padding:16px 20px;background:var(--surface);backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:14px;box-shadow:0 8px 40px rgba(0,0,0,0.3);transform:translateX(120%);transition:transform .5s var(--ease);display:flex;align-items:flex-start;gap:12px}
+        .toast.show{transform:translateX(0)}
+        .toast.toast-error{border-color:rgba(248,113,113,0.3)}
+        .toast.toast-success{border-color:rgba(52,211,153,0.3)}
+        .toast-icon{flex-shrink:0;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px}
+        .toast-error .toast-icon{background:rgba(248,113,113,0.15);color:var(--error)}
+        .toast-success .toast-icon{background:rgba(52,211,153,0.15);color:var(--green)}
+        .toast-content{flex:1}
+        .toast-title{font-weight:600;font-size:14px;color:var(--white);margin-bottom:2px}
+        .toast-message{font-size:13px;color:var(--dim)}
+        .toast-close{flex-shrink:0;background:none;border:none;color:var(--muted);cursor:pointer;padding:4px}
+        .toast-close:hover{color:var(--white)}
+    </style>
+<script>!function(w,d,s,u,n,a,b){if(w[n])return;a=w[n]={q:[],t: new Date,s:[],o:u,track:function(){a.q.push([ new Date].concat([].slice.call(arguments)))},setScope:function(){a.s=[].slice.call(arguments).filter(function(x){return typeof x==="string"});a.q.push([ new Date,"setScope"].concat(a.s))},scope:function(){var c=[].slice.call(arguments);return{track:function(){a.q.push([ new Date].concat([].slice.call(arguments)).concat([{__scope:c}]))}}}};b=d.createElement(s);b.async=1;b.src=u+"/s.js";d.getElementsByTagName(s)[0].parentNode.insertBefore(b,d.getElementsByTagName(s)[0])}(window,document,"script","https://t.whop.tw","whop");whop.setScope("biz_DJ6XbjaZmfVjZ8");whop.track("page");</script>
+</head>
+<body>
+
+<!-- Cursor -->
+<div class="cursor" id="cur"></div>
+
+<!-- Toast -->
+<div class="toast" id="toast">
+    <div class="toast-icon">!</div>
+    <div class="toast-content">
+        <div class="toast-title" id="toastTitle">Error</div>
+        <div class="toast-message" id="toastMessage">Error message</div>
+    </div>
+    <button class="toast-close" onclick="hideToast()">✕</button>
+</div>
+
+<!-- ═══════ HEADER ═══════ -->
+<header class="hdr">
+    <div class="hdr-in">
+        <a href="/en/" class="hdr-logo">Black<span>Ink</span></a>
+    </div>
+</header>
+
+<!-- ═══════ MAIN ═══════ -->
+<main class="main-section">
+    <!-- Background effects -->
+    <div class="mesh">
+        <div class="m1"></div>
+        <div class="m2"></div>
+        <div class="m3"></div>
+    </div>
+    <div class="particle" style="left:10%;animation-delay:0s,-2s"></div>
+    <div class="particle" style="left:25%;animation-delay:-10s,-4s"></div>
+    <div class="particle" style="left:40%;animation-delay:-20s,-6s"></div>
+    <div class="particle" style="left:55%;animation-delay:-30s,-3s"></div>
+    <div class="particle" style="left:70%;animation-delay:-15s,-7s"></div>
+    <div class="particle" style="left:85%;animation-delay:-25s,-5s"></div>
+
+    <div class="content">
+        <div class="container">
+            <div class="register-layout">
+                <!-- Left Side - Info -->
+                <div class="register-info">
+                    <div class="register-info-logo">
+                        <img src="/images/logo-icon-160.png" width="160" height="160" alt="BlackInk">
+                    </div>
+                    <h1 class="t-xl register-info-title" id="infoTitle">
+                        Set up in <span class="grad">15 minutes</span>
+                    </h1>
+                    <p class="t-body register-info-subtitle" id="infoSubtitle">
+                        Register the safe page and offer page in the platform (or use BlackInk Clone), configure the rules and connect your domain. The domain in the ad stays yours.
+                    </p>
+
+                    <div class="register-features" id="infoFeatures">
+                        <div class="register-feature">
+                            <div class="register-feature-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                            <div class="register-feature-text">
+                                <strong>Page setup</strong>
+                                <span>HTML/code in the dashboard or BlackInk Clone to copy the structure</span>
+                            </div>
+                        </div>
+                        <div class="register-feature">
+                            <div class="register-feature-icon">
+                                <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                            </div>
+                            <div class="register-feature-text">
+                                <strong>Your two domains</strong>
+                                <span>One hosts the pages, the other goes in the ad — both are yours. BlackInk’s domain appears to no one</span>
+                            </div>
+                        </div>
+                        <div class="register-feature">
+                            <div class="register-feature-icon">
+                                <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+                            </div>
+                            <div class="register-feature-text">
+                                <strong>Filtering rules</strong>
+                                <span>Geo, device, bots, VPNs and reviewers — no ads-account connection (Google, Meta, TikTok…)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Form -->
+                <div class="register-card">
+                    <!-- Steps -->
+                    <div class="steps">
+                        <div class="step completed">
+                            <div class="step-num">✓</div>
+                            <span class="step-label">Product</span>
+                        </div>
+                        <div class="step-line"></div>
+                        <div class="step active">
+                            <div class="step-num">2</div>
+                            <span class="step-label">Details</span>
+                        </div>
+                        <div class="step-line"></div>
+                        <div class="step">
+                            <div class="step-num">3</div>
+                            <span class="step-label">Payment</span>
+                        </div>
+                    </div>
+
+                    <!-- Order summary -->
+                    <div class="selected-plan" id="selectedPlan">
+                        <div class="selected-plan-label">Subscription summary</div>
+                        <div class="selected-plan-row">
+                            <div class="selected-plan-icon"><img src="/images/logo-icon-160.png" width="160" height="160" alt=""></div>
+                            <div class="selected-plan-info">
+                                <div class="selected-plan-name" id="planName">BlackInk Cloaker</div>
+                                <div class="selected-plan-price" id="planPrice">$69.99/month</div>
+                                <div class="selected-plan-billing" id="planBilling">Billed monthly in USD</div>
+                                <div class="selected-plan-billing" id="planGuarantee" style="color:var(--green);margin-top:6px">7-day guarantee on the amount charged. 7-day free trial on Whop.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="register-card-header">
+                        <h2 class="t-md register-card-title">Confirm your details</h2>
+                        <p class="register-card-subtitle">Last step before USD checkout on Whop</p>
+                    </div>
+
+                    <form id="registerForm">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Full name</label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                class="form-input"
+                                placeholder="Jane Smith"
+                                required
+                                autocomplete="name"
+                            >
+                            <div class="form-error" id="nameError">Please enter your full name (first and last name)</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="username"
+                                class="form-input"
+                                placeholder="you@email.com"
+                                required
+                                autocomplete="email"
+                            >
+                            <div class="form-error" id="emailError">Please enter a valid email</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                class="form-input"
+                                placeholder="+1 555 000 0000"
+                                required
+                                autocomplete="tel"
+                            >
+                            <div class="form-hint">We will use this for important account notifications</div>
+                            <div class="form-error" id="phoneError">Please enter a valid phone number with country code</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" class="form-label">Password</label>
+                            <div class="password-toggle">
+                                <input
+                                    type="password"
+                                    id="password"
+                                    name="password"
+                                    class="form-input"
+                                    placeholder="At least 8 characters"
+                                    required
+                                    autocomplete="new-password"
+                                >
+                                <button type="button" class="password-toggle-btn" id="togglePassword">
+                                    <svg viewBox="0 0 24 24" id="eyeIcon"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                </button>
+                            </div>
+                            <div class="password-strength" id="passwordStrength">
+                                <div class="password-strength-bar" id="str1"></div>
+                                <div class="password-strength-bar" id="str2"></div>
+                                <div class="password-strength-bar" id="str3"></div>
+                                <div class="password-strength-bar" id="str4"></div>
+                            </div>
+                            <div class="form-hint">At least 8 characters, with uppercase, lowercase, a number and a special character</div>
+                            <div class="form-error" id="passwordError">The password does not meet the minimum requirements</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword" class="form-label">Confirm password</label>
+                            <div class="password-toggle">
+                                <input
+                                    type="password"
+                                    id="confirmPassword"
+                                    name="confirm_password"
+                                    class="form-input"
+                                    placeholder="Type it again"
+                                    required
+                                    autocomplete="new-password"
+                                >
+                                <button type="button" class="password-toggle-btn" id="toggleConfirmPassword">
+                                    <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                </button>
+                            </div>
+                            <div class="form-error" id="confirmPasswordError">The passwords do not match</div>
+                        </div>
+
+                        <div class="btn-group">
+                            <button type="submit" class="btn btn-p" id="submitBtn">
+                                Continue to payment
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="form-footer">
+                        <p>Already have an account? <a href="https://app.blackink.cloud/auth/login">Log in</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer class="footer">
+    <div class="container">
+        <div class="f-bottom">
+            <span>&copy; 2026 BlackInk. All rights reserved.</span>
+            <span style="opacity:.75">By continuing you agree to the <a href="/termos-de-uso/" style="color:var(--accent);text-decoration:underline">Terms of Use</a> and the <a href="/politica-de-privacidade/" style="color:var(--accent);text-decoration:underline">Privacy Policy</a>.</span>
+        </div>
+    </div>
+</footer>
+
+<script>
+(function() {
+    // API Configuration
+    const API_BASE_URL = 'https://api.blackink.cloud';
+
+    // Single product — API plan name: Maré ($69.99/month)
+    const DEFAULT_PLAN = 'Maré';
+    const PLANS = {
+        'Maré': { displayName: 'BlackInk Cloaker', price: '$69.99/month', priceValue: 69.99 }
+    };
+
+    // Get URL params
+    const urlParams = new URLSearchParams(window.location.search);
+    let plan = urlParams.get('plan') || DEFAULT_PLAN;
+    const period = urlParams.get('period') || 'monthly';
+
+    if (!PLANS[plan]) {
+        plan = DEFAULT_PLAN;
+    }
+
+    // Update plan info display
+    const planData = PLANS[plan];
+    document.getElementById('planName').textContent = planData.displayName || plan;
+
+    // EN / Whop funnel is monthly USD only
+    const priceDisplay = planData.price;
+    const billingDisplay = 'Billed monthly in USD · 7-day free trial';
+    document.getElementById('planPrice').textContent = priceDisplay;
+    document.getElementById('planBilling').textContent = billingDisplay;
+
+
+
+    // Form elements
+    const form = document.getElementById('registerForm');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const phoneInput = document.getElementById('phone');
+    const passwordInput = document.getElementById('password');
+    const confirmPasswordInput = document.getElementById('confirmPassword');
+    const submitBtn = document.getElementById('submitBtn');
+
+    // Password visibility toggles
+    document.getElementById('togglePassword').addEventListener('click', () => {
+        const type = passwordInput.type === 'password' ? 'text' : 'password';
+        passwordInput.type = type;
+    });
+
+    document.getElementById('toggleConfirmPassword').addEventListener('click', () => {
+        const type = confirmPasswordInput.type === 'password' ? 'text' : 'password';
+        confirmPasswordInput.type = type;
+    });
+
+    // International phone — keep + and digits, no Brazilian DDD mask
+    phoneInput.addEventListener('input', (e) => {
+        let value = e.target.value.replace(/[^\d+]/g, '');
+        if (value.length > 16) value = value.slice(0, 16);
+        e.target.value = value;
+    });
+
+    // Password strength indicator
+    passwordInput.addEventListener('input', () => {
+        const password = passwordInput.value;
+        const strength = calculatePasswordStrength(password);
+        updatePasswordStrengthUI(strength);
+    });
+
+    function calculatePasswordStrength(password) {
+        let strength = 0;
+        if (password.length >= 8) strength++;
+        if (/[a-z]/.test(password)) strength++;
+        if (/[A-Z]/.test(password)) strength++;
+        if (/\d/.test(password)) strength++;
+        if (/[@$!%*#?&]/.test(password)) strength++;
+        return strength;
+    }
+
+    function updatePasswordStrengthUI(strength) {
+        const bars = ['str1', 'str2', 'str3', 'str4'];
+        bars.forEach((id, index) => {
+            const bar = document.getElementById(id);
+            bar.className = 'password-strength-bar';
+            if (strength > index) {
+                if (strength <= 2) bar.classList.add('weak');
+                else if (strength <= 3) bar.classList.add('medium');
+                else bar.classList.add('strong');
+            }
+        });
+    }
+
+    // Validation functions
+    function validateName(name) {
+        return name.trim().includes(' ') && name.trim().length >= 5;
+    }
+
+    function validateEmail(email) {
+        // {2,} e nao {2,4}: TLDs como .agency, .marketing, .digital e .online
+        // tem 5+ letras e eram rejeitados antes de chegar na API.
+        return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,}$/.test(email);
+    }
+
+    function validatePhone(phone) {
+        const digits = phone.replace(/\D/g, '');
+        return digits.length >= 8 && digits.length <= 15;
+    }
+
+    function validatePassword(password) {
+        return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(password);
+    }
+
+    // Clear errors on input
+    [nameInput, emailInput, phoneInput, passwordInput, confirmPasswordInput].forEach(input => {
+        input.addEventListener('input', () => {
+            input.classList.remove('error');
+            const errorEl = document.getElementById(input.id + 'Error') ||
+                           document.getElementById(input.name + 'Error');
+            if (errorEl) errorEl.classList.remove('show');
+        });
+    });
+
+    // Form submission
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const phone = phoneInput.value.trim();
+        const password = passwordInput.value;
+        const confirmPassword = confirmPasswordInput.value;
+
+        // Validate all fields
+        let isValid = true;
+
+        if (!validateName(name)) {
+            nameInput.classList.add('error');
+            document.getElementById('nameError').classList.add('show');
+            isValid = false;
+        }
+
+        if (!validateEmail(email)) {
+            emailInput.classList.add('error');
+            document.getElementById('emailError').classList.add('show');
+            isValid = false;
+        }
+
+        if (!validatePhone(phone)) {
+            phoneInput.classList.add('error');
+            document.getElementById('phoneError').classList.add('show');
+            isValid = false;
+        }
+
+        if (!validatePassword(password)) {
+            passwordInput.classList.add('error');
+            document.getElementById('passwordError').classList.add('show');
+            isValid = false;
+        }
+
+        if (password !== confirmPassword) {
+            confirmPasswordInput.classList.add('error');
+            document.getElementById('confirmPasswordError').classList.add('show');
+            isValid = false;
+        }
+
+        if (!isValid) {
+            showToast('error', 'Invalid fields', 'Please fix the highlighted fields.');
+            return;
+        }
+
+        // Submit to API
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span class="loading"></span> Processing...';
+
+        const registrationData = {
+            name: name,
+            username: email,
+            phone: phone,
+            password: password,
+            confirm_password: confirmPassword,
+            plan_name: plan,
+            period: 'monthly'
+        };
+
+        // Incluir dados de referral (parceiro) se presentes
+        var refParam = urlParams.get('ref');
+        var storedToken = localStorage.getItem('blackink_referral_token');
+        var storedCode = localStorage.getItem('blackink_referral_code');
+        if (storedToken) registrationData.cookie_token = storedToken;
+        if (refParam || storedCode) registrationData.referral_code = refParam || storedCode;
+
+        // Incluir dados de friend referral (indicacao de amigo) se presentes
+        var frefParam = urlParams.get('fref');
+        var friendToken = localStorage.getItem('blackink_friend_referral_token');
+        var friendCode = localStorage.getItem('blackink_friend_referral_code');
+        if (friendToken) registrationData.friend_cookie_token = friendToken;
+        if (frefParam || friendCode) registrationData.friend_referral_code = frefParam || friendCode;
+
+        try {
+            const response = await fetch(`${API_BASE_URL}/api/users/register-whop`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(registrationData),
+                // Sem timeout, uma conexao pendurada deixa o botao em "Processando..."
+                // para sempre e a pessoa perde os 5 campos ao recarregar.
+                signal: AbortSignal.timeout(20000)
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.message || 'Could not create the account');
+            }
+
+            // Limpar dados de referral apos registro bem-sucedido
+            localStorage.removeItem('blackink_referral_token');
+            localStorage.removeItem('blackink_referral_code');
+            localStorage.removeItem('blackink_friend_referral_token');
+            localStorage.removeItem('blackink_friend_referral_code');
+
+            if (typeof whop !== 'undefined' && typeof whop.track === 'function') {
+                whop.track('complete_registration', { value: 69.99, currency: 'USD' });
+            }
+
+            // Step 3: API returns the Whop USD checkout URL
+            // 250ms lets the pixel queue complete_registration before leaving the domain.
+            if (data.checkout_url) {
+                setTimeout(() => { window.location.href = data.checkout_url; }, 250);
+            } else {
+                // Sem checkout_url a conta foi criada mas o pagamento não pôde ser
+                // iniciado. Não prometer "redirecionando para o pagamento" — mandar
+                // para o login, que é para onde a pessoa realmente vai.
+                showToast('success', 'Account created', 'We could not open checkout right now. Log in to finish the subscription.');
+                setTimeout(() => {
+                    window.location.href = 'https://app.blackink.cloud/auth/login';
+                }, 3000);
+            }
+
+        } catch (error) {
+            console.error('Registration error:', error);
+            showToast('error', 'Signup failed', error.message || 'Try again later.');
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = 'Continue to payment';
+        }
+    });
+
+    // Toast notifications
+    function showToast(type, title, message) {
+        const toast = document.getElementById('toast');
+        const toastTitle = document.getElementById('toastTitle');
+        const toastMessage = document.getElementById('toastMessage');
+
+        toast.className = 'toast toast-' + type;
+        toastTitle.textContent = title;
+        toastMessage.textContent = message;
+
+        toast.classList.add('show');
+
+        setTimeout(() => {
+            hideToast();
+        }, 5000);
+    }
+
+    window.hideToast = function() {
+        document.getElementById('toast').classList.remove('show');
+    };
+
+    // ── Cursor follower (desktop) ──
+    const cur = document.getElementById('cur');
+    if (matchMedia('(pointer:fine)').matches && cur) {
+        let cx=0,cy=0,tx=0,ty=0;
+        document.addEventListener('mousemove', e => { tx=e.clientX; ty=e.clientY; if(!cur.classList.contains('on'))cur.classList.add('on'); });
+        (function loop(){ cx+=(tx-cx)*.12; cy+=(ty-cy)*.12; cur.style.left=cx+'px'; cur.style.top=cy+'px'; requestAnimationFrame(loop); })();
+        document.querySelectorAll('a,button,input').forEach(el => {
+            el.addEventListener('mouseenter', () => cur.classList.add('big'));
+            el.addEventListener('mouseleave', () => cur.classList.remove('big'));
+        });
+        document.addEventListener('mouseleave', () => cur.classList.remove('on'));
+        document.addEventListener('mouseenter', () => cur.classList.add('on'));
+    }
+})();
+</script>
+<script src="/js/referral-tracking.js"></script>
+</body>
+</html>

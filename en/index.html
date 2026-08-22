@@ -1,0 +1,1822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlackInk — Server-Side Cloaker for Paid Traffic</title>
+    <meta name="description" content="Server-side cloaker for Google Ads, Meta, TikTok and other paid-traffic platforms: bots, VPNs and ad reviewers see the safe page; buyers see the offer page. Decision in under 50ms. $69.99/month, 7-day guarantee.">
+    <meta property="og:title" content="BlackInk — Server-Side Cloaker for Paid Traffic">
+    <meta property="og:description" content="Server-side cloaker for Google Ads, Meta, TikTok and other paid-traffic platforms. Bots, VPNs, proxies and ad reviewers get the safe page; qualified traffic gets the offer page, in under 50ms.">
+    <meta property="og:url" content="https://blackink.cloud/en/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://blackink.cloud/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="BlackInk">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BlackInk — Server-Side Cloaker for Paid Traffic">
+    <meta name="twitter:description" content="Server-side cloaker for Google Ads, Meta, TikTok and other paid-traffic platforms. Bots, VPNs and ad reviewers get the safe page; the buyer gets the offer. Decision in under 50ms.">
+    <meta name="twitter:image" content="https://blackink.cloud/images/og-image.png">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="BlackInk">
+    <meta name="subject" content="Server-side cloaker for paid traffic — Google Ads, Meta, TikTok — bot, VPN and reviewer filtering">
+    <meta name="classification" content="Software/Ad Tech/Cloaker, Software/Ad Tech/Traffic Filtering">
+    <meta name="category" content="SaaS, Ad Tech, Cloaker, Server-Side Cloaker, Google Ads Cloaker, Meta Ads Cloaker, TikTok Ads Cloaker, Traffic Filtering">
+    <meta name="coverage" content="Worldwide">
+    <meta property="article:section" content="Ad Tech, Marketing Digital">
+    <meta property="article:tag" content="cloaker server-side">
+    <meta property="article:tag" content="Google Ads">
+    <meta property="article:tag" content="Meta Ads">
+    <meta property="article:tag" content="Facebook Ads">
+    <meta property="article:tag" content="TikTok Ads">
+    <meta property="article:tag" content="cloaker Google Ads">
+    <meta property="article:tag" content="cloaker Meta">
+    <meta property="article:tag" content="cloaker TikTok">
+    <meta property="article:tag" content="cloaker para afiliados">
+    <meta property="article:modified_time" content="2026-08-20T00:00:00-03:00">
+    <meta name="geo.region" content="US">
+    <meta name="geo.placename" content="United States">
+    <link rel="alternate" hreflang="en" href="https://blackink.cloud/en/">
+    <link rel="alternate" hreflang="pt-BR" href="https://blackink.cloud/">
+    <link rel="alternate" hreflang="x-default" href="https://blackink.cloud/">
+    <link rel="canonical" href="https://blackink.cloud/en/">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+    <!-- GSAP preload — inicia download sem bloquear render -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" as="script">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" as="script">
+    <link href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500,600,700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://blackink.cloud/#organization",
+      "name": "BlackInk",
+      "url": "https://blackink.cloud/en",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://blackink.cloud/images/logo-icon-440.png",
+        "width": 440,
+        "height": 440
+      },
+      "description": "BlackInk é um cloaker server-side para tráfego pago — Google Ads, Meta, TikTok e outras plataformas. Filtra bots, VPNs, proxies e revisores de anúncio em tempo real — safe page para tráfego inválido, offer page para tráfego qualificado.",
+      "foundingDate": "2024",
+      "sameAs": [
+        "https://www.instagram.com/blackink.cloud/"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "availableLanguage": [
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "BR"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://blackink.cloud/#website",
+      "name": "BlackInk",
+      "url": "https://blackink.cloud/en",
+      "publisher": {
+        "@id": "https://blackink.cloud/#organization"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://blackink.cloud/#software",
+      "name": "BlackInk",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Server-Side Cloaker for Paid Traffic",
+      "operatingSystem": "Web (SaaS)",
+      "description": "Cloaker server-side para Google Ads, Meta, TikTok e outras plataformas. Bots, VPNs, crawlers e revisores veem safe page — tráfego qualificado vê offer page. Filtragem com 15+ sinais, latência sub-50ms, decision logs. $69.99/month.",
+      "url": "https://blackink.cloud/en",
+      "provider": {
+        "@id": "https://blackink.cloud/#organization"
+      },
+      "offers": {
+        "@type": "Offer",
+        "name": "BlackInk Cloaker",
+        "description": "Cloaker server-side completo: safe/offer page, filtragem bots/VPNs/proxies/revisores, geo/device rules, decision logs, app mobile.",
+        "price": "69.99",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "69.99",
+          "priceCurrency": "USD",
+          "billingDuration": "P1M",
+          "unitText": "MONTH"
+        },
+        "availability": "https://schema.org/InStock",
+        "url": "https://blackink.cloud/en/cadastro/?plan=Maré&period=monthly"
+      },
+      "featureList": [
+        "Cloaker server-side em tempo real (bots, VPNs, proxies, datacenter, safe page / offer page)",
+        "Cadastro de páginas na plataforma e BlackInk Clone",
+        "Detecção de revisores de anúncio",
+        "Geo-targeting e device filtering",
+        "Decision logs com motivo de bloqueio",
+        "Rate limiting e alertas de fraude",
+        "App mobile com push de alertas",
+        "Latência inferior a 50ms"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://blackink.cloud/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Vocês veem a minha offer page. O que impede vocês de copiarem a minha oferta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Veem, sim — e não dá para ser diferente: decidir no servidor qual página sai exige que as duas páginas estejam cadastradas no painel. Nenhum cloaker server-side funciona sem isso, e quem disser que roteia sem ver a sua página está descrevendo um script na página, não um cloaker de servidor. O que existe do nosso lado é responsabilidade com nome: quem opera a plataforma, cobra e emite a nota é a BLACKINK TECNOLOGIA LTDA, CNPJ 66.362.785/0001-50, e o que vale entre nós dois está escrito nos Termos de Uso — leia antes de assinar, não depois."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Preciso conectar minha conta de anúncios? Funciona fora do Google?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não — sem OAuth, sem integração, sem acesso à sua conta. E funciona igual em Google Ads, Meta e TikTok porque não depende de nenhuma das três: a decisão é sobre quem abriu a URL, não sobre de qual painel veio o clique."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O anúncio vai apontar para um domínio de vocês?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. São dois domínios e os dois são seus: um hospeda a safe page e a offer page, o outro é o que vai no anúncio. O domínio da BlackInk não aparece em lugar nenhum — nem no anúncio, nem para o Google, Meta ou TikTok, nem para o visitante, nem para o seu cliente. Você não divide footprint com anunciante nenhum: domínio de outro cliente reprovado não encosta no seu. E se cancelar, os dois domínios continuam sendo seus."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Se a BlackInk sair do ar, meu tráfego para?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cada clique passa por aqui — é isso que põe a decisão no servidor em vez de num script, e seria desonesto fingir que não te deixa dependente de nós. Então a resposta útil não é “nunca cai”: é que a saída de emergência é sua. Os dois domínios são seus, e desconectá-los da BlackInk para servir as suas páginas direto é um movimento que não depende do nosso painel nem de abrir chamado; é o mesmo movimento do cancelamento. E se o problema for do nosso lado, o canal que não depende do painel é suporte@blackink.cloud."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Já uso outro cloaker. Preciso pausar a campanha para migrar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. A migração inteira acontece fora da campanha: você cadastra safe page e offer page no painel (ou usa o BlackInk Clone) e ajusta as regras enquanto o seu cloaker atual continua rodando o tráfego normalmente. Nada muda para o visitante até você trocar a URL de destino do anúncio — essa troca é o único momento em que a campanha sente a migração, e a hora é você quem escolhe. Dá para começar por uma campanha só, comparar com as que ficaram no cloaker antigo, e mover o resto depois."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "E se o revisor descobrir o cloaker?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não existe cloaker para ele descobrir. Ele abre a sua URL de destino e recebe a safe page direto — HTTP 200, sem redirect, sem JavaScript de detecção. Não sobra nada no navegador dele indicando que houve uma escolha. Em troca, a safe page precisa se sustentar sozinha: a BlackInk decide quem vê o quê, ela não faz conteúdo ruim passar em revisão."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "E se ele bloquear um comprador de verdade?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Acontece — todo filtro erra para algum lado, e este erra para o lado de fechar. Por isso cada sinal é um toggle seu: bot, VPN, datacenter, device e país você liga e desliga, e sinal desligado nunca manda ninguém para a safe page. Quando um desvio te parecer errado, ele está no decision log com IP, ISP, geo, device e o motivo — você vê qual regra pegou e desliga aquela regra. É por isso que os 7 dias são com tráfego real: calibrar isso só acontece na sua campanha, não na nossa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Cloaking contraria a política declarada das redes. E aí?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Contraria — e ninguém honesto vai dizer o contrário. A decisão acontecer no servidor significa que não sobra rastro no navegador do revisor; não significa, e ninguém pode prometer, que a sua conta nunca vai cair. Quem garante “conta nunca mais banida” está vendendo outra coisa. O que muda aqui é quem recebe a sua página. O que continua seu é o risco da operação, da oferta e da safe page."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "E se eu quiser cancelar? Tem multa ou aviso prévio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não há contrato nem fidelidade. Você tem 7 dias de garantia sobre o valor cobrado. Depois disso cancela quando quiser, sem multa e sem aviso prévio — o acesso segue até o fim do período já pago e a assinatura não renova. Antes de encerrar, desconecte da BlackInk os domínios que ainda estiverem roteando tráfego — eles são seus e continuam seus."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Preciso de conhecimento técnico?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. O dashboard é visual: cadastre suas páginas, ative filtros e configure geo e device com toggles. O BlackInk Clone facilita ainda mais se você já tem uma página pronta. Se travar, a assistência na configuração inicial é gratuita e, depois dela, o suporte é por ticket na plataforma."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quanto tempo leva para configurar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A configuração do cloaker leva aproximadamente 15 minutos. Cadastre safe page e offer page na plataforma, configure regras de filtragem por geo, device e ISP, conecte o seu domínio à BlackInk — e o roteamento funciona imediatamente. A equipe oferece suporte na configuração inicial gratuitamente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como configuro minhas páginas?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cadastre o HTML ou código da safe page e da offer page diretamente no painel da BlackInk. Alternativamente, use o BlackInk Clone: ferramenta da plataforma que copia a estrutura de uma página que já existe e a deixa pronta como safe page ou offer page, sem você remontar o HTML na mão. Depois, configure as regras de filtragem e mantenha o seu domínio como destino do anúncio — a plataforma decide qual página servir a cada visitante."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Como configurar cloaker server-side para tráfego pago",
+  "description": "Passo a passo para ativar cloaker server-side, filtrar bots e revisores no Google Ads, Meta, TikTok e outras plataformas com BlackInk. Configuração em 15 minutos.",
+  "totalTime": "PT15M",
+  "estimatedCost": { "@type": "MonetaryAmount", "currency": "USD", "value": "69.99" },
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Cadastre safe page e offer page", "text": "Insira o HTML ou código das páginas no painel da BlackInk — ou use o BlackInk Clone para replicar uma estrutura existente. Tempo: 5 minutos." },
+    { "@type": "HowToStep", "position": 2, "name": "Configure regras de filtragem", "text": "Habilite bloqueio de bots, VPNs, proxies, datacenter e revisores. Defina geo, device, OS e idioma. Tempo: 5 minutos." },
+    { "@type": "HowToStep", "position": 3, "name": "Conecte o seu domínio à BlackInk", "text": "O destino final do anúncio continua sendo um domínio seu, na sua plataforma (Google Ads, Meta, TikTok ou outra). A plataforma analisa cada visitante e serve a página correta. Tempo: 3 minutos." },
+    { "@type": "HowToStep", "position": 4, "name": "Monitore decision logs", "text": "Acompanhe bloqueios em tempo real no dashboard e receba alertas push no app mobile." }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "BlackInk: Cloaker Server-Side para Tráfego Pago — Guia Técnico",
+  "description": "Como o BlackInk implementa cloaker server-side para Google Ads, Meta, TikTok e outras plataformas. Safe pages, offer pages, filtragem multi-sinal e diferenças vs cloakers client-side.",
+  "author": { "@id": "https://blackink.cloud/#organization" },
+  "publisher": { "@id": "https://blackink.cloud/#organization" },
+  "datePublished": "2025-01-15",
+  "dateModified": "2026-08-11",
+  "inLanguage": "en",
+  "mainEntityOfPage": "https://blackink.cloud/",
+  "about": [
+    { "@type": "Thing", "name": "Cloaker server-side" },
+    { "@type": "Thing", "name": "Google Ads" },
+    { "@type": "Thing", "name": "Meta Ads" },
+    { "@type": "Thing", "name": "TikTok Ads" },
+    { "@type": "Thing", "name": "Safe page" }
+  ],
+  "proficiencyLevel": "Intermediate"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Diferenças entre o cloaker server-side BlackInk e o cloaker de script",
+  "description": "Diferenciais do cloaker server-side BlackInk vs cloakers tradicionais.",
+  "numberOfItems": 5,
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Cloaker 100% server-side com mais de 15 sinais por visitante" },
+    { "@type": "ListItem", "position": 2, "name": "Detecção de revisores de anúncio" },
+    { "@type": "ListItem", "position": 3, "name": "Decision logs completos com motivo de bloqueio" },
+    { "@type": "ListItem", "position": 4, "name": "Safe page entregue sem redirect e sem script no navegador do revisor" },
+    { "@type": "ListItem", "position": 5, "name": "Decisão server-side em menos de 50ms, antes de o HTML sair do servidor" }
+  ]
+}
+</script>
+<style>
+:root {
+    --ff-display: 'General Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+    --ff-body: 'General Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', system-ui, sans-serif;
+    --bg: #020a14;
+    --bg2: #06111f;
+    --surface: rgba(8,22,48,0.45);
+    --border: rgba(100,180,255,0.08);
+    --border-h: rgba(100,180,255,0.18);
+    --white: #f0f4f8;
+    --dim: rgba(240,244,248,0.65);
+    --muted: rgba(240,244,248,0.5);
+    --accent: #64b4ff;
+    --accent2: #38bdf8;
+    --gold: #fbbf24;
+    --green: #34d399;
+    --ease: cubic-bezier(0.16,1,0.3,1);
+    --section-py: clamp(52px,7vh,100px);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:88px;-webkit-text-size-adjust:100%}
+body{font-family:var(--ff-body);color:var(--white);background:#040b18;-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.6;position:relative}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+ul{list-style:none}
+
+/* Deep ocean background */
+body::before{content:'';position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse 120% 80% at 20% 85%,rgba(6,28,60,0.5) 0%,transparent 55%),radial-gradient(ellipse 100% 70% at 80% 15%,rgba(8,24,55,0.4) 0%,transparent 50%),radial-gradient(ellipse 80% 50% at 55% 50%,rgba(5,18,42,0.35) 0%,transparent 45%),radial-gradient(ellipse 60% 40% at 10% 20%,rgba(4,16,38,0.3) 0%,transparent 40%);pointer-events:none}
+
+/* Grain */
+body::after{content:'';position:fixed;inset:0;z-index:2;pointer-events:none;opacity:0.022;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:256px}
+
+/* Cursor glow bioluminescente — Fase 4 */
+.cursor-glow{position:fixed;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(100,180,255,0.06) 0%,transparent 70%);pointer-events:none;z-index:0;mix-blend-mode:screen;opacity:0;left:-200px;top:-200px;will-change:transform}
+@media(max-width:900px){.cursor-glow{display:none}}
+
+/* ── Layout ── */
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+@media(min-width:768px){.container{padding:0 48px}}
+@media(min-width:1200px){.container{padding:0 64px}}
+.section{padding:var(--section-py) 0;position:relative}
+
+/* ── Typography ── */
+.t-xl{font-family:var(--ff-display);font-weight:700;font-size:clamp(34px,10.5vw,52px);line-height:0.92;letter-spacing:-0.05em;text-wrap:balance}
+@media(min-width:768px){.t-xl{font-size:clamp(44px,5.1vw,66px)}} /* teto baixado de 110px: o H1 tem 4 linhas fixas e a 110px o bloco nao cabia na dobra */
+.t-lg{font-family:var(--ff-display);font-weight:700;font-size:clamp(36px,5vw,64px);line-height:1.05;letter-spacing:-0.04em}
+.t-body-lg{font-size:clamp(17px,1.4vw,20px);line-height:1.7;color:var(--dim)}
+.t-label{font-size:12px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent)}
+.grad{background:linear-gradient(135deg,#f0f4f8 0%,var(--accent) 60%,var(--accent2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* Animated gradient for hero "Escale" */
+.grad-hero{
+    background:linear-gradient(135deg,#f0f4f8 0%,var(--accent) 60%,var(--accent2) 100%);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+
+/* ── Buttons ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:none;border-radius:14px;font-family:var(--ff-body);font-weight:600;cursor:pointer;position:relative;overflow:hidden;transition:transform .4s var(--ease),opacity .4s var(--ease),background .4s var(--ease),box-shadow .4s var(--ease)}
+.btn-p{
+    background:linear-gradient(135deg,var(--accent),var(--accent2));color:#020a14;font-size:17px;height:60px;padding:0 38px;
+    box-shadow:0 0 0 1px rgba(100,180,255,0.2),0 8px 32px rgba(100,180,255,0.15),0 2px 4px rgba(0,0,0,0.1);
+    letter-spacing:-0.01em;
+}
+/* Shine sweep on primary button */
+.btn-p::before{
+    content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent);
+    transition:left .6s var(--ease);
+}
+.btn-p:hover::before{left:100%}
+/* Ultra premium: hover sutil, sem neon */
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(100,180,255,0.2),0 12px 36px rgba(100,180,255,0.10),0 2px 6px rgba(0,0,0,0.08)}
+.btn-p:active{transform:translateY(0)}
+.btn-o{
+    background:rgba(100,180,255,0.03);color:var(--white);font-size:17px;height:60px;padding:0 38px;
+    border:1px solid rgba(100,180,255,0.12);letter-spacing:-0.01em;
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+}
+.btn-o:hover{border-color:rgba(100,180,255,0.30);background:rgba(100,180,255,0.06);transform:translateY(-3px)}
+.btn-sm{height:44px;padding:0 22px;font-size:14px;border-radius:10px}
+.btn-full{width:100%;justify-content:center}
+.skip-link{position:absolute;top:-100%;left:50%;transform:translateX(-50%);background:var(--accent);color:#020a14;padding:12px 24px;border-radius:8px;font-weight:600;z-index:10000;transition:top .3s var(--ease)}.skip-link:focus{top:12px}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.faq-q:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+
+/* ── Loader ── */
+/* Failsafe em CSS puro: o loader se apaga sozinho em 3,5s mesmo que o JS nunca rode
+   ou estoure antes de chamar .done. Sem isso, um throw no IIFE deixava o visitante
+   olhando uma tela preta — o loader cobre inset:0 com fundo opaco. */
+/* Mesmo padrão do H1 e do reveal: o loader só existe se o JS assumiu. Sem JS a
+   classe .hero-split nunca entra e a cobertura opaca nunca chega a renderizar. */
+.loader{display:none}
+.hero-split .loader{position:fixed;inset:0;z-index:9998;background:var(--bg);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:24px;transition:opacity .3s var(--ease),visibility .3s;animation:loader-failsafe .7s var(--ease) 3.5s forwards}
+@keyframes loader-failsafe{to{opacity:0;visibility:hidden;pointer-events:none}}
+/* !important: precisa vencer a animação de failsafe acima quando o JS dispensa antes */
+.hero-split .loader.done{opacity:0!important;visibility:hidden!important;pointer-events:none;animation:none!important}
+.hero-split .loader img{width:80px;height:auto;animation:loader-pulse 1.5s ease-in-out infinite}
+@keyframes loader-pulse{0%,100%{opacity:.4;transform:scale(.95)}50%{opacity:1;transform:scale(1)}}
+
+/* ── Scroll reveal ── */
+/* Mesmo padrão do H1: o conteúdo nasce VISÍVEL. Só o JS o esconde para revelar no scroll,
+   e o failsafe devolve em 4s se o IntersectionObserver nunca rodar. Sem isso, um throw no
+   IIFE apagava 43 elementos — dor, calculadora, preço, comparativo, FAQ e CTA final. */
+/* Gate próprio do scroll-reveal: .rv-on só entra no <html> DEPOIS que o
+   IntersectionObserver existe e já está observando. Se o JS não rodar ou estourar
+   antes disso, a classe nunca entra e os 46 elementos nascem visíveis — sem timer,
+   sem animação de resgate competindo com .rv.vis na cascata. */
+.rv-on .rv{opacity:0;transform:translateY(40px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.vis{opacity:1;transform:translateY(0)}
+.rv-d1{transition-delay:.1s}.rv-d2{transition-delay:.2s}.rv-d3{transition-delay:.3s}.rv-d4{transition-delay:.4s}.rv-d5{transition-delay:.5s}
+
+/* Hero line reveal */
+.hero-title .ln{display:block;overflow:hidden;padding-bottom:4px}
+.hero-title .ln-i{display:block;transition:transform 1s var(--ease)}
+/* O H1 nasce VISÍVEL. Só o JS esconde, e só se for capaz de animar depois.
+   Sem isso, qualquer throw no IIFE deixava um buraco de 256px no lugar da headline. */
+.hero-split .hero-title .ln-i{transform:translateY(115%);animation:h1-failsafe 0s linear 3s forwards}
+.hero-split .hero-title .ch{animation:h1-failsafe-ch 0s linear 3s forwards}
+/* Se o JS escondeu o H1 para animar e a animação não veio (GSAP falhou, throw depois
+   do split, aba em segundo plano), o CSS devolve a headline em 3s. O elemento de
+   maior alavancagem da página nunca pode ficar invisível. */
+@keyframes h1-failsafe{to{transform:translateY(0)}}
+@keyframes h1-failsafe-ch{to{opacity:1;transform:translateY(0)}}
+.hero-title.go .ln-i{transform:translateY(0)}
+.hero-title .ln:nth-child(2) .ln-i{transition-delay:.12s}
+.hero-title .ln:nth-child(3) .ln-i{transition-delay:.24s}
+.hero-title .ln:nth-child(4) .ln-i{transition-delay:.36s}
+.hero-title .ln-i{white-space:nowrap}
+
+/* Hero split-character animation */
+.hero-title .ch{display:inline-block;transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.hero-split .hero-title .ch{opacity:0;transform:translateY(30px)}
+.hero-title.go .ch{opacity:1;transform:translateY(0)}
+
+.hdr{position:fixed;top:0;left:0;right:0;z-index:9998;padding:0 24px;transition:background .5s var(--ease),box-shadow .5s var(--ease),border-color .5s var(--ease)}
+.hdr.scrolled{
+    background:rgba(2,10,20,0.82);
+    backdrop-filter:blur(20px) saturate(1.2);-webkit-backdrop-filter:blur(20px) saturate(1.2);
+    border-bottom:1px solid rgba(100,180,255,0.05);
+    box-shadow:0 4px 24px rgba(0,0,0,0.15);
+}
+/* Scrolled header shine line */
+.hdr::after{
+    content:'';position:absolute;bottom:0;left:0;right:0;height:1px;
+    background:linear-gradient(90deg,transparent 5%,rgba(100,180,255,0.06) 30%,rgba(100,180,255,0.10) 50%,rgba(100,180,255,0.06) 70%,transparent 95%);
+    opacity:0;transition:opacity .5s var(--ease);
+}
+.hdr.scrolled::after{opacity:1}
+.hdr-in{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:72px}
+.hdr-logo{font-family:var(--ff-display);font-size:24px;font-weight:700;letter-spacing:-0.03em}
+.hdr-logo span{color:var(--accent)}
+.hdr-nav{display:none;align-items:center;gap:40px}
+.hdr-nav a{font-size:14px;font-weight:500;color:var(--dim);transition:color .3s var(--ease);letter-spacing:-0.01em;position:relative}
+.hdr-nav a:hover{color:var(--white)}
+.hdr-nav a::after{content:'';position:absolute;bottom:-4px;left:50%;right:50%;height:1px;background:var(--accent);transition:left .3s var(--ease),right .3s var(--ease),opacity .3s var(--ease);opacity:0}
+.hdr-nav a:hover::after{left:0;right:0;opacity:0.5}
+@media(min-width:768px){.hdr-nav{display:flex}}
+.hdr-cta{display:none}
+@media(min-width:768px){.hdr-cta{display:flex}}
+.mob-tog{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:10000;position:relative}
+.mob-tog span{width:22px;height:1.5px;background:var(--white);border-radius:2px;transition:transform .3s var(--ease),opacity .3s var(--ease)}
+.mob-tog.active span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
+.mob-tog.active span:nth-child(2){opacity:0}
+.mob-tog.active span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
+@media(min-width:768px){.mob-tog{display:none}}
+@media(max-width:767px){.hdr-nav.mob-open{display:flex;position:fixed;top:0;left:0;right:0;bottom:0;width:100vw;height:100vh;height:100dvh;flex-direction:column;align-items:center;justify-content:center;gap:32px;background:#020a14;z-index:9999}.hdr-nav.mob-open a{font-size:20px;color:var(--white)}}
+
+.hero{position:relative;min-height:100dvh;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:64px 24px 48px;overflow:hidden}
+
+/* Subtle radial vignette overlay */
+.hero::after{
+    content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
+    background:radial-gradient(ellipse 70% 60% at 50% 45%,transparent 0%,rgba(2,10,20,0.3) 100%);
+}
+
+/* Gradient mesh background — richer */
+.hero-mesh{position:absolute;inset:0;overflow:hidden}
+.hero-mesh div{position:absolute;border-radius:50%;filter:blur(130px);animation:mesh-float 20s ease-in-out infinite}
+.hero-mesh .m1{width:800px;height:800px;background:radial-gradient(circle,rgba(100,180,255,0.10),transparent 70%);top:-30%;right:-18%;animation-delay:0s}
+.hero-mesh .m2{width:600px;height:600px;background:radial-gradient(circle,rgba(56,189,248,0.06),transparent 70%);bottom:-15%;left:-18%;animation-delay:-7s}
+.hero-mesh .m3{width:450px;height:450px;background:radial-gradient(circle,rgba(129,140,248,0.06),transparent 70%);top:30%;left:35%;animation-delay:-14s}
+@keyframes mesh-float{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-20px) scale(1.05)}66%{transform:translate(-20px,30px) scale(0.95)}}
+
+/* Particles — bioluminescent deep ocean */
+.particles-zone{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.bp{position:absolute;border-radius:50%;bottom:-20px;pointer-events:none}
+.bp--s{width:1.5px;height:1.5px;background:rgba(140,210,255,0.3);animation:bp-rise var(--dur,90s) linear infinite,bp-glow var(--glow,12s) ease-in-out infinite}
+.bp--m{width:2px;height:2px;background:rgba(140,210,255,0.4);animation:bp-rise var(--dur,110s) linear infinite,bp-glow var(--glow,10s) ease-in-out infinite}
+.bp--l{width:2.5px;height:2.5px;background:rgba(100,200,220,0.25);animation:bp-rise var(--dur,130s) linear infinite,bp-glow var(--glow,14s) ease-in-out infinite}
+@keyframes bp-rise{from{transform:translateY(0) translateX(0);opacity:0}3%{opacity:1}25%{transform:translateY(-27vh) translateX(var(--dx,15px))}50%{transform:translateY(-55vh) translateX(0)}75%{transform:translateY(-82vh) translateX(calc(var(--dx,15px) * -0.7))}97%{opacity:1}to{transform:translateY(-110vh) translateX(0);opacity:0}}
+@keyframes bp-glow{0%,100%{opacity:.6}50%{opacity:1}}
+
+/* Logo — refined sizing */
+picture{display:contents} /* o wrapper nao deve criar caixa: img herda o layout do pai */
+.hero-logo{
+    /* height:auto e obrigatorio: o <img> tem width=440 height=440 no HTML e sem isso a arte quadrada era esticada */
+    width:clamp(132px,11vw,164px);height:auto;margin-top:0;margin-bottom:16px;position:relative;z-index:2;
+    filter:drop-shadow(0 0 30px rgba(100,180,255,0.15)) drop-shadow(0 0 60px rgba(100,180,255,0.08)) drop-shadow(0 0 100px rgba(100,180,255,0.04));
+    animation:hero-logo-in 1.2s var(--ease) .6s both;
+}
+@keyframes hero-logo-in{from{opacity:0;transform:scale(0.85) translateY(15px)}to{opacity:1;transform:scale(1) translateY(0)}}
+@property --badge-angle{syntax:'<angle>';initial-value:0deg;inherits:false}
+@keyframes badgeRotate{to{--badge-angle:360deg}}
+@keyframes badgeShimmer{0%{transform:translateX(-200%);opacity:0}10%{opacity:1}45%{transform:translateX(300%);opacity:1}50%{opacity:0}100%{opacity:0;transform:translateX(300%)}}
+/* Ultra premium: pulso quase imperceptível */
+@keyframes dotPulse{0%,100%{opacity:.7;transform:scale(1)}50%{opacity:1;transform:scale(1.1)}}
+
+/* Title */
+.hero-title{max-width:min(900px,100%);width:100%;margin-bottom:12px;position:relative;z-index:2}
+
+/* Sub */
+.hero-sub{max-width:540px;margin:0 auto 20px;position:relative;z-index:2;opacity:0;animation:fade-up .5s var(--ease) .1s both}
+
+/* CTAs */
+/* Delay curto de propósito: animação CSS com fill:both vence style inline, então este
+   número — não a timeline do GSAP — é quem decide quando o CTA aparece. */
+.hero-ctas{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;position:relative;z-index:2;opacity:0;animation:fade-up .5s var(--ease) .15s both}
+@keyframes fade-up{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+/* Trust micro-text below CTAs */
+.hero-trust{
+    display:flex;align-items:center;gap:8px;justify-content:center;
+    margin-top:20px;position:relative;z-index:2;
+    opacity:0;animation:fade-up .5s var(--ease) .35s both;
+}
+.hero-trust-icon{width:16px;height:16px;color:var(--green);opacity:0.7}
+.hero-trust-text{font-size:12px;color:var(--muted);font-weight:500;letter-spacing:0.02em}
+
+/* FAQ */
+.faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:4px}
+.faq-i{position:relative;overflow:hidden;border-radius:14px;border:1px solid rgba(100,180,255,0.04);transition:border-color .4s var(--ease)}
+.faq-i::before{content:'';position:absolute;top:0;left:15%;right:15%;height:1px;background:linear-gradient(90deg,transparent,rgba(100,180,255,0.10),transparent);pointer-events:none}
+.faq-i:hover{border-color:rgba(100,180,255,0.08)}
+.faq-i[open]{border-color:rgba(100,180,255,0.10)}
+.faq-q{
+    width:100%;display:flex;align-items:center;justify-content:space-between;
+    padding:22px 28px;
+    background:linear-gradient(180deg,rgba(10,22,48,0.5) 0%,rgba(8,18,40,0.55) 100%);
+    border:none;cursor:pointer;list-style:none;
+    font-family:var(--ff-body);font-size:16px;font-weight:500;color:var(--white);
+    text-align:left;transition:color .3s var(--ease),background .3s var(--ease);
+}
+.faq-q::-webkit-details-marker{display:none}
+.faq-q:hover{background:rgba(10,22,48,0.7)}
+.faq-q::after{
+    content:'+';font-size:20px;font-weight:300;color:var(--muted);
+    flex-shrink:0;margin-left:16px;transition:transform .3s var(--ease),color .3s var(--ease);
+    width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+    border-radius:8px;background:rgba(100,180,255,0.04);border:1px solid rgba(100,180,255,0.06);
+}
+.faq-i[open] .faq-q{color:var(--accent)}
+.faq-i[open] .faq-q::after{content:'\2212';color:var(--accent);background:rgba(100,180,255,0.08);border-color:rgba(100,180,255,0.12)}
+.faq-a{padding:0 28px 24px;background:linear-gradient(180deg,rgba(8,18,40,0.55) 0%,rgba(10,22,48,0.5) 100%);font-size:15px;line-height:1.75;color:var(--dim)}
+
+.cta-final{text-align:center;position:relative;overflow:hidden}
+.cta-final::before{
+    content:'';position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(ellipse 60% 50% at 50% 30%,rgba(100,180,255,0.04),transparent 70%);
+}
+/* Ultra premium: CTA orb — estático, bloom cinematográfico sem pulsação */
+.cta-orb{
+    position:absolute;width:700px;height:700px;border-radius:50%;filter:blur(180px);pointer-events:none;
+    background:radial-gradient(circle,rgba(100,180,255,0.07),rgba(56,189,248,0.03) 50%,transparent 70%);
+    top:-250px;left:50%;transform:translateX(-50%);
+    opacity:0.8;
+}
+
+.guarantee-badge{display:inline-block;padding:7px 18px;background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.18);border-radius:100px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin:26px 0 14px}
+.guarantee-text{font-size:14px;color:var(--dim);line-height:1.7;max-width:520px;margin:0 auto}
+.guarantee-text strong{color:var(--white);font-weight:600}
+
+/* Ultra premium: WA button sutil */
+
+.footer{padding:56px 0 28px;border-top:1px solid var(--border)}
+.f-grid{display:grid;grid-template-columns:1fr;gap:36px}
+@media(min-width:768px){.f-grid{grid-template-columns:2fr 1fr 1fr 1fr}}
+.f-col-t{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.f-links{display:flex;flex-direction:column;gap:8px}
+.f-links a{font-size:14px;color:var(--dim);transition:color .2s}
+.f-links a:hover{color:var(--white)}
+.f-bottom{margin-top:56px;padding-top:20px;border-top:1px solid var(--border);text-align:center}
+.f-bottom span{font-size:12px;color:var(--muted)}
+.f-legal{display:flex;flex-direction:column;gap:3px;margin-bottom:20px}
+.f-legal strong{font-size:13px;font-weight:600;color:var(--text);letter-spacing:.02em}
+.f-legal a{color:var(--muted);text-decoration:none;transition:color .2s var(--ease)}
+.f-legal a:hover{color:var(--primary)}
+
+@media(max-width:767px){.hdr-nav.mob-open{justify-content:flex-start;padding-top:28vh}}
+
+/* Mobile section */
+
+/* Section separator gradient */
+/* Ultra premium: separador cinematográfico — quase invisível, bloom sutil */
+.sep{
+    height:1px;position:relative;max-width:600px;margin:0 auto;
+    background:linear-gradient(90deg,transparent 0%,rgba(100,180,255,0.04) 30%,rgba(100,180,255,0.07) 50%,rgba(100,180,255,0.04) 70%,transparent 100%);
+}
+.sep::after{
+    content:'';position:absolute;top:-0.5px;left:50%;transform:translateX(-50%);
+    width:80px;height:1px;border-radius:2px;
+    background:linear-gradient(90deg,transparent,rgba(100,180,255,0.12),transparent);
+    box-shadow:0 0 16px rgba(100,180,255,0.03);
+}
+
+/* ── Responsive ── */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ── Problem agitation ── */
+.problem-grid{display:grid;grid-template-columns:1fr;gap:20px}
+@media(min-width:768px){.problem-grid{grid-template-columns:repeat(2,1fr);gap:24px}}
+
+/* ── Problem Cards — Ultra Premium Glass v3 ── */
+.problem-card{
+    --card-accent:#64b4ff;--card-glow:rgba(100,180,255,0.06);
+    padding:clamp(36px,3.8vw,48px);
+    border-radius:22px;
+    border:1px solid rgba(100,180,255,0.05);
+    background:
+        radial-gradient(ellipse 60% 50% at 50% 0%,var(--card-glow),transparent),
+        linear-gradient(180deg,rgba(14,26,54,0.72) 0%,rgba(10,20,44,0.82) 50%,rgba(6,14,32,0.92) 100%);
+    backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+    position:relative;overflow:hidden;
+    transition:transform .6s var(--ease),border-color .6s var(--ease),box-shadow .6s var(--ease);
+    box-shadow:
+        0 1px 2px rgba(0,0,0,0.15),
+        0 4px 14px rgba(0,0,0,0.14),
+        0 18px 52px rgba(0,0,0,0.20),
+        0 36px 90px rgba(0,0,0,0.14),
+        inset 0 1px 0 rgba(255,255,255,0.04);
+}
+/* Top shine line */
+.problem-card::before{
+    content:'';position:absolute;top:0;left:0;right:0;height:1px;z-index:4;
+    background:linear-gradient(90deg,transparent 5%,rgba(100,180,255,0.04) 20%,rgba(100,180,255,0.12) 50%,rgba(100,180,255,0.04) 80%,transparent 95%);
+}
+/* Bottom accent glow bar */
+.problem-card::after{
+    content:'';position:absolute;bottom:0;left:8%;right:8%;height:2px;z-index:4;
+    background:linear-gradient(90deg,transparent,var(--card-accent),transparent);
+    opacity:0.35;transition:opacity .6s var(--ease);
+    box-shadow:0 0 12px var(--card-accent),0 0 4px var(--card-accent);
+}
+.problem-card:hover::after{opacity:0.8}
+
+/* Ambient glow orb */
+.problem-card-glow{
+    position:absolute;top:-50px;left:50%;transform:translateX(-50%);
+    width:200px;height:120px;border-radius:50%;
+    background:radial-gradient(ellipse,var(--card-glow) 0%,transparent 70%);
+    pointer-events:none;z-index:1;filter:blur(50px);
+    transition:opacity .7s var(--ease);opacity:0.25;
+}
+.problem-card:hover .problem-card-glow{opacity:0.4;transform:translateX(-50%) scale(1.1) translateY(-8px)}
+
+.problem-card:hover{
+    border-color:rgba(255,255,255,0.07);
+    transform:translateY(-8px);
+    box-shadow:
+        0 2px 4px rgba(0,0,0,0.14),
+        0 10px 28px rgba(0,0,0,0.20),
+        0 28px 72px rgba(0,0,0,0.24),
+        0 44px 110px rgba(0,0,0,0.14),
+        inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+/* Per-card accent + glow colors */
+.problem-card:nth-child(1){--card-accent:#ef4444;--card-glow:rgba(239,68,68,0.10)}
+.problem-card:nth-child(1):hover{--card-glow:rgba(239,68,68,0.20);border-color:rgba(239,68,68,0.15)}
+.problem-card:nth-child(2){--card-accent:#fbbf24;--card-glow:rgba(251,191,36,0.10)}
+.problem-card:nth-child(2):hover{--card-glow:rgba(251,191,36,0.20);border-color:rgba(251,191,36,0.15)}
+
+/* Icon container — glassmorphic pill */
+.problem-icon{
+    width:50px;height:50px;border-radius:15px;margin-bottom:22px;
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(145deg,rgba(255,255,255,0.05),rgba(255,255,255,0.01));
+    border:1px solid rgba(255,255,255,0.06);
+    position:relative;z-index:2;
+    transition:transform .5s var(--ease),border-color .5s var(--ease);
+    box-shadow:0 2px 8px rgba(0,0,0,0.15),inset 0 1px 0 rgba(255,255,255,0.04);
+}
+.problem-icon svg{width:24px;height:24px;opacity:0.75;transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.problem-card:nth-child(1) .problem-icon{background:linear-gradient(145deg,rgba(239,68,68,0.08),rgba(239,68,68,0.02));border-color:rgba(239,68,68,0.10)}
+.problem-card:nth-child(1) .problem-icon svg{color:#ef4444}
+.problem-card:nth-child(2) .problem-icon{background:linear-gradient(145deg,rgba(251,191,36,0.08),rgba(251,191,36,0.02));border-color:rgba(251,191,36,0.10)}
+.problem-card:nth-child(2) .problem-icon svg{color:#fbbf24}
+.problem-card:hover .problem-icon{
+    background:linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03));
+    border-color:rgba(255,255,255,0.10);
+    box-shadow:0 4px 16px rgba(0,0,0,0.2),0 0 24px var(--card-glow);
+}
+.problem-card:hover .problem-icon svg{opacity:1;transform:scale(1.12)}
+
+/* Stat number — gradient text */
+.problem-stat{
+    font-family:var(--ff-display);font-size:clamp(52px,6vw,72px);font-weight:700;
+    line-height:1;letter-spacing:-.04em;margin-bottom:14px;
+    position:relative;z-index:2;
+    text-shadow:0 0 15px rgba(from currentColor r g b / 0.3);
+}
+/* Subtle pulse animation on the stat */
+@keyframes statPulse{
+    0%,100%{text-shadow:0 0 15px rgba(from currentColor r g b / 0.3)}
+    50%{text-shadow:0 0 20px rgba(from currentColor r g b / 0.4)}
+}
+.problem-card:hover .problem-stat{animation:statPulse 2.5s ease-in-out infinite}
+
+.problem-title{
+    font-family:var(--ff-display);font-weight:600;font-size:clamp(16px,1.2vw,18px);
+    color:var(--white);margin-bottom:12px;position:relative;z-index:2;
+    letter-spacing:-0.01em;
+}
+.problem-desc{font-size:14px;color:var(--dim);line-height:1.7;position:relative;z-index:2}
+
+/* Resolve line */
+.problem-resolve{text-align:center;margin-top:clamp(36px,4vw,52px);font-family:var(--ff-display);font-weight:600;font-size:clamp(18px,2vw,24px);color:var(--white);letter-spacing:-.02em}
+.problem-resolve .grad{position:relative}
+.problem-resolve .grad::after{content:'';position:absolute;bottom:-6px;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0.5}
+
+
+
+/* ── Pricing highlight (Raso) ── */
+/* Ultra premium: card Raso — estático, discreto, sem competição visual com Recife */
+@keyframes shimmer-rotate{to{--shimmer-angle:360deg}}
+@property --shimmer-angle{syntax:'<angle>';initial-value:0deg;inherits:false}
+
+/* ── Period Toggle ── */
+.period-switcher{display:inline-flex;flex-wrap:wrap;justify-content:center;max-width:100%;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:4px;gap:4px}
+.period-btn{background:transparent;border:none;padding:12px 20px;font-family:var(--ff-body);font-size:14px;font-weight:500;color:var(--dim);border-radius:10px;cursor:pointer;transition:color .3s var(--ease),background .3s var(--ease);display:inline-flex;align-items:center;gap:8px}
+.period-btn:hover{color:var(--white)}
+.period-btn.active{background:rgba(100,180,255,0.1);color:var(--white);box-shadow:0 2px 12px rgba(100,180,255,0.1)}
+.period-discount{font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px;background:rgba(52,211,153,0.15);color:var(--green);letter-spacing:.02em}
+
+
+/* ── ROI Calculator — Premium ── */
+.calc-wrap{max-width:920px;margin:0 auto}
+.calc-card{
+    border-radius:24px;border:1px solid rgba(100,180,255,0.06);
+    background:
+        radial-gradient(ellipse 60% 35% at 50% 0%,rgba(100,180,255,0.04),transparent),
+        linear-gradient(180deg,rgba(12,26,54,0.75) 0%,rgba(8,18,40,0.88) 50%,rgba(6,14,32,0.92) 100%);
+    padding:clamp(36px,5vw,60px);position:relative;overflow:hidden;
+    backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+    box-shadow:
+        0 2px 8px rgba(0,0,0,0.18),
+        0 16px 48px rgba(0,0,0,0.22),
+        0 36px 90px rgba(0,0,0,0.14),
+        inset 0 1px 0 rgba(255,255,255,0.04);
+}
+.calc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 5%,rgba(100,180,255,0.08) 30%,rgba(100,180,255,0.15) 50%,rgba(100,180,255,0.08) 70%,transparent 95%)}
+/* Ultra premium: calc card — linha base sutil sem glow excessivo */
+.calc-card::after{content:'';position:absolute;bottom:0;left:15%;right:15%;height:1px;background:linear-gradient(90deg,transparent,rgba(100,180,255,0.08),transparent);opacity:1}
+
+/* Slider section */
+.calc-slider-wrap{margin-bottom:40px}
+.calc-slider-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:8px}
+.calc-slider-label{font-size:13px;color:var(--muted);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.calc-slider-value{
+    font-family:var(--ff-display);font-size:clamp(28px,3.5vw,40px);font-weight:700;
+    color:var(--white);letter-spacing:-0.03em;
+    text-shadow:0 0 30px rgba(100,180,255,0.2);
+}
+.calc-slider-value span{color:var(--accent)}
+
+/* Custom slider track + thumb */
+.calc-slider{
+    -webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:3px;outline:none;cursor:pointer;
+    /* area de toque de 44px sem mudar o trilho: padding expande a caixa, background-clip mantem o
+       gradiente nos 6px de conteudo e a margem negativa devolve o espaco ao fluxo.
+       box-sizing:content-box e obrigatorio - o reset global usa border-box e zeraria o trilho. */
+    box-sizing:content-box;padding:19px 0;margin:-19px 0;background-clip:content-box;
+    background:linear-gradient(90deg,var(--accent) 0%,var(--accent) var(--fill,20%),rgba(100,180,255,0.08) var(--fill,20%),rgba(100,180,255,0.08) 100%);
+    transition:background .15s;
+}
+.calc-slider::-webkit-slider-thumb{
+    -webkit-appearance:none;width:24px;height:24px;border-radius:50%;
+    background:radial-gradient(circle at 40% 35%,#fff,var(--accent));
+    border:3px solid var(--bg);cursor:grab;
+    box-shadow:0 0 0 4px rgba(100,180,255,0.15),0 2px 8px rgba(0,0,0,0.3),0 0 20px rgba(100,180,255,0.2);
+    transition:box-shadow .3s var(--ease),transform .2s var(--ease);
+}
+.calc-slider::-webkit-slider-thumb:hover{
+    box-shadow:0 0 0 6px rgba(100,180,255,0.2),0 4px 16px rgba(0,0,0,0.4),0 0 30px rgba(100,180,255,0.3);
+    transform:scale(1.1);
+}
+.calc-slider::-webkit-slider-thumb:active{cursor:grabbing;transform:scale(0.95)}
+.calc-slider::-moz-range-thumb{
+    width:24px;height:24px;border-radius:50%;border:3px solid var(--bg);cursor:grab;
+    background:radial-gradient(circle at 40% 35%,#fff,var(--accent));
+    box-shadow:0 0 0 4px rgba(100,180,255,0.15),0 2px 8px rgba(0,0,0,0.3),0 0 20px rgba(100,180,255,0.2);
+}
+.calc-slider-ticks{display:flex;justify-content:space-between;margin-top:10px;padding:0 2px}
+.calc-slider-tick{font-size:11px;color:var(--muted);font-family:var(--ff-mono)}
+
+/* Divider */
+.calc-divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin-bottom:32px}
+
+
+/* Summary row: Total + ROI side by side */
+.calc-summary{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:32px}
+@media(max-width:600px){.calc-summary{gap:10px}.calc-summary-card{padding:18px 12px}.calc-summary-val{font-size:26px}}
+.calc-summary-card{padding:28px 24px;border-radius:16px;border:1px solid;text-align:center;position:relative;overflow:hidden;transition:border-color .4s var(--ease)}
+.calc-summary-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.04),transparent)}
+.calc-summary-card--loss{border-color:rgba(239,68,68,0.12);background:linear-gradient(180deg,rgba(239,68,68,0.035) 0%,rgba(239,68,68,0.01) 100%)}
+.calc-summary-card--loss:hover{border-color:rgba(239,68,68,0.2)}
+.calc-summary-tag{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:100px;font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
+.calc-summary-card--loss .calc-summary-tag{background:rgba(239,68,68,0.08);color:#ef4444;border:1px solid rgba(239,68,68,0.12)}
+.calc-summary-tag svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.calc-summary-val{font-family:var(--ff-display);font-size:clamp(30px,4vw,44px);font-weight:700;letter-spacing:-.03em;line-height:1;margin-bottom:8px;font-variant-numeric:tabular-nums}
+.calc-summary-lbl{font-size:11px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;font-weight:500}
+.calc-summary-bar{position:absolute;bottom:0;left:0;height:3px;border-radius:0 2px 0 0;transition:width .8s var(--ease);width:0}
+.calc-summary-card--loss .calc-summary-bar{background:linear-gradient(90deg,#ef4444,#f87171)}
+
+
+
+/* ── Cloaking Flow (How it works) ── */
+.flow-diagram{max-width:980px;margin:0 auto clamp(36px,5vw,52px);padding:clamp(28px,4vw,44px);border-radius:24px;border:1px solid rgba(100,180,255,0.08);background:linear-gradient(180deg,rgba(10,26,54,0.55) 0%,rgba(6,14,32,0.75) 100%);position:relative;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.18),inset 0 1px 0 rgba(255,255,255,0.04)}
+.flow-diagram::before{content:'';position:absolute;top:0;left:8%;right:8%;height:1px;background:linear-gradient(90deg,transparent,rgba(100,180,255,0.18),transparent);pointer-events:none}
+.flow-track{display:flex;flex-direction:column;align-items:center;gap:0}
+.flow-node{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-width:0;width:100%;max-width:280px;padding:18px 20px;border-radius:16px;border:1px solid rgba(100,180,255,0.1);background:linear-gradient(180deg,rgba(12,28,58,0.7) 0%,rgba(8,18,40,0.85) 100%);transition:border-color .45s var(--ease),transform .45s var(--ease),box-shadow .45s var(--ease)}
+.flow-node:hover{border-color:rgba(100,180,255,0.2);transform:translateY(-2px)}
+.flow-node-ico{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;background:rgba(100,180,255,0.08);border:1px solid rgba(100,180,255,0.12)}
+.flow-node-ico svg{width:20px;height:20px;stroke:var(--accent);fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.flow-node-label{font-family:var(--ff-display);font-size:15px;font-weight:600;color:var(--white);letter-spacing:-.01em;line-height:1.25}
+.flow-node-sub{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.4}
+.flow-node--core{border-color:rgba(100,180,255,0.22);background:linear-gradient(180deg,rgba(16,36,72,0.85) 0%,rgba(10,24,52,0.92) 100%);box-shadow:0 0 32px rgba(100,180,255,0.08);animation:flow-core-glow 4s var(--ease) infinite}
+.flow-node--core .flow-node-ico{background:rgba(100,180,255,0.14);border-color:rgba(100,180,255,0.25)}
+.flow-node--core .flow-node-label{color:var(--accent)}
+@keyframes flow-core-glow{0%,100%{box-shadow:0 0 24px rgba(100,180,255,0.06)}50%{box-shadow:0 0 40px rgba(100,180,255,0.14)}}
+.flow-connector{display:flex;align-items:center;justify-content:center;width:2px;height:28px;margin:4px 0;background:linear-gradient(180deg,rgba(100,180,255,0.04),rgba(100,180,255,0.35),rgba(100,180,255,0.04));position:relative;flex-shrink:0}
+.flow-connector::after{content:'';position:absolute;bottom:-2px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid rgba(100,180,255,0.45)}
+.flow-branch-wrap{display:flex;flex-direction:column;align-items:center;width:100%;gap:13px;margin-top:4px}
+.flow-branch-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.flow-branch{display:grid;grid-template-columns:1fr 1fr;gap:13px;width:100%;max-width:420px}
+.flow-dest{padding:16px 14px;border-radius:14px;text-align:center;transition:border-color .45s var(--ease),transform .45s var(--ease)}
+.flow-dest:hover{transform:translateY(-2px)}
+.flow-dest-tag{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+.flow-dest-name{font-family:var(--ff-display);font-size:14px;font-weight:600;line-height:1.25}
+.flow-dest-desc{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.4}
+.flow-dest--safe{border:1px solid rgba(239,68,68,0.15);background:linear-gradient(180deg,rgba(239,68,68,0.06) 0%,rgba(239,68,68,0.02) 100%)}
+.flow-dest--safe .flow-dest-tag{color:rgba(239,68,68,0.75)}
+.flow-dest--safe .flow-dest-name{color:rgba(239,68,68,0.9)}
+.flow-dest--offer{border:1px solid rgba(52,211,153,0.15);background:linear-gradient(180deg,rgba(52,211,153,0.06) 0%,rgba(52,211,153,0.02) 100%)}
+.flow-dest--offer .flow-dest-tag{color:var(--green)}
+.flow-dest--offer .flow-dest-name{color:var(--green)}
+.flow-lead{max-width:580px;margin:0 auto clamp(40px,5vw,56px);text-align:center;font-size:clamp(15px,1.7vw,17px);color:var(--dim);line-height:1.75}
+.flow-lead strong{color:var(--white);font-weight:600}
+.flow-pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:13px;max-width:880px;margin:0 auto}
+.flow-pillar{display:flex;align-items:flex-start;gap:12px;padding:16px 14px;border-radius:14px;border:1px solid rgba(100,180,255,0.06);background:rgba(8,20,44,0.45);transition:border-color .4s var(--ease),transform .4s var(--ease)}
+.flow-pillar:hover{border-color:rgba(100,180,255,0.12);transform:translateY(-1px)}
+.flow-pillar-ico{width:32px;height:32px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:rgba(100,180,255,0.07);border:1px solid rgba(100,180,255,0.1)}
+.flow-pillar-ico svg{width:16px;height:16px;stroke:var(--accent);fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.flow-pillar-text{font-size:13px;line-height:1.45;color:var(--dim)}
+.flow-pillar-text strong{display:block;font-family:var(--ff-display);font-size:13px;font-weight:600;color:var(--white);margin-bottom:2px;letter-spacing:-.01em}
+@media(min-width:640px){.flow-pillars{grid-template-columns:repeat(2,1fr);gap:13px;max-width:640px}}
+@media(min-width:768px){
+.flow-track{flex-direction:row;align-items:center;justify-content:center;flex-wrap:nowrap;gap:0}
+.flow-node{width:auto;flex:0 0 auto;min-width:140px;max-width:168px;padding:20px 16px}
+.flow-connector{width:36px;height:2px;margin:0 4px;background:linear-gradient(90deg,rgba(100,180,255,0.04),rgba(100,180,255,0.35),rgba(100,180,255,0.04))}
+.flow-connector::after{bottom:auto;right:-2px;left:auto;top:50%;transform:translateY(-50%);border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:6px solid rgba(100,180,255,0.45);border-right:none}
+.flow-branch-wrap{flex:0 0 auto;width:auto;margin-top:0;margin-left:4px;align-items:flex-start}
+.flow-branch{grid-template-columns:1fr;max-width:148px;gap:10px}
+.flow-dest{padding:14px 12px}}
+@media(max-width:480px){.flow-branch{grid-template-columns:1fr;max-width:280px}}
+@media(max-width:390px){
+.flow-diagram{padding:20px 16px;border-radius:18px}
+.flow-node{padding:14px 16px;max-width:none}
+.flow-node-label{font-size:14px}
+.flow-pillar{padding:13px 12px}
+.flow-pillar-text{font-size:12px}}
+
+
+
+/* ── Competitor Comparison ── */
+.comp-table{max-width:720px;margin:0 auto;border-radius:20px;overflow:hidden;border:1px solid rgba(100,180,255,0.08);background:linear-gradient(180deg,rgba(8,20,44,0.6) 0%,rgba(4,12,28,0.8) 100%);position:relative}
+.comp-table::before{content:'';position:absolute;top:0;left:15%;right:15%;height:1px;background:linear-gradient(90deg,transparent,rgba(100,180,255,0.12),transparent)}
+.comp-row{display:grid;grid-template-columns:2fr 1fr 1fr;gap:0;align-items:center;border-bottom:1px solid rgba(100,180,255,0.04)}
+.comp-row:last-child{border-bottom:none}
+.comp-row--header{background:rgba(100,180,255,0.03);border-bottom:1px solid rgba(100,180,255,0.08)}
+.comp-cell{padding:16px 20px;font-size:14px;color:var(--dim);text-align:center;display:flex;align-items:center;justify-content:center;min-height:52px}
+.comp-cell:first-child{text-align:left;justify-content:flex-start;font-weight:500;color:var(--white)}
+.comp-row--header .comp-cell{font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);padding:18px 20px}
+.comp-cell--bi{position:relative;color:var(--accent);font-weight:600}
+.comp-row--header .comp-cell--bi{color:var(--accent)}
+.comp-col-bi{background:rgba(100,180,255,0.03)}
+.comp-check{color:var(--green);font-size:16px;font-weight:700}
+.comp-cross{color:rgba(240,244,248,0.15);font-size:16px}
+.comp-partial{color:var(--gold);font-size:12px;font-weight:500}
+.comp-row:hover{background:rgba(100,180,255,0.02)}
+.comp-row--header:hover{background:rgba(100,180,255,0.03)}
+@media(max-width:640px){
+.comp-row{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) minmax(0,1fr)}
+.comp-cell{padding:12px 10px;font-size:13px;overflow-wrap:break-word}
+.comp-row--header .comp-cell{padding:14px 6px;font-size:10px;letter-spacing:.02em;overflow-wrap:normal;white-space:nowrap}
+.comp-cell:first-child{font-size:13px}
+.comp-table{overflow-x:auto;-webkit-overflow-scrolling:touch}}
+
+/* ── Pricing micro-copy ── */
+.p-micro{font-size:12px;color:var(--muted);text-align:center;margin-top:12px;line-height:1.5}
+
+/* Ultra premium: Maré — cloaker-only entry tier */
+
+/* Ultra premium: Recife — único card com shimmer cinematográfico lento + elevação */
+/* Ultra premium: Recife — linha de luz respirante no topo, ultra suave */
+@keyframes rec-breathe{0%,100%{opacity:0.3}50%{opacity:0.9}}
+@media(min-width:1200px){.p-val{font-size:clamp(36px,3.5vw,52px)}.p-monthly-eq{font-size:11px;line-height:1.4}}
+
+/* ── Price display ── */
+.p-price-wrap{min-height:90px;display:flex;flex-direction:column;justify-content:center;align-items:center;margin-bottom:24px}
+.p-price{display:flex;align-items:baseline;gap:3px;margin-bottom:28px;flex-wrap:wrap}
+.p-monthly-eq{width:100%;font-size:13px;color:var(--dim);margin-top:2px;letter-spacing:-.01em}
+.p-curr{font-size:14px;color:var(--dim);align-self:flex-start;margin-top:8px}
+.p-val{font-family:var(--ff-display);font-size:clamp(44px,5vw,60px);font-weight:700;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.p-per{font-size:13px;color:var(--muted)}
+.p-price[data-period]{display:none}
+.p-price[data-period].active{display:flex;justify-content:center}
+
+/* ── Pricing narrative (single product) ── */
+.pricing-narrative{max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(48px,7vw,80px)}
+.pricing-act{text-align:center}
+.pricing-act .t-label{margin-bottom:16px}
+.pricing-act .t-lg{max-width:760px;margin:0 auto 20px}
+.pricing-lead{max-width:520px;margin:0 auto;color:var(--dim);line-height:1.75}
+.pricing-lead strong{color:var(--white);font-weight:600}
+.pricing-bridge{font-size:15px;color:var(--dim);line-height:1.7;max-width:480px;margin:0 auto;padding-top:8px;border-top:1px solid rgba(100,180,255,0.06)}
+.pricing-reveal-block{display:flex;flex-direction:column;gap:clamp(32px,4vw,48px)}
+.pricing-reveal-inner{text-align:center;padding:clamp(36px,5vw,56px) clamp(24px,4vw,44px);border-radius:24px;border:1px solid rgba(100,180,255,0.1);background:linear-gradient(180deg,rgba(10,26,54,0.65) 0%,rgba(6,14,32,0.85) 100%);position:relative;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,0.25),inset 0 1px 0 rgba(255,255,255,0.04)}
+.pricing-reveal-inner::before{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(100,180,255,0.2),transparent);pointer-events:none}
+.pricing-reveal-title{font-family:var(--ff-display);font-size:clamp(28px,4vw,36px);font-weight:700;letter-spacing:-.03em;margin-bottom:8px;color:var(--white)}
+.pricing-reveal-sub{font-size:15px;color:var(--muted);margin-bottom:clamp(28px,4vw,40px);line-height:1.6}
+.period-toggle-label{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:13px}
+.pricing-reveal-inner .period-toggle{display:flex;justify-content:center;margin-bottom:clamp(28px,4vw,36px)}
+.pricing-reveal-inner .p-curr,.pricing-reveal-inner .p-per{font-size:clamp(14px,2vw,16px)}
+.pricing-reveal-inner .p-val{font-size:clamp(52px,8vw,72px)}
+.pricing-reveal-inner .p-monthly-eq{text-align:center;font-size:14px;color:var(--dim);margin-top:8px;line-height:1.5;max-width:100%;text-wrap:balance}
+.pricing-reveal-inner .pricing-cta{margin-top:8px}
+
+
+/* ── Scroll progress indicator ── */
+.scroll-progress{position:fixed;top:0;left:0;width:0%;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:10001;pointer-events:none;transition:none}
+
+/* ── Sticky CTA Bar (all screens) ── */
+.sticky-cta{
+    position:fixed;bottom:0;left:0;right:0;z-index:9997;
+    padding:12px 24px;
+    background:rgba(4,11,24,0.92);
+    backdrop-filter:blur(20px) saturate(1.2);-webkit-backdrop-filter:blur(20px) saturate(1.2);
+    border-top:1px solid rgba(100,180,255,0.06);
+    transform:translateY(100%);transition:transform .5s var(--ease);
+    box-shadow:0 -4px 24px rgba(0,0,0,0.2);
+}
+.sticky-cta::before{
+    content:'';position:absolute;top:0;left:0;right:0;height:1px;
+    background:linear-gradient(90deg,transparent 10%,rgba(100,180,255,0.10) 50%,transparent 90%);
+}
+.sticky-cta.visible{transform:translateY(0)}
+.sticky-cta-inner{
+    max-width:1200px;margin:0 auto;
+    display:flex;align-items:center;justify-content:space-between;gap:13px;
+}
+/* Mobile primeiro: a barra e o unico pedido persistente entre o hero e o rodape, entao em 390px ela
+   quebra em duas linhas — reversao de risco na linha de cima, preco dentro do botao. O row-gap vem do
+   gap:13px que .sticky-cta-inner ja tem; nada de margin (o reset zera a do <p>). Desktop volta a uma
+   linha so, com a frase longa. */
+.sticky-cta-inner{flex-wrap:wrap}
+.sticky-cta-text{font-size:12px;line-height:1.4;color:var(--dim);flex:1 0 100%;order:-1;text-align:center}
+.sticky-cta-text strong{color:var(--white)}
+.sticky-cta-long{display:none}
+@media(min-width:768px){.sticky-cta-inner{flex-wrap:nowrap}.sticky-cta-text{font-size:14px;flex:0 1 auto;order:0;text-align:left}.sticky-cta-long{display:inline}}
+.sticky-cta .btn-p{height:48px;font-size:14px;border-radius:12px;padding:0 28px;white-space:nowrap}
+.sticky-cta-close{
+    background:none;border:none;color:var(--muted);cursor:pointer;padding:6px;
+    font-size:18px;line-height:1;transition:color .3s;display:flex;align-items:center;
+}
+.sticky-cta-close:hover{color:var(--white)}
+@media(max-width:767px){
+    .sticky-cta .btn-p{flex:1;min-width:0;margin-right:0}
+    .sticky-cta-close{flex-shrink:0}}
+
+
+
+/* ── Mobile refinements (767px) ── */
+@media(max-width:767px){
+    body{overflow-x:hidden}
+    .container{padding:0 20px}
+
+    /* Header — solid background on mobile for readability */
+    .hdr.scrolled{background:rgba(2,10,20,0.95);backdrop-filter:blur(24px) saturate(1.2);-webkit-backdrop-filter:blur(24px) saturate(1.2)}
+
+    /* Global mobile typography */
+    .t-lg{font-size:clamp(28px,7vw,42px)}
+    .t-body-lg{font-size:16px;line-height:1.65}
+    :root{--section-py:clamp(36px,5vh,64px)}
+
+    /* Hero — Etapa 2 */
+    .hero{padding:100px 20px 48px;min-height:92dvh;min-height:92vh}
+    .hero-logo{width:clamp(124px,34vw,160px);margin-bottom:18px}
+    .hero-sub{max-width:85vw;font-size:16px;text-wrap:balance}
+    .hero-ctas{gap:14px;width:100%;max-width:360px;margin-left:auto;margin-right:auto}
+    .hero-ctas .btn-p,.hero-ctas .btn-o{height:52px;flex:1 1 auto;min-width:0}
+    .hero-trust{flex-wrap:wrap;justify-content:center;gap:6px}
+    .hero-trust-text{font-size:12px;text-align:center;line-height:1.5}
+    .hero-mesh .m1{width:350px;height:350px;opacity:0.6}
+    .hero-mesh .m2{width:250px;height:250px;opacity:0.4}
+    .hero-mesh .m3{width:180px;height:180px;opacity:0.3}
+
+    /* Problem cards — Etapa 3 */
+    .problem-grid{gap:20px}
+    .problem-card{padding:clamp(28px,5vw,36px)}
+    .problem-stat{font-size:clamp(40px,10vw,56px)}
+    .problem-card-glow{opacity:0.35}
+
+    /* Showcase sections — Etapa 4 */
+
+    /* Mockup blocks — Etapa 4 */
+
+    /* Term rows inside mockups */
+
+    /* Mock phone — Etapa 6 */
+
+
+    /* Protection simulator — Etapa 5 */
+
+    /* ROI Calculator — Etapa 6 */
+    .calc-slider::-webkit-slider-thumb{width:28px;height:28px}
+    .calc-slider::-moz-range-thumb{width:28px;height:28px}
+
+    /* Pricing — Etapa 8 */
+    .pricing-reveal-inner{padding:clamp(32px,5vw,56px) clamp(16px,4vw,44px)}
+    .pricing-reveal-inner .period-toggle{width:100%;justify-content:center}
+    .period-switcher{flex-direction:row;width:100%;max-width:100%;justify-content:center}
+    .period-btn{font-size:13px;padding:10px 14px;flex:1 1 auto;justify-content:center;min-width:0}
+    .period-discount{white-space:nowrap}
+    .pricing-reveal-inner .p-monthly-eq{font-size:13px;padding:0 8px}
+
+    /* FAQ — Etapa 10: More elegant spacing */
+    .faq-q{padding:18px 22px;font-size:15px}
+    .faq-a{padding:0 22px 20px;font-size:14px;line-height:1.7}
+    .faq-i{border-radius:16px}
+    .faq-list{gap:6px}
+
+    /* Sticky CTA — Etapa 9 */
+    .sticky-cta{padding:12px 20px;padding-bottom:calc(12px + env(safe-area-inset-bottom,0px))}
+    .sticky-cta .btn-p{width:auto;flex:1;margin-right:0}
+
+    /* How steps */
+
+
+    /* Community — Etapa 10 */
+
+    /* Footer — Etapa 10 */
+    .f-grid{grid-template-columns:1fr 1fr;gap:24px}
+    .f-brand{grid-column:1 / -1}
+    .f-bottom{flex-direction:column;gap:14px;text-align:center;padding-bottom:calc(20px + env(safe-area-inset-bottom,0px))}
+
+    /* Particles — fade gracefully instead of abrupt hide */
+    .bp:nth-child(n+8){opacity:0.3}
+    .bp:nth-child(n+12){opacity:0.15}
+    .bp:nth-child(n+16){display:none}}
+
+/* ── Small phones (480px) ── */
+@media(max-width:480px){
+    .container{padding:0 20px}
+    .hero{padding:92px 20px 40px}
+    .hero-ctas{flex-direction:column;max-width:320px;gap:13px}
+    .hero-ctas .btn{width:100%;flex:none}
+    .hero-mesh .m1{width:280px;height:280px;opacity:0.35}
+    .hero-mesh .m2{width:200px;height:200px;opacity:0.25}
+    .hero-mesh .m3{display:none}
+    .period-switcher{flex-direction:column;width:100%;max-width:280px;margin:0 auto}
+    .period-btn{justify-content:center;width:100%;flex:none}
+    .pricing-reveal-inner .p-monthly-eq{font-size:12px}}
+
+/* ── Ultra-small phones (390px — iPhone 14 Pro and below) ── */
+@media(max-width:390px){
+    .container{padding:0 16px}
+    .t-xl{font-size:clamp(30px,9.5vw,38px)}
+    .hero{padding:88px 16px 36px}
+    .hero-ctas{max-width:100%;gap:10px}
+    .hero-ctas .btn-p,.hero-ctas .btn-o{height:48px;font-size:15px;padding:0 21px}
+    .hero-trust{padding:0 8px}
+    .hero-trust-text{font-size:11px;line-height:1.55;text-wrap:balance}
+    .period-btn{font-size:12px;padding:10px 13px}
+    .pricing-reveal-inner{padding:28px 16px}
+    .pricing-reveal-inner .p-val{font-size:clamp(44px,12vw,52px)}
+    .problem-card{padding:24px}
+    .problem-stat{font-size:clamp(36px,9vw,48px)}
+    .calc-card{padding:28px 20px}}
+
+/* ── Mobile perf: hide particles + reduce blur ── */
+@media(max-width:900px){
+    .bp{display:none !important}
+    .hero-mesh div{filter:blur(80px)}}
+
+/* ── Reduced Motion ── */
+@media(prefers-reduced-motion:reduce){
+    /* animation-delay:0s !important: o reset acima zera a duracao mas nao o delay — sem isso
+       o .hero-ctas ficava invisivel 1.8s mesmo com reduced-motion. O !important e necessario
+       porque o delay vem no shorthand `animation` das regras por-componente. */
+    *,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important;animation-delay:0s !important}
+    .bp{display:none !important}
+    .hero-mesh div{animation:none !important}
+    .rv-on .rv{opacity:1;transform:none;filter:none}
+    .hero-title .ch{opacity:1;transform:none;filter:none}}
+/* ── GEO: Knowledge Base + Stats (sr-only crawlable content) ── */
+.geo-sources{font-size:11px;color:var(--muted);opacity:0.7;text-align:center;line-height:1.8}
+/* ── Piso de legibilidade ──
+   Estes rotulos renderizavam entre 9px e 10px, varios em rgba(240,244,248,0.5) sobre fundo
+   escuro. Regra proposital no FIM do <style>, fora de @media: mesma especificidade das regras
+   originais, mas posterior na cascata, entao vence tambem os overrides dentro das media
+   queries sem reordenar nenhuma delas e sem !important. */
+.flow-branch-label,.flow-dest-tag,.calc-summary-tag,.period-discount{font-size:11px}</style>
+<script>!function(w,d,s,u,n,a,b){if(w[n])return;a=w[n]={q:[],t: new Date,s:[],o:u,track:function(){a.q.push([ new Date].concat([].slice.call(arguments)))},setScope:function(){a.s=[].slice.call(arguments).filter(function(x){return typeof x==="string"});a.q.push([ new Date,"setScope"].concat(a.s))},scope:function(){var c=[].slice.call(arguments);return{track:function(){a.q.push([ new Date].concat([].slice.call(arguments)).concat([{__scope:c}]))}}}};b=d.createElement(s);b.async=1;b.src=u+"/s.js";d.getElementsByTagName(s)[0].parentNode.insertBefore(b,d.getElementsByTagName(s)[0])}(window,document,"script","https://t.whop.tw","whop");whop.setScope("biz_DJ6XbjaZmfVjZ8");whop.track("page");</script>
+</head>
+<body>
+<a href="#hero" class="skip-link">Ir para conteúdo</a>
+
+<!-- Global bioluminescent particles -->
+<div class="particles-zone" aria-hidden="true">
+    <!-- Small — faint, slow, whisper -->
+    <div class="bp bp--s" style="left:3%;--dur:95s;--drift:28s;--dx:12px;--glow:14s;animation-delay:0s,-4s,-2s"></div>
+    <div class="bp bp--s" style="left:12%;--dur:105s;--drift:22s;--dx:-10px;--glow:11s;animation-delay:-15s,-8s,-6s"></div>
+    <div class="bp bp--s" style="left:22%;--dur:88s;--drift:32s;--dx:18px;--glow:13s;animation-delay:-40s,-3s,-9s"></div>
+    <div class="bp bp--s" style="left:38%;--dur:100s;--drift:26s;--dx:-14px;--glow:15s;animation-delay:-60s,-12s,-4s"></div>
+    <div class="bp bp--s" style="left:55%;--dur:92s;--drift:30s;--dx:10px;--glow:12s;animation-delay:-25s,-6s,-7s"></div>
+    <div class="bp bp--s" style="left:72%;--dur:98s;--drift:24s;--dx:-16px;--glow:16s;animation-delay:-50s,-15s,-1s"></div>
+    <div class="bp bp--s" style="left:85%;--dur:110s;--drift:28s;--dx:8px;--glow:13s;animation-delay:-70s,-2s,-10s"></div>
+    <div class="bp bp--s" style="left:94%;--dur:87s;--drift:34s;--dx:-12px;--glow:11s;animation-delay:-35s,-9s,-5s"></div>
+    <!-- Medium — visible, steady drift -->
+    <div class="bp bp--m" style="left:7%;--dur:115s;--drift:35s;--dx:20px;--glow:10s;animation-delay:-10s,-5s,-3s"></div>
+    <div class="bp bp--m" style="left:18%;--dur:105s;--drift:28s;--dx:-18px;--glow:12s;animation-delay:-45s,-10s,-8s"></div>
+    <div class="bp bp--m" style="left:33%;--dur:120s;--drift:32s;--dx:14px;--glow:9s;animation-delay:-75s,-18s,-2s"></div>
+    <div class="bp bp--m" style="left:48%;--dur:108s;--drift:26s;--dx:-22px;--glow:11s;animation-delay:-20s,-7s,-6s"></div>
+    <div class="bp bp--m" style="left:62%;--dur:112s;--drift:30s;--dx:16px;--glow:13s;animation-delay:-55s,-14s,-4s"></div>
+    <div class="bp bp--m" style="left:78%;--dur:100s;--drift:34s;--dx:-12px;--glow:10s;animation-delay:-30s,-3s,-9s"></div>
+    <div class="bp bp--m" style="left:90%;--dur:118s;--drift:28s;--dx:18px;--glow:14s;animation-delay:-65s,-11s,-1s"></div>
+    <!-- Large — rare, gentle, cinema -->
+    <div class="bp bp--l" style="left:15%;--dur:140s;--drift:40s;--dx:24px;--glow:16s;animation-delay:-20s,-8s,-5s"></div>
+    <div class="bp bp--l" style="left:42%;--dur:135s;--drift:38s;--dx:-20px;--glow:14s;animation-delay:-80s,-20s,-3s"></div>
+    <div class="bp bp--l" style="left:68%;--dur:145s;--drift:42s;--dx:18px;--glow:18s;animation-delay:-50s,-4s,-10s"></div>
+    <div class="bp bp--l" style="left:88%;--dur:130s;--drift:36s;--dx:-26px;--glow:15s;animation-delay:-95s,-16s,-7s"></div>
+</div>
+
+<!-- Loader -->
+<div class="loader" id="loader">
+    <picture>
+        <source srcset="/images/logo-icon-440.webp" type="image/webp">
+        <img src="/images/logo-icon-440.png" width="440" height="440" alt="BlackInk — Carregando" fetchpriority="high">
+    </picture>
+</div>
+
+<header class="hdr" id="hdr">
+    <div class="hdr-in">
+        <a href="#" class="hdr-logo">Black<span>Ink</span></a>
+        <nav class="hdr-nav" aria-label="Primary navigation">
+            <a href="#como-funciona">How it works</a>
+            
+            <a href="#preco">Pricing</a>
+            <a href="#faq">FAQ</a>
+        </nav>
+        <div class="hdr-cta">
+            <a href="/" class="btn btn-o btn-sm">Português</a>
+            <a href="https://app.blackink.cloud" class="btn btn-p btn-sm">Log in</a>
+        </div>
+        <button class="mob-tog" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+</header>
+
+<main role="main">
+
+<section class="hero" id="hero">
+    <div class="hero-mesh">
+        <div class="m1"></div><div class="m2"></div><div class="m3"></div>
+    </div>
+
+    <picture>
+        <source srcset="/images/logo-icon-440.webp" type="image/webp">
+        <img src="/images/logo-icon-440.png" width="440" height="440" alt="BlackInk" class="hero-logo" fetchpriority="high">
+    </picture>
+
+    <h1 class="t-xl hero-title" id="hero-title">
+        <span class="ln"><span class="ln-i grad-hero">A reviewer opens</span></span>
+        <span class="ln"><span class="ln-i">your offer page.</span></span>
+        <span class="ln"><span class="ln-i grad-hero">That is how</span></span>
+        <span class="ln"><span class="ln-i">the account dies.</span></span>
+    </h1>
+
+    <p class="t-body-lg hero-sub">
+        The ad reviewer does not click: they type the destination URL and open your full offer page. <span style="color:var(--dim)">BlackInk is a server-side cloaker: the reviewer gets the safe page, the buyer gets the offer.</span>
+    </p>
+
+
+    <div class="hero-ctas">
+        <!-- Decisão do cliente (2026-08-20): o preço NÃO aparece no CTA do hero.
+             Por isso este é o único .plan-link sem data-cta-base — updatePricingCtaLabel()
+             injeta o valor em quem tem o atributo, e este ficou de fora de propósito.
+             O href continua sincronizado com o período pelo updatePlanLinks(). -->
+        <a href="/en/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link" data-plan="Maré">Activate Cloaker</a>
+        <a href="#como-funciona" class="btn btn-o">See how it works</a>
+    </div>
+
+    <div class="hero-trust">
+        <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        <span class="hero-trust-text">7-day guarantee · The advertised domain is yours</span>
+    </div>
+
+</section>
+
+<section class="section">
+    <div class="container">
+        <p class="t-label rv" style="text-align:center">The email with no reason</p>
+        <h2 class="t-lg rv rv-d1" style="text-align:center;margin:12px 0 16px">Yesterday it scaled.<br><span class="grad">Today the account is under review</span></h2>
+        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:520px;margin:0 auto clamp(40px,5vw,56px)">You opened the dashboard in the morning and the campaign was paused. The email arrived with a policy name — &ldquo;Misrepresentation&rdquo;, &ldquo;Circumventing systems&rdquo; — and nothing else: no ad, no page, no line. You changed nothing, and the filter you already pay for was on.</p>
+
+        <div class="problem-grid">
+            <div class="problem-card rv">
+                <div class="problem-card-glow"></div>
+                <div class="problem-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/><path d="M4 4l2 2" opacity="0.4"/><path d="M20 4l-2 2" opacity="0.4"/></svg>
+                </div>
+                <div class="problem-stat" style="color:#ef4444">From zero</div>
+                <div class="problem-title">Account suspended</div>
+                <div class="problem-desc">It is not only the campaign that stops. The account with history, the creative that was already scaling and weeks of learning go with it. The appeal comes back with an automatic reply, and you start over: new profile, new payment method, creative back in the approval queue — with day-one CPA, while whoever did not get banned keeps running.</div>
+            </div>
+            <div class="problem-card rv rv-d1">
+                <div class="problem-card-glow"></div>
+                <div class="problem-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
+                </div>
+                <div class="problem-stat" style="color:var(--gold)">In the dark</div>
+                <div class="problem-title">Your metrics lie</div>
+                <div class="problem-desc">CPA, CTR and ROAS count a bot click as a click. You pause the creative that sold and scale the one that only attracted a datacenter — and you never find out.</div>
+            </div>
+        </div>
+
+        <p class="problem-resolve rv">Both start at the same point: <span class="grad">who receives your page</span></p>
+    </div>
+</section>
+<div class="sep"></div>
+
+<section class="section" id="como-funciona">
+    <div class="container">
+        <p class="t-label rv" style="text-align:center">How it works</p>
+        <h2 class="t-lg rv rv-d1" style="text-align:center;max-width:880px;margin:12px auto 16px">BlackInk sits between the visitor<br><span class="grad">and the right destination</span></h2>
+        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:540px;margin:0 auto clamp(36px,5vw,48px)">Every click lands on your domain and goes through the platform before it becomes a page: it crosses your signals, applies your rules and serves the safe page or the offer page.</p>
+
+        <div class="flow-diagram rv rv-d3" aria-label="Fluxo de cloaking: visitante, BlackInk, destino">
+            <div class="flow-track">
+                <div class="flow-node">
+                    <div class="flow-node-ico"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                    <div class="flow-node-label">Visitor</div>
+                    <div class="flow-node-sub">Lands on your domain</div>
+                </div>
+                <div class="flow-connector" aria-hidden="true"></div>
+                <div class="flow-node flow-node--core">
+                    <div class="flow-node-ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                    <div class="flow-node-label">BlackInk</div>
+                    <div class="flow-node-sub">Decides on the server</div>
+                </div>
+                <div class="flow-connector" aria-hidden="true"></div>
+                <div class="flow-branch-wrap">
+                    <div class="flow-branch-label">Matching destination</div>
+                    <div class="flow-branch">
+                        <div class="flow-dest flow-dest--safe">
+                            <div class="flow-dest-tag">Invalid traffic</div>
+                            <div class="flow-dest-name">Safe Page</div>
+                            <div class="flow-dest-desc">Bots, VPNs, revisores</div>
+                        </div>
+                        <div class="flow-dest flow-dest--offer">
+                            <div class="flow-dest-tag">Qualified traffic</div>
+                            <div class="flow-dest-name">Offer Page</div>
+                            <div class="flow-dest-desc">Real buyers</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p class="flow-lead rv rv-d4" style="margin-bottom:14px">BlackInk is not a script on your page — it is <strong>server-side infrastructure</strong>: the decision happens <strong>before HTML leaves the server</strong>, in under 50ms.</p>
+        <p class="flow-lead rv rv-d5">You do not have to take our word for it: open a live ad destination URL behind a VPN and view the page source — Ctrl+U on Windows, Cmd+Option+U on Mac. If the filter is a script on the page, <strong>the offer-page HTML is all there</strong> — the server delivered the offer before any script ran. With BlackInk in place, the same source has to return the safe page: no redirect and no detection script.</p>
+
+        <div class="flow-pillars rv rv-d5">
+            <div class="flow-pillar">
+                <div class="flow-pillar-ico"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+                <div class="flow-pillar-text"><strong>15+ signals per visitor</strong>IP, geo, device, browser fingerprint and ASN — the network that owns the IP, which is how datacenters and VPNs give themselves away</div>
+            </div>
+            <div class="flow-pillar">
+                <div class="flow-pillar-ico"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+                <div class="flow-pillar-text"><strong>Rules per campaign</strong>Geo, device, OS, ISP and your own IP lists</div>
+            </div>
+            <!-- Fato dos dois domínios confirmado pelo cliente em 2026-08-20. [PENDENTE: cliente confirma o método técnico] — não escrever CNAME, DNS ou proxy reverso em texto visível. -->
+            <div class="flow-pillar" style="grid-column:1/-1">
+                <div class="flow-pillar-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 010 20a15.3 15.3 0 010-20"/></svg></div>
+                <div class="flow-pillar-text"><strong>The advertised domain is yours</strong>Two domains, both yours: one hosts the pages, the other goes in the ad. The BlackInk domain does not appear to Google, Meta, TikTok or the visitor — you do not share footprint or domain reputation with any other advertiser.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="sep"></div>
+
+
+<section class="section" id="roi-calc">
+    <div class="container">
+        <div class="t-label rv" style="text-align:center;margin-bottom:16px">Loss calculator</div>
+        <h2 class="t-lg rv rv-d1" style="text-align:center;max-width:880px;margin:0 auto 16px">See how much money<br>you <span class="grad">lose every month</span></h2>
+        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:500px;margin:0 auto 14px">You already saw where the decision happens. Now the number: move the slider to your budget and see how much of it invalid traffic consumes today. The ad-network dashboard does not split that piece; the decision log does — the record of every visitor that arrived, with IP, ISP, geo and the reason for the divert.</p>
+        <p class="geo-sources rv rv-d2" style="max-width:560px;margin:0 auto clamp(40px,5vw,56px)">The premise: we use 22% of budget as a working rate of invalid traffic — bot, crawler and datacenter. That is BlackInk's working estimate, not a third-party number: the real rate varies by niche, platform and creative, and yours only shows up in the decision log. The ad reviewer is not in this math: they do not click the ad, they type the URL. Their cost is not budget, it is the account. We apply that rate to your budget, which assumes a bad click costs the same as a good one. The rest is your number.</p>
+
+        <div class="calc-wrap rv rv-d3">
+            <div class="calc-card">
+                <!-- Slider -->
+                <div class="calc-slider-wrap">
+                    <div class="calc-slider-header">
+                        <span class="calc-slider-label">Monthly paid-traffic budget</span>
+                        <div class="calc-slider-value" id="calc-display">$<span>10,000</span></div>
+                    </div>
+                    <input type="range" class="calc-slider" id="calc-budget" min="1000" max="100000" step="1000" value="10000" aria-label="Monthly paid-traffic budget in US dollars">
+                    <div class="calc-slider-ticks">
+                        <span class="calc-slider-tick">$1k</span>
+                        <span class="calc-slider-tick">$25k</span>
+                        <span class="calc-slider-tick">$50k</span>
+                        <span class="calc-slider-tick">$75k</span>
+                        <span class="calc-slider-tick">$100k</span>
+                    </div>
+                </div>
+
+                <div class="calc-divider"></div>
+
+                <!-- Summary: tamanho da perda. Nao voltar a por um segundo card de "perda vs. preco":
+                     o cloaker nao devolve clique invalido, a rede ja cobrou o clique. O argumento correto
+                     sobre o preco esta no pricing-lead da secao seguinte. -->
+                <div class="calc-summary">
+                    <div class="calc-summary-card calc-summary-card--loss">
+                        <div class="calc-summary-tag">
+                            <svg viewBox="0 0 24 24"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/></svg>
+                            Invalid traffic
+                        </div>
+                        <!-- Estado estatico = o que o JS produz no value inicial do slider (10.000 x 22% = 2.200).
+                             data-current evita o count-up de 0 no load. Mexeu no value do slider? mexa nestes dois numeros junto. -->
+                        <div class="calc-summary-val" style="color:#ef4444" id="calc-total" data-current="2200">$2,200</div>
+                        <div class="calc-summary-lbl">Of your budget becomes a click that was never going to buy</div>
+                        <div class="calc-summary-bar" id="calc-total-bar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="pricing" style="background:var(--bg2)">
+    <div class="container">
+        <div class="pricing-narrative">
+
+            <!-- Act 1: Problem cost -->
+            <div class="pricing-act pricing-act--problem rv">
+                <p class="pricing-lead">In the calculator above, that is <strong id="pricing-anchor">$2,200</strong> a month of budget going to traffic that never buys — and that is the smaller of the two numbers. The other is what this account makes on a good day and how many months it took to earn approval history. The $69.99 does not refund the first number — it exists because of the second: keeping your offer page off the reviewer's screen.</p>
+            </div>
+
+            <div class="pricing-act pricing-act--value rv rv-d1">
+                <p class="pricing-bridge">One product, one price. No extra modules, no hidden upgrade and no contract.<br><strong style="color:var(--dim)">It does not connect your ads account, does not ask for OAuth and does not install a script on your page</strong> — and the domain in the ad is yours, not ours.</p>
+            </div>
+
+            <!-- Act 3: Investment + price reveal -->
+            <div class="pricing-reveal-block rv rv-d2" id="preco">
+                <div class="pricing-reveal-inner">
+                    <div class="t-label">Price</div>
+                    <h2 class="pricing-reveal-title">BlackInk Cloaker</h2>
+                    <p class="pricing-reveal-sub">Everything included — filtering, routing, a dashboard with the decision log of every visitor, and a mobile push when bot traffic spikes.</p>
+
+                    <div class="period-toggle-label">Billed in USD on Whop<span style="display:block;max-width:430px;margin:6px auto 0;font-size:13px;font-weight:400;text-transform:none;letter-spacing:0;color:var(--dim)">$69.99/month · 7-day free trial · same cloaker that Brazilian accounts buy in BRL on Stripe</span></div>
+                    <div class="period-toggle">
+                        <div class="period-switcher">
+                            <button class="period-btn active" data-period="monthly">Monthly</button>
+                        </div>
+                    </div>
+
+                    <div class="p-price-wrap">
+                        <div class="p-price active" data-period="monthly"><span class="p-curr">$</span><span class="p-val">69</span><span class="p-per">.99/month</span></div>
+                    </div>
+
+                    <a href="/en/cadastro/?plan=Maré&period=monthly" class="btn btn-p btn-full plan-link pricing-cta" data-plan="Maré" data-cta-base="Activate Cloaker" data-cta-sufixo="/month">Activate Cloaker — $69.99/month</a>
+                    <div class="guarantee-badge">7-day guarantee</div>
+                    <p class="guarantee-text">Subscribe, configure and run real traffic for <strong>7 days</strong>. If it is not for you, just ask — the guarantee covers the amount charged. The worst case here is 7 days; the worst case today is losing the account.</p>
+                    <p class="p-micro"><strong style="color:var(--dim)">About $2.30 a day.</strong> One price because our cost is per analyzed request, not per seat — and it costs more than a script cloaker because the decision runs on a server, not in a JavaScript snippet hosted on your own page.<br>No contract and no penalty: cancel, access continues until the end of the period already paid and the subscription does not renew · Analyzed requests with no quota: scaling budget does not change the invoice · Setup in 15 minutes, with free support on the first configuration</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- [PENDENTE: cliente fornece prova de existência] Formato pronto para receber; nada aqui pode ser preenchido por nós:
+             (a) 1 a 3 depoimentos nominais — nome, @ do perfil público e uma frase concreta (o que mudou e em quanto tempo). Sem nome verificável, não entra;
+             (b) 1 case com print de decision log ou do painel, com os números que o cliente autorizar publicar;
+             (c) tempo de mercado e/ou nº de contas ativas — só o número que o cliente confirmar por escrito.
+             Enquanto não vier, fica só o que já é verificável na linha abaixo (razão social, CNPJ e canal de suporte, os mesmos do rodapé). -->
+        <p class="p-micro rv" style="margin-top:clamp(24px,3vw,32px)">Payment by card on Whop (USD). Quem cobra, emite a nota e responde por esta assinatura é a <strong style="color:var(--dim)">BLACKINK TECNOLOGIA LTDA</strong> &mdash; CNPJ 66.362.785/0001-50, Goi&acirc;nia/GO. D&uacute;vida antes de assinar: <a href="mailto:suporte@blackink.cloud" style="color:var(--dim);text-decoration:underline">suporte@blackink.cloud</a>.</p>
+    </div>
+</section>
+<div class="sep"></div>
+
+<section class="section" id="comparison">
+    <div class="container">
+        <div class="t-label rv" style="text-align:center;margin-bottom:16px">Comparison</div>
+        <h2 class="t-lg rv rv-d1" style="text-align:center;max-width:880px;margin:0 auto 16px">The script on the page only acts<br><span class="grad">after the HTML already left</span></h2>
+        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:520px;margin:0 auto clamp(32px,4vw,48px)">Fair warning before the table: on price, BlackInk loses. There are cheaper cloakers than $69.99/month, and if price is your only criterion nothing below will convince you.</p>
+        <div class="comp-table rv rv-d3">
+            <div class="comp-row comp-row--header">
+                <div class="comp-cell">Capability</div>
+                <div class="comp-cell comp-cell--bi comp-col-bi">BlackInk</div>
+                <div class="comp-cell">Client-side cloaker</div>
+            </div>
+            <div class="comp-row"><div class="comp-cell">Decides before HTML leaves the server</div><div class="comp-cell comp-col-bi"><span class="comp-check">&#10003;</span></div><div class="comp-cell"><span class="comp-partial">Filters after the HTML</span></div></div>
+            <div class="comp-row"><div class="comp-cell">Blocks bots, VPNs, proxies and datacenters</div><div class="comp-cell comp-col-bi"><span class="comp-check">&#10003;</span></div><div class="comp-cell"><span class="comp-partial">IP list</span></div></div>
+            <div class="comp-row"><div class="comp-cell">Safe page delivered to the reviewer with no redirect and no script</div><div class="comp-cell comp-col-bi"><span class="comp-check">&#10003;</span></div><div class="comp-cell"><span class="comp-cross">&#10007;</span></div></div>
+            <!-- Célula da direita fica só na afirmação verificável (script do fornecedor aparece no HTML). NÃO escrever que o concorrente compartilha domínio ou blacklist sem prova. -->
+            <div class="comp-row"><div class="comp-cell">Vendor footprint</div><div class="comp-cell comp-col-bi"><strong style="color:var(--accent);font-weight:600">Nothing of ours in your HTML</strong></div><div class="comp-cell"><span class="comp-partial">Your domain + vendor script</span></div></div>
+        </div>
+        <p class="rv rv-d4" style="font-size:16px;line-height:1.8;color:var(--dim);max-width:620px;margin:clamp(32px,4vw,48px) auto 0;text-align:center">The test above closes here: with a script filter, the offer-page HTML leaves the server in full and only then the screen changes. The reviewer reads what the server sent, not what the script showed.</p>
+    </div>
+</section>
+
+<section class="section" id="faq" style="background:var(--bg2)" aria-label="Perguntas Frequentes">
+    <div class="container">
+        <div class="t-label rv" style="text-align:center;margin-bottom:16px">Objections</div>
+        <h2 class="t-lg rv rv-d1" style="text-align:center;margin-bottom:56px">Before you change the <span class="grad">ad destination URL</span></h2>
+        <!-- Ordem proposital: os dois slots mais lidos do FAQ sao os primeiros. Logistica ("quanto tempo leva",
+             "como configuro") nao vence objecao — ela foi para o fim, junto com "preciso de conhecimento tecnico".
+             Nao subir de volta. -->
+        <div class="faq-list">
+            <!-- [PENDENTE: cliente confirma se os Termos de Uso já têm cláusula de confidencialidade / não-uso do conteúdo do assinante e se ela pode ser citada nominalmente.]
+                 Ao confirmar: citar o número da cláusula no fim do parágrafo abaixo e espelhar a resposta no FAQPage do JSON-LD no <head>.
+                 NUNCA escrever "nunca olhamos", "não acessamos" ou "não usamos" sem respaldo contratual por escrito. -->
+            <details class="faq-i rv rv-d1"><summary class="faq-q">You can see my offer page. What stops you from copying my offer?</summary><div class="faq-a">We can — and it cannot be otherwise: deciding on the server which page goes out requires both pages to be registered in the dashboard. No server-side cloaker works without that, and anyone who says they route without seeing your page is describing a script on the page, not a server cloaker. What exists on our side is a named company: the platform is operated, billed and invoiced by BLACKINK TECNOLOGIA LTDA, CNPJ 66.362.785/0001-50, and what binds us is written in the <a href="/termos-de-uso/" style="color:var(--dim);text-decoration:underline">Terms of Use</a> — read them before you subscribe, not after.</div></details>
+            <!-- [PENDENTE: cliente confirma retenção e exclusão de dados]
+                 A página vende decision log com IP, ISP, geo e device de cada visitante como feature, e a FAQ logo acima admite que a BlackInk vê a offer page.
+                 Somadas, as duas dizem ao leitor que existe aqui um registro completo da operação dele. A página nunca diz por quanto tempo esse registro fica,
+                 nem o que acontece com ele no cancelamento. Perguntar, nesta ordem: (1) por quanto tempo o decision log fica guardado;
+                 (2) o assinante exporta e apaga os logs sozinho pelo painel; (3) o que é apagado quando ele cancela e em quanto tempo;
+                 (4) a Política de Privacidade já cobre isso e pode ser citada nominalmente.
+                 Bloco fica comentado de propósito — FAQ que pergunta e não responde é pior que FAQ nenhuma.
+                 Ao receber confirmação POR ESCRITO, descomentar e trocar RETENCAO pela resposta exata.
+                 NUNCA escrever "não guardamos", "apagamos na hora" ou prazo em dias sem confirmação por escrito. Ao preencher, espelhar no FAQPage do JSON-LD no <head>.
+            <details class="faq-i rv rv-d1"><summary class="faq-q">O que vocês guardam sobre os meus visitantes e as minhas páginas?</summary><div class="faq-a">RETENCAO. O que já dá para conferir antes de assinar está escrito: o que a BlackInk faz com esses dados está na <a href="/politica-de-privacidade/" style="color:var(--dim);text-decoration:underline">Privacy Policy</a>, e o que vale entre nós dois está nos <a href="/termos-de-uso/" style="color:var(--dim);text-decoration:underline">Terms of Use</a> — leia antes de assinar, não depois.</div></details>
+            -->
+            <details class="faq-i rv rv-d1"><summary class="faq-q">Do I need to connect my ads account? Does it work outside Google?</summary><div class="faq-a">No — no OAuth, no integration, no access to your account. And it works the same on Google Ads, Meta and TikTok because it depends on none of them: the decision is about who opened the URL, not which dashboard the click came from.</div></details>
+            <!-- [PENDENTE: cliente confirma o método técnico] Fato dos dois domínios confirmado pelo cliente em 2026-08-20. O COMO da ligação (CNAME, DNS, proxy reverso) NÃO foi confirmado — não escrever esses termos em texto visível. -->
+            <details class="faq-i rv rv-d1"><summary class="faq-q">Will the ad point to one of your domains?</summary><div class="faq-a">No. Two domains, both yours: one hosts the safe page and the offer page, the other is what goes in the ad. The BlackInk domain does not appear anywhere — not in the ad, not to Google, Meta or TikTok, not to the visitor, not to your customer. You do not share footprint with any other advertiser: another client's banned domain does not touch yours. And if you cancel, both domains stay yours.</div></details>
+            <!-- [PENDENTE: cliente confirma quantos domínios, ofertas e campanhas uma assinatura de R$ 399,99 cobre]
+                 A página ensina que a operação usa DOIS domínios e diz que a cobrança não é por assento, mas nunca diz o escopo:
+                 quem tem 6 ofertas multiplica o preço por 6 antes de perguntar. Bloco fica comentado de propósito —
+                 FAQ que pergunta e não responde é pior que FAQ nenhuma.
+                 Ao receber confirmação POR ESCRITO, descomentar e trocar ESCOPO por uma das duas formas:
+                   sem teto: "Domínios, ofertas e campanhas não têm limite por assinatura."
+                   com teto: "Cada assinatura cobre até N domínios e N ofertas." (número exato)
+                 NUNCA publicar "ilimitado" sem confirmação por escrito. Ao preencher, espelhar no FAQPage do JSON-LD no <head>
+                 e acrescentar o mesmo fato como terceiro item da linha do pricing que termina em "Setup em 15 min, com suporte gratuito na configuração".
+            <details class="faq-i rv rv-d2"><summary class="faq-q">Posso rodar mais de uma oferta na mesma assinatura?</summary><div class="faq-a">ESCOPO. A cobrança é uma só e não muda com o tamanho da operação: não é por assento, e requisições analisadas não têm franquia — escalar budget não muda a fatura.</div></details>
+            -->
+            <!-- [PENDENTE: cliente confirma comportamento em indisponibilidade] Falta a metade do nosso lado desta resposta. Perguntar, nesta ordem: (1) o que a plataforma faz com um clique que chega durante indisponibilidade — serve safe page, serve offer page, ou não responde; (2) existe página ou canal de status e como o assinante é avisado; (3) existe algum compromisso de disponibilidade que ele queira publicar; (4) em quanto tempo e em que horário suporte@blackink.cloud responde — durante indisponibilidade esse e-mail é o único canal que a resposta oferece, e hoje a página não diz se ele volta em 10 minutos ou em 3 dias; (5) indisponibilidade prolongada gera crédito ou reembolso proporcional, e por qual critério. NUNCA escrever número de uptime, percentual, SLA, "redundância" ou "failover" sem confirmação por escrito. Ao preencher, espelhar o texto no bloco FAQPage do JSON-LD no <head>. -->
+            <details class="faq-i rv rv-d2"><summary class="faq-q">If BlackInk goes down, does my traffic stop?</summary><div class="faq-a">Every click passes through here — that is what puts the decision on the server instead of in a script, and it would be dishonest to pretend that does not make you dependent on us. So the useful answer is not &ldquo;it never goes down&rdquo;: the emergency exit is yours. Both domains are yours, and disconnecting them from BlackInk to serve your pages directly does not depend on our dashboard or opening a ticket; it is the same move as canceling. And if the problem is on our side, the channel that does not depend on the dashboard is <a href="mailto:suporte@blackink.cloud" style="color:var(--dim);text-decoration:underline">suporte@blackink.cloud</a>.</div></details>
+            <details class="faq-i rv rv-d2"><summary class="faq-q">I already use another cloaker. Do I have to pause the campaign to migrate?</summary><div class="faq-a">No. The whole migration happens outside the campaign: you register the safe page and offer page in the dashboard (or use BlackInk Clone) and adjust the rules while your current cloaker keeps running traffic as usual. Nothing changes for the visitor until you swap the ad destination URL — that swap is the only moment the campaign feels the migration, and you choose when. You can start with one campaign, compare it with the ones still on the old cloaker, and move the rest later.</div></details>
+            <details class="faq-i rv rv-d3"><summary class="faq-q">What if the reviewer discovers the cloaker?</summary><div class="faq-a">There is no cloaker for them to discover. They open your destination URL and receive the safe page directly — HTTP 200, no redirect, no detection JavaScript. Nothing is left in their browser showing that a choice happened. In exchange, the safe page has to stand on its own: BlackInk decides who sees what; it does not make bad content pass review.</div></details>
+            <details class="faq-i rv rv-d3"><summary class="faq-q">What if it blocks a real buyer?</summary><div class="faq-a">It happens — every filter errs to one side, and this one errs toward closing. That is why every signal is your toggle: bot, VPN, datacenter, device and country you turn on and off, and a disabled signal never sends anyone to the safe page. When a divert looks wrong, it is in the decision log with IP, ISP, geo, device and the reason — you see which rule caught it and turn that rule off. That is why the 7 days are with real traffic: calibrating this only happens on your campaign, not on ours.</div></details>
+            <details class="faq-i rv rv-d4"><summary class="faq-q">Cloaking goes against the networks' stated policy. So?</summary><div class="faq-a">It does — and nobody honest will say otherwise. The decision happening on the server means nothing is left in the reviewer's browser; it does not mean, and nobody can promise, that your account will never be banned. Anyone who guarantees &ldquo;account never banned again&rdquo; is selling something else. What changes here is who receives your page. What stays yours is the risk of the operation, the offer and the safe page.</div></details>
+            <details class="faq-i rv rv-d4"><summary class="faq-q">What if I want to cancel? Is there a fee or notice period?</summary><div class="faq-a">There is no contract and no lock-in. You have a 7-day guarantee on the amount charged. After that you cancel whenever you want, with no fee and no notice — access continues until the end of the period already paid and the subscription does not renew. Before you close, disconnect from BlackInk any domains still routing traffic — they are yours and they stay yours.<!-- [PENDENTE: cliente confirma o passo técnico de desconexão no cancelamento] Não escrever CNAME, DNS ou proxy reverso em texto visível até a confirmação. --></div></details>
+            <details class="faq-i rv rv-d5"><summary class="faq-q">Do I need technical knowledge?</summary><div class="faq-a">No. The dashboard is visual: register your pages, turn filters on and configure geo and device with toggles. BlackInk Clone makes it even easier if you already have a finished page. If you get stuck, help on the first configuration is free and, after that, support is by ticket in the platform.</div></details>
+            <details class="faq-i rv rv-d5"><summary class="faq-q">How long does setup take?</summary><div class="faq-a">Cloaker setup takes about 15 minutes. Register the safe page and offer page in the platform, configure filtering rules by geo, device and ISP, connect your domain to BlackInk — and routing works immediately. The team offers free support on the first configuration.</div></details>
+            <details class="faq-i rv rv-d5"><summary class="faq-q">How do I set up my pages?</summary><div class="faq-a">Register the HTML or code of the safe page and the offer page directly in the BlackInk dashboard. Alternatively, use <strong>BlackInk Clone</strong>: a platform tool that copies the structure of a page that already exists and leaves it ready as a safe page or offer page, without you rebuilding the HTML by hand. Then configure the filtering rules and keep your domain as the ad destination — the platform decides which page to serve to each visitor.</div></details>
+        </div>
+    </div>
+</section>
+
+<section class="section cta-final">
+    <div class="cta-orb"></div>
+    <div class="container" style="position:relative;z-index:1">
+        <div class="t-label rv" style="text-align:center;margin-bottom:16px">Start now</div>
+        <h2 class="t-lg rv rv-d1" style="text-align:center">The next review is coming.<br>The question is <span class="grad">what it will find</span></h2>
+        <p class="t-body-lg rv rv-d2" style="text-align:center;max-width:520px;margin:16px auto 36px">It does not warn you, and it almost always arrives on a day the campaign is doing well. The only thing you can decide beforehand is who opens the door. 15 minutes of setup, without touching your ads account.</p>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center" class="rv rv-d3">
+            <a href="/en/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link" data-plan="Maré" data-cta-base="Activate Cloaker" data-cta-sufixo="/month">Activate Cloaker — $69.99/month</a>
+        </div>
+        <p class="rv rv-d4" style="text-align:center;margin-top:24px;font-size:13px;color:var(--muted)">7-day guarantee · The advertised domain is yours · No contract</p>
+    </div>
+</section>
+
+
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="f-grid">
+            <div class="f-brand"><a href="#" class="hdr-logo" style="font-size:22px">Black<span>Ink</span></a></div>
+            <div><div class="f-col-t">Product</div><div class="f-links"><a href="#como-funciona">How it works</a><a href="#preco">Pricing</a><a href="#faq">FAQ</a><a href="https://app.blackink.cloud">Dashboard</a></div></div>
+            <div><div class="f-col-t">Legal</div><div class="f-links"><a href="/politica-de-privacidade/">Privacy Policy</a><a href="/termos-de-uso/">Terms of Use</a></div></div>
+        </div>
+        <div class="f-bottom">
+            <div class="f-legal">
+                <strong>BLACKINK TECNOLOGIA LTDA</strong>
+                <span>CNPJ 66.362.785/0001-50</span>
+                <span>Av. Deputado Jamel Cecilio, 2496, Sala 143A &mdash; Jd. Goi&aacute;s, Goi&acirc;nia/GO &mdash; CEP 74810-100</span>
+                <span><a href="mailto:suporte@blackink.cloud">suporte@blackink.cloud</a></span>
+            </div>
+            <span>&copy; 2026 BlackInk. Todos os direitos reservados.</span>
+        </div>
+    </div>
+</footer>
+
+<!-- Scroll progress indicator -->
+<div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+<!-- Sticky CTA -->
+<div class="sticky-cta" id="sticky-cta" aria-hidden="true">
+    <div class="sticky-cta-inner">
+        <p class="sticky-cta-text"><span class="sticky-cta-long">Server-side cloaker — <strong>safe page and offer page</strong> · </span>7-day guarantee</p>
+        <a href="/en/cadastro/?plan=Maré&period=monthly" class="btn btn-p plan-link" data-plan="Maré" data-cta-base="Activate Cloaker" data-cta-sufixo="/month">Activate Cloaker — $69.99/month</a>
+        <button class="sticky-cta-close" id="sticky-cta-close" aria-label="Close">&times;</button>
+    </div>
+</div>
+
+
+<script>
+(() => {
+document.documentElement.classList.add('hero-split'); // a partir daqui o JS assume a revelação do H1
+const loader = document.getElementById('loader');
+const heroTitle = document.getElementById('hero-title');
+
+// ── Split hero text into characters ──
+let globalCharIdx = 0;
+heroTitle.querySelectorAll('.ln-i').forEach(lnI => {
+    const text = lnI.textContent;
+    const isGrad = lnI.classList.contains('grad') || lnI.classList.contains('grad-hero');
+    lnI.innerHTML = '';
+    // O gradiente vai em cada .ch; sem isto o background-clip:text do PAI repinta
+    // todos os glifos empilhados na borda esquerda da linha (fantasma no hero).
+    if (isGrad) { lnI.style.background = 'none'; lnI.style.webkitTextFillColor = 'initial'; }
+    for (const char of text) {
+        const span = document.createElement('span');
+        span.className = 'ch';
+        span.textContent = char === ' ' ? '\u00A0' : char;
+        span.style.transitionDelay = (0.05 + globalCharIdx * 0.005) + 's';
+        if (isGrad) { span.style.background = 'linear-gradient(135deg,#f0f4f8 0%,var(--accent) 60%,var(--accent2) 100%)'; span.style.webkitBackgroundClip = 'text'; span.style.webkitTextFillColor = 'transparent'; span.style.backgroundClip = 'text'; }
+        lnI.appendChild(span);
+        globalCharIdx++;
+    }
+});
+
+// O split terminou — libera a revelação. Um dono só, sem timer e sem GSAP:
+// quem corta os caracteres é quem manda revelar.
+heroTitle.classList.add('go');
+
+// ── Page load sequence ──
+// Dispensa AGORA, sem esperar evento nenhum. DOMContentLoaded não serve: ele espera
+// os scripts defer por especificação, e dois deles vêm do cdnjs — o loader ficava
+// refém de um CDN de terceiro para sair da frente do hero.
+// Este script já roda depois do <div class="loader"> e do hero inteiro no body.
+loader.classList.add('done');
+
+// ── Header ──
+const hdr = document.getElementById('hdr');
+window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', scrollY > 50), { passive: true });
+
+// ── Scroll reveal ──
+const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); } });
+}, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+// O observer está de pé — só agora é seguro esconder o que ele vai revelar.
+document.documentElement.classList.add('rv-on');
+
+// ── Mobile menu ──
+const mobTog = document.querySelector('.mob-tog');
+const hdrNav = document.querySelector('.hdr-nav');
+if (mobTog && hdrNav) {
+    mobTog.addEventListener('click', () => {
+        mobTog.classList.toggle('active');
+        hdrNav.classList.toggle('mob-open');
+        document.body.style.overflow = hdrNav.classList.contains('mob-open') ? 'hidden' : '';
+    });
+    hdrNav.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => { mobTog.classList.remove('active'); hdrNav.classList.remove('mob-open'); document.body.style.overflow = ''; });
+    });
+}
+
+// ── Magnetic buttons ──
+if (matchMedia('(pointer:fine)').matches) {
+    document.querySelectorAll('.btn-p:not(.btn-sm):not(.btn-full)').forEach(btn => {
+        let btnRect;
+        btn.addEventListener('mouseenter', () => { btnRect = btn.getBoundingClientRect(); });
+        btn.addEventListener('mousemove', e => {
+            if (!btnRect) return;
+            btn.style.transform = `translate(${(e.clientX-btnRect.left-btnRect.width/2)*.12}px,${(e.clientY-btnRect.top-btnRect.height/2)*.12}px)`;
+        });
+        btn.addEventListener('mouseleave', () => { btn.style.transform = ''; btnRect = null; });
+    });
+}
+
+
+
+
+
+// ── Period Toggle for Pricing ──
+const periodBtns = document.querySelectorAll('.period-btn');
+const allPrices = document.querySelectorAll('.p-price[data-period]');
+// Pricing mensal equivalente de cada período. Fonte única — os rótulos de TODOS os
+// CTAs e o texto da barra fixa são montados a partir daqui, senão um botão anuncia
+// R$399,99 e leva para um checkout de R$339,99.
+const PRICING_CTA_PRICES = {
+    monthly: '$69.99',
+    quarterly: '$69.99',
+    yearly: '$69.99'
+};
+
+function updatePricingCtaLabel(period) {
+    const price = PRICING_CTA_PRICES[period] || PRICING_CTA_PRICES.monthly;
+    document.querySelectorAll('[data-cta-base]').forEach(btn => {
+        btn.textContent = btn.dataset.ctaBase + ' — ' + price + (btn.dataset.ctaSufixo || '');
+    });
+}
+
+periodBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const period = btn.dataset.period;
+
+        // Update active button
+        periodBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Update visible prices
+        allPrices.forEach(price => {
+            price.classList.remove('active');
+            if (price.dataset.period === period) {
+                price.classList.add('active');
+            }
+        });
+
+        updatePlanLinks(period);
+        updatePricingCtaLabel(period);
+    });
+});
+
+// Plan CTA links — sync period + referral params
+function updatePlanLinks(period) {
+    period = period || document.querySelector('.period-btn.active')?.dataset.period || 'monthly';
+    const urlRef = new URLSearchParams(window.location.search).get('ref') || localStorage.getItem('blackink_referral_code');
+    const urlFref = new URLSearchParams(window.location.search).get('fref') || localStorage.getItem('blackink_friend_referral_code');
+    document.querySelectorAll('.plan-link[data-plan]').forEach(link => {
+        const plan = link.dataset.plan;
+        let url = `/en/cadastro/?plan=${encodeURIComponent(plan)}&period=monthly`;
+        if (urlRef) url += `&ref=${encodeURIComponent(urlRef)}`;
+        if (urlFref) url += `&fref=${encodeURIComponent(urlFref)}`;
+        link.href = url;
+    });
+}
+
+// Whop Pixel — conversion events only. Page views already fire from the snippet.
+// The Whop panel looks for the whop.track('…') literals on this URL.
+// view_content / complete_registration / add_to_cart / contact stay here.
+// complete_registration also fires for real on /en/cadastro/ after a successful POST.
+// No purchase/checkout — Whop records those on the server.
+function whopChargeForPeriod(period) {
+    return 69.99;
+}
+function currentWhopCharge() {
+    return { value: whopChargeForPeriod('monthly'), currency: 'USD' };
+}
+document.querySelectorAll('.plan-link[data-plan]').forEach(link => {
+    link.addEventListener('click', () => {
+        const charge = { value: whopChargeForPeriod('monthly'), currency: 'USD' };
+        if (typeof whop !== 'undefined' && typeof whop.track === 'function') {
+            whop.track('add_to_cart', charge);
+            whop.track('complete_registration', charge);
+        }
+    });
+});
+document.querySelectorAll('a[href="#como-funciona"], a[href="#preco"], a[href="#faq"]').forEach(link => {
+    link.addEventListener('click', () => {
+        if (typeof whop !== 'undefined' && typeof whop.track === 'function') {
+            whop.track('view_content', currentWhopCharge());
+        }
+    });
+});
+periodBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        if (typeof whop !== 'undefined' && typeof whop.track === 'function') {
+            whop.track('view_content', currentWhopCharge());
+        }
+    });
+});
+document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+    link.addEventListener('click', () => {
+        if (typeof whop !== 'undefined' && typeof whop.track === 'function') {
+            whop.track('contact');
+        }
+    });
+});
+// O HTML é a única fonte de qual período nasce ativo — não repetir o literal aqui.
+const periodoInicial = document.querySelector('.period-btn.active')?.dataset.period || 'monthly';
+updatePlanLinks(periodoInicial);
+// Fonte única de verdade também no load — sem isso o texto inicial era string
+// estática no HTML e só virava PRICING_CTA_PRICES depois do primeiro clique.
+updatePricingCtaLabel(periodoInicial);
+
+// ── ROI Calculator (Slider) ──
+const calcSlider = document.getElementById('calc-budget');
+const calcDisplay = document.getElementById('calc-display');
+const calcTotal = document.getElementById('calc-total');
+const calcTotalBar = document.getElementById('calc-total-bar');
+
+if (calcSlider) {
+    const fmt = v => '$' + Math.round(v).toLocaleString('en-US');
+    // Guarda o rAF em andamento por elemento. Sem isso, arrastar o slider dispara
+    // dezenas de animações concorrentes sobre o mesmo nó e a que termina por último
+    // — não necessariamente a mais recente — deixa um valor errado na tela.
+    const animFrames = new WeakMap();
+    const animNum = (el, target, prefix, suffix) => {
+        cancelAnimationFrame(animFrames.get(el));
+        const start = parseFloat(el.dataset.current || '0');
+        el.dataset.current = String(target);
+        const dur = 500;
+        const t0 = performance.now();
+        (function tick(now) {
+            const p = Math.min((now - t0) / dur, 1);
+            const ease = 1 - Math.pow(1 - p, 3);
+            const val = start + (target - start) * ease;
+            el.textContent = prefix + Math.round(val).toLocaleString('en-US') + suffix;
+            if (p < 1) animFrames.set(el, requestAnimationFrame(tick));
+        })(t0);
+    };
+
+    const updateCalc = () => {
+        const val = parseInt(calcSlider.value, 10) || 0;
+        // ponytail: teto lido do próprio input — trocar o max no HTML não reabre o bug da barra de preenchimento
+        const maxBudget = parseInt(calcSlider.max, 10);
+        // ponytail: piso lido do proprio input, igual ao teto — mexer no min do HTML nao desalinha a barra
+        const minBudget = parseInt(calcSlider.min, 10);
+        const pct = ((val - minBudget) / (maxBudget - minBudget)) * 100;
+
+        calcSlider.style.setProperty('--fill', pct + '%');
+        calcDisplay.innerHTML = '$<span>' + val.toLocaleString('en-US') + '</span>';
+
+        // 22% e o total de trafego invalido (bot, crawler e revisor ja incluidos).
+        // Somar revisores por fora seria contar duas vezes a mesma premissa.
+        const total = val * 0.22;
+
+        animNum(calcTotal, total, '$', '');
+
+        // Summary bar
+        const maxTotal = maxBudget * 0.25;
+        if (calcTotalBar) calcTotalBar.style.width = Math.max((total / maxTotal) * 100, 2) + '%';
+
+        // ponytail: âncora do pricing reusa o mesmo total; sem listener novo, sem estado novo
+        const anchorEl = document.getElementById('pricing-anchor');
+        if (anchorEl) anchorEl.textContent = fmt(total);
+    };
+
+    calcSlider.addEventListener('input', updateCalc);
+    updateCalc();
+}
+
+// SCROLL PROGRESS + STICKY CTA BAR
+const scrollBar = document.getElementById('scroll-progress');
+const stickyCta = document.getElementById('sticky-cta');
+const stickyClose = document.getElementById('sticky-cta-close');
+const heroSection = document.querySelector('.hero');
+const footerSection = document.querySelector('.footer');
+let stickyDismissed = false;
+
+if (stickyClose) {
+    stickyClose.addEventListener('click', () => {
+        stickyDismissed = true;
+        stickyCta.classList.remove('visible');
+        // aria-hidden acompanha a visibilidade real: com o atributo fixo em "true" no HTML, a barra
+        // ficava visivel na tela E escondida do leitor de tela, com link e botao focaveis dentro.
+        stickyCta.setAttribute('aria-hidden', 'true');
+    });
+}
+
+if (scrollBar || stickyCta) {
+    let ticking = false;
+    const heroBottom = heroSection ? heroSection.offsetTop + heroSection.offsetHeight : 600;
+    let cachedDocHeight = document.documentElement.scrollHeight - window.innerHeight;
+    let cachedFooterTop = footerSection ? footerSection.offsetTop : Infinity;
+    let resizeTimer;
+    window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(() => { cachedDocHeight = document.documentElement.scrollHeight - window.innerHeight; cachedFooterTop = footerSection ? footerSection.offsetTop : Infinity; }, 200); }, { passive: true });
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                const scrollTop = window.scrollY;
+                if (scrollBar && cachedDocHeight > 0) {
+                    scrollBar.style.width = (scrollTop / cachedDocHeight * 100) + '%';
+                }
+                if (stickyCta && !stickyDismissed) {
+                    const inRange = scrollTop > heroBottom && (scrollTop + window.innerHeight) < cachedFooterTop + 100;
+                    stickyCta.classList.toggle('visible', inRange);
+                    stickyCta.setAttribute('aria-hidden', inRange ? 'false' : 'true');
+                }
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
+}
+
+})();
+</script>
+<!-- Cursor glow -->
+<div class="cursor-glow" id="cursor-glow"></div>
+
+<script src="/js/referral-tracking.js"></script>
+<!-- GSAP — defer garante execução após parse do HTML -->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<!-- ?v= força o navegador a buscar a versão nova após deploy. Incrementar a cada mudança no arquivo. -->
+<script defer src="js/gsap-enhancements.js?v=7"></script>
+</body>
+</html>
