@@ -1659,6 +1659,31 @@ function updatePlanLinks(period) {
         link.href = url;
     });
 }
+
+// Whop Pixel — conversion events only. Page views already fire from the snippet.
+// add_to_cart: clique em "Ativar Cloaker" (hero, pricing, CTA final, barra sticky).
+// contact: clique no e-mail de suporte. Sem purchase/checkout — o Whop registra no servidor.
+function trackWhop(name, props) {
+    if (typeof whop === 'undefined' || typeof whop.track !== 'function') return;
+    if (props) whop.track(name, props);
+    else whop.track(name);
+}
+function whopChargeForPeriod(period) {
+    if (period === 'quarterly') return 1079.97;
+    if (period === 'yearly') return 4079.90;
+    return 399.99;
+}
+document.querySelectorAll('.plan-link[data-plan]').forEach(link => {
+    link.addEventListener('click', () => {
+        let period = 'monthly';
+        try { period = new URL(link.href, location.origin).searchParams.get('period') || 'monthly'; }
+        catch (e) { period = document.querySelector('.period-btn.active')?.dataset.period || 'monthly'; }
+        trackWhop('add_to_cart', { value: whopChargeForPeriod(period), currency: 'BRL' });
+    });
+});
+document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+    link.addEventListener('click', () => trackWhop('contact'));
+});
 // O HTML é a única fonte de qual período nasce ativo — não repetir o literal aqui.
 const periodoInicial = document.querySelector('.period-btn.active')?.dataset.period || 'monthly';
 updatePlanLinks(periodoInicial);
