@@ -131,5 +131,5 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 
 ## 2026-08-22 — Whop Pixel: só eventos de funil
 **Contexto**: o snippet global já chama `whop.track("page")`. Purchase/checkout o Whop registra no servidor.
-**Regra**: não adicionar page view, purchase, subscription ou checkout. Eventos manuais: `view_content` em seção/período; `add_to_cart` no clique de `.plan-link`; `complete_registration` no cadastro bem-sucedido; `contact` no mailto de suporte.
+**Regra**: não adicionar page view, purchase, subscription ou checkout. O painel do Whop lê o HTML da landing — os literais `whop.track('view_content')` e `whop.track('complete_registration')` precisam existir em `index.html`. Disparo: `view_content` em seção/período; `add_to_cart` + `complete_registration` no `.plan-link`; `complete_registration` de novo no cadastro ok; `contact` no mailto.
 **Status**: ativo

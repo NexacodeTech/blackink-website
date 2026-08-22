@@ -619,11 +619,6 @@
 
     // Whop Pixel — conversion events only. Page views already fire from the snippet.
     // complete_registration: conta criada de fato. Sem purchase/checkout — o Whop registra no servidor.
-    function trackWhop(name, props) {
-        if (typeof whop === 'undefined' || typeof whop.track !== 'function') return;
-        if (props) whop.track(name, props);
-        else whop.track(name);
-    }
     function whopChargeForPeriod(billingPeriod) {
         if (billingPeriod === 'quarterly') return Number((planData.priceValue * 3 * 0.9).toFixed(2));
         if (billingPeriod === 'yearly') return Number((planData.priceValue * 12 * 0.85).toFixed(2));
@@ -731,7 +726,9 @@
             localStorage.removeItem('blackink_friend_referral_token');
             localStorage.removeItem('blackink_friend_referral_code');
 
-            trackWhop('complete_registration', { value: whopChargeForPeriod(period), currency: 'BRL' });
+            if (typeof whop !== 'undefined' && typeof whop.track === 'function') {
+                whop.track('complete_registration', { value: whopChargeForPeriod(period), currency: 'BRL' });
+            }
 
             // Etapa 3: a API devolve a URL do checkout da Stripe
             // 250ms deixa o pixel enfileirar o complete_registration antes de sair do domínio.

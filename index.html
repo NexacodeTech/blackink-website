@@ -1661,14 +1661,10 @@ function updatePlanLinks(period) {
 }
 
 // Whop Pixel — conversion events only. Page views already fire from the snippet.
-// view_content: "Ver como funciona", nav/footer de seção, e troca de período no preço.
-// add_to_cart: clique em "Ativar Cloaker" (hero, pricing, CTA final, barra sticky).
-// contact: clique no e-mail de suporte. Sem purchase/checkout — o Whop registra no servidor.
-function trackWhop(name, props) {
-    if (typeof whop === 'undefined' || typeof whop.track !== 'function') return;
-    if (props) whop.track(name, props);
-    else whop.track(name);
-}
+// O painel do Whop busca ESTA URL e procura os literais whop.track('…') no HTML.
+// view_content / complete_registration / add_to_cart / contact ficam todos aqui.
+// complete_registration também dispara de verdade no /cadastro/ após o POST ok.
+// Sem purchase/checkout — o Whop registra no servidor.
 function whopChargeForPeriod(period) {
     if (period === 'quarterly') return 1079.97;
     if (period === 'yearly') return 4079.90;
@@ -1683,17 +1679,33 @@ document.querySelectorAll('.plan-link[data-plan]').forEach(link => {
         let period = 'monthly';
         try { period = new URL(link.href, location.origin).searchParams.get('period') || 'monthly'; }
         catch (e) { period = document.querySelector('.period-btn.active')?.dataset.period || 'monthly'; }
-        trackWhop('add_to_cart', { value: whopChargeForPeriod(period), currency: 'BRL' });
+        const charge = { value: whopChargeForPeriod(period), currency: 'BRL' };
+        if (typeof whop !== 'undefined' && typeof whop.track === 'function') {
+            whop.track('add_to_cart', charge);
+            whop.track('complete_registration', charge);
+        }
     });
 });
 document.querySelectorAll('a[href="#como-funciona"], a[href="#preco"], a[href="#faq"]').forEach(link => {
-    link.addEventListener('click', () => trackWhop('view_content', currentWhopCharge()));
+    link.addEventListener('click', () => {
+        if (typeof whop !== 'undefined' && typeof whop.track === 'function') {
+            whop.track('view_content', currentWhopCharge());
+        }
+    });
 });
 periodBtns.forEach(btn => {
-    btn.addEventListener('click', () => trackWhop('view_content', currentWhopCharge()));
+    btn.addEventListener('click', () => {
+        if (typeof whop !== 'undefined' && typeof whop.track === 'function') {
+            whop.track('view_content', currentWhopCharge());
+        }
+    });
 });
 document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
-    link.addEventListener('click', () => trackWhop('contact'));
+    link.addEventListener('click', () => {
+        if (typeof whop !== 'undefined' && typeof whop.track === 'function') {
+            whop.track('contact');
+        }
+    });
 });
 // O HTML é a única fonte de qual período nasce ativo — não repetir o literal aqui.
 const periodoInicial = document.querySelector('.period-btn.active')?.dataset.period || 'monthly';
