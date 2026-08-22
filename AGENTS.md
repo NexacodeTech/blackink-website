@@ -131,5 +131,10 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 
 ## 2026-08-22 — Whop Pixel: só eventos de funil
 **Contexto**: o snippet global já chama `whop.track("page")`. Purchase/checkout o Whop registra no servidor.
-**Regra**: não adicionar page view, purchase, subscription ou checkout. O painel do Whop lê o HTML da landing — os literais `whop.track('view_content')` e `whop.track('complete_registration')` precisam existir em `index.html`. Disparo: `view_content` em seção/período; `add_to_cart` + `complete_registration` no `.plan-link`; `complete_registration` de novo no cadastro ok; `contact` no mailto.
+**Regra**: não adicionar page view, purchase, subscription ou checkout. O painel do Whop lê o HTML da landing — os literais `whop.track('view_content')` e `whop.track('complete_registration')` precisam existir em `index.html` e em `en/index.html`. Disparo: `view_content` em seção/período; `add_to_cart` + `complete_registration` no `.plan-link`; `complete_registration` de novo no cadastro ok; `contact` no mailto. PT usa `currency: 'BRL'`; `/en` usa `currency: 'USD'` e `69.99`.
+**Status**: ativo
+
+## 2026-08-22 — Funil USD Whop é paralelo ao Stripe BRL
+**Contexto**: tráfego estrangeiro / ads em inglês paga em dólar na Whop; o funil PT continua Stripe R$ 399,99.
+**Regra**: não apontar CTA de `index.html` ou `cadastro/index.html` para Whop. `/en` e `/en/cadastro/` POST ` /api/users/register-whop` com `plan_name=Maré` e `period=monthly`. Preço user-facing EN: $69.99/mês. API interna do plano continua `Maré`.
 **Status**: ativo
