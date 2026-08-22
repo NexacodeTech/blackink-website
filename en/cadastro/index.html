@@ -686,10 +686,6 @@
 
             const data = await response.json().catch(() => ({}));
 
-            if (response.status === 404 || response.status === 405) {
-                throw new Error('USD checkout is still deploying. Wait a minute and try again.');
-            }
-
             if (!response.ok) {
                 throw new Error(data.message || 'Could not create the account');
             }
@@ -704,19 +700,13 @@
                 whop.track('complete_registration', { value: 69.99, currency: 'USD' });
             }
 
-            // Step 3: API returns the Whop USD checkout URL
+            // Step 3: API returns the Whop USD checkout URL with blackink_user_id.
             // 250ms lets the pixel queue complete_registration before leaving the domain.
-            if (data.checkout_url) {
-                setTimeout(() => { window.location.href = data.checkout_url; }, 250);
-            } else {
-                // Sem checkout_url a conta foi criada mas o pagamento não pôde ser
-                // iniciado. Não prometer "redirecionando para o pagamento" — mandar
-                // para o login, que é para onde a pessoa realmente vai.
-                showToast('success', 'Account created', 'We could not open checkout right now. Log in to finish the subscription.');
-                setTimeout(() => {
-                    window.location.href = 'https://app.blackink.cloud/auth/login';
-                }, 3000);
+            if (!data.checkout_url) {
+                throw new Error(data.message || 'Could not create the account');
             }
+
+            setTimeout(() => { window.location.href = data.checkout_url; }, 250);
 
         } catch (error) {
             console.error('Registration error:', error);
