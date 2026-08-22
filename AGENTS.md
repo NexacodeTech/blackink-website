@@ -129,6 +129,11 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Regra**: não reintroduzir links `wa.me`, `chat.whatsapp.com`, widget `.wa-widget` nem menções a suporte/comunidade via WhatsApp. Contato via email (`suporte@theblack.ink`) e ticket/chat na plataforma.
 **Status**: ativo
 
+## 2026-08-22 — Conversão: prova no hero, sem mentir
+**Contexto**: copy agressiva de fora pedia “garante que o revisor nunca mais vê”, “grátis 7 dias” e US$ na home PT.
+**Regra**: prova imediata abaixo do CTA (sem OAuth, sem script, domínio seu, 7 dias de garantia). Não escrever trial grátis nem garantia de que o revisor nunca vê. Home PT = R$ 399,99; `/en` = $69.99.
+**Status**: ativo
+
 ## 2026-08-22 — Whop Pixel: só eventos de funil
 **Contexto**: o snippet global já chama `whop.track("page")`. Purchase/checkout o Whop registra no servidor.
 **Regra**: não adicionar page view, purchase, subscription ou checkout. O painel do Whop lê o HTML da landing — os literais `whop.track('view_content')` e `whop.track('complete_registration')` precisam existir em `index.html` e em `en/index.html`. Disparo: `view_content` em seção/período; `add_to_cart` + `complete_registration` no `.plan-link`; `complete_registration` de novo no cadastro ok; `contact` no mailto. PT usa `currency: 'BRL'`; `/en` usa `currency: 'USD'` e `69.99`.
