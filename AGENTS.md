@@ -128,3 +128,8 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Contexto**: decisão de não expor contato via WhatsApp no site público — links, widget flutuante, comunidade e referências em copy legal/FAQ.
 **Regra**: não reintroduzir links `wa.me`, `chat.whatsapp.com`, widget `.wa-widget` nem menções a suporte/comunidade via WhatsApp. Contato via email (`suporte@theblack.ink`) e ticket/chat na plataforma.
 **Status**: ativo
+
+## 2026-08-22 — Whop Pixel: só eventos de funil
+**Contexto**: o snippet global já chama `whop.track("page")`. Purchase/checkout o Whop registra no servidor.
+**Regra**: não adicionar page view, purchase, subscription ou checkout. Eventos manuais: `view_content` em seção/período; `add_to_cart` no clique de `.plan-link`; `complete_registration` no cadastro bem-sucedido; `contact` no mailto de suporte.
+**Status**: ativo
