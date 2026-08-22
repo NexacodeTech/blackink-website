@@ -684,7 +684,11 @@
                 signal: AbortSignal.timeout(20000)
             });
 
-            const data = await response.json();
+            const data = await response.json().catch(() => ({}));
+
+            if (response.status === 404 || response.status === 405) {
+                throw new Error('USD checkout is still deploying. Wait a minute and try again.');
+            }
 
             if (!response.ok) {
                 throw new Error(data.message || 'Could not create the account');
