@@ -35,7 +35,7 @@
         document.querySelectorAll('a[href]').forEach(function(a) {
             var href = a.getAttribute('href');
             if (!href) return;
-            if (href.indexOf('/cadastro/') === 0 || href.indexOf('/subscribe/') === 0) {
+            if (href.indexOf('/cadastro/') === 0 || href.indexOf('/subscribe/') === 0 || href.indexOf('/en/cadastro/') === 0) {
                 var url = new URL(href, window.location.origin);
                 if (savedRef && !url.searchParams.has('ref')) {
                     url.searchParams.set('ref', savedRef);

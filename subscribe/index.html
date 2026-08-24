@@ -6,8 +6,10 @@
     <title>BlackInk — Cloaker Server-Side</title>
     <meta name="description" content="Cloaker server-side para Google Ads — R$ 399,99/mês. Redirecionando para cadastro.">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <script src="/js/locale-redirect.js"></script>
     <script>
     (function() {
+        if (window.__blackinkLocaleRedirecting) return;
         var params = new URLSearchParams(window.location.search);
         if (!params.has('plan')) params.set('plan', 'Maré');
         if (!params.has('period')) params.set('period', 'monthly');

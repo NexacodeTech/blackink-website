@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/js/locale-redirect.js"></script>
-    <title>Criar Conta — BlackInk</title>
-    <meta name="description" content="Crie sua conta BlackInk e comece a rastrear suas campanhas de tráfego pago.">
+    <title>Create account — BlackInk</title>
+    <link rel="canonical" href="https://blackink.cloud/en/cadastro/">
+    <meta name="description" content="Create your BlackInk account — server-side cloaker for Google Ads, Meta, TikTok and other paid-traffic platforms. $69.99/month on Whop.">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/abyss-tokens.css">
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+    <link href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500,600,700&display=swap" rel="stylesheet">
     <style>
         /* ══════════════════════════════════════════════════════════
            BLACKINK — Register Page
            ══════════════════════════════════════════════════════════ */
         :root {
-            --ff-display: 'Space Grotesk', sans-serif;
-            --ff-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --ff-display: 'General Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --ff-body: 'General Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             --bg: #020a14;
             --bg2: #06111f;
             --surface: rgba(8,22,48,0.45);
@@ -29,6 +29,7 @@
             --accent: #64b4ff;
             --accent2: #38bdf8;
             --green: #34d399;
+            --gold: #fbbf24;   /* usado por .password-strength-bar.medium — sem isto a barra fica transparente */
             --error: #f87171;
             --ease: cubic-bezier(0.16,1,0.3,1);
         }
@@ -109,7 +110,7 @@
         .register-info-logo img{width:100%;height:100%}
 
         .register-info-title{margin-bottom:16px}
-        .register-info-subtitle{margin-bottom:32px;max-width:400px;margin-left:auto;margin-right:auto}
+        .register-info-subtitle{margin-bottom:32px;max-width:400px;margin-left:auto;margin-right:auto;text-wrap:balance}
         @media(min-width:900px){
             .register-info-subtitle{margin-left:0;margin-right:0}
         }
@@ -137,7 +138,8 @@
         .selected-plan{background:rgba(100,180,255,0.04);border:1px solid var(--border-h);border-radius:14px;padding:18px;margin-bottom:28px}
         .selected-plan-label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:13px}
         .selected-plan-row{display:flex;align-items:center;gap:16px}
-        .selected-plan-icon{flex-shrink:0;font-size:32px}
+        .selected-plan-icon{flex-shrink:0;width:32px;height:32px}
+        .selected-plan-icon img{width:100%;height:100%;object-fit:contain}
         .selected-plan-info{flex:1}
         .selected-plan-name{font-family:var(--ff-display);font-weight:700;font-size:18px;color:var(--accent);margin-bottom:4px}
         .selected-plan-price{font-size:14px;color:var(--dim);line-height:1.5}
@@ -203,6 +205,21 @@
 
         /* ── Responsive ── */
         @media(max-width:767px){
+            /* itens de grid com conteúdo largo não encolhem sem min-width:0 —
+               era isso que cortava o checkout horizontalmente no telefone */
+            .register-info,.register-card{min-width:0}
+            .step-line{width:auto;flex:1 1 0;min-width:8px}
+            .step-label{font-size:12px}
+            /* o stepper era cortado pelo overflow:hidden do card em todo telefone.
+               Bolinha fixa, rótulo encolhe, linha absorve o resto. */
+            /* o rótulo empilha embaixo da bolinha em vez de encolher — encolher
+               truncava para "Prod… / Da… / Pagame…" abaixo de 410px */
+            .steps{gap:6px}
+            .step{flex-direction:column;gap:4px;min-width:0}
+            .step-num{width:24px;height:24px;flex:0 0 24px;font-size:12px}
+            .step-label{font-size:11px;white-space:nowrap}
+            .step-line{align-self:flex-start;margin-top:11px}
+
             .main-section{padding:100px 20px 60px}
             .register-features{display:none}
         }
@@ -220,131 +237,8 @@
         .toast-message{font-size:13px;color:var(--dim)}
         .toast-close{flex-shrink:0;background:none;border:none;color:var(--muted);cursor:pointer;padding:4px}
         .toast-close:hover{color:var(--white)}
-
-        /* ══════════════════════════════════════════════════════════
-           WhatsApp Widget Premium — Balão com mensagens rotativas
-           ══════════════════════════════════════════════════════════ */
-        .wa-widget{position:fixed;bottom:24px;right:24px;z-index:9990;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
-
-        /* Balão de mensagem */
-        .wa-bubble{
-            position:relative;
-            max-width:280px;
-            padding:14px 18px;
-            background:linear-gradient(145deg,rgba(12,28,54,0.98) 0%,rgba(6,18,40,0.99) 100%);
-            border:1px solid rgba(37,211,102,0.15);
-            border-radius:18px 18px 4px 18px;
-            box-shadow:0 4px 24px rgba(0,0,0,0.3),0 8px 48px rgba(37,211,102,0.08),inset 0 1px 0 rgba(255,255,255,0.03);
-            backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-            opacity:0;
-            transform:translateY(10px) scale(0.95);
-            transition:opacity .4s var(--ease),transform .4s var(--ease);
-            pointer-events:none;
-            cursor:pointer;
-        }
-        .wa-bubble.visible{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
-        .wa-bubble::before{
-            content:'';position:absolute;top:0;left:10%;right:10%;height:1px;
-            background:linear-gradient(90deg,transparent,rgba(37,211,102,0.2),transparent);
-        }
-        /* Seta do balão */
-        .wa-bubble::after{
-            content:'';position:absolute;bottom:8px;right:-6px;
-            width:12px;height:12px;
-            background:linear-gradient(135deg,transparent 50%,rgba(6,18,40,0.99) 50%);
-            border-right:1px solid rgba(37,211,102,0.15);
-            border-bottom:1px solid rgba(37,211,102,0.15);
-            transform:rotate(-45deg);
-        }
-
-        .wa-bubble-header{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-        .wa-bubble-avatar{
-            width:32px;height:32px;border-radius:50%;
-            background:linear-gradient(145deg,#25D366,#128C7E);
-            display:flex;align-items:center;justify-content:center;
-            box-shadow:0 2px 8px rgba(37,211,102,0.3);
-        }
-        .wa-bubble-avatar svg{width:16px;height:16px;fill:#fff}
-        .wa-bubble-info{display:flex;flex-direction:column;gap:1px}
-        .wa-bubble-name{font-size:13px;font-weight:600;color:var(--white);letter-spacing:-0.01em}
-        .wa-bubble-status{display:flex;align-items:center;gap:5px;font-size:10px;color:var(--green)}
-        .wa-bubble-status::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);animation:waPulse 2s ease-in-out infinite}
-        @keyframes waPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.2)}}
-
-        .wa-bubble-close{
-            position:absolute;top:8px;right:8px;
-            width:20px;height:20px;border-radius:50%;
-            background:rgba(255,255,255,0.05);
-            border:none;cursor:pointer;
-            display:flex;align-items:center;justify-content:center;
-            opacity:0;transition:opacity .3s,background .3s;
-        }
-        .wa-bubble:hover .wa-bubble-close{opacity:1}
-        .wa-bubble-close:hover{background:rgba(255,255,255,0.1)}
-        .wa-bubble-close svg{width:10px;height:10px;stroke:var(--muted);stroke-width:2}
-
-        .wa-bubble-msg{
-            font-size:14px;line-height:1.5;color:var(--dim);
-            min-height:42px;
-            display:flex;align-items:center;
-        }
-        .wa-bubble-msg span{
-            display:block;
-            animation:waMsgIn .4s var(--ease) both;
-        }
-        @keyframes waMsgIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
-
-        .wa-bubble-cta{
-            display:flex;align-items:center;gap:6px;
-            margin-top:10px;padding-top:10px;
-            border-top:1px solid rgba(255,255,255,0.05);
-            font-size:12px;font-weight:600;color:var(--green);
-            transition:color .3s;
-        }
-        .wa-bubble-cta svg{width:14px;height:14px;fill:var(--green);transition:transform .3s var(--ease)}
-        .wa-bubble:hover .wa-bubble-cta svg{transform:translateX(3px)}
-
-        /* Botão principal do WhatsApp */
-        .wa-btn{
-            position:relative;
-            width:60px;height:60px;
-            background:linear-gradient(145deg,#25D366,#128C7E);
-            border-radius:50%;
-            display:flex;align-items:center;justify-content:center;
-            box-shadow:0 4px 20px rgba(37,211,102,0.35),0 8px 40px rgba(37,211,102,0.15);
-            cursor:pointer;
-            transition:transform .4s var(--ease),box-shadow .4s var(--ease);
-            animation:waBtnPulse 3s ease-in-out infinite;
-        }
-        @keyframes waBtnPulse{
-            0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.35),0 8px 40px rgba(37,211,102,0.15),0 0 0 0 rgba(37,211,102,0.3)}
-            50%{box-shadow:0 4px 24px rgba(37,211,102,0.45),0 8px 48px rgba(37,211,102,0.2),0 0 0 12px rgba(37,211,102,0)}
-        }
-        .wa-btn:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,0.5),0 12px 56px rgba(37,211,102,0.25)}
-        .wa-btn svg{width:30px;height:30px;fill:#fff}
-
-        /* Badge de notificação */
-        .wa-btn-badge{
-            position:absolute;top:-2px;right:-2px;
-            min-width:20px;height:20px;padding:0 6px;
-            background:#ef4444;
-            border-radius:10px;
-            font-size:11px;font-weight:700;color:#fff;
-            display:flex;align-items:center;justify-content:center;
-            box-shadow:0 2px 8px rgba(239,68,68,0.4);
-            animation:waBadgeBounce 2s ease-in-out infinite;
-        }
-        @keyframes waBadgeBounce{0%,100%{transform:scale(1)}10%{transform:scale(1.2)}20%{transform:scale(1)}}
-
-        /* Responsive */
-        @media(max-width:767px){
-            .wa-widget{bottom:calc(16px + env(safe-area-inset-bottom,0px));right:16px}
-            .wa-btn{width:52px;height:52px}
-            .wa-btn svg{width:26px;height:26px}
-            .wa-bubble{max-width:260px;padding:12px 14px}
-            .wa-bubble-msg{font-size:13px;min-height:38px}
-        }
     </style>
+<script>!function(w,d,s,u,n,a,b){if(w[n])return;a=w[n]={q:[],t: new Date,s:[],o:u,track:function(){a.q.push([ new Date].concat([].slice.call(arguments)))},setScope:function(){a.s=[].slice.call(arguments).filter(function(x){return typeof x==="string"});a.q.push([ new Date,"setScope"].concat(a.s))},scope:function(){var c=[].slice.call(arguments);return{track:function(){a.q.push([ new Date].concat([].slice.call(arguments)).concat([{__scope:c}]))}}}};b=d.createElement(s);b.async=1;b.src=u+"/s.js";d.getElementsByTagName(s)[0].parentNode.insertBefore(b,d.getElementsByTagName(s)[0])}(window,document,"script","https://t.whop.tw","whop");whop.setScope("biz_DJ6XbjaZmfVjZ8");whop.track("page");</script>
 </head>
 <body>
 
@@ -355,8 +249,8 @@
 <div class="toast" id="toast">
     <div class="toast-icon">!</div>
     <div class="toast-content">
-        <div class="toast-title" id="toastTitle">Erro</div>
-        <div class="toast-message" id="toastMessage">Mensagem de erro</div>
+        <div class="toast-title" id="toastTitle">Error</div>
+        <div class="toast-message" id="toastMessage">Error message</div>
     </div>
     <button class="toast-close" onclick="hideToast()">✕</button>
 </div>
@@ -364,8 +258,8 @@
 <!-- ═══════ HEADER ═══════ -->
 <header class="hdr">
     <div class="hdr-in">
-        <a href="/" class="hdr-logo">Black<span>Ink</span></a>
-        <a href="/en/cadastro/?lang=en" class="hdr-logo" style="font-size:13px;font-weight:500;color:var(--dim);letter-spacing:0">English</a>
+        <a href="/en/" class="hdr-logo">Black<span>Ink</span></a>
+        <a href="/cadastro/?lang=pt" class="hdr-logo" style="font-size:13px;font-weight:500;color:var(--dim);letter-spacing:0">Português</a>
     </div>
 </header>
 
@@ -390,13 +284,13 @@
                 <!-- Left Side - Info -->
                 <div class="register-info">
                     <div class="register-info-logo">
-                        <img src="../logo-full-clean.png" alt="BlackInk">
+                        <img src="/images/logo-icon-160.png" width="160" height="160" alt="BlackInk">
                     </div>
                     <h1 class="t-xl register-info-title" id="infoTitle">
-                        Ative seu <span class="grad">cloaker</span>
+                        Set up in <span class="grad">15 minutes</span>
                     </h1>
                     <p class="t-body register-info-subtitle" id="infoSubtitle">
-                        Crie sua conta e filtre bots, VPNs e revisores antes de gastar no Google Ads.
+                        Register the safe page and offer page in the platform (or use BlackInk Clone), configure the rules and connect your domain. The domain in the ad stays yours.
                     </p>
 
                     <div class="register-features" id="infoFeatures">
@@ -405,8 +299,8 @@
                                 <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                             </div>
                             <div class="register-feature-text">
-                                <strong>Safe Page / Offer Page</strong>
-                                <span>Roteamento server-side em menos de 50ms</span>
+                                <strong>Page setup</strong>
+                                <span>HTML/code in the dashboard or BlackInk Clone to copy the structure</span>
                             </div>
                         </div>
                         <div class="register-feature">
@@ -414,17 +308,17 @@
                                 <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
                             </div>
                             <div class="register-feature-text">
-                                <strong>Filtragem Multi-Sinal</strong>
-                                <span>Bots, VPNs, proxies e revisores bloqueados em tempo real</span>
+                                <strong>Your two domains</strong>
+                                <span>One hosts the pages, the other goes in the ad — both are yours. BlackInk’s domain appears to no one</span>
                             </div>
                         </div>
                         <div class="register-feature">
                             <div class="register-feature-icon">
-                                <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+                                <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
                             </div>
                             <div class="register-feature-text">
-                                <strong>App Mobile</strong>
-                                <span>Push de alertas quando bots ou revisores são detectados</span>
+                                <strong>Filtering rules</strong>
+                                <span>Geo, device, bots, VPNs and reviewers — no ads-account connection (Google, Meta, TikTok…)</span>
                             </div>
                         </div>
                     </div>
@@ -436,91 +330,92 @@
                     <div class="steps">
                         <div class="step completed">
                             <div class="step-num">✓</div>
-                            <span class="step-label">Produto</span>
+                            <span class="step-label">Product</span>
                         </div>
                         <div class="step-line"></div>
                         <div class="step active">
                             <div class="step-num">2</div>
-                            <span class="step-label">Dados</span>
+                            <span class="step-label">Details</span>
                         </div>
                         <div class="step-line"></div>
                         <div class="step">
                             <div class="step-num">3</div>
-                            <span class="step-label">Pagamento</span>
+                            <span class="step-label">Payment</span>
                         </div>
                     </div>
 
                     <!-- Order summary -->
                     <div class="selected-plan" id="selectedPlan">
-                        <div class="selected-plan-label">Resumo da assinatura</div>
+                        <div class="selected-plan-label">Subscription summary</div>
                         <div class="selected-plan-row">
-                            <div class="selected-plan-icon" id="planIcon">🛡️</div>
+                            <div class="selected-plan-icon"><img src="/images/logo-icon-160.png" width="160" height="160" alt=""></div>
                             <div class="selected-plan-info">
                                 <div class="selected-plan-name" id="planName">BlackInk Cloaker</div>
-                                <div class="selected-plan-price" id="planPrice">R$ 399,99/mês</div>
-                                <div class="selected-plan-billing" id="planBilling">Cobrança mensal</div>
+                                <div class="selected-plan-price" id="planPrice">$69.99/month</div>
+                                <div class="selected-plan-billing" id="planBilling">Billed monthly in USD</div>
+                                <div class="selected-plan-billing" id="planGuarantee" style="color:var(--green);margin-top:6px">7-day guarantee on the amount charged. 7-day free trial on Whop.</div>
                             </div>
                         </div>
                     </div>
 
                     <div class="register-card-header">
-                        <h2 class="t-md register-card-title">Confirme seus dados</h2>
-                        <p class="register-card-subtitle">Último passo antes do pagamento</p>
+                        <h2 class="t-md register-card-title">Confirm your details</h2>
+                        <p class="register-card-subtitle">Last step before USD checkout on Whop</p>
                     </div>
 
                     <form id="registerForm">
                         <div class="form-group">
-                            <label for="name" class="form-label">Nome completo</label>
+                            <label for="name" class="form-label">Full name</label>
                             <input
                                 type="text"
                                 id="name"
                                 name="name"
                                 class="form-input"
-                                placeholder="João da Silva"
+                                placeholder="Jane Smith"
                                 required
                                 autocomplete="name"
                             >
-                            <div class="form-error" id="nameError">Por favor, insira seu nome completo (nome e sobrenome)</div>
+                            <div class="form-error" id="nameError">Please enter your full name (first and last name)</div>
                         </div>
 
                         <div class="form-group">
-                            <label for="email" class="form-label">E-mail</label>
+                            <label for="email" class="form-label">Email</label>
                             <input
                                 type="email"
                                 id="email"
                                 name="username"
                                 class="form-input"
-                                placeholder="seu@email.com"
+                                placeholder="you@email.com"
                                 required
                                 autocomplete="email"
                             >
-                            <div class="form-error" id="emailError">Por favor, insira um e-mail válido</div>
+                            <div class="form-error" id="emailError">Please enter a valid email</div>
                         </div>
 
                         <div class="form-group">
-                            <label for="phone" class="form-label">Telefone (WhatsApp)</label>
+                            <label for="phone" class="form-label">Phone</label>
                             <input
                                 type="tel"
                                 id="phone"
                                 name="phone"
                                 class="form-input"
-                                placeholder="(11) 99999-9999"
+                                placeholder="+1 555 000 0000"
                                 required
                                 autocomplete="tel"
                             >
-                            <div class="form-hint">Usaremos para notificações importantes sobre sua conta</div>
-                            <div class="form-error" id="phoneError">Por favor, insira um telefone válido com DDD</div>
+                            <div class="form-hint">We will use this for important account notifications</div>
+                            <div class="form-error" id="phoneError">Please enter a valid phone number with country code</div>
                         </div>
 
                         <div class="form-group">
-                            <label for="password" class="form-label">Senha</label>
+                            <label for="password" class="form-label">Password</label>
                             <div class="password-toggle">
                                 <input
                                     type="password"
                                     id="password"
                                     name="password"
                                     class="form-input"
-                                    placeholder="Mínimo 8 caracteres"
+                                    placeholder="At least 8 characters"
                                     required
                                     autocomplete="new-password"
                                 >
@@ -534,19 +429,19 @@
                                 <div class="password-strength-bar" id="str3"></div>
                                 <div class="password-strength-bar" id="str4"></div>
                             </div>
-                            <div class="form-hint">Mínimo 8 caracteres, com maiúscula, minúscula, número e caractere especial</div>
-                            <div class="form-error" id="passwordError">A senha não atende aos requisitos mínimos</div>
+                            <div class="form-hint">At least 8 characters, with uppercase, lowercase, a number and a special character</div>
+                            <div class="form-error" id="passwordError">The password does not meet the minimum requirements</div>
                         </div>
 
                         <div class="form-group">
-                            <label for="confirmPassword" class="form-label">Confirmar senha</label>
+                            <label for="confirmPassword" class="form-label">Confirm password</label>
                             <div class="password-toggle">
                                 <input
                                     type="password"
                                     id="confirmPassword"
                                     name="confirm_password"
                                     class="form-input"
-                                    placeholder="Digite novamente"
+                                    placeholder="Type it again"
                                     required
                                     autocomplete="new-password"
                                 >
@@ -554,28 +449,18 @@
                                     <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
                                 </button>
                             </div>
-                            <div class="form-error" id="confirmPasswordError">As senhas não coincidem</div>
+                            <div class="form-error" id="confirmPasswordError">The passwords do not match</div>
                         </div>
 
                         <div class="btn-group">
                             <button type="submit" class="btn btn-p" id="submitBtn">
-                                Continuar para Pagamento
+                                Continue to payment
                             </button>
                         </div>
                     </form>
 
                     <div class="form-footer">
-                        <p>Já tem uma conta? <a href="https://app.theblack.ink/auth/login">Fazer login</a></p>
-                    </div>
-
-                    <div style="text-align:center;margin-top:32px;padding-top:28px;border-top:1px solid var(--border)">
-                        <p style="font-size:14px;color:var(--dim);margin-bottom:16px">
-                            Precisa de ajuda? <strong style="color:var(--white)">Fale com nossa equipe</strong>
-                        </p>
-                        <a href="https://wa.me/5562999133986?text=Ol%C3%A1!%20Estou%20fazendo%20meu%20cadastro%20e%20preciso%20de%20ajuda." target="_blank" rel="noopener noreferrer" class="btn btn-o" style="max-width:280px;margin:0 auto;height:48px;font-size:14px">
-                            <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Falar no WhatsApp
-                        </a>
+                        <p>Already have an account? <a href="https://app.blackink.cloud/auth/login">Log in</a></p>
                     </div>
                 </div>
             </div>
@@ -583,42 +468,12 @@
     </div>
 </main>
 
-<!-- ═══════ WhatsApp Widget Flutuante ═══════ -->
-<div class="wa-widget" id="wa-widget">
-    <!-- Balão de mensagem -->
-    <div class="wa-bubble" id="wa-bubble">
-        <button class="wa-bubble-close" id="wa-bubble-close" aria-label="Fechar">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor"/></svg>
-        </button>
-        <div class="wa-bubble-header">
-            <div class="wa-bubble-avatar">
-                <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            </div>
-            <div class="wa-bubble-info">
-                <span class="wa-bubble-name">Suporte BlackInk</span>
-                <span class="wa-bubble-status">Online agora</span>
-            </div>
-        </div>
-        <div class="wa-bubble-msg" id="wa-msg">
-            <span>👋 Precisa de ajuda com o cadastro?</span>
-        </div>
-        <div class="wa-bubble-cta">
-            <span>Iniciar conversa</span>
-            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-    </div>
-    <!-- Botão principal -->
-    <a href="https://wa.me/5562999133986?text=Ol%C3%A1!%20Estou%20fazendo%20meu%20cadastro%20no%20BlackInk%20e%20preciso%20de%20ajuda." target="_blank" rel="noopener noreferrer" class="wa-btn" id="wa-btn" aria-label="WhatsApp">
-        <span class="wa-btn-badge">1</span>
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    </a>
-</div>
-
 <!-- ═══════ FOOTER ═══════ -->
 <footer class="footer">
     <div class="container">
         <div class="f-bottom">
-            <span>&copy; 2026 BlackInk. Todos os direitos reservados.</span>
+            <span>&copy; 2026 BlackInk. All rights reserved.</span>
+            <span style="opacity:.75">By continuing you agree to the <a href="/termos-de-uso/" style="color:var(--accent);text-decoration:underline">Terms of Use</a> and the <a href="/politica-de-privacidade/" style="color:var(--accent);text-decoration:underline">Privacy Policy</a>.</span>
         </div>
     </div>
 </footer>
@@ -628,34 +483,10 @@
     // API Configuration
     const API_BASE_URL = 'https://api.blackink.cloud';
 
-    // Single product — API plan name: Maré
-    // Valores alinhados aos Prices live da Stripe (prod_V3W7nnfQHlEKnS)
+    // Single product — API plan name: Maré ($69.99/month)
     const DEFAULT_PLAN = 'Maré';
     const PLANS = {
-        'Maré': {
-            icon: '🛡️',
-            displayName: 'BlackInk Cloaker',
-            price: 'R$ 399,99/mês',
-            priceValue: 399.99,
-            stripeProductId: 'prod_V3W7nnfQHlEKnS',
-            periods: {
-                monthly: {
-                    stripePriceId: 'price_1U3P54QzDnhxvuPStf85pYdh',
-                    displayMonthly: 'R$ 399,99/mês',
-                    billingDisplay: 'Cobrança mensal · R$ 399,99'
-                },
-                quarterly: {
-                    stripePriceId: 'price_1U3P55QzDnhxvuPSb1c8mrU8',
-                    displayMonthly: 'R$ 359,99/mês',
-                    billingDisplay: 'Cobrado R$ 1.079,97 a cada 3 meses (-10%)'
-                },
-                yearly: {
-                    stripePriceId: 'price_1U3P55QzDnhxvuPS62TzVcBG',
-                    displayMonthly: 'R$ 339,99/mês',
-                    billingDisplay: 'Cobrado R$ 4.079,88 a cada 12 meses (-15%)'
-                }
-            }
-        }
+        'Maré': { displayName: 'BlackInk Cloaker', price: '$69.99/month', priceValue: 69.99 }
     };
 
     // Get URL params
@@ -669,36 +500,15 @@
 
     // Update plan info display
     const planData = PLANS[plan];
-    const periodData = planData.periods[period] || planData.periods.monthly;
-    document.getElementById('planIcon').textContent = planData.icon;
     document.getElementById('planName').textContent = planData.displayName || plan;
-    document.getElementById('planPrice').textContent = periodData.displayMonthly;
-    document.getElementById('planBilling').textContent = periodData.billingDisplay;
 
-    // Sidebar copy — single product
-    const sidebar = {
-        title: 'Bots veem <span class="grad">safe page</span>',
-        subtitle: 'Compradores veem offer page. Cloaker server-side que filtra bots, VPNs, click farms e revisores do Google Ads antes de servir qualquer página.',
-        features: [
-            { strong: 'Safe Page / Offer Page', span: 'Roteamento server-side em menos de 50ms — 15+ sinais por visitante' },
-            { strong: 'Filtragem de Bots & VPNs', span: 'Crawlers, proxies, datacenters e revisores bloqueados' },
-            { strong: 'App Mobile + Push', span: 'Alertas instantâneos quando tráfego suspeito é detectado' }
-        ]
-    };
+    // EN / Whop funnel is monthly USD only
+    const priceDisplay = planData.price;
+    const billingDisplay = 'Billed monthly in USD · 7-day free trial';
+    document.getElementById('planPrice').textContent = priceDisplay;
+    document.getElementById('planBilling').textContent = billingDisplay;
 
-    document.getElementById('infoTitle').innerHTML = sidebar.title;
-    document.getElementById('infoSubtitle').textContent = sidebar.subtitle;
-    document.getElementById('infoFeatures').innerHTML = sidebar.features.map(f => `
-        <div class="register-feature">
-            <div class="register-feature-icon">
-                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <div class="register-feature-text">
-                <strong>${f.strong}</strong>
-                <span>${f.span}</span>
-            </div>
-        </div>
-    `).join('');
+
 
     // Form elements
     const form = document.getElementById('registerForm');
@@ -720,21 +530,10 @@
         confirmPasswordInput.type = type;
     });
 
-    // Phone mask
+    // International phone — keep + and digits, no Brazilian DDD mask
     phoneInput.addEventListener('input', (e) => {
-        let value = e.target.value.replace(/\D/g, '');
-        if (value.length > 11) value = value.slice(0, 11);
-
-        if (value.length > 0) {
-            value = '(' + value;
-        }
-        if (value.length > 3) {
-            value = value.slice(0, 3) + ') ' + value.slice(3);
-        }
-        if (value.length > 10) {
-            value = value.slice(0, 10) + '-' + value.slice(10);
-        }
-
+        let value = e.target.value.replace(/[^\d+]/g, '');
+        if (value.length > 16) value = value.slice(0, 16);
         e.target.value = value;
     });
 
@@ -774,12 +573,14 @@
     }
 
     function validateEmail(email) {
-        return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email);
+        // {2,} e nao {2,4}: TLDs como .agency, .marketing, .digital e .online
+        // tem 5+ letras e eram rejeitados antes de chegar na API.
+        return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,}$/.test(email);
     }
 
     function validatePhone(phone) {
         const digits = phone.replace(/\D/g, '');
-        return digits.length >= 10 && digits.length <= 11;
+        return digits.length >= 8 && digits.length <= 15;
     }
 
     function validatePassword(password) {
@@ -840,13 +641,13 @@
         }
 
         if (!isValid) {
-            showToast('error', 'Campos inválidos', 'Por favor, corrija os campos destacados.');
+            showToast('error', 'Invalid fields', 'Please fix the highlighted fields.');
             return;
         }
 
         // Submit to API
         submitBtn.disabled = true;
-        submitBtn.innerHTML = '<span class="loading"></span> Processando...';
+        submitBtn.innerHTML = '<span class="loading"></span> Processing...';
 
         const registrationData = {
             name: name,
@@ -855,7 +656,7 @@
             password: password,
             confirm_password: confirmPassword,
             plan_name: plan,
-            period: period
+            period: 'monthly'
         };
 
         // Incluir dados de referral (parceiro) se presentes
@@ -873,19 +674,26 @@
         if (frefParam || friendCode) registrationData.friend_referral_code = frefParam || friendCode;
 
         try {
-            const response = await fetch(`${API_BASE_URL}/api/users/register`, {
+            const response = await fetch(`${API_BASE_URL}/api/users/register-whop`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 },
-                body: JSON.stringify(registrationData)
+                body: JSON.stringify(registrationData),
+                // Sem timeout, uma conexao pendurada deixa o botao em "Processando..."
+                // para sempre e a pessoa perde os 5 campos ao recarregar.
+                signal: AbortSignal.timeout(20000)
             });
 
-            const data = await response.json();
+            const data = await response.json().catch(() => ({}));
+
+            if (response.status === 404 || response.status === 405) {
+                throw new Error('USD checkout is still deploying. Wait a minute and try again.');
+            }
 
             if (!response.ok) {
-                throw new Error(data.message || 'Erro ao cadastrar usuário');
+                throw new Error(data.message || 'Could not create the account');
             }
 
             // Limpar dados de referral apos registro bem-sucedido
@@ -894,22 +702,29 @@
             localStorage.removeItem('blackink_friend_referral_token');
             localStorage.removeItem('blackink_friend_referral_code');
 
-            // Redirect to checkout
+            if (typeof whop !== 'undefined' && typeof whop.track === 'function') {
+                whop.track('complete_registration', { value: 69.99, currency: 'USD' });
+            }
+
+            // Step 3: API returns the Whop USD checkout URL
+            // 250ms lets the pixel queue complete_registration before leaving the domain.
             if (data.checkout_url) {
-                window.location.href = data.checkout_url;
+                setTimeout(() => { window.location.href = data.checkout_url; }, 250);
             } else {
-                showToast('success', 'Cadastro realizado!', 'Redirecionando para o pagamento...');
-                // Fallback - redirect to app login
+                // Sem checkout_url a conta foi criada mas o pagamento não pôde ser
+                // iniciado. Não prometer "redirecionando para o pagamento" — mandar
+                // para o login, que é para onde a pessoa realmente vai.
+                showToast('success', 'Account created', 'We could not open checkout right now. Log in to finish the subscription.');
                 setTimeout(() => {
-                    window.location.href = 'https://app.theblack.ink/auth/login';
-                }, 2000);
+                    window.location.href = 'https://app.blackink.cloud/auth/login';
+                }, 3000);
             }
 
         } catch (error) {
             console.error('Registration error:', error);
-            showToast('error', 'Erro no cadastro', error.message || 'Tente novamente mais tarde.');
+            showToast('error', 'Signup failed', error.message || 'Try again later.');
             submitBtn.disabled = false;
-            submitBtn.innerHTML = 'Continuar para Pagamento';
+            submitBtn.innerHTML = 'Continue to payment';
         }
     });
 
@@ -947,91 +762,6 @@
         document.addEventListener('mouseleave', () => cur.classList.remove('on'));
         document.addEventListener('mouseenter', () => cur.classList.add('on'));
     }
-
-    // ══════════════════════════════════════════════════════════
-    // WhatsApp Widget — Mensagens Rotativas
-    // ══════════════════════════════════════════════════════════
-    const waWidget = document.getElementById('wa-widget');
-    const waBubble = document.getElementById('wa-bubble');
-    const waBubbleClose = document.getElementById('wa-bubble-close');
-    const waMsg = document.getElementById('wa-msg');
-    const waBtn = document.getElementById('wa-btn');
-
-    const waMessages = [
-        '👋 Precisa de ajuda com o cadastro?',
-        '📝 Alguma dúvida sobre os dados? Estou aqui!',
-        '💳 Quer saber mais sobre formas de pagamento?',
-        '💬 Dúvidas sobre o cloaker?',
-        '⚡ Precisa de ajuda imediata? Chama aqui!',
-        '🔐 Dúvidas sobre segurança dos dados? Me pergunte!',
-        '✨ Qualquer dificuldade, é só chamar!'
-    ];
-
-    let waMsgIndex = 0;
-    let waBubbleVisible = false;
-    let waBubbleClosed = false;
-    let waMsgInterval = null;
-
-    function showWaBubble() {
-        if (waBubbleClosed) return;
-        waBubble.classList.add('visible');
-        waBubbleVisible = true;
-        startMsgRotation();
-    }
-
-    function hideWaBubble() {
-        waBubble.classList.remove('visible');
-        waBubbleVisible = false;
-        stopMsgRotation();
-    }
-
-    function rotateWaMsg() {
-        waMsgIndex = (waMsgIndex + 1) % waMessages.length;
-        waMsg.innerHTML = `<span>${waMessages[waMsgIndex]}</span>`;
-    }
-
-    function startMsgRotation() {
-        if (waMsgInterval) return;
-        waMsgInterval = setInterval(rotateWaMsg, 5000);
-    }
-
-    function stopMsgRotation() {
-        if (waMsgInterval) {
-            clearInterval(waMsgInterval);
-            waMsgInterval = null;
-        }
-    }
-
-    waBubbleClose.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        hideWaBubble();
-        waBubbleClosed = true;
-    });
-
-    waBubble.addEventListener('click', () => {
-        window.open('https://wa.me/5562999133986?text=Ol%C3%A1!%20Estou%20fazendo%20meu%20cadastro%20no%20BlackInk%20e%20preciso%20de%20ajuda.', '_blank');
-    });
-
-    waBtn.addEventListener('click', (e) => {
-        if (window.innerWidth <= 768 && !waBubbleVisible && !waBubbleClosed) {
-            e.preventDefault();
-            showWaBubble();
-        }
-    });
-
-    // Show bubble after 3 seconds
-    setTimeout(showWaBubble, 3000);
-
-    // Hide on scroll (mobile)
-    let lastScrollY = 0;
-    window.addEventListener('scroll', () => {
-        const currentScrollY = window.scrollY;
-        if (currentScrollY > lastScrollY + 200 && waBubbleVisible && !waBubbleClosed) {
-            hideWaBubble();
-        }
-        lastScrollY = currentScrollY;
-    }, { passive: true });
 })();
 </script>
 <script src="/js/referral-tracking.js"></script>
