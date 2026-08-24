@@ -8,19 +8,19 @@
     <script src="/js/locale-redirect.js"></script>
     <script>if(!window.__blackinkLocaleRedirecting)document.documentElement.removeAttribute('data-locale-pending');</script>
     <title>Criar Conta — BlackInk</title>
-    <meta name="description" content="Crie sua conta BlackInk e comece a rastrear suas campanhas de tráfego pago.">
+    <link rel="canonical" href="https://blackink.cloud/cadastro/">
+    <meta name="description" content="Crie sua conta na plataforma BlackInk — cloaker server-side para Google Ads, Meta, TikTok e outras plataformas. R$ 399,99/mês.">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/abyss-tokens.css">
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+    <link href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500,600,700&display=swap" rel="stylesheet">
     <style>
         /* ══════════════════════════════════════════════════════════
            BLACKINK — Register Page
            ══════════════════════════════════════════════════════════ */
         :root {
-            --ff-display: 'Space Grotesk', sans-serif;
-            --ff-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --ff-display: 'General Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --ff-body: 'General Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             --bg: #020a14;
             --bg2: #06111f;
             --surface: rgba(8,22,48,0.45);
@@ -32,6 +32,7 @@
             --accent: #64b4ff;
             --accent2: #38bdf8;
             --green: #34d399;
+            --gold: #fbbf24;   /* usado por .password-strength-bar.medium — sem isto a barra fica transparente */
             --error: #f87171;
             --ease: cubic-bezier(0.16,1,0.3,1);
         }
@@ -112,7 +113,7 @@
         .register-info-logo img{width:100%;height:100%}
 
         .register-info-title{margin-bottom:16px}
-        .register-info-subtitle{margin-bottom:32px;max-width:400px;margin-left:auto;margin-right:auto}
+        .register-info-subtitle{margin-bottom:32px;max-width:400px;margin-left:auto;margin-right:auto;text-wrap:balance}
         @media(min-width:900px){
             .register-info-subtitle{margin-left:0;margin-right:0}
         }
@@ -140,7 +141,8 @@
         .selected-plan{background:rgba(100,180,255,0.04);border:1px solid var(--border-h);border-radius:14px;padding:18px;margin-bottom:28px}
         .selected-plan-label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:13px}
         .selected-plan-row{display:flex;align-items:center;gap:16px}
-        .selected-plan-icon{flex-shrink:0;font-size:32px}
+        .selected-plan-icon{flex-shrink:0;width:32px;height:32px}
+        .selected-plan-icon img{width:100%;height:100%;object-fit:contain}
         .selected-plan-info{flex:1}
         .selected-plan-name{font-family:var(--ff-display);font-weight:700;font-size:18px;color:var(--accent);margin-bottom:4px}
         .selected-plan-price{font-size:14px;color:var(--dim);line-height:1.5}
@@ -206,6 +208,21 @@
 
         /* ── Responsive ── */
         @media(max-width:767px){
+            /* itens de grid com conteúdo largo não encolhem sem min-width:0 —
+               era isso que cortava o checkout horizontalmente no telefone */
+            .register-info,.register-card{min-width:0}
+            .step-line{width:auto;flex:1 1 0;min-width:8px}
+            .step-label{font-size:12px}
+            /* o stepper era cortado pelo overflow:hidden do card em todo telefone.
+               Bolinha fixa, rótulo encolhe, linha absorve o resto. */
+            /* o rótulo empilha embaixo da bolinha em vez de encolher — encolher
+               truncava para "Prod… / Da… / Pagame…" abaixo de 410px */
+            .steps{gap:6px}
+            .step{flex-direction:column;gap:4px;min-width:0}
+            .step-num{width:24px;height:24px;flex:0 0 24px;font-size:12px}
+            .step-label{font-size:11px;white-space:nowrap}
+            .step-line{align-self:flex-start;margin-top:11px}
+
             .main-section{padding:100px 20px 60px}
             .register-features{display:none}
         }
@@ -223,131 +240,8 @@
         .toast-message{font-size:13px;color:var(--dim)}
         .toast-close{flex-shrink:0;background:none;border:none;color:var(--muted);cursor:pointer;padding:4px}
         .toast-close:hover{color:var(--white)}
-
-        /* ══════════════════════════════════════════════════════════
-           WhatsApp Widget Premium — Balão com mensagens rotativas
-           ══════════════════════════════════════════════════════════ */
-        .wa-widget{position:fixed;bottom:24px;right:24px;z-index:9990;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
-
-        /* Balão de mensagem */
-        .wa-bubble{
-            position:relative;
-            max-width:280px;
-            padding:14px 18px;
-            background:linear-gradient(145deg,rgba(12,28,54,0.98) 0%,rgba(6,18,40,0.99) 100%);
-            border:1px solid rgba(37,211,102,0.15);
-            border-radius:18px 18px 4px 18px;
-            box-shadow:0 4px 24px rgba(0,0,0,0.3),0 8px 48px rgba(37,211,102,0.08),inset 0 1px 0 rgba(255,255,255,0.03);
-            backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-            opacity:0;
-            transform:translateY(10px) scale(0.95);
-            transition:opacity .4s var(--ease),transform .4s var(--ease);
-            pointer-events:none;
-            cursor:pointer;
-        }
-        .wa-bubble.visible{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
-        .wa-bubble::before{
-            content:'';position:absolute;top:0;left:10%;right:10%;height:1px;
-            background:linear-gradient(90deg,transparent,rgba(37,211,102,0.2),transparent);
-        }
-        /* Seta do balão */
-        .wa-bubble::after{
-            content:'';position:absolute;bottom:8px;right:-6px;
-            width:12px;height:12px;
-            background:linear-gradient(135deg,transparent 50%,rgba(6,18,40,0.99) 50%);
-            border-right:1px solid rgba(37,211,102,0.15);
-            border-bottom:1px solid rgba(37,211,102,0.15);
-            transform:rotate(-45deg);
-        }
-
-        .wa-bubble-header{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-        .wa-bubble-avatar{
-            width:32px;height:32px;border-radius:50%;
-            background:linear-gradient(145deg,#25D366,#128C7E);
-            display:flex;align-items:center;justify-content:center;
-            box-shadow:0 2px 8px rgba(37,211,102,0.3);
-        }
-        .wa-bubble-avatar svg{width:16px;height:16px;fill:#fff}
-        .wa-bubble-info{display:flex;flex-direction:column;gap:1px}
-        .wa-bubble-name{font-size:13px;font-weight:600;color:var(--white);letter-spacing:-0.01em}
-        .wa-bubble-status{display:flex;align-items:center;gap:5px;font-size:10px;color:var(--green)}
-        .wa-bubble-status::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);animation:waPulse 2s ease-in-out infinite}
-        @keyframes waPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.2)}}
-
-        .wa-bubble-close{
-            position:absolute;top:8px;right:8px;
-            width:20px;height:20px;border-radius:50%;
-            background:rgba(255,255,255,0.05);
-            border:none;cursor:pointer;
-            display:flex;align-items:center;justify-content:center;
-            opacity:0;transition:opacity .3s,background .3s;
-        }
-        .wa-bubble:hover .wa-bubble-close{opacity:1}
-        .wa-bubble-close:hover{background:rgba(255,255,255,0.1)}
-        .wa-bubble-close svg{width:10px;height:10px;stroke:var(--muted);stroke-width:2}
-
-        .wa-bubble-msg{
-            font-size:14px;line-height:1.5;color:var(--dim);
-            min-height:42px;
-            display:flex;align-items:center;
-        }
-        .wa-bubble-msg span{
-            display:block;
-            animation:waMsgIn .4s var(--ease) both;
-        }
-        @keyframes waMsgIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
-
-        .wa-bubble-cta{
-            display:flex;align-items:center;gap:6px;
-            margin-top:10px;padding-top:10px;
-            border-top:1px solid rgba(255,255,255,0.05);
-            font-size:12px;font-weight:600;color:var(--green);
-            transition:color .3s;
-        }
-        .wa-bubble-cta svg{width:14px;height:14px;fill:var(--green);transition:transform .3s var(--ease)}
-        .wa-bubble:hover .wa-bubble-cta svg{transform:translateX(3px)}
-
-        /* Botão principal do WhatsApp */
-        .wa-btn{
-            position:relative;
-            width:60px;height:60px;
-            background:linear-gradient(145deg,#25D366,#128C7E);
-            border-radius:50%;
-            display:flex;align-items:center;justify-content:center;
-            box-shadow:0 4px 20px rgba(37,211,102,0.35),0 8px 40px rgba(37,211,102,0.15);
-            cursor:pointer;
-            transition:transform .4s var(--ease),box-shadow .4s var(--ease);
-            animation:waBtnPulse 3s ease-in-out infinite;
-        }
-        @keyframes waBtnPulse{
-            0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.35),0 8px 40px rgba(37,211,102,0.15),0 0 0 0 rgba(37,211,102,0.3)}
-            50%{box-shadow:0 4px 24px rgba(37,211,102,0.45),0 8px 48px rgba(37,211,102,0.2),0 0 0 12px rgba(37,211,102,0)}
-        }
-        .wa-btn:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,0.5),0 12px 56px rgba(37,211,102,0.25)}
-        .wa-btn svg{width:30px;height:30px;fill:#fff}
-
-        /* Badge de notificação */
-        .wa-btn-badge{
-            position:absolute;top:-2px;right:-2px;
-            min-width:20px;height:20px;padding:0 6px;
-            background:#ef4444;
-            border-radius:10px;
-            font-size:11px;font-weight:700;color:#fff;
-            display:flex;align-items:center;justify-content:center;
-            box-shadow:0 2px 8px rgba(239,68,68,0.4);
-            animation:waBadgeBounce 2s ease-in-out infinite;
-        }
-        @keyframes waBadgeBounce{0%,100%{transform:scale(1)}10%{transform:scale(1.2)}20%{transform:scale(1)}}
-
-        /* Responsive */
-        @media(max-width:767px){
-            .wa-widget{bottom:calc(16px + env(safe-area-inset-bottom,0px));right:16px}
-            .wa-btn{width:52px;height:52px}
-            .wa-btn svg{width:26px;height:26px}
-            .wa-bubble{max-width:260px;padding:12px 14px}
-            .wa-bubble-msg{font-size:13px;min-height:38px}
-        }
     </style>
+<script>!function(w,d,s,u,n,a,b){if(w[n])return;a=w[n]={q:[],t: new Date,s:[],o:u,track:function(){a.q.push([ new Date].concat([].slice.call(arguments)))},setScope:function(){a.s=[].slice.call(arguments).filter(function(x){return typeof x==="string"});a.q.push([ new Date,"setScope"].concat(a.s))},scope:function(){var c=[].slice.call(arguments);return{track:function(){a.q.push([ new Date].concat([].slice.call(arguments)).concat([{__scope:c}]))}}}};b=d.createElement(s);b.async=1;b.src=u+"/s.js";d.getElementsByTagName(s)[0].parentNode.insertBefore(b,d.getElementsByTagName(s)[0])}(window,document,"script","https://t.whop.tw","whop");whop.setScope("biz_DJ6XbjaZmfVjZ8");whop.track("page");</script>
 </head>
 <body>
 
@@ -393,13 +287,13 @@
                 <!-- Left Side - Info -->
                 <div class="register-info">
                     <div class="register-info-logo">
-                        <img src="../logo-full-clean.png" alt="BlackInk">
+                        <img src="../images/logo-icon-160.png" width="160" height="160" alt="BlackInk">
                     </div>
                     <h1 class="t-xl register-info-title" id="infoTitle">
-                        Ative seu <span class="grad">cloaker</span>
+                        Configure em <span class="grad">15 minutos</span>
                     </h1>
                     <p class="t-body register-info-subtitle" id="infoSubtitle">
-                        Crie sua conta e filtre bots, VPNs e revisores antes de gastar no Google Ads.
+                        Cadastre safe page e offer page na plataforma (ou use BlackInk Clone), configure as regras e conecte o seu domínio. O domínio que vai no anúncio continua sendo o seu.
                     </p>
 
                     <div class="register-features" id="infoFeatures">
@@ -408,8 +302,8 @@
                                 <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                             </div>
                             <div class="register-feature-text">
-                                <strong>Safe Page / Offer Page</strong>
-                                <span>Roteamento server-side em menos de 50ms</span>
+                                <strong>Cadastro de páginas</strong>
+                                <span>HTML/código no painel ou BlackInk Clone para replicar estrutura</span>
                             </div>
                         </div>
                         <div class="register-feature">
@@ -417,17 +311,17 @@
                                 <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
                             </div>
                             <div class="register-feature-text">
-                                <strong>Filtragem Multi-Sinal</strong>
-                                <span>Bots, VPNs, proxies e revisores bloqueados em tempo real</span>
+                                <strong>Seus dois domínios</strong>
+                                <span>Um hospeda as páginas, o outro vai no anúncio — os dois são seus. O da BlackInk não aparece para ninguém</span>
                             </div>
                         </div>
                         <div class="register-feature">
                             <div class="register-feature-icon">
-                                <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+                                <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
                             </div>
                             <div class="register-feature-text">
-                                <strong>App Mobile</strong>
-                                <span>Push de alertas quando bots ou revisores são detectados</span>
+                                <strong>Regras de filtragem</strong>
+                                <span>Geo, device, bots, VPNs e revisores — sem conectar conta de anúncios (Google, Meta, TikTok…)</span>
                             </div>
                         </div>
                     </div>
@@ -457,11 +351,12 @@
                     <div class="selected-plan" id="selectedPlan">
                         <div class="selected-plan-label">Resumo da assinatura</div>
                         <div class="selected-plan-row">
-                            <div class="selected-plan-icon" id="planIcon">🛡️</div>
+                            <div class="selected-plan-icon"><img src="../images/logo-icon-160.png" width="160" height="160" alt=""></div>
                             <div class="selected-plan-info">
                                 <div class="selected-plan-name" id="planName">BlackInk Cloaker</div>
                                 <div class="selected-plan-price" id="planPrice">R$ 399,99/mês</div>
                                 <div class="selected-plan-billing" id="planBilling">Cobrança mensal</div>
+                                <div class="selected-plan-billing" id="planGuarantee" style="color:var(--green);margin-top:6px">7 dias de garantia sobre o valor cobrado.</div>
                             </div>
                         </div>
                     </div>
@@ -501,7 +396,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="phone" class="form-label">Telefone (WhatsApp)</label>
+                            <label for="phone" class="form-label">Telefone</label>
                             <input
                                 type="tel"
                                 id="phone"
@@ -568,17 +463,7 @@
                     </form>
 
                     <div class="form-footer">
-                        <p>Já tem uma conta? <a href="https://app.theblack.ink/auth/login">Fazer login</a></p>
-                    </div>
-
-                    <div style="text-align:center;margin-top:32px;padding-top:28px;border-top:1px solid var(--border)">
-                        <p style="font-size:14px;color:var(--dim);margin-bottom:16px">
-                            Precisa de ajuda? <strong style="color:var(--white)">Fale com nossa equipe</strong>
-                        </p>
-                        <a href="https://wa.me/5562999133986?text=Ol%C3%A1!%20Estou%20fazendo%20meu%20cadastro%20e%20preciso%20de%20ajuda." target="_blank" rel="noopener noreferrer" class="btn btn-o" style="max-width:280px;margin:0 auto;height:48px;font-size:14px">
-                            <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Falar no WhatsApp
-                        </a>
+                        <p>Já tem uma conta? <a href="https://app.blackink.cloud/auth/login">Fazer login</a></p>
                     </div>
                 </div>
             </div>
@@ -586,42 +471,12 @@
     </div>
 </main>
 
-<!-- ═══════ WhatsApp Widget Flutuante ═══════ -->
-<div class="wa-widget" id="wa-widget">
-    <!-- Balão de mensagem -->
-    <div class="wa-bubble" id="wa-bubble">
-        <button class="wa-bubble-close" id="wa-bubble-close" aria-label="Fechar">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor"/></svg>
-        </button>
-        <div class="wa-bubble-header">
-            <div class="wa-bubble-avatar">
-                <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            </div>
-            <div class="wa-bubble-info">
-                <span class="wa-bubble-name">Suporte BlackInk</span>
-                <span class="wa-bubble-status">Online agora</span>
-            </div>
-        </div>
-        <div class="wa-bubble-msg" id="wa-msg">
-            <span>👋 Precisa de ajuda com o cadastro?</span>
-        </div>
-        <div class="wa-bubble-cta">
-            <span>Iniciar conversa</span>
-            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-    </div>
-    <!-- Botão principal -->
-    <a href="https://wa.me/5562999133986?text=Ol%C3%A1!%20Estou%20fazendo%20meu%20cadastro%20no%20BlackInk%20e%20preciso%20de%20ajuda." target="_blank" rel="noopener noreferrer" class="wa-btn" id="wa-btn" aria-label="WhatsApp">
-        <span class="wa-btn-badge">1</span>
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    </a>
-</div>
-
 <!-- ═══════ FOOTER ═══════ -->
 <footer class="footer">
     <div class="container">
         <div class="f-bottom">
             <span>&copy; 2026 BlackInk. Todos os direitos reservados.</span>
+            <span style="opacity:.75">Ao continuar, você concorda com os <a href="/termos-de-uso/" style="color:var(--accent);text-decoration:underline">Termos de Uso</a> e a <a href="/politica-de-privacidade/" style="color:var(--accent);text-decoration:underline">Política de Privacidade</a>.</span>
         </div>
     </div>
 </footer>
@@ -635,30 +490,7 @@
     // Valores alinhados aos Prices live da Stripe (prod_V3W7nnfQHlEKnS)
     const DEFAULT_PLAN = 'Maré';
     const PLANS = {
-        'Maré': {
-            icon: '🛡️',
-            displayName: 'BlackInk Cloaker',
-            price: 'R$ 399,99/mês',
-            priceValue: 399.99,
-            stripeProductId: 'prod_V3W7nnfQHlEKnS',
-            periods: {
-                monthly: {
-                    stripePriceId: 'price_1U3P54QzDnhxvuPStf85pYdh',
-                    displayMonthly: 'R$ 399,99/mês',
-                    billingDisplay: 'Cobrança mensal · R$ 399,99'
-                },
-                quarterly: {
-                    stripePriceId: 'price_1U3P55QzDnhxvuPSb1c8mrU8',
-                    displayMonthly: 'R$ 359,99/mês',
-                    billingDisplay: 'Cobrado R$ 1.079,97 a cada 3 meses (-10%)'
-                },
-                yearly: {
-                    stripePriceId: 'price_1U3P55QzDnhxvuPS62TzVcBG',
-                    displayMonthly: 'R$ 339,99/mês',
-                    billingDisplay: 'Cobrado R$ 4.079,88 a cada 12 meses (-15%)'
-                }
-            }
-        }
+        'Maré': { displayName: 'BlackInk Cloaker', price: 'R$ 399,99/mês', priceValue: 399.99 }
     };
 
     // Get URL params
@@ -672,36 +504,25 @@
 
     // Update plan info display
     const planData = PLANS[plan];
-    const periodData = planData.periods[period] || planData.periods.monthly;
-    document.getElementById('planIcon').textContent = planData.icon;
     document.getElementById('planName').textContent = planData.displayName || plan;
-    document.getElementById('planPrice').textContent = periodData.displayMonthly;
-    document.getElementById('planBilling').textContent = periodData.billingDisplay;
 
-    // Sidebar copy — single product
-    const sidebar = {
-        title: 'Bots veem <span class="grad">safe page</span>',
-        subtitle: 'Compradores veem offer page. Cloaker server-side que filtra bots, VPNs, click farms e revisores do Google Ads antes de servir qualquer página.',
-        features: [
-            { strong: 'Safe Page / Offer Page', span: 'Roteamento server-side em menos de 50ms — 15+ sinais por visitante' },
-            { strong: 'Filtragem de Bots & VPNs', span: 'Crawlers, proxies, datacenters e revisores bloqueados' },
-            { strong: 'App Mobile + Push', span: 'Alertas instantâneos quando tráfego suspeito é detectado' }
-        ]
-    };
+    let priceDisplay = planData.price;
+    let billingDisplay = 'Cobrança mensal';
+    if (period === 'quarterly') {
+        const monthlyEq = (planData.priceValue * 0.9).toFixed(2).replace('.', ',');
+        const quarterlyTotal = (planData.priceValue * 3 * 0.9).toFixed(2).replace('.', ',');
+        priceDisplay = `R$ ${monthlyEq}/mês`;
+        billingDisplay = `Cobrado R$ ${quarterlyTotal} a cada 3 meses`;
+    } else if (period === 'yearly') {
+        const monthlyEq = (planData.priceValue * 0.85).toFixed(2).replace('.', ',');
+        const yearlyTotal = (planData.priceValue * 12 * 0.85).toFixed(2).replace('.', ',');
+        priceDisplay = `R$ ${monthlyEq}/mês`;
+        billingDisplay = `Cobrado R$ ${yearlyTotal} a cada 12 meses`;
+    }
+    document.getElementById('planPrice').textContent = priceDisplay;
+    document.getElementById('planBilling').textContent = billingDisplay;
 
-    document.getElementById('infoTitle').innerHTML = sidebar.title;
-    document.getElementById('infoSubtitle').textContent = sidebar.subtitle;
-    document.getElementById('infoFeatures').innerHTML = sidebar.features.map(f => `
-        <div class="register-feature">
-            <div class="register-feature-icon">
-                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <div class="register-feature-text">
-                <strong>${f.strong}</strong>
-                <span>${f.span}</span>
-            </div>
-        </div>
-    `).join('');
+
 
     // Form elements
     const form = document.getElementById('registerForm');
@@ -777,7 +598,9 @@
     }
 
     function validateEmail(email) {
-        return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email);
+        // {2,} e nao {2,4}: TLDs como .agency, .marketing, .digital e .online
+        // tem 5+ letras e eram rejeitados antes de chegar na API.
+        return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,}$/.test(email);
     }
 
     function validatePhone(phone) {
@@ -798,6 +621,14 @@
             if (errorEl) errorEl.classList.remove('show');
         });
     });
+
+    // Whop Pixel — conversion events only. Page views already fire from the snippet.
+    // complete_registration: conta criada de fato. Sem purchase/checkout — o Whop registra no servidor.
+    function whopChargeForPeriod(billingPeriod) {
+        if (billingPeriod === 'quarterly') return Number((planData.priceValue * 3 * 0.9).toFixed(2));
+        if (billingPeriod === 'yearly') return Number((planData.priceValue * 12 * 0.85).toFixed(2));
+        return planData.priceValue;
+    }
 
     // Form submission
     form.addEventListener('submit', async (e) => {
@@ -882,7 +713,10 @@
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 },
-                body: JSON.stringify(registrationData)
+                body: JSON.stringify(registrationData),
+                // Sem timeout, uma conexao pendurada deixa o botao em "Processando..."
+                // para sempre e a pessoa perde os 5 campos ao recarregar.
+                signal: AbortSignal.timeout(20000)
             });
 
             const data = await response.json();
@@ -897,15 +731,22 @@
             localStorage.removeItem('blackink_friend_referral_token');
             localStorage.removeItem('blackink_friend_referral_code');
 
-            // Redirect to checkout
+            if (typeof whop !== 'undefined' && typeof whop.track === 'function') {
+                whop.track('complete_registration', { value: whopChargeForPeriod(period), currency: 'BRL' });
+            }
+
+            // Etapa 3: a API devolve a URL do checkout da Stripe
+            // 250ms deixa o pixel enfileirar o complete_registration antes de sair do domínio.
             if (data.checkout_url) {
-                window.location.href = data.checkout_url;
+                setTimeout(() => { window.location.href = data.checkout_url; }, 250);
             } else {
-                showToast('success', 'Cadastro realizado!', 'Redirecionando para o pagamento...');
-                // Fallback - redirect to app login
+                // Sem checkout_url a conta foi criada mas o pagamento não pôde ser
+                // iniciado. Não prometer "redirecionando para o pagamento" — mandar
+                // para o login, que é para onde a pessoa realmente vai.
+                showToast('success', 'Conta criada!', 'Não conseguimos abrir o pagamento agora. Entre na sua conta para concluir a assinatura.');
                 setTimeout(() => {
-                    window.location.href = 'https://app.theblack.ink/auth/login';
-                }, 2000);
+                    window.location.href = 'https://app.blackink.cloud/auth/login';
+                }, 3000);
             }
 
         } catch (error) {
@@ -950,91 +791,6 @@
         document.addEventListener('mouseleave', () => cur.classList.remove('on'));
         document.addEventListener('mouseenter', () => cur.classList.add('on'));
     }
-
-    // ══════════════════════════════════════════════════════════
-    // WhatsApp Widget — Mensagens Rotativas
-    // ══════════════════════════════════════════════════════════
-    const waWidget = document.getElementById('wa-widget');
-    const waBubble = document.getElementById('wa-bubble');
-    const waBubbleClose = document.getElementById('wa-bubble-close');
-    const waMsg = document.getElementById('wa-msg');
-    const waBtn = document.getElementById('wa-btn');
-
-    const waMessages = [
-        '👋 Precisa de ajuda com o cadastro?',
-        '📝 Alguma dúvida sobre os dados? Estou aqui!',
-        '💳 Quer saber mais sobre formas de pagamento?',
-        '💬 Dúvidas sobre o cloaker?',
-        '⚡ Precisa de ajuda imediata? Chama aqui!',
-        '🔐 Dúvidas sobre segurança dos dados? Me pergunte!',
-        '✨ Qualquer dificuldade, é só chamar!'
-    ];
-
-    let waMsgIndex = 0;
-    let waBubbleVisible = false;
-    let waBubbleClosed = false;
-    let waMsgInterval = null;
-
-    function showWaBubble() {
-        if (waBubbleClosed) return;
-        waBubble.classList.add('visible');
-        waBubbleVisible = true;
-        startMsgRotation();
-    }
-
-    function hideWaBubble() {
-        waBubble.classList.remove('visible');
-        waBubbleVisible = false;
-        stopMsgRotation();
-    }
-
-    function rotateWaMsg() {
-        waMsgIndex = (waMsgIndex + 1) % waMessages.length;
-        waMsg.innerHTML = `<span>${waMessages[waMsgIndex]}</span>`;
-    }
-
-    function startMsgRotation() {
-        if (waMsgInterval) return;
-        waMsgInterval = setInterval(rotateWaMsg, 5000);
-    }
-
-    function stopMsgRotation() {
-        if (waMsgInterval) {
-            clearInterval(waMsgInterval);
-            waMsgInterval = null;
-        }
-    }
-
-    waBubbleClose.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        hideWaBubble();
-        waBubbleClosed = true;
-    });
-
-    waBubble.addEventListener('click', () => {
-        window.open('https://wa.me/5562999133986?text=Ol%C3%A1!%20Estou%20fazendo%20meu%20cadastro%20no%20BlackInk%20e%20preciso%20de%20ajuda.', '_blank');
-    });
-
-    waBtn.addEventListener('click', (e) => {
-        if (window.innerWidth <= 768 && !waBubbleVisible && !waBubbleClosed) {
-            e.preventDefault();
-            showWaBubble();
-        }
-    });
-
-    // Show bubble after 3 seconds
-    setTimeout(showWaBubble, 3000);
-
-    // Hide on scroll (mobile)
-    let lastScrollY = 0;
-    window.addEventListener('scroll', () => {
-        const currentScrollY = window.scrollY;
-        if (currentScrollY > lastScrollY + 200 && waBubbleVisible && !waBubbleClosed) {
-            hideWaBubble();
-        }
-        lastScrollY = currentScrollY;
-    }, { passive: true });
 })();
 </script>
 <script src="/js/referral-tracking.js"></script>

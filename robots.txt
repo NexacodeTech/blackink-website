@@ -1,5 +1,5 @@
 # BlackInk — robots.txt
-# https://theblack.ink
+# https://blackink.cloud
 
 User-agent: *
 Allow: /
@@ -33,4 +33,4 @@ User-agent: cohere-ai
 Allow: /
 
 # Sitemap
-Sitemap: https://theblack.ink/sitemap.xml
+Sitemap: https://blackink.cloud/sitemap.xml
