@@ -105,6 +105,11 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Regra**: H1/H2 e linhas de billboard (hero `.ln-i`, marquee, sticky CTA punch) sem `.` no final; parágrafos, FAQ e meta mantêm pontuação normal.
 **Status**: ativo
 
+## 2026-08-24 — Hero sem split por caractere
+**Contexto**: JS embrulhava cada letra do H1 em `<span class="ch">` com `display:inline-block`. Kerning some, `letter-spacing` negativo desalinha em Safari/Firefox, e `background-clip:text` no pai virava fantasma.
+**Regra**: o H1 anima por linha (`.ln` / `.ln-i` + classe `.go`). Nunca fatiar o texto em spans por letra. Gradiente fica no `.ln-i.grad-hero`.
+**Status**: ativo
+
 ## 2026-08-12 — Posicionamento plataforma profissional
 **Contexto**: landing precisa transmitir plataforma enterprise (proteção de campanhas, controle de acesso, infraestrutura) — não script/tool improvisado.
 **Mudanças**: seção `#como-funciona` com fluxo visual Visitante → BlackInk → Análise → Safe/Offer; 8 pilares; hero/marquee/nav/footer/sticky CTA com tom de plataforma; nav link "Como funciona".
