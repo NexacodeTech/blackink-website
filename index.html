@@ -407,11 +407,21 @@ summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .rv.vis{opacity:1;transform:translateY(0)}
 .rv-d1{transition-delay:.1s}.rv-d2{transition-delay:.2s}.rv-d3{transition-delay:.3s}.rv-d4{transition-delay:.4s}.rv-d5{transition-delay:.5s}
 
-/* Hero title: uma linha por bloco, agora visível. Sem translateY — transform
-   no mesmo elemento que usa background-clip:text deixa o gradiente invisível
-   até a transition acabar, e as linhas sólidas (branco) aparecem primeiro. */
-.hero-title .ln{display:block;padding-bottom:4px}
-.hero-title .ln-i{display:block;white-space:nowrap}
+/* Title — line-height maior que o .t-xl (0.92) para não cortar descendentes (g, q).
+   Azul é color, não background-clip: clip + fonte web atrasada deixava as linhas
+   sólidas visíveis e as de accent invisíveis até o swap da fonte. */
+.hero-title{
+    max-width:min(900px,100%);width:100%;margin-bottom:12px;position:relative;z-index:2;
+    line-height:1.18;overflow:visible;
+    opacity:0;animation:fade-up .7s var(--ease) .12s both;
+}
+.hero-title .ln{display:block;overflow:visible;padding-bottom:0.12em}
+.hero-title .ln-i{display:block;white-space:nowrap;overflow:visible;padding-bottom:0.04em}
+.hero-title .grad-hero{
+    background:none;
+    -webkit-background-clip:border-box;background-clip:border-box;
+    color:var(--accent);-webkit-text-fill-color:var(--accent);
+}
 
 .hdr{position:fixed;top:0;left:0;right:0;z-index:9998;padding:0 24px;transition:background .5s var(--ease),box-shadow .5s var(--ease),border-color .5s var(--ease)}
 .hdr.scrolled{
@@ -477,7 +487,7 @@ picture{display:contents} /* o wrapper nao deve criar caixa: img herda o layout 
     /* height:auto e obrigatorio: o <img> tem width=440 height=440 no HTML e sem isso a arte quadrada era esticada */
     width:clamp(132px,11vw,164px);height:auto;margin-top:0;margin-bottom:16px;position:relative;z-index:2;
     filter:drop-shadow(0 0 30px rgba(100,180,255,0.15)) drop-shadow(0 0 60px rgba(100,180,255,0.08)) drop-shadow(0 0 100px rgba(100,180,255,0.04));
-    animation:hero-logo-in 1.2s var(--ease) .6s both;
+    animation:hero-logo-in .8s var(--ease) .05s both;
 }
 @keyframes hero-logo-in{from{opacity:0;transform:scale(0.85) translateY(15px)}to{opacity:1;transform:scale(1) translateY(0)}}
 @property --badge-angle{syntax:'<angle>';initial-value:0deg;inherits:false}
@@ -486,23 +496,20 @@ picture{display:contents} /* o wrapper nao deve criar caixa: img herda o layout 
 /* Ultra premium: pulso quase imperceptível */
 @keyframes dotPulse{0%,100%{opacity:.7;transform:scale(1)}50%{opacity:1;transform:scale(1.1)}}
 
-/* Title */
-.hero-title{max-width:min(900px,100%);width:100%;margin-bottom:12px;position:relative;z-index:2}
-
 /* Sub */
-.hero-sub{max-width:540px;margin:0 auto 20px;position:relative;z-index:2;opacity:0;animation:fade-up .5s var(--ease) .1s both}
+.hero-sub{max-width:540px;margin:0 auto 20px;position:relative;z-index:2;opacity:0;animation:fade-up .5s var(--ease) .32s both}
 
 /* CTAs */
 /* Delay curto de propósito: animação CSS com fill:both vence style inline, então este
    número — não a timeline do GSAP — é quem decide quando o CTA aparece. */
-.hero-ctas{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;position:relative;z-index:2;opacity:0;animation:fade-up .5s var(--ease) .15s both}
+.hero-ctas{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;position:relative;z-index:2;opacity:0;animation:fade-up .5s var(--ease) .42s both}
 @keyframes fade-up{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 
 /* Trust micro-text below CTAs */
 .hero-trust{
     display:flex;align-items:center;gap:8px;justify-content:center;
     margin-top:20px;position:relative;z-index:2;
-    opacity:0;animation:fade-up .5s var(--ease) .35s both;
+    opacity:0;animation:fade-up .5s var(--ease) .55s both;
 }
 .hero-trust-icon{width:16px;height:16px;color:var(--green);opacity:0.7}
 .hero-trust-text{font-size:12px;color:var(--muted);font-weight:500;letter-spacing:0.02em}

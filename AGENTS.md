@@ -163,3 +163,8 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Contexto**: hosting passou a ser o próprio GitHub; FTP HostGator e AWS S3 não rodam mais.
 **Regra**: não reintroduzir `.github/workflows/deploy.yml` nem `ftp-deploy.yml`.
 **Status**: ativo
+
+## 2026-08-24 — H1: espaço para descendente, accent sólido, fade único
+**Contexto**: `line-height: 0.92` + `background-clip:text` cortava o `g` de page e o `q` de que; a fonte web atrasava o clip e as linhas azuis nasciam depois das brancas.
+**Regra**: `.hero-title` usa `line-height: 1.18` e overflow visível. Linhas de destaque no H1 são `color: var(--accent)`, não clip. Entrada é um fade do H1 inteiro, nunca por linha.
+**Status**: ativo
