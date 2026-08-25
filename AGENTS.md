@@ -149,6 +149,11 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Regra**: não apontar CTA de `index.html` ou `cadastro/index.html` para Whop. `/en` e `/en/cadastro/` POST ` /api/users/register-whop` com `plan_name=Maré` e `period=monthly`. Preço user-facing EN: $69.99/mês. API interna do plano continua `Maré`.
 **Status**: ativo
 
+## 2026-08-25 — Pixel Ad Measurement (Convex)
+**Contexto**: snippet `am_F9WQQ4mvZaaAy7--` em `aromatic-caribou-889.convex.site`. Page view e page leave são automáticos.
+**Regra**: manter o `<script async>` no `<head>` de todas as páginas HTML, logo após o Whop. Não duplicar. Não disparar page view extra.
+**Status**: ativo
+
 ## 2026-08-24 — Redirect de locale: fora do Brasil vai para /en
 **Contexto**: tráfego US caía 100% em `/` e `/cadastro` (PT, Stripe BRL) em vez do funil `/en` (Whop USD).
 **Regra**: `js/locale-redirect.js` no `<head>` de `/`, `/cadastro`, `/subscribe`, `/en`, `/en/cadastro`. Brasil (timezone BR, ou UTC+pt-BR) fica no PT; qualquer outro visitante vai para `/en` ou `/en/cadastro`. Query string (`ref`, `fref`, UTM, plan, period) é preservada. Bots não redirecionam. Override: `?lang=pt` / `?lang=en` + `localStorage.blackink_locale`. Não prefixar `/en` em termos/privacidade (não existem em EN). Link de troca precisa do `?lang=` senão o script devolve o usuário ao funil detectado. `html[data-locale-pending]` esconde o body até o script decidir — não remover, senão estrangeiro vê flash da página PT.
