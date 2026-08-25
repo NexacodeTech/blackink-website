@@ -33,8 +33,8 @@
   // ── Inicializar módulos ──
   // O hero NÃO é animado aqui: os elementos têm animação CSS com fill:both, que vence
   // style inline na cascata — qualquer tween do GSAP sobre eles seria inerte. Quem
-  // controla o hero é o CSS (delays em .hero-sub/.hero-ctas/.hero-trust) e o script
-  // inline do rodapé, que aplica .go na revelação por linha do H1.
+  // controla o hero é o CSS (delays em .hero-sub/.hero-ctas/.hero-trust). O H1
+  // nasce visível — sem stagger por linha.
 
   if (isFinePointer) {
     initParallaxOrbs(dur.orbParallax);

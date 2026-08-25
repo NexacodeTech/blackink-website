@@ -153,3 +153,13 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Contexto**: tráfego US caía 100% em `/` e `/cadastro` (PT, Stripe BRL) em vez do funil `/en` (Whop USD).
 **Regra**: `js/locale-redirect.js` no `<head>` de `/`, `/cadastro`, `/subscribe`, `/en`, `/en/cadastro`. Brasil (timezone BR, ou UTC+pt-BR) fica no PT; qualquer outro visitante vai para `/en` ou `/en/cadastro`. Query string (`ref`, `fref`, UTM, plan, period) é preservada. Bots não redirecionam. Override: `?lang=pt` / `?lang=en` + `localStorage.blackink_locale`. Não prefixar `/en` em termos/privacidade (não existem em EN). Link de troca precisa do `?lang=` senão o script devolve o usuário ao funil detectado. `html[data-locale-pending]` esconde o body até o script decidir — não remover, senão estrangeiro vê flash da página PT.
 **Status**: ativo
+
+## 2026-08-24 — H1 visível, sem stagger
+**Contexto**: revelação por linha + `transform` no mesmo nó de `background-clip:text` fazia as linhas sólidas (branco) pintarem antes das linhas com `.grad-hero`.
+**Regra**: o H1 nasce visível. Sem `translateY`, sem delay por linha, sem classe `.go` no título. `.ln` / `.ln-i` só para quebra e nowrap.
+**Status**: ativo
+
+## 2026-08-24 — Sem workflow de deploy
+**Contexto**: hosting passou a ser o próprio GitHub; FTP HostGator e AWS S3 não rodam mais.
+**Regra**: não reintroduzir `.github/workflows/deploy.yml` nem `ftp-deploy.yml`.
+**Status**: ativo
