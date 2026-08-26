@@ -173,3 +173,8 @@ Caderno de aprendizados específicos da landing. **Append-only, teto 200 linhas.
 **Contexto**: `line-height: 0.92` + `background-clip:text` cortava o `g` de page e o `q` de que; a fonte web atrasava o clip e as linhas azuis nasciam depois das brancas.
 **Regra**: `.hero-title` usa `line-height: 1.18` e overflow visível. Linhas de destaque no H1 são `color: var(--accent)`, não clip. Entrada é um fade do H1 inteiro, nunca por linha.
 **Status**: ativo
+
+## 2026-08-26 — Google Analytics (gtag G-B05EJEJ91F)
+**Contexto**: snippet global no `<head>` de index, /en, cadastro, termos, privacidade e 404. `/subscribe` não leva a tag — a página só redireciona.
+**Regra**: `gtag('config')` não dispara se `window.__blackinkLocaleRedirecting` estiver setado, senão o hop PT→/en conta pageview duplicado. Não trocar o measurement ID.
+**Status**: ativo
